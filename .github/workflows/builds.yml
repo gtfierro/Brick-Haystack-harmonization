@@ -27,11 +27,8 @@ jobs:
       with:
         path: .venv
         key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
-    - name: Install dependencies
-      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
-      run: poetry install --no-interaction --no-root -E all
     - name: Install Dependencies
-      run: poetry install --no-interaction --no-root -E all
+      run: poetry install --no-interaction --no-root
     - name: Create new Taxonomy Visualization
       run: poetry run tools/visualize_taxonomy.py unified_taxonomy.yml
     - name: Add new viz to repo
