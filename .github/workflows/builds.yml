@@ -34,6 +34,7 @@ jobs:
     - name: Create new Taxonomy Visualization
       run: poetry run python tools/visualize_taxonomy.py unified_taxonomy.yaml
     - name: Add new viz to repo
+      continue-on-error: true
       run: |
         git config --local user.name 'automated'
         mv unified_taxonomy.png .github/images
@@ -42,6 +43,7 @@ jobs:
     - name: Update Brick report
       run: poetry run python tools/check_brick.py Brick.ttl unified_taxonomy.yaml > brick_report.txt
     - name: Add Brick report to repo
+      continue-on-error: true
       run: |
         git config --local user.name 'automated'
         git add brick_report.txt
