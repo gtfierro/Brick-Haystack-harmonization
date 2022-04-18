@@ -11,3 +11,7 @@
 ## Unified Taxonomy
 
 ![Unified taxonomy for Brick and Haystack](.github/images/unified_taxonomy.png)
+
+## Ontology Reports
+
+[Brick Report](brick_report.txt)
