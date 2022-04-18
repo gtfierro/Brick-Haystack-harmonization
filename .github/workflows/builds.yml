@@ -39,10 +39,6 @@ jobs:
         mv unified_taxonomy.png .github/images
         git add .github/images
         git commit -m 'Updated unified taxonomy viz'
-    - name: Push changes # push the output folder to your repo
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Update Brick report
       run: poetry run python tools/check_brick.py Brick.ttl unified_taxonomy.yaml > brick_report.txt
     - name: Add Brick report to repo
@@ -50,3 +46,7 @@ jobs:
         git config --local user.name 'automated'
         git add brick_report.txt
         git commit -m 'Updated Brick report'
+    - name: Push changes # push the output folder to your repo
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
