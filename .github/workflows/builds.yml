@@ -1,0 +1,46 @@
+name: Build
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        python-version: [3.7.9]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+          python-version: ${{ matrix.python-version }}
+    - name: Install Poetry
+      uses: snok/install-poetry@v1
+      with:
+        virtualenvs-create: true
+        virtualenvs-in-project: true
+        installer-parallel: true
+    - name: Load cached venv
+      id: cached-poetry-dependencies
+      uses: actions/cache@v2
+      with:
+        path: .venv
+        key: venv-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
+    - name: Install dependencies
+      if: steps.cached-poetry-dependencies.outputs.cache-hit != 'true'
+      run: poetry install --no-interaction --no-root -E all
+    - name: Install Dependencies
+      run: poetry install --no-interaction --no-root -E all
+    - name: Create new Taxonomy Visualization
+      run: poetry run tools/visualize_taxonomy.py unified_taxonomy.yml
+    - name: Add new viz to repo
+      run: |
+        git config --local user.name 'automated'
+        mv unified_taxonomy.png .github/images
+        git add .github/images
+        git commit -m 'Updated unified taxonomy viz'
+    - name: Push changes # push the output folder to your repo
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
