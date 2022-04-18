@@ -30,7 +30,7 @@ jobs:
     - name: Install Dependencies
       run: poetry install --no-interaction --no-root
     - name: Create new Taxonomy Visualization
-      run: poetry run tools/visualize_taxonomy.py unified_taxonomy.yml
+      run: poetry run python tools/visualize_taxonomy.py unified_taxonomy.yml
     - name: Add new viz to repo
       run: |
         git config --local user.name 'automated'
