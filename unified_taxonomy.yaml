@@ -1,211 +1,234 @@
 Equipment:
   definition: "Some text here..."
   brick: https://brickschema.org/schema/Brick#Equipment
-  haystack-class: equip
-  children:
-  - Air Handling Unit
-  - Terminal Unit
-  - Aquifer Thermal Energy System
-  - Energy Storage Equipment
-  - Boiler
-  - Chiller
-  - Cooling Tower
-  - Fume Hood
-  - Heat Exchanger
-  - Humidifier
-  - Lighting Equipment
-  - Meter
-  - Motor
+  haystack: equip
 
 Air Handling Unit:
   definition: "Assembly consisting of sections containing a fan or fans and other necessary equipment to perform one or more of the following functions: circulating, filtration, heating, cooling, heat recovery, humidifying, dehumidifying, and mixing of air. Is usually connected to an air-distribution system."
   brick: https://brickschema.org/schema/Brick#AHU
-  haystack-class: ahu
-  children:
-  - Dedicated Outdoor Air System
-  - Rooftop Unit
-  - Heat Pump
-  - Fan Coil Unit
+  haystack: ahu
+  parents:
+  - Equipment
 
 Dedicated Outdoor Air System:
   brick: https://brickschema.org/schema/Brick#DOAS
-  haystack-class: doas
-  children:
-  - Makeup Air Unit
+  haystack: doas
+  parents:
+  - Air Handling Unit
 
 Makeup Air Unit:
   brick: https://brickschema.org/schema/Brick#MAU
-  haystack-class: mau
+  haystack: mau
+  parents:
+  - Dedicated Ourdoor Air System
 
 Rooftop Unit:
   brick: https://brickschema.org/schema/Brick#RTU
-  haystack-class: rtu
+  haystack: rtu
+  parents:
+  - Air Handling Unit
 
 Heat Pump:
-  haystack-class: heatPump
+  haystack: heatPump
+  parents:
+  - Air Handling Unit
 
 Fan Coil Unit:
   brick: https://brickschema.org/schema/Brick#FCU
-  haystack-class: fcu
-  children:
-    - Computer Room Air Conditioner
-    - Unit Ventilator
+  haystack: fcu
+  parents:
+  - Air Handling Unit
 
 Computer Room Air Conditioner:
   brick: https://brickschema.org/schema/Brick#CRAC
-  haystack-class: crac
+  haystack: crac
+  parents:
+  - Fan Coil Unit
 
 Unit Ventilator:
-  haystack-class: unitVent
+  haystack: unitVent
+  parents:
+  - Fan Coil Unit
 
 Terminal Unit:
   brick: https://brickschema.org/schema/Brick#Terminal_Unit
-  haystack-class: airTerminalUnit
-  children:
-  - Constant Air Volume Box
-  - Variable Air Volume Box
+  haystack: airTerminalUnit
+  parents:
+  - Equipment
 
 Constant Air Volume Box:
   brick: https://brickschema.org/schema/Brick#CAV
-  haystack-class: cav
+  haystack: cav
+  parents:
+  - Terminal Unit
 
 Variable Air Volume Box:
   brick: https://brickschema.org/schema/Brick#VAV
-  haystack-class: vav
+  haystack: vav
+  parents:
+  - Terminal Unit
 
 Aquifer Thermal Energy System:
-  haystack-class: ates
+  parents:
+  - Equipment
+  haystack: ates
 
 Energy Storage Equipment:
   brick: https://brickschema.org/schema/Brick#Energy_Storage
-  children:
-  - Battery
+  parents:
+  - Equipment
 
 Battery:
   brick: https://brickschema.org/schema/Brick#Battery
-  haystack-class: battery
+  haystack: battery
+  parents:
+  - Energy Storage Equipment
 
 Boiler:
   brick: https://brickschema.org/schema/Brick#Boiler
-  haystack-class: boiler
-  children:
-  - Hot Water Boiler
-  - Steam Boiler
+  haystack: boiler
+  parents:
+  - Equipment
 
 Hot Water Boiler:
   brick: https://brickschema.org/schema/BrickShape#Hot_Water_Boiler
-  haystack-class: hot-water-boiler
+  haystack: hot-water-boiler
+  parents:
+  - Boiler
 
 Steam Boiler:
   brick: https://brickschema.org/schema/BrickShape#Steam_Boiler
-  haystack-class: steam-boiler
+  haystack: steam-boiler
+  children:
+  - Battery
 
 Chiller:
   definition: "Refrigerating machine used to transfer heat between fluids. Chillers are either direct expansion with a compressor or absorption type."
   brick: https://brickschema.org/schema/Brick#Chiller
-  haystack-class: chiller-equip
+  haystack: chiller-equip
+  parents:
+  - Equipment
 
 Cooling Tower:
   definition: "A cooling tower is a heat rejection device that rejects waste heat to the atmosphere through the cooling of a water stream to a lower temperature. Cooling towers may either use the evaporation of water to remove process heat and cool the working fluid to near the wet-bulb air temperature or, in the case of closed circuit dry cooling towers, rely solely on air to cool the working fluid to near the dry-bulb air temperature."
   brick: https://brickschema.org/schema/Brick#Cooling_Tower
-  haystack-class: coolingTower-equip
+  haystack: coolingTower-equip
+  parents:
+  - Equipment
 
 # ignore flowInverter
 Fume Hood:
   brick: https://brickschema.org/schema/Brick#Fume_Hood
-  haystack-class: fumeHood
+  haystack: fumeHood
+  parents:
+  - Equipment
 
 Heat Exchanger:
   definition: "A heat exchanger is a piece of equipment built for efficient heat transfer from one medium to another. The media may be separated by a solid wall to prevent mixing or they may be in direct contact (BEDES)"
   brick: https://brickschema.org/schema/Brick#Heat_Exchanger
-  haystack-class: heatExchanger
+  haystack: heatExchanger
+  parents:
+  - Equipment
   children:
   - Coil
 
 Coil:
   definition: "Cooling or heating element made of pipe or tube that may or may not be finned and formed into helical or serpentine shape (ASHRAE Dictionary)"
   brick: https://brickschema.org/schema/Brick#Coil
-  haystack-class: coil
-  children:
-  - Cooling Coil
-  - Heating Coil
+  haystack: coil
 
 Cooling Coil:
   definition: "A cooling element made of pipe or tube that removes heat from equipment, machines or airflows. Typically filled with either refrigerant or cold water."
   brick: https://brickschema.org/schema/Brick#Cooling_Coil
-  haystack-class: coolingCoil
+  haystack: coolingCoil
+  parents:
+  - Coil
 
 Heating Coil:
   definition: "A heating element typically made of pipe, tube or wire that emits heat. Typically filled with hot water, or, in the case of wire, uses electricity."
   brick: https://brickschema.org/schema/Brick#Heating_Coil
-  haystack-class: heatingCoil
+  haystack: heatingCoil
+  parents:
+  - Coil
 
 Humidifier:
   brick: https://brickschema.org/schema/Brick#Humidifier
-  haystack-class: humidifier-equip
-  #why -equip?
+  haystack: humidifier-equip
+  parents:
+  - Equipment
 
 Lighting Equipment:
   brick: https://brickschema.org/schema/Brick#Lighting_Equipment
-  children:
-  - Luminaire
+  parents:
+  - Equipment
 
 Luminaire:
   brick: https://brickschema.org/schema/Brick#Luminaire
-  haystack-class: luminaire
+  haystack: luminaire
+  parents:
+  - Lighting Equipment
 
 Meter:
   brick: https://brickschema.org/schema/Brick#Meter
-  haystack-class: meter
-  children:
-  - Electricity Meter
-  - Thermal Power Meter
-  - Flow Meter
+  haystack: meter
+  parents:
+  - Equipment
 
 Electricity Meter:
   brick: https://brickschema.org/schema/Brick#Electrical_Meter
-  haystack-class: elec-meter
-  children:
-  - AC Meter
-  - DC Meter
+  haystack: elec-meter
+  parents:
+  - Meter
 
 AC Meter:
-  haystack-class: ac-elec-meter
+  haystack: ac-elec-meter
   brick: https://brickschema.org/schema/BrickShape#AC_Electrical_Meter
+  parents:
+  - Electricity Meter
 
 DC Meter:
-  haystack-class: dc-elec-meter
+  haystack: dc-elec-meter
   brick: https://brickschema.org/schema/BrickShape#DC_Electrical_Meter
+  parents:
+  - Electricity Meter
 
 Thermal Power Meter:
   brick: https://brickschema.org/schema/Brick#Thermal_Power_Meter
+  parents:
+  - Meter
 
 Flow Meter:
-  haystack-class: flow-meter
-  children:
-  - Gas Meter
-  - Water Meter
+  haystack: flow-meter
+  parents:
+  - Meter
 
 Gas Meter:
   brick: https://brickschema.org/schema/Brick#Gas_Meter
+  parents:
+  - Flow Meter
 
 Water Meter:
   brick: https://brickschema.org/schema/Brick#Water_Meter
+  parents:
+  - Flow Meter
 
 Motor:
   brick: https://brickschema.org/schema/Brick#Motor
-  haystack-class: motor
-  children:
-  - Fan Motor
-  - Pump Motor
+  haystack: motor
+  parents:
+  - Equipment
 
 Fan Motor:
   brick: https://brickschema.org/schema/BrickShape#Fan_Motor
-  haystack-class: fan-motor
+  haystack: fan-motor
+  parents:
+  - Motor
 
 Pump Motor:
   brick: https://brickschema.org/schema/BrickShape#Pump_Motor
-  haystack-class: pump-motor
+  haystack: pump-motor
+  parents:
+  - Motor
 
 # ignore panel
 # TODO: the rest of the class hierarchy

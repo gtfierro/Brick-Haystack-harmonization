@@ -17,21 +17,21 @@ def check_brick_hierarchy(graph: rdflib.Graph, taxonomy: dict):
                 f"Brick class {brick_class} for {concept_name} not found in graph"
             )
             continue
-        children = concept_defn.get("children", [])
-        for child_concept in children:
-            if child_concept not in taxonomy:
-                messages.append(f"Child concept {child_concept} not found in taxonomy")
+        parents = concept_defn.get("parents", [])
+        for parent_concept in parents:
+            if parent_concept not in taxonomy:
+                messages.append(f"Parent concept {parent_concept} not found in taxonomy")
                 continue
-            child_concept_uri = taxonomy[child_concept].get("brick")
-            if child_concept_uri is None:
-                messages.append(f"No Brick class defined for {child_concept}")
+            parent_concept_uri = taxonomy[parent_concept].get("brick")
+            if parent_concept_uri is None:
+                messages.append(f"No Brick class defined for {parent_concept}")
                 continue
-            child_concept_uri = rdflib.URIRef(child_concept_uri)
-            if brick_class_uri not in graph.transitive_objects(
-                child_concept_uri, rdflib.RDFS.subClassOf
+            parent_concept_uri = rdflib.URIRef(parent_concept_uri)
+            if brick_class_uri not in graph.transitive_subjects(
+                rdflib.RDFS.subClassOf, parent_concept_uri
             ):
                 messages.append(
-                    f"Child concept {child_concept} is not child of "
+                    f"Parent concept {parent_concept} is not parent of "
                     f"brick class {brick_class} for {concept_name}"
                 )
                 continue

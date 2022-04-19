@@ -13,10 +13,10 @@ def visualize_taxonomy(taxonomy, output='output.png'):
     for concept_name, concept_defn in taxonomy.items():
         concept_node = pydot.Node(concept_name, label=concept_name)
         graph.add_node(concept_node)
-        for child_concept in concept_defn.get('children', []):
-            child_node = pydot.Node(child_concept, label=child_concept)
-            graph.add_node(child_node)
-            graph.add_edge(pydot.Edge(concept_node, child_node))
+        for parent_concept in concept_defn.get('parents', []):
+            parent_node = pydot.Node(parent_concept, label=parent_concept)
+            graph.add_node(parent_node)
+            graph.add_edge(pydot.Edge(parent_node, concept_node))
     graph.write_png(output)
 
 
