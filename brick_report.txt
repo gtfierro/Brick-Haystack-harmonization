@@ -9,5 +9,5 @@ No Brick class defined for Flow Meter
 No Brick class defined for Heat Pump
 No Brick class defined for Unit Ventilator
 Parent concept Air Handling Unit is not parent of brick class https://brickschema.org/schema/Brick#FCU for Fan Coil Unit
-Parent concept Dedicated Ourdoor Air System not found in taxonomy
+Parent concept Dedicated Outdoor Air System is not parent of brick class https://brickschema.org/schema/Brick#MAU for Makeup Air Unit
 Parent concept Fan Coil Unit is not parent of brick class https://brickschema.org/schema/Brick#CRAC for Computer Room Air Conditioner
