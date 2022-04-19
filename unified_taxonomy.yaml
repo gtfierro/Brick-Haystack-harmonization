@@ -99,8 +99,8 @@ Hot Water Boiler:
 Steam Boiler:
   brick: https://brickschema.org/schema/BrickShape#Steam_Boiler
   haystack: steam-boiler
-  children:
-  - Battery
+  parents:
+  - Boiler
 
 Chiller:
   definition: "Refrigerating machine used to transfer heat between fluids. Chillers are either direct expansion with a compressor or absorption type."
