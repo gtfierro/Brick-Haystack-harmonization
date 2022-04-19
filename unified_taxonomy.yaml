@@ -20,7 +20,7 @@ Makeup Air Unit:
   brick: https://brickschema.org/schema/Brick#MAU
   haystack: mau
   parents:
-  - Dedicated Ourdoor Air System
+  - Dedicated Outdoor Air System
 
 Rooftop Unit:
   brick: https://brickschema.org/schema/Brick#RTU
