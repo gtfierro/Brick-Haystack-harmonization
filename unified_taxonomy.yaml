@@ -129,13 +129,13 @@ Heat Exchanger:
   haystack: heatExchanger
   parents:
   - Equipment
-  children:
-  - Coil
 
 Coil:
   definition: "Cooling or heating element made of pipe or tube that may or may not be finned and formed into helical or serpentine shape (ASHRAE Dictionary)"
   brick: https://brickschema.org/schema/Brick#Coil
   haystack: coil
+  parents:
+  - Heat Exchanger
 
 Cooling Coil:
   definition: "A cooling element made of pipe or tube that removes heat from equipment, machines or airflows. Typically filled with either refrigerant or cold water."
