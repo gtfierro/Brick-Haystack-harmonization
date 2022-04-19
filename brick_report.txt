@@ -4,16 +4,10 @@ Brick class https://brickschema.org/schema/BrickShape#Fan_Motor for Fan Motor no
 Brick class https://brickschema.org/schema/BrickShape#Hot_Water_Boiler for Hot Water Boiler not found in graph
 Brick class https://brickschema.org/schema/BrickShape#Pump_Motor for Pump Motor not found in graph
 Brick class https://brickschema.org/schema/BrickShape#Steam_Boiler for Steam Boiler not found in graph
-Child concept AC Meter is not child of brick class https://brickschema.org/schema/Brick#Electrical_Meter for Electricity Meter
-Child concept Computer Room Air Conditioner is not child of brick class https://brickschema.org/schema/Brick#FCU for Fan Coil Unit
-Child concept DC Meter is not child of brick class https://brickschema.org/schema/Brick#Electrical_Meter for Electricity Meter
-Child concept Fan Coil Unit is not child of brick class https://brickschema.org/schema/Brick#AHU for Air Handling Unit
-Child concept Fan Motor is not child of brick class https://brickschema.org/schema/Brick#Motor for Motor
-Child concept Hot Water Boiler is not child of brick class https://brickschema.org/schema/Brick#Boiler for Boiler
-Child concept Makeup Air Unit is not child of brick class https://brickschema.org/schema/Brick#DOAS for Dedicated Outdoor Air System
-Child concept Pump Motor is not child of brick class https://brickschema.org/schema/Brick#Motor for Motor
-Child concept Steam Boiler is not child of brick class https://brickschema.org/schema/Brick#Boiler for Boiler
 No Brick class defined for Aquifer Thermal Energy System
 No Brick class defined for Flow Meter
 No Brick class defined for Heat Pump
 No Brick class defined for Unit Ventilator
+Parent concept Air Handling Unit is not parent of brick class https://brickschema.org/schema/Brick#FCU for Fan Coil Unit
+Parent concept Dedicated Ourdoor Air System not found in taxonomy
+Parent concept Fan Coil Unit is not parent of brick class https://brickschema.org/schema/Brick#CRAC for Computer Room Air Conditioner

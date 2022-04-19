@@ -33,22 +33,26 @@ jobs:
       run: poetry install --no-interaction --no-root
     - name: Create new Taxonomy Visualization
       run: poetry run python tools/visualize_taxonomy.py unified_taxonomy.yaml
-    - name: Add new viz to repo
-      continue-on-error: true
-      run: |
-        git config --local user.name 'automated'
-        mv unified_taxonomy.png .github/images
-        git add .github/images
-        git commit -m 'Updated unified taxonomy viz'
     - name: Update Brick report
       run: poetry run python tools/check_brick.py Brick.ttl unified_taxonomy.yaml > brick_report.txt
-    - name: Add Brick report to repo
+    - uses: actions/upload-artifact@v3
+      with:
+        name: taxonomy visualization
+        path: |
+          unified_taxonomy.png
+          brick-report.txt
+    - name: Add Brick report and updated viz to repo
+      if: ${{ github.ref == 'refs/heads/main' }}
       continue-on-error: true
       run: |
-        git config --local user.name 'automated'
+        git config --local user.name 'automated github action'
+        mv unified_taxonomy.png .github/images
+        git add .github/images
         git add brick_report.txt
-        git commit -m 'Updated Brick report'
+        git commit -m 'Updated Brick report and taxonomy viz'
     - name: Push changes # push the output folder to your repo
       uses: ad-m/github-push-action@master
+      if: ${{ github.ref == 'refs/heads/main' }}
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
