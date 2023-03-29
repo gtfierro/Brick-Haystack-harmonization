@@ -10,6 +10,7 @@ python = "^3.7"
 pyaml = "^21.10.1"
 rdflib = "^6.1.1"
 pydot = "^1.4.2"
+brickschema = "0.7.1a2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.1"

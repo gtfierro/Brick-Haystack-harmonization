@@ -3,12 +3,17 @@ Equipment:
   brick: https://brickschema.org/schema/Brick#Equipment
   haystack: equip
 
+Air Handling Unit Equip:
+  haystack: airHandlingEquip
+  parents:
+  - Equipment
+
 Air Handling Unit:
   definition: "Assembly consisting of sections containing a fan or fans and other necessary equipment to perform one or more of the following functions: circulating, filtration, heating, cooling, heat recovery, humidifying, dehumidifying, and mixing of air. Is usually connected to an air-distribution system."
   brick: https://brickschema.org/schema/Brick#AHU
   haystack: ahu
   parents:
-  - Equipment
+  - Air Handling Unit Equip
 
 Dedicated Outdoor Air System:
   brick: https://brickschema.org/schema/Brick#DOAS
@@ -49,6 +54,12 @@ Unit Ventilator:
   haystack: unitVent
   parents:
   - Fan Coil Unit
+
+VRF Indoor Unit FCU:
+  haystack: vrf-indoorUnit-fcu
+  parents:
+  - Fan Coil Unit
+  - vrf Indoor Unit
 
 Terminal Unit:
   brick: https://brickschema.org/schema/Brick#Terminal_Unit
@@ -105,14 +116,14 @@ Steam Boiler:
 Chiller:
   definition: "Refrigerating machine used to transfer heat between fluids. Chillers are either direct expansion with a compressor or absorption type."
   brick: https://brickschema.org/schema/Brick#Chiller
-  haystack: chiller-equip
+  haystack: chiller
   parents:
   - Equipment
 
 Cooling Tower:
   definition: "A cooling tower is a heat rejection device that rejects waste heat to the atmosphere through the cooling of a water stream to a lower temperature. Cooling towers may either use the evaporation of water to remove process heat and cool the working fluid to near the wet-bulb air temperature or, in the case of closed circuit dry cooling towers, rely solely on air to cool the working fluid to near the dry-bulb air temperature."
   brick: https://brickschema.org/schema/Brick#Cooling_Tower
-  haystack: coolingTower-equip
+  haystack: coolingTower
   parents:
   - Equipment
 
@@ -229,6 +240,51 @@ Pump Motor:
   haystack: pump-motor
   parents:
   - Motor
+
+Radiant Equipment:
+  haystack: radiantEquip
+  parents:
+  - Equipment
+
+Radiator:
+  brick: https://brickschema.org/schema/Brick#Radiator
+  haystack: radiator
+  parents:
+  - Radiant Equipment
+
+Radiant Floor:
+  brick: https://brickschema.org/schema/Brick#Radiant_Panel
+  haystack: radiantFloor
+  parents:
+  - Radiant Equipment
+
+Chilled Beam:
+  brick: https://brickschema.org/schema/Brick#Chilled_Beam
+  haystack: chilledBeam
+  parents:
+  - Radiant Equipment
+
+Tank:
+  brick: https://brickschema.org/schema/Brick#Tank
+  haystack: tank
+  parents:
+  - Equipment
+
+VRF Equipment:
+  haystack: vrf-equip
+  parents:
+  - Equipment
+
+vrf Indoor Unit:
+  haystack: vrf-indoorUnit
+  parents:
+  - VRF Equipment
+
+vrf Outdoor Unit:
+  haystack: vrf-outdoorUnit
+  parents:
+  - VRF Equipment
+
 
 # ignore panel
 # TODO: the rest of the class hierarchy
