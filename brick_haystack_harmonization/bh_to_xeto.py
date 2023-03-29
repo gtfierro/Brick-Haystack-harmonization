@@ -28,8 +28,11 @@ def run(filename: str, outputfile: str):
         f.writelines(statements)
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) < 3:
         print("Usage: bh-to-xeto <csv file> <output xeto file>")
         sys.exit(1)
     run(sys.argv[1], sys.argv[2])
+
+if __name__ == "__main__":
+    main()

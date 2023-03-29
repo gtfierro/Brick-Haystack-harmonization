@@ -6,7 +6,9 @@ authors = ["Gabe Fierro <gtfierro@mines.edu>"]
 license = "bsd-3-clause"
 
 [tool.poetry.scripts]
-bh-to-shapes = "brick_haystack_harmonization.bh_to_shapes:main"                                                   
+bh-to-shapes = "brick_haystack_harmonization.bh_to_shapes:main"
+bh-to-xeto = "brick_haystack_harmonization.bh_to_xeto:main"
+xeto-to-shacl = "brick_haystack_harmonization.xeto_to_shacl:main"
 
 [tool.poetry.dependencies]
 python = "^3.7"

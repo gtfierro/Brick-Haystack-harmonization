@@ -48,10 +48,14 @@ def slot_to_shacl(library_name, name, defn):
                 (SH.value, TAG[key])
             ]))
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) < 3:
         print("Usage: xeto-to-shacl <resolved json file> <output graph file>")
     resolved_xetos = json.load(open(sys.argv[1]))
     for slot in read_slots(resolved_xetos):
         slot_to_shacl(*slot)
     g.serialize(sys.argv[2], format=guess_format(sys.argv[2]))
+
+
+if __name__ == "__main__":
+    main()
