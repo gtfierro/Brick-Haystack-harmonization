@@ -5,8 +5,8 @@ def taglist_to_set(taglist: str) -> Set[str]:
     return set(map(lambda x: x.strip(), taglist.split(",")))
 
 
-def read_csv():
-    with open("brick-haystack.csv") as f:
+def read_csv(filename: str):
+    with open(filename) as f:
         rdr = csv.DictReader(f)
         for row in rdr:
             yield row

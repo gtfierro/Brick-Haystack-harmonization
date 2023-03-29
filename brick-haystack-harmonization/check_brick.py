@@ -42,7 +42,7 @@ def check_brick_hierarchy(graph: rdflib.Graph, taxonomy: dict):
 
 if __name__ == "__main__":
     if len(sys.argv) != 3:
-        print("Usage: check_brick.py <brick_file> <taxonomy_file>")
+        print("Usage: check_brick <brick_file> <taxonomy_file>")
         sys.exit(1)
     graph = rdflib.Graph()
     graph.parse(sys.argv[1], format="turtle")

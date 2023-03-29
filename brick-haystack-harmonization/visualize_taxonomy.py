@@ -28,7 +28,7 @@ def visualize_taxonomy(taxonomy, output='output.png'):
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
-        print('Usage: visualize_taxonomy.py <taxonomy.yaml>')
+        print('Usage: visualize_taxonomy <taxonomy.yaml>')
         sys.exit(1)
 
     if len(sys.argv) == 3:
