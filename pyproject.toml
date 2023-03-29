@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "brick-haystack-harmonization"
+name = "brick_haystack_harmonization"
 version = "0.1.0"
 description = ""
 authors = ["Gabe Fierro <gtfierro@mines.edu>"]
@@ -7,7 +7,6 @@ license = "bsd-3-clause"
 
 [tool.poetry.scripts]
 bh-to-shapes = "brick_haystack_harmonization.bh_to_shapes:main"                                                   
-brickify = "brickschema.brickify.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.7"
