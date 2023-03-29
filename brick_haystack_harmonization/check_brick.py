@@ -40,7 +40,7 @@ def check_brick_hierarchy(graph: rdflib.Graph, taxonomy: dict):
         print(msg)
 
 
-if __name__ == "__main__":
+def main():
     if len(sys.argv) != 3:
         print("Usage: check_brick <brick_file> <taxonomy_file>")
         sys.exit(1)
@@ -48,3 +48,6 @@ if __name__ == "__main__":
     graph.parse(sys.argv[1], format="turtle")
     taxonomy = yaml.load(open(sys.argv[2]), Loader=Loader)
     check_brick_hierarchy(graph, taxonomy)
+
+if __name__ == "__main__":
+    main()

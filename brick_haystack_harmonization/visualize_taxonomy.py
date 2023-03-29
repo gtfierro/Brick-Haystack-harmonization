@@ -26,7 +26,7 @@ def visualize_taxonomy(taxonomy, output='output.png'):
     graph.write_png(output)
 
 
-if __name__ == '__main__':
+def main():
     if len(sys.argv) != 2:
         print('Usage: visualize_taxonomy <taxonomy.yaml>')
         sys.exit(1)
@@ -39,3 +39,6 @@ if __name__ == '__main__':
     taxonomy_file = sys.argv[1]
     taxonomy = yaml.load(open(taxonomy_file), Loader=Loader)
     visualize_taxonomy(taxonomy, output)
+
+if __name__ == '__main__':
+    main()

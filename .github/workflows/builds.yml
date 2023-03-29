@@ -10,11 +10,11 @@ jobs:
       matrix:
         python-version: [3.7.9]
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v4
     - name: Setup Graphviz
       uses: ts-graphviz/setup-graphviz@v1
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v3
       with:
           python-version: ${{ matrix.python-version }}
     - name: Install Poetry
@@ -32,9 +32,9 @@ jobs:
     - name: Install Dependencies
       run: poetry install --no-interaction --no-root
     - name: Create new Taxonomy Visualization
-      run: poetry run python tools/visualize_taxonomy.py unified_taxonomy.yaml
+      run: poetry run visualize-taxonomy unified_taxonomy.yaml
     - name: Update Brick report
-      run: poetry run python tools/check_brick.py Brick.ttl unified_taxonomy.yaml > brick_report.txt
+      run: poetry run check-brick Brick.ttl unified_taxonomy.yaml > brick_report.txt
     - uses: actions/upload-artifact@v3
       with:
         name: taxonomy visualization

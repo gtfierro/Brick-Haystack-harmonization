@@ -1,0 +1,1954 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix tag: <https://brickschema.org/schema/BrickTag#> .
+
+<urn:brick-haystack-xeto> a owl:Ontology ;
+    owl:imports <http://www.w3.org/ns/shacl>,
+        <https://brickschema.org/schema/Brick> .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Active_Power_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:active ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:power ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Air_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Air_Flow_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Air_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Air_Temperature_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Average_Zone_Air_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:avg ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:zone ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Building_Air_Static_Pressure_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Building_Air_Static_Pressure_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Bypass_Water_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:bypass ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_CO2_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:co2 ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Chilled_Water_Differential_Pressure_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:delta ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:chilled ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Chilled_Water_Differential_Pressure_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:delta ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:chilled ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Chilled_Water_Differential_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:delta ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:chilled ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Chilled_Water_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:chilled ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Chilled_Water_Flow_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:chilled ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Communication_Loss_Alarm> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:alarm ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Condensate_Leak_Alarm> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:condensate ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Condenser_Water_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:condenser ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Condenser_Water_Flow_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:condenser ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Cooling_Command> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cool ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cmd ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Cooling_Discharge_Air_Flow_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cooling ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Cooling_Discharge_Air_Temperature_Deadband_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cooling ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Cooling_Enable_Command> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:run ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cmd ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cooling ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Current_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:current ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_DC_Bus_Voltage_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:dc ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:volt ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Differential_Pressure_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:delta ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Differential_Pressure_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:delta ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Dewpoint_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:dewPoint ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Flow_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Humidity_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Humidity_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Static_Pressure_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Static_Pressure_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Temperature_Deadband_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Temperature_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Discharge_Air_Velocity_Pressure_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:velocity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Effective_Zone_Air_Temperature_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:zone ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:effective ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Electrical_Power_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:elec ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:power ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Enable_Command> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:enable ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cmd ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Enable_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:enable ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Entering_Water_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:entering ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Entering_Water_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:entering ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Exhaust_Air_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:exhaust ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Exhaust_Air_Flow_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:exhaust ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Exhaust_Air_Humidity_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:exhaust ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Exhaust_Air_Static_Pressure_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:exhaust ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Exhaust_Air_Static_Pressure_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:exhaust ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Exhaust_Air_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:exhaust ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Fault_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Flow_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Frequency_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:freq ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Heat_Sink_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Heating_Command> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cmd ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:heat ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Heating_Discharge_Air_Flow_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:heating ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Heating_Discharge_Air_Temperature_Deadband_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:discharge ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:heating ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Heating_Enable_Command> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:heating ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cmd ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:run ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Hot_Water_Differential_Pressure_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:delta ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:hot ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Hot_Water_Differential_Pressure_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:hot ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:delta ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Hot_Water_Differential_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:hot ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:delta ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Hot_Water_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:hot ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Hot_Water_Flow_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:hot ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Humidity_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Illuminance_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:illuminance ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Leak_Alarm> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:alarm ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Leaving_Water_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:leaving ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Leaving_Water_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:leaving ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Lockout_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:economizing ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:disable ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:outside ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Mixed_Air_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:mixed ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Mixed_Air_Humidity_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:mixed ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Mixed_Air_Humidity_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:mixed ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Mixed_Air_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:mixed ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Mixed_Air_Temperature_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:mixed ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Mode_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:run ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Occupancy_Command> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cmd ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:occupied ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Occupancy_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:occupied ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Occupied_Mode_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:occupied ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_On_Off_Command> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cmd ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:run ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_On_Off_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:run ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Operating_Mode_Command> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:enable ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cmd ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Operating_Mode_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Outside_Air_CO2_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:outside ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:co2 ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Outside_Air_Dewpoint_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:outside ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:dewPoint ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Outside_Air_Enthalpy_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:outside ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Outside_Air_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:outside ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Outside_Air_Flow_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:min ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:outside ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Outside_Air_Humidity_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:outside ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Outside_Air_Lockout_Temperature_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:outside ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:disable ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Outside_Air_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:outside ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Overridden_Off_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Overridden_On_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Overridden_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Override_Command> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cmd ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_PM10_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:zone ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_PM1_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:zone ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_PM25_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:zone ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Position_Command> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:cmd ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Position_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Power_Factor_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pf ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Reactive_Power_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:power ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:reactive ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Relative_Humidity_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Return_Air_CO2_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:co2 ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:return ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Return_Air_CO2_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:return ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:co2 ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Return_Air_Dewpoint_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:dewPoint ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:return ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Return_Air_Enthalpy_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:return ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Return_Air_Flow_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:flow ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:return ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Return_Air_Humidity_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:return ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Return_Air_Humidity_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:return ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Return_Air_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:return ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Return_Air_Temperature_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:return ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Run_Request_Status> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:status ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:run ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Run_Time_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:run ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Speed_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:speed ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Speed_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:speed ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Static_Pressure_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Static_Pressure_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:pressure ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Temperature_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Thermal_Power_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:power ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Torque_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Voltage_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:volt ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Water_Differential_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:delta ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Water_Level_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Water_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:water ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Zone_Air_Dewpoint_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:dewPoint ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:zone ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Zone_Air_Humidity_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:zone ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Zone_Air_Humidity_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:humidity ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:zone ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Zone_Air_Temperature_Sensor> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sensor ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:zone ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ] .
+
+<urn:brick-haystack-xeto/xetolib::Brick_Zone_Air_Temperature_Setpoint> a sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:air ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:temp ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:zone ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:point ],
+        [ a sh:PropertyShape ;
+            sh:path brick:hasTag ;
+            sh:value tag:sp ] .
+

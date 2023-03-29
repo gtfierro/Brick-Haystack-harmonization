@@ -9,6 +9,8 @@ license = "bsd-3-clause"
 bh-to-shapes = "brick_haystack_harmonization.bh_to_shapes:main"
 bh-to-xeto = "brick_haystack_harmonization.bh_to_xeto:main"
 xeto-to-shacl = "brick_haystack_harmonization.xeto_to_shacl:main"
+visualize-taxonomy = "brick_haystack_harmonization.visualize_taxonomy:main"
+check-brick = "brick_haystack_harmonization.check_brick:main"
 
 [tool.poetry.dependencies]
 python = "^3.7"
