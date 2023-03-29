@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:toDateSpan &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>axon</a></li><li> » </li><li><a href='func~toDateSpan.html'>func:toDateSpan</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index axon
+func~toDateSpan func:toDateSpan
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:toDateSpan</h1>
+<h2>toDateSpan(x)</h2>
+
+<p>Convert the following objects into a <code><a href='../haystack/DateSpan.html'>DateSpan</a></code>:</p>
+
+<ul>
+<li><code>Func</code>: function which evaluates to date range</li>
+
+<li><code>DateSpan</code>: return itself</li>
+
+<li><code>Date</code>: one day range</li>
+
+<li><code>Span</code>: return <code><a href='../haystack/Span.html#toDateSpan'>Span.toDateSpan</a></code></li>
+
+<li><code>Str</code>: evaluates to <code><a href='../haystack/DateSpan.html#fromStr'>DateSpan.fromStr</a></code></li>
+
+<li><code>Date..Date</code>: starting and ending date (inclusive)</li>
+
+<li><code>Date..Number</code>: starting date and num of days (day unit required)</li>
+
+<li><code>DateTime..DateTime</code>: use starting/ending dates; if end is midnight, then use previous date</li>
+
+<li><code>Number</code>: convert as year</li>
+
+<li>null: use projMeta dateSpanDefault or default to today (deprecated)</li>
+</ul>
+
+<p>Examples:</p>
+
+<pre>toDateSpan(2010-07-01..2010-07-03)  >>  01-Jul-2010..03-Jul-2010
+toDateSpan(2010-07-01..60day)       >>  01-Jul-2010..29-Aug-2010
+toDateSpan(2010-07)                 >>  01-Jul-2010..31-Jul-2010
+toDateSpan(2010)                    >>  01-Jan-2010..31-Dec-2010
+toDateSpan(pastWeek) // on 9 Aug    >>  02-Aug-2010..09-Aug-2010</pre>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~toDateSpan.html'>func:toDateSpan</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:axon</a></td>
+</tr>
+<tr>
+<th><a href='name.html'>name</a></th>
+<td>toDateSpan</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

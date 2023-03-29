@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>io &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>io</a></li><li> » </li><li><a href='doc.html'>doc</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index io
+doc doc
+-->
+<div class='defc-main'>
+
+</div>
+<div class='defc-manual'>
+<h1 class='defc-chapter-title'>lib io</h1>
+<div>
+<a href='doc.html'>Overview</a> • <a href='#handles'>IO Handles</a> • <a href='#examples'>Examples</a></div>
+
+<h2 id='overview'>Overview</h2>
+
+<p>The ioExt is used to read/write data via a variety of formats:</p>
+
+<ul>
+<li>Text strings: <code><a href='func~ioReadStr.html'>ioReadStr()</a></code>, <code><a href='func~ioWriteStr.html'>ioWriteStr()</a></code></li>
+
+<li>Text lines: <code><a href='func~ioReadLines.html'>ioReadLines()</a></code>, <code><a href='func~ioWriteLines.html'>ioWriteLines()</a></code></li>
+
+<li>Zinc: <code><a href='func~ioReadZinc.html'>ioReadZinc()</a></code>, <code><a href='func~ioWriteZinc.html'>ioWriteZinc()</a></code></li>
+
+<li>Trio: <code><a href='func~ioReadTrio.html'>ioReadTrio()</a></code>, <code><a href='func~ioWriteTrio.html'>ioWriteTrio()</a></code></li>
+
+<li>CSV: <code><a href='func~ioReadCsv.html'>ioReadCsv()</a></code>, <code><a href='func~ioWriteCsv.html'>ioWriteCsv()</a></code>, <code><a href='func~ioEachCsv.html'>ioEachCsv()</a></code>, <code><a href='func~ioStreamCsv.html'>ioStreamCsv()</a></code></li>
+
+<li>JSON: <code><a href='func~ioReadJson.html'>ioReadJson()</a></code>, <code><a href='func~ioWriteJson.html'>ioWriteJson()</a></code></li>
+
+<li>XML: <code><a href='func~ioWriteXml.html'>ioWriteXml()</a></code>, <code><a href='../lib-xml/func~xmlRead.html'>xmlRead()</a></code></li>
+
+<li>PDF: <code><a href='func~ioWritePdf.html'>ioWritePdf()</a></code></li>
+
+<li>SVG: <code><a href='func~ioWriteSvg.html'>ioWriteSvg()</a></code></li>
+
+<li>HTML: <code><a href='func~ioWriteHtml.html'>ioWriteHtml()</a></code></li>
+
+<li>RDF: <code><a href='func~ioWriteTurtle.html'>ioWriteTurtle()</a></code>, <code><a href='func~ioWriteJsonLd.html'>ioWriteJsonLd()</a></code></li>
+</ul>
+
+<h2 id='handles'>IO Handles</h2>
+
+<p>All the read/write functions take an <em>IO handle</em> which is one of the following:</p>
+
+<ul>
+<li>any string can be used by the the read functions; if used for a write function then the output is concatenated to the end of the string and returned as the result of the write function</li>
+
+<li>Uri which starts with "io/" which read/writes relative to the project's io directory</li>
+
+<li>Uri with <code>fan://</code> scheme will read files bundled in pods</li>
+
+<li>Uri with <code>http://</code> or <code>https://</code> scheme will read using HTTP GET request (readonly)</li>
+
+<li>Uri with <code>ftp://</code> or <code>ftps://</code> scheme will retreive using <a href='doc.html#ftp'>FTP</a></li>
+</ul>
+
+<p>The default charset used by all I/O handles is "UTF-8".  You can wrap any of the handles above with the <code><a href='func~ioCharset.html'>ioCharset()</a></code> function to specify an alternate charset.</p>
+
+<h3 id='ftp'>FTP Handles</h3>
+
+<p>You may read and write files to a FTP server via a <code>ftp://</code> or <code>ftps://</code> Uri.  Using <code><a href='func~ioDir.html'>ioDir()</a></code> is supported if Uri ends with a slash, but returns name only (not dir, size, or mod). By default the "anonymous" user account is used.  But you can customize this by creating a key/value the <a href='../docHaxall/Folio.html#passwords'>password manager</a> where the key is the base URI and the value is a string formatted as "user:pass". For example given:</p>
+
+<pre>uri:  ftp://somehost/somefile.csv
+user: bob
+pass: secret</pre>
+
+<p>You can setup the password for all FTP request to "ftp://somehost/" like this:</p>
+
+<pre>passwordSet("ftp://somehost/", "bob:secret")</pre>
+
+<p>Note that the URI key must end with a slash and match the scheme (ftp or ftps).</p>
+
+<p>In newer versions of Java, you may see the following warning in the console the first time an FTPS connection is made:</p>
+
+<pre>WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by fan.ftp.FtpClientPeer (file:) to field sun.security.ssl.SSLSessionContextImpl.sessionHostPortCache
+WARNING: Please consider reporting this to the maintainers of fan.ftp.FtpClientPeer
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+</pre>
+
+<p>If you see this, then you need to edit your <code>etc/sys/config.props</code> and add the following options to the <code>java.options</code> along with any other options you have set (e.g. heap configuration).</p>
+
+<pre>java.options=--add-opens java.base/sun.security.ssl=ALL-UNNAMED --add-opens java.base/sun.security.util=ALL-UNNAMED
+</pre>
+
+<h2 id='examples'>Examples</h2>
+
+<p>Here are some basic examples:</p>
+
+<pre>// export your sites to a trio file: {proj}/io/sites.trio
+readAll(site).ioWriteTrio(`io/sites.trio`)
+
+// export your sites to a trio string literal
+readAll(site).ioWriteTrio("")
+
+// export point to CSV file
+read(weatherTemp).hisRead(pastMonth).ioWriteCsv(`io/point.csv`)
+
+// import history data from CSV file where timestamps
+// are formatted as 2010-10-02T13:00
+ioReadCsv(`io/his.csv`)
+  .map(row => {ts: parseDateTime(row->ts, "YYYY-MM-DD'T'hh:mm", "New_York"),
+               val: parseNumber(row->val)})
+  .hisWrite(hisId)
+
+// parse an oBIX XML document and map into name/value pairs
+xmlRead(`http://obix.acme.com/obix/about`).xmlElems
+  .map(x => {name:x.xmlAttr("name").xmlVal, val:x.xmlAttr("val").xmlVal})</pre>
+</div>
+
+<!-- defc-navData
+#overview Overview
+#handles IO Handles
+ #ftp FTP Handles
+#examples Examples
+-->
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

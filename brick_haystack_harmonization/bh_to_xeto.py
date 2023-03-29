@@ -1,5 +1,5 @@
 import brickschema
-from brickschema.namespaces import SKOS, BRICK
+from brickschema.namespaces import SKOS, BRICK, RDFS
 import os
 import pathlib
 import sys
@@ -16,16 +16,21 @@ def base_to_xeto(row: dict) -> str:
     tags = taglist_to_set(row["Haystack:Markers"])
     tags.add(row["Brick:L1PointClass"])
     fixup_tags(tags)
-    print(point_class, tags)
     if len(tags) > 1:
         tag_list = ', '.join(tags)
     else:
         tag_list = tags.pop()
-    try:
-        defn = next(g.objects(subject=BRICK[point_class], predicate=SKOS.definition))
-        return f"// {defn}\nBrick_{point_class} : Point {{ {tag_list} }}\n"
-    except StopIteration:
-        return f"\nBrick_{point_class} : Point {{ {tag_list} }}\n"
+    parent = g.value(subject=BRICK[point_class], predicate=RDFS.subClassOf)
+    if parent is None:
+        parent = "Point"
+    else:
+        parent = f"Brick_{parent.split('#')[-1].replace('.','')}"
+
+    defn = g.value(subject=BRICK[point_class], predicate=SKOS.definition)
+    if defn is not None:
+        return f"// {defn}\nBrick_{point_class.replace('.', '')} : {parent} {{ {tag_list} }}\n"
+    else:
+        return f"\nBrick_{point_class.replace('.', '')} : {parent} {{ {tag_list} }}\n"
 
 
 # TODO

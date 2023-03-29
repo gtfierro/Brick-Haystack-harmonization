@@ -1,0 +1,495 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>hx &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>hx</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index hx
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='lib'><a href='../docHaystack/Docs.html#def'>lib</a></h2>
+<div class='defc-main-section'>
+<h1>lib:hx</h1>
+
+<p>Haxall framework definitions</p>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='index.html'>lib:hx</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/depends.html'>depends</a></th>
+<td><a href='../lib-ph/index.html'>lib:ph</a>, <a href='../lib-axon/index.html'>lib:axon</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='../lib-ph/lib.html'>lib</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:hx</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/version.html'>version</a></th>
+<td>3.1.7</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='tags-index'><a href='../docHaystack/Docs.html#tags-index'>tags</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='created.html'>created</a></th>
+<td>
+<p>The timestamp when entity was created</p>
+</td>
+</tr>
+<tr>
+<th><a href='disKey.html'>disKey</a></th>
+<td>
+<p>Localized string key formatted as <code>pod::key</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='disMacro.html'>disMacro</a></th>
+<td>
+<p>Display name using macro syntax</p>
+</td>
+</tr>
+<tr>
+<th><a href='disabled.html'>disabled</a></th>
+<td>
+<p>Indicates the entity is in a disabled state</p>
+</td>
+</tr>
+<tr>
+<th><a href='flags.html'>flags</a></th>
+<td>
+<p>Flags string</p>
+</td>
+</tr>
+<tr>
+<th><a href='mod.html'>mod</a></th>
+<td>
+<p>Last modified time of record - see <a href='../docHaxall/Folio.html#concurrency'>docSkySpark</a></p>
+</td>
+</tr>
+<tr>
+<th><a href='multiLine.html'>multiLine</a></th>
+<td>
+<p>Indicates that a multi-line text input should be used</p>
+</td>
+</tr>
+<tr>
+<th><a href='noSkyarc.html'>noSkyarc</a></th>
+<td>
+<p>Marks a Haxall library as not runnable on SkySpark enabled products</p>
+</td>
+</tr>
+<tr>
+<th><a href='password.html'>password</a></th>
+<td>
+<p>Manages password which is hashed/stored to the password store</p>
+</td>
+</tr>
+<tr>
+<th><a href='projMeta.html'>projMeta</a></th>
+<td>
+<p>Singleton record for project meta data</p>
+</td>
+</tr>
+<tr>
+<th><a href='reader.html'>reader</a></th>
+<td>
+<p>Fantom type qname for reader class</p>
+</td>
+</tr>
+<tr>
+<th><a href='steadyState.html'>steadyState</a></th>
+<td>
+<p>The delay before transitioning to the steady state</p>
+</td>
+</tr>
+<tr>
+<th><a href='trash.html'>trash</a></th>
+<td>
+<p>Marks a record for deletion</p>
+</td>
+</tr>
+<tr>
+<th><a href='typeName.html'>typeName</a></th>
+<td>
+<p>Fantom type qname</p>
+</td>
+</tr>
+<tr>
+<th><a href='username.html'>username</a></th>
+<td>
+<p>Username for an authentication account</p>
+</td>
+</tr>
+<tr>
+<th><a href='writer.html'>writer</a></th>
+<td>
+<p>Fantom type qname for writer class</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='ops'>ops</h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='op~commit.html'>commit</a></th>
+<td>
+<p>Commit one or more diffs to the Folio database</p>
+</td>
+</tr>
+<tr>
+<th><a href='op~eval.html'>eval</a></th>
+<td>
+<p>Evaluate an Axon expression</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='filetypes'>filetypes</h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='filetype~excel.html'>excel</a></th>
+<td>
+<p>Excel 2003 XML spreadsheet</p>
+</td>
+</tr>
+<tr>
+<th><a href='filetype~xml.html'>xml</a></th>
+<td>
+<p>EXtensible Markup Language</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='funcs'>funcs</h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='func~about.html'>about</a></th>
+<td>
+<p>Return <code><a href='../lib-ph/op~about.html'>about</a></code> dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~commit.html'>commit</a></th>
+<td>
+<p>Commit one or more diffs to the folio database</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~context.html'>context</a></th>
+<td>
+<p>Get the current context as a Dict with the following tags</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~diff.html'>diff</a></th>
+<td>
+<p>Construct a modification "diff" used by <code><a href='func~commit.html'>commit()</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isSteadyState.html'>isSteadyState</a></th>
+<td>
+<p>Return <code><a href='../hx/HxRuntime.html#isSteadyState'>HxRuntime.isSteadyState</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isWatched.html'>isWatched</a></th>
+<td>
+<p>Return if given record is under at least one watch</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~libAdd.html'>libAdd</a></th>
+<td>
+<p>Enable a library by name in the runtime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~libRemove.html'>libRemove</a></th>
+<td>
+<p>Disable a library by name in the runtime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~libStatus.html'>libStatus</a></th>
+<td>
+<p>Return grid of enabled libs and their current status</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~passwordSet.html'>passwordSet</a></th>
+<td>
+<p>Store a password key/val pair into current project's password store</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~pods.html'>pods</a></th>
+<td>
+<p>Return list of installed Fantom pods</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~read.html'>read</a></th>
+<td>
+<p>Read from database the first record which matches <a href='../docHaystack/Filters.html'>filter</a></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readAll.html'>readAll</a></th>
+<td>
+<p>Reall all records from the database which match the <a href='../docHaystack/Filters.html'>filter</a></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readAllStream.html'>readAllStream</a></th>
+<td>
+<p>Reall all records which match filter as stream of Dict records</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readAllTagNames.html'>readAllTagNames</a></th>
+<td>
+<p>Return the intersection of all tag names used by all the records matching the given filter</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readAllTagVals.html'>readAllTagVals</a></th>
+<td>
+<p>Return the range of all the values mapped to a given tag name used by all the records matching the given filter</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readById.html'>readById</a></th>
+<td>
+<p>Read a record from database by <code>id</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readByIdPersistentTags.html'>readByIdPersistentTags</a></th>
+<td>
+<p>Given record id, read only the persistent tags from Folio</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readByIdTransientTags.html'>readByIdTransientTags</a></th>
+<td>
+<p>Given record id, read only the transient tags from Folio</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readByIds.html'>readByIds</a></th>
+<td>
+<p>Read a list of record ids into a grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readByIdsStream.html'>readByIdsStream</a></th>
+<td>
+<p>Read a list of ids as a stream of Dict records</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readCount.html'>readCount</a></th>
+<td>
+<p>Return the number of records which match the given filter expression</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~readLink.html'>readLink</a></th>
+<td>
+<p>Read a record Dict by its id for hyperlinking in a UI</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~services.html'>services</a></th>
+<td>
+<p>Grid of installed services</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~stripUncommittable.html'>stripUncommittable</a></th>
+<td>
+<p>Strip any tags which cannot be persistently committed to Folio</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toRec.html'>toRec</a></th>
+<td>
+<p>Coerce a value to a record Dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toRecId.html'>toRecId</a></th>
+<td>
+<p>Coerce a value to a Ref identifier</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toRecIdList.html'>toRecIdList</a></th>
+<td>
+<p>Coerce a value to a list of Ref identifiers</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toRecList.html'>toRecList</a></th>
+<td>
+<p>Coerce a value to a list of record Dicts</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~tzdb.html'>tzdb</a></th>
+<td>
+<p>Return the installed timezone database as Grid with following columns</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~unitdb.html'>unitdb</a></th>
+<td>
+<p>Return the installed unit database as Grid with following columns</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~watchAdd.html'>watchAdd</a></th>
+<td>
+<p>Add a grid of recs to an existing watch and return the grid passed in</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~watchClose.html'>watchClose</a></th>
+<td>
+<p>Close an open watch by id</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~watchOpen.html'>watchOpen</a></th>
+<td>
+<p>Open a new watch on a grid of records</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~watchPoll.html'>watchPoll</a></th>
+<td>
+<p>Poll an open watch and return all the records which have changed since the last poll</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~watchRemove.html'>watchRemove</a></th>
+<td>
+<p>Remove a grid of recs from an existing watch and return grid passed in</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<!-- defc-navData
+#tags-index tags
+ created created
+ disKey disKey
+ disMacro disMacro
+ disabled disabled
+ flags flags
+ mod mod
+ multiLine multiLine
+ noSkyarc noSkyarc
+ password password
+ projMeta projMeta
+ reader reader
+ steadyState steadyState
+ trash trash
+ typeName typeName
+ username username
+ writer writer
+#ops ops
+ op~commit commit
+ op~eval eval
+#filetypes filetypes
+ filetype~excel excel
+ filetype~xml xml
+#funcs funcs
+ func~about about
+ func~commit commit
+ func~context context
+ func~diff diff
+ func~isSteadyState isSteadyState
+ func~isWatched isWatched
+ func~libAdd libAdd
+ func~libRemove libRemove
+ func~libStatus libStatus
+ func~passwordSet passwordSet
+ func~pods pods
+ func~read read
+ func~readAll readAll
+ func~readAllStream readAllStream
+ func~readAllTagNames readAllTagNames
+ func~readAllTagVals readAllTagVals
+ func~readById readById
+ func~readByIdPersistentTags readByIdPersistentTags
+ func~readByIdTransientTags readByIdTransientTags
+ func~readByIds readByIds
+ func~readByIdsStream readByIdsStream
+ func~readCount readCount
+ func~readLink readLink
+ func~services services
+ func~stripUncommittable stripUncommittable
+ func~toRec toRec
+ func~toRecId toRecId
+ func~toRecIdList toRecIdList
+ func~toRecList toRecList
+ func~tzdb tzdb
+ func~unitdb unitdb
+ func~watchAdd watchAdd
+ func~watchClose watchClose
+ func~watchOpen watchOpen
+ func~watchPoll watchPoll
+ func~watchRemove watchRemove
+-->
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

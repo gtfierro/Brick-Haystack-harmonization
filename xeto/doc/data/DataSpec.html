@@ -1,0 +1,396 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>data::DataSpec &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>data</a></li><li> » </li><li><a href='DataSpec.html'>DataSpec</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index data
+DataSpec DataSpec
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='type-summary'><a href='../docLang/Structure.html#types'>type</a></h2>
+<div class='defc-main-section'>
+<h1>DataSpec</h1>
+<p class='docgen-type-sig'>
+<code>
+@<a href='../sys/Js.html'>Js</a><br />
+
+const mixin DataSpec : <a href='DataDict.html'>DataDict</a>
+</code>
+</p>
+
+
+<p>Data specification.  DataSpec implements the DataDict mixin which models the effective meta-data (including from inherited types).  Use the <code><a href='DataSpec.html#own'>own</a></code> method to get only the declared meta-data.</p>
+
+</div>
+
+<h2 class='defc-main-heading' id='methods-summary'><a href='../docLang/Methods.html'>methods</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='DataSpec.html#base'>base</a></th>
+<td>
+<p>Base spec from which this spec directly inherits its meta and slots.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#env'>env</a></th>
+<td>
+<p>Environment for spec</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#fits'>fits</a></th>
+<td>
+<p>Return if spec <code>this</code> spec fits <code>that</code> based on structural typing.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#isMaybe'>isMaybe</a></th>
+<td>
+<p>Does meta have maybe tag</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#isa'>isa</a></th>
+<td>
+<p>Return if <code>this</code> spec inherits from <code>that</code> from a nominal type perspective.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#name'>name</a></th>
+<td>
+<p>Return simple name scoped by <code><a href='DataSpec.html#parent'>parent</a></code>.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#own'>own</a></th>
+<td>
+<p>Get my own declared meta-data</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#parent'>parent</a></th>
+<td>
+<p>Parent spec which contains this spec definition and scopes <code><a href='DataSpec.html#name'>name</a></code>.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#qname'>qname</a></th>
+<td>
+<p>Return fully qualified name of this spec</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#slot'>slot</a></th>
+<td>
+<p>Convenience for <code>slots.get</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#slotOwn'>slotOwn</a></th>
+<td>
+<p>Convenience for <code>slotsOwn.get</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#slots'>slots</a></th>
+<td>
+<p>Get the effective children slots including inherited</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#slotsOwn'>slotsOwn</a></th>
+<td>
+<p>Get the declared children slots</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataSpec.html#type'>type</a></th>
+<td>
+<p>Type of this spec.</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<h2 class='docgen-slot-details' id='slot-details'>Slot Details</h2>
+
+</div>
+
+<h2 class='defc-main-heading' id='base'>base</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataSpec.html'>DataSpec?</a> base()
+</code>
+</p>
+
+
+<p>Base spec from which this spec directly inherits its meta and slots. Returns null if this is <code>sys::Obj</code> itself.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='env'>env</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataEnv.html'>DataEnv</a> env()
+</code>
+</p>
+
+
+<p>Environment for spec</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='fits'>fits</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Bool.html'>Bool</a> fits(<a href='DataSpec.html'>DataSpec</a> that)
+</code>
+</p>
+
+
+<p>Return if spec <code>this</code> spec fits <code>that</code> based on structural typing.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='isMaybe'>isMaybe</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Bool.html'>Bool</a> isMaybe()
+</code>
+</p>
+
+
+<p>Does meta have maybe tag</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='isa'>isa</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Bool.html'>Bool</a> isa(<a href='DataSpec.html'>DataSpec</a> that)
+</code>
+</p>
+
+
+<p>Return if <code>this</code> spec inherits from <code>that</code> from a nominal type perspective. Nonimal typing matches any of the following conditions:</p>
+
+<ul>
+<li>if <code>that</code> matches one of <code>this</code> inherited specs via <code><a href='DataSpec.html#base'>base</a></code></li>
+
+<li>if <code>this</code> is maybe and that is <code>None</code></li>
+
+<li>if <code>this</code> is <code>And</code> and <code>that</code> matches any <code>this.ofs</code></li>
+
+<li>if <code>this</code> is <code>Or</code> and <code>that</code> matches all <code>this.ofs</code> (common base)</li>
+
+<li>if <code>that</code> is <code>Or</code> and <code>this</code> matches any of <code>that.ofs</code></li>
+</ul>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='name'>name</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Str.html'>Str</a> name()
+</code>
+</p>
+
+
+<p>Return simple name scoped by <code><a href='DataSpec.html#parent'>parent</a></code>.  This method returns the empty string a library.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='own'>own</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataDict.html'>DataDict</a> own()
+</code>
+</p>
+
+
+<p>Get my own declared meta-data</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='parent'>parent</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataSpec.html'>DataSpec?</a> parent()
+</code>
+</p>
+
+
+<p>Parent spec which contains this spec definition and scopes <code><a href='DataSpec.html#name'>name</a></code>. Returns null for libs and derived specs.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='qname'>qname</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Str.html'>Str</a> qname()
+</code>
+</p>
+
+
+<p>Return fully qualified name of this spec:</p>
+
+<ul>
+<li>DataLib will return "foo.bar"</li>
+
+<li>DataType will return "foo.bar::Baz"</li>
+
+<li>DataType slots will return "foo.bar::Baz.qux"</li>
+
+<li>Derived specs will return "derived123::{name}"</li>
+</ul>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='slot'>slot</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataSpec.html'>DataSpec?</a> slot(<a href='../sys/Str.html'>Str</a> name, <a href='../sys/Bool.html'>Bool</a> checked := true)
+</code>
+</p>
+
+
+<p>Convenience for <code>slots.get</code></p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='slotOwn'>slotOwn</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataSpec.html'>DataSpec?</a> slotOwn(<a href='../sys/Str.html'>Str</a> name, <a href='../sys/Bool.html'>Bool</a> checked := true)
+</code>
+</p>
+
+
+<p>Convenience for <code>slotsOwn.get</code></p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='slots'>slots</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataSlots.html'>DataSlots</a> slots()
+</code>
+</p>
+
+
+<p>Get the effective children slots including inherited</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='slotsOwn'>slotsOwn</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataSlots.html'>DataSlots</a> slotsOwn()
+</code>
+</p>
+
+
+<p>Get the declared children slots</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='type'>type</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataType.html'>DataType</a> type()
+</code>
+</p>
+
+
+<p>Type of this spec.   If this spec is a DataType itself then return self.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- defc-navData
+#base base
+#env env
+#fits fits
+#isMaybe isMaybe
+#isa isa
+#name name
+#own own
+#parent parent
+#qname qname
+#slot slot
+#slotOwn slotOwn
+#slots slots
+#slotsOwn slotsOwn
+#type type
+-->
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

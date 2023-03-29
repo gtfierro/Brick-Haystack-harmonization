@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:fold &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>axon</a></li><li> » </li><li><a href='func~fold.html'>func:fold</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index axon
+func~fold func:fold
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:fold</h1>
+<h2>fold(val, fn)</h2>
+
+<p>Fold a list or stream into a single value using given folding function. The folding function signature must be <code>(val, acc)</code> where val is the items being folded, and acc is an accumulator used to maintain state between interations.  Lifecycle of a fold:</p>
+
+<ol style='list-style-type:decimal'>
+<li>Call <code>fn(foldStart, null)</code>, return initial accumulator state</li>
+
+<li>Call <code>fn(item, acc)</code> for every item, return new accumulator state</li>
+
+<li>Call <code>fn(foldEnd, acc)</code> return final result</li>
+</ol>
+
+<p>See <a href='../docHaxall/Streams.html#fold'>Streams</a> for streaming details.</p>
+
+<p>The fold will short-circuit and halt immediately if the folding function returns <code><a href='func~na.html'>na()</a></code> for the accumulator state. The result of the fold is <code><a href='func~na.html'>na()</a></code> in this case.  A folding function should document its behavior when a collection contains <code><a href='func~na.html'>na()</a></code>.</p>
+
+<p>Built-in folding functions include:</p>
+
+<ul>
+<li><code><a href='func~count.html'>count()</a></code></li>
+
+<li><code><a href='func~sum.html'>sum()</a></code></li>
+
+<li><code><a href='func~avg.html'>avg()</a></code></li>
+
+<li><code><a href='func~min.html'>min()</a></code></li>
+
+<li><code><a href='func~max.html'>max()</a></code></li>
+
+<li><code><a href='../lib-math/func~mean.html'>mean()</a></code></li>
+
+<li><code><a href='../lib-math/func~median.html'>median()</a></code></li>
+
+<li><code><a href='../lib-math/func~rootMeanSquareErr.html'>rootMeanSquareErr()</a></code></li>
+
+<li><code><a href='../lib-math/func~meanBiasErr.html'>meanBiasErr()</a></code></li>
+
+<li><code><a href='../lib-math/func~standardDeviation.html'>standardDeviation()</a></code></li>
+</ul>
+
+<p>Examples:</p>
+
+<pre>[1, 2, 3, 4].fold(max)  // fold list into its max value
+[1, 2, 3, 4].fold(avg)  // fold list into its average value
+[1, 2, na(), 3].fold(sum) // => na()</pre>
+
+<p>Example of writing your own custom fold function that used start/end values and has support for na():</p>
+
+<pre>average: (val, acc) => do
+  if (val == foldStart()) return {sum:0, count:0}
+  if (val == foldEnd()) return acc->sum / acc->count
+  if (val == na()) return na()
+  return {sum: acc->sum + val, count: acc->count + 1}
+end</pre>
+
+<p>Also see <code><a href='func~reduce.html'>reduce()</a></code> which is easier to use if doing your own simple rollup computation.</p>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~fold.html'>func:fold</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:axon</a></td>
+</tr>
+<tr>
+<th><a href='name.html'>name</a></th>
+<td>fold</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

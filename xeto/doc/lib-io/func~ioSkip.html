@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:ioSkip &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>io</a></li><li> » </li><li><a href='func~ioSkip.html'>func:ioSkip</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index io
+func~ioSkip func:ioSkip
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:ioSkip</h1>
+<h2>ioSkip(handle, opts)</h2>
+
+<p>Apply a skipping operation to an input I/O handle.  The following options are available (in order of processing):</p>
+
+<ul>
+<li>bom: skip byte order mark</li>
+
+<li>bytes: number of bytes to skip (must be binary input stream)</li>
+
+<li>chars: number of chars to skip (must be text input stream)</li>
+
+<li>lines: number of lines to skip</li>
+</ul>
+
+<p>Skipping a BOM will automatically set the appropiate charset. If no BOM is detected, then this call is safely ignored by pushing those bytes back into the input stream.  The following byte order marks are supported:</p>
+
+<ul>
+<li>UTF-16 Big Endian: 0xFE_FF</li>
+
+<li>UTF-16 Little Endian: 0xFF_FE</li>
+
+<li>UTF-8: 0xEF_BB_BF</li>
+</ul>
+
+<p>Examples:</p>
+
+<pre>// skip leading 4 lines in a CSV file
+ioSkip(`io/foo.csv`, {lines:4}).ioReadCsv
+
+// skip byte order mark
+ioSkip(`io/foo.csv`, {bom}).ioReadCsv</pre>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-axon/admin.html'>admin</a></th>
+<td>✓</td>
+</tr>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~ioSkip.html'>func:ioSkip</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='../lib-axon/func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:io</a></td>
+</tr>
+<tr>
+<th><a href='../lib-axon/name.html'>name</a></th>
+<td>ioSkip</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='../lib-axon/func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

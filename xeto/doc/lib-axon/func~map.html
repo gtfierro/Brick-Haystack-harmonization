@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:map &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>axon</a></li><li> » </li><li><a href='func~map.html'>func:map</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index axon
+func~map func:map
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:map</h1>
+<h2>map(val, fn)</h2>
+
+<p>Map list, dict, or grid by applying the given mapping function.</p>
+
+<p>If mapping a list, the mapping should be a function that takes <code>(val)</code> or <code>(val, index)</code>.  It should return the new value for that index.</p>
+
+<p>If mapping a dict, the mapping should be a function that takes <code>(val)</code> or <code>(val, name)</code>.  It should return the new value for that name.</p>
+
+<p>If mapping a grid, the mapping function takes <code>(row)</code> or <code>(row,index)</code> and returns a new dictionary to use for the row.  The resulting grid shares the original's grid level meta.  Columns left intact share the old meta-data, new columns have no meta-data.  If the mapping function returns null, then that row is removed from the resulting grid (not mapped).</p>
+
+<p>If mapping a range, then the mapping function takes <code>(integer)</code>, and returns a list for each mapped integer inte the range.</p>
+
+<p>If mapping a stream, the mapping functions takes <code>(val)</code>. See <a href='../docHaxall/Streams.html#map'>Streams</a>.</p>
+
+<p>Examples:</p>
+
+<pre>// create list adding ten to each number
+[1, 2, 3].map(v => v+10)   >>   [11, 12, 13]
+
+// create new list that turns strings into uppercase
+["ape", "bee", "cat"].map(upper)    // ["APE, "BEE", "CAT"]
+
+// create dict adding ten to each value
+{a:1, b:2, c:3}.map(v => v+10)   >>   {a:11, b:12, c:13}
+
+// create grid with just dis, area column
+readAll(site).map(s => {dis:s->dis, area:s->area})</pre>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~map.html'>func:map</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:axon</a></td>
+</tr>
+<tr>
+<th><a href='name.html'>name</a></th>
+<td>map</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

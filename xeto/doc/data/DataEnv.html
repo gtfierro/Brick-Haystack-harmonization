@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>data::DataEnv &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>data</a></li><li> » </li><li><a href='DataEnv.html'>DataEnv</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index data
+DataEnv DataEnv
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='type-summary'><a href='../docLang/Structure.html#types'>type</a></h2>
+<div class='defc-main-section'>
+<h1>DataEnv</h1>
+<p class='docgen-type-sig'>
+<code>
+@<a href='../sys/Js.html'>Js</a><br />
+
+abstract const class DataEnv : <a href='../sys/Obj.html'>Obj</a>
+</code>
+</p>
+
+
+<p>Environment for the data processing subsystem. There is one instance for the VM accessed via <code><a href='DataEnv.html#cur'>DataEnv.cur</a></code>.</p>
+
+</div>
+
+<h2 class='defc-main-heading' id='methods-summary'><a href='../docLang/Methods.html'>methods</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='DataEnv.html#compileData'>compileData</a></th>
+<td>
+<p>Compile Xeto data file into in-memory dict/scalar tree Raise exception if there are any syntax or semantic errors.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#compileLib'>compileLib</a></th>
+<td>
+<p>Compile Xeto source code into a temp library.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#cur'>cur</a></th>
+<td>
+<p>Current default environment for the VM</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#derive'>derive</a></th>
+<td>
+<p>Derive a new spec from the given base type, additional meta, and slots.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#dict'>dict</a></th>
+<td>
+<p>Coerce one of the following values to a dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#fits'>fits</a></th>
+<td>
+<p>Return if the given instance fits the spec via structural typing.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#instantiate'>instantiate</a></th>
+<td>
+<p>Create default instance for the given spec.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#isLibLoaded'>isLibLoaded</a></th>
+<td>
+<p>Return if given library is loaded into memory</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#lib'>lib</a></th>
+<td>
+<p>Get or load library by the given qualified name</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#libsInstalled'>libsInstalled</a></th>
+<td>
+<p>List the library qnames installed by this environment</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#marker'>marker</a></th>
+<td>
+<p>Marker singleton</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#spec'>spec</a></th>
+<td>
+<p>Get or load spec by the given qualified name</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#type'>type</a></th>
+<td>
+<p>Get or load type by the given qualified name</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataEnv.html#typeOf'>typeOf</a></th>
+<td>
+<p>Data type for Fantom object</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<h2 class='docgen-slot-details' id='slot-details'>Slot Details</h2>
+
+</div>
+
+<h2 class='defc-main-heading' id='compileData'>compileData</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Obj.html'>Obj?</a> compileData(<a href='../sys/Str.html'>Str</a> src, <a href='DataDict.html'>DataDict?</a> opts := null)
+</code>
+</p>
+
+
+<p>Compile Xeto data file into in-memory dict/scalar tree Raise exception if there are any syntax or semantic errors.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='compileLib'>compileLib</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataLib.html'>DataLib</a> compileLib(<a href='../sys/Str.html'>Str</a> src, <a href='DataDict.html'>DataDict?</a> opts := null)
+</code>
+</p>
+
+
+<p>Compile Xeto source code into a temp library. Raise exception if there are any syntax or semantic errors.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='cur'>cur</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+static <a href='DataEnv.html'>DataEnv</a> cur()
+</code>
+</p>
+
+
+<p>Current default environment for the VM</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='derive'>derive</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataSpec.html'>DataSpec</a> derive(<a href='../sys/Str.html'>Str</a> name, <a href='DataSpec.html'>DataSpec</a> base, <a href='DataDict.html'>DataDict</a> meta, [<a href='../sys/Str.html'>Str</a>:<a href='DataSpec.html'>DataSpec</a>]? slots := null)
+</code>
+</p>
+
+
+<p>Derive a new spec from the given base type, additional meta, and slots.  The spec is not associated with any library and a synthetic qname is generated.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='dict'>dict</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataDict.html'>DataDict</a> dict(<a href='../sys/Obj.html'>Obj?</a> x)
+</code>
+</p>
+
+
+<p>Coerce one of the following values to a dict:</p>
+
+<ul>
+<li>null return empty dict</li>
+
+<li>if DataDict return it</li>
+
+<li>if Str:Obj wrap it as dict</li>
+
+<li>raise exception for anything else</li>
+</ul>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='fits'>fits</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Bool.html'>Bool</a> fits(<a href='DataContext.html'>DataContext</a> cx, <a href='../sys/Obj.html'>Obj?</a> val, <a href='DataSpec.html'>DataSpec</a> spec, <a href='DataDict.html'>DataDict?</a> opts := null)
+</code>
+</p>
+
+
+<p>Return if the given instance fits the spec via structural typing.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='instantiate'>instantiate</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Obj.html'>Obj?</a> instantiate(<a href='DataSpec.html'>DataSpec</a> spec)
+</code>
+</p>
+
+
+<p>Create default instance for the given spec. Raise exception if spec is abstract.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='isLibLoaded'>isLibLoaded</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Bool.html'>Bool</a> isLibLoaded(<a href='../sys/Str.html'>Str</a> qname)
+</code>
+</p>
+
+
+<p>Return if given library is loaded into memory</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='lib'><a href='../docHaystack/Docs.html#def'>lib</a></h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataLib.html'>DataLib?</a> lib(<a href='../sys/Str.html'>Str</a> qname, <a href='../sys/Bool.html'>Bool</a> checked := true)
+</code>
+</p>
+
+
+<p>Get or load library by the given qualified name</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='libsInstalled'>libsInstalled</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Str.html'>Str</a>[] libsInstalled()
+</code>
+</p>
+
+
+<p>List the library qnames installed by this environment</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='marker'>marker</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Obj.html'>Obj</a> marker()
+</code>
+</p>
+
+
+<p>Marker singleton</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='spec'>spec</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataSpec.html'>DataSpec?</a> spec(<a href='../sys/Str.html'>Str</a> qname, <a href='../sys/Bool.html'>Bool</a> checked := true)
+</code>
+</p>
+
+
+<p>Get or load spec by the given qualified name:</p>
+
+<ul>
+<li>lib: "foo.bar"</li>
+
+<li>type: "foo.bar::Baz"</li>
+
+<li>slot: "foo.bar::Baz.qux"</li>
+</ul>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='type'>type</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataType.html'>DataType?</a> type(<a href='../sys/Str.html'>Str</a> qname, <a href='../sys/Bool.html'>Bool</a> checked := true)
+</code>
+</p>
+
+
+<p>Get or load type by the given qualified name</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='typeOf'>typeOf</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataType.html'>DataType?</a> typeOf(<a href='../sys/Obj.html'>Obj?</a> val, <a href='../sys/Bool.html'>Bool</a> checked := true)
+</code>
+</p>
+
+
+<p>Data type for Fantom object</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- defc-navData
+#compileData compileData
+#compileLib compileLib
+#cur cur
+#derive derive
+#dict dict
+#fits fits
+#instantiate instantiate
+#isLibLoaded isLibLoaded
+#lib lib
+#libsInstalled libsInstalled
+#marker marker
+#spec spec
+#type type
+#typeOf typeOf
+-->
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

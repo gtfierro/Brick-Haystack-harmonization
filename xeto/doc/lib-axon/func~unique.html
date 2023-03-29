@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:unique &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>axon</a></li><li> » </li><li><a href='func~unique.html'>func:unique</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index axon
+func~unique func:unique
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:unique</h1>
+<h2>unique(val, key: null)</h2>
+
+<p>Return the unique items in a collection.  If val is a List then return <code><a href='../sys/List.html#unique'>List.unique</a></code>.  If val is a Grid then return <code><a href='../haystack/Grid.html#unique'>Grid.unique</a></code> where key must be a column name or list of column names.</p>
+
+<p>Examples:</p>
+
+<pre>[1, 1, 2, 2].unique                 >> [1, 2]
+grid.unique("geoState")             >> unique states
+grid.unique(["geoCity", geoState"]) >> city,state combos</pre>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~unique.html'>func:unique</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:axon</a></td>
+</tr>
+<tr>
+<th><a href='name.html'>name</a></th>
+<td>unique</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:diff &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>hx</a></li><li> » </li><li><a href='func~diff.html'>func:diff</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index hx
+func~diff func:diff
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:diff</h1>
+<h2>diff(orig, changes, flags: null)</h2>
+
+<p>Construct a modification "diff" used by <code><a href='func~commit.html'>commit()</a></code>.  The orig should be the instance which was read from the database, or it may be null only if the add flag is passed.  Any tags to add/set/remove should be included in the changes dict.</p>
+
+<p>The following flags are supported:</p>
+
+<ul>
+<li><code>add</code>: indicates diff is adding new record</li>
+
+<li><code>remove</code>: indicates diff is removing record (in general you should add <code><a href='trash.html'>trash</a></code> tag instead of removing)</li>
+
+<li><code>transient</code>: indicate that this diff should not be flushed to persistent storage (it may or may not be persisted).</li>
+
+<li><code>force</code>: indicating that changes should be applied regardless of other concurrent changes which may be been applied after the orig version was read (use with caution!)</li>
+</ul>
+
+<p>Examples:</p>
+
+<pre>// create new record
+diff(null, {dis:"New Rec", someMarker}, {add})
+
+// create new record with explicit id like Diff.makeAdd
+diff(null, {id:151bd3c5-6ce3cb21, dis:"New Rec"}, {add})
+
+// set/add dis tag and remove oldTag
+diff(orig, {dis:"New Dis", -oldTag})
+
+// set/add val tag transiently
+diff(orig, {val:123}, {transient})</pre>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~diff.html'>func:diff</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='../lib-axon/func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:hx</a></td>
+</tr>
+<tr>
+<th><a href='../lib-axon/name.html'>name</a></th>
+<td>diff</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='../lib-axon/func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

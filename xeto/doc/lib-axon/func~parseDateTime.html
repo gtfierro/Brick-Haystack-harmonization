@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:parseDateTime &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>axon</a></li><li> » </li><li><a href='func~parseDateTime.html'>func:parseDateTime</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index axon
+func~parseDateTime func:parseDateTime
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:parseDateTime</h1>
+<h2>parseDateTime(val, pattern: &quot;YYYY-MM-DD&#39;T&#39;hh:mm:SS.FFFFFFFFFz zzzz&quot;, tz: now().tz, checked: true)</h2>
+
+<p>Parse a Str into a DateTime.  If the string cannot be parsed into a valid DateTime and checked is false then return null, otherwise throw ParseErr. See <code><a href='../sys/DateTime.html#toLocale'>DateTime.toLocale</a></code> for pattern:</p>
+
+<pre>YY     Two digit year             07
+YYYY   Four digit year            2007
+M      One/two digit month        6, 11
+MM     Two digit month            06, 11
+MMM    Three letter abbr month    Jun, Nov
+MMMM   Full month                 June, November
+D      One/two digit day          5, 28
+DD     Two digit day              05, 28
+DDD    Day with suffix            1st, 2nd, 3rd, 24th
+WWW    Three letter abbr weekday  Tue
+WWWW   Full weekday               Tuesday
+V      One/two digit week of year 1,52
+VV     Two digit week of year     01,52
+VVV    Week of year with suffix   1st,52nd
+h      One digit 24 hour (0-23)   3, 22
+hh     Two digit 24 hour (0-23)   03, 22
+k      One digit 12 hour (1-12)   3, 11
+kk     Two digit 12 hour (1-12)   03, 11
+m      One digit minutes (0-59)   4, 45
+mm     Two digit minutes (0-59)   04, 45
+s      One digit seconds (0-59)   4, 45
+ss     Two digit seconds (0-59)   04, 45
+SS     Optional seconds (only if non-zero)
+f*     Fractional secs trailing zeros
+F*     Fractional secs no trailing zeros
+a      Lower case a/p for am/pm   a, p
+aa     Lower case am/pm           am, pm
+A      Upper case A/P for am/pm   A, P
+AA     Upper case AM/PM           AM, PM
+z      Time zone offset           Z, +03:00 (ISO 8601, XML Schema)
+zzz    Time zone abbr             EST, EDT
+zzzz   Time zone name             New_York
+'xyz'  Literal characters
+''     Single quote literal</pre>
+
+<p>Examples:</p>
+
+<pre>parseDateTime("2023-02-07 14:30", "YYYY-MM-DD hh:mm")
+parseDateTime("2023-02-07 14:30", "YYYY-MM-DD hh:mm", "Paris")
+parseDateTime("7/2/23 2:30pm", "D/M/YY k:mma")
+parseDateTime("2023-02-07T14:30:00", "YYYY-MM-DD'T'hh:mm:ss")</pre>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~parseDateTime.html'>func:parseDateTime</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:axon</a></td>
+</tr>
+<tr>
+<th><a href='name.html'>name</a></th>
+<td>parseDateTime</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

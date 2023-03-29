@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>data::DataLogRec &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>data</a></li><li> » </li><li><a href='DataLogRec.html'>DataLogRec</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index data
+DataLogRec DataLogRec
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='type-summary'><a href='../docLang/Structure.html#types'>type</a></h2>
+<div class='defc-main-section'>
+<h1>DataLogRec</h1>
+<p class='docgen-type-sig'>
+<code>
+@<a href='../sys/Js.html'>Js</a><br />
+
+const mixin DataLogRec
+</code>
+</p>
+
+
+<p>DataLogRec models a message from a DataEnv operation. It is used to report compiler errors and explanations.</p>
+
+</div>
+
+<h2 class='defc-main-heading' id='methods-summary'><a href='../docLang/Methods.html'>methods</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='DataLogRec.html#err'>err</a></th>
+<td>
+<p>Exception that caused the issue if applicable</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataLogRec.html#level'>level</a></th>
+<td>
+<p>Severity level of the issue</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataLogRec.html#loc'>loc</a></th>
+<td>
+<p>File location of issue or unknown</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataLogRec.html#msg'>msg</a></th>
+<td>
+<p>String message of the issue</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<h2 class='docgen-slot-details' id='slot-details'>Slot Details</h2>
+
+</div>
+
+<h2 class='defc-main-heading' id='err'>err</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Err.html'>Err?</a> err()
+</code>
+</p>
+
+
+<p>Exception that caused the issue if applicable</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='level'>level</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/LogLevel.html'>LogLevel</a> level()
+</code>
+</p>
+
+
+<p>Severity level of the issue</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='loc'>loc</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../util/FileLoc.html'>FileLoc</a> loc()
+</code>
+</p>
+
+
+<p>File location of issue or unknown</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='msg'>msg</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Str.html'>Str</a> msg()
+</code>
+</p>
+
+
+<p>String message of the issue</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- defc-navData
+#err err
+#level level
+#loc loc
+#msg msg
+-->
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

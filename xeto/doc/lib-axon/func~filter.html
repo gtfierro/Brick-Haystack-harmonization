@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:filter &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>axon</a></li><li> » </li><li><a href='func~filter.html'>func:filter</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index axon
+func~filter func:filter
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:filter</h1>
+<h2>filter(val, filterExpr)</h2>
+
+<p>Apply a <a href='../docHaystack/Filters.html'>filter</a> expression to a collection of dicts.  The collection value may be any of the following:</p>
+
+<ul>
+<li>Grid: returns new grid with filtered rows</li>
+
+<li>Dict[]: returns list of filtered dicts (nulls are filtered out)</li>
+
+<li>Col[]: returns list of columns filtered by their meta</li>
+
+<li>Stream: filters stream of Dicts - see <a href='../docHaxall/Streams.html#filter'>Streams</a></li>
+</ul>
+
+<p>The filter parameter may one fo the following:</p>
+
+<ul>
+<li>Axon expression which maps to a filter</li>
+
+<li>Filter from <code><a href='func~parseFilter.html'>parseFilter()</a></code></li>
+
+<li>Filter from <code><a href='func~parseSearch.html'>parseSearch()</a></code></li>
+</ul>
+
+<p>Examples:</p>
+
+<pre>// apply to a list of dicts
+[{v:1}, {v:2}, {v:3}, {v:4}].filter(v >= 3)
+
+// apply to a grid and return new grid with matching rows
+readAll(equip).filter(meter)
+
+// apply to a list of columns
+read(ahu).toPoints.hisRead(yesterday).cols.filter(kind=="Bool")
+
+// apply to a stream of dicts
+readAllStream(equip).filter(siteMeter and elec and meter).collect
+
+// apply search filter
+readAll(equip).filter(parseSearch("RTU-1"))</pre>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~filter.html'>func:filter</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:axon</a></td>
+</tr>
+<tr>
+<th><a href='name.html'>name</a></th>
+<td>filter</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

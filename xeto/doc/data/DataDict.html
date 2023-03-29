@@ -1,0 +1,243 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>data::DataDict &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>data</a></li><li> » </li><li><a href='DataDict.html'>DataDict</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index data
+DataDict DataDict
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='type-summary'><a href='../docLang/Structure.html#types'>type</a></h2>
+<div class='defc-main-section'>
+<h1>DataDict</h1>
+<p class='docgen-type-sig'>
+<code>
+@<a href='../sys/Js.html'>Js</a><br />
+
+const mixin DataDict
+</code>
+</p>
+
+
+<p>DataDict is a map of name/value pairs. Create instances via <code><a href='DataEnv.html#dict'>DataEnv.dict</a></code>.</p>
+
+</div>
+
+<h2 class='defc-main-heading' id='methods-summary'><a href='../docLang/Methods.html'>methods</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='DataDict.html#each'>each</a></th>
+<td>
+<p>Iterate through the name/value pairs</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataDict.html#eachWhile'>eachWhile</a></th>
+<td>
+<p>Iterate through the name/value pairs until the given function returns non-null, then break the iteration and return resulting object.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataDict.html#get'>get</a></th>
+<td>
+<p>Get the value for the given name or <code>def</code> if name not mapped</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataDict.html#has'>has</a></th>
+<td>
+<p>Return true if this dictionary contains given name</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataDict.html#isEmpty'>isEmpty</a></th>
+<td>
+<p>Return if the there are no name/value pairs</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataDict.html#missing'>missing</a></th>
+<td>
+<p>Return true if this dictionary does not contain given name</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataDict.html#spec'>spec</a></th>
+<td>
+<p>Specification of this dict or <code>sys::Dict</code> if generic.</p>
+</td>
+</tr>
+<tr>
+<th><a href='DataDict.html#trap'>trap</a></th>
+<td>
+<p>Get the value mapped by the given name.</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<h2 class='docgen-slot-details' id='slot-details'>Slot Details</h2>
+
+</div>
+
+<h2 class='defc-main-heading' id='each'>each</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Void.html'>Void</a> each(|<a href='../sys/Obj.html'>Obj</a>,<a href='../sys/Str.html'>Str</a>| f)
+</code>
+</p>
+
+
+<p>Iterate through the name/value pairs</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='eachWhile'>eachWhile</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Obj.html'>Obj?</a> eachWhile(|<a href='../sys/Obj.html'>Obj</a>,<a href='../sys/Str.html'>Str</a>-><a href='../sys/Obj.html'>Obj?</a>| f)
+</code>
+</p>
+
+
+<p>Iterate through the name/value pairs until the given function returns non-null, then break the iteration and return resulting object.  Return null if function returns null for every name/value pair.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='get'>get</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+@<a href='../sys/Operator.html'>Operator</a><br />
+abstract <a href='../sys/Obj.html'>Obj?</a> get(<a href='../sys/Str.html'>Str</a> name, <a href='../sys/Obj.html'>Obj?</a> def := null)
+</code>
+</p>
+
+
+<p>Get the value for the given name or <code>def</code> if name not mapped</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='has'>has</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Bool.html'>Bool</a> has(<a href='../sys/Str.html'>Str</a> name)
+</code>
+</p>
+
+
+<p>Return true if this dictionary contains given name</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='isEmpty'>isEmpty</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Bool.html'>Bool</a> isEmpty()
+</code>
+</p>
+
+
+<p>Return if the there are no name/value pairs</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='missing'>missing</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='../sys/Bool.html'>Bool</a> missing(<a href='../sys/Str.html'>Str</a> name)
+</code>
+</p>
+
+
+<p>Return true if this dictionary does not contain given name</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='spec'>spec</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract <a href='DataSpec.html'>DataSpec</a> spec()
+</code>
+</p>
+
+
+<p>Specification of this dict or <code>sys::Dict</code> if generic.</p>
+</div>
+
+</div>
+
+<h2 class='defc-main-heading' id='trap'>trap</h2>
+<div class='defc-main-section'>
+<div class='docgen-type-slot-section'>
+<p class='docgen-type-sig'>
+<code>
+abstract override <a href='../sys/Obj.html'>Obj?</a> trap(<a href='../sys/Str.html'>Str</a> name, <a href='../sys/Obj.html'>Obj?</a>[]? args := null)
+</code>
+</p>
+
+
+<p>Get the value mapped by the given name.  If it is not mapped to a non-null value, then throw an UnknownNameErr.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- defc-navData
+#each each
+#eachWhile eachWhile
+#get get
+#has has
+#isEmpty isEmpty
+#missing missing
+#spec spec
+#trap trap
+-->
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

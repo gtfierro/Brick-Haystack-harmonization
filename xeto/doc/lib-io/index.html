@@ -1,0 +1,392 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>io &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>io</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index io
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='lib'><a href='../docHaystack/Docs.html#def'>lib</a></h2>
+<div class='defc-main-section'>
+<h1>lib:io</h1>
+
+<p>I/O function library</p>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='index.html'>lib:io</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/depends.html'>depends</a></th>
+<td><a href='../lib-ph/index.html'>lib:ph</a>, <a href='../lib-axon/index.html'>lib:axon</a>, <a href='../lib-hx/index.html'>lib:hx</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='../lib-ph/lib.html'>lib</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:io</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/version.html'>version</a></th>
+<td>3.1.7</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='docs'>docs</h2>
+<div class='defc-main-section'>
+<a href='doc.html'>Overview</a> • <a href='doc.html#handles'>IO Handles</a> • <a href='doc.html#examples'>Examples</a>
+</div>
+
+<h2 class='defc-main-heading' id='funcs'>funcs</h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='func~ioAppend.html'>ioAppend</a></th>
+<td>
+<p>Convert a handle to append mode</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioCharset.html'>ioCharset</a></th>
+<td>
+<p>Configure an I/O handle to use the specified charset</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioCopy.html'>ioCopy</a></th>
+<td>
+<p>Copy a file or directory to the new specified location</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioCrc.html'>ioCrc</a></th>
+<td>
+<p>Generate a cycle reduancy check code as a Number</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioDelete.html'>ioDelete</a></th>
+<td>
+<p>Delete a file or a directory as mapped by the given I/O handle</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioDigest.html'>ioDigest</a></th>
+<td>
+<p>Generate a one-way hash of the given I/O handle</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioDir.html'>ioDir</a></th>
+<td>
+<p>Read a directory listing, return a grid with cols</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioEachCsv.html'>ioEachCsv</a></th>
+<td>
+<p>Iterate the rows of a CSV file (comma separated values) and callback the given function with two parameters</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioEachLine.html'>ioEachLine</a></th>
+<td>
+<p>For each line of the given source stream call the given function with two parameters</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioExport.html'>ioExport</a></th>
+<td>
+<p>Export a view to the given file handle - see <code><a href='https://skyfoundry.com/doc/docFresco/Export'>Export</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioFromBase64.html'>ioFromBase64</a></th>
+<td>
+<p>Return an I/O handle to decode from a base64 string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioGzip.html'>ioGzip</a></th>
+<td>
+<p>Wrap an I/O handle to GZIP compress/uncompress</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioHmac.html'>ioHmac</a></th>
+<td>
+<p>Generate an HMAC message authentication as specified by RFC 2104</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioInfo.html'>ioInfo</a></th>
+<td>
+<p>Get information about a file handle and return a Dict with the same tags as <code><a href='func~ioDir.html'>ioDir()</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioMove.html'>ioMove</a></th>
+<td>
+<p>Move or rename a file or directory</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioPbk.html'>ioPbk</a></th>
+<td>
+<p>Generate a password based cryptographic key</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioRandom.html'>ioRandom</a></th>
+<td>
+<p>Generate randomized series of bytes which can be used as an input I/O handle</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioReadCsv.html'>ioReadCsv</a></th>
+<td>
+<p>Read a CSV (comma separated values) file into memory as a Grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioReadJson.html'>ioReadJson</a></th>
+<td>
+<p>Read a JSON file into memory</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioReadJsonGrid.html'>ioReadJsonGrid</a></th>
+<td>
+<p>Read a JSON file formatted as a standardized Haystack grid into memory</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioReadLines.html'>ioReadLines</a></th>
+<td>
+<p>Read an I/O handle into memory as a list of string lines</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioReadStr.html'>ioReadStr</a></th>
+<td>
+<p>Read an I/O handle into memory as a string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioReadTrio.html'>ioReadTrio</a></th>
+<td>
+<p>Read a <a href='../docHaystack/Trio.html'>Trio</a> file into memory as a list of Dicts</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioReadZinc.html'>ioReadZinc</a></th>
+<td>
+<p>Read a <a href='../docHaystack/Zinc.html'>Zinc</a> file into memory as a Haystack data type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioSkip.html'>ioSkip</a></th>
+<td>
+<p>Apply a skipping operation to an input I/O handle</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioStreamCsv.html'>ioStreamCsv</a></th>
+<td>
+<p>Read a stream of dicts from a comma separated value file</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioStreamLines.html'>ioStreamLines</a></th>
+<td>
+<p>Read a stream of lines</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioToBase64.html'>ioToBase64</a></th>
+<td>
+<p>Encode an I/O handle into a base64 string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioToHex.html'>ioToHex</a></th>
+<td>
+<p>Encode an I/O handle into hexidecimal string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteCsv.html'>ioWriteCsv</a></th>
+<td>
+<p>Write a grid to a <a href='../docHaystack/Csv.html'>CSV</a> (comma separated values) file</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteExcel.html'>ioWriteExcel</a></th>
+<td>
+<p>Write an Excel XLS file, where <code>val</code> may be</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteHtml.html'>ioWriteHtml</a></th>
+<td>
+<p>Write an Axon data structure to HTML</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteJson.html'>ioWriteJson</a></th>
+<td>
+<p>Write an Axon data structure to JSON</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteJsonLd.html'>ioWriteJsonLd</a></th>
+<td>
+<p>Write an Axon data structure to RDF <a href='../docHaystack/Rdf.html'>JSON-LD</a> format</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteLines.html'>ioWriteLines</a></th>
+<td>
+<p>Write a list of string lines separated with "\n" character</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWritePdf.html'>ioWritePdf</a></th>
+<td>
+<p>Render data to a PDF file</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteStr.html'>ioWriteStr</a></th>
+<td>
+<p>Write a string to an I/O handle</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteSvg.html'>ioWriteSvg</a></th>
+<td>
+<p>Render data to an SVG file</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteTrio.html'>ioWriteTrio</a></th>
+<td>
+<p>Write dicts to a <a href='../docHaystack/Trio.html'>Trio</a> file</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteTurtle.html'>ioWriteTurtle</a></th>
+<td>
+<p>Write an Axon data structure to RDF <a href='../docHaystack/Rdf.html'>Turtle</a> format</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteXml.html'>ioWriteXml</a></th>
+<td>
+<p>Write a grid to an <a href='../docHaxall/Xml.html'>XML</a> file</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioWriteZinc.html'>ioWriteZinc</a></th>
+<td>
+<p>Write a Grid to the <a href='../docHaystack/Zinc.html'>Zinc</a> format</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioZipDir.html'>ioZipDir</a></th>
+<td>
+<p>Read a zip file's entry listing, return a grid with cols</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~ioZipEntry.html'>ioZipEntry</a></th>
+<td>
+<p>Return a I/O handle which may be used to read from a zip entry within a zip file</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<!-- defc-navData
+#funcs funcs
+ func~ioAppend ioAppend
+ func~ioCharset ioCharset
+ func~ioCopy ioCopy
+ func~ioCrc ioCrc
+ func~ioDelete ioDelete
+ func~ioDigest ioDigest
+ func~ioDir ioDir
+ func~ioEachCsv ioEachCsv
+ func~ioEachLine ioEachLine
+ func~ioExport ioExport
+ func~ioFromBase64 ioFromBase64
+ func~ioGzip ioGzip
+ func~ioHmac ioHmac
+ func~ioInfo ioInfo
+ func~ioMove ioMove
+ func~ioPbk ioPbk
+ func~ioRandom ioRandom
+ func~ioReadCsv ioReadCsv
+ func~ioReadJson ioReadJson
+ func~ioReadJsonGrid ioReadJsonGrid
+ func~ioReadLines ioReadLines
+ func~ioReadStr ioReadStr
+ func~ioReadTrio ioReadTrio
+ func~ioReadZinc ioReadZinc
+ func~ioSkip ioSkip
+ func~ioStreamCsv ioStreamCsv
+ func~ioStreamLines ioStreamLines
+ func~ioToBase64 ioToBase64
+ func~ioToHex ioToHex
+ func~ioWriteCsv ioWriteCsv
+ func~ioWriteExcel ioWriteExcel
+ func~ioWriteHtml ioWriteHtml
+ func~ioWriteJson ioWriteJson
+ func~ioWriteJsonLd ioWriteJsonLd
+ func~ioWriteLines ioWriteLines
+ func~ioWritePdf ioWritePdf
+ func~ioWriteStr ioWriteStr
+ func~ioWriteSvg ioWriteSvg
+ func~ioWriteTrio ioWriteTrio
+ func~ioWriteTurtle ioWriteTurtle
+ func~ioWriteXml ioWriteXml
+ func~ioWriteZinc ioWriteZinc
+ func~ioZipDir ioZipDir
+ func~ioZipEntry ioZipEntry
+-->
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

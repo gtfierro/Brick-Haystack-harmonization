@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:ioWritePdf &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>io</a></li><li> » </li><li><a href='func~ioWritePdf.html'>func:ioWritePdf</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index io
+func~ioWritePdf func:ioWritePdf
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:ioWritePdf</h1>
+<h2>ioWritePdf(val, handle, opts: {})</h2>
+
+<p>Render data to a PDF file.  The grid meta "view" tag determines the visualization:</p>
+
+<ul>
+<li><code>table</code>: render grid as <code><a href='https://skyfoundry.com/doc/docFresco/Tables'>table</a></code> (default)</li>
+
+<li><code>chart</code>: render grid as <code><a href='https://skyfoundry.com/doc/docFresco/Charts'>chart</a></code></li>
+
+<li><code>fandoc</code>: render string as <a href='../fandoc/index.html#overview'>fandoc</a></li>
+
+<li><code>text</code>: render as plaintext</li>
+</ul>
+
+<p>Options:</p>
+
+<ul>
+<li><code><a href='https://skyfoundry.com/doc/lib-skyarc/pageSize'>pageSize</a></code>: determines the PDF page size</li>
+</ul>
+
+<p>Examples:</p>
+
+<pre>// render as chart with default page size
+read(power).hisRead(yesterday).ioWritePdf(`io/portrait.pdf`)
+
+// render as chart with landscape page size of 11" x 8.5"
+read(power).hisRead(yesterday).ioWritePdf(`io/landscape.pdf`, {pageSize:"11in,8.5in"})
+
+// render table as single auto-fit page
+readAll(site).ioWritePdf(`io/sites.pdf`, {pageSize:"auto"})</pre>
+
+<p>Note: this feature is available in SkySpark only</p>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-axon/admin.html'>admin</a></th>
+<td>✓</td>
+</tr>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~ioWritePdf.html'>func:ioWritePdf</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='../lib-axon/func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:io</a></td>
+</tr>
+<tr>
+<th><a href='../lib-axon/name.html'>name</a></th>
+<td>ioWritePdf</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='../lib-axon/func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

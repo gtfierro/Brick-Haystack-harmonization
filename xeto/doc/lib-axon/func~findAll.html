@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:findAll &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>axon</a></li><li> » </li><li><a href='func~findAll.html'>func:findAll</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index axon
+func~findAll func:findAll
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:findAll</h1>
+<h2>findAll(val, fn)</h2>
+
+<p>Find all the items in a list, dict, or grid by applying the given filter function.  Also see <code><a href='func~find.html'>find()</a></code>.</p>
+
+<p>If working with a list, the filter should be a function that takes <code>(val)</code> or <code>(val, index)</code>.  It should return true to keep the item.</p>
+
+<p>If working with a dict, the filter should be a function that takes <code>(val)</code> or <code>(val, name)</code>.  It should return the true to keep the name/value pair.</p>
+
+<p>If working with a grid, the filter function takes <code>(row)</code> or <code>(row, index)</code> and returns true to keep the row.  The resulting grid shares the original's grid meta and columns.</p>
+
+<p>If working with a stream, the filter takes <code>(val)</code> and returns true to match.  See <a href='../docHaxall/Streams.html#findAll'>Streams</a>.</p>
+
+<p>Examples:</p>
+
+<pre>// find all the strings longer than 3 chars
+["ape", "bat", "charlie", "dingo"].findAll(x => x.size > 3)
+
+// find even numbers
+[0, 1, 2, 3, 4].findAll(isEven)
+
+// find all the sites greater than 10,000ft from grid
+readAll(site).findAll(s => s->area > 10_000ft²)</pre>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~findAll.html'>func:findAll</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:axon</a></td>
+</tr>
+<tr>
+<th><a href='name.html'>name</a></th>
+<td>findAll</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

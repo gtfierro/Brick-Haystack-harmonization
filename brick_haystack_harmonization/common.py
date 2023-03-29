@@ -2,9 +2,7 @@ import csv
 from typing import Set
 
 def clean_brick_classname(cls: str) -> str:
-    cls = cls.replace(' ', '_')
-    cls = cls.replace('.', '')
-    return cls
+    return cls.replace(' ', '_')
 
 def taglist_to_set(taglist: str) -> Set[str]:
     return set(filter(lambda x: x, map(lambda x: x.strip(), taglist.split(","))))

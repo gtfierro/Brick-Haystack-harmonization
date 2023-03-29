@@ -1,0 +1,1939 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>axon &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>axon</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index axon
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='lib'><a href='../docHaystack/Docs.html#def'>lib</a></h2>
+<div class='defc-main-section'>
+<h1>lib:axon</h1>
+
+<p>Axon core library</p>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='index.html'>lib:axon</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/depends.html'>depends</a></th>
+<td><a href='../lib-ph/index.html'>lib:ph</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='../lib-ph/lib.html'>lib</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:axon</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/version.html'>version</a></th>
+<td>3.1.7</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='tags-index'><a href='../docHaystack/Docs.html#tags-index'>tags</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='admin.html'>admin</a></th>
+<td>
+<p>Requires admin permission</p>
+</td>
+</tr>
+<tr>
+<th><a href='disableOverridableChecks.html'>disableOverridableChecks</a></th>
+<td>
+<p>Disables function <code><a href='overridable.html'>overridable</a></code> checking</p>
+</td>
+</tr>
+<tr>
+<th><a href='err.html'>err</a></th>
+<td>
+<p>Indicates an error condition, <code><a href='../lib-ph/dis.html'>dis</a></code> should contain display message</p>
+</td>
+</tr>
+<tr>
+<th><a href='errTrace.html'>errTrace</a></th>
+<td>
+<p>Exception stack trace</p>
+</td>
+</tr>
+<tr>
+<th><a href='expr.html'>expr</a></th>
+<td>
+<p>Axon expression string</p>
+</td>
+</tr>
+<tr>
+<th><a href='foldOn.html'>foldOn</a></th>
+<td>
+<p>Registers a function as folding a given value type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+<tr>
+<th><a href='name.html'>name</a></th>
+<td>
+<p>Name key</p>
+</td>
+</tr>
+<tr>
+<th><a href='overridable.html'>overridable</a></th>
+<td>
+<p>Applied to an ext function to enable <a href='../docHaxall/Axon.html#overrides'>override</a> by project record functions</p>
+</td>
+</tr>
+<tr>
+<th><a href='src.html'>src</a></th>
+<td>
+<p>Source code</p>
+</td>
+</tr>
+<tr>
+<th><a href='su.html'>su</a></th>
+<td>
+<p>Requires superuser permission</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='funcs'>funcs</h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='func~abs.html'>abs</a></th>
+<td>
+<p>Return absolute value of a number, if null return null</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~add.html'>add</a></th>
+<td>
+<p>Add item to the end of a list and return a new list</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~addAll.html'>addAll</a></th>
+<td>
+<p>Add all the items to the end of a list and return a new list</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~addCol.html'>addCol</a></th>
+<td>
+<p>Add a column to a grid by mapping each row to a new cell value</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~addColMeta.html'>addColMeta</a></th>
+<td>
+<p>Return a new grid with additional column meta-data</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~addCols.html'>addCols</a></th>
+<td>
+<p>Add grid b as a new set of columns to grid a</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~addMeta.html'>addMeta</a></th>
+<td>
+<p>Return new grid with additional grid level meta-data tags</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~addRow.html'>addRow</a></th>
+<td>
+<p>Add an additional Dict row to the end of a grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~addRows.html'>addRows</a></th>
+<td>
+<p>Add an list of rows to the end of a grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~all.html'>all</a></th>
+<td>
+<p>Return if all the items in a list, dict, or grid match the given test function</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~any.html'>any</a></th>
+<td>
+<p>Return if any the items in a list, dict, or grid match the given test function</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~as.html'>as</a></th>
+<td>
+<p>Set the unit of a number</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~avg.html'>avg</a></th>
+<td>
+<p>Fold multiple values into their standard average or arithmetic mean</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~call.html'>call</a></th>
+<td>
+<p>Reflectively call a function with the given arguments</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~capitalize.html'>capitalize</a></th>
+<td>
+<p>Return this string with the first character converted to uppercase</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~clamp.html'>clamp</a></th>
+<td>
+<p>Clamp the number val between the min and max</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~col.html'>col</a></th>
+<td>
+<p>Get a column by its name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~colNames.html'>colNames</a></th>
+<td>
+<p>Get the column names a list of strings</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~colToList.html'>colToList</a></th>
+<td>
+<p>Get a column as a list of the cell values ordered by row</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~collect.html'>collect</a></th>
+<td>
+<p>Collect stream into a in-memory list or grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~cols.html'>cols</a></th>
+<td>
+<p>Get the columns from a grid as a list</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~colsToLocale.html'>colsToLocale</a></th>
+<td>
+<p>Localize column display names</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~compDef.html'>compDef</a></th>
+<td>
+<p>Return component definition</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~concat.html'>concat</a></th>
+<td>
+<p>Concatenate a list of items into a string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~conjuncts.html'>conjuncts</a></th>
+<td>
+<p>List conjunct definitions in the context namespace as Def[]</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~contains.html'>contains</a></th>
+<td>
+<p>Return if <code>val</code> contains <code>x</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~coord.html'>coord</a></th>
+<td>
+<p>Construct a Coord from two Numbers in decimal degrees</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~coordDist.html'>coordDist</a></th>
+<td>
+<p>Compute the great-circle distance between two Coords</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~coordLat.html'>coordLat</a></th>
+<td>
+<p>Latitude of a Coord as a Number</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~coordLng.html'>coordLng</a></th>
+<td>
+<p>Longitude of a Coord as a Number</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~count.html'>count</a></th>
+<td>
+<p>Fold multiple values into their total count Return zero if no values</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~curFunc.html'>curFunc</a></th>
+<td>
+<p>Get the current top-level function's tags</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~date.html'>date</a></th>
+<td>
+<p>If val is a DateTime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~dateTime.html'>dateTime</a></th>
+<td>
+<p>Construct a DateTime from a date, time, and timezone name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~day.html'>day</a></th>
+<td>
+<p>Get day of month as integer between 1 to 31 from date or datetime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~dayOfYear.html'>dayOfYear</a></th>
+<td>
+<p>Given a DateTime or Date, return the day of the year</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~debugType.html'>debugType</a></th>
+<td>
+<p>Return a string of the given value's type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~decapitalize.html'>decapitalize</a></th>
+<td>
+<p>Return this string with the first character converted to lowercase</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~def.html'>def</a></th>
+<td>
+<p>Lookup a def by its symbol name (Str or Symbol)</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~defs.html'>defs</a></th>
+<td>
+<p>List all definitions in the context namespace as Def[]</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~dis.html'>dis</a></th>
+<td>
+<p>Get display string for dict or the given tag</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~dst.html'>dst</a></th>
+<td>
+<p>Return if a DateTime is in daylight saving time</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~each.html'>each</a></th>
+<td>
+<p>Iterate the items of a collection</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~eachDay.html'>eachDay</a></th>
+<td>
+<p>Iterate the days of a span</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~eachMonth.html'>eachMonth</a></th>
+<td>
+<p>Iterate the months of a span</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~eachWhile.html'>eachWhile</a></th>
+<td>
+<p>Iterate the items of a collection until the given function returns non-null</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~echo.html'>echo</a></th>
+<td>
+<p>Write the str represenation of <code>x</code> to stdout and return <code>x</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~end.html'>end</a></th>
+<td>
+<p>End value of a DateSpan, Span, or a range</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~endsWith.html'>endsWith</a></th>
+<td>
+<p>Return if Str ends with the specified Str</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~equals.html'>equals</a></th>
+<td>
+<p>Return if two values are equivalent</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~eval.html'>eval</a></th>
+<td>
+<p>Evaluate an Axon string expression</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~filter.html'>filter</a></th>
+<td>
+<p>Apply a <a href='../docHaystack/Filters.html'>filter</a> expression to a collection of dicts</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~filterToFunc.html'>filterToFunc</a></th>
+<td>
+<p>Convert a <a href='../docHaystack/Filters.html'>filter</a> expression to a function which maybe used with <code><a href='func~findAll.html'>findAll()</a></code> or <code><a href='func~find.html'>find()</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~find.html'>find</a></th>
+<td>
+<p>Find the first matching item in a list or grid by applying the given filter function</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~findAll.html'>findAll</a></th>
+<td>
+<p>Find all the items in a list, dict, or grid by applying the given filter function</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~first.html'>first</a></th>
+<td>
+<p>Get the first item from an ordered collection or return null if the collection is empty</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~firstOfMonth.html'>firstOfMonth</a></th>
+<td>
+<p>Get the first day of given date's month</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~flatMap.html'>flatMap</a></th>
+<td>
+<p>Map each item in a list or grid to zero or more new items as a flattened result</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~flatten.html'>flatten</a></th>
+<td>
+<p>Flatten a list to a single level</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~fold.html'>fold</a></th>
+<td>
+<p>Fold a list or stream into a single value using given folding function</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~foldCol.html'>foldCol</a></th>
+<td>
+<p>Fold the values of the given column into a single value</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~foldCols.html'>foldCols</a></th>
+<td>
+<p>Fold a set of columns in each row into a new folded column and return a new grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~foldEnd.html'>foldEnd</a></th>
+<td>
+<p>The fold end marker value</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~foldStart.html'>foldStart</a></th>
+<td>
+<p>The fold start marker value</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~format.html'>format</a></th>
+<td>
+<p>Format an object using the current locale and specified format pattern</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~fromJavaMillis.html'>fromJavaMillis</a></th>
+<td>
+<p>Given Number of milliseconds since Unix epoch return a DateTime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~func.html'>func</a></th>
+<td>
+<p>Find a top-level function by name or by reference and return its tags</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~funcs.html'>funcs</a></th>
+<td>
+<p>Find all the top-levels functions in the current project which match the given filter</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~get.html'>get</a></th>
+<td>
+<p>Get an item from a collection</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~getSafe.html'>getSafe</a></th>
+<td>
+<p>Get an item from a str, list, or grid safely when an index is out of bounds</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~gridColKinds.html'>gridColKinds</a></th>
+<td>
+<p>Given a grid return the types used in each column as a grid with the following</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~gridColsToDict.html'>gridColsToDict</a></th>
+<td>
+<p>Convert grid columns into a dict of name/val pairs</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~gridRowsToDict.html'>gridRowsToDict</a></th>
+<td>
+<p>Convert grid rows into a dict of name/val pairs</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~has.html'>has</a></th>
+<td>
+<p>If val is a Grid return if it has the given column name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~hour.html'>hour</a></th>
+<td>
+<p>Get hour of day as integer between 0 to 23 from time or datetime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~hoursInDay.html'>hoursInDay</a></th>
+<td>
+<p>Given a DateTime in a specific timezone, return the number of hours in the day</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~index.html'>index</a></th>
+<td>
+<p>Return the first match of <code>x</code> in <code>val</code> searching forward, starting at the specified offset index</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~indexr.html'>indexr</a></th>
+<td>
+<p>Return the last match of <code>x</code> in <code>val</code> searching backward, starting at the specified offset index</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~insert.html'>insert</a></th>
+<td>
+<p>Insert an item into a list at the given index and return a new list</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~insertAll.html'>insertAll</a></th>
+<td>
+<p>Insert a list of items at the given index and return a new list</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isAlpha.html'>isAlpha</a></th>
+<td>
+<p>Is number an ASCII alpha char</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isAlphaNum.html'>isAlphaNum</a></th>
+<td>
+<p>Is number an ASCII alpha-numeric char</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isBool.html'>isBool</a></th>
+<td>
+<p>Return if an object is a boolean type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isDate.html'>isDate</a></th>
+<td>
+<p>Return if an object is a Date type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isDateTime.html'>isDateTime</a></th>
+<td>
+<p>Return if an object is a DateTime type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isDict.html'>isDict</a></th>
+<td>
+<p>Return if an object is a dict type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isDigit.html'>isDigit</a></th>
+<td>
+<p>Is number a digit in the specified radix</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isEmpty.html'>isEmpty</a></th>
+<td>
+<p>Return if a collection is empty</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isEven.html'>isEven</a></th>
+<td>
+<p>Return if an integer is an even number</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isFunc.html'>isFunc</a></th>
+<td>
+<p>Return if an object is a function type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isGrid.html'>isGrid</a></th>
+<td>
+<p>Return if an object is a grid type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isKeyword.html'>isKeyword</a></th>
+<td>
+<p>Return if given string is an Axon keyword</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isLeapYear.html'>isLeapYear</a></th>
+<td>
+<p>Return if a year is a leap year</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isList.html'>isList</a></th>
+<td>
+<p>Return if an object is a list type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isLower.html'>isLower</a></th>
+<td>
+<p>Is number an ASCII lowercase alphabetic char</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isMetric.html'>isMetric</a></th>
+<td>
+<p>Given an optional value return true if the SI metric system should be used</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isNaN.html'>isNaN</a></th>
+<td>
+<p>Return if <code>val</code> is the Number representation of not-a-number</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isNonNull.html'>isNonNull</a></th>
+<td>
+<p>Return if an object is not null</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isNull.html'>isNull</a></th>
+<td>
+<p>Return if an object is null</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isNumber.html'>isNumber</a></th>
+<td>
+<p>Return if an object is a number type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isOdd.html'>isOdd</a></th>
+<td>
+<p>Return if an integer is an odd number</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isRef.html'>isRef</a></th>
+<td>
+<p>Return if an object is a ref type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isSpace.html'>isSpace</a></th>
+<td>
+<p>Is number is whitespace char</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isSpan.html'>isSpan</a></th>
+<td>
+<p>Return if an object is a span</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isStr.html'>isStr</a></th>
+<td>
+<p>Return if an object is a str type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isTagName.html'>isTagName</a></th>
+<td>
+<p>Return if the given string is legal tag name - see <code><a href='../haystack/Etc.html#isTagName'>Etc.isTagName</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isTime.html'>isTime</a></th>
+<td>
+<p>Return if an object is a Time type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isUpper.html'>isUpper</a></th>
+<td>
+<p>Is number an ASCII uppercase alphabetic char</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isUri.html'>isUri</a></th>
+<td>
+<p>Return if an object is a Uri type</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isWeekday.html'>isWeekday</a></th>
+<td>
+<p>Does the given Date or DateTime fall on Mon, Tue, Wed, Thu, or Fri</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~isWeekend.html'>isWeekend</a></th>
+<td>
+<p>Does the given Date or DateTime fall on Sat or Sun</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~join.html'>join</a></th>
+<td>
+<p>Join two grids by column name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~joinAll.html'>joinAll</a></th>
+<td>
+<p>Join a list of grids into a single grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~keepCols.html'>keepCols</a></th>
+<td>
+<p>Return a new grid with keeps the given columns, but removes all the others</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~last.html'>last</a></th>
+<td>
+<p>Get the last item from an ordered collection or return null if the collection is empty</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~lastMonth.html'>lastMonth</a></th>
+<td>
+<p>DateSpan for month previous to this month <code>1..28-31</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~lastOfMonth.html'>lastOfMonth</a></th>
+<td>
+<p>Get the last day of the date's month</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~lastQuarter.html'>lastQuarter</a></th>
+<td>
+<p>DateSpan for 3 month quarter previous to this quarter</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~lastWeek.html'>lastWeek</a></th>
+<td>
+<p>DateSpan for week previous to this week <code>sun..sat</code> (uses locale start of week)</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~lastYear.html'>lastYear</a></th>
+<td>
+<p>DateSpan for year previous to this year <code>Jan-1..Dec-31</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~libs.html'>libs</a></th>
+<td>
+<p>List the lib definitions in the context namespace as Def[]</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~limit.html'>limit</a></th>
+<td>
+<p>Truncate stream after given limit is reached</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~localeUse.html'>localeUse</a></th>
+<td>
+<p>Evaluate an expression within a specific locale</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~lower.html'>lower</a></th>
+<td>
+<p>Convert a char number or str to ASCII lower case</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~map.html'>map</a></th>
+<td>
+<p>Map list, dict, or grid by applying the given mapping function</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~marker.html'>marker</a></th>
+<td>
+<p>Get the marker value singleton <code><a href='../haystack/Marker.html#val'>Marker.val</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~max.html'>max</a></th>
+<td>
+<p>Compare two numbers and return the larger one</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~merge.html'>merge</a></th>
+<td>
+<p>Merge two Dicts together and return a new Dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~meta.html'>meta</a></th>
+<td>
+<p>Get the meta-data from a grid or col as a dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~min.html'>min</a></th>
+<td>
+<p>Compare two numbers and return the smaller one</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~minute.html'>minute</a></th>
+<td>
+<p>Get minutes of the time as integer between 0 to 59 from time or datetime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~missing.html'>missing</a></th>
+<td>
+<p>If val is a Grid return if it does not have given column name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~month.html'>month</a></th>
+<td>
+<p>Get month as integer between 1 to 12 from date or datetime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~moveTo.html'>moveTo</a></th>
+<td>
+<p>Find the given item in a list, and move it to the given index</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~na.html'>na</a></th>
+<td>
+<p>Get NA not-available singleton <code><a href='../haystack/NA.html#val'>NA.val</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~name.html'>name</a></th>
+<td>
+<p>If val is a Col, get the column name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~names.html'>names</a></th>
+<td>
+<p>Get the list of names used by a given dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~nan.html'>nan</a></th>
+<td>
+<p>Return the Number representation of not-a-number</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~negInf.html'>negInf</a></th>
+<td>
+<p>Return the Number representation negative infinity</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~now.html'>now</a></th>
+<td>
+<p>Return current DateTime according to context's time zone</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~nowTicks.html'>nowTicks</a></th>
+<td>
+<p>Return current time as nanosecond ticks since 1 Jan 2000 UTC</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~numDays.html'>numDays</a></th>
+<td>
+<p>Number of whole days in a span</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~numDaysInMonth.html'>numDaysInMonth</a></th>
+<td>
+<p>Get the number of days in a given month</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~occurred.html'>occurred</a></th>
+<td>
+<p>Return if a timestamp is contained within a Date range</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~padl.html'>padl</a></th>
+<td>
+<p>Pad string to the left</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~padr.html'>padr</a></th>
+<td>
+<p>Pad string to the right</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseAst.html'>parseAst</a></th>
+<td>
+<p>Parse Axon source code into an abstract syntax tree modeled as a tree of dicts</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseBool.html'>parseBool</a></th>
+<td>
+<p>Parse a Str into a Bool, legal formats are "true" or "false</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseDate.html'>parseDate</a></th>
+<td>
+<p>Parse a Str into a Date</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseDateTime.html'>parseDateTime</a></th>
+<td>
+<p>Parse a Str into a DateTime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseFilter.html'>parseFilter</a></th>
+<td>
+<p>Parse a filter string into a <code><a href='../haystack/Filter.html'>Filter</a></code> instance</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseFloat.html'>parseFloat</a></th>
+<td>
+<p>Parse a Str into a Float</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseInt.html'>parseInt</a></th>
+<td>
+<p>Parse a Str into a integer number using the specified radix</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseNumber.html'>parseNumber</a></th>
+<td>
+<p>Parse a Str into a number with an option unit</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseRef.html'>parseRef</a></th>
+<td>
+<p>Parse a Str into a Ref</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseSearch.html'>parseSearch</a></th>
+<td>
+<p>Parse a search string into a <code><a href='../haystack/Filter.html'>Filter</a></code> instance</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseSymbol.html'>parseSymbol</a></th>
+<td>
+<p>Parse a Str into a Symbol</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseTime.html'>parseTime</a></th>
+<td>
+<p>Parse a Str into a Time</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseUnit.html'>parseUnit</a></th>
+<td>
+<p>Parse a Str into a standardized unit name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~parseUri.html'>parseUri</a></th>
+<td>
+<p>Parse a string into a Uri instance</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~pastMonth.html'>pastMonth</a></th>
+<td>
+<p>DateSpan for last 30days <code>today-30days..today</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~pastWeek.html'>pastWeek</a></th>
+<td>
+<p>DateSpan for last 7 days as <code>today-7days..today</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~pastYear.html'>pastYear</a></th>
+<td>
+<p>DateSpan for this past <code>today-365days..today</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~posInf.html'>posInf</a></th>
+<td>
+<p>Return the Number representation positive infinity</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~reFind.html'>reFind</a></th>
+<td>
+<p>Find the first match of regular expression in <code>s</code> or return null if no matches</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~reFindAll.html'>reFindAll</a></th>
+<td>
+<p>Find all matches of the regular expression in <code>s</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~reGroups.html'>reGroups</a></th>
+<td>
+<p>Return a list of the substrings captured by matching the given regular operation against <code>s</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~reMatches.html'>reMatches</a></th>
+<td>
+<p>Return if regular expression matches entire region of <code>s</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~reduce.html'>reduce</a></th>
+<td>
+<p>Reduce a collection to a single value with the given reducer function</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~refDis.html'>refDis</a></th>
+<td>
+<p>Given a ref return <code><a href='../haystack/Ref.html#dis'>Ref.dis</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~refGen.html'>refGen</a></th>
+<td>
+<p>Generate a new unique Ref identifier</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~refProjName.html'>refProjName</a></th>
+<td>
+<p>Given an absolute ref, return its project name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~relDis.html'>relDis</a></th>
+<td>
+<p>Get a relative display name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~remove.html'>remove</a></th>
+<td>
+<p>Remove an item from a collection and return a new collection</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~removeCol.html'>removeCol</a></th>
+<td>
+<p>Return a new grid with the given column removed</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~removeCols.html'>removeCols</a></th>
+<td>
+<p>Return a new grid with all the given columns removed</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~removeMarker.html'>removeMarker</a></th>
+<td>
+<p>Get the remove value singleton <code><a href='../haystack/Remove.html#val'>Remove.val</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~renameCol.html'>renameCol</a></th>
+<td>
+<p>Return a new grid with the given column renamed</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~renameCols.html'>renameCols</a></th>
+<td>
+<p>Return a new grid with multiple columns renamed</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~reorderCols.html'>reorderCols</a></th>
+<td>
+<p>Return a new grid with the columns reordered</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~replace.html'>replace</a></th>
+<td>
+<p>String replace of all occurrences of <code>from</code> with <code>to</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~rowToList.html'>rowToList</a></th>
+<td>
+<p>Get a grid row as a list of cells</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~second.html'>second</a></th>
+<td>
+<p>Get seconds of the time as integer between 0 to 59 from time or datetime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~set.html'>set</a></th>
+<td>
+<p>Set a collection item and return a new collection</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~setColMeta.html'>setColMeta</a></th>
+<td>
+<p>Return a new grid with column meta-data replaced by given meta dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~setMeta.html'>setMeta</a></th>
+<td>
+<p>Return new grid with grid level meta-data replaced by given meta Dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~size.html'>size</a></th>
+<td>
+<p>Return number of items in str, list, or grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~skip.html'>skip</a></th>
+<td>
+<p>Skip the given number of items in a stream</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~sort.html'>sort</a></th>
+<td>
+<p>Sort a list or grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~sortDis.html'>sortDis</a></th>
+<td>
+<p>Sort a grid by row display name - see <code><a href='../haystack/Grid.html#sortDis'>Grid.sortDis</a></code></p>
+
+<p>Examples</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~sortr.html'>sortr</a></th>
+<td>
+<p>Reverse sort a list or grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~split.html'>split</a></th>
+<td>
+<p>Split a string by the given separator and trim whitespace</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~spread.html'>spread</a></th>
+<td>
+<p>Fold multiple values to compute the difference between the max and min value</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~start.html'>start</a></th>
+<td>
+<p>Start value of a DateSpan, Span or a range</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~startOfWeek.html'>startOfWeek</a></th>
+<td>
+<p>Return current locale's start of weekday</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~startsWith.html'>startsWith</a></th>
+<td>
+<p>Return if Str starts with the specified Str</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~stream.html'>stream</a></th>
+<td>
+<p>Create new stream from given collection</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~streamCol.html'>streamCol</a></th>
+<td>
+<p>Create a new stream for the cell values of the given column</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~sum.html'>sum</a></th>
+<td>
+<p>Fold multiple values into their numeric sum</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~swizzleRefs.html'>swizzleRefs</a></th>
+<td>
+<p>Given a grid of records, assign new ids and swizzle all internal ref tags</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~tags.html'>tags</a></th>
+<td>
+<p>List tag definitions in the context namespace as Def[]</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~terms.html'>terms</a></th>
+<td>
+<p>List term definitions (tags and conjuncts) in the context namespace as Def[]</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~thisMonth.html'>thisMonth</a></th>
+<td>
+<p>DateSpan for this month as <code>1st..28-31</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~thisQuarter.html'>thisQuarter</a></th>
+<td>
+<p>DateSpan for this 3 month quarter</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~thisWeek.html'>thisWeek</a></th>
+<td>
+<p>DateSpan for this week as <code>sun..sat</code> (uses locale start of week)</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~thisYear.html'>thisYear</a></th>
+<td>
+<p>DateSpan for this year <code>Jan-1..Dec-31</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~time.html'>time</a></th>
+<td>
+<p>If val is a DateTime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~times.html'>times</a></th>
+<td>
+<p>Call the specified function the given number of times passing the counter</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~to.html'>to</a></th>
+<td>
+<p>Convert a number to the given unit</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toAxonCode.html'>toAxonCode</a></th>
+<td>
+<p>Convert a scalar, list, or dict value to its Axon code representation</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toChar.html'>toChar</a></th>
+<td>
+<p>Convert a unicode char number into a single char string</p>
+
+<p>Examples</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toDateSpan.html'>toDateSpan</a></th>
+<td>
+<p>Convert the following objects into a <code><a href='../haystack/DateSpan.html'>DateSpan</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toGrid.html'>toGrid</a></th>
+<td>
+<p>Given an arbitrary object, translate it to a Grid via <code><a href='../haystack/Etc.html#toGrid'>Etc.toGrid</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toHex.html'>toHex</a></th>
+<td>
+<p>Convert a number to a hexadecimal string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toJavaMillis.html'>toJavaMillis</a></th>
+<td>
+<p>Given a DateTime return Number of milliseconds since Unix epoch</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toList.html'>toList</a></th>
+<td>
+<p>If val is a list return it, otherwise return <code>[val]</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toLocale.html'>toLocale</a></th>
+<td>
+<p>Get the localized string for the given tag name or qualified name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toRadix.html'>toRadix</a></th>
+<td>
+<p>Convert a number to its string representation in the given radix (base)</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toSpan.html'>toSpan</a></th>
+<td>
+<p>Convert the following objects into a <code><a href='../haystack/Span.html'>Span</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toStr.html'>toStr</a></th>
+<td>
+<p>Convert an obj to its string representation</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toTagName.html'>toTagName</a></th>
+<td>
+<p>Given arbitrary string, convert to a safe tag name - see <code><a href='../haystack/Etc.html#toTagName'>Etc.toTagName</a></code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~toTimeZone.html'>toTimeZone</a></th>
+<td>
+<p>Convert a DateTime or Span to another timezone</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~today.html'>today</a></th>
+<td>
+<p>Return today's Date according to context's time zone</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~transpose.html'>transpose</a></th>
+<td>
+<p>Perform a matrix transpose on the grid</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~trap.html'>trap</a></th>
+<td>
+<p>Function for the <code>-></code> operator</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~trim.html'>trim</a></th>
+<td>
+<p>Trim whitespace from the beginning and end of the string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~trimEnd.html'>trimEnd</a></th>
+<td>
+<p>Trim whitespace only from the end of the string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~trimStart.html'>trimStart</a></th>
+<td>
+<p>Trim whitespace only from the beginning of the string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~tz.html'>tz</a></th>
+<td>
+<p>Get timezone as city name string in tzinfo database from datetime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~unique.html'>unique</a></th>
+<td>
+<p>Return the unique items in a collection</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~unit.html'>unit</a></th>
+<td>
+<p>Given a number return its unit string or null</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~unitsEq.html'>unitsEq</a></th>
+<td>
+<p>Return if the two numbers have the same unit</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~upper.html'>upper</a></th>
+<td>
+<p>Convert a char number or str to ASCII upper case</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriBasename.html'>uriBasename</a></th>
+<td>
+<p>Get the basename (last name in path without extension) of a Uri as a string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriDecode.html'>uriDecode</a></th>
+<td>
+<p>Parse an ASCII percent encoded string into a Uri according to RFC 3986</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriEncode.html'>uriEncode</a></th>
+<td>
+<p>Return the percent encoded string for this Uri according to RFC 3986</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriExt.html'>uriExt</a></th>
+<td>
+<p>Get the URI extension of a Uri as a string or null</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriFrag.html'>uriFrag</a></th>
+<td>
+<p>Return if the fragment identifier portion of the a URI after hash symbol</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriHost.html'>uriHost</a></th>
+<td>
+<p>Get the host Uri as a string or null</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriIsDir.html'>uriIsDir</a></th>
+<td>
+<p>Return if the URI path ends in a slash</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriName.html'>uriName</a></th>
+<td>
+<p>Get the name Str of a Uri (last item in path)</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriPath.html'>uriPath</a></th>
+<td>
+<p>Get the path segments of a Uri as a list of Strs</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriPathStr.html'>uriPathStr</a></th>
+<td>
+<p>Get the path a Uri as a string</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriPlusSlash.html'>uriPlusSlash</a></th>
+<td>
+<p>Adding trailing slash to the URI</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriPort.html'>uriPort</a></th>
+<td>
+<p>Get the port of a Uri as a Number or null</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriQueryStr.html'>uriQueryStr</a></th>
+<td>
+<p>Return if the query portion of the a URI after question mark</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~uriScheme.html'>uriScheme</a></th>
+<td>
+<p>Get the scheme of a Uri as a string or null</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~vals.html'>vals</a></th>
+<td>
+<p>Get the list of values used by a given dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~weekOfYear.html'>weekOfYear</a></th>
+<td>
+<p>Given a DateTime or Date, return the week number of the year</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~weekday.html'>weekday</a></th>
+<td>
+<p>Get weekday as integer from 0 to 6 of Date or DateTime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~xstr.html'>xstr</a></th>
+<td>
+<p>Construct decoded <code><a href='../haystack/XStr.html'>XStr</a></code> instance</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~year.html'>year</a></th>
+<td>
+<p>Get year as integer such as 2010 from date or datetime</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~yesterday.html'>yesterday</a></th>
+<td>
+<p>Return yesterday's Date according to context's time zone</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<!-- defc-navData
+#tags-index tags
+ admin admin
+ disableOverridableChecks disableOverridableChecks
+ err err
+ errTrace errTrace
+ expr expr
+ foldOn foldOn
+ func func
+ name name
+ overridable overridable
+ src src
+ su su
+#funcs funcs
+ func~abs abs
+ func~add add
+ func~addAll addAll
+ func~addCol addCol
+ func~addColMeta addColMeta
+ func~addCols addCols
+ func~addMeta addMeta
+ func~addRow addRow
+ func~addRows addRows
+ func~all all
+ func~any any
+ func~as as
+ func~avg avg
+ func~call call
+ func~capitalize capitalize
+ func~clamp clamp
+ func~col col
+ func~colNames colNames
+ func~colToList colToList
+ func~collect collect
+ func~cols cols
+ func~colsToLocale colsToLocale
+ func~compDef compDef
+ func~concat concat
+ func~conjuncts conjuncts
+ func~contains contains
+ func~coord coord
+ func~coordDist coordDist
+ func~coordLat coordLat
+ func~coordLng coordLng
+ func~count count
+ func~curFunc curFunc
+ func~date date
+ func~dateTime dateTime
+ func~day day
+ func~dayOfYear dayOfYear
+ func~debugType debugType
+ func~decapitalize decapitalize
+ func~def def
+ func~defs defs
+ func~dis dis
+ func~dst dst
+ func~each each
+ func~eachDay eachDay
+ func~eachMonth eachMonth
+ func~eachWhile eachWhile
+ func~echo echo
+ func~end end
+ func~endsWith endsWith
+ func~equals equals
+ func~eval eval
+ func~filter filter
+ func~filterToFunc filterToFunc
+ func~find find
+ func~findAll findAll
+ func~first first
+ func~firstOfMonth firstOfMonth
+ func~flatMap flatMap
+ func~flatten flatten
+ func~fold fold
+ func~foldCol foldCol
+ func~foldCols foldCols
+ func~foldEnd foldEnd
+ func~foldStart foldStart
+ func~format format
+ func~fromJavaMillis fromJavaMillis
+ func~func func
+ func~funcs funcs
+ func~get get
+ func~getSafe getSafe
+ func~gridColKinds gridColKinds
+ func~gridColsToDict gridColsToDict
+ func~gridRowsToDict gridRowsToDict
+ func~has has
+ func~hour hour
+ func~hoursInDay hoursInDay
+ func~index index
+ func~indexr indexr
+ func~insert insert
+ func~insertAll insertAll
+ func~isAlpha isAlpha
+ func~isAlphaNum isAlphaNum
+ func~isBool isBool
+ func~isDate isDate
+ func~isDateTime isDateTime
+ func~isDict isDict
+ func~isDigit isDigit
+ func~isEmpty isEmpty
+ func~isEven isEven
+ func~isFunc isFunc
+ func~isGrid isGrid
+ func~isKeyword isKeyword
+ func~isLeapYear isLeapYear
+ func~isList isList
+ func~isLower isLower
+ func~isMetric isMetric
+ func~isNaN isNaN
+ func~isNonNull isNonNull
+ func~isNull isNull
+ func~isNumber isNumber
+ func~isOdd isOdd
+ func~isRef isRef
+ func~isSpace isSpace
+ func~isSpan isSpan
+ func~isStr isStr
+ func~isTagName isTagName
+ func~isTime isTime
+ func~isUpper isUpper
+ func~isUri isUri
+ func~isWeekday isWeekday
+ func~isWeekend isWeekend
+ func~join join
+ func~joinAll joinAll
+ func~keepCols keepCols
+ func~last last
+ func~lastMonth lastMonth
+ func~lastOfMonth lastOfMonth
+ func~lastQuarter lastQuarter
+ func~lastWeek lastWeek
+ func~lastYear lastYear
+ func~libs libs
+ func~limit limit
+ func~localeUse localeUse
+ func~lower lower
+ func~map map
+ func~marker marker
+ func~max max
+ func~merge merge
+ func~meta meta
+ func~min min
+ func~minute minute
+ func~missing missing
+ func~month month
+ func~moveTo moveTo
+ func~na na
+ func~name name
+ func~names names
+ func~nan nan
+ func~negInf negInf
+ func~now now
+ func~nowTicks nowTicks
+ func~numDays numDays
+ func~numDaysInMonth numDaysInMonth
+ func~occurred occurred
+ func~padl padl
+ func~padr padr
+ func~parseAst parseAst
+ func~parseBool parseBool
+ func~parseDate parseDate
+ func~parseDateTime parseDateTime
+ func~parseFilter parseFilter
+ func~parseFloat parseFloat
+ func~parseInt parseInt
+ func~parseNumber parseNumber
+ func~parseRef parseRef
+ func~parseSearch parseSearch
+ func~parseSymbol parseSymbol
+ func~parseTime parseTime
+ func~parseUnit parseUnit
+ func~parseUri parseUri
+ func~pastMonth pastMonth
+ func~pastWeek pastWeek
+ func~pastYear pastYear
+ func~posInf posInf
+ func~reFind reFind
+ func~reFindAll reFindAll
+ func~reGroups reGroups
+ func~reMatches reMatches
+ func~reduce reduce
+ func~refDis refDis
+ func~refGen refGen
+ func~refProjName refProjName
+ func~relDis relDis
+ func~remove remove
+ func~removeCol removeCol
+ func~removeCols removeCols
+ func~removeMarker removeMarker
+ func~renameCol renameCol
+ func~renameCols renameCols
+ func~reorderCols reorderCols
+ func~replace replace
+ func~rowToList rowToList
+ func~second second
+ func~set set
+ func~setColMeta setColMeta
+ func~setMeta setMeta
+ func~size size
+ func~skip skip
+ func~sort sort
+ func~sortDis sortDis
+ func~sortr sortr
+ func~split split
+ func~spread spread
+ func~start start
+ func~startOfWeek startOfWeek
+ func~startsWith startsWith
+ func~stream stream
+ func~streamCol streamCol
+ func~sum sum
+ func~swizzleRefs swizzleRefs
+ func~tags tags
+ func~terms terms
+ func~thisMonth thisMonth
+ func~thisQuarter thisQuarter
+ func~thisWeek thisWeek
+ func~thisYear thisYear
+ func~time time
+ func~times times
+ func~to to
+ func~toAxonCode toAxonCode
+ func~toChar toChar
+ func~toDateSpan toDateSpan
+ func~toGrid toGrid
+ func~toHex toHex
+ func~toJavaMillis toJavaMillis
+ func~toList toList
+ func~toLocale toLocale
+ func~toRadix toRadix
+ func~toSpan toSpan
+ func~toStr toStr
+ func~toTagName toTagName
+ func~toTimeZone toTimeZone
+ func~today today
+ func~transpose transpose
+ func~trap trap
+ func~trim trim
+ func~trimEnd trimEnd
+ func~trimStart trimStart
+ func~tz tz
+ func~unique unique
+ func~unit unit
+ func~unitsEq unitsEq
+ func~upper upper
+ func~uriBasename uriBasename
+ func~uriDecode uriDecode
+ func~uriEncode uriEncode
+ func~uriExt uriExt
+ func~uriFrag uriFrag
+ func~uriHost uriHost
+ func~uriIsDir uriIsDir
+ func~uriName uriName
+ func~uriPath uriPath
+ func~uriPathStr uriPathStr
+ func~uriPlusSlash uriPlusSlash
+ func~uriPort uriPort
+ func~uriQueryStr uriQueryStr
+ func~uriScheme uriScheme
+ func~vals vals
+ func~weekOfYear weekOfYear
+ func~weekday weekday
+ func~xstr xstr
+ func~year year
+ func~yesterday yesterday
+-->
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

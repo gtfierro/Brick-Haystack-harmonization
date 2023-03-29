@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>func:commit &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>hx</a></li><li> » </li><li><a href='func~commit.html'>func:commit</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index hx
+func~commit func:commit
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='def'><a href='../docHaystack/Docs.html#def'>def</a></h2>
+<div class='defc-main-section'>
+<h1>func:commit</h1>
+<h2>commit(diffs)</h2>
+
+<p>Commit one or more diffs to the folio database. The argument may be one of the following:</p>
+
+<ul>
+<li>result of <code><a href='func~diff.html'>diff()</a></code></li>
+
+<li>list of <code><a href='func~diff.html'>diff()</a></code> to commit multiple diffs at once</li>
+
+<li>stream of <code><a href='func~diff.html'>diff()</a></code>; see <a href='../docHaxall/Streams.html#commit'>Streams</a>.</li>
+</ul>
+
+<p>If one diff is passed, return the new record.  If a list of diffs is passed return a list of new records.</p>
+
+<p>This is a synchronous blocking call which will return the new record or records as the result.</p>
+
+<p>Examples:</p>
+
+<pre>// add new record
+newRec: commit(diff(null, {dis:"New Rec!"}, {add}))
+
+// add someTag to some group of records
+readAll(filter).toRecList.map(r => diff(r, {someTag})).commit</pre>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-axon/admin.html'>admin</a></th>
+<td>✓</td>
+</tr>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='func~commit.html'>func:commit</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='../lib-axon/func.html'>func</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:hx</a></td>
+</tr>
+<tr>
+<th><a href='../lib-axon/name.html'>name</a></th>
+<td>commit</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='supertypes'><a href='../docHaystack/Docs.html#supertypes'>supertypes</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/feature.html'>feature</a></th>
+<td>
+<p>Feature namespace of definitions formatted as <code>feature:name</code></p>
+</td>
+</tr>
+<tr>
+<th>&nbsp;&nbsp;&nbsp;&nbsp;<a href='../lib-axon/func.html'>func</a></th>
+<td>
+<p>Axon function</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>

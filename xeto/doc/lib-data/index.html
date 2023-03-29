@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns='http://www.w3.org/1999/xhtml'>
+<head>
+<meta charset='UTF-8'/><title>data &ndash; Haxall</title>
+<link rel='stylesheet' type='text/css' href='../doc.css' />
+</head>
+<body style='padding:0; background:#fff; margin:1em 4em 3em 6em;'>
+<div class='defc'>
+
+<div class='defc-nav'>
+<ul>
+<li><a href='../index.html'>Index</a></li><li> » </li><li><a href='index.html'>data</a></li></ul>
+</div>
+<hr />
+
+<!-- defc-breadcrumb
+../index Index
+index data
+-->
+<div class='defc-main'>
+
+<h2 class='defc-main-heading' id='lib'><a href='../docHaystack/Docs.html#def'>lib</a></h2>
+<div class='defc-main-section'>
+<h1>lib:data</h1>
+
+<p>Data type system function library</p>
+
+</div>
+
+<h2 class='defc-main-heading' id='meta'><a href='../docHaystack/Docs.html#meta'>meta</a></h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='../lib-ph/def.html'>def</a></th>
+<td><a href='index.html'>lib:data</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/depends.html'>depends</a></th>
+<td><a href='../lib-ph/index.html'>lib:ph</a>, <a href='../lib-axon/index.html'>lib:axon</a>, <a href='../lib-hx/index.html'>lib:hx</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/is.html'>is</a></th>
+<td><a href='../lib-ph/lib.html'>lib</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/lib.html'>lib</a></th>
+<td><a href='index.html'>lib:data</a></td>
+</tr>
+<tr>
+<th><a href='../lib-ph/version.html'>version</a></th>
+<td>3.1.7</td>
+</tr>
+</table>
+
+</div>
+
+<h2 class='defc-main-heading' id='funcs'>funcs</h2>
+<div class='defc-main-section'>
+<table class='defc-props'>
+<tr>
+<th><a href='func~fits.html'>fits</a></th>
+<td>
+<p>Return if the given instance fits the spec via structural typing</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~fitsExplain.html'>fitsExplain</a></th>
+<td>
+<p>Return grid which explains how data fits the given spec</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~fitsMatchAll.html'>fitsMatchAll</a></th>
+<td>
+<p>Match dict recs against specs to find all the specs that fit</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~instantiate.html'>instantiate</a></th>
+<td>
+<p>Create the default instance for a given spec</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~is.html'>is</a></th>
+<td>
+<p>Return if the given instance inherits from the spec via nominal typing</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~query.html'>query</a></th>
+<td>
+<p>Evaluate a relationship query and return record dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~queryAll.html'>queryAll</a></th>
+<td>
+<p>Evaluate a relationship query and return grid of results</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~queryNamed.html'>queryNamed</a></th>
+<td>
+<p>Evaluate a relationship query and return the named constraints as a dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~spec.html'>spec</a></th>
+<td>
+<p>Load or lookup a DataSpec by its qname</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specAst.html'>specAst</a></th>
+<td>
+<p>Build an AST tree of dict, lists, and strings of the effective meta and slots for the given spec</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specAstOwn.html'>specAstOwn</a></th>
+<td>
+<p>Build an AST tree of dict, lists, and strings of the effective meta and slots for the given spec</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specBase.html'>specBase</a></th>
+<td>
+<p>Base spec from which the given spec directly inherits</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specFits.html'>specFits</a></th>
+<td>
+<p>Return if spec <code>a</code> fits spec <code>b</code> based on structural typing</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specFitsExplain.html'>specFitsExplain</a></th>
+<td>
+<p>Return a grid explaining why spec <code>a</code> does not fit <code>b</code></p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specIs.html'>specIs</a></th>
+<td>
+<p>Return if spec <code>a</code> inherits from spec <code>b</code> based on nominal typing</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specMetaOwn.html'>specMetaOwn</a></th>
+<td>
+<p>Get the spec's own declared meta-data as dict</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specName.html'>specName</a></th>
+<td>
+<p>Return simple name of spec</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specParent.html'>specParent</a></th>
+<td>
+<p>Parent spec which contains given spec and scopes its name</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specQName.html'>specQName</a></th>
+<td>
+<p>Return fully qualified name of the spec</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specSlots.html'>specSlots</a></th>
+<td>
+<p>Get the effective children slots as a dict of DataSpecs</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specSlotsOwn.html'>specSlotsOwn</a></th>
+<td>
+<p>Get the spec's declared children slots as dict of DataSpecs</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~specType.html'>specType</a></th>
+<td>
+<p>Data type of the spec</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~typeof.html'>typeof</a></th>
+<td>
+<p>Return the data type of the given value</p>
+</td>
+</tr>
+<tr>
+<th><a href='func~types.html'>types</a></th>
+<td>
+<p>List all the data types currently in scope</p>
+</td>
+</tr>
+</table>
+
+</div>
+
+</div>
+
+<!-- defc-navData
+#funcs funcs
+ func~fits fits
+ func~fitsExplain fitsExplain
+ func~fitsMatchAll fitsMatchAll
+ func~instantiate instantiate
+ func~is is
+ func~query query
+ func~queryAll queryAll
+ func~queryNamed queryNamed
+ func~spec spec
+ func~specAst specAst
+ func~specAstOwn specAstOwn
+ func~specBase specBase
+ func~specFits specFits
+ func~specFitsExplain specFitsExplain
+ func~specIs specIs
+ func~specMetaOwn specMetaOwn
+ func~specName specName
+ func~specParent specParent
+ func~specQName specQName
+ func~specSlots specSlots
+ func~specSlotsOwn specSlotsOwn
+ func~specType specType
+ func~typeof typeof
+ func~types types
+-->
+<h2 class='defc-main-heading' id=''></h2>
+<div class='defc-main-section'>
+<p class='defc-footer-ts'>
+Haxall 3.1.7 ∙ 24-Mar-2023 15:34 EDT</p>
+
+</div>
+
+</div>
+</body>
+</html>
