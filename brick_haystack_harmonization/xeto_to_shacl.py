@@ -51,6 +51,7 @@ def slot_to_shacl(library_name, name, defn):
 def main():
     if len(sys.argv) < 3:
         print("Usage: xeto-to-shacl <resolved json file> <output graph file>")
+        sys.exit(1)
     resolved_xetos = json.load(open(sys.argv[1]))
     for slot in read_slots(resolved_xetos):
         slot_to_shacl(*slot)

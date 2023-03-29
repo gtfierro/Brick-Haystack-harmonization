@@ -1,8 +1,13 @@
 import csv
 from typing import Set
 
+def clean_brick_classname(cls: str) -> str:
+    cls = cls.replace(' ', '_')
+    cls = cls.replace('.', '')
+    return cls
+
 def taglist_to_set(taglist: str) -> Set[str]:
-    return set(map(lambda x: x.strip(), taglist.split(",")))
+    return set(filter(lambda x: x, map(lambda x: x.strip(), taglist.split(","))))
 
 
 def read_csv(filename: str):

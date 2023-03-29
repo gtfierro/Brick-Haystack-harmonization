@@ -1,0 +1,399 @@
+// An On/Off Command controls or reports the binary status of a control loop, relay or equipment activity
+Brick_On_Off_Command : Point { run, cmd }
+
+// Indicates the on/off status of a control loop, relay or equipment
+Brick_On_Off_Status : Point { run, status }
+
+// Commands that enable functionality
+Brick_Enable_Command : Point { enable, cmd }
+
+// Indicates if a system or piece of functionality has been enabled
+Brick_Enable_Status : Point { enable, status }
+
+// Indicates which mode a system, device or control loop is currently in
+Brick_Mode_Status : Point { run, status }
+
+// Indicates the current operating mode of a system, device or control loop
+Brick_Operating_Mode_Status : Point { status }
+
+// Controls whether or not a device or controller is operating in "Occupied" mode
+Brick_Occupancy_Command : Point { occupied, cmd }
+
+// Indicates if a room or space is occupied
+Brick_Occupancy_Status : Point { occupied, status }
+
+// Indicates if a system, device or control loop is in "Occupied" mode
+Brick_Occupied_Mode_Status : Point { occupied, status }
+
+// Indicates if the expected operating status of an equipment or control loop has been overridden
+Brick_Overridden_Status : Point { status }
+
+// Controls or reports whether or not a device or control loop is in 'override'
+Brick_Override_Command : Point { cmd }
+
+// Indicates if a control loop, relay or equipment has been turned on when it would otherwise be scheduled to be off
+Brick_Overridden_On_Status : Point { status }
+
+// Indicates if a control loop, relay or equipment has been turned off when it would otherwise be scheduled to be on
+Brick_Overridden_Off_Status : Point { status }
+
+
+Brick_Operating_Mode_Command : Point { enable, cmd }
+
+// Indicates if a request has been filed to start a device or equipment
+Brick_Run_Request_Status : Point { run, status }
+
+// Indicates the presence of a fault in a device, system or control loop
+Brick_Fault_Status : Point { status }
+
+// An alarm that indicates a loss of communication e.g. with a device or controller
+Brick_Communication_Loss_Alarm : Point { alarm }
+
+
+Brick_Thermal_Power_Sensor : Point { sensor, power }
+
+
+Brick_Electrical_Power_Sensor : Point { sensor, power, elec }
+
+// Measures the duration for which a device was in an active or "on" state
+Brick_Run_Time_Sensor : Point { sensor, run }
+
+// Measures the temperature of discharge air
+Brick_Discharge_Air_Temperature_Sensor : Point { sensor, discharge, temp, air }
+
+// Sets temperature of discharge air
+Brick_Discharge_Air_Temperature_Setpoint : Point { discharge, sp, temp, air }
+
+// Sets the size of a deadband of temperature of discharge air
+Brick_Discharge_Air_Temperature_Deadband_Setpoint : Point { discharge, sp, temp, air }
+
+// Sets the size of a deadband of temperature of heating discharge air
+Brick_Heating_Discharge_Air_Temperature_Deadband_Setpoint : Point { heating, discharge, sp, temp, air }
+
+// Sets the size of a deadband of temperature of cooling discharge air
+Brick_Cooling_Discharge_Air_Temperature_Deadband_Setpoint : Point { discharge, sp, cooling, temp, air }
+
+// Measures the relative humidity of discharge air
+Brick_Discharge_Air_Humidity_Sensor : Point { sensor, discharge, humidity, air }
+
+// Humidity setpoint for discharge air
+Brick_Discharge_Air_Humidity_Setpoint : Point { discharge, sp, humidity, air }
+
+// The static pressure of air within discharge regions of an HVAC system
+Brick_Discharge_Air_Static_Pressure_Sensor : Point { sensor, discharge, air, pressure }
+
+// Sets static pressure of discharge air
+Brick_Discharge_Air_Static_Pressure_Setpoint : Point { discharge, sp, air, pressure }
+
+
+Brick_Discharge_Air_Velocity_Pressure_Sensor : Point { sensor, discharge, pressure, velocity, air }
+
+// Measures dewpoint of discharge air
+Brick_Discharge_Air_Dewpoint_Sensor : Point { sensor, discharge, dewPoint, temp, air }
+
+// Measures the rate of flow of discharge air
+Brick_Discharge_Air_Flow_Sensor : Point { sensor, discharge, flow, air }
+
+// Sets discharge air flow
+Brick_Discharge_Air_Flow_Setpoint : Point { discharge, sp, flow, air }
+
+// Sets discharge air flow for cooling
+Brick_Cooling_Discharge_Air_Flow_Setpoint : Point { discharge, sp, cooling, flow, air }
+
+// Sets discharge air flow for heating
+Brick_Heating_Discharge_Air_Flow_Setpoint : Point { heating, discharge, sp, flow, air }
+
+
+
+
+// Measures the temperature of mixed air
+Brick_Mixed_Air_Temperature_Sensor : Point { sensor, mixed, temp, air }
+
+// Sets temperature of mixed air
+Brick_Mixed_Air_Temperature_Setpoint : Point { mixed, sp, temp, air }
+
+// Measures the humidity of mixed air
+Brick_Mixed_Air_Humidity_Sensor : Point { sensor, mixed, humidity, air }
+
+// Humidity setpoint for mixed air
+Brick_Mixed_Air_Humidity_Setpoint : Point { mixed, sp, humidity, air }
+
+// Measures the rate of flow of mixed air
+Brick_Mixed_Air_Flow_Sensor : Point { sensor, mixed, flow, air }
+
+// Measures the temperature of return air
+Brick_Return_Air_Temperature_Sensor : Point { sensor, return, temp, air }
+
+// The target temperature for return air, often used as an approximation of zone air temperature
+Brick_Return_Air_Temperature_Setpoint : Point { return, sp, temp, air }
+
+// Measures the relative humidity of return air
+Brick_Return_Air_Humidity_Sensor : Point { sensor, return, humidity, air }
+
+// Humidity setpoint for return air
+Brick_Return_Air_Humidity_Setpoint : Point { return, sp, humidity, air }
+
+// Measures the total heat content of return air
+Brick_Return_Air_Enthalpy_Sensor : Point { sensor, return, air }
+
+// Senses the dewpoint temperature of return air
+Brick_Return_Air_Dewpoint_Sensor : Point { sensor, return, dewPoint, temp, air }
+
+// Measures the rate of flow of return air
+Brick_Return_Air_Flow_Sensor : Point { sensor, return, flow, air }
+
+// Measures the concentration of CO2 in return air
+Brick_Return_Air_CO2_Sensor : Point { sensor, return, co2, air }
+
+// Sets some property of CO2 in Return Air
+Brick_Return_Air_CO2_Setpoint : Point { return, co2, sp, air }
+
+// Measures the temperature of outside air
+Brick_Outside_Air_Temperature_Sensor : Point { sensor, temp, outside, air }
+
+// Senses the dewpoint temperature of outside air
+Brick_Outside_Air_Dewpoint_Sensor : Point { sensor, dewPoint, temp, outside, air }
+
+// Measures the relative humidity of outside air
+Brick_Outside_Air_Humidity_Sensor : Point { sensor, outside, humidity, air }
+
+// Measures the total heat content of outside air
+Brick_Outside_Air_Enthalpy_Sensor : Point { sensor, outside, air }
+
+// Measures the rate of flow of outside air into the system
+Brick_Outside_Air_Flow_Sensor : Point { sensor, outside, flow, air }
+
+// Sets outside air flow rate
+Brick_Outside_Air_Flow_Setpoint : Point { min, sp, outside, flow, air }
+
+// Measures the concentration of CO2 in outside air
+Brick_Outside_Air_CO2_Sensor : Point { sensor, co2, outside, air }
+
+// Measures the temperature of exhaust air
+Brick_Exhaust_Air_Temperature_Sensor : Point { sensor, temp, exhaust, air }
+
+// Measures the relative humidity of exhaust air
+Brick_Exhaust_Air_Humidity_Sensor : Point { sensor, humidity, exhaust, air }
+
+// The static pressure of air within exhaust regions of an HVAC system
+Brick_Exhaust_Air_Static_Pressure_Sensor : Point { sensor, air, exhaust, pressure }
+
+// Sets static pressure of exhaust air
+Brick_Exhaust_Air_Static_Pressure_Setpoint : Point { air, sp, exhaust, pressure }
+
+// Measures the rate of flow of exhaust air
+Brick_Exhaust_Air_Flow_Sensor : Point { sensor, exhaust, flow, air }
+
+// Sets exhaust air flow rate
+Brick_Exhaust_Air_Flow_Setpoint : Point { sp, exhaust, flow, air }
+
+// Measures the temperature of air
+Brick_Air_Temperature_Sensor : Point { sensor, temp, air }
+
+// Sets temperature of air
+Brick_Air_Temperature_Setpoint : Point { sp, temp, air }
+
+// Measures the present state of absolute humidity relative to a maximum humidity given the same temperature
+Brick_Relative_Humidity_Sensor : Point { humidity, sensor, air }
+
+// Measures the concentration of water vapor in air
+Brick_Humidity_Sensor : Point { humidity, sensor, air }
+
+// Measures the rate of flow of air
+Brick_Air_Flow_Sensor : Point { flow, sensor, air }
+
+// Sets air flow
+Brick_Air_Flow_Setpoint : Point { flow, sp, air }
+
+// Measures the magnitude of velocity of some form of movement
+Brick_Speed_Sensor : Point { sensor, speed }
+
+// Sets speed
+Brick_Speed_Setpoint : Point { sp, speed }
+
+// Measures the current position of a component in terms of a fraction of its full range of motion
+Brick_Position_Sensor : Point { sensor }
+
+// Controls or reports the position of some object
+Brick_Position_Command : Point { cmd }
+
+// Measures the rate of flow of some substance
+Brick_Flow_Sensor : Point { sensor, flow }
+
+// Sets flow
+Brick_Flow_Setpoint : Point { sp, flow }
+
+// Measures resistance to airflow in a heating and cooling system's components and duct work
+Brick_Static_Pressure_Sensor : Point { sensor, pressure }
+
+// Sets static pressure
+Brick_Static_Pressure_Setpoint : Point { sp, pressure }
+
+// Measures the difference between two applied pressures
+Brick_Differential_Pressure_Sensor : Point { delta, sensor, pressure }
+
+// Sets differential pressure
+Brick_Differential_Pressure_Setpoint : Point { delta, sp, pressure }
+
+// Measures temperature: the physical property of matter that quantitatively expresses the common notions of hot and cold
+Brick_Temperature_Sensor : Point { sensor, temp }
+
+// Sets temperature
+Brick_Temperature_Setpoint : Point { sp, temp }
+
+// Measures properties of CO2 in air
+Brick_CO2_Sensor : Point { sensor, co2 }
+
+
+Brick_Outside_Air_Lockout_Temperature_Setpoint : Point { disable, sp, temp, outside, air }
+
+// Indicates if a piece of equipment, system, or functionality has been locked out from operation
+Brick_Lockout_Status : Point { disable, temp, economizing, outside, status, air }
+
+// Command that enables heating functionality in equipment but certain condition(s) must be met first before actively heating. For the actively heating control, see Heating_Command.
+Brick_Heating_Enable_Command : Point { heating, run, cmd }
+
+// Controls the amount of heating to be delivered (typically as a proportion of total heating output)
+Brick_Heating_Command : Point { cmd, stage:{n}, heat }
+
+// Command that enables cooling functionality in equipment but certain condition(s) must be met first before actively cooling. For the actively cooling control, see Cooling_Command.
+Brick_Cooling_Enable_Command : Point { cooling, run, cmd }
+
+// Controls the amount of cooling to be delivered (typically as a proportion of total cooling output)
+Brick_Cooling_Command : Point { cool, stage:{n}, cmd }
+
+// Measures the rate of flow in a chilled water circuit
+Brick_Chilled_Water_Flow_Sensor : Point { sensor, chilled, water, flow }
+
+// Sets the target flow rate of chilled water
+Brick_Chilled_Water_Flow_Setpoint : Point { sp, chilled, water, flow }
+
+
+// Measures the difference in temperature between the entering water to the chiller or other water cooling device and leaving water from the same chiller or other water cooling device
+Brick_Chilled_Water_Differential_Temperature_Sensor : Point { delta, sensor, temp, chilled, water }
+
+// Measures the difference in water pressure on either side of a chilled water valve
+Brick_Chilled_Water_Differential_Pressure_Sensor : Point { delta, sensor, chilled, water, pressure }
+
+// Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit used to carry chilled water
+Brick_Chilled_Water_Differential_Pressure_Setpoint : Point { delta, sp, chilled, water, pressure }
+
+
+// Measures the rate of flow in a hot water circuit
+Brick_Hot_Water_Flow_Sensor : Point { sensor, hot, water, flow }
+
+// Sets the target flow rate of hot water
+Brick_Hot_Water_Flow_Setpoint : Point { sp, hot, water, flow }
+
+// Measures the difference in temperature between the entering water to the boiler or other water heating device and leaving water from the same boiler or other water heating device
+Brick_Hot_Water_Differential_Temperature_Sensor : Point { delta, sensor, hot, temp, water }
+
+// Measures the difference in water pressure on either side of a hot water valve
+Brick_Hot_Water_Differential_Pressure_Sensor : Point { delta, sensor, pressure, hot, water }
+
+// Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit used to carry hot water
+Brick_Hot_Water_Differential_Pressure_Setpoint : Point { delta, sp, hot, water, pressure }
+
+// Measures the flow of the condenser water
+Brick_Condenser_Water_Flow_Sensor : Point { sensor, condenser, water, flow }
+
+
+Brick_Condenser_Water_Flow_Setpoint : Point { sp, condenser, water, flow }
+
+// Measures the rate of flow of bypass water
+Brick_Bypass_Water_Flow_Sensor : Point { sensor, bypass, water, flow }
+
+// Measures the temperature of entering water
+Brick_Entering_Water_Temperature_Sensor : Point { sensor, entering, temp, water }
+
+// Measures the temperature of water leaving a piece of equipment or system
+Brick_Leaving_Water_Temperature_Sensor : Point { sensor, leaving, temp, water }
+
+// Measures the rate of flow of water entering a piece of equipment or system
+Brick_Entering_Water_Flow_Sensor : Point { sensor, entering, pressure, water, flow }
+
+// Measures the rate of flow of water that is leaving a piece of equipment or system
+Brick_Leaving_Water_Flow_Sensor : Point { sensor, leaving, pressure, water, flow }
+
+// Measures the difference in water temperature between an upstream and downstream point in a pipe or conduit
+Brick_Water_Differential_Temperature_Sensor : Point { delta, sensor, temp, water }
+
+// Measures the temperature of water
+Brick_Water_Temperature_Sensor : Point { sensor, water, temp }
+
+// Measures the height/level of water in some container
+Brick_Water_Level_Sensor : Point { sensor, water }
+
+// An alarm that indicates leaks occured in systems containing fluids
+Brick_Leak_Alarm : Point { alarm }
+
+// A physical or virtual sensor which represents the temperature of an HVAC Zone
+Brick_Zone_Air_Temperature_Sensor : Point { sensor, temp, zone, air }
+
+// Sets temperature of zone air
+Brick_Zone_Air_Temperature_Setpoint : Point { sp, temp, zone, air }
+
+
+Brick_Effective_Zone_Air_Temperature_Setpoint : Point { sp, temp, effective, zone, air }
+
+// Measures the relative humidity of zone air
+Brick_Zone_Air_Humidity_Sensor : Point { sensor, humidity, zone, air }
+
+// Humidity setpoint for zone air
+Brick_Zone_Air_Humidity_Setpoint : Point { sp, humidity, zone, air }
+
+// Measures dewpoint of zone air
+Brick_Zone_Air_Dewpoint_Sensor : Point { sensor, dewPoint, temp, zone, air }
+
+// The static pressure of air within a building
+Brick_Building_Air_Static_Pressure_Sensor : Point { sensor, air, pressure }
+
+// Sets static pressure of the entire building
+Brick_Building_Air_Static_Pressure_Setpoint : Point { sp, air, pressure }
+
+// The computed average temperature of air in a zone, over some period of time
+Brick_Average_Zone_Air_Temperature_Sensor : Point { sensor, temp, avg, zone, air }
+
+// Measures the portion of power that, averaged over a complete cycle of the AC waveform, results in net transfer of energy in one direction
+Brick_Active_Power_Sensor : Point { sensor, power, active }
+
+// Measures the portion of power that, averaged over a complete cycle of the AC waveform, is due to stored energy which returns to the source in each cycle
+Brick_Reactive_Power_Sensor : Point { sensor, power, reactive }
+
+// Senses the amperes of electrical current passing through the sensor
+Brick_Current_Sensor : Point { sensor, current }
+
+// Measures the voltage of an electrical device or object
+Brick_Voltage_Sensor : Point { sensor, volt }
+
+// Measures the frequency of a phenomenon or aspect of a phenomenon, e.g. the frequency of a fan turning
+Brick_Frequency_Sensor : Point { sensor, freq }
+
+// Sensors measuring power Factor, under periodic conditions, is the ratio of the absolute value of the active power (P) to the apparent power (S).
+Brick_Power_Factor_Sensor : Point { sensor, pf }
+
+// Measures torque, the tendency of a force to rotate an object about some axis
+Brick_Torque_Sensor : Point { sensor }
+
+// Measure temperature of the heat sink on a device such as a VFD.
+Brick_Heat_Sink_Temperature_Sensor : Point { sensor, temp }
+
+// Measures the voltage across a DC bus
+Brick_DC_Bus_Voltage_Sensor : Point { sensor, volt, dc }
+
+// An alarm that indicates a leak of condensate from a cooling system
+Brick_Condensate_Leak_Alarm : Point { condensate, status }
+
+
+// Measures the total luminous flux incident on a surface, per unit area
+Brick_Illuminance_Sensor : Point { sensor, illuminance }
+
+// Detects matter of size 1 micron
+Brick_PM1_Sensor : Point { sensor, zone, air }
+
+
+Brick_PM25_Sensor : Point { sensor, zone, air }
+
+// Detects matter of size 10 microns
+Brick_PM10_Sensor : Point { sensor, zone, air }
+

@@ -18,7 +18,7 @@
     "slots": {
       "Brick_On_Off_Command": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "An On/Off Command controls or reports the binary status of a control loop, relay or equipment activity",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -38,7 +38,7 @@
       },
       "Brick_On_Off_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates the on/off status of a control loop, relay or equipment",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -48,17 +48,17 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "status": {
+          "run": {
             "type": "sys::Marker"
           },
-          "run": {
+          "status": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Enable_Command": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Commands that enable functionality",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -78,7 +78,7 @@
       },
       "Brick_Enable_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates if a system or piece of functionality has been enabled",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -88,17 +88,17 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "status": {
+          "enable": {
             "type": "sys::Marker"
           },
-          "enable": {
+          "status": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Mode_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates which mode a system, device or control loop is currently in",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -108,17 +108,17 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "status": {
+          "run": {
             "type": "sys::Marker"
           },
-          "run": {
+          "status": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Operating_Mode_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates the current operating mode of a system, device or control loop",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -135,7 +135,7 @@
       },
       "Brick_Occupancy_Command": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Controls whether or not a device or controller is operating in \"Occupied\" mode",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -155,7 +155,7 @@
       },
       "Brick_Occupancy_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates if a room or space is occupied",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -165,17 +165,17 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "status": {
+          "occupied": {
             "type": "sys::Marker"
           },
-          "occupied": {
+          "status": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Occupied_Mode_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates if a system, device or control loop is in \"Occupied\" mode",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -185,17 +185,17 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "status": {
+          "occupied": {
             "type": "sys::Marker"
           },
-          "occupied": {
+          "status": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Overridden_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates if the expected operating status of an equipment or control loop has been overridden",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -212,7 +212,7 @@
       },
       "Brick_Override_Command": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Controls or reports whether or not a device or control loop is in 'override'",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -229,7 +229,7 @@
       },
       "Brick_Overridden_On_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates if a control loop, relay or equipment has been turned on when it would otherwise be scheduled to be off",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -246,7 +246,7 @@
       },
       "Brick_Overridden_Off_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates if a control loop, relay or equipment has been turned off when it would otherwise be scheduled to be on",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -283,7 +283,7 @@
       },
       "Brick_Run_Request_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates if a request has been filed to start a device or equipment",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -293,17 +293,17 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "status": {
+          "run": {
             "type": "sys::Marker"
           },
-          "run": {
+          "status": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Fault_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates the presence of a fault in a device, system or control loop",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -320,7 +320,7 @@
       },
       "Brick_Communication_Loss_Alarm": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "An alarm that indicates a loss of communication e.g. with a device or controller",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -347,10 +347,10 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "power": {
+          "sensor": {
             "type": "sys::Marker"
           },
-          "sensor": {
+          "power": {
             "type": "sys::Marker"
           }
         }
@@ -367,10 +367,10 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "power": {
+          "sensor": {
             "type": "sys::Marker"
           },
-          "sensor": {
+          "power": {
             "type": "sys::Marker"
           },
           "elec": {
@@ -380,7 +380,7 @@
       },
       "Brick_Run_Time_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the duration for which a device was in an active or \"on\" state",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -400,7 +400,7 @@
       },
       "Brick_Discharge_Air_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the temperature of discharge air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -413,20 +413,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "discharge": {
             "type": "sys::Marker"
           },
           "temp": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Temperature_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets temperature of discharge air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -436,9 +436,6 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "discharge": {
             "type": "sys::Marker"
           },
@@ -446,13 +443,16 @@
             "type": "sys::Marker"
           },
           "temp": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Temperature_Deadband_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets the size of a deadband of temperature of discharge air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -462,9 +462,6 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "discharge": {
             "type": "sys::Marker"
           },
@@ -473,12 +470,15 @@
           },
           "temp": {
             "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Heating_Discharge_Air_Temperature_Deadband_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets the size of a deadband of temperature of heating discharge air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -491,9 +491,6 @@
           "heating": {
             "type": "sys::Marker"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "discharge": {
             "type": "sys::Marker"
           },
@@ -501,13 +498,16 @@
             "type": "sys::Marker"
           },
           "temp": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Cooling_Discharge_Air_Temperature_Deadband_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets the size of a deadband of temperature of cooling discharge air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -517,26 +517,26 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "cooling": {
-            "type": "sys::Marker"
-          },
-          "air": {
-            "type": "sys::Marker"
-          },
           "discharge": {
             "type": "sys::Marker"
           },
           "sp": {
             "type": "sys::Marker"
           },
+          "cooling": {
+            "type": "sys::Marker"
+          },
           "temp": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Humidity_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the relative humidity of discharge air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -549,20 +549,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "discharge": {
             "type": "sys::Marker"
           },
           "humidity": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Humidity_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Humidity setpoint for discharge air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -571,9 +571,6 @@
             "type": "sys::Query",
             "of": "ph::Equip",
             "via": "equipRef+"
-          },
-          "air": {
-            "type": "sys::Marker"
           },
           "discharge": {
             "type": "sys::Marker"
@@ -583,12 +580,15 @@
           },
           "humidity": {
             "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Static_Pressure_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "The static pressure of air within discharge regions of an HVAC system",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -601,10 +601,10 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "discharge": {
             "type": "sys::Marker"
           },
-          "discharge": {
+          "air": {
             "type": "sys::Marker"
           },
           "pressure": {
@@ -614,7 +614,7 @@
       },
       "Brick_Discharge_Air_Static_Pressure_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets static pressure of discharge air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -624,13 +624,13 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "discharge": {
             "type": "sys::Marker"
           },
           "sp": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           },
           "pressure": {
@@ -653,23 +653,23 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
             "type": "sys::Marker"
           },
           "velocity": {
             "type": "sys::Marker"
           },
-          "discharge": {
-            "type": "sys::Marker"
-          },
-          "pressure": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Dewpoint_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures dewpoint of discharge air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -682,23 +682,23 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "dewPoint": {
-            "type": "sys::Marker"
-          },
-          "air": {
-            "type": "sys::Marker"
-          },
           "discharge": {
             "type": "sys::Marker"
           },
+          "dewPoint": {
+            "type": "sys::Marker"
+          },
           "temp": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow of discharge air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -711,20 +711,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "discharge": {
             "type": "sys::Marker"
           },
           "flow": {
             "type": "sys::Marker"
           },
-          "discharge": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Flow_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets discharge air flow",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -734,23 +734,23 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "air": {
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "sp": {
             "type": "sys::Marker"
           },
           "flow": {
             "type": "sys::Marker"
           },
-          "discharge": {
-            "type": "sys::Marker"
-          },
-          "sp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Cooling_Discharge_Air_Flow_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets discharge air flow for cooling",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -760,26 +760,26 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "cooling": {
+          "discharge": {
             "type": "sys::Marker"
           },
-          "air": {
+          "sp": {
+            "type": "sys::Marker"
+          },
+          "cooling": {
             "type": "sys::Marker"
           },
           "flow": {
             "type": "sys::Marker"
           },
-          "discharge": {
-            "type": "sys::Marker"
-          },
-          "sp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Heating_Discharge_Air_Flow_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets discharge air flow for heating",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -792,23 +792,23 @@
           "heating": {
             "type": "sys::Marker"
           },
-          "air": {
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "sp": {
             "type": "sys::Marker"
           },
           "flow": {
             "type": "sys::Marker"
           },
-          "discharge": {
-            "type": "sys::Marker"
-          },
-          "sp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Mixed_Air_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the temperature of mixed air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -821,20 +821,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "mixed": {
             "type": "sys::Marker"
           },
           "temp": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Mixed_Air_Temperature_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets temperature of mixed air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -844,23 +844,23 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "air": {
+          "mixed": {
             "type": "sys::Marker"
           },
           "sp": {
             "type": "sys::Marker"
           },
-          "mixed": {
+          "temp": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Mixed_Air_Humidity_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the humidity of mixed air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -873,20 +873,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "mixed": {
             "type": "sys::Marker"
           },
           "humidity": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Mixed_Air_Humidity_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Humidity setpoint for mixed air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -896,23 +896,23 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "air": {
+          "mixed": {
             "type": "sys::Marker"
           },
           "sp": {
             "type": "sys::Marker"
           },
-          "mixed": {
+          "humidity": {
             "type": "sys::Marker"
           },
-          "humidity": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Mixed_Air_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow of mixed air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -925,20 +925,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "mixed": {
             "type": "sys::Marker"
           },
           "flow": {
             "type": "sys::Marker"
           },
-          "mixed": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Return_Air_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the temperature of return air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -948,23 +948,23 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "return": {
-            "type": "sys::Marker"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "return": {
             "type": "sys::Marker"
           },
           "temp": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Return_Air_Temperature_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "The target temperature for return air, often used as an approximation of zone air temperature",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -977,20 +977,20 @@
           "return": {
             "type": "sys::Marker"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "sp": {
             "type": "sys::Marker"
           },
           "temp": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Return_Air_Humidity_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the relative humidity of return air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1000,23 +1000,23 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "return": {
-            "type": "sys::Marker"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "return": {
             "type": "sys::Marker"
           },
           "humidity": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Return_Air_Humidity_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Humidity setpoint for return air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1027,9 +1027,6 @@
             "via": "equipRef+"
           },
           "return": {
-            "type": "sys::Marker"
-          },
-          "air": {
             "type": "sys::Marker"
           },
           "sp": {
@@ -1037,12 +1034,15 @@
           },
           "humidity": {
             "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Return_Air_Enthalpy_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the total heat content of return air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1055,17 +1055,17 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "return": {
             "type": "sys::Marker"
           },
-          "return": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Return_Air_Dewpoint_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Senses the dewpoint temperature of return air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1075,26 +1075,26 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "return": {
+          "sensor": {
             "type": "sys::Marker"
           },
-          "sensor": {
+          "return": {
             "type": "sys::Marker"
           },
           "dewPoint": {
             "type": "sys::Marker"
           },
-          "air": {
+          "temp": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Return_Air_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow of return air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1104,23 +1104,23 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "return": {
-            "type": "sys::Marker"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "return": {
             "type": "sys::Marker"
           },
           "flow": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Return_Air_CO2_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the concentration of CO2 in return air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1130,13 +1130,13 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
+          "sensor": {
+            "type": "sys::Marker"
+          },
           "return": {
             "type": "sys::Marker"
           },
           "co2": {
-            "type": "sys::Marker"
-          },
-          "sensor": {
             "type": "sys::Marker"
           },
           "air": {
@@ -1146,7 +1146,7 @@
       },
       "Brick_Return_Air_CO2_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets some property of CO2 in Return Air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1162,17 +1162,17 @@
           "co2": {
             "type": "sys::Marker"
           },
-          "air": {
+          "sp": {
             "type": "sys::Marker"
           },
-          "sp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Outside_Air_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the temperature of outside air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1185,20 +1185,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "temp": {
             "type": "sys::Marker"
           },
           "outside": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Outside_Air_Dewpoint_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Senses the dewpoint temperature of outside air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1214,20 +1214,20 @@
           "dewPoint": {
             "type": "sys::Marker"
           },
-          "air": {
+          "temp": {
             "type": "sys::Marker"
           },
           "outside": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Outside_Air_Humidity_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the relative humidity of outside air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1238,9 +1238,6 @@
             "via": "equipRef+"
           },
           "sensor": {
-            "type": "sys::Marker"
-          },
-          "air": {
             "type": "sys::Marker"
           },
           "outside": {
@@ -1248,12 +1245,15 @@
           },
           "humidity": {
             "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Outside_Air_Enthalpy_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the total heat content of outside air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1263,20 +1263,20 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
           "outside": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Outside_Air_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow of outside air into the system",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1289,20 +1289,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "outside": {
             "type": "sys::Marker"
           },
           "flow": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Outside_Air_Flow_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets outside air flow rate",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1312,7 +1312,10 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "air": {
+          "min": {
+            "type": "sys::Marker"
+          },
+          "sp": {
             "type": "sys::Marker"
           },
           "outside": {
@@ -1321,17 +1324,14 @@
           "flow": {
             "type": "sys::Marker"
           },
-          "sp": {
-            "type": "sys::Marker"
-          },
-          "min": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Outside_Air_CO2_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the concentration of CO2 in outside air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1347,17 +1347,17 @@
           "co2": {
             "type": "sys::Marker"
           },
-          "air": {
+          "outside": {
             "type": "sys::Marker"
           },
-          "outside": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Exhaust_Air_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the temperature of exhaust air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1370,20 +1370,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "temp": {
             "type": "sys::Marker"
           },
           "exhaust": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Exhaust_Air_Humidity_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the relative humidity of exhaust air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1396,20 +1396,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "humidity": {
             "type": "sys::Marker"
           },
           "exhaust": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Exhaust_Air_Static_Pressure_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "The static pressure of air within exhaust regions of an HVAC system",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1425,17 +1425,17 @@
           "air": {
             "type": "sys::Marker"
           },
-          "pressure": {
+          "exhaust": {
             "type": "sys::Marker"
           },
-          "exhaust": {
+          "pressure": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Exhaust_Air_Static_Pressure_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets static pressure of exhaust air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1451,17 +1451,17 @@
           "sp": {
             "type": "sys::Marker"
           },
-          "pressure": {
+          "exhaust": {
             "type": "sys::Marker"
           },
-          "exhaust": {
+          "pressure": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Exhaust_Air_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow of exhaust air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1474,20 +1474,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "exhaust": {
             "type": "sys::Marker"
           },
           "flow": {
             "type": "sys::Marker"
           },
-          "exhaust": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Exhaust_Air_Flow_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets exhaust air flow rate",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1496,24 +1496,24 @@
             "type": "sys::Query",
             "of": "ph::Equip",
             "via": "equipRef+"
-          },
-          "air": {
-            "type": "sys::Marker"
-          },
-          "flow": {
-            "type": "sys::Marker"
           },
           "sp": {
             "type": "sys::Marker"
           },
           "exhaust": {
             "type": "sys::Marker"
+          },
+          "flow": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Air_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the temperature of air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1526,17 +1526,17 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "temp": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Air_Temperature_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets temperature of air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1549,17 +1549,17 @@
           "sp": {
             "type": "sys::Marker"
           },
-          "air": {
+          "temp": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Relative_Humidity_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the present state of absolute humidity relative to a maximum humidity given the same temperature",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1569,10 +1569,10 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "sensor": {
+          "humidity": {
             "type": "sys::Marker"
           },
-          "humidity": {
+          "sensor": {
             "type": "sys::Marker"
           },
           "air": {
@@ -1582,7 +1582,7 @@
       },
       "Brick_Humidity_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the concentration of water vapor in air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1592,10 +1592,10 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "sensor": {
+          "humidity": {
             "type": "sys::Marker"
           },
-          "humidity": {
+          "sensor": {
             "type": "sys::Marker"
           },
           "air": {
@@ -1605,7 +1605,7 @@
       },
       "Brick_Air_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow of air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1614,21 +1614,21 @@
             "type": "sys::Query",
             "of": "ph::Equip",
             "via": "equipRef+"
+          },
+          "flow": {
+            "type": "sys::Marker"
           },
           "sensor": {
             "type": "sys::Marker"
           },
           "air": {
             "type": "sys::Marker"
-          },
-          "flow": {
-            "type": "sys::Marker"
           }
         }
       },
       "Brick_Air_Flow_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets air flow",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1638,20 +1638,20 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
+          "flow": {
+            "type": "sys::Marker"
+          },
           "sp": {
             "type": "sys::Marker"
           },
           "air": {
-            "type": "sys::Marker"
-          },
-          "flow": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Speed_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the magnitude of velocity of some form of movement",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1671,7 +1671,7 @@
       },
       "Brick_Speed_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets speed",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1691,7 +1691,7 @@
       },
       "Brick_Position_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the current position of a component in terms of a fraction of its full range of motion",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1708,7 +1708,7 @@
       },
       "Brick_Position_Command": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Controls or reports the position of some object",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1725,7 +1725,7 @@
       },
       "Brick_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow of some substance",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1745,7 +1745,7 @@
       },
       "Brick_Flow_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets flow",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1765,7 +1765,7 @@
       },
       "Brick_Static_Pressure_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures resistance to airflow in a heating and cooling system's components and duct work",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1785,7 +1785,7 @@
       },
       "Brick_Static_Pressure_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets static pressure",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1805,7 +1805,7 @@
       },
       "Brick_Differential_Pressure_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the difference between two applied pressures",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1814,21 +1814,21 @@
             "type": "sys::Query",
             "of": "ph::Equip",
             "via": "equipRef+"
+          },
+          "delta": {
+            "type": "sys::Marker"
           },
           "sensor": {
             "type": "sys::Marker"
           },
           "pressure": {
             "type": "sys::Marker"
-          },
-          "delta": {
-            "type": "sys::Marker"
           }
         }
       },
       "Brick_Differential_Pressure_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets differential pressure",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1838,20 +1838,20 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
+          "delta": {
+            "type": "sys::Marker"
+          },
           "sp": {
             "type": "sys::Marker"
           },
           "pressure": {
-            "type": "sys::Marker"
-          },
-          "delta": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures temperature: the physical property of matter that quantitatively expresses the common notions of hot and cold",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1871,7 +1871,7 @@
       },
       "Brick_Temperature_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets temperature",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1891,7 +1891,7 @@
       },
       "Brick_CO2_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures properties of CO2 in air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1901,10 +1901,10 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "co2": {
+          "sensor": {
             "type": "sys::Marker"
           },
-          "sensor": {
+          "co2": {
             "type": "sys::Marker"
           }
         }
@@ -1924,23 +1924,23 @@
           "disable": {
             "type": "sys::Marker"
           },
-          "air": {
+          "sp": {
+            "type": "sys::Marker"
+          },
+          "temp": {
             "type": "sys::Marker"
           },
           "outside": {
             "type": "sys::Marker"
           },
-          "sp": {
-            "type": "sys::Marker"
-          },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Lockout_Status": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Indicates if a piece of equipment, system, or functionality has been locked out from operation",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1950,29 +1950,29 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "status": {
-            "type": "sys::Marker"
-          },
           "disable": {
             "type": "sys::Marker"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
-          "outside": {
+          "temp": {
             "type": "sys::Marker"
           },
           "economizing": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "outside": {
+            "type": "sys::Marker"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Heating_Enable_Command": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Command that enables heating functionality in equipment but certain condition(s) must be met first before actively heating. For the actively heating control, see Heating_Command.",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -1995,7 +1995,7 @@
       },
       "Brick_Heating_Command": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Controls the amount of heating to be delivered (typically as a proportion of total heating output)",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2004,6 +2004,9 @@
             "type": "sys::Query",
             "of": "ph::Equip",
             "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
           },
           "stage": {
             "type": "sys::Dict",
@@ -2015,15 +2018,12 @@
           },
           "heat": {
             "type": "sys::Marker"
-          },
-          "cmd": {
-            "type": "sys::Marker"
           }
         }
       },
       "Brick_Cooling_Enable_Command": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Command that enables cooling functionality in equipment but certain condition(s) must be met first before actively cooling. For the actively cooling control, see Cooling_Command.",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2033,20 +2033,20 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "cmd": {
+          "cooling": {
             "type": "sys::Marker"
           },
           "run": {
             "type": "sys::Marker"
           },
-          "cooling": {
+          "cmd": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Cooling_Command": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Controls the amount of cooling to be delivered (typically as a proportion of total cooling output)",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2055,6 +2055,9 @@
             "type": "sys::Query",
             "of": "ph::Equip",
             "via": "equipRef+"
+          },
+          "cool": {
+            "type": "sys::Marker"
           },
           "stage": {
             "type": "sys::Dict",
@@ -2064,9 +2067,6 @@
               }
             }
           },
-          "cool": {
-            "type": "sys::Marker"
-          },
           "cmd": {
             "type": "sys::Marker"
           }
@@ -2074,7 +2074,7 @@
       },
       "Brick_Chilled_Water_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow in a chilled water circuit",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2084,13 +2084,13 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
+          "sensor": {
             "type": "sys::Marker"
           },
           "chilled": {
             "type": "sys::Marker"
           },
-          "sensor": {
+          "water": {
             "type": "sys::Marker"
           },
           "flow": {
@@ -2100,7 +2100,7 @@
       },
       "Brick_Chilled_Water_Flow_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets the target flow rate of chilled water",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2110,23 +2110,23 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
+          "sp": {
             "type": "sys::Marker"
           },
           "chilled": {
             "type": "sys::Marker"
           },
-          "flow": {
+          "water": {
             "type": "sys::Marker"
           },
-          "sp": {
+          "flow": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Chilled_Water_Differential_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the difference in temperature between the entering water to the chiller or other water cooling device and leaving water from the same chiller or other water cooling device",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2136,26 +2136,26 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
-            "type": "sys::Marker"
-          },
-          "chilled": {
+          "delta": {
             "type": "sys::Marker"
           },
           "sensor": {
             "type": "sys::Marker"
           },
-          "delta": {
+          "temp": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "chilled": {
+            "type": "sys::Marker"
+          },
+          "water": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Chilled_Water_Differential_Pressure_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the difference in water pressure on either side of a chilled water valve",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2165,26 +2165,26 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
-            "type": "sys::Marker"
-          },
-          "chilled": {
+          "delta": {
             "type": "sys::Marker"
           },
           "sensor": {
             "type": "sys::Marker"
           },
-          "pressure": {
+          "chilled": {
             "type": "sys::Marker"
           },
-          "delta": {
+          "water": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Chilled_Water_Differential_Pressure_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit used to carry chilled water",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2194,26 +2194,26 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
-            "type": "sys::Marker"
-          },
-          "chilled": {
+          "delta": {
             "type": "sys::Marker"
           },
           "sp": {
             "type": "sys::Marker"
           },
-          "pressure": {
+          "chilled": {
             "type": "sys::Marker"
           },
-          "delta": {
+          "water": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Hot_Water_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow in a hot water circuit",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2223,13 +2223,13 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
+          "sensor": {
             "type": "sys::Marker"
           },
           "hot": {
             "type": "sys::Marker"
           },
-          "sensor": {
+          "water": {
             "type": "sys::Marker"
           },
           "flow": {
@@ -2239,7 +2239,7 @@
       },
       "Brick_Hot_Water_Flow_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets the target flow rate of hot water",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2249,23 +2249,23 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
+          "sp": {
             "type": "sys::Marker"
           },
           "hot": {
             "type": "sys::Marker"
           },
-          "flow": {
+          "water": {
             "type": "sys::Marker"
           },
-          "sp": {
+          "flow": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Hot_Water_Differential_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the difference in temperature between the entering water to the boiler or other water heating device and leaving water from the same boiler or other water heating device",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2275,26 +2275,26 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
-            "type": "sys::Marker"
-          },
-          "hot": {
+          "delta": {
             "type": "sys::Marker"
           },
           "sensor": {
             "type": "sys::Marker"
           },
-          "delta": {
+          "hot": {
             "type": "sys::Marker"
           },
           "temp": {
+            "type": "sys::Marker"
+          },
+          "water": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Hot_Water_Differential_Pressure_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the difference in water pressure on either side of a hot water valve",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2304,10 +2304,7 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
-            "type": "sys::Marker"
-          },
-          "hot": {
+          "delta": {
             "type": "sys::Marker"
           },
           "sensor": {
@@ -2316,14 +2313,17 @@
           "pressure": {
             "type": "sys::Marker"
           },
-          "delta": {
+          "hot": {
+            "type": "sys::Marker"
+          },
+          "water": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Hot_Water_Differential_Pressure_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit used to carry hot water",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2333,26 +2333,26 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
-            "type": "sys::Marker"
-          },
-          "hot": {
+          "delta": {
             "type": "sys::Marker"
           },
           "sp": {
             "type": "sys::Marker"
           },
-          "pressure": {
+          "hot": {
             "type": "sys::Marker"
           },
-          "delta": {
+          "water": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Condenser_Water_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the flow of the condenser water",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2362,13 +2362,13 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
-            "type": "sys::Marker"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
           "condenser": {
+            "type": "sys::Marker"
+          },
+          "water": {
             "type": "sys::Marker"
           },
           "flow": {
@@ -2388,23 +2388,23 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
+          "sp": {
             "type": "sys::Marker"
           },
           "condenser": {
             "type": "sys::Marker"
           },
-          "flow": {
+          "water": {
             "type": "sys::Marker"
           },
-          "sp": {
+          "flow": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Bypass_Water_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow of bypass water",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2414,13 +2414,13 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
+          "sensor": {
             "type": "sys::Marker"
           },
           "bypass": {
             "type": "sys::Marker"
           },
-          "sensor": {
+          "water": {
             "type": "sys::Marker"
           },
           "flow": {
@@ -2430,7 +2430,7 @@
       },
       "Brick_Entering_Water_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the temperature of entering water",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2440,9 +2440,6 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
-            "type": "sys::Marker"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -2450,13 +2447,16 @@
             "type": "sys::Marker"
           },
           "temp": {
+            "type": "sys::Marker"
+          },
+          "water": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Leaving_Water_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the temperature of water leaving a piece of equipment or system",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2465,9 +2465,6 @@
             "type": "sys::Query",
             "of": "ph::Equip",
             "via": "equipRef+"
-          },
-          "water": {
-            "type": "sys::Marker"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -2477,12 +2474,15 @@
           },
           "temp": {
             "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Entering_Water_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow of water entering a piece of equipment or system",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2492,13 +2492,7 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
-            "type": "sys::Marker"
-          },
           "sensor": {
-            "type": "sys::Marker"
-          },
-          "flow": {
             "type": "sys::Marker"
           },
           "entering": {
@@ -2506,12 +2500,18 @@
           },
           "pressure": {
             "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          },
+          "flow": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Leaving_Water_Flow_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the rate of flow of water that is leaving a piece of equipment or system",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2520,9 +2520,6 @@
             "type": "sys::Query",
             "of": "ph::Equip",
             "via": "equipRef+"
-          },
-          "water": {
-            "type": "sys::Marker"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -2530,17 +2527,20 @@
           "leaving": {
             "type": "sys::Marker"
           },
-          "flow": {
+          "pressure": {
             "type": "sys::Marker"
           },
-          "pressure": {
+          "water": {
+            "type": "sys::Marker"
+          },
+          "flow": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Water_Differential_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the difference in water temperature between an upstream and downstream point in a pipe or conduit",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2550,23 +2550,23 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "water": {
+          "delta": {
             "type": "sys::Marker"
           },
           "sensor": {
             "type": "sys::Marker"
           },
-          "delta": {
+          "temp": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "water": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Water_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the temperature of water",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2589,7 +2589,7 @@
       },
       "Brick_Water_Level_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the height/level of water in some container",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2609,7 +2609,7 @@
       },
       "Brick_Leak_Alarm": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "An alarm that indicates leaks occured in systems containing fluids",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2626,7 +2626,7 @@
       },
       "Brick_Zone_Air_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "A physical or virtual sensor which represents the temperature of an HVAC Zone",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2639,20 +2639,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "temp": {
             "type": "sys::Marker"
           },
           "zone": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Zone_Air_Temperature_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets temperature of zone air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2662,16 +2662,16 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "air": {
+          "sp": {
             "type": "sys::Marker"
           },
-          "sp": {
+          "temp": {
             "type": "sys::Marker"
           },
           "zone": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
@@ -2688,26 +2688,26 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "effective": {
-            "type": "sys::Marker"
-          },
-          "air": {
-            "type": "sys::Marker"
-          },
           "sp": {
+            "type": "sys::Marker"
+          },
+          "temp": {
+            "type": "sys::Marker"
+          },
+          "effective": {
             "type": "sys::Marker"
           },
           "zone": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Zone_Air_Humidity_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the relative humidity of zone air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2720,20 +2720,20 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "humidity": {
             "type": "sys::Marker"
           },
           "zone": {
+            "type": "sys::Marker"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Zone_Air_Humidity_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Humidity setpoint for zone air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2743,9 +2743,6 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
           "sp": {
             "type": "sys::Marker"
           },
@@ -2754,12 +2751,15 @@
           },
           "zone": {
             "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Zone_Air_Dewpoint_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures dewpoint of zone air",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2775,20 +2775,20 @@
           "dewPoint": {
             "type": "sys::Marker"
           },
-          "air": {
+          "temp": {
             "type": "sys::Marker"
           },
           "zone": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Building_Air_Static_Pressure_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "The static pressure of air within a building",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2801,17 +2801,17 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "pressure": {
+          "air": {
             "type": "sys::Marker"
           },
-          "air": {
+          "pressure": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Building_Air_Static_Pressure_Setpoint": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sets static pressure of the entire building",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2824,17 +2824,17 @@
           "sp": {
             "type": "sys::Marker"
           },
-          "pressure": {
+          "air": {
             "type": "sys::Marker"
           },
-          "air": {
+          "pressure": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Average_Zone_Air_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "The computed average temperature of air in a zone, over some period of time",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2844,26 +2844,26 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "avg": {
-            "type": "sys::Marker"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
-          "air": {
+          "temp": {
+            "type": "sys::Marker"
+          },
+          "avg": {
             "type": "sys::Marker"
           },
           "zone": {
             "type": "sys::Marker"
           },
-          "temp": {
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Active_Power_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the portion of power that, averaged over a complete cycle of the AC waveform, results in net transfer of energy in one direction",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2873,10 +2873,10 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "power": {
+          "sensor": {
             "type": "sys::Marker"
           },
-          "sensor": {
+          "power": {
             "type": "sys::Marker"
           },
           "active": {
@@ -2886,7 +2886,7 @@
       },
       "Brick_Reactive_Power_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the portion of power that, averaged over a complete cycle of the AC waveform, is due to stored energy which returns to the source in each cycle",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2895,21 +2895,21 @@
             "type": "sys::Query",
             "of": "ph::Equip",
             "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
           },
           "power": {
             "type": "sys::Marker"
           },
           "reactive": {
             "type": "sys::Marker"
-          },
-          "sensor": {
-            "type": "sys::Marker"
           }
         }
       },
       "Brick_Current_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Senses the amperes of electrical current passing through the sensor",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2919,17 +2919,17 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "current": {
+          "sensor": {
             "type": "sys::Marker"
           },
-          "sensor": {
+          "current": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Voltage_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the voltage of an electrical device or object",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2949,7 +2949,7 @@
       },
       "Brick_Frequency_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the frequency of a phenomenon or aspect of a phenomenon, e.g. the frequency of a fan turning",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2969,7 +2969,7 @@
       },
       "Brick_Power_Factor_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Sensors measuring power Factor, under periodic conditions, is the ratio of the absolute value of the active power (P) to the apparent power (S).",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -2979,17 +2979,17 @@
             "of": "ph::Equip",
             "via": "equipRef+"
           },
-          "pf": {
+          "sensor": {
             "type": "sys::Marker"
           },
-          "sensor": {
+          "pf": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Torque_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures torque, the tendency of a force to rotate an object about some axis",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -3006,7 +3006,7 @@
       },
       "Brick_Heat_Sink_Temperature_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measure temperature of the heat sink on a device such as a VFD.",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -3026,7 +3026,7 @@
       },
       "Brick_DC_Bus_Voltage_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the voltage across a DC bus",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -3039,17 +3039,17 @@
           "sensor": {
             "type": "sys::Marker"
           },
-          "dc": {
+          "volt": {
             "type": "sys::Marker"
           },
-          "volt": {
+          "dc": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Condensate_Leak_Alarm": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "An alarm that indicates a leak of condensate from a cooling system",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -3069,7 +3069,7 @@
       },
       "Brick_Illuminance_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Measures the total luminous flux incident on a surface, per unit area",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -3089,7 +3089,7 @@
       },
       "Brick_PM1_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Detects matter of size 1 micron",
         "slots": {
           "point": {
             "type": "sys::Marker"
@@ -3135,7 +3135,7 @@
       },
       "Brick_PM10_Sensor": {
         "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "doc": "Detects matter of size 10 microns",
         "slots": {
           "point": {
             "type": "sys::Marker"
