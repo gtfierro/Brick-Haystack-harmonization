@@ -1,5 +1,16 @@
+import rdflib
+from brickschema.namespaces import BRICK, RDFS
 import csv
 from typing import Set
+
+replacements = {
+    "Sensor": "sensor",
+    "Setpoint": "sp",
+    "Command": "cmd",
+    "Status": "status",
+    "Alarm": "alarm",
+    "Temperature": "temp",
+}
 
 def clean_brick_classname(cls: str) -> str:
     return cls.replace(' ', '_')
@@ -15,13 +26,6 @@ def read_csv(filename: str):
             yield row
 
 def fixup_tags(tags: Set[str]):
-    replacements = {
-        "Sensor": "sensor",
-        "Setpoint": "sp",
-        "Command": "cmd",
-        "Status": "status",
-        "Alarm": "alarm",
-    }
     for t in tags.copy():
         if '|' in t:
             tags.remove(t)
@@ -32,3 +36,13 @@ def fixup_tags(tags: Set[str]):
             tags.remove(t)
             tags.add(replacements[t])
 
+
+def guess_tags(brick: rdflib.Graph, concept: rdflib.URIRef) -> Set[str]:
+    tags = brick.objects(concept, BRICK.hasAssociatedTag)
+    ret = set()
+    for tag in tags:
+        tstr = brick.value(tag, RDFS.label)
+        tstr = str(tag).split('#')[-1] if tstr is None else str(tstr)
+        tstr = replacements.get(tstr, tstr).lower()
+        ret.add(tstr)
+    return ret

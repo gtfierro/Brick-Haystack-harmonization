@@ -1,18 +1,20 @@
 import brickschema
 from brickschema.namespaces import SKOS, BRICK, RDFS
 import os
+from typing import List
 import pathlib
 import sys
-from .common import taglist_to_set, read_csv, fixup_tags, clean_brick_classname
+from .common import taglist_to_set, read_csv, fixup_tags, clean_brick_classname, guess_tags
 
 g = brickschema.Graph().load_file("Brick.ttl")
 seen_classes = set()
+parent_classes = set()
 
 def base_to_xeto(row: dict) -> str:
     point_class = clean_brick_classname(row["Brick:PointClass"])
-    if point_class in seen_classes:
+    if BRICK[point_class] in seen_classes:
         return ''
-    seen_classes.add(point_class)
+    seen_classes.add(BRICK[point_class])
     tags = taglist_to_set(row["Haystack:Markers"])
     tags.add(row["Brick:L1PointClass"])
     fixup_tags(tags)
@@ -20,17 +22,22 @@ def base_to_xeto(row: dict) -> str:
         tag_list = ', '.join(sorted(tags))
     else:
         tag_list = tags.pop()
+    return make_statement(point_class, tag_list)
+
+
+def make_statement(point_class: str, tag_list: str) -> str:
     parent = g.value(subject=BRICK[point_class], predicate=RDFS.subClassOf)
-    if parent is None:
+    if parent is None or parent == BRICK['Point']:
         parent = "Point"
     else:
+        parent_classes.add(parent)
         parent = f"Brick_{parent.split('#')[-1].replace('.','')}"
 
     defn = g.value(subject=BRICK[point_class], predicate=SKOS.definition)
     if defn is not None:
-        return f'// {defn}\nBrick_{point_class.replace(".", "")} <uri:"{point_class}"> : {parent} {{ {tag_list} }}\n'
+        return f'// {defn}\nBrick_{point_class.replace(".", "")} : {parent} <uri:"{point_class}"> {{ {tag_list} }}\n'
     else:
-        return f'\nBrick_{point_class.replace(".", "")} <uri:"{point_class}">: {parent} {{ {tag_list} }}\n'
+        return f'\nBrick_{point_class.replace(".", "")} : {parent} <uri:"{point_class}"> {{ {tag_list} }}\n'
 
 
 # TODO
@@ -48,6 +55,26 @@ def run(filename: str, outputfile: str):
             statements.append(base_to_xeto(row) + '\n')
         elif row["Meta:State"] == "Subparts":
             subparts_to_xeto(row) # TODO: finish
+
+    # compute any classes which show up as parents but aren't already
+    # in the file
+    while len(parent_classes):
+        leftover = parent_classes - seen_classes
+        if not leftover:
+            break
+        for concept in leftover:
+            if concept in seen_classes:
+                continue
+            seen_classes.add(concept)
+
+            tags = guess_tags(g, concept)
+            fixup_tags(tags)
+            statements.append(make_statement(
+                concept.split('#')[-1],
+                ', '.join(tags)
+            ))
+            parent_classes.remove(concept)
+
     # library name
     libfile = pathlib.Path(outputfile).with_name("lib.xeto")
     # create output directory
