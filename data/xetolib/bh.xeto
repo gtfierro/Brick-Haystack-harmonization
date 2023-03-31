@@ -1,399 +1,399 @@
 // An On/Off Command controls or reports the binary status of a control loop, relay or equipment activity
-Brick_On_Off_Command : Brick_Command { run, cmd }
+Brick_On_Off_Command <uri:"On_Off_Command"> : Brick_Command { cmd, run }
 
 // Indicates the on/off status of a control loop, relay or equipment
-Brick_On_Off_Status : Brick_Off_Status { run, status }
+Brick_On_Off_Status <uri:"On_Off_Status"> : Brick_Off_Status { status, run }
 
 // Commands that enable functionality
-Brick_Enable_Command : Brick_Command { enable, cmd }
+Brick_Enable_Command <uri:"Enable_Command"> : Brick_Command { enable, cmd }
 
 // Indicates if a system or piece of functionality has been enabled
-Brick_Enable_Status : Brick_Status { enable, status }
+Brick_Enable_Status <uri:"Enable_Status"> : Brick_Status { enable, status }
 
 // Indicates which mode a system, device or control loop is currently in
-Brick_Mode_Status : Brick_Status { run, status }
+Brick_Mode_Status <uri:"Mode_Status"> : Brick_Status { status, run }
 
 // Indicates the current operating mode of a system, device or control loop
-Brick_Operating_Mode_Status : Brick_Mode_Status { status }
+Brick_Operating_Mode_Status <uri:"Operating_Mode_Status"> : Brick_Mode_Status { status }
 
 // Controls whether or not a device or controller is operating in "Occupied" mode
-Brick_Occupancy_Command : Brick_Command { occupied, cmd }
+Brick_Occupancy_Command <uri:"Occupancy_Command"> : Brick_Command { occupied, cmd }
 
 // Indicates if a room or space is occupied
-Brick_Occupancy_Status : Brick_Status { status, occupied }
+Brick_Occupancy_Status <uri:"Occupancy_Status"> : Brick_Status { occupied, status }
 
 // Indicates if a system, device or control loop is in "Occupied" mode
-Brick_Occupied_Mode_Status : Brick_Mode_Status { status, occupied }
+Brick_Occupied_Mode_Status <uri:"Occupied_Mode_Status"> : Brick_Mode_Status { occupied, status }
 
 // Indicates if the expected operating status of an equipment or control loop has been overridden
-Brick_Overridden_Status : Brick_Status { status }
+Brick_Overridden_Status <uri:"Overridden_Status"> : Brick_Status { status }
 
 // Controls or reports whether or not a device or control loop is in 'override'
-Brick_Override_Command : Brick_Command { cmd }
+Brick_Override_Command <uri:"Override_Command"> : Brick_Command { cmd }
 
 // Indicates if a control loop, relay or equipment has been turned on when it would otherwise be scheduled to be off
-Brick_Overridden_On_Status : Brick_On_Status { status }
+Brick_Overridden_On_Status <uri:"Overridden_On_Status"> : Brick_On_Status { status }
 
 // Indicates if a control loop, relay or equipment has been turned off when it would otherwise be scheduled to be on
-Brick_Overridden_Off_Status : Brick_Off_Status { status }
+Brick_Overridden_Off_Status <uri:"Overridden_Off_Status"> : Brick_Off_Status { status }
 
 
-Brick_Operating_Mode_Command : Point { enable, cmd }
+Brick_Operating_Mode_Command <uri:"Operating_Mode_Command">: Point { enable, cmd }
 
 // Indicates if a request has been filed to start a device or equipment
-Brick_Run_Request_Status : Brick_Run_Status { run, status }
+Brick_Run_Request_Status <uri:"Run_Request_Status"> : Brick_Run_Status { status, run }
 
 // Indicates the presence of a fault in a device, system or control loop
-Brick_Fault_Status : Brick_Status { status }
+Brick_Fault_Status <uri:"Fault_Status"> : Brick_Status { status }
 
 // An alarm that indicates a loss of communication e.g. with a device or controller
-Brick_Communication_Loss_Alarm : Brick_Alarm { alarm }
+Brick_Communication_Loss_Alarm <uri:"Communication_Loss_Alarm"> : Brick_Alarm { alarm }
 
 
-Brick_Thermal_Power_Sensor : Brick_Power_Sensor { power, sensor }
+Brick_Thermal_Power_Sensor <uri:"Thermal_Power_Sensor">: Brick_Power_Sensor { sensor, power }
 
 
-Brick_Electrical_Power_Sensor : Point { power, sensor, elec }
+Brick_Electrical_Power_Sensor <uri:"Electrical_Power_Sensor">: Point { sensor, elec, power }
 
 // Measures the duration for which a device was in an active or "on" state
-Brick_Run_Time_Sensor : Brick_Duration_Sensor { run, sensor }
+Brick_Run_Time_Sensor <uri:"Run_Time_Sensor"> : Brick_Duration_Sensor { sensor, run }
 
 // Measures the temperature of discharge air
-Brick_Discharge_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor { discharge, sensor, air, temp }
+Brick_Discharge_Air_Temperature_Sensor <uri:"Discharge_Air_Temperature_Sensor"> : Brick_Air_Temperature_Sensor { sensor, discharge, air, temp }
 
 // Sets temperature of discharge air
-Brick_Discharge_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint { discharge, air, temp, sp }
+Brick_Discharge_Air_Temperature_Setpoint <uri:"Discharge_Air_Temperature_Setpoint"> : Brick_Air_Temperature_Setpoint { sp, discharge, air, temp }
 
 // Sets the size of a deadband of temperature of discharge air
-Brick_Discharge_Air_Temperature_Deadband_Setpoint : Brick_Discharge_Air_Temperature_Setpoint { discharge, air, temp, sp }
+Brick_Discharge_Air_Temperature_Deadband_Setpoint <uri:"Discharge_Air_Temperature_Deadband_Setpoint"> : Brick_Discharge_Air_Temperature_Setpoint { sp, discharge, air, temp }
 
 // Sets the size of a deadband of temperature of heating discharge air
-Brick_Heating_Discharge_Air_Temperature_Deadband_Setpoint : Brick_Discharge_Air_Temperature_Deadband_Setpoint { discharge, air, temp, heating, sp }
+Brick_Heating_Discharge_Air_Temperature_Deadband_Setpoint <uri:"Heating_Discharge_Air_Temperature_Deadband_Setpoint"> : Brick_Discharge_Air_Temperature_Deadband_Setpoint { sp, heating, discharge, air, temp }
 
 // Sets the size of a deadband of temperature of cooling discharge air
-Brick_Cooling_Discharge_Air_Temperature_Deadband_Setpoint : Brick_Discharge_Air_Temperature_Cooling_Setpoint { discharge, cooling, air, temp, sp }
+Brick_Cooling_Discharge_Air_Temperature_Deadband_Setpoint <uri:"Cooling_Discharge_Air_Temperature_Deadband_Setpoint"> : Brick_Discharge_Air_Temperature_Cooling_Setpoint { sp, cooling, discharge, air, temp }
 
 // Measures the relative humidity of discharge air
-Brick_Discharge_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor { discharge, sensor, air, humidity }
+Brick_Discharge_Air_Humidity_Sensor <uri:"Discharge_Air_Humidity_Sensor"> : Brick_Relative_Humidity_Sensor { sensor, discharge, air, humidity }
 
 // Humidity setpoint for discharge air
-Brick_Discharge_Air_Humidity_Setpoint : Brick_Humidity_Setpoint { discharge, air, humidity, sp }
+Brick_Discharge_Air_Humidity_Setpoint <uri:"Discharge_Air_Humidity_Setpoint"> : Brick_Humidity_Setpoint { sp, discharge, air, humidity }
 
 // The static pressure of air within discharge regions of an HVAC system
-Brick_Discharge_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor { discharge, sensor, air, pressure }
+Brick_Discharge_Air_Static_Pressure_Sensor <uri:"Discharge_Air_Static_Pressure_Sensor"> : Brick_Static_Pressure_Sensor { pressure, sensor, discharge, air }
 
 // Sets static pressure of discharge air
-Brick_Discharge_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint { discharge, air, pressure, sp }
+Brick_Discharge_Air_Static_Pressure_Setpoint <uri:"Discharge_Air_Static_Pressure_Setpoint"> : Brick_Static_Pressure_Setpoint { pressure, sp, discharge, air }
 
 
-Brick_Discharge_Air_Velocity_Pressure_Sensor : Brick_Velocity_Pressure_Sensor { discharge, sensor, velocity, air, pressure }
+Brick_Discharge_Air_Velocity_Pressure_Sensor <uri:"Discharge_Air_Velocity_Pressure_Sensor">: Brick_Velocity_Pressure_Sensor { pressure, sensor, discharge, air, velocity }
 
 // Measures dewpoint of discharge air
-Brick_Discharge_Air_Dewpoint_Sensor : Brick_Dewpoint_Sensor { discharge, sensor, air, temp, dewPoint }
+Brick_Discharge_Air_Dewpoint_Sensor <uri:"Discharge_Air_Dewpoint_Sensor"> : Brick_Dewpoint_Sensor { dewPoint, sensor, discharge, air, temp }
 
 // Measures the rate of flow of discharge air
-Brick_Discharge_Air_Flow_Sensor : Brick_Air_Flow_Sensor { discharge, flow, sensor, air }
+Brick_Discharge_Air_Flow_Sensor <uri:"Discharge_Air_Flow_Sensor"> : Brick_Air_Flow_Sensor { flow, sensor, discharge, air }
 
 // Sets discharge air flow
-Brick_Discharge_Air_Flow_Setpoint : Brick_Air_Flow_Setpoint { discharge, flow, air, sp }
+Brick_Discharge_Air_Flow_Setpoint <uri:"Discharge_Air_Flow_Setpoint"> : Brick_Air_Flow_Setpoint { flow, sp, discharge, air }
 
 // Sets discharge air flow for cooling
-Brick_Cooling_Discharge_Air_Flow_Setpoint : Brick_Discharge_Air_Flow_Setpoint { discharge, cooling, flow, air, sp }
+Brick_Cooling_Discharge_Air_Flow_Setpoint <uri:"Cooling_Discharge_Air_Flow_Setpoint"> : Brick_Discharge_Air_Flow_Setpoint { flow, sp, cooling, discharge, air }
 
 // Sets discharge air flow for heating
-Brick_Heating_Discharge_Air_Flow_Setpoint : Brick_Discharge_Air_Flow_Setpoint { discharge, flow, air, heating, sp }
+Brick_Heating_Discharge_Air_Flow_Setpoint <uri:"Heating_Discharge_Air_Flow_Setpoint"> : Brick_Discharge_Air_Flow_Setpoint { flow, sp, heating, discharge, air }
 
 
 
 
 // Measures the temperature of mixed air
-Brick_Mixed_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor { sensor, mixed, air, temp }
+Brick_Mixed_Air_Temperature_Sensor <uri:"Mixed_Air_Temperature_Sensor"> : Brick_Air_Temperature_Sensor { mixed, sensor, air, temp }
 
 // Sets temperature of mixed air
-Brick_Mixed_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint { mixed, air, temp, sp }
+Brick_Mixed_Air_Temperature_Setpoint <uri:"Mixed_Air_Temperature_Setpoint"> : Brick_Air_Temperature_Setpoint { mixed, sp, air, temp }
 
 // Measures the humidity of mixed air
-Brick_Mixed_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor { sensor, mixed, air, humidity }
+Brick_Mixed_Air_Humidity_Sensor <uri:"Mixed_Air_Humidity_Sensor"> : Brick_Relative_Humidity_Sensor { mixed, sensor, air, humidity }
 
 // Humidity setpoint for mixed air
-Brick_Mixed_Air_Humidity_Setpoint : Brick_Humidity_Setpoint { mixed, air, humidity, sp }
+Brick_Mixed_Air_Humidity_Setpoint <uri:"Mixed_Air_Humidity_Setpoint"> : Brick_Humidity_Setpoint { mixed, sp, air, humidity }
 
 // Measures the rate of flow of mixed air
-Brick_Mixed_Air_Flow_Sensor : Brick_Air_Flow_Sensor { flow, sensor, mixed, air }
+Brick_Mixed_Air_Flow_Sensor <uri:"Mixed_Air_Flow_Sensor"> : Brick_Air_Flow_Sensor { flow, mixed, sensor, air }
 
 // Measures the temperature of return air
-Brick_Return_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor { sensor, air, temp, return }
+Brick_Return_Air_Temperature_Sensor <uri:"Return_Air_Temperature_Sensor"> : Brick_Air_Temperature_Sensor { sensor, return, air, temp }
 
 // The target temperature for return air, often used as an approximation of zone air temperature
-Brick_Return_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint { air, temp, return, sp }
+Brick_Return_Air_Temperature_Setpoint <uri:"Return_Air_Temperature_Setpoint"> : Brick_Air_Temperature_Setpoint { sp, return, air, temp }
 
 // Measures the relative humidity of return air
-Brick_Return_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor { sensor, air, humidity, return }
+Brick_Return_Air_Humidity_Sensor <uri:"Return_Air_Humidity_Sensor"> : Brick_Relative_Humidity_Sensor { sensor, return, air, humidity }
 
 // Humidity setpoint for return air
-Brick_Return_Air_Humidity_Setpoint : Brick_Humidity_Setpoint { air, humidity, return, sp }
+Brick_Return_Air_Humidity_Setpoint <uri:"Return_Air_Humidity_Setpoint"> : Brick_Humidity_Setpoint { sp, return, air, humidity }
 
 // Measures the total heat content of return air
-Brick_Return_Air_Enthalpy_Sensor : Brick_Air_Enthalpy_Sensor { air, return, sensor }
+Brick_Return_Air_Enthalpy_Sensor <uri:"Return_Air_Enthalpy_Sensor"> : Brick_Air_Enthalpy_Sensor { return, air, sensor }
 
 // Senses the dewpoint temperature of return air
-Brick_Return_Air_Dewpoint_Sensor : Brick_Dewpoint_Sensor { sensor, air, temp, dewPoint, return }
+Brick_Return_Air_Dewpoint_Sensor <uri:"Return_Air_Dewpoint_Sensor"> : Brick_Dewpoint_Sensor { dewPoint, sensor, return, air, temp }
 
 // Measures the rate of flow of return air
-Brick_Return_Air_Flow_Sensor : Brick_Air_Flow_Sensor { flow, sensor, air, return }
+Brick_Return_Air_Flow_Sensor <uri:"Return_Air_Flow_Sensor"> : Brick_Air_Flow_Sensor { flow, sensor, return, air }
 
 // Measures the concentration of CO2 in return air
-Brick_Return_Air_CO2_Sensor : Brick_CO2_Sensor { sensor, air, co2, return }
+Brick_Return_Air_CO2_Sensor <uri:"Return_Air_CO2_Sensor"> : Brick_CO2_Sensor { sensor, return, co2, air }
 
 // Sets some property of CO2 in Return Air
-Brick_Return_Air_CO2_Setpoint : Brick_CO2_Setpoint { air, co2, return, sp }
+Brick_Return_Air_CO2_Setpoint <uri:"Return_Air_CO2_Setpoint"> : Brick_CO2_Setpoint { sp, return, co2, air }
 
 // Measures the temperature of outside air
-Brick_Outside_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor { outside, sensor, air, temp }
+Brick_Outside_Air_Temperature_Sensor <uri:"Outside_Air_Temperature_Sensor"> : Brick_Air_Temperature_Sensor { outside, sensor, air, temp }
 
 // Senses the dewpoint temperature of outside air
-Brick_Outside_Air_Dewpoint_Sensor : Brick_Dewpoint_Sensor { outside, sensor, air, temp, dewPoint }
+Brick_Outside_Air_Dewpoint_Sensor <uri:"Outside_Air_Dewpoint_Sensor"> : Brick_Dewpoint_Sensor { dewPoint, outside, sensor, air, temp }
 
 // Measures the relative humidity of outside air
-Brick_Outside_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor { outside, sensor, air, humidity }
+Brick_Outside_Air_Humidity_Sensor <uri:"Outside_Air_Humidity_Sensor"> : Brick_Relative_Humidity_Sensor { outside, sensor, air, humidity }
 
 // Measures the total heat content of outside air
-Brick_Outside_Air_Enthalpy_Sensor : Brick_Air_Enthalpy_Sensor { outside, air, sensor }
+Brick_Outside_Air_Enthalpy_Sensor <uri:"Outside_Air_Enthalpy_Sensor"> : Brick_Air_Enthalpy_Sensor { outside, air, sensor }
 
 // Measures the rate of flow of outside air into the system
-Brick_Outside_Air_Flow_Sensor : Brick_Air_Flow_Sensor { outside, flow, sensor, air }
+Brick_Outside_Air_Flow_Sensor <uri:"Outside_Air_Flow_Sensor"> : Brick_Air_Flow_Sensor { outside, flow, sensor, air }
 
 // Sets outside air flow rate
-Brick_Outside_Air_Flow_Setpoint : Brick_Air_Flow_Setpoint { outside, flow, min, air, sp }
+Brick_Outside_Air_Flow_Setpoint <uri:"Outside_Air_Flow_Setpoint"> : Brick_Air_Flow_Setpoint { outside, flow, min, sp, air }
 
 // Measures the concentration of CO2 in outside air
-Brick_Outside_Air_CO2_Sensor : Brick_CO2_Sensor { outside, sensor, air, co2 }
+Brick_Outside_Air_CO2_Sensor <uri:"Outside_Air_CO2_Sensor"> : Brick_CO2_Sensor { outside, sensor, co2, air }
 
 // Measures the temperature of exhaust air
-Brick_Exhaust_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor { sensor, air, temp, exhaust }
+Brick_Exhaust_Air_Temperature_Sensor <uri:"Exhaust_Air_Temperature_Sensor"> : Brick_Air_Temperature_Sensor { exhaust, sensor, air, temp }
 
 // Measures the relative humidity of exhaust air
-Brick_Exhaust_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor { sensor, air, exhaust, humidity }
+Brick_Exhaust_Air_Humidity_Sensor <uri:"Exhaust_Air_Humidity_Sensor"> : Brick_Relative_Humidity_Sensor { exhaust, sensor, air, humidity }
 
 // The static pressure of air within exhaust regions of an HVAC system
-Brick_Exhaust_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor { sensor, air, pressure, exhaust }
+Brick_Exhaust_Air_Static_Pressure_Sensor <uri:"Exhaust_Air_Static_Pressure_Sensor"> : Brick_Static_Pressure_Sensor { exhaust, pressure, sensor, air }
 
 // Sets static pressure of exhaust air
-Brick_Exhaust_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint { air, pressure, exhaust, sp }
+Brick_Exhaust_Air_Static_Pressure_Setpoint <uri:"Exhaust_Air_Static_Pressure_Setpoint"> : Brick_Static_Pressure_Setpoint { exhaust, pressure, sp, air }
 
 // Measures the rate of flow of exhaust air
-Brick_Exhaust_Air_Flow_Sensor : Brick_Air_Flow_Sensor { flow, sensor, air, exhaust }
+Brick_Exhaust_Air_Flow_Sensor <uri:"Exhaust_Air_Flow_Sensor"> : Brick_Air_Flow_Sensor { exhaust, flow, sensor, air }
 
 // Sets exhaust air flow rate
-Brick_Exhaust_Air_Flow_Setpoint : Brick_Air_Flow_Setpoint { flow, air, exhaust, sp }
+Brick_Exhaust_Air_Flow_Setpoint <uri:"Exhaust_Air_Flow_Setpoint"> : Brick_Air_Flow_Setpoint { exhaust, flow, sp, air }
 
 // Measures the temperature of air
-Brick_Air_Temperature_Sensor : Brick_Temperature_Sensor { air, temp, sensor }
+Brick_Air_Temperature_Sensor <uri:"Air_Temperature_Sensor"> : Brick_Temperature_Sensor { air, sensor, temp }
 
 // Sets temperature of air
-Brick_Air_Temperature_Setpoint : Brick_Temperature_Setpoint { air, temp, sp }
+Brick_Air_Temperature_Setpoint <uri:"Air_Temperature_Setpoint"> : Brick_Temperature_Setpoint { sp, air, temp }
 
 // Measures the present state of absolute humidity relative to a maximum humidity given the same temperature
-Brick_Relative_Humidity_Sensor : Brick_Humidity_Sensor { humidity, air, sensor }
+Brick_Relative_Humidity_Sensor <uri:"Relative_Humidity_Sensor"> : Brick_Humidity_Sensor { air, sensor, humidity }
 
 // Measures the concentration of water vapor in air
-Brick_Humidity_Sensor : Brick_Sensor { humidity, air, sensor }
+Brick_Humidity_Sensor <uri:"Humidity_Sensor"> : Brick_Sensor { air, sensor, humidity }
 
 // Measures the rate of flow of air
-Brick_Air_Flow_Sensor : Brick_Flow_Sensor { air, sensor, flow }
+Brick_Air_Flow_Sensor <uri:"Air_Flow_Sensor"> : Brick_Flow_Sensor { air, sensor, flow }
 
 // Sets air flow
-Brick_Air_Flow_Setpoint : Brick_Flow_Setpoint { air, sp, flow }
+Brick_Air_Flow_Setpoint <uri:"Air_Flow_Setpoint"> : Brick_Flow_Setpoint { sp, air, flow }
 
 // Measures the magnitude of velocity of some form of movement
-Brick_Speed_Sensor : Brick_Sensor { sensor, speed }
+Brick_Speed_Sensor <uri:"Speed_Sensor"> : Brick_Sensor { speed, sensor }
 
 // Sets speed
-Brick_Speed_Setpoint : Brick_Setpoint { sp, speed }
+Brick_Speed_Setpoint <uri:"Speed_Setpoint"> : Brick_Setpoint { speed, sp }
 
 // Measures the current position of a component in terms of a fraction of its full range of motion
-Brick_Position_Sensor : Brick_Sensor { sensor }
+Brick_Position_Sensor <uri:"Position_Sensor"> : Brick_Sensor { sensor }
 
 // Controls or reports the position of some object
-Brick_Position_Command : Brick_Command { cmd }
+Brick_Position_Command <uri:"Position_Command"> : Brick_Command { cmd }
 
 // Measures the rate of flow of some substance
-Brick_Flow_Sensor : Brick_Sensor { flow, sensor }
+Brick_Flow_Sensor <uri:"Flow_Sensor"> : Brick_Sensor { sensor, flow }
 
 // Sets flow
-Brick_Flow_Setpoint : Brick_Setpoint { flow, sp }
+Brick_Flow_Setpoint <uri:"Flow_Setpoint"> : Brick_Setpoint { sp, flow }
 
 // Measures resistance to airflow in a heating and cooling system's components and duct work
-Brick_Static_Pressure_Sensor : Brick_Pressure_Sensor { sensor, pressure }
+Brick_Static_Pressure_Sensor <uri:"Static_Pressure_Sensor"> : Brick_Pressure_Sensor { pressure, sensor }
 
 // Sets static pressure
-Brick_Static_Pressure_Setpoint : Brick_Pressure_Setpoint { pressure, sp }
+Brick_Static_Pressure_Setpoint <uri:"Static_Pressure_Setpoint"> : Brick_Pressure_Setpoint { pressure, sp }
 
 // Measures the difference between two applied pressures
-Brick_Differential_Pressure_Sensor : Brick_Pressure_Sensor { sensor, pressure, delta }
+Brick_Differential_Pressure_Sensor <uri:"Differential_Pressure_Sensor"> : Brick_Pressure_Sensor { pressure, delta, sensor }
 
 // Sets differential pressure
-Brick_Differential_Pressure_Setpoint : Brick_Differential_Setpoint { pressure, delta, sp }
+Brick_Differential_Pressure_Setpoint <uri:"Differential_Pressure_Setpoint"> : Brick_Differential_Setpoint { pressure, sp, delta }
 
 // Measures temperature: the physical property of matter that quantitatively expresses the common notions of hot and cold
-Brick_Temperature_Sensor : Brick_Sensor { temp, sensor }
+Brick_Temperature_Sensor <uri:"Temperature_Sensor"> : Brick_Sensor { sensor, temp }
 
 // Sets temperature
-Brick_Temperature_Setpoint : Brick_Setpoint { temp, sp }
+Brick_Temperature_Setpoint <uri:"Temperature_Setpoint"> : Brick_Setpoint { sp, temp }
 
 // Measures properties of CO2 in air
-Brick_CO2_Sensor : Brick_Air_Quality_Sensor { sensor, co2 }
+Brick_CO2_Sensor <uri:"CO2_Sensor"> : Brick_Air_Quality_Sensor { sensor, co2 }
 
 
-Brick_Outside_Air_Lockout_Temperature_Setpoint : Brick_Outside_Air_Temperature_Setpoint { outside, air, temp, disable, sp }
+Brick_Outside_Air_Lockout_Temperature_Setpoint <uri:"Outside_Air_Lockout_Temperature_Setpoint">: Brick_Outside_Air_Temperature_Setpoint { outside, sp, air, disable, temp }
 
 // Indicates if a piece of equipment, system, or functionality has been locked out from operation
-Brick_Lockout_Status : Brick_Status { outside, air, temp, status, economizing, disable }
+Brick_Lockout_Status <uri:"Lockout_Status"> : Brick_Status { economizing, outside, status, air, disable, temp }
 
 // Command that enables heating functionality in equipment but certain condition(s) must be met first before actively heating. For the actively heating control, see Heating_Command.
-Brick_Heating_Enable_Command : Brick_Enable_Command { run, cmd, heating }
+Brick_Heating_Enable_Command <uri:"Heating_Enable_Command"> : Brick_Enable_Command { cmd, heating, run }
 
 // Controls the amount of heating to be delivered (typically as a proportion of total heating output)
-Brick_Heating_Command : Brick_Command { stage:{n}, cmd, heat }
+Brick_Heating_Command <uri:"Heating_Command"> : Brick_Command { heat, cmd, stage:{n} }
 
 // Command that enables cooling functionality in equipment but certain condition(s) must be met first before actively cooling. For the actively cooling control, see Cooling_Command.
-Brick_Cooling_Enable_Command : Brick_Enable_Command { run, cooling, cmd }
+Brick_Cooling_Enable_Command <uri:"Cooling_Enable_Command"> : Brick_Enable_Command { cooling, cmd, run }
 
 // Controls the amount of cooling to be delivered (typically as a proportion of total cooling output)
-Brick_Cooling_Command : Brick_Command { cool, stage:{n}, cmd }
+Brick_Cooling_Command <uri:"Cooling_Command"> : Brick_Command { cmd, cool, stage:{n} }
 
 // Measures the rate of flow in a chilled water circuit
-Brick_Chilled_Water_Flow_Sensor : Brick_Water_Flow_Sensor { flow, sensor, chilled, water }
+Brick_Chilled_Water_Flow_Sensor <uri:"Chilled_Water_Flow_Sensor"> : Brick_Water_Flow_Sensor { chilled, flow, water, sensor }
 
 // Sets the target flow rate of chilled water
-Brick_Chilled_Water_Flow_Setpoint : Brick_Water_Flow_Setpoint { flow, chilled, water, sp }
+Brick_Chilled_Water_Flow_Setpoint <uri:"Chilled_Water_Flow_Setpoint"> : Brick_Water_Flow_Setpoint { chilled, flow, water, sp }
 
 
 // Measures the difference in temperature between the entering water to the chiller or other water cooling device and leaving water from the same chiller or other water cooling device
-Brick_Chilled_Water_Differential_Temperature_Sensor : Brick_Chilled_Water_Temperature_Sensor { sensor, temp, chilled, delta, water }
+Brick_Chilled_Water_Differential_Temperature_Sensor <uri:"Chilled_Water_Differential_Temperature_Sensor"> : Brick_Chilled_Water_Temperature_Sensor { chilled, water, sensor, delta, temp }
 
 // Measures the difference in water pressure on either side of a chilled water valve
-Brick_Chilled_Water_Differential_Pressure_Sensor : Brick_Differential_Pressure_Sensor { sensor, chilled, pressure, delta, water }
+Brick_Chilled_Water_Differential_Pressure_Sensor <uri:"Chilled_Water_Differential_Pressure_Sensor"> : Brick_Differential_Pressure_Sensor { pressure, chilled, water, sensor, delta }
 
 // Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit used to carry chilled water
-Brick_Chilled_Water_Differential_Pressure_Setpoint : Brick_Water_Differential_Pressure_Setpoint { chilled, pressure, delta, water, sp }
+Brick_Chilled_Water_Differential_Pressure_Setpoint <uri:"Chilled_Water_Differential_Pressure_Setpoint"> : Brick_Water_Differential_Pressure_Setpoint { pressure, chilled, water, sp, delta }
 
 
 // Measures the rate of flow in a hot water circuit
-Brick_Hot_Water_Flow_Sensor : Brick_Water_Flow_Sensor { flow, sensor, hot, water }
+Brick_Hot_Water_Flow_Sensor <uri:"Hot_Water_Flow_Sensor"> : Brick_Water_Flow_Sensor { flow, water, sensor, hot }
 
 // Sets the target flow rate of hot water
-Brick_Hot_Water_Flow_Setpoint : Brick_Water_Flow_Setpoint { flow, hot, water, sp }
+Brick_Hot_Water_Flow_Setpoint <uri:"Hot_Water_Flow_Setpoint"> : Brick_Water_Flow_Setpoint { flow, water, sp, hot }
 
 // Measures the difference in temperature between the entering water to the boiler or other water heating device and leaving water from the same boiler or other water heating device
-Brick_Hot_Water_Differential_Temperature_Sensor : Brick_Entering_Hot_Water_Temperature_Sensor { sensor, hot, temp, delta, water }
+Brick_Hot_Water_Differential_Temperature_Sensor <uri:"Hot_Water_Differential_Temperature_Sensor"> : Brick_Entering_Hot_Water_Temperature_Sensor { water, sensor, delta, hot, temp }
 
 // Measures the difference in water pressure on either side of a hot water valve
-Brick_Hot_Water_Differential_Pressure_Sensor : Brick_Differential_Pressure_Sensor { sensor, hot, pressure, delta, water }
+Brick_Hot_Water_Differential_Pressure_Sensor <uri:"Hot_Water_Differential_Pressure_Sensor"> : Brick_Differential_Pressure_Sensor { pressure, water, sensor, delta, hot }
 
 // Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit used to carry hot water
-Brick_Hot_Water_Differential_Pressure_Setpoint : Brick_Water_Differential_Pressure_Setpoint { hot, pressure, delta, water, sp }
+Brick_Hot_Water_Differential_Pressure_Setpoint <uri:"Hot_Water_Differential_Pressure_Setpoint"> : Brick_Water_Differential_Pressure_Setpoint { pressure, water, sp, delta, hot }
 
 // Measures the flow of the condenser water
-Brick_Condenser_Water_Flow_Sensor : Brick_Water_Flow_Sensor { flow, sensor, condenser, water }
+Brick_Condenser_Water_Flow_Sensor <uri:"Condenser_Water_Flow_Sensor"> : Brick_Water_Flow_Sensor { condenser, flow, water, sensor }
 
 
-Brick_Condenser_Water_Flow_Setpoint : Brick_Water_Flow_Setpoint { flow, condenser, water, sp }
+Brick_Condenser_Water_Flow_Setpoint <uri:"Condenser_Water_Flow_Setpoint">: Brick_Water_Flow_Setpoint { condenser, flow, water, sp }
 
 // Measures the rate of flow of bypass water
-Brick_Bypass_Water_Flow_Sensor : Brick_Water_Flow_Sensor { flow, sensor, water, bypass }
+Brick_Bypass_Water_Flow_Sensor <uri:"Bypass_Water_Flow_Sensor"> : Brick_Water_Flow_Sensor { flow, water, sensor, bypass }
 
 // Measures the temperature of entering water
-Brick_Entering_Water_Temperature_Sensor : Brick_Water_Temperature_Sensor { sensor, entering, temp, water }
+Brick_Entering_Water_Temperature_Sensor <uri:"Entering_Water_Temperature_Sensor"> : Brick_Water_Temperature_Sensor { entering, water, sensor, temp }
 
 // Measures the temperature of water leaving a piece of equipment or system
-Brick_Leaving_Water_Temperature_Sensor : Brick_Water_Temperature_Sensor { leaving, sensor, temp, water }
+Brick_Leaving_Water_Temperature_Sensor <uri:"Leaving_Water_Temperature_Sensor"> : Brick_Water_Temperature_Sensor { leaving, water, sensor, temp }
 
 // Measures the rate of flow of water entering a piece of equipment or system
-Brick_Entering_Water_Flow_Sensor : Brick_Water_Flow_Sensor { flow, sensor, entering, pressure, water }
+Brick_Entering_Water_Flow_Sensor <uri:"Entering_Water_Flow_Sensor"> : Brick_Water_Flow_Sensor { pressure, flow, entering, water, sensor }
 
 // Measures the rate of flow of water that is leaving a piece of equipment or system
-Brick_Leaving_Water_Flow_Sensor : Brick_Water_Flow_Sensor { leaving, flow, sensor, pressure, water }
+Brick_Leaving_Water_Flow_Sensor <uri:"Leaving_Water_Flow_Sensor"> : Brick_Water_Flow_Sensor { leaving, pressure, flow, water, sensor }
 
 // Measures the difference in water temperature between an upstream and downstream point in a pipe or conduit
-Brick_Water_Differential_Temperature_Sensor : Brick_Water_Temperature_Sensor { sensor, temp, delta, water }
+Brick_Water_Differential_Temperature_Sensor <uri:"Water_Differential_Temperature_Sensor"> : Brick_Water_Temperature_Sensor { water, sensor, delta, temp }
 
 // Measures the temperature of water
-Brick_Water_Temperature_Sensor : Brick_Temperature_Sensor { temp, water, sensor }
+Brick_Water_Temperature_Sensor <uri:"Water_Temperature_Sensor"> : Brick_Temperature_Sensor { water, sensor, temp }
 
 // Measures the height/level of water in some container
-Brick_Water_Level_Sensor : Brick_Sensor { sensor, water }
+Brick_Water_Level_Sensor <uri:"Water_Level_Sensor"> : Brick_Sensor { water, sensor }
 
 // An alarm that indicates leaks occured in systems containing fluids
-Brick_Leak_Alarm : Brick_Alarm { alarm }
+Brick_Leak_Alarm <uri:"Leak_Alarm"> : Brick_Alarm { alarm }
 
 // A physical or virtual sensor which represents the temperature of an HVAC Zone
-Brick_Zone_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor { sensor, zone, air, temp }
+Brick_Zone_Air_Temperature_Sensor <uri:"Zone_Air_Temperature_Sensor"> : Brick_Air_Temperature_Sensor { zone, sensor, air, temp }
 
 // Sets temperature of zone air
-Brick_Zone_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint { zone, air, temp, sp }
+Brick_Zone_Air_Temperature_Setpoint <uri:"Zone_Air_Temperature_Setpoint"> : Brick_Air_Temperature_Setpoint { zone, sp, air, temp }
 
 
-Brick_Effective_Zone_Air_Temperature_Setpoint : Brick_Effective_Air_Temperature_Setpoint { zone, air, temp, effective, sp }
+Brick_Effective_Zone_Air_Temperature_Setpoint <uri:"Effective_Zone_Air_Temperature_Setpoint">: Brick_Effective_Air_Temperature_Setpoint { zone, sp, effective, air, temp }
 
 // Measures the relative humidity of zone air
-Brick_Zone_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor { sensor, zone, air, humidity }
+Brick_Zone_Air_Humidity_Sensor <uri:"Zone_Air_Humidity_Sensor"> : Brick_Relative_Humidity_Sensor { zone, sensor, air, humidity }
 
 // Humidity setpoint for zone air
-Brick_Zone_Air_Humidity_Setpoint : Brick_Humidity_Setpoint { zone, air, humidity, sp }
+Brick_Zone_Air_Humidity_Setpoint <uri:"Zone_Air_Humidity_Setpoint"> : Brick_Humidity_Setpoint { zone, sp, air, humidity }
 
 // Measures dewpoint of zone air
-Brick_Zone_Air_Dewpoint_Sensor : Brick_Dewpoint_Sensor { sensor, zone, air, temp, dewPoint }
+Brick_Zone_Air_Dewpoint_Sensor <uri:"Zone_Air_Dewpoint_Sensor"> : Brick_Dewpoint_Sensor { dewPoint, zone, sensor, air, temp }
 
 // The static pressure of air within a building
-Brick_Building_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor { air, sensor, pressure }
+Brick_Building_Air_Static_Pressure_Sensor <uri:"Building_Air_Static_Pressure_Sensor"> : Brick_Static_Pressure_Sensor { pressure, air, sensor }
 
 // Sets static pressure of the entire building
-Brick_Building_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint { air, pressure, sp }
+Brick_Building_Air_Static_Pressure_Setpoint <uri:"Building_Air_Static_Pressure_Setpoint"> : Brick_Static_Pressure_Setpoint { pressure, sp, air }
 
 // The computed average temperature of air in a zone, over some period of time
-Brick_Average_Zone_Air_Temperature_Sensor : Brick_Zone_Air_Temperature_Sensor { sensor, zone, air, temp, avg }
+Brick_Average_Zone_Air_Temperature_Sensor <uri:"Average_Zone_Air_Temperature_Sensor"> : Brick_Zone_Air_Temperature_Sensor { zone, sensor, avg, air, temp }
 
 // Measures the portion of power that, averaged over a complete cycle of the AC waveform, results in net transfer of energy in one direction
-Brick_Active_Power_Sensor : Brick_Electric_Power_Sensor { active, power, sensor }
+Brick_Active_Power_Sensor <uri:"Active_Power_Sensor"> : Brick_Electric_Power_Sensor { power, sensor, active }
 
 // Measures the portion of power that, averaged over a complete cycle of the AC waveform, is due to stored energy which returns to the source in each cycle
-Brick_Reactive_Power_Sensor : Brick_Electric_Power_Sensor { reactive, power, sensor }
+Brick_Reactive_Power_Sensor <uri:"Reactive_Power_Sensor"> : Brick_Electric_Power_Sensor { power, reactive, sensor }
 
 // Senses the amperes of electrical current passing through the sensor
-Brick_Current_Sensor : Brick_Sensor { current, sensor }
+Brick_Current_Sensor <uri:"Current_Sensor"> : Brick_Sensor { current, sensor }
 
 // Measures the voltage of an electrical device or object
-Brick_Voltage_Sensor : Brick_Sensor { volt, sensor }
+Brick_Voltage_Sensor <uri:"Voltage_Sensor"> : Brick_Sensor { volt, sensor }
 
 // Measures the frequency of a phenomenon or aspect of a phenomenon, e.g. the frequency of a fan turning
-Brick_Frequency_Sensor : Brick_Sensor { sensor, freq }
+Brick_Frequency_Sensor <uri:"Frequency_Sensor"> : Brick_Sensor { sensor, freq }
 
 // Sensors measuring power Factor, under periodic conditions, is the ratio of the absolute value of the active power (P) to the apparent power (S).
-Brick_Power_Factor_Sensor : Brick_Sensor { pf, sensor }
+Brick_Power_Factor_Sensor <uri:"Power_Factor_Sensor"> : Brick_Sensor { pf, sensor }
 
 // Measures torque, the tendency of a force to rotate an object about some axis
-Brick_Torque_Sensor : Brick_Sensor { sensor }
+Brick_Torque_Sensor <uri:"Torque_Sensor"> : Brick_Sensor { sensor }
 
 // Measure temperature of the heat sink on a device such as a VFD.
-Brick_Heat_Sink_Temperature_Sensor : Brick_Temperature_Sensor { temp, sensor }
+Brick_Heat_Sink_Temperature_Sensor <uri:"Heat_Sink_Temperature_Sensor"> : Brick_Temperature_Sensor { sensor, temp }
 
 // Measures the voltage across a DC bus
-Brick_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor { dc, volt, sensor }
+Brick_DC_Bus_Voltage_Sensor <uri:"DC_Bus_Voltage_Sensor"> : Brick_Voltage_Sensor { dc, sensor, volt }
 
 // An alarm that indicates a leak of condensate from a cooling system
-Brick_Condensate_Leak_Alarm : Brick_Leak_Alarm { condensate, status }
+Brick_Condensate_Leak_Alarm <uri:"Condensate_Leak_Alarm"> : Brick_Leak_Alarm { condensate, status }
 
 
 // Measures the total luminous flux incident on a surface, per unit area
-Brick_Illuminance_Sensor : Brick_Sensor { sensor, illuminance }
+Brick_Illuminance_Sensor <uri:"Illuminance_Sensor"> : Brick_Sensor { sensor, illuminance }
 
 // Detects matter of size 1 micron
-Brick_PM1_Sensor : Brick_Particulate_Matter_Sensor { zone, air, sensor }
+Brick_PM1_Sensor <uri:"PM1_Sensor"> : Brick_Particulate_Matter_Sensor { zone, air, sensor }
 
 // Detects matter of size 2.5 microns
-Brick_PM25_Sensor : Brick_Particulate_Matter_Sensor { zone, air, sensor }
+Brick_PM25_Sensor <uri:"PM2.5_Sensor"> : Brick_Particulate_Matter_Sensor { zone, air, sensor }
 
 // Detects matter of size 10 microns
-Brick_PM10_Sensor : Brick_Particulate_Matter_Sensor { zone, air, sensor }
+Brick_PM10_Sensor <uri:"PM10_Sensor"> : Brick_Particulate_Matter_Sensor { zone, air, sensor }
 

@@ -2,6 +2,7 @@
 pragma: Lib <
   doc: "Generated xeto file"
   version: "3.9.12"
+  baseUri: "https://brickschema.org/schema/Brick#"
   depends: {
     { lib: "sys" }
     { lib: "ph" }

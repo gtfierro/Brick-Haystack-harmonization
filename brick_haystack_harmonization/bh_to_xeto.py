@@ -28,9 +28,9 @@ def base_to_xeto(row: dict) -> str:
 
     defn = g.value(subject=BRICK[point_class], predicate=SKOS.definition)
     if defn is not None:
-        return f"// {defn}\nBrick_{point_class.replace('.', '')} : {parent} {{ {tag_list} }}\n"
+        return f'// {defn}\nBrick_{point_class.replace(".", "")} <uri:"{point_class}"> : {parent} {{ {tag_list} }}\n'
     else:
-        return f"\nBrick_{point_class.replace('.', '')} : {parent} {{ {tag_list} }}\n"
+        return f'\nBrick_{point_class.replace(".", "")} <uri:"{point_class}">: {parent} {{ {tag_list} }}\n'
 
 
 # TODO
@@ -57,19 +57,22 @@ def run(filename: str, outputfile: str):
         f.writelines(statements)
 
     # write library file
+    mappings = dict(g.namespace_manager.namespaces())
+    brick_base_uri = mappings["brick"]
     with open(libfile, "w") as f:
-        f.write("""
+        f.write(f"""
 pragma: Lib <
   doc: "Generated xeto file"
   version: "3.9.12"
-  depends: {
-    { lib: "sys" }
-    { lib: "ph" }
-  }
-  org: {
+  baseUri: "{brick_base_uri}"
+  depends: {{
+    {{ lib: "sys" }}
+    {{ lib: "ph" }}
+  }}
+  org: {{
    dis: "Brick xeto file"
    uri: "https://github.com/gtfierro/Brick-Haystack-harmonization"
-  }
+  }}
 >""")
 
 
