@@ -17,7 +17,7 @@ def base_to_xeto(row: dict) -> str:
     tags.add(row["Brick:L1PointClass"])
     fixup_tags(tags)
     if len(tags) > 1:
-        tag_list = ', '.join(tags)
+        tag_list = ', '.join(sorted(tags))
     else:
         tag_list = tags.pop()
     parent = g.value(subject=BRICK[point_class], predicate=RDFS.subClassOf)
