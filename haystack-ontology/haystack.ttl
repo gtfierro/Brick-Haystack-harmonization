@@ -49,7 +49,6 @@ ph:ValueTag a owl:Class, sh:NodeShape ;
         sh:maxCount 1 ;
         sh:minCount 1 ;
         sh:path ph:value ;
-        sh:datatype xsd:anyURI ;
     ] ;
 .
 

@@ -26,7 +26,7 @@ data/resolved-all.json: xeto/*
 data/all.json: xeto/*
 	xeto/bin/xeto json-ast -own -out data/resolved-all.json all
 
-data/haystack-models/%.ttl: data/haystack-models/%.json
+data/haystack-models/%.ttl: data/haystack-models/%.json brick_haystack_harmonization/ph_to_ttl.py haystack-ontology/haystack.ttl
 	poetry run ph-to-ttl $< $@
 
 data/bh.ttl: data/resolved-bh.json

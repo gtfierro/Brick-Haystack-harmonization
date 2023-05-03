@@ -3,13 +3,12 @@ import json
 from rdflib import Namespace, Literal
 import rdflib
 import brickschema
-from brickschema.namespaces import SKOS, BRICK, RDFS, A
+from brickschema.namespaces import SKOS, BRICK, RDFS, A, XSD
 
 M = Namespace("urn:model/")
 PH = Namespace("urn:project_haystack/")
 
-g = brickschema.Graph().load_file("haystack-ontology/haystack.ttl")
-model = brickschema.Graph()
+model = brickschema.Graph().load_file("haystack-ontology/haystack.ttl")
 model.bind("model", M)
 model.bind("ph", PH)
 
@@ -40,7 +39,7 @@ def run(haystack_file: str, output_file: str):
                     M[eid],
                     PH.hasValueTag,
                     [
-                        (PH.key, Literal(key)),
+                        (PH.key, Literal(key, datatype=XSD.string)),
                         (PH.value, Literal(value)),
                     ],
                 )
@@ -59,11 +58,15 @@ def run(haystack_file: str, output_file: str):
                     M[eid],
                     PH.hasRefTag,
                     [
-                        (PH.key, Literal(key)),
+                        (PH.key, Literal(key, datatype=XSD.string)),
                         (PH.value, vent),
                     ],
                 )
             )
+    valid, _, report = model.validate()
+    if not valid:
+        print(report)
+        sys.exit(1)
 
     model.serialize(output_file, format=rdflib.util.guess_format(output_file) or "ttl")
 
