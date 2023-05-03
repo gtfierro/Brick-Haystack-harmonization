@@ -8,8 +8,21 @@ import json
 g = brickschema.Graph()
 XETO = Namespace("urn:brick-haystack-xeto/")
 g.add((URIRef("urn:brick-haystack-xeto"), A, OWL.Ontology))
-g.add((URIRef("urn:brick-haystack-xeto"), OWL.imports, URIRef("http://www.w3.org/ns/shacl")))
-g.add((URIRef("urn:brick-haystack-xeto"), OWL.imports, URIRef("https://brickschema.org/schema/Brick")))
+g.add(
+    (
+        URIRef("urn:brick-haystack-xeto"),
+        OWL.imports,
+        URIRef("http://www.w3.org/ns/shacl"),
+    )
+)
+g.add(
+    (
+        URIRef("urn:brick-haystack-xeto"),
+        OWL.imports,
+        URIRef("https://brickschema.org/schema/Brick"),
+    )
+)
+
 
 def read_slots(resolved_repr: dict):
     for library_name, definition in resolved_repr.items():
@@ -32,21 +45,34 @@ def slot_to_shacl(library_name, name, defn):
             if "type" in slot:
                 target_shape = XETO[slot["type"]]
                 # add a "dependency" on the shape indicated in this slot
-                g.add((shape, SH.property, [
-                    (A, SH.PropertyShape),
-                    (SH.path, BRICK.hasPoint),
-                    (SH.node, target_shape),
-                ]))
+                g.add(
+                    (
+                        shape,
+                        SH.property,
+                        [
+                            (A, SH.PropertyShape),
+                            (SH.path, BRICK.hasPoint),
+                            (SH.node, target_shape),
+                        ],
+                    )
+                )
 
     # loop through the rest of the type definition
     for key, keydefn in defn["slots"].items():
         # if it's a marker, add the SHACL requirement
         if keydefn["type"] == "sys::Marker":
-            g.add((shape, SH.property, [
-                (A, SH.PropertyShape),
-                (SH.path, BRICK.hasTag),
-                (SH.value, TAG[key])
-            ]))
+            g.add(
+                (
+                    shape,
+                    SH.property,
+                    [
+                        (A, SH.PropertyShape),
+                        (SH.path, BRICK.hasTag),
+                        (SH.value, TAG[key]),
+                    ],
+                )
+            )
+
 
 def main():
     if len(sys.argv) < 3:

@@ -20,7 +20,9 @@ def check_brick_hierarchy(graph: rdflib.Graph, taxonomy: dict):
         parents = concept_defn.get("parents", [])
         for parent_concept in parents:
             if parent_concept not in taxonomy:
-                messages.append(f"Parent concept {parent_concept} not found in taxonomy")
+                messages.append(
+                    f"Parent concept {parent_concept} not found in taxonomy"
+                )
                 continue
             parent_concept_uri = taxonomy[parent_concept].get("brick")
             if parent_concept_uri is None:
@@ -48,6 +50,7 @@ def main():
     graph.parse(sys.argv[1], format="turtle")
     taxonomy = yaml.load(open(sys.argv[2]), Loader=Loader)
     check_brick_hierarchy(graph, taxonomy)
+
 
 if __name__ == "__main__":
     main()
