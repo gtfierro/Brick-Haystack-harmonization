@@ -42,9 +42,9 @@ def make_statement(point_class: str, tag_list: str) -> str:
 
     defn = g.value(subject=BRICK[point_class], predicate=SKOS.definition)
     if defn is not None:
-        return f'// {defn}\nBrick_{point_class.replace(".", "")} : {parent} <uri:"{point_class}"> {{ {tag_list} }}\n'
+        return f'// {defn}\nBrick_{point_class.replace(".", "")} : {parent} <uri:"{BRICK[point_class]}"> {{ {tag_list} }}\n'
     else:
-        return f'\nBrick_{point_class.replace(".", "")} : {parent} <uri:"{point_class}"> {{ {tag_list} }}\n'
+        return f'\nBrick_{point_class.replace(".", "")} : {parent} <uri:"{BRICK[point_class]}"> {{ {tag_list} }}\n'
 
 
 # TODO
