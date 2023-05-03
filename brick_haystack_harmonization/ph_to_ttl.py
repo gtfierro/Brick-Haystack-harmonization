@@ -19,8 +19,11 @@ def run(haystack_file: str, output_file: str):
         defs = json.load(f)
     rows = defs["rows"]
     for ent in rows:
+        # define entity URI using 'id' field
         eid = ent["id"]["val"]
         model.add((M[eid], A, PH.Entity))
+
+        # define and add marker tags
         marker_tags = [
             t
             for t, v in ent.items()
@@ -28,6 +31,8 @@ def run(haystack_file: str, output_file: str):
         ]
         for mt in marker_tags:
             model.add((M[eid], PH.hasMarkerTag, Literal(mt)))
+
+        # define and add value tags (key-value pairs)
         value_tags = [(t, v) for t, v in ent.items() if not isinstance(v, dict)]
         for key, value in value_tags:
             model.add(
@@ -40,6 +45,8 @@ def run(haystack_file: str, output_file: str):
                     ],
                 )
             )
+
+        # define and add ref tags
         ref_tags = [
             (t, v)
             for t, v in ent.items()
