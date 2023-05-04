@@ -12,6 +12,7 @@ ph-to-ttl = "brick_haystack_harmonization.ph_to_ttl:main"
 xeto-to-shacl = "brick_haystack_harmonization.xeto_to_shacl:main"
 visualize-taxonomy = "brick_haystack_harmonization.visualize_taxonomy:main"
 check-brick = "brick_haystack_harmonization.check_brick:main"
+brick-to-haystack = "brick_haystack_harmonization.brick_to_haystack:main"
 
 [tool.poetry.dependencies]
 python = "^3.7"

@@ -8,6 +8,10 @@ import json
 
 g = brickschema.Graph()
 XETO = Namespace("urn:brick-haystack-xeto/")
+PH = Namespace("urn:project_haystack/")
+g.bind("ph", PH)
+g.bind("xeto", XETO)
+
 g.add((URIRef("urn:brick-haystack-xeto"), A, OWL.Ontology))
 g.add(
     (
@@ -39,6 +43,15 @@ def slot_to_shacl(library_name, name, defn):
         shape = XETO[f"{library_name}::{name}"]
 
     g.add((shape, A, SH.NodeShape))
+    g.add((shape, A, OWL.Class))
+    g.add(
+        (shape, SH.rule, [
+            (A, SH.TripleRule),
+            (SH.object, PH.Entity),
+            (SH.predicate, RDF.type),
+            (SH.subject, SH.this)
+        ])
+    )
     if "slots" not in defn:
         return
     if "points" in defn["slots"]:
@@ -73,10 +86,26 @@ def slot_to_shacl(library_name, name, defn):
                     SH.property,
                     [
                         (A, SH.PropertyShape),
-                        (SH.path, BRICK.hasTag),
-                        (SH.value, Literal(key)),
+                        (SH.path, PH.hasMarkerTag),
+                        (
+                            SH.qualifiedValueShape,
+                            [
+                                (SH.hasValue, Literal(key)),
+                            ],
+                        ),
+                        (SH.qualifiedMinCount, Literal(1)),
                     ],
                 )
+            )
+
+            # add rule to infer tags
+            g.add(
+                (shape, SH.rule, [
+                    (A, SH.TripleRule),
+                    (SH.object, Literal(key)),
+                    (SH.predicate, PH.hasMarkerTag),
+                    (SH.subject, SH.this)
+                ])
             )
 
 

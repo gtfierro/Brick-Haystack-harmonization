@@ -1,9 +1,21 @@
 @prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix ex: <http://example.org#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix ph: <urn:project_haystack/> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex:vav1 a brick:VAV ;
+    brick:feeds ex:zone1 ;
+    brick:hasPart ex:hw_coil,
+        ex:vdmp1 ;
+    brick:hasPoint ex:co2s1,
+        ex:safs1,
+        ex:sats1,
+        ex:zts1 .
 
 brick:Active_Power_Sensor a owl:Class,
         sh:NodeShape ;
@@ -297,15 +309,15 @@ brick:Alarm a owl:Class,
             sh:qualifiedMinCount 1 ;
             sh:qualifiedValueShape [ sh:hasValue "point" ] ] ;
     sh:rule [ a sh:TripleRule ;
-            sh:object "point" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
             sh:object ph:Entity ;
             sh:predicate rdf:type ;
             sh:subject sh:this ],
         [ a sh:TripleRule ;
             sh:object "alarm" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object "point" ;
             sh:predicate ph:hasMarkerTag ;
             sh:subject sh:this ] .
 
@@ -486,53 +498,6 @@ brick:Bypass_Water_Flow_Sensor a owl:Class,
             sh:subject sh:this ],
         [ a sh:TripleRule ;
             sh:object "point" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ] .
-
-brick:CO2_Sensor a owl:Class,
-        sh:NodeShape ;
-    sh:property [ a sh:PropertyShape ;
-            sh:path ph:hasMarkerTag ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:hasValue "point" ] ],
-        [ a sh:PropertyShape ;
-            sh:path ph:hasMarkerTag ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:hasValue "sensor" ] ],
-        [ a sh:PropertyShape ;
-            sh:path ph:hasMarkerTag ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:hasValue "co2" ] ],
-        [ a sh:PropertyShape ;
-            sh:path ph:hasMarkerTag ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:hasValue "quality" ] ],
-        [ a sh:PropertyShape ;
-            sh:path ph:hasMarkerTag ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:hasValue "air" ] ] ;
-    sh:rule [ a sh:TripleRule ;
-            sh:object "sensor" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
-            sh:object "point" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
-            sh:object "air" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
-            sh:object "co2" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
-            sh:object ph:Entity ;
-            sh:predicate rdf:type ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
-            sh:object "quality" ;
             sh:predicate ph:hasMarkerTag ;
             sh:subject sh:this ] .
 
@@ -6820,53 +6785,6 @@ brick:Zone_Air_Humidity_Setpoint a owl:Class,
             sh:predicate rdf:type ;
             sh:subject sh:this ] .
 
-brick:Zone_Air_Temperature_Sensor a owl:Class,
-        sh:NodeShape ;
-    sh:property [ a sh:PropertyShape ;
-            sh:path ph:hasMarkerTag ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:hasValue "point" ] ],
-        [ a sh:PropertyShape ;
-            sh:path ph:hasMarkerTag ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:hasValue "zone" ] ],
-        [ a sh:PropertyShape ;
-            sh:path ph:hasMarkerTag ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:hasValue "sensor" ] ],
-        [ a sh:PropertyShape ;
-            sh:path ph:hasMarkerTag ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:hasValue "temp" ] ],
-        [ a sh:PropertyShape ;
-            sh:path ph:hasMarkerTag ;
-            sh:qualifiedMinCount 1 ;
-            sh:qualifiedValueShape [ sh:hasValue "air" ] ] ;
-    sh:rule [ a sh:TripleRule ;
-            sh:object ph:Entity ;
-            sh:predicate rdf:type ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
-            sh:object "sensor" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
-            sh:object "point" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
-            sh:object "air" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
-            sh:object "temp" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ],
-        [ a sh:TripleRule ;
-            sh:object "zone" ;
-            sh:predicate ph:hasMarkerTag ;
-            sh:subject sh:this ] .
-
 brick:Zone_Air_Temperature_Setpoint a owl:Class,
         sh:NodeShape ;
     sh:property [ a sh:PropertyShape ;
@@ -6917,4 +6835,194 @@ brick:Zone_Air_Temperature_Setpoint a owl:Class,
 <urn:brick-haystack-xeto> a owl:Ontology ;
     owl:imports <http://www.w3.org/ns/shacl>,
         <https://brickschema.org/schema/Brick> .
+
+<urn:project_haystack> a owl:Ontology ;
+    rdfs:label "Haystack RDF Representation" ;
+    sh:declare [ sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+            sh:prefix "rdf" ],
+        [ sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace "http://www.w3.org/ns/shacl#"^^xsd:anyURI ;
+            sh:prefix "sh" ],
+        [ sh:namespace "http://www.w3.org/2002/07/owl#"^^xsd:anyURI ;
+            sh:prefix "owl" ] .
+
+ph:RefTag a owl:Class,
+        sh:NodeShape ;
+    rdfs:label "Value Tag" ;
+    rdfs:subClassOf ph:ValueTag ;
+    sh:property [ sh:class ph:Entity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path ph:value ] .
+
+ex:dmppos1 a brick:Damper_Position_Command .
+
+ex:hw_coil a brick:Hot_Water_Coil ;
+    brick:hasPart ex:hwvlv .
+
+ex:hwvlv a brick:Heating_Valve ;
+    brick:hasPoint ex:vlvcmd1 .
+
+ex:room1 a brick:Room .
+
+ex:room2 a brick:Room ;
+    brick:hasPoint ex:co2s1,
+        ex:zts1 .
+
+ex:safs1 a brick:Supply_Air_Flow_Sensor .
+
+ex:sats1 a brick:Supply_Air_Temperature_Sensor .
+
+ex:vdmp1 a brick:Damper ;
+    brick:hasPoint ex:dmppos1 .
+
+ex:vlvcmd1 a brick:Valve_Command .
+
+ex:zone1 a brick:HVAC_Zone ;
+    brick:hasPart ex:room1,
+        ex:room2 .
+
+brick:CO2_Sensor a owl:Class,
+        sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path ph:hasMarkerTag ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:hasValue "point" ] ],
+        [ a sh:PropertyShape ;
+            sh:path ph:hasMarkerTag ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:hasValue "sensor" ] ],
+        [ a sh:PropertyShape ;
+            sh:path ph:hasMarkerTag ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:hasValue "co2" ] ],
+        [ a sh:PropertyShape ;
+            sh:path ph:hasMarkerTag ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:hasValue "quality" ] ],
+        [ a sh:PropertyShape ;
+            sh:path ph:hasMarkerTag ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:hasValue "air" ] ] ;
+    sh:rule [ a sh:TripleRule ;
+            sh:object "sensor" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object "point" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object "air" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object "co2" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object ph:Entity ;
+            sh:predicate rdf:type ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object "quality" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ] .
+
+brick:Zone_Air_Temperature_Sensor a owl:Class,
+        sh:NodeShape ;
+    sh:property [ a sh:PropertyShape ;
+            sh:path ph:hasMarkerTag ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:hasValue "point" ] ],
+        [ a sh:PropertyShape ;
+            sh:path ph:hasMarkerTag ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:hasValue "zone" ] ],
+        [ a sh:PropertyShape ;
+            sh:path ph:hasMarkerTag ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:hasValue "sensor" ] ],
+        [ a sh:PropertyShape ;
+            sh:path ph:hasMarkerTag ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:hasValue "temp" ] ],
+        [ a sh:PropertyShape ;
+            sh:path ph:hasMarkerTag ;
+            sh:qualifiedMinCount 1 ;
+            sh:qualifiedValueShape [ sh:hasValue "air" ] ] ;
+    sh:rule [ a sh:TripleRule ;
+            sh:object ph:Entity ;
+            sh:predicate rdf:type ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object "sensor" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object "point" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object "air" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object "temp" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ],
+        [ a sh:TripleRule ;
+            sh:object "zone" ;
+            sh:predicate ph:hasMarkerTag ;
+            sh:subject sh:this ] .
+
+ph:hasMarkerTagShape a sh:PropertyShape ;
+    sh:datatype xsd:string ;
+    sh:path ph:hasMarkerTag .
+
+ph:hasValueTag a owl:ObjectProperty ;
+    rdfs:label "has value tag" ;
+    skos:definition "Value tag (k/v pair) associated with an entity" .
+
+ph:hasValueTagShape a sh:PropertyShape ;
+    sh:node ph:ValueTag ;
+    sh:path ph:hasValueTag .
+
+ex:co2s1 a brick:CO2_Sensor,
+        ph:Entity ;
+    ph:hasMarkerTag "air",
+        "co2",
+        "point",
+        "quality",
+        "sensor" .
+
+ex:zts1 a brick:Zone_Air_Temperature_Sensor,
+        ph:Entity ;
+    ph:hasMarkerTag "air",
+        "point",
+        "sensor",
+        "temp",
+        "zone" .
+
+ph:ValueTag a owl:Class,
+        sh:NodeShape ;
+    rdfs:label "Value Tag" ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:maxCount 1 ;
+            sh:message "Each value tag must have a key/name" ;
+            sh:minCount 1 ;
+            sh:path ph:key ],
+        [ sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path ph:value ] .
+
+ph:Entity a owl:Class,
+        sh:NodeShape ;
+    sh:property ph:hasMarkerTagShape,
+        ph:hasValueTagShape .
+
+ph:hasMarkerTag a owl:DatatypeProperty ;
+    rdfs:label "has marker tag" ;
+    skos:definition "Marker tag associated with an entity" .
 
