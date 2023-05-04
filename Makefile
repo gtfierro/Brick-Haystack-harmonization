@@ -1,8 +1,8 @@
 .PHONY: install-deps visualize-taxonomy check-taxonomy all clean convert-haystack-to-ttl
 
-all: install-deps data/resolved-bh.json data/resolved-all.json convert-haystack-to-ttl
+all: install-deps data/resolved-bh.json data/resolved-all.json convert-haystack-to-ttl data/bh.ttl
 
-install-deps:
+install-deps: pyproject.toml poetry.lock
 	poetry install
 
 visualize-taxonomy:
@@ -31,7 +31,7 @@ data/all.json: xeto/* data/xetolib/
 data/haystack-models/%.ttl: data/haystack-models/%.json brick_haystack_harmonization/ph_to_ttl.py haystack-ontology/haystack.ttl
 	poetry run ph-to-ttl $< $@
 
-data/bh.ttl: data/resolved-bh.json
+data/bh.ttl: data/resolved-bh.json brick_haystack_harmonization/xeto_to_shacl.py
 	poetry run xeto-to-shacl data/resolved-bh.json data/bh.ttl
 
 clean:

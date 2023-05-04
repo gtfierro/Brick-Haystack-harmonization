@@ -1,7 +1,7 @@
 import sys
 import brickschema
-from brickschema.namespaces import BRICK, SH, A, RDF, RDFS, TAG, OWL
-from rdflib import Namespace, URIRef, BNode
+from brickschema.namespaces import BRICK, SH, A, RDF, RDFS, OWL
+from rdflib import Namespace, URIRef, BNode, Literal
 from rdflib.util import guess_format
 import json
 
@@ -31,7 +31,7 @@ def read_slots(resolved_repr: dict):
 
 
 def slot_to_shacl(library_name, name, defn):
-    shape = XETO[f"{library_name}::{name}"]
+    shape = URIRef(defn["uri"])
     g.add((shape, A, SH.NodeShape))
     if "slots" not in defn:
         return
@@ -68,7 +68,7 @@ def slot_to_shacl(library_name, name, defn):
                     [
                         (A, SH.PropertyShape),
                         (SH.path, BRICK.hasTag),
-                        (SH.value, TAG[key]),
+                        (SH.value, Literal(key)),
                     ],
                 )
             )
