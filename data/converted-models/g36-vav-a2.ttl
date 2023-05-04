@@ -6847,15 +6847,6 @@ brick:Zone_Air_Temperature_Setpoint a owl:Class,
         [ sh:namespace "http://www.w3.org/2002/07/owl#"^^xsd:anyURI ;
             sh:prefix "owl" ] .
 
-ph:RefTag a owl:Class,
-        sh:NodeShape ;
-    rdfs:label "Value Tag" ;
-    rdfs:subClassOf ph:ValueTag ;
-    sh:property [ sh:class ph:Entity ;
-            sh:maxCount 1 ;
-            sh:minCount 1 ;
-            sh:path ph:value ] .
-
 ex:dmppos1 a brick:Damper_Position_Command .
 
 ex:hw_coil a brick:Hot_Water_Coil ;
@@ -6977,9 +6968,26 @@ brick:Zone_Air_Temperature_Sensor a owl:Class,
             sh:predicate ph:hasMarkerTag ;
             sh:subject sh:this ] .
 
+ph:RefTag a owl:Class,
+        sh:NodeShape ;
+    rdfs:label "Value Tag" ;
+    rdfs:subClassOf ph:ValueTag ;
+    sh:property [ sh:class ph:Entity ;
+            sh:maxCount 1 ;
+            sh:minCount 1 ;
+            sh:path ph:value ] .
+
 ph:hasMarkerTagShape a sh:PropertyShape ;
     sh:datatype xsd:string ;
     sh:path ph:hasMarkerTag .
+
+ph:hasRefTag a owl:ObjectProperty ;
+    rdfs:label "has value tag" ;
+    skos:definition "Ref tag (k/v pair) associated with an entity that points to another entity" .
+
+ph:hasRefTagShape a sh:PropertyShape ;
+    sh:node ph:RefTag ;
+    sh:path ph:hasRefTag .
 
 ph:hasValueTag a owl:ObjectProperty ;
     rdfs:label "has value tag" ;
@@ -7020,6 +7028,7 @@ ph:ValueTag a owl:Class,
 ph:Entity a owl:Class,
         sh:NodeShape ;
     sh:property ph:hasMarkerTagShape,
+        ph:hasRefTagShape,
         ph:hasValueTagShape .
 
 ph:hasMarkerTag a owl:DatatypeProperty ;

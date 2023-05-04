@@ -36,6 +36,14 @@ ph:hasValueTagShape a sh:PropertyShape ;
     sh:path ph:hasValueTag ;
     sh:node ph:ValueTag .
 
+ph:hasRefTag a owl:ObjectProperty ;
+    rdfs:label "has value tag" ;
+    skos:definition "Ref tag (k/v pair) associated with an entity that points to another entity" .
+
+ph:hasRefTagShape a sh:PropertyShape ;
+    sh:path ph:hasRefTag ;
+    sh:node ph:RefTag .
+
 ph:ValueTag a owl:Class, sh:NodeShape ;
     rdfs:label "Value Tag" ;
     sh:property [
@@ -65,5 +73,6 @@ ph:RefTag a owl:Class, sh:NodeShape ;
 
 ph:Entity a owl:Class, sh:NodeShape ;
     sh:property ph:hasMarkerTagShape, 
-                ph:hasValueTagShape
+                ph:hasValueTagShape,
+                ph:hasRefTagShape
 .
