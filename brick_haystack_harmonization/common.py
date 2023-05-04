@@ -1,4 +1,5 @@
 import rdflib
+import rfc3987
 from brickschema.namespaces import BRICK, RDFS
 import csv
 from typing import Set
@@ -49,3 +50,11 @@ def guess_tags(brick: rdflib.Graph, concept: rdflib.URIRef) -> Set[str]:
         tstr = replacements.get(tstr, tstr).lower()
         ret.add(tstr)
     return ret
+
+
+def validate_uri(uri: str):
+    parsed = rfc3987.parse(uri)
+    if not parsed["scheme"]:
+        raise ValueError(
+            f"{uri} does not look like a valid URI, trying to serialize this will break."
+        )

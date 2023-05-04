@@ -1,6 +1,7 @@
 import sys
 import brickschema
 from brickschema.namespaces import BRICK, SH, A, RDF, RDFS, OWL
+from brick_haystack_harmonization.common import validate_uri
 from rdflib import Namespace, URIRef, BNode, Literal
 from rdflib.util import guess_format
 import json
@@ -31,7 +32,12 @@ def read_slots(resolved_repr: dict):
 
 
 def slot_to_shacl(library_name, name, defn):
-    shape = URIRef(defn["uri"])
+    # use the URI if it exists and is valid; else construct one
+    if validate_uri(defn.get("uri", "")):
+        shape = URIRef(defn["uri"])
+    else:
+        shape = XETO[f"{library_name}::{name}"]
+
     g.add((shape, A, SH.NodeShape))
     if "slots" not in defn:
         return
