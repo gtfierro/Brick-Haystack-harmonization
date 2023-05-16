@@ -1,4 +1,5 @@
 import sys
+import pyshacl
 import json
 from rdflib import Namespace, Literal
 import rdflib
@@ -9,6 +10,8 @@ M = Namespace("urn:model/")
 PH = Namespace("urn:project_haystack/")
 
 model = brickschema.Graph().load_file("haystack-ontology/haystack.ttl")
+model.load_file("data/bh.ttl")
+model.load_file("Brick.ttl")
 model.bind("model", M)
 model.bind("ph", PH)
 
@@ -63,10 +66,15 @@ def run(haystack_file: str, output_file: str):
                     ],
                 )
             )
-    valid, _, report = model.validate()
+    valid, _, report = pyshacl.validate(model, advanced=True, inplace=True)
     if not valid:
         print(report)
         sys.exit(1)
+
+    print("Inferred Brick classes for:")
+    res = model.query("SELECT ?ent ?type WHERE { ?ent rdf:type ?type . ?type rdfs:subClassOf* brick:Entity . ?ent rdf:type/rdfs:subClassOf* brick:Entity . ?ent a ph:Entity }")
+    for row in res:
+        print(row)
 
     model.serialize(output_file, format=rdflib.util.guess_format(output_file) or "ttl")
 

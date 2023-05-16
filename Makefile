@@ -32,7 +32,7 @@ data/resolved-all.json: xeto/* data/xetolib/bh.xeto
 data/all.json: xeto/* data/xetolib/bh.xeto
 	xeto/bin/xeto json-ast -own -out data/resolved-all.json all
 
-data/haystack-models/%.ttl: data/haystack-models/%.json brick_haystack_harmonization/ph_to_ttl.py haystack-ontology/haystack.ttl
+data/haystack-models/%.ttl: data/haystack-models/%.json brick_haystack_harmonization/ph_to_ttl.py haystack-ontology/haystack.ttl data/bh.ttl
 	poetry run ph-to-ttl $< $@
 
 data/converted-models/%.ttl: data/brick-models/%.ttl brick_haystack_harmonization/brick_to_haystack.py data/bh.ttl haystack-ontology/haystack.ttl

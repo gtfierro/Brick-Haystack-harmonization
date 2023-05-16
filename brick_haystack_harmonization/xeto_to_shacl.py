@@ -28,6 +28,34 @@ g.add(
     )
 )
 
+tag_conditions = {}
+
+
+def get_tag_condition(tag):
+    if tag in tag_conditions:
+        return tag_conditions[tag]
+    condition = PH[f"HasTag-{tag}"]
+    g.add((condition, A, SH.NodeShape))
+    g.add((condition, A, OWL.Class))
+    g.add((condition, SH.property, [
+        (A, SH.PropertyShape),
+        (SH.path, PH.hasMarkerTag),
+        (SH.hasValue, Literal(tag)),
+    ]))
+    condition_rule = PH[f"HasTag-{tag}-Rule"]
+    g.add((condition_rule, A, SH.NodeShape))
+    g.add((condition_rule, SH.targetClass, PH.Entity))
+    g.add((condition_rule, SH.rule, [
+        (A, SH.TripleRule),
+        (SH.condition, condition),
+        (SH.object, condition),
+        (SH.predicate, A),
+        (SH.subject, SH.this),
+    ]))
+
+    tag_conditions[tag] = condition
+    return condition
+
 
 def read_slots(resolved_repr: dict):
     for library_name, definition in resolved_repr.items():
@@ -98,6 +126,20 @@ def slot_to_shacl(library_name, name, defn):
                 )
             )
 
+            condition = get_tag_condition(key)
+            # add ruleto infer Brick class
+            g.add((XETO[f"infer_brick_rule_{name}"], A, SH.NodeShape))
+            g.add((XETO[f"infer_brick_rule_{name}"], SH.targetClass, condition))
+            g.add(
+                (XETO[f"infer_brick_rule_{name}"], SH.rule, [
+                    (A, SH.TripleRule),
+                    (SH.condition, shape),
+                    (SH.object, shape),
+                    (SH.predicate, RDF.type),
+                    (SH.subject, SH.this)
+                ])
+            )
+
             # add rule to infer tags
             g.add(
                 (shape, SH.rule, [
@@ -107,6 +149,9 @@ def slot_to_shacl(library_name, name, defn):
                     (SH.subject, SH.this)
                 ])
             )
+
+
+
 
 
 def main():
