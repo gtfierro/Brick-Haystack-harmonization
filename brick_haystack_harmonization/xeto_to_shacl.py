@@ -65,7 +65,11 @@ def read_slots(resolved_repr: dict):
 
 def slot_to_shacl(library_name, name, defn):
     # use the URI if it exists and is valid; else construct one
-    if validate_uri(defn.get("uri", "")):
+    # TODO: make sure we emit the shape for the buildingmotif template
+    if defn.get('template',''):
+        print('template name', defn['template'])
+        return
+    elif validate_uri(defn.get("uri", "")):
         shape = URIRef(defn["uri"])
     else:
         shape = XETO[f"{library_name}::{name}"]

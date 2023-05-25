@@ -36,6 +36,8 @@ def fixup_tags(tags: Set[str]):
             tags.add(t.split("|")[0])
         if "(" in t and ")" in t:
             tags.remove(t)
+        if '{' in t or '}' in t:
+            tags.remove(t)
         elif t in replacements:
             tags.remove(t)
             tags.add(replacements[t])

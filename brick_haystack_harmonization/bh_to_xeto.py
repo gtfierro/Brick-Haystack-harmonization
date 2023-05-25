@@ -15,7 +15,7 @@ from .common import (
 g = brickschema.Graph().load_file("Brick.ttl")
 seen_classes = set()
 parent_classes = set()
-
+buildingmotif_template_file_content = ''
 
 def base_to_xeto(row: dict) -> str:
     point_class = clean_brick_classname(row["Brick:PointClass"])
@@ -47,13 +47,87 @@ def make_statement(point_class: str, tag_list: str) -> str:
         return f'\nBrick_{point_class.replace(".", "")} : {parent} <uri:"{BRICK[point_class]}"> {{ {tag_list} }}\n'
 
 
-# TODO
 def subparts_to_xeto(row: dict):
     point_class = clean_brick_classname(row["Brick:PointClass"])
-    l0class = row["Subpart:EntityClassL0"]
-    l1class = row["Subpart:EntityClassL1"]
-    return (point_class, l0class, l1class)
+    l0class = clean_brick_classname(row["Subpart:EntityClassL0"])
+    l1class = clean_brick_classname(row["Subpart:EntityClassL1"])
+    tags = taglist_to_set(row["Haystack:Markers"])
+    ctags = taglist_to_set(row["Haystack:CustomMarkers"])
+    tags.update(ctags)
+    fixup_tags(tags)
+    assert len(tags) > 0, f'Markers? {row}'
+    if len(tags) > 1:
+        tag_list = ", ".join(sorted(tags))
+    else:
+        tag_list = tags.pop()
 
+    xeto_type_name = f"Brick_{l0class}_{point_class}"
+    if l1class:
+        xeto_type_name = f"Brick_{l1class}_{xeto_type_name}"
+
+    if xeto_type_name in seen_classes:
+        return ""
+    seen_classes.add(xeto_type_name)
+
+    # TODO: what is the 'name' of the compound class?
+    # TODO: create building motif template
+    # TODO: come up with a way of minting names for the points, etc
+    if not l1class:
+        # l0class hasPoint point_class
+        template = f"""
+{xeto_type_name}:
+  body: >
+    @prefix P: <urn:___param___#> .
+    @prefix brick: <https://brickschema.org/schema/Brick#> .
+    P:name a brick:{row['Subpart:EntityClassL0']} ;
+        brick:hasPoint P:point .
+    P:point a brick:{row['Brick:PointClass']} .
+  dependencies:
+  - template: https://brickschema.org/schema/Brick#{row['Subpart:EntityClassL0']}
+    library: https://brickschema.org/schema/1.3/Brick
+    args: {{"name": "name"}}
+  - template: https://brickschema.org/schema/Brick#{row['Brick:PointClass']}
+    library: https://brickschema.org/schema/1.3/Brick
+    args: {{"name": "point"}}
+        """
+    else:
+        # l1class hasPoint point_class
+        # l0class hasPart l1class
+        template = f"""
+{xeto_type_name}:
+  body: >
+    @prefix P: <urn:___param___#> .
+    @prefix brick: <https://brickschema.org/schema/Brick#> .
+    P:name a brick:{row['Subpart:EntityClassL0']} ;
+        brick:hasPart P:part .
+    P:part a brick:{row['Subpart:EntityClassL1']} ;
+        brick:hasPoint P:point .
+    P:point a brick:{row['Brick:PointClass']} .
+  dependencies:
+  - template: https://brickschema.org/schema/Brick#{row['Subpart:EntityClassL0']}
+    library: https://brickschema.org/schema/1.3/Brick
+    args: {{"name": "name"}}
+  - template: https://brickschema.org/schema/Brick#{row['Subpart:EntityClassL1']}
+    library: https://brickschema.org/schema/1.3/Brick
+    args: {{"name": "part"}}
+  - template: https://brickschema.org/schema/Brick#{row['Brick:PointClass']}
+    library: https://brickschema.org/schema/1.3/Brick
+    args: {{"name": "point"}}
+        """
+        pass
+    global buildingmotif_template_file_content
+    buildingmotif_template_file_content += template
+    return make_templ_statement(point_class, xeto_type_name, tag_list)
+
+def make_templ_statement(point_class: str, template_name: str, tag_list: str) -> str:
+    parent = g.value(subject=BRICK[point_class], predicate=RDFS.subClassOf)
+    if parent is None or parent == BRICK["Point"]:
+        parent = "Point"
+    else:
+        parent_classes.add(parent)
+        parent = f"Brick_{parent.split('#')[-1].replace('.','')}"
+
+    return f'\n{template_name} : {parent} <template:"{template_name}"> {{ {tag_list} }}\n'
 
 def run(filename: str, outputfile: str):
     statements = []
@@ -61,7 +135,9 @@ def run(filename: str, outputfile: str):
         if row["Meta:State"] == "Base":
             statements.append(base_to_xeto(row) + "\n")
         elif row["Meta:State"] == "Subparts":
-            subparts_to_xeto(row)  # TODO: finish
+            statements.append(subparts_to_xeto(row) + "\n")
+    with open('data/bmotif_templates.yml', 'w') as f:
+        f.write(buildingmotif_template_file_content)
 
     # compute any classes which show up as parents but aren't already
     # in the file

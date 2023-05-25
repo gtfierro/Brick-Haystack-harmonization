@@ -713,11 +713,11 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "discharge": {
+          "air": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "air": {
+          "discharge": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
@@ -1427,12 +1427,12 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "quality": {
-            "type": "sys::Marker"
-          },
           "air": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
+          },
+          "quality": {
+            "type": "sys::Marker"
           },
           "co2": {
             "type": "sys::Marker",
@@ -1680,12 +1680,12 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "quality": {
-            "type": "sys::Marker"
-          },
           "air": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
+          },
+          "quality": {
+            "type": "sys::Marker"
           },
           "co2": {
             "type": "sys::Marker",
@@ -2324,10 +2324,10 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "quality": {
+          "air": {
             "type": "sys::Marker"
           },
-          "air": {
+          "quality": {
             "type": "sys::Marker"
           },
           "co2": {
@@ -2451,14 +2451,6 @@
           },
           "heat": {
             "type": "sys::Marker"
-          },
-          "stage": {
-            "type": "sys::Dict",
-            "slots": {
-              "n": {
-                "type": "sys::Marker"
-              }
-            }
           }
         }
       },
@@ -2509,14 +2501,6 @@
           },
           "cool": {
             "type": "sys::Marker"
-          },
-          "stage": {
-            "type": "sys::Dict",
-            "slots": {
-              "n": {
-                "type": "sys::Marker"
-              }
-            }
           }
         }
       },
@@ -2778,12 +2762,12 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
+          "entering": {
+            "type": "sys::Marker"
+          },
           "hot": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "entering": {
-            "type": "sys::Marker"
           },
           "delta": {
             "type": "sys::Marker"
@@ -3136,6 +3120,36 @@
             "doc": "Marker labels a dict with typing information"
           },
           "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick__Collection_Basin_Water_Level_Sensor": {
+        "base": "xetolib::Brick_Water_Level_Sensor",
+        "template": "Brick__Collection_Basin_Water_Level_Sensor",
+        "doc": "Measures the height/level of water in some container",
+        "uri": "https://brickschema.org/schema/Brick#Water_Level_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "water": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "basin": {
+            "type": "sys::Marker"
+          },
+          "level": {
             "type": "sys::Marker"
           }
         }
@@ -3740,17 +3754,17 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "quality": {
-            "type": "sys::Marker"
-          },
           "air": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "particulate": {
+          "quality": {
             "type": "sys::Marker"
           },
           "matter": {
+            "type": "sys::Marker"
+          },
+          "particulate": {
             "type": "sys::Marker"
           },
           "zone": {
@@ -3776,17 +3790,17 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "quality": {
-            "type": "sys::Marker"
-          },
           "air": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "particulate": {
+          "quality": {
             "type": "sys::Marker"
           },
           "matter": {
+            "type": "sys::Marker"
+          },
+          "particulate": {
             "type": "sys::Marker"
           },
           "zone": {
@@ -3812,17 +3826,17 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "quality": {
-            "type": "sys::Marker"
-          },
           "air": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "particulate": {
+          "quality": {
             "type": "sys::Marker"
           },
           "matter": {
+            "type": "sys::Marker"
+          },
+          "particulate": {
             "type": "sys::Marker"
           },
           "zone": {
@@ -3830,37 +3844,14 @@
           }
         }
       },
-      "Brick_Dewpoint_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Senses the dewpoint temperature . Dew point is the temperature to which air must be cooled to become saturated with water vapor",
-        "uri": "https://brickschema.org/schema/Brick#Dewpoint_Sensor",
+      "Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint": {
+        "base": "xetolib::Brick_Air_Temperature_Setpoint",
+        "template": "Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint",
+        "doc": "Sets temperature of air",
+        "uri": "https://brickschema.org/schema/Brick#Air_Temperature_Setpoint",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "dewpoint": {
             "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_CO2_Setpoint": {
-        "base": "xetolib::Brick_Setpoint",
-        "doc": "Sets some property of CO2",
-        "uri": "https://brickschema.org/schema/Brick#CO2_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
           },
           "equips": {
             "type": "sys::Query",
@@ -3871,15 +3862,30 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "co2": {
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "hotDeck": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
             "type": "sys::Marker"
           }
         }
       },
-      "Brick_Velocity_Pressure_Sensor": {
-        "base": "xetolib::Brick_Pressure_Sensor",
-        "doc": "Measures the difference between total pressure and static pressure",
-        "uri": "https://brickschema.org/schema/Brick#Velocity_Pressure_Sensor",
+      "Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor": {
+        "base": "xetolib::Brick_Static_Pressure_Sensor",
+        "template": "Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor",
+        "doc": "Measures resistance to airflow in a heating and cooling system's components and duct work",
+        "uri": "https://brickschema.org/schema/Brick#Static_Pressure_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
@@ -3898,7 +3904,4882 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "velocity": {
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "hotDeck": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint": {
+        "base": "xetolib::Brick_Static_Pressure_Setpoint",
+        "template": "Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint",
+        "doc": "Sets static pressure",
+        "uri": "https://brickschema.org/schema/Brick#Static_Pressure_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "hotDeck": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint": {
+        "base": "xetolib::Brick_Air_Temperature_Setpoint",
+        "template": "Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint",
+        "doc": "Sets temperature of air",
+        "uri": "https://brickschema.org/schema/Brick#Air_Temperature_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "coldDeck": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor": {
+        "base": "xetolib::Brick_Static_Pressure_Sensor",
+        "template": "Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor",
+        "doc": "Measures resistance to airflow in a heating and cooling system's components and duct work",
+        "uri": "https://brickschema.org/schema/Brick#Static_Pressure_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "coldDeck": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint": {
+        "base": "xetolib::Brick_Static_Pressure_Setpoint",
+        "template": "Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint",
+        "doc": "Sets static pressure",
+        "uri": "https://brickschema.org/schema/Brick#Static_Pressure_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "coldDeck": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Mixed_Damper_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Mixed_Damper_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "mixed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Mixed_Damper_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Mixed_Damper_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "mixed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Damper_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Damper_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "inlet": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Damper_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Damper_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "inlet": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Damper_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Return_Damper_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Damper_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Return_Damper_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Damper_Overriden_Status": {
+        "base": "ph::Point",
+        "template": "Brick_Return_Damper_Overriden_Status",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Damper_Override_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Return_Damper_Override_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Outside_Damper_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Outside_Damper_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "outside": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Outside_Damper_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Outside_Damper_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "outside": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Outside_Damper_Overriden_Status": {
+        "base": "ph::Point",
+        "template": "Brick_Outside_Damper_Overriden_Status",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "outside": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Outside_Damper_Override_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Outside_Damper_Override_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "outside": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Economizer_Damper_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Economizer_Damper_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "economizer": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Economizer_Damper_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Economizer_Damper_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "economizer": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Economizer_Damper_Overriden_Status": {
+        "base": "ph::Point",
+        "template": "Brick_Economizer_Damper_Overriden_Status",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "economizer": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Economizer_Damper_Override_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Economizer_Damper_Override_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "economizer": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Exhaust_Damper_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Exhaust_Damper_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Exhaust_Damper_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Exhaust_Damper_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Exhaust_Damper_Overriden_Status": {
+        "base": "ph::Point",
+        "template": "Brick_Exhaust_Damper_Overriden_Status",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Exhaust_Damper_Override_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Exhaust_Damper_Override_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Damper_Command": {
+        "base": "ph::Point",
+        "template": "Brick_Damper_Command",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Damper_Overriden_Status": {
+        "base": "ph::Point",
+        "template": "Brick_Damper_Overriden_Status",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Damper_Override_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Damper_Override_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Discharge_Fan_On_Off_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Discharge_Fan_On_Off_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Discharge_Fan_On_Off_Status": {
+        "base": "xetolib::Brick_Off_Status",
+        "template": "Brick_Discharge_Fan_On_Off_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Discharge_Fan_Speed_Mode_Status": {
+        "base": "xetolib::Brick_Mode_Status",
+        "template": "Brick_Discharge_Fan_Speed_Mode_Status",
+        "doc": "Indicates which mode a system, device or control loop is currently in",
+        "uri": "https://brickschema.org/schema/Brick#Mode_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "run": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "mode": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint",
+        "doc": "A Setpoint is an input value at which the desired property is set",
+        "uri": "https://brickschema.org/schema/Brick#Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "freq": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor": {
+        "base": "xetolib::Brick_Electric_Power_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor",
+        "doc": "Measures the amount of instantaneous electric power consumed",
+        "uri": "https://brickschema.org/schema/Brick#Electric_Power_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "power": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "electric": {
+            "type": "sys::Marker"
+          },
+          "active": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "current": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "volt": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "torque": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor": {
+        "base": "xetolib::Brick_Voltage_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor",
+        "doc": "Measures the voltage of an electrical device or object",
+        "uri": "https://brickschema.org/schema/Brick#Voltage_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "volt": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "dc": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "fault": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Fan_On_Off_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Return_Fan_On_Off_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Fan_On_Off_Status": {
+        "base": "xetolib::Brick_Off_Status",
+        "template": "Brick_Return_Fan_On_Off_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Fan_Speed_Mode_Status": {
+        "base": "xetolib::Brick_Mode_Status",
+        "template": "Brick_Return_Fan_Speed_Mode_Status",
+        "doc": "Indicates which mode a system, device or control loop is currently in",
+        "uri": "https://brickschema.org/schema/Brick#Mode_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "run": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "mode": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint",
+        "doc": "A Setpoint is an input value at which the desired property is set",
+        "uri": "https://brickschema.org/schema/Brick#Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "freq": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor": {
+        "base": "xetolib::Brick_Electric_Power_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor",
+        "doc": "Measures the amount of instantaneous electric power consumed",
+        "uri": "https://brickschema.org/schema/Brick#Electric_Power_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "power": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "electric": {
+            "type": "sys::Marker"
+          },
+          "active": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "current": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          },
+          "volt": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          },
+          "torque": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor": {
+        "base": "xetolib::Brick_Voltage_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor",
+        "doc": "Measures the voltage of an electrical device or object",
+        "uri": "https://brickschema.org/schema/Brick#Voltage_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "volt": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "dc": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "fault": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Fan_Air_Flow_Sensor": {
+        "base": "xetolib::Brick_Flow_Sensor",
+        "template": "Brick_Return_Fan_Air_Flow_Sensor",
+        "doc": "Measures the rate of flow of some substance",
+        "uri": "https://brickschema.org/schema/Brick#Flow_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "flow": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Fan_Air_Flow_Setpoint": {
+        "base": "xetolib::Brick_Flow_Setpoint",
+        "template": "Brick_Return_Fan_Air_Flow_Setpoint",
+        "doc": "Sets flow",
+        "uri": "https://brickschema.org/schema/Brick#Flow_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "flow": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Exhaust_Fan_On_Off_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Exhaust_Fan_On_Off_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Exhaust_Fan_On_Off_Status": {
+        "base": "xetolib::Brick_Off_Status",
+        "template": "Brick_Exhaust_Fan_On_Off_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint",
+        "doc": "A Setpoint is an input value at which the desired property is set",
+        "uri": "https://brickschema.org/schema/Brick#Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "freq": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor": {
+        "base": "xetolib::Brick_Electric_Power_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor",
+        "doc": "Measures the amount of instantaneous electric power consumed",
+        "uri": "https://brickschema.org/schema/Brick#Electric_Power_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "power": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "electric": {
+            "type": "sys::Marker"
+          },
+          "active": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "current": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "volt": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "torque": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor": {
+        "base": "xetolib::Brick_Voltage_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor",
+        "doc": "Measures the voltage of an electrical device or object",
+        "uri": "https://brickschema.org/schema/Brick#Voltage_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "volt": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "dc": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "exhaust": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "fault": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Fan_On_Off_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Fan_On_Off_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Fan_On_Off_Status": {
+        "base": "xetolib::Brick_Off_Status",
+        "template": "Brick_Fan_On_Off_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Fan_Speed_Mode_Status": {
+        "base": "xetolib::Brick_Mode_Status",
+        "template": "Brick_Fan_Speed_Mode_Status",
+        "doc": "Indicates which mode a system, device or control loop is currently in",
+        "uri": "https://brickschema.org/schema/Brick#Mode_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "run": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "mode": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status": {
+        "base": "xetolib::Brick_Run_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status",
+        "doc": "Indicates the active/inactive status of a control loop (but not equipment activities or relays -- use On/Off for this purpose)",
+        "uri": "https://brickschema.org/schema/Brick#Run_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "stop": {
+            "type": "sys::Marker"
+          },
+          "start": {
+            "type": "sys::Marker"
+          },
+          "call": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint",
+        "doc": "A Setpoint is an input value at which the desired property is set",
+        "uri": "https://brickschema.org/schema/Brick#Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "freq": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor": {
+        "base": "xetolib::Brick_Electric_Power_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor",
+        "doc": "Measures the amount of instantaneous electric power consumed",
+        "uri": "https://brickschema.org/schema/Brick#Electric_Power_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "power": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "electric": {
+            "type": "sys::Marker"
+          },
+          "active": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "current": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "volt": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "torque": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor": {
+        "base": "xetolib::Brick_Voltage_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor",
+        "doc": "Measures the voltage of an electrical device or object",
+        "uri": "https://brickschema.org/schema/Brick#Voltage_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "volt": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "dc": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          },
+          "fault": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Humidifier_On_Off_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Humidifier_On_Off_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "humidifier": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Humidifier_On_Off_Status": {
+        "base": "xetolib::Brick_Off_Status",
+        "template": "Brick_Humidifier_On_Off_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "humidifier": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Humidifier_Command": {
+        "base": "ph::Point",
+        "template": "Brick_Humidifier_Command",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "humidifier": {
+            "type": "sys::Marker"
+          },
+          "modulation": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Heat_Wheel_On_Off_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Heat_Wheel_On_Off_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "heatWheel": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Heat_Wheel_On_Off_Status": {
+        "base": "xetolib::Brick_Off_Status",
+        "template": "Brick_Heat_Wheel_On_Off_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "heatWheel": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Heat_Wheel_Speed_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Heat_Wheel_Speed_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "heatWheel": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Valve_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Valve_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Valve_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Valve_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Valve_Flow_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Valve_Flow_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "flow": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Valve_Failure_Alarm": {
+        "base": "xetolib::Brick_Alarm",
+        "template": "Brick_Valve_Failure_Alarm",
+        "doc": "Alarm points are signals (either audible or visual) that alert an operator to an off-normal condition which requires some form of corrective action",
+        "uri": "https://brickschema.org/schema/Brick#Alarm",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "alarm": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Chilled_Water_Valve_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Chilled_Water_Valve_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "chilled": {
+            "type": "sys::Marker"
+          },
+          "cool": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Chilled_Water_Valve_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Chilled_Water_Valve_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "chilled": {
+            "type": "sys::Marker"
+          },
+          "cool": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Chilled_Water_Valve_Failure_Alarm": {
+        "base": "xetolib::Brick_Alarm",
+        "template": "Brick_Chilled_Water_Valve_Failure_Alarm",
+        "doc": "Alarm points are signals (either audible or visual) that alert an operator to an off-normal condition which requires some form of corrective action",
+        "uri": "https://brickschema.org/schema/Brick#Alarm",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "alarm": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "chilled": {
+            "type": "sys::Marker"
+          },
+          "cool": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Condenser_Water_Valve_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Condenser_Water_Valve_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "condenser": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Condenser_Water_Valve_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Condenser_Water_Valve_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "condenser": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Condenser_Water_Valve_Failure_Alarm": {
+        "base": "xetolib::Brick_Alarm",
+        "template": "Brick_Condenser_Water_Valve_Failure_Alarm",
+        "doc": "Alarm points are signals (either audible or visual) that alert an operator to an off-normal condition which requires some form of corrective action",
+        "uri": "https://brickschema.org/schema/Brick#Alarm",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "alarm": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "chilled": {
+            "type": "sys::Marker"
+          },
+          "cool": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Hot_Water_Valve_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Hot_Water_Valve_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "heat": {
+            "type": "sys::Marker"
+          },
+          "hot": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Hot_Water_Valve_Failure_Alarm": {
+        "base": "xetolib::Brick_Alarm",
+        "template": "Brick_Hot_Water_Valve_Failure_Alarm",
+        "doc": "Alarm points are signals (either audible or visual) that alert an operator to an off-normal condition which requires some form of corrective action",
+        "uri": "https://brickschema.org/schema/Brick#Alarm",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "alarm": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "heat": {
+            "type": "sys::Marker"
+          },
+          "hot": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Hot_Water_Valve_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Hot_Water_Valve_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "heat": {
+            "type": "sys::Marker"
+          },
+          "hot": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Steam_Valve_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Steam_Valve_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "steam": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Steam_Valve_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Steam_Valve_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "steam": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Isolation_Valve_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Isolation_Valve_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "isolation": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Isolation_Valve_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Isolation_Valve_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "isolation": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Condenser_Water_Isolation_Valve_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Condenser_Water_Isolation_Valve_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "condenser": {
+            "type": "sys::Marker"
+          },
+          "isolation": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Condenser_Water_Isolation_Valve_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Condenser_Water_Isolation_Valve_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "condenser": {
+            "type": "sys::Marker"
+          },
+          "isolation": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Bypass_Valve_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Bypass_Valve_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "bypass": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Bypass_Valve_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Bypass_Valve_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "bypass": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Bypass_Valve_Flow_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Bypass_Valve_Flow_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "bypass": {
+            "type": "sys::Marker"
+          },
+          "flow": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Condenser_Water_Bypass_Valve_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Condenser_Water_Bypass_Valve_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "bypass": {
+            "type": "sys::Marker"
+          },
+          "condenser": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Condenser_Water_Bypass_Valve_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Condenser_Water_Bypass_Valve_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "bypass": {
+            "type": "sys::Marker"
+          },
+          "condenser": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Condenser_Water_Bypass_Valve_Flow_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Condenser_Water_Bypass_Valve_Flow_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "bypass": {
+            "type": "sys::Marker"
+          },
+          "condenser": {
+            "type": "sys::Marker"
+          },
+          "flow": {
+            "type": "sys::Marker"
+          },
+          "valve": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_check_Differential_Pressure_Sensor": {
+        "base": "xetolib::Brick_Pressure_Sensor",
+        "template": "Brick_check_Differential_Pressure_Sensor",
+        "doc": "Measure the amount of force acting on a unit area",
+        "uri": "https://brickschema.org/schema/Brick#Pressure_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "delta": {
+            "type": "sys::Marker"
+          },
+          "primaryLoop": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Filter_Status": {
+        "base": "ph::Point",
+        "template": "Brick_Filter_Status",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Filter_Alarm": {
+        "base": "ph::Point",
+        "template": "Brick_Filter_Alarm",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "fault": {
+            "type": "sys::Marker"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Filter_Differential_Pressure_Sensor": {
+        "base": "xetolib::Brick_Pressure_Sensor",
+        "template": "Brick_Filter_Differential_Pressure_Sensor",
+        "doc": "Measure the amount of force acting on a unit area",
+        "uri": "https://brickschema.org/schema/Brick#Pressure_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "delta": {
+            "type": "sys::Marker"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Filter_Differential_Pressure_Setpoint": {
+        "base": "xetolib::Brick_Differential_Setpoint",
+        "template": "Brick_Filter_Differential_Pressure_Setpoint",
+        "doc": "A type of Setpoints that is related to the difference between two measurements",
+        "uri": "https://brickschema.org/schema/Brick#Differential_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "differential": {
+            "type": "sys::Marker"
+          },
+          "delta": {
+            "type": "sys::Marker"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Air_Filter_Status": {
+        "base": "ph::Point",
+        "template": "Brick_Return_Air_Filter_Status",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Air_Filter_Alarm": {
+        "base": "ph::Point",
+        "template": "Brick_Return_Air_Filter_Alarm",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "fault": {
+            "type": "sys::Marker"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Air_Filter_Differential_Pressure_Sensor": {
+        "base": "xetolib::Brick_Pressure_Sensor",
+        "template": "Brick_Return_Air_Filter_Differential_Pressure_Sensor",
+        "doc": "Measure the amount of force acting on a unit area",
+        "uri": "https://brickschema.org/schema/Brick#Pressure_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "delta": {
+            "type": "sys::Marker"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Return_Air_Filter_Differential_Pressure_Setpoint": {
+        "base": "xetolib::Brick_Differential_Setpoint",
+        "template": "Brick_Return_Air_Filter_Differential_Pressure_Setpoint",
+        "doc": "A type of Setpoints that is related to the difference between two measurements",
+        "uri": "https://brickschema.org/schema/Brick#Differential_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "differential": {
+            "type": "sys::Marker"
+          },
+          "delta": {
+            "type": "sys::Marker"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          },
+          "return": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Intake_Air_Filter_Status": {
+        "base": "ph::Point",
+        "template": "Brick_Intake_Air_Filter_Status",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          },
+          "outside": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Intake_Air_Filter_Alarm": {
+        "base": "ph::Point",
+        "template": "Brick_Intake_Air_Filter_Alarm",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "fault": {
+            "type": "sys::Marker"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          },
+          "outside": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Intake_Air_Filter_Differential_Pressure_Sensor": {
+        "base": "xetolib::Brick_Pressure_Sensor",
+        "template": "Brick_Intake_Air_Filter_Differential_Pressure_Sensor",
+        "doc": "Measure the amount of force acting on a unit area",
+        "uri": "https://brickschema.org/schema/Brick#Pressure_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "delta": {
+            "type": "sys::Marker"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          },
+          "outside": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Intake_Air_Filter_Differential_Pressure_Setpoint": {
+        "base": "xetolib::Brick_Differential_Setpoint",
+        "template": "Brick_Intake_Air_Filter_Differential_Pressure_Setpoint",
+        "doc": "A type of Setpoints that is related to the difference between two measurements",
+        "uri": "https://brickschema.org/schema/Brick#Differential_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "differential": {
+            "type": "sys::Marker"
+          },
+          "delta": {
+            "type": "sys::Marker"
+          },
+          "filter": {
+            "type": "sys::Marker"
+          },
+          "outside": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Compressor_On_Off_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Compressor_On_Off_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "compressor": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Compressor_On_Off_Status": {
+        "base": "xetolib::Brick_Off_Status",
+        "template": "Brick_Compressor_On_Off_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "compressor": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Compressor_Enable_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Compressor_Enable_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "compressor": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Compressor_Enable_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Compressor_Enable_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "compressor": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Compressor_Fault_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Compressor_Fault_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "compressor": {
+            "type": "sys::Marker"
+          },
+          "fault": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Compressor_Speed_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Compressor_Speed_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "compressor": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Compressor_Temperature_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Compressor_Temperature_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "compressor": {
+            "type": "sys::Marker"
+          },
+          "temp": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Compressor_Current_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Compressor_Current_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "compressor": {
+            "type": "sys::Marker"
+          },
+          "current": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Compressor_Run_Time_Sensor": {
+        "base": "xetolib::Brick_Duration_Sensor",
+        "template": "Brick_Compressor_Run_Time_Sensor",
+        "doc": "Measures the duration of a phenomenon or event",
+        "uri": "https://brickschema.org/schema/Brick#Duration_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "duration": {
+            "type": "sys::Marker"
+          },
+          "compressor": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          },
+          "time": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_On_Off_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Variable_Frequency_Drive_On_Off_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_On_Off_Status": {
+        "base": "xetolib::Brick_Off_Status",
+        "template": "Brick_Variable_Frequency_Drive_On_Off_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Enable_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Variable_Frequency_Drive_Enable_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "https://brickschema.org/schema/Brick#Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Enable_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Enable_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "enable": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Overridden_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Overridden_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "override": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Speed_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Speed_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Speed_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "template": "Brick_Variable_Frequency_Drive_Speed_Setpoint",
+        "doc": "A Setpoint is an input value at which the desired property is set",
+        "uri": "https://brickschema.org/schema/Brick#Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "speed": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Frequency_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Frequency_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "freq": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Active_Power_Sensor": {
+        "base": "xetolib::Brick_Electric_Power_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Active_Power_Sensor",
+        "doc": "Measures the amount of instantaneous electric power consumed",
+        "uri": "https://brickschema.org/schema/Brick#Electric_Power_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "power": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "electric": {
+            "type": "sys::Marker"
+          },
+          "active": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Current_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Current_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "current": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Voltage_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Voltage_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          },
+          "volt": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Torque_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Torque_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "https://brickschema.org/schema/Brick#Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "torque": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor": {
+        "base": "xetolib::Brick_Temperature_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor",
+        "doc": "Measures temperature: the physical property of matter that quantitatively expresses the common notions of hot and cold",
+        "uri": "https://brickschema.org/schema/Brick#Temperature_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "heatsink": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor": {
+        "base": "xetolib::Brick_Voltage_Sensor",
+        "template": "Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor",
+        "doc": "Measures the voltage of an electrical device or object",
+        "uri": "https://brickschema.org/schema/Brick#Voltage_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "volt": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "dc": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Frequency_Drive_Fault_Status": {
+        "base": "xetolib::Brick_Status",
+        "template": "Brick_Variable_Frequency_Drive_Fault_Status",
+        "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
+        "uri": "https://brickschema.org/schema/Brick#Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker"
+          },
+          "fault": {
+            "type": "sys::Marker"
+          },
+          "vfd": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Humidity_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "doc": "Sets humidity",
+        "uri": "https://brickschema.org/schema/Brick#Humidity_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "humidity": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Duration_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Measures the duration of a phenomenon or event",
+        "uri": "https://brickschema.org/schema/Brick#Duration_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "duration": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Particulate_Matter_Sensor": {
+        "base": "xetolib::Brick_Air_Quality_Sensor",
+        "doc": "Detects pollutants in the ambient air",
+        "uri": "https://brickschema.org/schema/Brick#Particulate_Matter_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "quality": {
+            "type": "sys::Marker"
+          },
+          "matter": {
+            "type": "sys::Marker"
+          },
+          "particulate": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Air_Quality_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "A sensor which provides a measure of air quality",
+        "uri": "https://brickschema.org/schema/Brick#Air_Quality_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "quality": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Differential_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "doc": "A type of Setpoints that is related to the difference between two measurements",
+        "uri": "https://brickschema.org/schema/Brick#Differential_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "differential": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Pressure_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "doc": "Sets pressure",
+        "uri": "https://brickschema.org/schema/Brick#Pressure_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
             "type": "sys::Marker"
           }
         }
@@ -3937,140 +8818,6 @@
           }
         }
       },
-      "Brick_Entering_Hot_Water_Temperature_Sensor": {
-        "base": "xetolib::Brick_Water_Temperature_Sensor",
-        "doc": "Measures the temperature of water enteringed to a hot water system",
-        "uri": "https://brickschema.org/schema/Brick#Entering_Hot_Water_Temperature_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "water": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "hot": {
-            "type": "sys::Marker"
-          },
-          "entering": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Duration_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Measures the duration of a phenomenon or event",
-        "uri": "https://brickschema.org/schema/Brick#Duration_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "duration": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Pressure_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Measure the amount of force acting on a unit area",
-        "uri": "https://brickschema.org/schema/Brick#Pressure_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Chilled_Water_Temperature_Sensor": {
-        "base": "xetolib::Brick_Water_Temperature_Sensor",
-        "doc": "Measures the temperature of chilled water",
-        "uri": "https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "water": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "chilled": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Pressure_Setpoint": {
-        "base": "xetolib::Brick_Setpoint",
-        "doc": "Sets pressure",
-        "uri": "https://brickschema.org/schema/Brick#Pressure_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker"
-          }
-        }
-      },
       "Brick_Effective_Air_Temperature_Setpoint": {
         "base": "xetolib::Brick_Air_Temperature_Setpoint",
         "doc": "Sets temperature of air",
@@ -4098,6 +8845,270 @@
             "doc": "Marker labels a dict with typing information"
           },
           "effective": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Dewpoint_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Senses the dewpoint temperature . Dew point is the temperature to which air must be cooled to become saturated with water vapor",
+        "uri": "https://brickschema.org/schema/Brick#Dewpoint_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "dewpoint": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Discharge_Air_Temperature_Cooling_Setpoint": {
+        "base": "xetolib::Brick_Cooling_Temperature_Setpoint",
+        "doc": "Sets temperature of discharge air for cooling",
+        "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Cooling_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "cool": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Electric_Power_Sensor": {
+        "base": "xetolib::Brick_Power_Sensor",
+        "doc": "Measures the amount of instantaneous electric power consumed",
+        "uri": "https://brickschema.org/schema/Brick#Electric_Power_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "power": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "electric": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_On_Status": {
+        "base": "xetolib::Brick_Status",
+        "doc": "Indicates if a control loop, relay or equipment is on",
+        "uri": "https://brickschema.org/schema/Brick#On_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "on": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Off_Status": {
+        "base": "xetolib::Brick_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_CO2_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "doc": "Sets some property of CO2",
+        "uri": "https://brickschema.org/schema/Brick#CO2_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "co2": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Water_Flow_Sensor": {
+        "base": "xetolib::Brick_Flow_Sensor",
+        "doc": "Measures the rate of flow of water",
+        "uri": "https://brickschema.org/schema/Brick#Water_Flow_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "flow": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Pressure_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Measure the amount of force acting on a unit area",
+        "uri": "https://brickschema.org/schema/Brick#Pressure_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Entering_Hot_Water_Temperature_Sensor": {
+        "base": "xetolib::Brick_Water_Temperature_Sensor",
+        "doc": "Measures the temperature of water enteringed to a hot water system",
+        "uri": "https://brickschema.org/schema/Brick#Entering_Hot_Water_Temperature_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "water": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "entering": {
+            "type": "sys::Marker"
+          },
+          "hot": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Air_Enthalpy_Sensor": {
+        "base": "xetolib::Brick_Enthalpy_Sensor",
+        "doc": "Measures the total heat content of air",
+        "uri": "https://brickschema.org/schema/Brick#Air_Enthalpy_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "enthalpy": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
@@ -4135,113 +9146,6 @@
           }
         }
       },
-      "Brick_Humidity_Setpoint": {
-        "base": "xetolib::Brick_Setpoint",
-        "doc": "Sets humidity",
-        "uri": "https://brickschema.org/schema/Brick#Humidity_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "humidity": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_On_Status": {
-        "base": "xetolib::Brick_Status",
-        "doc": "Indicates if a control loop, relay or equipment is on",
-        "uri": "https://brickschema.org/schema/Brick#On_Status",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "status": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "on": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Discharge_Air_Temperature_Cooling_Setpoint": {
-        "base": "xetolib::Brick_Cooling_Temperature_Setpoint",
-        "doc": "Sets temperature of discharge air for cooling",
-        "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Cooling_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "cool": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
-            "type": "sys::Marker"
-          },
-          "air": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Water_Flow_Sensor": {
-        "base": "xetolib::Brick_Flow_Sensor",
-        "doc": "Measures the rate of flow of water",
-        "uri": "https://brickschema.org/schema/Brick#Water_Flow_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "flow": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "water": {
-            "type": "sys::Marker"
-          }
-        }
-      },
       "Brick_Outside_Air_Temperature_Setpoint": {
         "base": "xetolib::Brick_Air_Temperature_Setpoint",
         "doc": "Sets temperature of outside air",
@@ -4273,33 +9177,10 @@
           }
         }
       },
-      "Brick_Off_Status": {
-        "base": "xetolib::Brick_Status",
-        "doc": "Indicates if a control loop, relay or equipment is off",
-        "uri": "https://brickschema.org/schema/Brick#Off_Status",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "status": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "off": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Particulate_Matter_Sensor": {
-        "base": "xetolib::Brick_Air_Quality_Sensor",
-        "doc": "Detects pollutants in the ambient air",
-        "uri": "https://brickschema.org/schema/Brick#Particulate_Matter_Sensor",
+      "Brick_Chilled_Water_Temperature_Sensor": {
+        "base": "xetolib::Brick_Water_Temperature_Sensor",
+        "doc": "Measures the temperature of chilled water",
+        "uri": "https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
@@ -4314,47 +9195,23 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "quality": {
-            "type": "sys::Marker"
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
           },
-          "air": {
-            "type": "sys::Marker"
+          "water": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
           },
-          "particulate": {
-            "type": "sys::Marker"
-          },
-          "matter": {
+          "chilled": {
             "type": "sys::Marker"
           }
         }
       },
-      "Brick_Differential_Setpoint": {
-        "base": "xetolib::Brick_Setpoint",
-        "doc": "A type of Setpoints that is related to the difference between two measurements",
-        "uri": "https://brickschema.org/schema/Brick#Differential_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "differential": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Power_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Measures the amount of instantaneous power consumed",
-        "uri": "https://brickschema.org/schema/Brick#Power_Sensor",
+      "Brick_Velocity_Pressure_Sensor": {
+        "base": "xetolib::Brick_Pressure_Sensor",
+        "doc": "Measures the difference between total pressure and static pressure",
+        "uri": "https://brickschema.org/schema/Brick#Velocity_Pressure_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
@@ -4369,60 +9226,11 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "power": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Electric_Power_Sensor": {
-        "base": "xetolib::Brick_Power_Sensor",
-        "doc": "Measures the amount of instantaneous electric power consumed",
-        "uri": "https://brickschema.org/schema/Brick#Electric_Power_Sensor",
-        "slots": {
-          "point": {
+          "pressure": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "power": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "electric": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Air_Quality_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "A sensor which provides a measure of air quality",
-        "uri": "https://brickschema.org/schema/Brick#Air_Quality_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "quality": {
-            "type": "sys::Marker"
-          },
-          "air": {
+          "velocity": {
             "type": "sys::Marker"
           }
         }
@@ -4454,10 +9262,33 @@
           }
         }
       },
-      "Brick_Air_Enthalpy_Sensor": {
-        "base": "xetolib::Brick_Enthalpy_Sensor",
-        "doc": "Measures the total heat content of air",
-        "uri": "https://brickschema.org/schema/Brick#Air_Enthalpy_Sensor",
+      "Brick_Power_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Measures the amount of instantaneous power consumed",
+        "uri": "https://brickschema.org/schema/Brick#Power_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "power": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Enthalpy_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Measures the total heat content of some substance",
+        "uri": "https://brickschema.org/schema/Brick#Enthalpy_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
@@ -4473,10 +9304,6 @@
             "doc": "Marker labels a dict with typing information"
           },
           "enthalpy": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
             "type": "sys::Marker"
           }
         }
@@ -4509,29 +9336,6 @@
             "type": "sys::Marker"
           },
           "start": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Enthalpy_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Measures the total heat content of some substance",
-        "uri": "https://brickschema.org/schema/Brick#Enthalpy_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "enthalpy": {
             "type": "sys::Marker"
           }
         }

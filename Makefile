@@ -20,6 +20,9 @@ convert-brick-to-haystack: data/converted-models/g36-vav-a2.ttl
 data/xetolib/bh.xeto: data/brick-haystack.csv brick_haystack_harmonization/bh_to_xeto.py
 	poetry run bh-to-xeto data/brick-haystack.csv data/xetolib/bh.xeto
 
+data/bmotif_templates.yml: data/brick-haystack.csv brick_haystack_harmonization/bh_to_xeto.py
+	poetry run bh-to-xeto data/brick-haystack.csv data/xetolib/bh.xeto
+
 data/resolved-bh.json: data/xetolib/bh.xeto
 	rm -f data/resolved-bh.json
 	rm -rf xeto/lib/data/xetolib
