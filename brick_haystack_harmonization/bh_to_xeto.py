@@ -132,6 +132,9 @@ def make_templ_statement(point_class: str, template_name: str, tag_list: str) ->
 def run(filename: str, outputfile: str):
     statements = []
     for row in read_csv(filename):
+        if 'check' in row.values():
+            print(f"Skipping {row} because of 'check'")
+            continue
         if row["Meta:State"] == "Base":
             statements.append(base_to_xeto(row) + "\n")
         elif row["Meta:State"] == "Subparts":
