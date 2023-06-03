@@ -1,0 +1,404 @@
+{
+    "_kind": "grid",
+    "meta": {
+        "ver": "3.0",
+        "numPoints": 562,
+        "numSpaces": 0,
+        "anonymized": {
+            "_kind": "marker"
+        },
+        "numWeathers": 8,
+        "numEquips": 52,
+        "donatedBy": "Thomas Duke",
+        "doc": "One tenant's space in a multi-story office building."
+    },
+    "cols": [
+        {
+            "name": "id"
+        },
+        {
+            "name": "ac"
+        },
+        {
+            "name": "actuator"
+        },
+        {
+            "name": "ahu"
+        },
+        {
+            "name": "air"
+        },
+        {
+            "name": "airRef"
+        },
+        {
+            "name": "area"
+        },
+        {
+            "name": "atmospheric"
+        },
+        {
+            "name": "boiler"
+        },
+        {
+            "name": "chilled"
+        },
+        {
+            "name": "chiller"
+        },
+        {
+            "name": "cmd"
+        },
+        {
+            "name": "co2"
+        },
+        {
+            "name": "cooling"
+        },
+        {
+            "name": "cur"
+        },
+        {
+            "name": "current"
+        },
+        {
+            "name": "damper"
+        },
+        {
+            "name": "daytime"
+        },
+        {
+            "name": "demand"
+        },
+        {
+            "name": "dewPoint"
+        },
+        {
+            "name": "dis"
+        },
+        {
+            "name": "discharge"
+        },
+        {
+            "name": "effective"
+        },
+        {
+            "name": "elec"
+        },
+        {
+            "name": "enable"
+        },
+        {
+            "name": "energy"
+        },
+        {
+            "name": "entering"
+        },
+        {
+            "name": "enum"
+        },
+        {
+            "name": "equip"
+        },
+        {
+            "name": "equipRef"
+        },
+        {
+            "name": "fan"
+        },
+        {
+            "name": "feelsLike"
+        },
+        {
+            "name": "flow"
+        },
+        {
+            "name": "geoAddr"
+        },
+        {
+            "name": "geoCity"
+        },
+        {
+            "name": "geoCoord"
+        },
+        {
+            "name": "geoCountry"
+        },
+        {
+            "name": "geoPostalCode"
+        },
+        {
+            "name": "geoState"
+        },
+        {
+            "name": "geoStreet"
+        },
+        {
+            "name": "heat"
+        },
+        {
+            "name": "heating"
+        },
+        {
+            "name": "his"
+        },
+        {
+            "name": "hisTotalized"
+        },
+        {
+            "name": "hot"
+        },
+        {
+            "name": "humidity"
+        },
+        {
+            "name": "kind"
+        },
+        {
+            "name": "leaving"
+        },
+        {
+            "name": "light"
+        },
+        {
+            "name": "maxVal"
+        },
+        {
+            "name": "meter"
+        },
+        {
+            "name": "minVal"
+        },
+        {
+            "name": "mixed"
+        },
+        {
+            "name": "occ"
+        },
+        {
+            "name": "occupied"
+        },
+        {
+            "name": "outside"
+        },
+        {
+            "name": "point"
+        },
+        {
+            "name": "power"
+        },
+        {
+            "name": "precipitation"
+        },
+        {
+            "name": "pressure"
+        },
+        {
+            "name": "primaryFunction"
+        },
+        {
+            "name": "pump"
+        },
+        {
+            "name": "reactive"
+        },
+        {
+            "name": "return"
+        },
+        {
+            "name": "run"
+        },
+        {
+            "name": "sensor"
+        },
+        {
+            "name": "site"
+        },
+        {
+            "name": "siteMeter"
+        },
+        {
+            "name": "siteRef"
+        },
+        {
+            "name": "sp"
+        },
+        {
+            "name": "speed"
+        },
+        {
+            "name": "submeterOf"
+        },
+        {
+            "name": "temp"
+        },
+        {
+            "name": "tz"
+        },
+        {
+            "name": "unit"
+        },
+        {
+            "name": "unocc"
+        },
+        {
+            "name": "valve"
+        },
+        {
+            "name": "vav"
+        },
+        {
+            "name": "volume"
+        },
+        {
+            "name": "water"
+        },
+        {
+            "name": "weather"
+        },
+        {
+            "name": "weatherCond"
+        },
+        {
+            "name": "weatherStationRef"
+        },
+        {
+            "name": "weatherStation"
+        },
+        {
+            "name": "yearBuilt"
+        },
+        {
+            "name": "zone"
+        },
+        {
+            "name": "custom"
+        }
+    ],
+    "rows": [
+        {
+            "id": {
+                "_kind": "ref",
+                "val": "c-0000"
+            },
+            "area": {
+                "_kind": "number",
+                "val": 50000,
+                "unit": "ft\u00b2"
+            },
+            "dis": "Charlie",
+            "geoAddr": "123 Some Rd, Troy, MI 48007",
+            "geoCity": "Troy",
+            "geoCountry": "US",
+            "geoPostalCode": "48007",
+            "geoState": "MI",
+            "geoStreet": "123 Some Rd",
+            "primaryFunction": "Office",
+            "site": {
+                "_kind": "marker"
+            },
+            "tz": "Detroit",
+            "weatherStationRef": {
+                "_kind": "ref",
+                "val": "c-0267"
+            },
+            "yearBuilt": 1995
+        },
+        {
+            "id": {
+                "_kind": "ref",
+                "val": "c-0001"
+            },
+            "ahu": {
+                "_kind": "marker"
+            },
+            "dis": "Charlie AHU 1",
+            "equip": {
+                "_kind": "marker"
+            },
+            "siteRef": {
+                "_kind": "ref",
+                "val": "c-0000"
+            },
+            "custom": {
+                "equipGroup": "AHUs"
+            }
+        },
+        {
+            "id": {
+                "_kind": "ref",
+                "val": "c-0009"
+            },
+            "air": {
+                "_kind": "marker"
+            },
+            "cur": {
+                "_kind": "marker"
+            },
+            "cmd": {
+                "_kind": "marker"
+            },
+            "damper": {
+                "_kind": "marker"
+            },
+            "dis": "Charlie AHU 1 Mixed Air Damper Position",
+            "equipRef": {
+                "_kind": "ref",
+                "val": "c-0001"
+            },
+            "his": {
+                "_kind": "marker"
+            },
+            "kind": "Number",
+            "mixed": {
+                "_kind": "marker"
+            },
+            "point": {
+                "_kind": "marker"
+            },
+            "siteRef": {
+                "_kind": "ref",
+                "val": "c-0000"
+            },
+            "tz": "New_York",
+            "custom": {
+                "precision": 1
+            }
+        },
+        {
+            "id": {
+                "_kind": "ref",
+                "val": "c-test1"
+            },
+            "cur": {
+                "_kind": "marker"
+            },
+            "damper": {
+                "_kind": "marker"
+            },
+            "dis": "Charlie AHU 1 Mixed Air Damper Command",
+            "equipRef": {
+                "_kind": "ref",
+                "val": "c-0001"
+            },
+            "his": {
+                "_kind": "marker"
+            },
+            "kind": "Number",
+            "point": {
+                "_kind": "marker"
+            },
+            "cmd": {
+                "_kind": "marker"
+            },
+            "siteRef": {
+                "_kind": "ref",
+                "val": "c-0000"
+            },
+            "tz": "New_York",
+            "custom": {
+                "precision": 1
+            }
+        }
+    ]
+}

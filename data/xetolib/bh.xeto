@@ -26,10 +26,10 @@ Brick_Enable_Command : Brick_Command <uri:"https://brickschema.org/schema/Brick#
 Brick_Enable_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Enable_Status"> { enable, status }
 
 // Indicates which mode a system, device or control loop is currently in
-Brick_Mode_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Mode_Status"> { run, status }
+Brick_Mode_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Mode_Status"> { mode, run, status }
 
 // Indicates the current operating mode of a system, device or control loop
-Brick_Operating_Mode_Status : Brick_Mode_Status <uri:"https://brickschema.org/schema/Brick#Operating_Mode_Status"> { status }
+Brick_Operating_Mode_Status : Brick_Mode_Status <uri:"https://brickschema.org/schema/Brick#Operating_Mode_Status"> { mode, operation, status }
 
 // Controls whether or not a device or controller is operating in "Occupied" mode
 Brick_Occupancy_Command : Brick_Command <uri:"https://brickschema.org/schema/Brick#Occupancy_Command"> { cmd, occupied }
@@ -38,67 +38,67 @@ Brick_Occupancy_Command : Brick_Command <uri:"https://brickschema.org/schema/Bri
 Brick_Occupancy_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Occupancy_Status"> { occupied, status }
 
 // Indicates if a system, device or control loop is in "Occupied" mode
-Brick_Occupied_Mode_Status : Brick_Mode_Status <uri:"https://brickschema.org/schema/Brick#Occupied_Mode_Status"> { occupied, status }
+Brick_Occupied_Mode_Status : Brick_Mode_Status <uri:"https://brickschema.org/schema/Brick#Occupied_Mode_Status"> { mode, occupied, status }
 
 // Indicates if the expected operating status of an equipment or control loop has been overridden
-Brick_Overridden_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Overridden_Status"> { status }
+Brick_Overridden_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Overridden_Status"> { override, status }
 
 // Controls or reports whether or not a device or control loop is in 'override'
-Brick_Override_Command : Brick_Command <uri:"https://brickschema.org/schema/Brick#Override_Command"> { cmd }
+Brick_Override_Command : Brick_Command <uri:"https://brickschema.org/schema/Brick#Override_Command"> { cmd, override }
 
 // Indicates if a control loop, relay or equipment has been turned on when it would otherwise be scheduled to be off
-Brick_Overridden_On_Status : Brick_On_Status <uri:"https://brickschema.org/schema/Brick#Overridden_On_Status"> { status }
+Brick_Overridden_On_Status : Brick_On_Status <uri:"https://brickschema.org/schema/Brick#Overridden_On_Status"> { on, override, status }
 
 // Indicates if a control loop, relay or equipment has been turned off when it would otherwise be scheduled to be on
-Brick_Overridden_Off_Status : Brick_Off_Status <uri:"https://brickschema.org/schema/Brick#Overridden_Off_Status"> { status }
+Brick_Overridden_Off_Status : Brick_Off_Status <uri:"https://brickschema.org/schema/Brick#Overridden_Off_Status"> { off, override, status }
 
 
-Brick_Operating_Mode_Command : Point <uri:"https://brickschema.org/schema/Brick#Operating_Mode_Command"> { cmd, enable }
+Brick_Operating_Mode_Command : Point <uri:"https://brickschema.org/schema/Brick#Operating_Mode_Command"> { cmd, emergency, enable, mode }
 
 // Indicates if a request has been filed to start a device or equipment
-Brick_Run_Request_Status : Brick_Run_Status <uri:"https://brickschema.org/schema/Brick#Run_Request_Status"> { run, status }
+Brick_Run_Request_Status : Brick_Run_Status <uri:"https://brickschema.org/schema/Brick#Run_Request_Status"> { call, run, status }
 
 // Indicates the presence of a fault in a device, system or control loop
-Brick_Fault_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Fault_Status"> { status }
+Brick_Fault_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Fault_Status"> { fault, status }
 
 // An alarm that indicates a loss of communication e.g. with a device or controller
 Brick_Communication_Loss_Alarm : Brick_Alarm <uri:"https://brickschema.org/schema/Brick#Communication_Loss_Alarm"> { alarm }
 
 
-Brick_Thermal_Power_Sensor : Brick_Power_Sensor <uri:"https://brickschema.org/schema/Brick#Thermal_Power_Sensor"> { power, sensor }
+Brick_Thermal_Power_Sensor : Brick_Power_Sensor <uri:"https://brickschema.org/schema/Brick#Thermal_Power_Sensor"> { power, sensor, thermal }
 
 
 Brick_Electrical_Power_Sensor : Point <uri:"https://brickschema.org/schema/Brick#Electrical_Power_Sensor"> { elec, power, sensor }
 
 // Measures the duration for which a device was in an active or "on" state
-Brick_Run_Time_Sensor : Brick_Duration_Sensor <uri:"https://brickschema.org/schema/Brick#Run_Time_Sensor"> { run, sensor }
+Brick_Run_Time_Sensor : Brick_Duration_Sensor <uri:"https://brickschema.org/schema/Brick#Run_Time_Sensor"> { run, sensor, time }
 
 // Measures the temperature of discharge air
 Brick_Discharge_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Sensor"> { air, discharge, sensor, temp }
 
 // Sets temperature of discharge air
-Brick_Discharge_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Setpoint"> { air, discharge, sp, temp }
+Brick_Discharge_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Setpoint"> { air, discharge, setpoint, sp, temp }
 
 // Sets the size of a deadband of temperature of discharge air
-Brick_Discharge_Air_Temperature_Deadband_Setpoint : Brick_Discharge_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Deadband_Setpoint"> { air, discharge, sp, temp }
+Brick_Discharge_Air_Temperature_Deadband_Setpoint : Brick_Discharge_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Deadband_Setpoint"> { air, deadband, discharge, setpoint, sp, temp }
 
 // Sets the size of a deadband of temperature of heating discharge air
-Brick_Heating_Discharge_Air_Temperature_Deadband_Setpoint : Brick_Discharge_Air_Temperature_Deadband_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Discharge_Air_Temperature_Deadband_Setpoint"> { air, discharge, heating, sp, temp }
+Brick_Heating_Discharge_Air_Temperature_Deadband_Setpoint : Brick_Discharge_Air_Temperature_Deadband_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Discharge_Air_Temperature_Deadband_Setpoint"> { air, deadband, discharge, heating, setpoint, sp, temp }
 
 // Sets the size of a deadband of temperature of cooling discharge air
-Brick_Cooling_Discharge_Air_Temperature_Deadband_Setpoint : Brick_Discharge_Air_Temperature_Cooling_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Discharge_Air_Temperature_Deadband_Setpoint"> { air, cooling, discharge, sp, temp }
+Brick_Cooling_Discharge_Air_Temperature_Deadband_Setpoint : Brick_Discharge_Air_Temperature_Cooling_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Discharge_Air_Temperature_Deadband_Setpoint"> { air, cooling, deadband, discharge, setpoint, sp, temp }
 
 // Measures the relative humidity of discharge air
 Brick_Discharge_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Humidity_Sensor"> { air, discharge, humidity, sensor }
 
 // Humidity setpoint for discharge air
-Brick_Discharge_Air_Humidity_Setpoint : Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Humidity_Setpoint"> { air, discharge, humidity, sp }
+Brick_Discharge_Air_Humidity_Setpoint : Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Humidity_Setpoint"> { air, discharge, humidity, setpoint, sp }
 
 // The static pressure of air within discharge regions of an HVAC system
 Brick_Discharge_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Sensor"> { air, discharge, pressure, sensor }
 
 // Sets static pressure of discharge air
-Brick_Discharge_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Setpoint"> { air, discharge, pressure, sp }
+Brick_Discharge_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Setpoint"> { air, discharge, pressure, setpoint, sp }
 
 
 Brick_Discharge_Air_Velocity_Pressure_Sensor : Brick_Velocity_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Velocity_Pressure_Sensor"> { air, discharge, pressure, sensor, velocity }
@@ -110,13 +110,13 @@ Brick_Discharge_Air_Dewpoint_Sensor : Brick_Dewpoint_Sensor <uri:"https://bricks
 Brick_Discharge_Air_Flow_Sensor : Brick_Air_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Flow_Sensor"> { air, discharge, flow, sensor }
 
 // Sets discharge air flow
-Brick_Discharge_Air_Flow_Setpoint : Brick_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Flow_Setpoint"> { air, discharge, flow, sp }
+Brick_Discharge_Air_Flow_Setpoint : Brick_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Flow_Setpoint"> { air, discharge, flow, setpoint, sp }
 
 // Sets discharge air flow for cooling
-Brick_Cooling_Discharge_Air_Flow_Setpoint : Brick_Discharge_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Discharge_Air_Flow_Setpoint"> { air, cooling, discharge, flow, sp }
+Brick_Cooling_Discharge_Air_Flow_Setpoint : Brick_Discharge_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Discharge_Air_Flow_Setpoint"> { air, cooling, discharge, flow, setpoint, sp }
 
 // Sets discharge air flow for heating
-Brick_Heating_Discharge_Air_Flow_Setpoint : Brick_Discharge_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Discharge_Air_Flow_Setpoint"> { air, discharge, flow, heating, sp }
+Brick_Heating_Discharge_Air_Flow_Setpoint : Brick_Discharge_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Discharge_Air_Flow_Setpoint"> { air, discharge, flow, heating, setpoint, sp }
 
 
 
@@ -125,13 +125,13 @@ Brick_Heating_Discharge_Air_Flow_Setpoint : Brick_Discharge_Air_Flow_Setpoint <u
 Brick_Mixed_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Temperature_Sensor"> { air, mixed, sensor, temp }
 
 // Sets temperature of mixed air
-Brick_Mixed_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Temperature_Setpoint"> { air, mixed, sp, temp }
+Brick_Mixed_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Temperature_Setpoint"> { air, mixed, setpoint, sp, temp }
 
 // Measures the humidity of mixed air
 Brick_Mixed_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Humidity_Sensor"> { air, humidity, mixed, sensor }
 
 // Humidity setpoint for mixed air
-Brick_Mixed_Air_Humidity_Setpoint : Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Humidity_Setpoint"> { air, humidity, mixed, sp }
+Brick_Mixed_Air_Humidity_Setpoint : Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Humidity_Setpoint"> { air, humidity, mixed, setpoint, sp }
 
 // Measures the rate of flow of mixed air
 Brick_Mixed_Air_Flow_Sensor : Brick_Air_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Flow_Sensor"> { air, flow, mixed, sensor }
@@ -140,16 +140,16 @@ Brick_Mixed_Air_Flow_Sensor : Brick_Air_Flow_Sensor <uri:"https://brickschema.or
 Brick_Return_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_Temperature_Sensor"> { air, return, sensor, temp }
 
 // The target temperature for return air, often used as an approximation of zone air temperature
-Brick_Return_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Return_Air_Temperature_Setpoint"> { air, return, sp, temp }
+Brick_Return_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Return_Air_Temperature_Setpoint"> { air, return, setpoint, sp, temp }
 
 // Measures the relative humidity of return air
 Brick_Return_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_Humidity_Sensor"> { air, humidity, return, sensor }
 
 // Humidity setpoint for return air
-Brick_Return_Air_Humidity_Setpoint : Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Return_Air_Humidity_Setpoint"> { air, humidity, return, sp }
+Brick_Return_Air_Humidity_Setpoint : Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Return_Air_Humidity_Setpoint"> { air, humidity, return, setpoint, sp }
 
 // Measures the total heat content of return air
-Brick_Return_Air_Enthalpy_Sensor : Brick_Air_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_Enthalpy_Sensor"> { air, return, sensor }
+Brick_Return_Air_Enthalpy_Sensor : Brick_Air_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_Enthalpy_Sensor"> { air, enthalpy, return, sensor }
 
 // Senses the dewpoint temperature of return air
 Brick_Return_Air_Dewpoint_Sensor : Brick_Dewpoint_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_Dewpoint_Sensor"> { air, dewPoint, return, sensor, temp }
@@ -161,7 +161,7 @@ Brick_Return_Air_Flow_Sensor : Brick_Air_Flow_Sensor <uri:"https://brickschema.o
 Brick_Return_Air_CO2_Sensor : Brick_CO2_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_CO2_Sensor"> { air, co2, return, sensor }
 
 // Sets some property of CO2 in Return Air
-Brick_Return_Air_CO2_Setpoint : Brick_CO2_Setpoint <uri:"https://brickschema.org/schema/Brick#Return_Air_CO2_Setpoint"> { air, co2, return, sp }
+Brick_Return_Air_CO2_Setpoint : Brick_CO2_Setpoint <uri:"https://brickschema.org/schema/Brick#Return_Air_CO2_Setpoint"> { air, co2, return, setpoint, sp }
 
 // Measures the temperature of outside air
 Brick_Outside_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_Temperature_Sensor"> { air, outside, sensor, temp }
@@ -173,13 +173,13 @@ Brick_Outside_Air_Dewpoint_Sensor : Brick_Dewpoint_Sensor <uri:"https://bricksch
 Brick_Outside_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_Humidity_Sensor"> { air, humidity, outside, sensor }
 
 // Measures the total heat content of outside air
-Brick_Outside_Air_Enthalpy_Sensor : Brick_Air_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_Enthalpy_Sensor"> { air, outside, sensor }
+Brick_Outside_Air_Enthalpy_Sensor : Brick_Air_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_Enthalpy_Sensor"> { air, enthalpy, outside, sensor }
 
 // Measures the rate of flow of outside air into the system
 Brick_Outside_Air_Flow_Sensor : Brick_Air_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_Flow_Sensor"> { air, flow, outside, sensor }
 
 // Sets outside air flow rate
-Brick_Outside_Air_Flow_Setpoint : Brick_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Flow_Setpoint"> { air, flow, min, outside, sp }
+Brick_Outside_Air_Flow_Setpoint : Brick_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Flow_Setpoint"> { air, flow, min, outside, setpoint, sp }
 
 // Measures the concentration of CO2 in outside air
 Brick_Outside_Air_CO2_Sensor : Brick_CO2_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_CO2_Sensor"> { air, co2, outside, sensor }
@@ -194,73 +194,73 @@ Brick_Exhaust_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor <uri:"https:/
 Brick_Exhaust_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Static_Pressure_Sensor"> { air, exhaust, pressure, sensor }
 
 // Sets static pressure of exhaust air
-Brick_Exhaust_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Static_Pressure_Setpoint"> { air, exhaust, pressure, sp }
+Brick_Exhaust_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Static_Pressure_Setpoint"> { air, exhaust, pressure, setpoint, sp }
 
 // Measures the rate of flow of exhaust air
 Brick_Exhaust_Air_Flow_Sensor : Brick_Air_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Flow_Sensor"> { air, exhaust, flow, sensor }
 
 // Sets exhaust air flow rate
-Brick_Exhaust_Air_Flow_Setpoint : Brick_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Flow_Setpoint"> { air, exhaust, flow, sp }
+Brick_Exhaust_Air_Flow_Setpoint : Brick_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Flow_Setpoint"> { air, exhaust, flow, setpoint, sp }
 
 // Measures the temperature of air
 Brick_Air_Temperature_Sensor : Brick_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Temperature_Sensor"> { air, sensor, temp }
 
 // Sets temperature of air
-Brick_Air_Temperature_Setpoint : Brick_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Air_Temperature_Setpoint"> { air, sp, temp }
+Brick_Air_Temperature_Setpoint : Brick_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Air_Temperature_Setpoint"> { air, setpoint, sp, temp }
 
 // Measures the present state of absolute humidity relative to a maximum humidity given the same temperature
 Brick_Relative_Humidity_Sensor : Brick_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Relative_Humidity_Sensor"> { air, humidity, sensor }
 
 // Measures the concentration of water vapor in air
-Brick_Humidity_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Humidity_Sensor"> { air, humidity, sensor }
+Brick_Humidity_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Humidity_Sensor"> { absolute, air, humidity, sensor }
 
 // Measures the rate of flow of air
 Brick_Air_Flow_Sensor : Brick_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Flow_Sensor"> { air, flow, sensor }
 
 // Sets air flow
-Brick_Air_Flow_Setpoint : Brick_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Air_Flow_Setpoint"> { air, flow, sp }
+Brick_Air_Flow_Setpoint : Brick_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Air_Flow_Setpoint"> { air, flow, setpoint, sp }
 
 // Measures the magnitude of velocity of some form of movement
 Brick_Speed_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Speed_Sensor"> { sensor, speed }
 
 // Sets speed
-Brick_Speed_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Speed_Setpoint"> { sp, speed }
+Brick_Speed_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Speed_Setpoint"> { setpoint, sp, speed }
 
 // Measures the current position of a component in terms of a fraction of its full range of motion
-Brick_Position_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Position_Sensor"> { sensor }
+Brick_Position_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Position_Sensor"> { position, sensor }
 
 // Controls or reports the position of some object
-Brick_Position_Command : Brick_Command <uri:"https://brickschema.org/schema/Brick#Position_Command"> { cmd }
+Brick_Position_Command : Brick_Command <uri:"https://brickschema.org/schema/Brick#Position_Command"> { cmd, position }
 
 // Measures the rate of flow of some substance
 Brick_Flow_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Flow_Sensor"> { flow, sensor }
 
 // Sets flow
-Brick_Flow_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Flow_Setpoint"> { flow, sp }
+Brick_Flow_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Flow_Setpoint"> { flow, setpoint, sp }
 
 // Measures resistance to airflow in a heating and cooling system's components and duct work
 Brick_Static_Pressure_Sensor : Brick_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Static_Pressure_Sensor"> { pressure, sensor }
 
 // Sets static pressure
-Brick_Static_Pressure_Setpoint : Brick_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Static_Pressure_Setpoint"> { pressure, sp }
+Brick_Static_Pressure_Setpoint : Brick_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Static_Pressure_Setpoint"> { pressure, setpoint, sp }
 
 // Measures the difference between two applied pressures
 Brick_Differential_Pressure_Sensor : Brick_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Differential_Pressure_Sensor"> { delta, pressure, sensor }
 
 // Sets differential pressure
-Brick_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <uri:"https://brickschema.org/schema/Brick#Differential_Pressure_Setpoint"> { delta, pressure, sp }
+Brick_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <uri:"https://brickschema.org/schema/Brick#Differential_Pressure_Setpoint"> { delta, pressure, setpoint, sp }
 
 // Measures temperature: the physical property of matter that quantitatively expresses the common notions of hot and cold
 Brick_Temperature_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Temperature_Sensor"> { sensor, temp }
 
 // Sets temperature
-Brick_Temperature_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Temperature_Setpoint"> { sp, temp }
+Brick_Temperature_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Temperature_Setpoint"> { setpoint, sp, temp }
 
 // Measures properties of CO2 in air
 Brick_CO2_Sensor : Brick_Air_Quality_Sensor <uri:"https://brickschema.org/schema/Brick#CO2_Sensor"> { co2, sensor }
 
 
-Brick_Outside_Air_Lockout_Temperature_Setpoint : Brick_Outside_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Lockout_Temperature_Setpoint"> { air, disable, outside, sp, temp }
+Brick_Outside_Air_Lockout_Temperature_Setpoint : Brick_Outside_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Lockout_Temperature_Setpoint"> { air, disable, outside, setpoint, sp, temp }
 
 // Indicates if a piece of equipment, system, or functionality has been locked out from operation
 Brick_Lockout_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Lockout_Status"> { air, disable, economizing, outside, status, temp }
@@ -281,7 +281,7 @@ Brick_Cooling_Command : Brick_Command <uri:"https://brickschema.org/schema/Brick
 Brick_Chilled_Water_Flow_Sensor : Brick_Water_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Flow_Sensor"> { chilled, flow, sensor, water }
 
 // Sets the target flow rate of chilled water
-Brick_Chilled_Water_Flow_Setpoint : Brick_Water_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Flow_Setpoint"> { chilled, flow, sp, water }
+Brick_Chilled_Water_Flow_Setpoint : Brick_Water_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Flow_Setpoint"> { chilled, flow, setpoint, sp, water }
 
 
 // Measures the difference in temperature between the entering water to the chiller or other water cooling device and leaving water from the same chiller or other water cooling device
@@ -291,14 +291,14 @@ Brick_Chilled_Water_Differential_Temperature_Sensor : Brick_Chilled_Water_Temper
 Brick_Chilled_Water_Differential_Pressure_Sensor : Brick_Differential_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Differential_Pressure_Sensor"> { chilled, delta, pressure, sensor, water }
 
 // Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit used to carry chilled water
-Brick_Chilled_Water_Differential_Pressure_Setpoint : Brick_Water_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Differential_Pressure_Setpoint"> { chilled, delta, pressure, sp, water }
+Brick_Chilled_Water_Differential_Pressure_Setpoint : Brick_Water_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Differential_Pressure_Setpoint"> { chilled, delta, pressure, setpoint, sp, water }
 
 
 // Measures the rate of flow in a hot water circuit
 Brick_Hot_Water_Flow_Sensor : Brick_Water_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Hot_Water_Flow_Sensor"> { flow, hot, sensor, water }
 
 // Sets the target flow rate of hot water
-Brick_Hot_Water_Flow_Setpoint : Brick_Water_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Hot_Water_Flow_Setpoint"> { flow, hot, sp, water }
+Brick_Hot_Water_Flow_Setpoint : Brick_Water_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Hot_Water_Flow_Setpoint"> { flow, hot, setpoint, sp, water }
 
 // Measures the difference in temperature between the entering water to the boiler or other water heating device and leaving water from the same boiler or other water heating device
 Brick_Hot_Water_Differential_Temperature_Sensor : Brick_Entering_Hot_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Hot_Water_Differential_Temperature_Sensor"> { delta, hot, sensor, temp, water }
@@ -307,13 +307,13 @@ Brick_Hot_Water_Differential_Temperature_Sensor : Brick_Entering_Hot_Water_Tempe
 Brick_Hot_Water_Differential_Pressure_Sensor : Brick_Differential_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Hot_Water_Differential_Pressure_Sensor"> { delta, hot, pressure, sensor, water }
 
 // Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit used to carry hot water
-Brick_Hot_Water_Differential_Pressure_Setpoint : Brick_Water_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Hot_Water_Differential_Pressure_Setpoint"> { delta, hot, pressure, sp, water }
+Brick_Hot_Water_Differential_Pressure_Setpoint : Brick_Water_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Hot_Water_Differential_Pressure_Setpoint"> { delta, hot, pressure, setpoint, sp, water }
 
 // Measures the flow of the condenser water
 Brick_Condenser_Water_Flow_Sensor : Brick_Water_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Condenser_Water_Flow_Sensor"> { condenser, flow, sensor, water }
 
 
-Brick_Condenser_Water_Flow_Setpoint : Brick_Water_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Condenser_Water_Flow_Setpoint"> { condenser, flow, sp, water }
+Brick_Condenser_Water_Flow_Setpoint : Brick_Water_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Condenser_Water_Flow_Setpoint"> { condenser, flow, setpoint, sp, water }
 
 // Measures the rate of flow of bypass water
 Brick_Bypass_Water_Flow_Sensor : Brick_Water_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Bypass_Water_Flow_Sensor"> { bypass, flow, sensor, water }
@@ -337,37 +337,37 @@ Brick_Water_Differential_Temperature_Sensor : Brick_Water_Temperature_Sensor <ur
 Brick_Water_Temperature_Sensor : Brick_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Temperature_Sensor"> { sensor, temp, water }
 
 // Measures the level of the water in the collection basin, e.g. within a Cooling_Tower
-Brick_Collection_Basin_Water_Level_Sensor : Brick_Water_Level_Sensor <uri:"https://brickschema.org/schema/Brick#Collection_Basin_Water_Level_Sensor"> { sensor, water }
+Brick_Collection_Basin_Water_Level_Sensor : Brick_Water_Level_Sensor <uri:"https://brickschema.org/schema/Brick#Collection_Basin_Water_Level_Sensor"> { basin, level, sensor, water }
 
 // Measures the height/level of water in some container
-Brick_Water_Level_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Level_Sensor"> { sensor, water }
+Brick_Water_Level_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Level_Sensor"> { level, sensor, water }
 
 // An alarm that indicates leaks occured in systems containing fluids
-Brick_Leak_Alarm : Brick_Alarm <uri:"https://brickschema.org/schema/Brick#Leak_Alarm"> { alarm }
+Brick_Leak_Alarm : Brick_Alarm <uri:"https://brickschema.org/schema/Brick#Leak_Alarm"> { alarm, leak }
 
 // A physical or virtual sensor which represents the temperature of an HVAC Zone
 Brick_Zone_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Zone_Air_Temperature_Sensor"> { air, sensor, temp, zone }
 
 // Sets temperature of zone air
-Brick_Zone_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Zone_Air_Temperature_Setpoint"> { air, sp, temp, zone }
+Brick_Zone_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Zone_Air_Temperature_Setpoint"> { air, setpoint, sp, temp, zone }
 
 
-Brick_Effective_Zone_Air_Temperature_Setpoint : Brick_Effective_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Effective_Zone_Air_Temperature_Setpoint"> { air, effective, sp, temp, zone }
+Brick_Effective_Zone_Air_Temperature_Setpoint : Brick_Effective_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Effective_Zone_Air_Temperature_Setpoint"> { air, effective, setpoint, sp, temp, zone }
 
 // Measures the relative humidity of zone air
 Brick_Zone_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Zone_Air_Humidity_Sensor"> { air, humidity, sensor, zone }
 
 // Humidity setpoint for zone air
-Brick_Zone_Air_Humidity_Setpoint : Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Zone_Air_Humidity_Setpoint"> { air, humidity, sp, zone }
+Brick_Zone_Air_Humidity_Setpoint : Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Zone_Air_Humidity_Setpoint"> { air, humidity, setpoint, sp, zone }
 
 // Measures dewpoint of zone air
 Brick_Zone_Air_Dewpoint_Sensor : Brick_Dewpoint_Sensor <uri:"https://brickschema.org/schema/Brick#Zone_Air_Dewpoint_Sensor"> { air, dewPoint, sensor, temp, zone }
 
 // The static pressure of air within a building
-Brick_Building_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Building_Air_Static_Pressure_Sensor"> { air, pressure, sensor }
+Brick_Building_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Building_Air_Static_Pressure_Sensor"> { air, building, pressure, sensor }
 
 // Sets static pressure of the entire building
-Brick_Building_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Building_Air_Static_Pressure_Setpoint"> { air, pressure, sp }
+Brick_Building_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Building_Air_Static_Pressure_Setpoint"> { air, building, pressure, setpoint, sp }
 
 // The computed average temperature of air in a zone, over some period of time
 Brick_Average_Zone_Air_Temperature_Sensor : Brick_Zone_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Average_Zone_Air_Temperature_Sensor"> { air, avg, sensor, temp, zone }
@@ -391,588 +391,588 @@ Brick_Frequency_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick
 Brick_Power_Factor_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Power_Factor_Sensor"> { pf, sensor }
 
 // Measures torque, the tendency of a force to rotate an object about some axis
-Brick_Torque_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Torque_Sensor"> { sensor }
+Brick_Torque_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Torque_Sensor"> { sensor, torque }
 
 // Measure temperature of the heat sink on a device such as a VFD.
-Brick_Heat_Sink_Temperature_Sensor : Brick_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Heat_Sink_Temperature_Sensor"> { sensor, temp }
+Brick_Heat_Sink_Temperature_Sensor : Brick_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Heat_Sink_Temperature_Sensor"> { heatsink, sensor, temp }
 
 // Measures the voltage across a DC bus
 Brick_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <uri:"https://brickschema.org/schema/Brick#DC_Bus_Voltage_Sensor"> { dc, sensor, volt }
 
 // An alarm that indicates a leak of condensate from a cooling system
-Brick_Condensate_Leak_Alarm : Brick_Leak_Alarm <uri:"https://brickschema.org/schema/Brick#Condensate_Leak_Alarm"> { condensate, status }
+Brick_Condensate_Leak_Alarm : Brick_Leak_Alarm <uri:"https://brickschema.org/schema/Brick#Condensate_Leak_Alarm"> { alarm, condensate, status }
 
 
 // Measures the total luminous flux incident on a surface, per unit area
 Brick_Illuminance_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Illuminance_Sensor"> { illuminance, sensor }
 
 // Detects matter of size 1 micron
-Brick_PM1_Sensor : Brick_Particulate_Matter_Sensor <uri:"https://brickschema.org/schema/Brick#PM1_Sensor"> { air, sensor, zone }
+Brick_PM1_Sensor : Brick_Particulate_Matter_Sensor <uri:"https://brickschema.org/schema/Brick#PM1_Sensor"> { air, pm1, sensor, zone }
 
 // Detects matter of size 2.5 microns
-Brick_PM25_Sensor : Brick_Particulate_Matter_Sensor <uri:"https://brickschema.org/schema/Brick#PM2.5_Sensor"> { air, sensor, zone }
+Brick_PM25_Sensor : Brick_Particulate_Matter_Sensor <uri:"https://brickschema.org/schema/Brick#PM2.5_Sensor"> { air, pm2_5, sensor, zone }
 
 // Detects matter of size 10 microns
-Brick_PM10_Sensor : Brick_Particulate_Matter_Sensor <uri:"https://brickschema.org/schema/Brick#PM10_Sensor"> { air, sensor, zone }
+Brick_PM10_Sensor : Brick_Particulate_Matter_Sensor <uri:"https://brickschema.org/schema/Brick#PM10_Sensor"> { air, pm10, sensor, zone }
 
 
-Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <template:"Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint"> { air, discharge, hotDeck, setpoint, temp }
+Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <template:"Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint", uri:"urn:___param___#Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint"> { air, discharge, hotDeck, setpoint, temp }
 
 
-Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor <template:"Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor"> { air, discharge, hotDeck, pressure }
+Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor <template:"Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor", uri:"urn:___param___#Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor"> { air, discharge, hotDeck, pressure }
 
 
-Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <template:"Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint"> { air, discharge, hotDeck, pressure, setpoint }
+Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <template:"Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint", uri:"urn:___param___#Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint"> { air, discharge, hotDeck, pressure, setpoint }
 
 
-Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <template:"Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint"> { air, coldDeck, discharge, setpoint, temp }
+Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <template:"Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint", uri:"urn:___param___#Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint"> { air, coldDeck, discharge, setpoint, temp }
 
 
-Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor <template:"Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor"> { air, coldDeck, discharge, pressure }
+Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor <template:"Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor", uri:"urn:___param___#Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor"> { air, coldDeck, discharge, pressure }
 
 
-Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <template:"Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint"> { air, coldDeck, discharge, pressure, setpoint }
+Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <template:"Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint", uri:"urn:___param___#Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint"> { air, coldDeck, discharge, pressure, setpoint }
 
 
-Brick_Mixed_Damper_Position_Command : Brick_Command <template:"Brick_Mixed_Damper_Position_Command"> { air, damper, mixed }
+Brick_Mixed_Damper_Position_Command : Brick_Command <template:"Brick_Mixed_Damper_Position_Command", uri:"urn:___param___#Brick_Mixed_Damper_Position_Command"> { air, damper, mixed }
 
 
-Brick_Mixed_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Mixed_Damper_Position_Sensor"> { air, damper, mixed }
+Brick_Mixed_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Mixed_Damper_Position_Sensor", uri:"urn:___param___#Brick_Mixed_Damper_Position_Sensor"> { air, damper, mixed }
 
 
-Brick_Damper_Position_Command : Brick_Command <template:"Brick_Damper_Position_Command"> { damper, inlet }
+Brick_Damper_Position_Command : Brick_Command <template:"Brick_Damper_Position_Command", uri:"urn:___param___#Brick_Damper_Position_Command"> { damper, inlet }
 
 
-Brick_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Damper_Position_Sensor"> { damper, inlet }
+Brick_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Damper_Position_Sensor", uri:"urn:___param___#Brick_Damper_Position_Sensor"> { damper, inlet }
 
 
-Brick_Return_Damper_Position_Command : Brick_Command <template:"Brick_Return_Damper_Position_Command"> { air, damper, return }
+Brick_Return_Damper_Position_Command : Brick_Command <template:"Brick_Return_Damper_Position_Command", uri:"urn:___param___#Brick_Return_Damper_Position_Command"> { air, damper, return }
 
 
-Brick_Return_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Return_Damper_Position_Sensor"> { air, damper, return }
+Brick_Return_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Return_Damper_Position_Sensor", uri:"urn:___param___#Brick_Return_Damper_Position_Sensor"> { air, damper, return }
 
 
-Brick_Return_Damper_Overridden_Status : Brick_Status <template:"Brick_Return_Damper_Overridden_Status"> { air, damper, override, return }
+Brick_Return_Damper_Overridden_Status : Brick_Status <template:"Brick_Return_Damper_Overridden_Status", uri:"urn:___param___#Brick_Return_Damper_Overridden_Status"> { air, damper, override, return }
 
 
-Brick_Return_Damper_Override_Command : Brick_Command <template:"Brick_Return_Damper_Override_Command"> { air, damper, override, return }
+Brick_Return_Damper_Override_Command : Brick_Command <template:"Brick_Return_Damper_Override_Command", uri:"urn:___param___#Brick_Return_Damper_Override_Command"> { air, damper, override, return }
 
 
-Brick_Outside_Damper_Position_Command : Brick_Command <template:"Brick_Outside_Damper_Position_Command"> { air, damper, outside }
+Brick_Outside_Damper_Position_Command : Brick_Command <template:"Brick_Outside_Damper_Position_Command", uri:"urn:___param___#Brick_Outside_Damper_Position_Command"> { air, damper, outside }
 
 
-Brick_Outside_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Outside_Damper_Position_Sensor"> { air, damper, outside }
+Brick_Outside_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Outside_Damper_Position_Sensor", uri:"urn:___param___#Brick_Outside_Damper_Position_Sensor"> { air, damper, outside }
 
 
-Brick_Outside_Damper_Overridden_Status : Brick_Status <template:"Brick_Outside_Damper_Overridden_Status"> { air, damper, outside, override }
+Brick_Outside_Damper_Overridden_Status : Brick_Status <template:"Brick_Outside_Damper_Overridden_Status", uri:"urn:___param___#Brick_Outside_Damper_Overridden_Status"> { air, damper, outside, override }
 
 
-Brick_Outside_Damper_Override_Command : Brick_Command <template:"Brick_Outside_Damper_Override_Command"> { air, damper, outside, override }
+Brick_Outside_Damper_Override_Command : Brick_Command <template:"Brick_Outside_Damper_Override_Command", uri:"urn:___param___#Brick_Outside_Damper_Override_Command"> { air, damper, outside, override }
 
 
-Brick_Economizer_Damper_Position_Command : Brick_Command <template:"Brick_Economizer_Damper_Position_Command"> { air, damper, economizer }
+Brick_Economizer_Damper_Position_Command : Brick_Command <template:"Brick_Economizer_Damper_Position_Command", uri:"urn:___param___#Brick_Economizer_Damper_Position_Command"> { air, damper, economizer }
 
 
-Brick_Economizer_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Economizer_Damper_Position_Sensor"> { air, damper, economizer }
+Brick_Economizer_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Economizer_Damper_Position_Sensor", uri:"urn:___param___#Brick_Economizer_Damper_Position_Sensor"> { air, damper, economizer }
 
 
-Brick_Economizer_Damper_Overridden_Status : Brick_Status <template:"Brick_Economizer_Damper_Overridden_Status"> { air, damper, economizer, override }
+Brick_Economizer_Damper_Overridden_Status : Brick_Status <template:"Brick_Economizer_Damper_Overridden_Status", uri:"urn:___param___#Brick_Economizer_Damper_Overridden_Status"> { air, damper, economizer, override }
 
 
-Brick_Economizer_Damper_Override_Command : Brick_Command <template:"Brick_Economizer_Damper_Override_Command"> { air, damper, economizer, override }
+Brick_Economizer_Damper_Override_Command : Brick_Command <template:"Brick_Economizer_Damper_Override_Command", uri:"urn:___param___#Brick_Economizer_Damper_Override_Command"> { air, damper, economizer, override }
 
 
-Brick_Exhaust_Damper_Position_Command : Brick_Command <template:"Brick_Exhaust_Damper_Position_Command"> { air, damper, exhaust }
+Brick_Exhaust_Damper_Position_Command : Brick_Command <template:"Brick_Exhaust_Damper_Position_Command", uri:"urn:___param___#Brick_Exhaust_Damper_Position_Command"> { air, damper, exhaust }
 
 
-Brick_Exhaust_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Exhaust_Damper_Position_Sensor"> { air, damper, exhaust }
+Brick_Exhaust_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Exhaust_Damper_Position_Sensor", uri:"urn:___param___#Brick_Exhaust_Damper_Position_Sensor"> { air, damper, exhaust }
 
 
-Brick_Exhaust_Damper_Overridden_Status : Brick_Status <template:"Brick_Exhaust_Damper_Overridden_Status"> { air, damper, exhaust, override }
+Brick_Exhaust_Damper_Overridden_Status : Brick_Status <template:"Brick_Exhaust_Damper_Overridden_Status", uri:"urn:___param___#Brick_Exhaust_Damper_Overridden_Status"> { air, damper, exhaust, override }
 
 
-Brick_Exhaust_Damper_Override_Command : Brick_Command <template:"Brick_Exhaust_Damper_Override_Command"> { air, damper, exhaust, override }
+Brick_Exhaust_Damper_Override_Command : Brick_Command <template:"Brick_Exhaust_Damper_Override_Command", uri:"urn:___param___#Brick_Exhaust_Damper_Override_Command"> { air, damper, exhaust, override }
 
 
 
 
-Brick_Damper_Command : Point <template:"Brick_Damper_Command"> { damper }
+Brick_Damper_Command : Point <template:"Brick_Damper_Command", uri:"urn:___param___#Brick_Damper_Command"> { damper }
 
 
-Brick_Damper_Overridden_Status : Brick_Status <template:"Brick_Damper_Overridden_Status"> { damper, override }
+Brick_Damper_Overridden_Status : Brick_Status <template:"Brick_Damper_Overridden_Status", uri:"urn:___param___#Brick_Damper_Overridden_Status"> { damper, override }
 
 
-Brick_Damper_Override_Command : Brick_Command <template:"Brick_Damper_Override_Command"> { damper, override }
+Brick_Damper_Override_Command : Brick_Command <template:"Brick_Damper_Override_Command", uri:"urn:___param___#Brick_Damper_Override_Command"> { damper, override }
 
 
-Brick_Discharge_Fan_On_Off_Command : Brick_Command <template:"Brick_Discharge_Fan_On_Off_Command"> { air, discharge, fan, run }
+Brick_Discharge_Fan_On_Off_Command : Brick_Command <template:"Brick_Discharge_Fan_On_Off_Command", uri:"urn:___param___#Brick_Discharge_Fan_On_Off_Command"> { air, discharge, fan, run }
 
 
-Brick_Discharge_Fan_On_Off_Status : Brick_Off_Status <template:"Brick_Discharge_Fan_On_Off_Status"> { air, discharge, fan, run }
+Brick_Discharge_Fan_On_Off_Status : Brick_Off_Status <template:"Brick_Discharge_Fan_On_Off_Status", uri:"urn:___param___#Brick_Discharge_Fan_On_Off_Status"> { air, discharge, fan, run }
 
 
-Brick_Discharge_Fan_Speed_Mode_Status : Brick_Mode_Status <template:"Brick_Discharge_Fan_Speed_Mode_Status"> { air, discharge, fan, mode, speed }
+Brick_Discharge_Fan_Speed_Mode_Status : Brick_Mode_Status <template:"Brick_Discharge_Fan_Speed_Mode_Status", uri:"urn:___param___#Brick_Discharge_Fan_Speed_Mode_Status"> { air, discharge, fan, mode, speed }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command"> { air, discharge, enable, fan }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command"> { air, discharge, enable, fan }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status"> { air, discharge, enable, fan }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status"> { air, discharge, enable, fan }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status"> { air, discharge, fan, override }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status"> { air, discharge, fan, override }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command"> { air, discharge, fan, override }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command"> { air, discharge, fan, override }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor"> { air, discharge, fan, speed }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor"> { air, discharge, fan, speed }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint"> { air, discharge, fan, setpoint, speed }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint"> { air, discharge, fan, setpoint, speed }
 
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor"> { air, discharge, fan, freq }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor"> { air, discharge, fan, freq }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor"> { active, air, discharge, fan, power }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor"> { active, air, discharge, fan, power }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor"> { air, current, discharge, fan }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor"> { air, current, discharge, fan }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor"> { air, discharge, fan, volt }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor"> { air, discharge, fan, volt }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor"> { air, discharge, fan, torque }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor"> { air, discharge, fan, torque }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor"> { air, dc, discharge, fan, volt }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor"> { air, dc, discharge, fan, volt }
 
 
-Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status"> { air, discharge, fan, fault }
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status"> { air, discharge, fan, fault }
 
 
 
 
-Brick_Return_Fan_On_Off_Command : Brick_Command <template:"Brick_Return_Fan_On_Off_Command"> { air, fan, return, run }
+Brick_Return_Fan_On_Off_Command : Brick_Command <template:"Brick_Return_Fan_On_Off_Command", uri:"urn:___param___#Brick_Return_Fan_On_Off_Command"> { air, fan, return, run }
 
 
-Brick_Return_Fan_On_Off_Status : Brick_Off_Status <template:"Brick_Return_Fan_On_Off_Status"> { air, fan, return, run }
+Brick_Return_Fan_On_Off_Status : Brick_Off_Status <template:"Brick_Return_Fan_On_Off_Status", uri:"urn:___param___#Brick_Return_Fan_On_Off_Status"> { air, fan, return, run }
 
 
-Brick_Return_Fan_Speed_Mode_Status : Brick_Mode_Status <template:"Brick_Return_Fan_Speed_Mode_Status"> { air, fan, mode, return, speed }
+Brick_Return_Fan_Speed_Mode_Status : Brick_Mode_Status <template:"Brick_Return_Fan_Speed_Mode_Status", uri:"urn:___param___#Brick_Return_Fan_Speed_Mode_Status"> { air, fan, mode, return, speed }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command"> { air, enable, fan, return }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command"> { air, enable, fan, return }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status"> { air, enable, fan, return }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status"> { air, enable, fan, return }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status"> { air, fan, override, return }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status"> { air, fan, override, return }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command"> { air, fan, override, return }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command"> { air, fan, override, return }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor"> { air, fan, return, speed }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor"> { air, fan, return, speed }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint"> { air, fan, return, setpoint, speed }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint"> { air, fan, return, setpoint, speed }
 
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor"> { air, fan, freq, return }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor"> { air, fan, freq, return }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor"> { active, air, fan, power, return }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor"> { active, air, fan, power, return }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor"> { air, current, fan, return }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor"> { air, current, fan, return }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor"> { air, fan, return, volt }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor"> { air, fan, return, volt }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor"> { air, fan, return, torque }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor"> { air, fan, return, torque }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor"> { air, dc, fan, return, volt }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor"> { air, dc, fan, return, volt }
 
 
-Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status"> { air, fan, fault, return }
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status"> { air, fan, fault, return }
 
 
 
 
-Brick_Return_Fan_Air_Flow_Sensor : Brick_Flow_Sensor <template:"Brick_Return_Fan_Air_Flow_Sensor"> { air, fan, flow, return }
+Brick_Return_Fan_Air_Flow_Sensor : Brick_Flow_Sensor <template:"Brick_Return_Fan_Air_Flow_Sensor", uri:"urn:___param___#Brick_Return_Fan_Air_Flow_Sensor"> { air, fan, flow, return }
 
 
-Brick_Return_Fan_Air_Flow_Setpoint : Brick_Flow_Setpoint <template:"Brick_Return_Fan_Air_Flow_Setpoint"> { air, fan, flow, return, setpoint }
+Brick_Return_Fan_Air_Flow_Setpoint : Brick_Flow_Setpoint <template:"Brick_Return_Fan_Air_Flow_Setpoint", uri:"urn:___param___#Brick_Return_Fan_Air_Flow_Setpoint"> { air, fan, flow, return, setpoint }
 
 
-Brick_Exhaust_Fan_On_Off_Command : Brick_Command <template:"Brick_Exhaust_Fan_On_Off_Command"> { air, exhaust, fan, run }
+Brick_Exhaust_Fan_On_Off_Command : Brick_Command <template:"Brick_Exhaust_Fan_On_Off_Command", uri:"urn:___param___#Brick_Exhaust_Fan_On_Off_Command"> { air, exhaust, fan, run }
 
 
-Brick_Exhaust_Fan_On_Off_Status : Brick_Off_Status <template:"Brick_Exhaust_Fan_On_Off_Status"> { air, exhaust, fan, run }
+Brick_Exhaust_Fan_On_Off_Status : Brick_Off_Status <template:"Brick_Exhaust_Fan_On_Off_Status", uri:"urn:___param___#Brick_Exhaust_Fan_On_Off_Status"> { air, exhaust, fan, run }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command"> { air, enable, exhaust, fan }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command"> { air, enable, exhaust, fan }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status"> { air, enable, exhaust, fan }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status"> { air, enable, exhaust, fan }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status"> { air, exhaust, fan, override }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status"> { air, exhaust, fan, override }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command"> { air, exhaust, fan, override }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command"> { air, exhaust, fan, override }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor"> { air, exhaust, fan, speed }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor"> { air, exhaust, fan, speed }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint"> { air, exhaust, fan, setpoint, speed }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint"> { air, exhaust, fan, setpoint, speed }
 
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor"> { air, exhaust, fan, freq }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor"> { air, exhaust, fan, freq }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor"> { active, air, exhaust, fan, power }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor"> { active, air, exhaust, fan, power }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor"> { air, current, exhaust, fan }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor"> { air, current, exhaust, fan }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor"> { air, exhaust, fan, volt }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor"> { air, exhaust, fan, volt }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor"> { air, exhaust, fan, torque }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor"> { air, exhaust, fan, torque }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor"> { air, dc, exhaust, fan, volt }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor"> { air, dc, exhaust, fan, volt }
 
 
-Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status"> { air, exhaust, fan, fault }
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status"> { air, exhaust, fan, fault }
 
 
 
 
-Brick_Fan_On_Off_Command : Brick_Command <template:"Brick_Fan_On_Off_Command"> { fan, run }
+Brick_Fan_On_Off_Command : Brick_Command <template:"Brick_Fan_On_Off_Command", uri:"urn:___param___#Brick_Fan_On_Off_Command"> { fan, run }
 
 
-Brick_Fan_On_Off_Status : Brick_Off_Status <template:"Brick_Fan_On_Off_Status"> { fan, run }
+Brick_Fan_On_Off_Status : Brick_Off_Status <template:"Brick_Fan_On_Off_Status", uri:"urn:___param___#Brick_Fan_On_Off_Status"> { fan, run }
 
 
-Brick_Fan_Speed_Mode_Status : Brick_Mode_Status <template:"Brick_Fan_Speed_Mode_Status"> { fan, mode, speed }
+Brick_Fan_Speed_Mode_Status : Brick_Mode_Status <template:"Brick_Fan_Speed_Mode_Status", uri:"urn:___param___#Brick_Fan_Speed_Mode_Status"> { fan, mode, speed }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status : Brick_Run_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status"> { call, fan, run }
+Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status : Brick_Run_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status"> { call, fan, run }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command"> { enable, fan }
+Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command"> { enable, fan }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status"> { enable, fan }
+Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status"> { enable, fan }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status"> { fan, override }
+Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status"> { fan, override }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command"> { fan, override }
+Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command"> { fan, override }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor"> { fan, speed }
+Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor"> { fan, speed }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint"> { fan, setpoint, speed }
+Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint"> { fan, setpoint, speed }
 
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor"> { fan, freq }
+Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor"> { fan, freq }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor"> { active, fan, power }
+Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor"> { active, fan, power }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor"> { current, fan }
+Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor"> { current, fan }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor"> { fan, volt }
+Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor"> { fan, volt }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor"> { fan, torque }
+Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor"> { fan, torque }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor"> { dc, fan, volt }
+Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor"> { dc, fan, volt }
 
 
-Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status"> { fan, fault }
+Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status"> { fan, fault }
 
 
 
 
-Brick_Humidifier_On_Off_Command : Brick_Command <template:"Brick_Humidifier_On_Off_Command"> { humidifier, run }
+Brick_Humidifier_On_Off_Command : Brick_Command <template:"Brick_Humidifier_On_Off_Command", uri:"urn:___param___#Brick_Humidifier_On_Off_Command"> { humidifier, run }
 
 
-Brick_Humidifier_On_Off_Status : Brick_Off_Status <template:"Brick_Humidifier_On_Off_Status"> { humidifier, run }
+Brick_Humidifier_On_Off_Status : Brick_Off_Status <template:"Brick_Humidifier_On_Off_Status", uri:"urn:___param___#Brick_Humidifier_On_Off_Status"> { humidifier, run }
 
 
-Brick_Humidifier_Command : Point <template:"Brick_Humidifier_Command"> { humidifier, modulation }
+Brick_Humidifier_Command : Point <template:"Brick_Humidifier_Command", uri:"urn:___param___#Brick_Humidifier_Command"> { humidifier, modulation }
 
 
-Brick_Heat_Wheel_On_Off_Command : Brick_Command <template:"Brick_Heat_Wheel_On_Off_Command"> { heatWheel, run }
+Brick_Heat_Wheel_On_Off_Command : Brick_Command <template:"Brick_Heat_Wheel_On_Off_Command", uri:"urn:___param___#Brick_Heat_Wheel_On_Off_Command"> { heatWheel, run }
 
 
-Brick_Heat_Wheel_On_Off_Status : Brick_Off_Status <template:"Brick_Heat_Wheel_On_Off_Status"> { heatWheel, run }
+Brick_Heat_Wheel_On_Off_Status : Brick_Off_Status <template:"Brick_Heat_Wheel_On_Off_Status", uri:"urn:___param___#Brick_Heat_Wheel_On_Off_Status"> { heatWheel, run }
 
 
-Brick_Heat_Wheel_Speed_Sensor : Brick_Sensor <template:"Brick_Heat_Wheel_Speed_Sensor"> { heatWheel, speed }
+Brick_Heat_Wheel_Speed_Sensor : Brick_Sensor <template:"Brick_Heat_Wheel_Speed_Sensor", uri:"urn:___param___#Brick_Heat_Wheel_Speed_Sensor"> { heatWheel, speed }
 
 
-Brick_Valve_Position_Command : Brick_Command <template:"Brick_Valve_Position_Command"> { valve }
+Brick_Valve_Position_Command : Brick_Command <template:"Brick_Valve_Position_Command", uri:"urn:___param___#Brick_Valve_Position_Command"> { valve }
 
 
-Brick_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Valve_Position_Sensor"> { valve }
+Brick_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Valve_Position_Sensor", uri:"urn:___param___#Brick_Valve_Position_Sensor"> { valve }
 
 
-Brick_Valve_Flow_Sensor : Brick_Sensor <template:"Brick_Valve_Flow_Sensor"> { flow, valve }
+Brick_Valve_Flow_Sensor : Brick_Sensor <template:"Brick_Valve_Flow_Sensor", uri:"urn:___param___#Brick_Valve_Flow_Sensor"> { flow, valve }
 
 
-Brick_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Valve_Failure_Alarm"> { alarm, valve }
+Brick_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Valve_Failure_Alarm", uri:"urn:___param___#Brick_Valve_Failure_Alarm"> { alarm, valve }
 
 
-Brick_Chilled_Water_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Chilled_Water_Valve_Position_Sensor"> { chilled, cool, valve, water }
+Brick_Chilled_Water_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Chilled_Water_Valve_Position_Sensor", uri:"urn:___param___#Brick_Chilled_Water_Valve_Position_Sensor"> { chilled, cool, valve, water }
 
 
-Brick_Chilled_Water_Valve_Position_Command : Brick_Command <template:"Brick_Chilled_Water_Valve_Position_Command"> { chilled, cool, valve, water }
+Brick_Chilled_Water_Valve_Position_Command : Brick_Command <template:"Brick_Chilled_Water_Valve_Position_Command", uri:"urn:___param___#Brick_Chilled_Water_Valve_Position_Command"> { chilled, cool, valve, water }
 
 
-Brick_Chilled_Water_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Chilled_Water_Valve_Failure_Alarm"> { alarm, chilled, cool, valve, water }
+Brick_Chilled_Water_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Chilled_Water_Valve_Failure_Alarm", uri:"urn:___param___#Brick_Chilled_Water_Valve_Failure_Alarm"> { alarm, chilled, cool, valve, water }
 
 
 
 
-Brick_Condenser_Water_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Valve_Position_Sensor"> { condenser, valve, water }
+Brick_Condenser_Water_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Valve_Position_Sensor", uri:"urn:___param___#Brick_Condenser_Water_Valve_Position_Sensor"> { condenser, valve, water }
 
 
-Brick_Condenser_Water_Valve_Position_Command : Brick_Command <template:"Brick_Condenser_Water_Valve_Position_Command"> { condenser, valve, water }
+Brick_Condenser_Water_Valve_Position_Command : Brick_Command <template:"Brick_Condenser_Water_Valve_Position_Command", uri:"urn:___param___#Brick_Condenser_Water_Valve_Position_Command"> { condenser, valve, water }
 
 
-Brick_Condenser_Water_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Condenser_Water_Valve_Failure_Alarm"> { alarm, chilled, cool, valve, water }
+Brick_Condenser_Water_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Condenser_Water_Valve_Failure_Alarm", uri:"urn:___param___#Brick_Condenser_Water_Valve_Failure_Alarm"> { alarm, chilled, cool, valve, water }
 
 
-Brick_Hot_Water_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Hot_Water_Valve_Position_Sensor"> { heat, hot, valve, water }
+Brick_Hot_Water_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Hot_Water_Valve_Position_Sensor", uri:"urn:___param___#Brick_Hot_Water_Valve_Position_Sensor"> { heat, hot, valve, water }
 
 
 
-Brick_Hot_Water_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Hot_Water_Valve_Failure_Alarm"> { alarm, heat, hot, valve, water }
+Brick_Hot_Water_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Hot_Water_Valve_Failure_Alarm", uri:"urn:___param___#Brick_Hot_Water_Valve_Failure_Alarm"> { alarm, heat, hot, valve, water }
 
 
-Brick_Hot_Water_Valve_Position_Command : Brick_Command <template:"Brick_Hot_Water_Valve_Position_Command"> { heat, hot, valve, water }
+Brick_Hot_Water_Valve_Position_Command : Brick_Command <template:"Brick_Hot_Water_Valve_Position_Command", uri:"urn:___param___#Brick_Hot_Water_Valve_Position_Command"> { heat, hot, valve, water }
 
 
 
 
 
-Brick_Steam_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Steam_Valve_Position_Sensor"> { steam, valve }
+Brick_Steam_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Steam_Valve_Position_Sensor", uri:"urn:___param___#Brick_Steam_Valve_Position_Sensor"> { steam, valve }
 
 
-Brick_Steam_Valve_Position_Command : Brick_Command <template:"Brick_Steam_Valve_Position_Command"> { steam, valve }
+Brick_Steam_Valve_Position_Command : Brick_Command <template:"Brick_Steam_Valve_Position_Command", uri:"urn:___param___#Brick_Steam_Valve_Position_Command"> { steam, valve }
 
 
-Brick_Isolation_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Isolation_Valve_Position_Sensor"> { isolation, valve }
+Brick_Isolation_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Isolation_Valve_Position_Sensor", uri:"urn:___param___#Brick_Isolation_Valve_Position_Sensor"> { isolation, valve }
 
 
-Brick_Isolation_Valve_Position_Command : Brick_Command <template:"Brick_Isolation_Valve_Position_Command"> { isolation, valve }
+Brick_Isolation_Valve_Position_Command : Brick_Command <template:"Brick_Isolation_Valve_Position_Command", uri:"urn:___param___#Brick_Isolation_Valve_Position_Command"> { isolation, valve }
 
 
-Brick_Condenser_Water_Isolation_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Isolation_Valve_Position_Sensor"> { condenser, isolation, valve, water }
+Brick_Condenser_Water_Isolation_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Isolation_Valve_Position_Sensor", uri:"urn:___param___#Brick_Condenser_Water_Isolation_Valve_Position_Sensor"> { condenser, isolation, valve, water }
 
 
-Brick_Condenser_Water_Isolation_Valve_Position_Command : Brick_Command <template:"Brick_Condenser_Water_Isolation_Valve_Position_Command"> { condenser, isolation, valve, water }
+Brick_Condenser_Water_Isolation_Valve_Position_Command : Brick_Command <template:"Brick_Condenser_Water_Isolation_Valve_Position_Command", uri:"urn:___param___#Brick_Condenser_Water_Isolation_Valve_Position_Command"> { condenser, isolation, valve, water }
 
 
-Brick_Bypass_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Bypass_Valve_Position_Sensor"> { bypass, valve }
+Brick_Bypass_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Bypass_Valve_Position_Sensor", uri:"urn:___param___#Brick_Bypass_Valve_Position_Sensor"> { bypass, valve }
 
 
-Brick_Bypass_Valve_Position_Command : Brick_Command <template:"Brick_Bypass_Valve_Position_Command"> { bypass, valve }
+Brick_Bypass_Valve_Position_Command : Brick_Command <template:"Brick_Bypass_Valve_Position_Command", uri:"urn:___param___#Brick_Bypass_Valve_Position_Command"> { bypass, valve }
 
 
 
-Brick_Bypass_Valve_Flow_Sensor : Brick_Sensor <template:"Brick_Bypass_Valve_Flow_Sensor"> { bypass, flow, valve }
+Brick_Bypass_Valve_Flow_Sensor : Brick_Sensor <template:"Brick_Bypass_Valve_Flow_Sensor", uri:"urn:___param___#Brick_Bypass_Valve_Flow_Sensor"> { bypass, flow, valve }
 
 
-Brick_Condenser_Water_Bypass_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Bypass_Valve_Position_Sensor"> { bypass, condenser, valve, water }
+Brick_Condenser_Water_Bypass_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Bypass_Valve_Position_Sensor", uri:"urn:___param___#Brick_Condenser_Water_Bypass_Valve_Position_Sensor"> { bypass, condenser, valve, water }
 
 
-Brick_Condenser_Water_Bypass_Valve_Position_Command : Brick_Command <template:"Brick_Condenser_Water_Bypass_Valve_Position_Command"> { bypass, condenser, valve, water }
+Brick_Condenser_Water_Bypass_Valve_Position_Command : Brick_Command <template:"Brick_Condenser_Water_Bypass_Valve_Position_Command", uri:"urn:___param___#Brick_Condenser_Water_Bypass_Valve_Position_Command"> { bypass, condenser, valve, water }
 
 
-Brick_Condenser_Water_Bypass_Valve_Flow_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Bypass_Valve_Flow_Sensor"> { bypass, condenser, flow, valve, water }
+Brick_Condenser_Water_Bypass_Valve_Flow_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Bypass_Valve_Flow_Sensor", uri:"urn:___param___#Brick_Condenser_Water_Bypass_Valve_Flow_Sensor"> { bypass, condenser, flow, valve, water }
 
 
-Brick_Filter_Status : Point <template:"Brick_Filter_Status"> { filter }
+Brick_Filter_Status : Point <template:"Brick_Filter_Status", uri:"urn:___param___#Brick_Filter_Status"> { filter }
 
 
-Brick_Filter_Alarm : Point <template:"Brick_Filter_Alarm"> { fault, filter }
+Brick_Filter_Alarm : Point <template:"Brick_Filter_Alarm", uri:"urn:___param___#Brick_Filter_Alarm"> { fault, filter }
 
 
-Brick_Filter_Differential_Pressure_Sensor : Brick_Pressure_Sensor <template:"Brick_Filter_Differential_Pressure_Sensor"> { delta, filter, pressure }
+Brick_Filter_Differential_Pressure_Sensor : Brick_Pressure_Sensor <template:"Brick_Filter_Differential_Pressure_Sensor", uri:"urn:___param___#Brick_Filter_Differential_Pressure_Sensor"> { delta, filter, pressure }
 
 
-Brick_Filter_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <template:"Brick_Filter_Differential_Pressure_Setpoint"> { delta, filter, pressure, setpoint }
+Brick_Filter_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <template:"Brick_Filter_Differential_Pressure_Setpoint", uri:"urn:___param___#Brick_Filter_Differential_Pressure_Setpoint"> { delta, filter, pressure, setpoint }
 
 
-Brick_Return_Air_Filter_Status : Point <template:"Brick_Return_Air_Filter_Status"> { filter, return }
+Brick_Return_Air_Filter_Status : Point <template:"Brick_Return_Air_Filter_Status", uri:"urn:___param___#Brick_Return_Air_Filter_Status"> { filter, return }
 
 
-Brick_Return_Air_Filter_Alarm : Point <template:"Brick_Return_Air_Filter_Alarm"> { fault, filter, return }
+Brick_Return_Air_Filter_Alarm : Point <template:"Brick_Return_Air_Filter_Alarm", uri:"urn:___param___#Brick_Return_Air_Filter_Alarm"> { fault, filter, return }
 
 
-Brick_Return_Air_Filter_Differential_Pressure_Sensor : Brick_Pressure_Sensor <template:"Brick_Return_Air_Filter_Differential_Pressure_Sensor"> { delta, filter, pressure, return }
+Brick_Return_Air_Filter_Differential_Pressure_Sensor : Brick_Pressure_Sensor <template:"Brick_Return_Air_Filter_Differential_Pressure_Sensor", uri:"urn:___param___#Brick_Return_Air_Filter_Differential_Pressure_Sensor"> { delta, filter, pressure, return }
 
 
-Brick_Return_Air_Filter_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <template:"Brick_Return_Air_Filter_Differential_Pressure_Setpoint"> { delta, filter, pressure, return, setpoint }
+Brick_Return_Air_Filter_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <template:"Brick_Return_Air_Filter_Differential_Pressure_Setpoint", uri:"urn:___param___#Brick_Return_Air_Filter_Differential_Pressure_Setpoint"> { delta, filter, pressure, return, setpoint }
 
 
-Brick_Intake_Air_Filter_Status : Point <template:"Brick_Intake_Air_Filter_Status"> { filter, outside }
+Brick_Intake_Air_Filter_Status : Point <template:"Brick_Intake_Air_Filter_Status", uri:"urn:___param___#Brick_Intake_Air_Filter_Status"> { filter, outside }
 
 
-Brick_Intake_Air_Filter_Alarm : Point <template:"Brick_Intake_Air_Filter_Alarm"> { fault, filter, outside }
+Brick_Intake_Air_Filter_Alarm : Point <template:"Brick_Intake_Air_Filter_Alarm", uri:"urn:___param___#Brick_Intake_Air_Filter_Alarm"> { fault, filter, outside }
 
 
-Brick_Intake_Air_Filter_Differential_Pressure_Sensor : Brick_Pressure_Sensor <template:"Brick_Intake_Air_Filter_Differential_Pressure_Sensor"> { delta, filter, outside, pressure }
+Brick_Intake_Air_Filter_Differential_Pressure_Sensor : Brick_Pressure_Sensor <template:"Brick_Intake_Air_Filter_Differential_Pressure_Sensor", uri:"urn:___param___#Brick_Intake_Air_Filter_Differential_Pressure_Sensor"> { delta, filter, outside, pressure }
 
 
-Brick_Intake_Air_Filter_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <template:"Brick_Intake_Air_Filter_Differential_Pressure_Setpoint"> { delta, filter, outside, pressure, setpoint }
+Brick_Intake_Air_Filter_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <template:"Brick_Intake_Air_Filter_Differential_Pressure_Setpoint", uri:"urn:___param___#Brick_Intake_Air_Filter_Differential_Pressure_Setpoint"> { delta, filter, outside, pressure, setpoint }
 
 
-Brick_Compressor_On_Off_Command : Brick_Command <template:"Brick_Compressor_On_Off_Command"> { compressor, run }
+Brick_Compressor_On_Off_Command : Brick_Command <template:"Brick_Compressor_On_Off_Command", uri:"urn:___param___#Brick_Compressor_On_Off_Command"> { compressor, run }
 
 
-Brick_Compressor_On_Off_Status : Brick_Off_Status <template:"Brick_Compressor_On_Off_Status"> { compressor, run }
+Brick_Compressor_On_Off_Status : Brick_Off_Status <template:"Brick_Compressor_On_Off_Status", uri:"urn:___param___#Brick_Compressor_On_Off_Status"> { compressor, run }
 
 
-Brick_Compressor_Enable_Command : Brick_Command <template:"Brick_Compressor_Enable_Command"> { compressor, enable }
+Brick_Compressor_Enable_Command : Brick_Command <template:"Brick_Compressor_Enable_Command", uri:"urn:___param___#Brick_Compressor_Enable_Command"> { compressor, enable }
 
 
-Brick_Compressor_Enable_Status : Brick_Status <template:"Brick_Compressor_Enable_Status"> { compressor, enable }
+Brick_Compressor_Enable_Status : Brick_Status <template:"Brick_Compressor_Enable_Status", uri:"urn:___param___#Brick_Compressor_Enable_Status"> { compressor, enable }
 
 
-Brick_Compressor_Fault_Status : Brick_Status <template:"Brick_Compressor_Fault_Status"> { compressor, fault }
+Brick_Compressor_Fault_Status : Brick_Status <template:"Brick_Compressor_Fault_Status", uri:"urn:___param___#Brick_Compressor_Fault_Status"> { compressor, fault }
 
 
-Brick_Compressor_Speed_Sensor : Brick_Sensor <template:"Brick_Compressor_Speed_Sensor"> { compressor, speed }
+Brick_Compressor_Speed_Sensor : Brick_Sensor <template:"Brick_Compressor_Speed_Sensor", uri:"urn:___param___#Brick_Compressor_Speed_Sensor"> { compressor, speed }
 
 
-Brick_Compressor_Temperature_Sensor : Brick_Sensor <template:"Brick_Compressor_Temperature_Sensor"> { compressor, temp }
+Brick_Compressor_Temperature_Sensor : Brick_Sensor <template:"Brick_Compressor_Temperature_Sensor", uri:"urn:___param___#Brick_Compressor_Temperature_Sensor"> { compressor, temp }
 
 
-Brick_Compressor_Current_Sensor : Brick_Sensor <template:"Brick_Compressor_Current_Sensor"> { compressor, current }
+Brick_Compressor_Current_Sensor : Brick_Sensor <template:"Brick_Compressor_Current_Sensor", uri:"urn:___param___#Brick_Compressor_Current_Sensor"> { compressor, current }
 
 
-Brick_Compressor_Run_Time_Sensor : Brick_Duration_Sensor <template:"Brick_Compressor_Run_Time_Sensor"> { compressor, run, time }
+Brick_Compressor_Run_Time_Sensor : Brick_Duration_Sensor <template:"Brick_Compressor_Run_Time_Sensor", uri:"urn:___param___#Brick_Compressor_Run_Time_Sensor"> { compressor, run, time }
 
 
-Brick_Variable_Frequency_Drive_On_Off_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_On_Off_Command"> { run, vfd }
+Brick_Variable_Frequency_Drive_On_Off_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_On_Off_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_On_Off_Command"> { run, vfd }
 
 
-Brick_Variable_Frequency_Drive_On_Off_Status : Brick_Off_Status <template:"Brick_Variable_Frequency_Drive_On_Off_Status"> { run, vfd }
+Brick_Variable_Frequency_Drive_On_Off_Status : Brick_Off_Status <template:"Brick_Variable_Frequency_Drive_On_Off_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_On_Off_Status"> { run, vfd }
 
 
-Brick_Variable_Frequency_Drive_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Enable_Command"> { enable, vfd }
+Brick_Variable_Frequency_Drive_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Enable_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Enable_Command"> { enable, vfd }
 
 
-Brick_Variable_Frequency_Drive_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Enable_Status"> { enable, vfd }
+Brick_Variable_Frequency_Drive_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Enable_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Enable_Status"> { enable, vfd }
 
 
-Brick_Variable_Frequency_Drive_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Overridden_Status"> { override, vfd }
+Brick_Variable_Frequency_Drive_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Overridden_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Overridden_Status"> { override, vfd }
 
 
-Brick_Variable_Frequency_Drive_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Speed_Sensor"> { speed, vfd }
+Brick_Variable_Frequency_Drive_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Speed_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Speed_Sensor"> { speed, vfd }
 
 
-Brick_Variable_Frequency_Drive_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Speed_Setpoint"> { setpoint, speed, vfd }
+Brick_Variable_Frequency_Drive_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Speed_Setpoint", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Speed_Setpoint"> { setpoint, speed, vfd }
 
 
-Brick_Variable_Frequency_Drive_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Frequency_Sensor"> { freq, vfd }
+Brick_Variable_Frequency_Drive_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Frequency_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Frequency_Sensor"> { freq, vfd }
 
 
-Brick_Variable_Frequency_Drive_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Active_Power_Sensor"> { active, power, vfd }
+Brick_Variable_Frequency_Drive_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Active_Power_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Active_Power_Sensor"> { active, power, vfd }
 
 
-Brick_Variable_Frequency_Drive_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Current_Sensor"> { current, vfd }
+Brick_Variable_Frequency_Drive_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Current_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Current_Sensor"> { current, vfd }
 
 
-Brick_Variable_Frequency_Drive_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Voltage_Sensor"> { vfd, volt }
+Brick_Variable_Frequency_Drive_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Voltage_Sensor"> { vfd, volt }
 
 
-Brick_Variable_Frequency_Drive_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Torque_Sensor"> { torque, vfd }
+Brick_Variable_Frequency_Drive_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Torque_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Torque_Sensor"> { torque, vfd }
 
 
-Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor : Brick_Temperature_Sensor <template:"Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor"> { heatsink, temp, vfd }
+Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor : Brick_Temperature_Sensor <template:"Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor"> { heatsink, temp, vfd }
 
 
-Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor"> { dc, vfd, volt }
+Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor"> { dc, vfd, volt }
 
 
-Brick_Variable_Frequency_Drive_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Fault_Status"> { fault, vfd }
+Brick_Variable_Frequency_Drive_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Fault_Status"> { fault, vfd }
 
-// Measures the duration of a phenomenon or event
-Brick_Duration_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Duration_Sensor"> { point, duration, sensor }
-// Detects pollutants in the ambient air
-Brick_Particulate_Matter_Sensor : Brick_Air_Quality_Sensor <uri:"https://brickschema.org/schema/Brick#Particulate_Matter_Sensor"> { matter, particulate, point, sensor }
-// Sets some property of CO2
-Brick_CO2_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#CO2_Setpoint"> { point, co2, sp }
-// Sets humidity
-Brick_Humidity_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Humidity_Setpoint"> { point, humidity, sp }
-// Senses the dewpoint temperature . Dew point is the temperature to which air must be cooled to become saturated with water vapor
-Brick_Dewpoint_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Dewpoint_Sensor"> { point, dewpoint, sensor }
-// Measures the temperature of chilled water
-Brick_Chilled_Water_Temperature_Sensor : Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor"> { chilled, point, sensor, temp, water }
-// Measures the difference between total pressure and static pressure
-Brick_Velocity_Pressure_Sensor : Brick_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Velocity_Pressure_Sensor"> { point, pressure, sensor, velocity }
-// A type of Setpoints that is related to the difference between two measurements
-Brick_Differential_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Differential_Setpoint"> { point, differential, sp }
-
-Brick_Run_Status : Brick_Start_Stop_Status <uri:"https://brickschema.org/schema/Brick#Run_Status"> { point, status, run }
-// Sets temperature of outside air
-Brick_Outside_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Temperature_Setpoint"> { point, temp, outside, air, sp }
-// Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit
-Brick_Water_Differential_Pressure_Setpoint : Brick_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Water_Differential_Pressure_Setpoint"> { pressure, point, differential, water, sp }
-// Measure the amount of force acting on a unit area
-Brick_Pressure_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Pressure_Sensor"> { point, pressure, sensor }
-// Sets pressure
-Brick_Pressure_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Pressure_Setpoint"> { point, pressure, sp }
 // Measures the rate of flow of water
-Brick_Water_Flow_Sensor : Brick_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Flow_Sensor"> { point, water, flow, sensor }
-// A sensor which provides a measure of air quality
-Brick_Air_Quality_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Quality_Sensor"> { point, air, quality, sensor }
+Brick_Water_Flow_Sensor : Brick_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Flow_Sensor"> { sensor, flow, water, point }
+// Measures the temperature of chilled water
+Brick_Chilled_Water_Temperature_Sensor : Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor"> { sensor, water, point, chilled, temp }
+// Sets temperature of outside air
+Brick_Outside_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Temperature_Setpoint"> { outside, point, sp, air, temp }
+// Measure the amount of force acting on a unit area
+Brick_Pressure_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Pressure_Sensor"> { sensor, pressure, point }
 
-Brick_Effective_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Effective_Air_Temperature_Setpoint"> { point, effective, temp, air, sp }
-// Measures the total heat content of air
-Brick_Air_Enthalpy_Sensor : Brick_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Enthalpy_Sensor"> { point, air, sensor, enthalpy }
+Brick_Effective_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Effective_Air_Temperature_Setpoint"> { point, sp, effective, air, temp }
+// Detects pollutants in the ambient air
+Brick_Particulate_Matter_Sensor : Brick_Air_Quality_Sensor <uri:"https://brickschema.org/schema/Brick#Particulate_Matter_Sensor"> { sensor, particulate, matter, point }
+// Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit
+Brick_Water_Differential_Pressure_Setpoint : Brick_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Water_Differential_Pressure_Setpoint"> { differential, water, point, sp, pressure }
+
+Brick_Run_Status : Brick_Start_Stop_Status <uri:"https://brickschema.org/schema/Brick#Run_Status"> { run, status, point }
+// Sets humidity
+Brick_Humidity_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Humidity_Setpoint"> { sp, humidity, point }
 // Sets the target flow rate of water
-Brick_Water_Flow_Setpoint : Brick_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Water_Flow_Setpoint"> { point, water, flow, sp }
-// Indicates if a control loop, relay or equipment is off
-Brick_Off_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Off_Status"> { point, status, off }
-// Measures the amount of instantaneous power consumed
-Brick_Power_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Power_Sensor"> { point, power, sensor }
-// Indicates if a control loop, relay or equipment is on
-Brick_On_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#On_Status"> { point, status, on }
-// Sets temperature of discharge air for cooling
-Brick_Discharge_Air_Temperature_Cooling_Setpoint : Brick_Cooling_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Cooling_Setpoint"> { discharge, point, temp, air, cool, sp }
+Brick_Water_Flow_Setpoint : Brick_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Water_Flow_Setpoint"> { sp, flow, water, point }
+// Measures the difference between total pressure and static pressure
+Brick_Velocity_Pressure_Sensor : Brick_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Velocity_Pressure_Sensor"> { velocity, sensor, pressure, point }
 // Measures the temperature of water enteringed to a hot water system
-Brick_Entering_Hot_Water_Temperature_Sensor : Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Entering_Hot_Water_Temperature_Sensor"> { point, sensor, temp, entering, water, hot }
+Brick_Entering_Hot_Water_Temperature_Sensor : Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Entering_Hot_Water_Temperature_Sensor"> { hot, sensor, entering, water, point, temp }
+// Senses the dewpoint temperature . Dew point is the temperature to which air must be cooled to become saturated with water vapor
+Brick_Dewpoint_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Dewpoint_Sensor"> { sensor, dewpoint, point }
+// Measures the amount of instantaneous power consumed
+Brick_Power_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Power_Sensor"> { power, sensor, point }
+// Indicates if a control loop, relay or equipment is off
+Brick_Off_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Off_Status"> { status, off, point }
+// Indicates if a control loop, relay or equipment is on
+Brick_On_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#On_Status"> { status, on, point }
+// Sets temperature of discharge air for cooling
+Brick_Discharge_Air_Temperature_Cooling_Setpoint : Brick_Cooling_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Cooling_Setpoint"> { discharge, point, sp, air, cool, temp }
+// Measures the duration of a phenomenon or event
+Brick_Duration_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Duration_Sensor"> { sensor, duration, point }
+// A type of Setpoints that is related to the difference between two measurements
+Brick_Differential_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Differential_Setpoint"> { sp, differential, point }
+// Sets pressure
+Brick_Pressure_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Pressure_Setpoint"> { sp, pressure, point }
+// A sensor which provides a measure of air quality
+Brick_Air_Quality_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Quality_Sensor"> { sensor, point, quality, air }
+// Measures the total heat content of air
+Brick_Air_Enthalpy_Sensor : Brick_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Enthalpy_Sensor"> { enthalpy, sensor, point, air }
+// Sets some property of CO2
+Brick_CO2_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#CO2_Setpoint"> { sp, point, co2 }
 // Measures the amount of instantaneous electric power consumed
-Brick_Electric_Power_Sensor : Brick_Power_Sensor <uri:"https://brickschema.org/schema/Brick#Electric_Power_Sensor"> { point, electric, power, sensor }
-// Indicates the active/inactive status of a control loop (but not equipment activities or relays -- use On/Off for this purpose)
-Brick_Start_Stop_Status : Brick_On_Off_Status <uri:"https://brickschema.org/schema/Brick#Start_Stop_Status"> { point, status, start, stop }
-// Measures the total heat content of some substance
-Brick_Enthalpy_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Enthalpy_Sensor"> { point, sensor, enthalpy }
+Brick_Electric_Power_Sensor : Brick_Power_Sensor <uri:"https://brickschema.org/schema/Brick#Electric_Power_Sensor"> { power, sensor, electric, point }
 // Sets temperature for cooling
-Brick_Cooling_Temperature_Setpoint : Brick_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Temperature_Setpoint"> { point, sp, temp, cool }
+Brick_Cooling_Temperature_Setpoint : Brick_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Temperature_Setpoint"> { cool, temp, sp, point }
+// Measures the total heat content of some substance
+Brick_Enthalpy_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Enthalpy_Sensor"> { enthalpy, sensor, point }
+// Indicates the active/inactive status of a control loop (but not equipment activities or relays -- use On/Off for this purpose)
+Brick_Start_Stop_Status : Brick_On_Off_Status <uri:"https://brickschema.org/schema/Brick#Start_Stop_Status"> { status, start, stop, point }

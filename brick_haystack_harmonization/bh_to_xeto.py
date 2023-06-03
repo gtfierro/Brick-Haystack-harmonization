@@ -1,5 +1,6 @@
 import brickschema
 from brickschema.namespaces import SKOS, BRICK, RDFS
+from buildingmotif.namespaces import PARAM
 import os
 from typing import List
 import pathlib
@@ -23,6 +24,7 @@ def base_to_xeto(row: dict) -> str:
         return ""
     seen_classes.add(BRICK[point_class])
     tags = taglist_to_set(row["Haystack:Markers"])
+    tags.update(taglist_to_set(row["Haystack:CustomMarkers"]))
     tags.add(row["Brick:L1PointClass"])
     fixup_tags(tags)
     if len(tags) > 1:
@@ -79,16 +81,17 @@ def subparts_to_xeto(row: dict):
   body: >
     @prefix P: <urn:___param___#> .
     @prefix brick: <https://brickschema.org/schema/Brick#> .
-    P:name a brick:{row['Subpart:EntityClassL0']} ;
-        brick:hasPoint P:point .
-    P:point a brick:{row['Brick:PointClass']} .
+    P:name a brick:{row['Brick:PointClass']} ;
+        brick:isPointOf P:part .
+    P:part a brick:{row['Subpart:EntityClassL0']} ;
+        brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#{row['Subpart:EntityClassL0']}
     library: https://brickschema.org/schema/1.3/Brick
-    args: {{"name": "name"}}
+    args: {{"name": "part"}}
   - template: https://brickschema.org/schema/Brick#{row['Brick:PointClass']}
     library: https://brickschema.org/schema/1.3/Brick
-    args: {{"name": "point"}}
+    args: {{"name": "name"}}
         """
     else:
         # l1class hasPoint point_class
@@ -98,21 +101,21 @@ def subparts_to_xeto(row: dict):
   body: >
     @prefix P: <urn:___param___#> .
     @prefix brick: <https://brickschema.org/schema/Brick#> .
-    P:name a brick:{row['Subpart:EntityClassL0']} ;
+    P:name a brick:{row['Brick:PointClass']} .
+    P:equip a brick:{row['Subpart:EntityClassL0']} ;
         brick:hasPart P:part .
     P:part a brick:{row['Subpart:EntityClassL1']} ;
-        brick:hasPoint P:point .
-    P:point a brick:{row['Brick:PointClass']} .
+        brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#{row['Subpart:EntityClassL0']}
     library: https://brickschema.org/schema/1.3/Brick
-    args: {{"name": "name"}}
+    args: {{"name": "equip"}}
   - template: https://brickschema.org/schema/Brick#{row['Subpart:EntityClassL1']}
     library: https://brickschema.org/schema/1.3/Brick
     args: {{"name": "part"}}
   - template: https://brickschema.org/schema/Brick#{row['Brick:PointClass']}
     library: https://brickschema.org/schema/1.3/Brick
-    args: {{"name": "point"}}
+    args: {{"name": "name"}}
         """
         pass
     global buildingmotif_template_file_content
@@ -127,7 +130,7 @@ def make_templ_statement(point_class: str, template_name: str, tag_list: str) ->
         parent_classes.add(parent)
         parent = f"Brick_{parent.split('#')[-1].replace('.','')}"
 
-    return f'\n{template_name} : {parent} <template:"{template_name}"> {{ {tag_list} }}\n'
+    return f'\n{template_name} : {parent} <template:"{template_name}", uri:"{PARAM[template_name]}"> {{ {tag_list} }}\n'
 
 def run(filename: str, outputfile: str):
     statements = []
@@ -139,7 +142,7 @@ def run(filename: str, outputfile: str):
             statements.append(base_to_xeto(row) + "\n")
         elif row["Meta:State"] == "Subparts":
             statements.append(subparts_to_xeto(row) + "\n")
-    with open('data/bmotif_templates.yml', 'w') as f:
+    with open('data/bmotif/templates.yml', 'w') as f:
         f.write(buildingmotif_template_file_content)
 
     # compute any classes which show up as parents but aren't already

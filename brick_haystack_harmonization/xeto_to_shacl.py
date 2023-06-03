@@ -1,10 +1,14 @@
 import sys
+from functools import cache
+from buildingmotif.namespaces import PARAM
 import brickschema
-from brickschema.namespaces import BRICK, SH, A, RDF, RDFS, OWL
-from brick_haystack_harmonization.common import validate_uri
-from rdflib import Namespace, URIRef, BNode, Literal
+from brickschema.namespaces import BRICK, SH, A, RDF, OWL
+from brick_haystack_harmonization.common import validate_uri, get_template_shape, keep_marker_tag_property_shapes
+from rdflib import Namespace, URIRef, Literal
 from rdflib.util import guess_format
 import json
+
+shape_cache = set()
 
 g = brickschema.Graph()
 XETO = Namespace("urn:brick-haystack-xeto/")
@@ -66,10 +70,21 @@ def read_slots(resolved_repr: dict):
 def slot_to_shacl(library_name, name, defn):
     # use the URI if it exists and is valid; else construct one
     # TODO: make sure we emit the shape for the buildingmotif template
+    global g
     if defn.get('template',''):
         print('template name', defn['template'])
-        return
-    elif validate_uri(defn.get("uri", "")):
+        # TODO: only keep the 'hasmarkertag' parts of the shape
+        shape = get_template_shape(defn['template'])
+        keep_marker_tag_property_shapes(PARAM[defn['template']], shape)
+        g += shape
+        g.add((PARAM[defn['template']], A, OWL.Class))
+        # add a note for which template should be instantiated.
+        g.add((PARAM[defn['template']], PARAM['hasTemplate'], Literal(defn['template'])))
+        # TODO: do we awnt to remvoe this?
+        assert_class = g.value(PARAM[defn['template']], SH["class"])
+        if assert_class is not None:
+            g.remove((PARAM[defn['template']], SH["class"], None))
+    if validate_uri(defn.get("uri", "")):
         shape = URIRef(defn["uri"])
     else:
         shape = XETO[f"{library_name}::{name}"]
@@ -112,6 +127,22 @@ def slot_to_shacl(library_name, name, defn):
     for key, keydefn in defn["slots"].items():
         # if it's a marker, add the SHACL requirement
         if keydefn["type"] == "sys::Marker":
+            if key not in shape_cache:
+                shape_cache.add(key)
+                condition = get_tag_condition(key)
+                # add ruleto infer Brick class
+                g.add((XETO[f"infer_brick_rule_{name}"], A, SH.NodeShape))
+                g.add((XETO[f"infer_brick_rule_{name}"], SH.targetClass, condition))
+                g.add(
+                    (XETO[f"infer_brick_rule_{name}"], SH.rule, [
+                        (A, SH.TripleRule),
+                        (SH.condition, shape),
+                        (SH.object, shape),
+                        (SH.predicate, RDF.type),
+                        (SH.subject, SH.this)
+                    ])
+                )
+
             g.add(
                 (
                     shape,
@@ -129,21 +160,6 @@ def slot_to_shacl(library_name, name, defn):
                     ],
                 )
             )
-
-            condition = get_tag_condition(key)
-            # add ruleto infer Brick class
-            g.add((XETO[f"infer_brick_rule_{name}"], A, SH.NodeShape))
-            g.add((XETO[f"infer_brick_rule_{name}"], SH.targetClass, condition))
-            g.add(
-                (XETO[f"infer_brick_rule_{name}"], SH.rule, [
-                    (A, SH.TripleRule),
-                    (SH.condition, shape),
-                    (SH.object, shape),
-                    (SH.predicate, RDF.type),
-                    (SH.subject, SH.this)
-                ])
-            )
-
             # add rule to infer tags
             g.add(
                 (shape, SH.rule, [

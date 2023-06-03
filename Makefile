@@ -2,7 +2,7 @@
 
 all: install-deps files convert-haystack-to-ttl convert-brick-to-haystack
 
-files: data/resolved-bh.json data/resolved-all.json data/bh.ttl data/xetolib
+files: data/resolved-bh.json data/resolved-all.json data/bh.ttl data/xetolib data/bmotif/templates.yml
 
 install-deps: pyproject.toml poetry.lock
 	poetry install
@@ -13,14 +13,14 @@ visualize-taxonomy:
 check-taxonomy:
 	poetry run check-brick Brick.ttl unified_taxonomy.yaml
 
-convert-haystack-to-ttl: data/haystack-models/alpha.ttl
+convert-haystack-to-ttl: data/haystack-models/minimum.ttl
 
 convert-brick-to-haystack: data/converted-models/g36-vav-a2.ttl
 
 data/xetolib/bh.xeto: data/brick-haystack.csv brick_haystack_harmonization/bh_to_xeto.py
 	poetry run bh-to-xeto data/brick-haystack.csv data/xetolib/bh.xeto
 
-data/bmotif_templates.yml: data/brick-haystack.csv brick_haystack_harmonization/bh_to_xeto.py
+data/bmotif/templates.yml: data/brick-haystack.csv brick_haystack_harmonization/bh_to_xeto.py
 	poetry run bh-to-xeto data/brick-haystack.csv data/xetolib/bh.xeto
 
 data/resolved-bh.json: data/xetolib/bh.xeto
@@ -45,4 +45,4 @@ data/bh.ttl: data/resolved-bh.json brick_haystack_harmonization/xeto_to_shacl.py
 	poetry run xeto-to-shacl data/resolved-bh.json data/bh.ttl
 
 clean:
-	rm data/haystack-models/*.ttl data/bh.ttl
+	rm data/haystack-models/*.ttl data/bh.ttl data/xetolib/bh.xeto

@@ -1,8 +1,19 @@
+import buildingmotif
+from typing import Optional
+import logging
+from buildingmotif.dataclasses import Library
 import rdflib
+from rdflib.term import Node
 import rfc3987
-from brickschema.namespaces import BRICK, RDFS
+from brickschema.namespaces import BRICK, RDFS, SH
 import csv
 from typing import Set
+
+# set up buildingmotif to read templates
+bm = buildingmotif.BuildingMOTIF("sqlite://", log_level=logging.WARNING)
+Library.load(ontology_graph='Brick.ttl')
+lib = Library.load(directory='data/bmotif/', overwrite=True)
+PH = rdflib.Namespace("urn:project_haystack/")
 
 replacements = {
     "Sensor": "sensor",
@@ -12,6 +23,16 @@ replacements = {
     "Alarm": "alarm",
     "Temperature": "temp",
 }
+
+
+def get_template_shape(template_name: str) -> rdflib.Graph:
+    """
+    Given the name of a template (in data/bmotif/templates.yml),
+    it returns the SHACL shape corresponding to the template
+    """
+    templ = lib.get_template_by_name(template_name)
+    print(templ.inline_dependencies().body.serialize())
+    return templ.to_nodeshape()
 
 
 def clean_brick_classname(cls: str) -> str:
@@ -38,6 +59,9 @@ def fixup_tags(tags: Set[str]):
             tags.remove(t)
         if '{' in t or '}' in t:
             tags.remove(t)
+        if '.' in t:
+            tags.remove(t)
+            tags.add(t.replace('.','_'))
         elif t in replacements:
             tags.remove(t)
             tags.add(replacements[t])
@@ -57,3 +81,23 @@ def guess_tags(brick: rdflib.Graph, concept: rdflib.URIRef) -> Set[str]:
 def validate_uri(uri: str) -> bool:
     parsed = rfc3987.parse(uri)
     return parsed["scheme"]
+
+
+def keep_marker_tag_property_shapes(root: Node, sg: rdflib.Graph):
+    """Removes all property shapes that aren't about
+    haystack tags"""
+    pshapes = list(sg.objects(root, SH.property))
+    for pshape in pshapes:
+        if not str(sg.value(pshape, SH.path)).startswith(PH):
+            sg.remove((root, SH.property, pshape))
+            sg.remove((pshape, None, None))
+
+
+def get_equip_ref(entity: Node, graph: rdflib.Graph) -> Optional[Node]:
+    q = """SELECT ?entity ?equip WHERE {
+        ?entity ph:hasRefTag ?tag  .
+        ?tag ph:key "equipRef"^^xsd:string .
+        ?tag ph:value ?equip
+    }"""
+    for row in graph.query(q, initBindings={"entity": entity}):
+        return row[1]
