@@ -41,6 +41,9 @@ data/haystack-models/%.ttl: data/haystack-models/%.json brick_haystack_harmoniza
 data/converted-models/%.ttl: data/brick-models/%.ttl brick_haystack_harmonization/brick_to_haystack.py data/bh.ttl haystack-ontology/haystack.ttl
 	poetry run brick-to-haystack $< $@
 
+data/converted-models/%.json: data/brick-models/%.ttl brick_haystack_harmonization/brick_to_haystack.py data/bh.ttl haystack-ontology/haystack.ttl
+	poetry run brick-to-haystack $< $@
+
 data/bh.ttl: data/resolved-bh.json brick_haystack_harmonization/xeto_to_shacl.py
 	poetry run xeto-to-shacl data/resolved-bh.json data/bh.ttl
 
