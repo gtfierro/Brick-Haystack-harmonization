@@ -1,3 +1,21 @@
+// devices that serve all or part of the building and may include electric power, lighting, transportation, or service water heating, including, but not limited to, furnaces, boilers, air conditioners, heat pumps, chillers, water heaters, lamps, luminaires, ballasts, elevators, escalators, or other devices or installations.
+Brick_Equipment : Brick_Class <uri:"https://brickschema.org/schema/Brick#Equipment"> { equip }
+
+// See Variable_Air_Volume_Box
+Brick_VAV : Brick_Terminal_Unit <uri:"https://brickschema.org/schema/Brick#VAV"> { equip, vav }
+
+// See Variable_Air_Volume_Box_With_Reheat
+Brick_RVAV : Brick_Variable_Air_Volume_Box <uri:"https://brickschema.org/schema/Brick#RVAV"> { equip, reheat, vav }
+
+// Element inserted into an air-distribution system or element of an air-distribution system permitting modification of the air resistance of the system and consequently changing the airflow rate or shutting off the airflow.
+Brick_Damper : Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Damper"> { damper, equip }
+
+// A damper that modulates the flow of exhaust air
+Brick_Exhaust_Damper : Brick_Damper <uri:"https://brickschema.org/schema/Brick#Exhaust_Damper"> { damper, equip, exhaust }
+
+// Any device with two or more blades or vanes attached to a rotating shaft used to produce an airflow for the purpose of comfort, ventilation, exhaust, heating, cooling, or any other gaseous transport.
+Brick_Fan : Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Fan"> { equip, fan }
+
 // A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.
 Brick_Command : Point <uri:"https://brickschema.org/schema/Brick#Command"> { cmd }
 
@@ -117,6 +135,54 @@ Brick_Cooling_Discharge_Air_Flow_Setpoint : Brick_Discharge_Air_Flow_Setpoint <u
 
 // Sets discharge air flow for heating
 Brick_Heating_Discharge_Air_Flow_Setpoint : Brick_Discharge_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Discharge_Air_Flow_Setpoint"> { air, discharge, flow, heating, setpoint, sp }
+
+
+
+
+// Measures the temperature of supply air
+Brick_Supply_Air_Temperature_Sensor : Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Temperature_Sensor"> { air, sensor, supply, temp }
+
+// Temperature setpoint for supply air
+Brick_Supply_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Supply_Air_Temperature_Setpoint"> { air, setpoint, sp, supply, temp }
+
+// Sets the size of a deadband of temperature of supply air
+Brick_Supply_Air_Temperature_Deadband_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Supply_Air_Temperature_Deadband_Setpoint"> { air, deadband, setpoint, sp, supply, temp }
+
+// Sets the size of a deadband of temperature of supply air for heating
+Brick_Heating_Supply_Air_Temperature_Deadband_Setpoint : Brick_Heating_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Supply_Air_Temperature_Deadband_Setpoint"> { air, deadband, heating, setpoint, sp, supply, temp }
+
+// Sets the size of a deadband of temperature of supply air for cooling
+Brick_Cooling_Supply_Air_Temperature_Deadband_Setpoint : Brick_Cooling_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Supply_Air_Temperature_Deadband_Setpoint"> { air, cooling, deadband, setpoint, sp, supply, temp }
+
+// Measures the relative humidity of supply air
+Brick_Supply_Air_Humidity_Sensor : Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Humidity_Sensor"> { air, humidity, sensor, supply }
+
+// Humidity setpoint for supply air
+Brick_Supply_Air_Humidity_Setpoint : Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Supply_Air_Humidity_Setpoint"> { air, humidity, setpoint, sp, supply }
+
+// The static pressure of air within supply regions of an HVAC system
+Brick_Supply_Air_Static_Pressure_Sensor : Brick_Static_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Static_Pressure_Sensor"> { air, pressure, sensor, supply }
+
+// Sets static pressure of supply air
+Brick_Supply_Air_Static_Pressure_Setpoint : Brick_Static_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Supply_Air_Static_Pressure_Setpoint"> { air, pressure, setpoint, sp, supply }
+
+
+Brick_Supply_Air_Velocity_Pressure_Sensor : Brick_Velocity_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Velocity_Pressure_Sensor"> { air, pressure, sensor, supply, velocity }
+
+
+Brick_Supply_Air_Dewpoint_Sensor : Brick_Dewpoint_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Dewpoint_Sensor"> { air, dewPoint, sensor, supply, temp }
+
+// Measures the rate of flow of supply air
+Brick_Supply_Air_Flow_Sensor : Brick_Air_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Flow_Sensor"> { air, flow, sensor, supply }
+
+// Sets supply air flow rate
+Brick_Supply_Air_Flow_Setpoint : Brick_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Supply_Air_Flow_Setpoint"> { air, flow, setpoint, sp, supply }
+
+// Sets supply air flow rate for cooling
+Brick_Cooling_Supply_Air_Flow_Setpoint : Brick_Supply_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Supply_Air_Flow_Setpoint"> { air, cooling, flow, setpoint, sp, supply }
+
+// Sets supply air flow rate for heating
+Brick_Heating_Supply_Air_Flow_Setpoint : Brick_Supply_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Supply_Air_Flow_Setpoint"> { air, flow, heating, setpoint, sp, supply }
 
 
 
@@ -256,8 +322,9 @@ Brick_Temperature_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Bri
 // Sets temperature
 Brick_Temperature_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Temperature_Setpoint"> { setpoint, sp, temp }
 
-// Measures properties of CO2 in air
-Brick_CO2_Sensor : Brick_Air_Quality_Sensor <uri:"https://brickschema.org/schema/Brick#CO2_Sensor"> { co2, sensor }
+// Measures the concentration of CO2 in air
+Brick_CO2_Level_Sensor : Brick_CO2_Sensor <uri:"https://brickschema.org/schema/Brick#CO2_Level_Sensor"> { co2, sensor }
+
 
 
 Brick_Outside_Air_Lockout_Temperature_Setpoint : Brick_Outside_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Lockout_Temperature_Setpoint"> { air, disable, outside, setpoint, sp, temp }
@@ -922,57 +989,69 @@ Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <tem
 
 Brick_Variable_Frequency_Drive_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Fault_Status"> { fault, vfd }
 
-// Measures the rate of flow of water
-Brick_Water_Flow_Sensor : Brick_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Flow_Sensor"> { sensor, flow, water, point }
-// Measures the temperature of chilled water
-Brick_Chilled_Water_Temperature_Sensor : Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor"> { sensor, water, point, chilled, temp }
-// Sets temperature of outside air
-Brick_Outside_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Temperature_Setpoint"> { outside, point, sp, air, temp }
-// Measure the amount of force acting on a unit area
-Brick_Pressure_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Pressure_Sensor"> { sensor, pressure, point }
-
-Brick_Effective_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Effective_Air_Temperature_Setpoint"> { point, sp, effective, air, temp }
-// Detects pollutants in the ambient air
-Brick_Particulate_Matter_Sensor : Brick_Air_Quality_Sensor <uri:"https://brickschema.org/schema/Brick#Particulate_Matter_Sensor"> { sensor, particulate, matter, point }
-// Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit
-Brick_Water_Differential_Pressure_Setpoint : Brick_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Water_Differential_Pressure_Setpoint"> { differential, water, point, sp, pressure }
-
-Brick_Run_Status : Brick_Start_Stop_Status <uri:"https://brickschema.org/schema/Brick#Run_Status"> { run, status, point }
-// Sets humidity
-Brick_Humidity_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Humidity_Setpoint"> { sp, humidity, point }
-// Sets the target flow rate of water
-Brick_Water_Flow_Setpoint : Brick_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Water_Flow_Setpoint"> { sp, flow, water, point }
-// Measures the difference between total pressure and static pressure
-Brick_Velocity_Pressure_Sensor : Brick_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Velocity_Pressure_Sensor"> { velocity, sensor, pressure, point }
-// Measures the temperature of water enteringed to a hot water system
-Brick_Entering_Hot_Water_Temperature_Sensor : Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Entering_Hot_Water_Temperature_Sensor"> { hot, sensor, entering, water, point, temp }
-// Senses the dewpoint temperature . Dew point is the temperature to which air must be cooled to become saturated with water vapor
-Brick_Dewpoint_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Dewpoint_Sensor"> { sensor, dewpoint, point }
 // Measures the amount of instantaneous power consumed
-Brick_Power_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Power_Sensor"> { power, sensor, point }
-// Indicates if a control loop, relay or equipment is off
-Brick_Off_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Off_Status"> { status, off, point }
-// Indicates if a control loop, relay or equipment is on
-Brick_On_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#On_Status"> { status, on, point }
-// Sets temperature of discharge air for cooling
-Brick_Discharge_Air_Temperature_Cooling_Setpoint : Brick_Cooling_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Cooling_Setpoint"> { discharge, point, sp, air, cool, temp }
-// Measures the duration of a phenomenon or event
-Brick_Duration_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Duration_Sensor"> { sensor, duration, point }
-// A type of Setpoints that is related to the difference between two measurements
-Brick_Differential_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Differential_Setpoint"> { sp, differential, point }
+Brick_Power_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Power_Sensor"> { sensor, point, power }
 // Sets pressure
-Brick_Pressure_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Pressure_Setpoint"> { sp, pressure, point }
-// A sensor which provides a measure of air quality
-Brick_Air_Quality_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Quality_Sensor"> { sensor, point, quality, air }
-// Measures the total heat content of air
-Brick_Air_Enthalpy_Sensor : Brick_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Enthalpy_Sensor"> { enthalpy, sensor, point, air }
+Brick_Pressure_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Pressure_Setpoint"> { pressure, sp, point }
+
+Brick_Class : Point <uri:"https://brickschema.org/schema/Brick#Class"> {  }
+
+Brick_Effective_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Effective_Air_Temperature_Setpoint"> { air, point, temp, sp, effective }
+// Measures properties of CO2 in air
+Brick_CO2_Sensor : Brick_Air_Quality_Sensor <uri:"https://brickschema.org/schema/Brick#CO2_Sensor"> { point, sensor, co2 }
+// Detects pollutants in the ambient air
+Brick_Particulate_Matter_Sensor : Brick_Air_Quality_Sensor <uri:"https://brickschema.org/schema/Brick#Particulate_Matter_Sensor"> { particulate, matter, point, sensor }
 // Sets some property of CO2
 Brick_CO2_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#CO2_Setpoint"> { sp, point, co2 }
-// Measures the amount of instantaneous electric power consumed
-Brick_Electric_Power_Sensor : Brick_Power_Sensor <uri:"https://brickschema.org/schema/Brick#Electric_Power_Sensor"> { power, sensor, electric, point }
+// Measures the temperature of chilled water
+Brick_Chilled_Water_Temperature_Sensor : Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor"> { point, temp, chilled, sensor, water }
+// Measures the total heat content of air
+Brick_Air_Enthalpy_Sensor : Brick_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Enthalpy_Sensor"> { enthalpy, air, point, sensor }
+// Measures the difference between total pressure and static pressure
+Brick_Velocity_Pressure_Sensor : Brick_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Velocity_Pressure_Sensor"> { pressure, point, velocity, sensor }
+// A device that regulates the volume and temperature of air delivered to a zone by opening or closing a damper
+Brick_Variable_Air_Volume_Box : Brick_Terminal_Unit <uri:"https://brickschema.org/schema/Brick#Variable_Air_Volume_Box"> { volume, variable, box, equipment }
+// Measures the duration of a phenomenon or event
+Brick_Duration_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Duration_Sensor"> { point, sensor, duration }
+// Measures the rate of flow of water
+Brick_Water_Flow_Sensor : Brick_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Flow_Sensor"> { sensor, water, point, flow }
+// Measures the temperature of water enteringed to a hot water system
+Brick_Entering_Hot_Water_Temperature_Sensor : Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Entering_Hot_Water_Temperature_Sensor"> { point, temp, entering, sensor, water, hot }
+// A device that regulates the volumetric flow rate and/or the temperature of the controlled medium.
+Brick_Terminal_Unit : Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Terminal_Unit"> { terminal, unit, equipment }
+// Senses the dewpoint temperature . Dew point is the temperature to which air must be cooled to become saturated with water vapor
+Brick_Dewpoint_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Dewpoint_Sensor"> { sensor, point, dewpoint }
+// Indicates if a control loop, relay or equipment is on
+Brick_On_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#On_Status"> { status, point, on }
+// Sets temperature of discharge air for cooling
+Brick_Discharge_Air_Temperature_Cooling_Setpoint : Brick_Cooling_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Cooling_Setpoint"> { air, point, temp, sp, discharge, cool }
+// Indicates if a control loop, relay or equipment is off
+Brick_Off_Status : Brick_Status <uri:"https://brickschema.org/schema/Brick#Off_Status"> { status, point, off }
+// Sets temperature for heating
+Brick_Heating_Temperature_Setpoint : Brick_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Temperature_Setpoint"> { sp, point, heat, temp }
+// See Heating_Ventilation_Air_Conditioning_System
+Brick_HVAC_Equipment : Brick_Equipment <uri:"https://brickschema.org/schema/Brick#HVAC_Equipment"> { hvac, equipment }
 // Sets temperature for cooling
-Brick_Cooling_Temperature_Setpoint : Brick_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Temperature_Setpoint"> { cool, temp, sp, point }
-// Measures the total heat content of some substance
-Brick_Enthalpy_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Enthalpy_Sensor"> { enthalpy, sensor, point }
+Brick_Cooling_Temperature_Setpoint : Brick_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Temperature_Setpoint"> { cool, sp, point, temp }
+// Measure the amount of force acting on a unit area
+Brick_Pressure_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Pressure_Sensor"> { pressure, point, sensor }
+// A type of Setpoints that is related to the difference between two measurements
+Brick_Differential_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Differential_Setpoint"> { sp, point, differential }
+// Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit
+Brick_Water_Differential_Pressure_Setpoint : Brick_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Water_Differential_Pressure_Setpoint"> { point, sp, differential, pressure, water }
+// Sets humidity
+Brick_Humidity_Setpoint : Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Humidity_Setpoint"> { sp, point, humidity }
+// Measures the amount of instantaneous electric power consumed
+Brick_Electric_Power_Sensor : Brick_Power_Sensor <uri:"https://brickschema.org/schema/Brick#Electric_Power_Sensor"> { sensor, point, electric, power }
+// Sets the target flow rate of water
+Brick_Water_Flow_Setpoint : Brick_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Water_Flow_Setpoint"> { water, sp, point, flow }
+
+Brick_Run_Status : Brick_Start_Stop_Status <uri:"https://brickschema.org/schema/Brick#Run_Status"> { status, point, run }
+// Sets temperature of outside air
+Brick_Outside_Air_Temperature_Setpoint : Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Temperature_Setpoint"> { air, point, temp, sp, outside }
+// A sensor which provides a measure of air quality
+Brick_Air_Quality_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Quality_Sensor"> { quality, air, point, sensor }
 // Indicates the active/inactive status of a control loop (but not equipment activities or relays -- use On/Off for this purpose)
-Brick_Start_Stop_Status : Brick_On_Off_Status <uri:"https://brickschema.org/schema/Brick#Start_Stop_Status"> { status, start, stop, point }
+Brick_Start_Stop_Status : Brick_On_Off_Status <uri:"https://brickschema.org/schema/Brick#Start_Stop_Status"> { status, point, start, stop }
+// Measures the total heat content of some substance
+Brick_Enthalpy_Sensor : Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Enthalpy_Sensor"> { enthalpy, point, sensor }

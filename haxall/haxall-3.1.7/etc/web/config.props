@@ -1,0 +1,31 @@
+//
+// Config: web
+//
+// History:
+//   10 Jun 11  Brian Frank  Creation
+//   21 Jan 13  Nicholas Harker - Added Proxy Exclusion Support
+//
+
+// Default WebClient.proxy URI formatted as "http://{host}[:port]/"
+// proxy=http://foo:8080/
+
+// WebClient.proxy exceptions as comma separated list of Regex globs
+// proxy.exceptions=192.168.*.*,*.google.com
+
+// Set Secure parameter on session cookies to force HTTPS (default is false)
+// secureSessionCookie=true
+
+// Set SameSite:strict parameter on session cookies (default is strict)
+// sameSiteSessionCookie=strict
+
+// Qualified type name of WebMod used to handle internal 500 errors
+// See WispService.errMod
+// errMod=wisp::WispDefaultErrMod
+
+// Extra HTTP headers to add to every response
+// See WispService.extraResHeaders
+// extraResHeaders=Header-1:"Val"; Header-2:"Val";
+
+// Cookie name to use for built-in web session management
+// sessionCookieName=fanws
+

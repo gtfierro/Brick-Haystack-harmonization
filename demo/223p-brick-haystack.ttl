@@ -1,0 +1,116 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix ns1: <http://data.ashrae.org/standard223#> .
+@prefix ns2: <urn:project_haystack/> .
+
+<urn:example/name-dmp_8ace698d> a ns1:Damper,
+        brick:Damper,
+        brick:Equipment,
+        ns2:Entity,
+        ns2:HasTag-damper,
+        ns2:HasTag-equip,
+        ns2:HasTag-equipment,
+        ns2:HasTag-hvac,
+        ns2:HasTag-point ;
+    ns1:hasConnectionPoint <urn:example/name-dmp-in_06f5c756>,
+        <urn:example/name-dmp-out_acc3b8d9> ;
+    ns1:hasProperty <urn:example/name-dmp-command_7900c050>,
+        <urn:example/name-dmp-feedback_914879d6> ;
+    ns2:hasMarkerTag "damper",
+        "equip",
+        "equipment",
+        "hvac",
+        "point" ;
+    ns2:hasRefTag [ ns2:key "equipRef" ;
+            ns2:value <urn:example/rvav1> ] .
+
+<urn:example/sensor-saf1> a ns1:FlowSensor,
+        ns1:Sensor,
+        brick:Supply_Air_Flow_Sensor,
+        ns2:Entity,
+        ns2:HasTag-air,
+        ns2:HasTag-flow,
+        ns2:HasTag-point,
+        ns2:HasTag-sensor,
+        ns2:HasTag-supply ;
+    ns1:hasMeasurementLocation <urn:example/name-dmp-out_acc3b8d9> ;
+    ns1:observes <urn:example/name-sup-air-flow_87292688> ;
+    ns2:hasMarkerTag "air",
+        "flow",
+        "point",
+        "sensor",
+        "supply" ;
+    ns2:hasRefTag [ ns2:key "equipRef" ;
+            ns2:value <urn:example/rvav1> ],
+        [ ns2:key "equipRef" ;
+            ns2:value <urn:example/rvav1> ] .
+
+<urn:example/sensor-sap1> a ns1:PressureSensor,
+        ns1:Sensor,
+        brick:Supply_Air_Static_Pressure_Sensor,
+        ns2:Entity,
+        ns2:HasTag-air,
+        ns2:HasTag-point,
+        ns2:HasTag-pressure,
+        ns2:HasTag-sensor,
+        ns2:HasTag-supply ;
+    ns1:hasMeasurementLocation <urn:example/name-dmp-out_acc3b8d9> ;
+    ns1:observes <urn:example/name-sup-air-pressure_3211bcc4> ;
+    ns2:hasMarkerTag "air",
+        "point",
+        "pressure",
+        "sensor",
+        "supply" ;
+    ns2:hasRefTag [ ns2:key "equipRef" ;
+            ns2:value <urn:example/rvav1> ],
+        [ ns2:key "equipRef" ;
+            ns2:value <urn:example/rvav1> ] .
+
+<urn:example/sensor-sat1> a ns1:Sensor,
+        ns1:TemperatureSensor,
+        brick:Supply_Air_Temperature_Sensor,
+        ns2:Entity,
+        ns2:HasTag-air,
+        ns2:HasTag-point,
+        ns2:HasTag-sensor,
+        ns2:HasTag-supply,
+        ns2:HasTag-temp ;
+    ns1:hasMeasurementLocation <urn:example/name-dmp-out_acc3b8d9> ;
+    ns1:observes <urn:example/name-sup-air-temp_00e9d545> ;
+    ns2:hasMarkerTag "air",
+        "point",
+        "sensor",
+        "supply",
+        "temp" ;
+    ns2:hasRefTag [ ns2:key "equipRef" ;
+            ns2:value <urn:example/rvav1> ],
+        [ ns2:key "equipRef" ;
+            ns2:value <urn:example/rvav1> ] .
+
+<urn:example/rvav1> a ns1:VAV,
+        brick:Equipment,
+        brick:VAV,
+        <urn:brick-haystack-xeto/ashrae.g36::G36Vav>,
+        ns2:Entity,
+        ns2:HasTag-equip,
+        ns2:HasTag-equipment,
+        ns2:HasTag-hvac,
+        ns2:HasTag-point,
+        ns2:HasTag-terminal,
+        ns2:HasTag-unit,
+        ns2:HasTag-vav ;
+    ns1:contains <urn:example/name-dmp_8ace698d>,
+        <urn:example/name-rhc_a3a03022>,
+        <urn:example/sensor-saf1>,
+        <urn:example/sensor-sap1>,
+        <urn:example/sensor-sat1> ;
+    ns1:hasProperty <urn:example/name-sup-air-flow_87292688>,
+        <urn:example/name-sup-air-pressure_3211bcc4>,
+        <urn:example/name-sup-air-temp_00e9d545> ;
+    ns2:hasMarkerTag "equip",
+        "equipment",
+        "hvac",
+        "point",
+        "terminal",
+        "unit",
+        "vav" .
+

@@ -3,7 +3,7 @@ import re
 import json
 from pathlib import Path
 import pyshacl
-from rdflib import URIRef, Graph
+from rdflib import URIRef, Graph, Namespace, BNode, Literal
 from rdflib.query import ResultRow
 from brickschema import Graph
 from brickschema.namespaces import RDF
@@ -59,7 +59,7 @@ def entity_to_document(entity: URIRef, graph: Graph) -> dict:
         assert isinstance(row, ResultRow)
         key, value = row
         tag_cache.add(str(key))
-        doc[str(key)] = {'_kind': 'ref', 'val': str(value)}
+        doc[str(key)] = {'_kind': 'ref', 'val': str(re.split('#|/', value)[-1])}
     return doc
 
 
@@ -68,12 +68,29 @@ def run(brick_file: str, output: str):
     g.load_file(brick_file)
     g.load_file("data/bh.ttl")
     g.load_file("haystack-ontology/haystack.ttl")
+    g.bind('s223', Namespace('http://data.ashrae.org/standard223#'))
 
     valid, _, report = pyshacl.validate(g, advanced=True, inplace=True)
-    g.serialize(output, format='ttl')
     if not valid:
         print(report)
         sys.exit(1)
+
+    # add equip ref tags
+    query = """SELECT ?ent ?equip WHERE {
+        { ?ent s223:observes ?prop .
+          ?equip s223:hasProperty ?prop }
+        UNION
+        { ?equip s223:contains ?ent }
+    }"""
+    for row in g.query(query):
+        ent, equip = row
+        bn = BNode()
+        print(f"ADDING {ent} equipref {equip}")
+        g.add((ent, PH.hasRefTag, bn))
+        g.add((bn, PH.key, Literal("equipRef")))
+        g.add((bn, PH.value, equip))
+
+    g.serialize(output, format='ttl')
 
     # haystack tags now exist on all entities in the RDF graph.
     # next step is to convert this to JSON
@@ -82,6 +99,13 @@ def run(brick_file: str, output: str):
     with open(json_output.with_suffix('.json'), 'w') as f:
         json.dump(doc, f)
         
+
+    # save simplified model
+    simple_g = Graph()
+    for ent in g.subjects(RDF.type, PH.Entity):
+        simple_g += g.cbd(ent)
+    simple_g.serialize(output, format='ttl')
+
 
 def main():
     if len(sys.argv) < 3:

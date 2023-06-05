@@ -1,0 +1,91 @@
+vav-reheat-equip:
+  body: >
+    @prefix P: <urn:___param___#> .
+    @prefix s223: <http://data.ashrae.org/standard223#> .
+    @prefix brick: <https://brickschema.org/schema/Brick#> .
+    P:name a s223:VAV, brick:VAV .
+    P:sup-air-temp-sensor a s223:TemperatureSensor .
+    P:sup-air-flow-sensor a s223:FlowSensor .
+    P:sup-air-pressure-sensor a s223:PressureSensor .
+  dependencies:
+    - template: vav-reheat-equip-inner
+      args: {"name": "name", "sup-air-temp-sensor": "sup-air-temp-sensor",
+             "sup-air-flow-sensor": "sup-air-flow-sensor",
+             "sup-air-pressure-sensor": "sup-air-pressure-sensor"}
+
+vav-reheat-equip-inner:
+  body: >
+    @prefix P: <urn:___param___#> .
+    @prefix s223: <http://data.ashrae.org/standard223#> .
+    @prefix brick: <https://brickschema.org/schema/Brick#> .
+    P:name a s223:VAV, brick:VAV ;
+      s223:contains P:rhc, P:dmp, P:sup-air-flow-sensor,
+                    P:sup-air-temp-sensor, P:sup-air-pressure-sensor ;
+      s223:hasProperty P:sup-air-temp, P:sup-air-flow, P:sup-air-pressure .
+
+    P:sup-air-temp-sensor a s223:TemperatureSensor ;
+            s223:observes P:sup-air-temp .
+    P:sup-air-flow-sensor a s223:FlowSensor ;
+            s223:observes P:sup-air-flow .
+    P:sup-air-pressure-sensor a s223:PressureSensor ;
+            s223:observes P:sup-air-pressure .
+
+    P:rhc-air-out s223:connectsThrough P:c0 .
+    P:dmp-in s223:connectsThrough P:c0 .
+
+  dependencies:
+    - template: duct
+      library: nrel-templates
+      args: {"name": "c0", "a": "rhc-air-out", "b": "dmp-in"}
+
+    # hot water coil
+    - template: hot-water-coil
+      library: nrel-templates
+      args: {"name": "rhc", "air-in-mapsto": "air-in"}
+    - template: https://brickschema.org/schema/Brick#Heating_Coil
+      library: https://brickschema.org/schema/1.3/Brick
+      args: {"name": "rhc"}
+
+    # damper
+    - template: damper
+      library: nrel-templates
+      args: {"name": "dmp", "out-mapsto": "air-out"}
+    - template: https://brickschema.org/schema/Brick#Damper
+      library: https://brickschema.org/schema/1.3/Brick
+      args: {"name": "dmp"}
+
+    - template: air-inlet-cp
+      library: nrel-templates
+      args: {"name": "air-in"}
+    - template: air-outlet-cp
+      library: nrel-templates
+      args: {"name": "air-out"}
+    - template: air-temperature
+      library: nrel-templates
+      args: {"name": "sup-air-temp"}
+    - template: sensor
+      library: nrel-templates
+      args: {"name": "sup-air-temp-sensor", "property": "sup-air-temp", "where": "air-out"}
+    - template: https://brickschema.org/schema/Brick#Supply_Air_Temperature_Sensor
+      library: https://brickschema.org/schema/1.3/Brick
+      args: {"name": "sup-air-temp-sensor"}
+
+    - template: air-flow
+      library: nrel-templates
+      args: {"name": "sup-air-flow"}
+    - template: sensor
+      library: nrel-templates
+      args: {"name": "sup-air-flow-sensor", "property": "sup-air-flow", "where": "air-out"}
+    - template: https://brickschema.org/schema/Brick#Supply_Air_Flow_Sensor
+      library: https://brickschema.org/schema/1.3/Brick
+      args: {"name": "sup-air-flow-sensor"}
+
+    - template: static-pressure
+      library: nrel-templates
+      args: {"name": "sup-air-pressure"}
+    - template: sensor
+      library: nrel-templates
+      args: {"name": "sup-air-pressure-sensor", "property": "sup-air-pressure", "where": "air-out"}
+    - template: https://brickschema.org/schema/Brick#Supply_Air_Static_Pressure_Sensor
+      library: https://brickschema.org/schema/1.3/Brick
+      args: {"name": "sup-air-pressure-sensor"}

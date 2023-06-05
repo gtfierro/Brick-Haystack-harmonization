@@ -1,4 +1,5 @@
 import buildingmotif
+import os
 from typing import Optional
 import logging
 from buildingmotif.dataclasses import Library
@@ -10,8 +11,12 @@ import csv
 from typing import Set
 
 # set up buildingmotif to read templates
-bm = buildingmotif.BuildingMOTIF("sqlite://", log_level=logging.WARNING)
-Library.load(ontology_graph='Brick.ttl')
+if os.path.exists('/tmp/bmotif.db'):
+    bm = buildingmotif.BuildingMOTIF("sqlite://///tmp/bmotif.db", log_level=logging.WARNING)
+else:
+    bm = buildingmotif.BuildingMOTIF("sqlite://///tmp/bmotif.db", log_level=logging.WARNING)
+    bm.setup_tables()
+Library.load(ontology_graph='Brick.ttl', overwrite=False)
 lib = Library.load(directory='data/bmotif/', overwrite=True)
 PH = rdflib.Namespace("urn:project_haystack/")
 

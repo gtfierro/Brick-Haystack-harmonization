@@ -1,0 +1,9 @@
+- ontology: https://raw.githubusercontent.com/NREL/BuildingMOTIF/develop/libraries/ashrae/223p/ontology/223p.ttl
+- ontology: https://github.com/BrickSchema/Brick/releases/download/nightly/Brick.ttl
+- git:
+    repo: https://github.com/NREL/BuildingMOTIF
+    branch: develop
+    path: libraries/ashrae/223p/nrel-templates
+
+- directory: ../data/bmotif
+- directory: demolib

@@ -1,11 +1,13 @@
-.PHONY: install-deps visualize-taxonomy check-taxonomy all clean convert-haystack-to-ttl
+.PHONY: install-deps visualize-taxonomy check-taxonomy all clean convert-haystack-to-ttl demo
 
-all: install-deps files convert-haystack-to-ttl convert-brick-to-haystack
+all: files convert-haystack-to-ttl convert-brick-to-haystack demo
 
 files: data/resolved-bh.json data/resolved-all.json data/bh.ttl data/xetolib data/bmotif/templates.yml
 
 install-deps: pyproject.toml poetry.lock
 	poetry install
+	poetry run pip install -e buildingmotif
+	poetry run pip install openpyxl
 
 visualize-taxonomy:
 	poetry run visualize-taxonomy unified_taxonomy.yaml
@@ -13,7 +15,7 @@ visualize-taxonomy:
 check-taxonomy:
 	poetry run check-brick Brick.ttl unified_taxonomy.yaml
 
-convert-haystack-to-ttl: data/haystack-models/minimum.ttl
+convert-haystack-to-ttl: data/haystack-models/minimum.ttl data/haystack-models/charlie.ttl
 
 convert-brick-to-haystack: data/converted-models/g36-vav-a2.ttl
 
@@ -27,13 +29,13 @@ data/resolved-bh.json: data/xetolib/bh.xeto
 	rm -f data/resolved-bh.json
 	rm -rf xeto/lib/data/xetolib
 	cp -r data/xetolib xeto/lib/data/
-	xeto/bin/xeto json-ast -out data/resolved-bh.json xetolib
+	xeto/bin/xeto json-ast -out data/resolved-bh.json xetolib ashrae.g36
 
 data/resolved-all.json: xeto/* data/xetolib/bh.xeto
 	xeto/bin/xeto json-ast -out data/resolved-all.json all
 
 data/all.json: xeto/* data/xetolib/bh.xeto
-	xeto/bin/xeto json-ast -own -out data/resolved-all.json all
+	xeto/bin/xeto json-ast -own -out data/all.json all
 
 data/haystack-models/%.ttl: data/haystack-models/%.json brick_haystack_harmonization/ph_to_ttl.py haystack-ontology/haystack.ttl data/bh.ttl
 	poetry run ph-to-ttl $< $@
@@ -47,5 +49,16 @@ data/converted-models/%.json: data/brick-models/%.ttl brick_haystack_harmonizati
 data/bh.ttl: data/resolved-bh.json brick_haystack_harmonization/xeto_to_shacl.py
 	poetry run xeto-to-shacl data/resolved-bh.json data/bh.ttl
 
+demo/bmotif.db:
+	cd demo && poetry run python 1_load_libraries.py
+
+demo/vav_reheat.xlsx: demo/bmotif.db
+	cd demo && poetry run python 2_generate_sheet_model.py 
+
+demo: demo/bmotif.db demo/vav_reheat.xlsx
+	cd demo && poetry run python 3_generate_model_from_spreadsheet.py
+	cd demo && ./4_generate_haystack_model.sh
+	cd demo && ./5_generate_brick_223p.sh
+
 clean:
-	rm data/haystack-models/*.ttl data/bh.ttl data/xetolib/bh.xeto
+	rm data/haystack-models/*.ttl data/bh.ttl data/xetolib/bh.xeto data/*.json

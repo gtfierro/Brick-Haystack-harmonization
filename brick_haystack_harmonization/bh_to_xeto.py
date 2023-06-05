@@ -34,6 +34,21 @@ def base_to_xeto(row: dict) -> str:
     return make_statement(point_class, tag_list)
 
 
+def equip_to_xeto(row: dict) -> str:
+    equip_class = clean_brick_classname(row["Subpart:EntityClassL0"])
+    if BRICK[equip_class] in seen_classes:
+        return ""
+    seen_classes.add(BRICK[equip_class])
+    tags = taglist_to_set(row["Haystack:Markers"])
+    tags.update(taglist_to_set(row["Haystack:CustomMarkers"]))
+    fixup_tags(tags)
+    if len(tags) > 1:
+        tag_list = ", ".join(sorted(tags))
+    else:
+        tag_list = tags.pop()
+    return make_statement(equip_class, tag_list)
+
+
 def make_statement(point_class: str, tag_list: str) -> str:
     parent = g.value(subject=BRICK[point_class], predicate=RDFS.subClassOf)
     if parent is None or parent == BRICK["Point"]:
@@ -142,6 +157,8 @@ def run(filename: str, outputfile: str):
             statements.append(base_to_xeto(row) + "\n")
         elif row["Meta:State"] == "Subparts":
             statements.append(subparts_to_xeto(row) + "\n")
+        elif row["Meta:State"] == "Equip":
+            statements.append(equip_to_xeto(row) + "\n")
     with open('data/bmotif/templates.yml', 'w') as f:
         f.write(buildingmotif_template_file_content)
 

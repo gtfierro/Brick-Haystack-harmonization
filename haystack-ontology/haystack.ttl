@@ -17,6 +17,10 @@
             sh:prefix "rdfs" ],
         [ sh:namespace "http://www.w3.org/ns/shacl#"^^xsd:anyURI ;
             sh:prefix "sh" ],
+        [ sh:namespace "http://data.ashrae.org/standard223#"^^xsd:anyURI ;
+            sh:prefix "s223" ],
+        [ sh:namespace "https://brickschema.org/schema/Brick#"^^xsd:anyURI ;
+            sh:prefix "brick" ],
         [ sh:namespace "http://www.w3.org/2002/07/owl#"^^xsd:anyURI ;
             sh:prefix "owl" ] .
 
@@ -76,3 +80,24 @@ ph:Entity a owl:Class, sh:NodeShape ;
                 ph:hasValueTagShape,
                 ph:hasRefTagShape
 .
+
+
+# brick/hasytack rules
+#ph:add_equip_ref a sh:NodeShape ;
+#    sh:targetClass ph:Entity ;
+#    sh:rule [
+#        a sh:SPARQLRule ;
+#        sh:construct """
+#        CONSTRUCT {
+#            $this ph:hasRefTag _:0 .
+#            _:0 ph:key "equipRef" .
+#            _:0 ph:value ?label .
+#        } WHERE {
+#            $this s223:observes ?prop .
+#            ?equip s223:hasProperty ?prop .
+#            ?equip rdfs:label ?label 
+#        }
+#        """ ;
+#        sh:prefixes <urn:project_haystack> ;
+#    ] ;
+#.

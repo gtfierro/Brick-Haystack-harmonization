@@ -6,7 +6,7 @@ import rdflib
 import brickschema
 from brick_haystack_harmonization.common import lib, get_equip_ref
 from buildingmotif.namespaces import PARAM
-from brickschema.namespaces import SKOS, BRICK, RDFS, A, XSD
+from brickschema.namespaces import SKOS, BRICK, RDFS, A, XSD, RDF
 
 M = Namespace("urn:model/")
 PH = Namespace("urn:project_haystack/")
@@ -102,7 +102,18 @@ def run(haystack_file: str, output_file: str):
     print("Validate SHACL")
     valid, _, report = pyshacl.validate(model, advanced=True, inplace=True, abort_on_first=False)
 
-    model.serialize(output_file, format=rdflib.util.guess_format(output_file) or "ttl")
+    # save simplified model
+    simple_g = rdflib.Graph()
+    entities = model.query("SELECT DISTINCT ?ent WHERE { ?ent rdf:type/rdfs:subClassOf* brick:Entity }")
+    for (ent,) in entities:
+        simple_g += model.cbd(ent)
+    for (s, p, o) in simple_g:
+        if PH in s or PH in p or PH in o:
+            simple_g.remove((s, p, o))
+    #simple_g.serialize(output, format='ttl')
+
+    simple_g.serialize(output_file, format=rdflib.util.guess_format(output_file) or "ttl")
+    print('ZZZZ',output_file)
 
     if not valid:
         print(report)

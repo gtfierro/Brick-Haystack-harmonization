@@ -1,0 +1,127 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix ns1: <http://data.ashrae.org/standard223#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix qudt: <http://qudt.org/schema/qudt/> .
+@prefix qudtqk: <http://qudt.org/vocab/quantitykind/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+
+<urn:example/> a owl:Ontology .
+
+<urn:example/rvav1> a ns1:VAV,
+        brick:VAV ;
+    ns1:contains <urn:example/name-dmp_8ace698d>,
+        <urn:example/name-rhc_a3a03022>,
+        <urn:example/sensor-saf1>,
+        <urn:example/sensor-sap1>,
+        <urn:example/sensor-sat1> ;
+    ns1:hasProperty <urn:example/name-sup-air-flow_87292688>,
+        <urn:example/name-sup-air-pressure_3211bcc4>,
+        <urn:example/name-sup-air-temp_00e9d545> .
+
+<urn:example/name-dmp-command_7900c050> a ns1:QuantifiableActuatableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:unit unit:PERCENT .
+
+<urn:example/name-dmp-feedback_914879d6> a ns1:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
+    qudt:unit unit:PERCENT .
+
+<urn:example/name-dmp_8ace698d> a ns1:Damper,
+        brick:Damper ;
+    ns1:hasConnectionPoint <urn:example/name-dmp-in_06f5c756>,
+        <urn:example/name-dmp-out_acc3b8d9> ;
+    ns1:hasProperty <urn:example/name-dmp-command_7900c050>,
+        <urn:example/name-dmp-feedback_914879d6> .
+
+<urn:example/name-rhc-air-in_763e4e5f> a ns1:InletConnectionPoint ;
+    ns1:hasMedium ns1:Medium-Air .
+
+<urn:example/name-rhc-return-water-temp-sensor_95eed59a> a ns1:Sensor ;
+    ns1:observes <urn:example/name-rhc-return-water-temp_8c21c678> .
+
+<urn:example/name-rhc-supply-water-temp-sensor_b14ce3c1> a ns1:Sensor ;
+    ns1:observes <urn:example/name-rhc-supply-water-temp_fbeae422> .
+
+<urn:example/name-rhc-valve-command_ee807935> a ns1:EnumeratedActuatableProperty ;
+    ns1:hasEnumerationKind ns1:EnumerationKind-RunStatus .
+
+<urn:example/name-rhc-valve-feedback_51ad6fc8> a ns1:EnumeratedObservableProperty ;
+    ns1:hasEnumerationKind ns1:EnumerationKind-RunStatus .
+
+<urn:example/name-rhc-valve-in_ef5a8f96> a ns1:InletConnectionPoint ;
+    ns1:hasMedium ns1:Medium-Water .
+
+<urn:example/name-rhc-valve-out_69fc6cc0> a ns1:OutletConnectionPoint ;
+    ns1:hasMedium ns1:Medium-Water .
+
+<urn:example/name-rhc-valve_298d2d84> a ns1:Valve ;
+    ns1:hasConnectionPoint <urn:example/name-rhc-valve-in_ef5a8f96>,
+        <urn:example/name-rhc-valve-out_69fc6cc0> ;
+    ns1:hasMedium ns1:Water-HotWater ;
+    ns1:hasProperty <urn:example/name-rhc-valve-command_ee807935>,
+        <urn:example/name-rhc-valve-feedback_51ad6fc8> .
+
+<urn:example/name-rhc_a3a03022> a ns1:HeatingCoil,
+        brick:Heating_Coil ;
+    ns1:contains <urn:example/name-rhc-return-water-temp-sensor_95eed59a>,
+        <urn:example/name-rhc-supply-water-temp-sensor_b14ce3c1>,
+        <urn:example/name-rhc-valve_298d2d84> ;
+    ns1:hasConnectionPoint <urn:example/name-rhc-air-in_763e4e5f>,
+        <urn:example/name-rhc-air-out_ccd4c8c5> ;
+    ns1:hasProperty <urn:example/name-rhc-return-water-temp_8c21c678>,
+        <urn:example/name-rhc-supply-water-temp_fbeae422> .
+
+<urn:example/sensor-saf1> a ns1:FlowSensor,
+        ns1:Sensor,
+        brick:Supply_Air_Flow_Sensor ;
+    ns1:hasMeasurementLocation <urn:example/name-dmp-out_acc3b8d9> ;
+    ns1:observes <urn:example/name-sup-air-flow_87292688> .
+
+<urn:example/sensor-sap1> a ns1:PressureSensor,
+        ns1:Sensor,
+        brick:Supply_Air_Static_Pressure_Sensor ;
+    ns1:hasMeasurementLocation <urn:example/name-dmp-out_acc3b8d9> ;
+    ns1:observes <urn:example/name-sup-air-pressure_3211bcc4> .
+
+<urn:example/sensor-sat1> a ns1:Sensor,
+        ns1:TemperatureSensor,
+        brick:Supply_Air_Temperature_Sensor ;
+    ns1:hasMeasurementLocation <urn:example/name-dmp-out_acc3b8d9> ;
+    ns1:observes <urn:example/name-sup-air-temp_00e9d545> .
+
+<urn:example/name-c0_d44a1459> a ns1:Duct ;
+    ns1:connectsAt <urn:example/name-dmp-in_06f5c756>,
+        <urn:example/name-rhc-air-out_ccd4c8c5> ;
+    ns1:hasMedium ns1:Medium-Air .
+
+<urn:example/name-dmp-in_06f5c756> a ns1:InletConnectionPoint ;
+    ns1:connectsThrough <urn:example/name-c0_d44a1459> ;
+    ns1:hasMedium ns1:Medium-Air .
+
+<urn:example/name-rhc-air-out_ccd4c8c5> a ns1:OutletConnectionPoint ;
+    ns1:connectsThrough <urn:example/name-c0_d44a1459> ;
+    ns1:hasMedium ns1:Medium-Air .
+
+<urn:example/name-rhc-return-water-temp_8c21c678> a ns1:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:unit unit:DEG_C .
+
+<urn:example/name-rhc-supply-water-temp_fbeae422> a ns1:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:unit unit:DEG_C .
+
+<urn:example/name-sup-air-flow_87292688> a ns1:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
+    qudt:unit unit:FT3-PER-MIN .
+
+<urn:example/name-sup-air-pressure_3211bcc4> a ns1:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:Pressure ;
+    qudt:unit unit:INH2O .
+
+<urn:example/name-sup-air-temp_00e9d545> a ns1:QuantifiableObservableProperty ;
+    qudt:hasQuantityKind qudtqk:Temperature ;
+    qudt:unit unit:DEG_C .
+
+<urn:example/name-dmp-out_acc3b8d9> a ns1:OutletConnectionPoint ;
+    ns1:hasMedium ns1:Medium-Air .
+

@@ -1,0 +1,213 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix ns1: <urn:project_haystack/> .
+@prefix ns2: <http://data.ashrae.org/standard223#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<urn:example/name-dmp_6f3bd3bb> a ns2:Damper,
+        brick:Damper,
+        ns1:Entity,
+        ns1:HasTag-damper,
+        ns1:HasTag-equip,
+        ns1:HasTag-equipment,
+        ns1:HasTag-hvac ;
+    rdfs:label "urn:example/name-dmp_6f3bd3bb" ;
+    ns2:hasConnectionPoint <urn:example/name-dmp-in_ba50a253>,
+        <urn:example/name-dmp-out_1bb516dc> ;
+    ns2:hasProperty <urn:example/name-dmp-command_aa9f5929>,
+        <urn:example/name-dmp-feedback_6fcc9c33> ;
+    ns1:hasMarkerTag "damper",
+        "equip",
+        "equipment",
+        "hvac",
+        "point" ;
+    ns1:hasRefTag [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav1> ] .
+
+<urn:example/name-dmp_bf939fbb> a ns2:Damper,
+        brick:Damper,
+        ns1:Entity,
+        ns1:HasTag-damper,
+        ns1:HasTag-equip,
+        ns1:HasTag-equipment,
+        ns1:HasTag-hvac ;
+    rdfs:label "urn:example/name-dmp_bf939fbb" ;
+    ns2:hasConnectionPoint <urn:example/name-dmp-in_a9ce78fd>,
+        <urn:example/name-dmp-out_1656d40f> ;
+    ns2:hasProperty <urn:example/name-dmp-command_d170127b>,
+        <urn:example/name-dmp-feedback_8582a3fb> ;
+    ns1:hasMarkerTag "damper",
+        "equip",
+        "equipment",
+        "hvac",
+        "point" ;
+    ns1:hasRefTag [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav2> ] .
+
+<urn:example/saf1> a ns2:FlowSensor,
+        ns2:Sensor,
+        brick:Supply_Air_Flow_Sensor,
+        ns1:Entity,
+        ns1:HasTag-air,
+        ns1:HasTag-flow,
+        ns1:HasTag-sensor,
+        ns1:HasTag-supply ;
+    rdfs:label "urn:example/saf1" ;
+    ns2:observes <urn:example/name-sup-air-flow_88f913e1> ;
+    ns1:hasMarkerTag "air",
+        "flow",
+        "point",
+        "sensor",
+        "supply" ;
+    ns1:hasRefTag [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav1> ],
+        [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav1> ] .
+
+<urn:example/saf2> a ns2:FlowSensor,
+        ns2:Sensor,
+        brick:Supply_Air_Flow_Sensor,
+        ns1:Entity,
+        ns1:HasTag-air,
+        ns1:HasTag-flow,
+        ns1:HasTag-sensor,
+        ns1:HasTag-supply ;
+    rdfs:label "urn:example/saf2" ;
+    ns2:observes <urn:example/name-sup-air-flow_749d63d0> ;
+    ns1:hasMarkerTag "air",
+        "flow",
+        "point",
+        "sensor",
+        "supply" ;
+    ns1:hasRefTag [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav2> ],
+        [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav2> ] .
+
+<urn:example/sap1> a ns2:PressureSensor,
+        ns2:Sensor,
+        brick:Supply_Air_Static_Pressure_Sensor,
+        ns1:Entity,
+        ns1:HasTag-air,
+        ns1:HasTag-point,
+        ns1:HasTag-pressure,
+        ns1:HasTag-sensor,
+        ns1:HasTag-supply ;
+    rdfs:label "urn:example/sap1" ;
+    ns2:observes <urn:example/name-sup-air-pressure_8af42c6c> ;
+    ns1:hasMarkerTag "air",
+        "point",
+        "pressure",
+        "sensor",
+        "supply" ;
+    ns1:hasRefTag [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav1> ],
+        [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav1> ] .
+
+<urn:example/sap2> a ns2:PressureSensor,
+        ns2:Sensor,
+        brick:Supply_Air_Static_Pressure_Sensor,
+        ns1:Entity,
+        ns1:HasTag-air,
+        ns1:HasTag-point,
+        ns1:HasTag-pressure,
+        ns1:HasTag-sensor,
+        ns1:HasTag-supply ;
+    rdfs:label "urn:example/sap2" ;
+    ns2:observes <urn:example/name-sup-air-pressure_849c5f1d> ;
+    ns1:hasMarkerTag "air",
+        "point",
+        "pressure",
+        "sensor",
+        "supply" ;
+    ns1:hasRefTag [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav2> ],
+        [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav2> ] .
+
+<urn:example/sat1> a ns2:Sensor,
+        ns2:TemperatureSensor,
+        brick:Supply_Air_Temperature_Sensor,
+        ns1:Entity,
+        ns1:HasTag-sensor,
+        ns1:HasTag-supply,
+        ns1:HasTag-temp ;
+    rdfs:label "urn:example/sat1" ;
+    ns2:observes <urn:example/name-sup-air-temp_cda2866a> ;
+    ns1:hasMarkerTag "air",
+        "point",
+        "sensor",
+        "supply",
+        "temp" ;
+    ns1:hasRefTag [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav1> ],
+        [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav1> ] .
+
+<urn:example/sat2> a ns2:Sensor,
+        ns2:TemperatureSensor,
+        brick:Supply_Air_Temperature_Sensor,
+        ns1:Entity,
+        ns1:HasTag-sensor,
+        ns1:HasTag-supply,
+        ns1:HasTag-temp ;
+    rdfs:label "urn:example/sat2" ;
+    ns2:observes <urn:example/name-sup-air-temp_dd8afd1b> ;
+    ns1:hasMarkerTag "air",
+        "point",
+        "sensor",
+        "supply",
+        "temp" ;
+    ns1:hasRefTag [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav2> ],
+        [ ns1:key "equipRef" ;
+            ns1:value <urn:example/vav2> ] .
+
+<urn:example/vav1> a ns2:VAV,
+        brick:VAV,
+        ns1:Entity,
+        ns1:HasTag-equip,
+        ns1:HasTag-equipment,
+        ns1:HasTag-hvac,
+        ns1:HasTag-unit ;
+    rdfs:label "urn:example/vav1" ;
+    ns2:contains <urn:example/name-dmp_6f3bd3bb>,
+        <urn:example/name-rhc_e5ea79a6>,
+        <urn:example/saf1>,
+        <urn:example/sap1>,
+        <urn:example/sat1> ;
+    ns2:hasProperty <urn:example/name-sup-air-flow_88f913e1>,
+        <urn:example/name-sup-air-pressure_8af42c6c>,
+        <urn:example/name-sup-air-temp_cda2866a> ;
+    ns1:hasMarkerTag "equip",
+        "equipment",
+        "hvac",
+        "point",
+        "terminal",
+        "unit",
+        "vav" .
+
+<urn:example/vav2> a ns2:VAV,
+        brick:VAV,
+        ns1:Entity,
+        ns1:HasTag-equip,
+        ns1:HasTag-equipment,
+        ns1:HasTag-hvac,
+        ns1:HasTag-unit ;
+    rdfs:label "urn:example/vav2" ;
+    ns2:contains <urn:example/name-dmp_bf939fbb>,
+        <urn:example/name-rhc_e5d118ec>,
+        <urn:example/saf2>,
+        <urn:example/sap2>,
+        <urn:example/sat2> ;
+    ns2:hasProperty <urn:example/name-sup-air-flow_749d63d0>,
+        <urn:example/name-sup-air-pressure_849c5f1d>,
+        <urn:example/name-sup-air-temp_dd8afd1b> ;
+    ns1:hasMarkerTag "equip",
+        "equipment",
+        "hvac",
+        "point",
+        "terminal",
+        "unit",
+        "vav" .
+
