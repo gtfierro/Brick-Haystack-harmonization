@@ -279,14 +279,6 @@
         "doc": "devices that serve all or part of the building and may include electric power, lighting, transportation, or service water heating, including, but not limited to, furnaces, boilers, air conditioners, heat pumps, chillers, water heaters, lamps, luminaires, ballasts, elevators, escalators, or other devices or installations.",
         "uri": "https://brickschema.org/schema/Brick#Equipment",
         "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "equip": {
             "type": "sys::Marker"
           }
@@ -297,24 +289,16 @@
         "doc": "See Variable_Air_Volume_Box",
         "uri": "https://brickschema.org/schema/Brick#VAV",
         "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "equip": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equipment": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
           "hvac": {
             "type": "sys::Marker"
-          },
-          "equipment": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
           },
           "terminal": {
             "type": "sys::Marker"
@@ -332,24 +316,16 @@
         "doc": "See Variable_Air_Volume_Box_With_Reheat",
         "uri": "https://brickschema.org/schema/Brick#RVAV",
         "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "equip": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "equipment": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
           "hvac": {
             "type": "sys::Marker"
-          },
-          "equipment": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
           },
           "terminal": {
             "type": "sys::Marker"
@@ -360,10 +336,10 @@
           "variable": {
             "type": "sys::Marker"
           },
-          "box": {
+          "volume": {
             "type": "sys::Marker"
           },
-          "volume": {
+          "box": {
             "type": "sys::Marker"
           },
           "reheat": {
@@ -379,22 +355,14 @@
         "doc": "Element inserted into an air-distribution system or element of an air-distribution system permitting modification of the air resistance of the system and consequently changing the airflow rate or shutting off the airflow.",
         "uri": "https://brickschema.org/schema/Brick#Damper",
         "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "equip": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "hvac": {
+          "equipment": {
             "type": "sys::Marker"
           },
-          "equipment": {
+          "hvac": {
             "type": "sys::Marker"
           },
           "damper": {
@@ -407,22 +375,14 @@
         "doc": "A damper that modulates the flow of exhaust air",
         "uri": "https://brickschema.org/schema/Brick#Exhaust_Damper",
         "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "equip": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "hvac": {
+          "equipment": {
             "type": "sys::Marker"
           },
-          "equipment": {
+          "hvac": {
             "type": "sys::Marker"
           },
           "damper": {
@@ -439,22 +399,14 @@
         "doc": "Any device with two or more blades or vanes attached to a rotating shaft used to produce an airflow for the purpose of comfort, ventilation, exhaust, heating, cooling, or any other gaseous transport.",
         "uri": "https://brickschema.org/schema/Brick#Fan",
         "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "equip": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "hvac": {
+          "equipment": {
             "type": "sys::Marker"
           },
-          "equipment": {
+          "hvac": {
             "type": "sys::Marker"
           },
           "fan": {
@@ -463,17 +415,12 @@
         }
       },
       "Brick_Command": {
-        "base": "ph::Point",
+        "base": "xetolib::Brick_Point",
         "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
         "uri": "https://brickschema.org/schema/Brick#Command",
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -481,17 +428,12 @@
         }
       },
       "Brick_Sensor": {
-        "base": "ph::Point",
+        "base": "xetolib::Brick_Point",
         "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
         "uri": "https://brickschema.org/schema/Brick#Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -499,17 +441,12 @@
         }
       },
       "Brick_Alarm": {
-        "base": "ph::Point",
+        "base": "xetolib::Brick_Point",
         "doc": "Alarm points are signals (either audible or visual) that alert an operator to an off-normal condition which requires some form of corrective action",
         "uri": "https://brickschema.org/schema/Brick#Alarm",
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "alarm": {
             "type": "sys::Marker"
@@ -517,17 +454,12 @@
         }
       },
       "Brick_Status": {
-        "base": "ph::Point",
+        "base": "xetolib::Brick_Point",
         "doc": "A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'",
         "uri": "https://brickschema.org/schema/Brick#Status",
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -535,17 +467,12 @@
         }
       },
       "Brick_Setpoint": {
-        "base": "ph::Point",
+        "base": "xetolib::Brick_Point",
         "doc": "A Setpoint is an input value at which the desired property is set",
         "uri": "https://brickschema.org/schema/Brick#Setpoint",
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker"
@@ -559,11 +486,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker",
@@ -582,11 +504,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -608,11 +525,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -630,11 +542,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -651,11 +558,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -676,11 +578,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -706,11 +603,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -728,11 +620,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -749,11 +636,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -779,11 +661,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -800,11 +677,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker",
@@ -823,11 +695,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -851,11 +718,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -870,18 +732,10 @@
         }
       },
       "Brick_Operating_Mode_Command": {
-        "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "base": "ph::Entity",
+        "doc": "Top-level dicts with a unique identifier.\nSee `docHaystack::Ontology#entities` chapter.",
         "uri": "https://brickschema.org/schema/Brick#Operating_Mode_Command",
         "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -904,11 +758,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -940,11 +789,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -962,11 +806,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "alarm": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -982,11 +821,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1001,18 +835,10 @@
         }
       },
       "Brick_Electrical_Power_Sensor": {
-        "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
+        "base": "ph::Entity",
+        "doc": "Top-level dicts with a unique identifier.\nSee `docHaystack::Ontology#entities` chapter.",
         "uri": "https://brickschema.org/schema/Brick#Electrical_Power_Sensor",
         "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "elec": {
             "type": "sys::Marker"
           },
@@ -1032,11 +858,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -1060,11 +881,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -1090,11 +906,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1124,11 +935,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1162,11 +968,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1205,11 +1006,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1251,11 +1047,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1285,11 +1076,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1318,11 +1104,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1347,11 +1128,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1382,11 +1158,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1415,11 +1186,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -1450,11 +1216,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1479,11 +1240,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1513,11 +1269,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1552,11 +1303,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1590,11 +1336,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1619,11 +1360,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1653,11 +1389,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1691,11 +1422,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1735,11 +1461,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1777,11 +1498,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1811,11 +1527,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1844,11 +1555,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1873,11 +1579,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -1908,11 +1609,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -1941,11 +1637,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -1976,11 +1667,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2005,11 +1691,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -2039,11 +1720,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -2078,11 +1754,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2116,11 +1787,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2145,11 +1811,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -2180,11 +1841,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2214,11 +1870,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2246,11 +1897,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2276,11 +1922,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2305,11 +1946,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -2340,11 +1976,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2374,11 +2005,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2407,11 +2033,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2437,11 +2058,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -2472,11 +2088,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2502,11 +2113,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -2537,11 +2143,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2569,11 +2170,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2599,11 +2195,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -2634,11 +2225,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2668,11 +2254,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2698,11 +2279,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2727,11 +2303,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -2766,11 +2337,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2799,11 +2365,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2828,11 +2389,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -2863,11 +2419,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2892,11 +2443,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -2926,11 +2472,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -2955,11 +2496,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -2990,11 +2526,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3015,11 +2546,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3046,11 +2572,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3076,11 +2597,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3104,11 +2620,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3129,11 +2640,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3160,11 +2666,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3181,11 +2682,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3207,11 +2703,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3228,11 +2719,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker",
@@ -3251,11 +2737,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3272,11 +2753,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3299,11 +2775,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3322,11 +2793,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3350,11 +2816,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3376,11 +2837,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3408,11 +2864,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3430,11 +2881,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3447,19 +2893,14 @@
           }
         }
       },
-      "Brick_CO2_Sensor": {
-        "base": "xetolib::Brick_Air_Quality_Sensor",
-        "doc": "Measures properties of CO2 in air",
-        "uri": "https://brickschema.org/schema/Brick#CO2_Sensor",
+      "Brick_CO2_Level_Sensor": {
+        "base": "xetolib::Brick_CO2_Sensor",
+        "doc": "Measures the concentration of CO2 in air",
+        "uri": "https://brickschema.org/schema/Brick#CO2_Level_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -3472,7 +2913,8 @@
             "type": "sys::Marker"
           },
           "co2": {
-            "type": "sys::Marker"
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
           }
         }
       },
@@ -3484,11 +2926,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3523,11 +2960,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3557,11 +2989,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3585,11 +3012,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3606,11 +3028,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker",
@@ -3635,11 +3052,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3657,11 +3069,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -3688,11 +3095,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3724,11 +3126,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3759,11 +3156,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3792,11 +3184,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3836,11 +3223,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3866,11 +3248,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3902,11 +3279,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -3919,12 +3291,12 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
+          "entering": {
+            "type": "sys::Marker"
+          },
           "hot": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "entering": {
-            "type": "sys::Marker"
           },
           "delta": {
             "type": "sys::Marker"
@@ -3939,11 +3311,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -3973,11 +3340,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -4017,11 +3379,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4047,11 +3404,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -4083,11 +3435,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4112,11 +3459,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -4143,11 +3485,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4173,11 +3510,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -4208,11 +3540,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4241,11 +3568,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4271,11 +3593,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4296,11 +3613,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -4327,11 +3639,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4352,11 +3659,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "alarm": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4373,11 +3675,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -4403,11 +3700,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -4438,11 +3730,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -4477,11 +3764,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4511,11 +3793,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4543,11 +3820,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -4579,11 +3851,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4608,11 +3875,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -4641,11 +3903,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -4677,11 +3934,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4707,11 +3959,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4736,11 +3983,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4757,11 +3999,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -4780,11 +4017,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4801,11 +4033,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -4824,11 +4051,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4845,11 +4067,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -4872,11 +4089,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4897,11 +4109,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "alarm": {
             "type": "sys::Marker",
@@ -4926,11 +4133,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4949,11 +4151,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -4965,10 +4162,10 @@
           "quality": {
             "type": "sys::Marker"
           },
-          "particulate": {
+          "matter": {
             "type": "sys::Marker"
           },
-          "matter": {
+          "particulate": {
             "type": "sys::Marker"
           },
           "pm1": {
@@ -4988,11 +4185,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -5004,10 +4196,10 @@
           "quality": {
             "type": "sys::Marker"
           },
-          "particulate": {
+          "matter": {
             "type": "sys::Marker"
           },
-          "matter": {
+          "particulate": {
             "type": "sys::Marker"
           },
           "pm2_5": {
@@ -5027,11 +4219,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -5043,10 +4230,10 @@
           "quality": {
             "type": "sys::Marker"
           },
-          "particulate": {
+          "matter": {
             "type": "sys::Marker"
           },
-          "matter": {
+          "particulate": {
             "type": "sys::Marker"
           },
           "pm10": {
@@ -5065,11 +4252,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -5105,11 +4287,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -5138,11 +4315,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -5175,11 +4347,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -5215,11 +4382,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -5248,11 +4410,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -5286,11 +4443,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -5313,11 +4465,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -5342,11 +4489,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -5367,11 +4509,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -5391,11 +4528,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -5420,11 +4552,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -5447,11 +4574,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -5479,11 +4601,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -5510,11 +4627,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -5538,11 +4650,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -5565,11 +4672,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -5597,11 +4699,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -5628,11 +4725,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -5656,11 +4748,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -5683,11 +4770,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -5715,11 +4797,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -5746,11 +4823,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -5774,11 +4846,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -5801,11 +4868,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -5832,11 +4894,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -5883,11 +4940,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -5908,11 +4960,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -5932,11 +4979,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -5964,11 +5006,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -5999,11 +5036,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -6039,11 +5071,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -6069,11 +5096,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -6101,11 +5123,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -6131,11 +5148,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -6163,11 +5175,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -6193,11 +5200,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker"
@@ -6228,11 +5230,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -6259,11 +5256,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -6299,11 +5291,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -6329,11 +5316,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -6361,11 +5343,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -6391,11 +5368,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -6428,11 +5400,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -6458,11 +5425,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -6490,11 +5452,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -6525,11 +5482,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -6565,11 +5517,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -6595,11 +5542,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -6627,11 +5569,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -6657,11 +5594,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -6689,11 +5621,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -6719,11 +5646,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker"
@@ -6754,11 +5676,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -6785,11 +5702,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -6825,11 +5737,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -6855,11 +5762,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -6887,11 +5789,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -6917,11 +5814,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -6954,11 +5846,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -6984,11 +5871,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -7017,11 +5899,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -7055,11 +5932,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -7086,11 +5958,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -7122,11 +5989,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -7152,11 +6014,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -7184,11 +6041,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -7214,11 +6066,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -7246,11 +6093,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -7276,11 +6118,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker"
@@ -7311,11 +6148,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -7342,11 +6174,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -7382,11 +6209,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -7412,11 +6234,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -7444,11 +6261,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -7474,11 +6286,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -7511,11 +6318,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -7542,11 +6344,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -7567,11 +6364,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -7596,11 +6388,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -7630,11 +6417,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -7670,11 +6452,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -7694,11 +6471,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -7720,11 +6492,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -7744,11 +6511,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -7770,11 +6532,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -7794,11 +6551,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker"
@@ -7823,11 +6575,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -7848,11 +6595,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -7882,11 +6624,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -7906,11 +6643,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -7932,11 +6664,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -7956,11 +6683,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -7987,11 +6709,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -8011,11 +6728,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -8037,11 +6749,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -8089,11 +6796,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -8114,11 +6816,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -8144,11 +6841,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -8169,11 +6861,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -8191,11 +6878,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -8212,11 +6894,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -8238,11 +6915,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "alarm": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -8260,11 +6932,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -8292,11 +6959,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -8322,11 +6984,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "alarm": {
             "type": "sys::Marker",
@@ -8355,11 +7012,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -8383,11 +7035,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -8410,11 +7057,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "alarm": {
             "type": "sys::Marker",
@@ -8443,11 +7085,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -8473,11 +7110,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "alarm": {
             "type": "sys::Marker",
@@ -8506,11 +7138,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -8537,11 +7164,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -8561,11 +7183,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "cmd": {
             "type": "sys::Marker"
@@ -8587,11 +7204,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -8612,11 +7224,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -8636,11 +7243,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -8668,11 +7270,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -8699,11 +7296,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -8724,11 +7316,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -8748,11 +7335,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -8776,11 +7358,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -8808,11 +7385,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -8838,11 +7410,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -8915,11 +7482,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -8945,11 +7507,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -9029,11 +7586,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -9062,11 +7614,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -9149,11 +7696,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -9182,11 +7724,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -9221,11 +7758,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -9246,11 +7778,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -9276,11 +7803,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -9300,11 +7822,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -9326,11 +7843,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -9350,11 +7862,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -9376,11 +7883,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -9400,11 +7902,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -9426,11 +7923,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -9459,11 +7951,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -9484,11 +7971,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker",
@@ -9514,11 +7996,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "cmd": {
             "type": "sys::Marker"
           },
@@ -9538,11 +8015,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "status": {
             "type": "sys::Marker"
@@ -9564,11 +8036,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -9589,11 +8056,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -9613,11 +8075,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker"
@@ -9642,11 +8099,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -9667,11 +8119,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -9701,11 +8148,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -9725,11 +8167,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker"
@@ -9751,11 +8188,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker"
           },
@@ -9775,11 +8207,6 @@
         "slots": {
           "point": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -9806,11 +8233,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -9836,11 +8258,6 @@
           "point": {
             "type": "sys::Marker"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker"
           },
@@ -9852,363 +8269,20 @@
           }
         }
       },
-      "Brick_Heating_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Temperature_Setpoint",
-        "doc": "Sets temperature for heating",
-        "uri": "https://brickschema.org/schema/Brick#Heating_Temperature_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "heat": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Run_Status": {
-        "base": "xetolib::Brick_Start_Stop_Status",
-        "doc": "Indicates the active/inactive status of a control loop (but not equipment activities or relays -- use On/Off for this purpose)",
-        "uri": "https://brickschema.org/schema/Brick#Run_Status",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "status": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "off": {
-            "type": "sys::Marker"
-          },
-          "run": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "start": {
-            "type": "sys::Marker"
-          },
-          "stop": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Entering_Hot_Water_Temperature_Sensor": {
-        "base": "xetolib::Brick_Water_Temperature_Sensor",
-        "doc": "Measures the temperature of water enteringed to a hot water system",
-        "uri": "https://brickschema.org/schema/Brick#Entering_Hot_Water_Temperature_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "water": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "hot": {
-            "type": "sys::Marker"
-          },
-          "entering": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Water_Flow_Sensor": {
-        "base": "xetolib::Brick_Flow_Sensor",
-        "doc": "Measures the rate of flow of water",
-        "uri": "https://brickschema.org/schema/Brick#Water_Flow_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "flow": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "water": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Cooling_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Temperature_Setpoint",
-        "doc": "Sets temperature for cooling",
-        "uri": "https://brickschema.org/schema/Brick#Cooling_Temperature_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "cool": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_CO2_Setpoint": {
+      "Brick_Differential_Setpoint": {
         "base": "xetolib::Brick_Setpoint",
-        "doc": "Sets some property of CO2",
-        "uri": "https://brickschema.org/schema/Brick#CO2_Setpoint",
+        "doc": "A type of Setpoints that is related to the difference between two measurements",
+        "uri": "https://brickschema.org/schema/Brick#Differential_Setpoint",
         "slots": {
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "co2": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Class": {
-        "base": "ph::Point",
-        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
-        "uri": "https://brickschema.org/schema/Brick#Class",
-        "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          }
-        }
-      },
-      "Brick_Power_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Measures the amount of instantaneous power consumed",
-        "uri": "https://brickschema.org/schema/Brick#Power_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "power": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_On_Status": {
-        "base": "xetolib::Brick_Status",
-        "doc": "Indicates if a control loop, relay or equipment is on",
-        "uri": "https://brickschema.org/schema/Brick#On_Status",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "status": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "on": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Water_Flow_Setpoint": {
-        "base": "xetolib::Brick_Flow_Setpoint",
-        "doc": "Sets the target flow rate of water",
-        "uri": "https://brickschema.org/schema/Brick#Water_Flow_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "flow": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker"
-          },
-          "water": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Outside_Air_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Air_Temperature_Setpoint",
-        "doc": "Sets temperature of outside air",
-        "uri": "https://brickschema.org/schema/Brick#Outside_Air_Temperature_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "outside": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Humidity_Setpoint": {
-        "base": "xetolib::Brick_Setpoint",
-        "doc": "Sets humidity",
-        "uri": "https://brickschema.org/schema/Brick#Humidity_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "humidity": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Effective_Air_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Air_Temperature_Setpoint",
-        "doc": "Sets temperature of air",
-        "uri": "https://brickschema.org/schema/Brick#Effective_Air_Temperature_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "effective": {
+          "differential": {
             "type": "sys::Marker"
           }
         }
@@ -10221,11 +8295,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -10240,107 +8309,6 @@
           }
         }
       },
-      "Brick_Pressure_Setpoint": {
-        "base": "xetolib::Brick_Setpoint",
-        "doc": "Sets pressure",
-        "uri": "https://brickschema.org/schema/Brick#Pressure_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_HVAC_Equipment": {
-        "base": "xetolib::Brick_Equipment",
-        "doc": "See Heating_Ventilation_Air_Conditioning_System",
-        "uri": "https://brickschema.org/schema/Brick#HVAC_Equipment",
-        "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "equip": {
-            "type": "sys::Marker"
-          },
-          "hvac": {
-            "type": "sys::Marker"
-          },
-          "equipment": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Chilled_Water_Temperature_Sensor": {
-        "base": "xetolib::Brick_Water_Temperature_Sensor",
-        "doc": "Measures the temperature of chilled water",
-        "uri": "https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "water": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "chilled": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Pressure_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Measure the amount of force acting on a unit area",
-        "uri": "https://brickschema.org/schema/Brick#Pressure_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker"
-          }
-        }
-      },
       "Brick_Discharge_Air_Temperature_Cooling_Setpoint": {
         "base": "xetolib::Brick_Cooling_Temperature_Setpoint",
         "doc": "Sets temperature of discharge air for cooling",
@@ -10349,11 +8317,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -10378,88 +8341,50 @@
           }
         }
       },
-      "Brick_Differential_Setpoint": {
-        "base": "xetolib::Brick_Setpoint",
-        "doc": "A type of Setpoints that is related to the difference between two measurements",
-        "uri": "https://brickschema.org/schema/Brick#Differential_Setpoint",
+      "Brick_Dewpoint_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Senses the dewpoint temperature . Dew point is the temperature to which air must be cooled to become saturated with water vapor",
+        "uri": "https://brickschema.org/schema/Brick#Dewpoint_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "differential": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Terminal_Unit": {
-        "base": "xetolib::Brick_HVAC_Equipment",
-        "doc": "A device that regulates the volumetric flow rate and/or the temperature of the controlled medium.",
-        "uri": "https://brickschema.org/schema/Brick#Terminal_Unit",
-        "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "equip": {
-            "type": "sys::Marker"
-          },
-          "hvac": {
-            "type": "sys::Marker"
-          },
-          "equipment": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "terminal": {
-            "type": "sys::Marker"
-          },
-          "unit": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Particulate_Matter_Sensor": {
-        "base": "xetolib::Brick_Air_Quality_Sensor",
-        "doc": "Detects pollutants in the ambient air",
-        "uri": "https://brickschema.org/schema/Brick#Particulate_Matter_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "air": {
+          "dewpoint": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Class": {
+        "base": "ph::Entity",
+        "doc": "Top-level dicts with a unique identifier.\nSee `docHaystack::Ontology#entities` chapter.",
+        "uri": "https://brickschema.org/schema/Brick#Class"
+      },
+      "Brick_Cooling_Temperature_Setpoint": {
+        "base": "xetolib::Brick_Temperature_Setpoint",
+        "doc": "Sets temperature for cooling",
+        "uri": "https://brickschema.org/schema/Brick#Cooling_Temperature_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "setpoint": {
             "type": "sys::Marker"
           },
-          "quality": {
-            "type": "sys::Marker"
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
           },
-          "particulate": {
-            "type": "sys::Marker"
-          },
-          "matter": {
+          "cool": {
             "type": "sys::Marker"
           }
         }
@@ -10472,11 +8397,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -10491,19 +8411,39 @@
           }
         }
       },
-      "Brick_Air_Quality_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "A sensor which provides a measure of air quality",
-        "uri": "https://brickschema.org/schema/Brick#Air_Quality_Sensor",
+      "Brick_Water_Flow_Setpoint": {
+        "base": "xetolib::Brick_Flow_Setpoint",
+        "doc": "Sets the target flow rate of water",
+        "uri": "https://brickschema.org/schema/Brick#Water_Flow_Setpoint",
         "slots": {
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "flow": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Particulate_Matter_Sensor": {
+        "base": "xetolib::Brick_Air_Quality_Sensor",
+        "doc": "Detects pollutants in the ambient air",
+        "uri": "https://brickschema.org/schema/Brick#Particulate_Matter_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -10514,68 +8454,227 @@
           },
           "quality": {
             "type": "sys::Marker"
+          },
+          "matter": {
+            "type": "sys::Marker"
+          },
+          "particulate": {
+            "type": "sys::Marker"
           }
         }
       },
-      "Brick_Variable_Air_Volume_Box": {
-        "base": "xetolib::Brick_Terminal_Unit",
-        "doc": "A device that regulates the volume and temperature of air delivered to a zone by opening or closing a damper",
-        "uri": "https://brickschema.org/schema/Brick#Variable_Air_Volume_Box",
+      "Brick_Humidity_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "doc": "Sets humidity",
+        "uri": "https://brickschema.org/schema/Brick#Humidity_Setpoint",
         "slots": {
           "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "humidity": {
             "type": "sys::Marker"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
+          }
+        }
+      },
+      "Brick_Terminal_Unit": {
+        "base": "xetolib::Brick_HVAC_Equipment",
+        "doc": "A device that regulates the volumetric flow rate and/or the temperature of the controlled medium.",
+        "uri": "https://brickschema.org/schema/Brick#Terminal_Unit",
+        "slots": {
           "equip": {
-            "type": "sys::Marker"
-          },
-          "hvac": {
             "type": "sys::Marker"
           },
           "equipment": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
+          "hvac": {
+            "type": "sys::Marker"
+          },
           "terminal": {
             "type": "sys::Marker"
           },
           "unit": {
             "type": "sys::Marker"
-          },
-          "variable": {
-            "type": "sys::Marker"
-          },
-          "box": {
-            "type": "sys::Marker"
-          },
-          "volume": {
-            "type": "sys::Marker"
           }
         }
       },
-      "Brick_Off_Status": {
-        "base": "xetolib::Brick_Status",
-        "doc": "Indicates if a control loop, relay or equipment is off",
-        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+      "Brick_Effective_Air_Temperature_Setpoint": {
+        "base": "xetolib::Brick_Air_Temperature_Setpoint",
+        "doc": "Sets temperature of air",
+        "uri": "https://brickschema.org/schema/Brick#Effective_Air_Temperature_Setpoint",
         "slots": {
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "status": {
+          "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "off": {
+          "setpoint": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "effective": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Entering_Hot_Water_Temperature_Sensor": {
+        "base": "xetolib::Brick_Water_Temperature_Sensor",
+        "doc": "Measures the temperature of water enteringed to a hot water system",
+        "uri": "https://brickschema.org/schema/Brick#Entering_Hot_Water_Temperature_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "water": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "entering": {
+            "type": "sys::Marker"
+          },
+          "hot": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_HVAC_Equipment": {
+        "base": "xetolib::Brick_Equipment",
+        "doc": "See Heating_Ventilation_Air_Conditioning_System",
+        "uri": "https://brickschema.org/schema/Brick#HVAC_Equipment",
+        "slots": {
+          "equip": {
+            "type": "sys::Marker"
+          },
+          "equipment": {
+            "type": "sys::Marker"
+          },
+          "hvac": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Water_Flow_Sensor": {
+        "base": "xetolib::Brick_Flow_Sensor",
+        "doc": "Measures the rate of flow of water",
+        "uri": "https://brickschema.org/schema/Brick#Water_Flow_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "flow": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_CO2_Sensor": {
+        "base": "xetolib::Brick_Air_Quality_Sensor",
+        "doc": "Measures properties of CO2 in air",
+        "uri": "https://brickschema.org/schema/Brick#CO2_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "quality": {
+            "type": "sys::Marker"
+          },
+          "co2": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Duration_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Measures the duration of a phenomenon or event",
+        "uri": "https://brickschema.org/schema/Brick#Duration_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "duration": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_CO2_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "doc": "Sets some property of CO2",
+        "uri": "https://brickschema.org/schema/Brick#CO2_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "co2": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Pressure_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Measure the amount of force acting on a unit area",
+        "uri": "https://brickschema.org/schema/Brick#Pressure_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
             "type": "sys::Marker"
           }
         }
@@ -10588,11 +8687,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sp": {
             "type": "sys::Marker",
@@ -10617,48 +8711,200 @@
           }
         }
       },
-      "Brick_Duration_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Measures the duration of a phenomenon or event",
-        "uri": "https://brickschema.org/schema/Brick#Duration_Sensor",
+      "Brick_Pressure_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "doc": "Sets pressure",
+        "uri": "https://brickschema.org/schema/Brick#Pressure_Setpoint",
         "slots": {
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
-          "sensor": {
+          "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "duration": {
+          "pressure": {
             "type": "sys::Marker"
           }
         }
       },
-      "Brick_Dewpoint_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Senses the dewpoint temperature . Dew point is the temperature to which air must be cooled to become saturated with water vapor",
-        "uri": "https://brickschema.org/schema/Brick#Dewpoint_Sensor",
+      "Brick_Run_Status": {
+        "base": "xetolib::Brick_Start_Stop_Status",
+        "doc": "Indicates the active/inactive status of a control loop (but not equipment activities or relays -- use On/Off for this purpose)",
+        "uri": "https://brickschema.org/schema/Brick#Run_Status",
         "slots": {
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "start": {
+            "type": "sys::Marker"
+          },
+          "stop": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Off_Status": {
+        "base": "xetolib::Brick_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Point": {
+        "base": "xetolib::Brick_Class",
+        "doc": "Top-level dicts with a unique identifier.\nSee `docHaystack::Ontology#entities` chapter.",
+        "uri": "https://brickschema.org/schema/Brick#Point",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_On_Status": {
+        "base": "xetolib::Brick_Status",
+        "doc": "Indicates if a control loop, relay or equipment is on",
+        "uri": "https://brickschema.org/schema/Brick#On_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "on": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Chilled_Water_Temperature_Sensor": {
+        "base": "xetolib::Brick_Water_Temperature_Sensor",
+        "doc": "Measures the temperature of chilled water",
+        "uri": "https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
           },
           "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "dewpoint": {
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "water": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "chilled": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Variable_Air_Volume_Box": {
+        "base": "xetolib::Brick_Terminal_Unit",
+        "doc": "A device that regulates the volume and temperature of air delivered to a zone by opening or closing a damper",
+        "uri": "https://brickschema.org/schema/Brick#Variable_Air_Volume_Box",
+        "slots": {
+          "equip": {
+            "type": "sys::Marker"
+          },
+          "equipment": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "hvac": {
+            "type": "sys::Marker"
+          },
+          "terminal": {
+            "type": "sys::Marker"
+          },
+          "unit": {
+            "type": "sys::Marker"
+          },
+          "variable": {
+            "type": "sys::Marker"
+          },
+          "volume": {
+            "type": "sys::Marker"
+          },
+          "box": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Outside_Air_Temperature_Setpoint": {
+        "base": "xetolib::Brick_Air_Temperature_Setpoint",
+        "doc": "Sets temperature of outside air",
+        "uri": "https://brickschema.org/schema/Brick#Outside_Air_Temperature_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "setpoint": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "outside": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Power_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Measures the amount of instantaneous power consumed",
+        "uri": "https://brickschema.org/schema/Brick#Power_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "power": {
             "type": "sys::Marker"
           }
         }
@@ -10671,11 +8917,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -10690,6 +8931,52 @@
           }
         }
       },
+      "Brick_Heating_Temperature_Setpoint": {
+        "base": "xetolib::Brick_Temperature_Setpoint",
+        "doc": "Sets temperature for heating",
+        "uri": "https://brickschema.org/schema/Brick#Heating_Temperature_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "temp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "heat": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Air_Quality_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "A sensor which provides a measure of air quality",
+        "uri": "https://brickschema.org/schema/Brick#Air_Quality_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "quality": {
+            "type": "sys::Marker"
+          }
+        }
+      },
       "Brick_Enthalpy_Sensor": {
         "base": "xetolib::Brick_Sensor",
         "doc": "Measures the total heat content of some substance",
@@ -10698,11 +8985,6 @@
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -10722,11 +9004,6 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equips": {
-            "type": "sys::Query",
-            "of": "ph::Equip",
-            "via": "equipRef+"
-          },
           "status": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
@@ -10741,6 +9018,16 @@
             "type": "sys::Marker"
           },
           "stop": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Site": {
+        "base": "ph::Entity",
+        "doc": "Top-level dicts with a unique identifier.\nSee `docHaystack::Ontology#entities` chapter.",
+        "uri": "https://brickschema.org/schema/Brick#Site",
+        "slots": {
+          "site": {
             "type": "sys::Marker"
           }
         }

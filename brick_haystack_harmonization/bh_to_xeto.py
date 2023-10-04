@@ -51,8 +51,8 @@ def equip_to_xeto(row: dict) -> str:
 
 def make_statement(point_class: str, tag_list: str) -> str:
     parent = g.value(subject=BRICK[point_class], predicate=RDFS.subClassOf)
-    if parent is None or parent == BRICK["Point"]:
-        parent = "Point"
+    if parent is None:
+        parent = "Entity"
     else:
         parent_classes.add(parent)
         parent = f"Brick_{parent.split('#')[-1].replace('.','')}"
@@ -185,6 +185,7 @@ def run(filename: str, outputfile: str):
     # write xeto file
     with open(outputfile, "w") as f:
         f.writelines(statements)
+        f.write('Brick_Site : Entity <uri:"https://brickschema.org/schema/Brick#Site"> { site }\n')
 
     # write library file
     mappings = dict(g.namespace_manager.namespaces())

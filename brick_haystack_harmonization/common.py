@@ -3,6 +3,7 @@ import os
 from typing import Optional
 import logging
 from buildingmotif.dataclasses import Library
+from buildingmotif.utils import template_to_shape
 import rdflib
 from rdflib.term import Node
 import rfc3987
@@ -37,8 +38,8 @@ def get_template_shape(template_name: str) -> rdflib.Graph:
     """
     templ = lib.get_template_by_name(template_name)
     print(templ.inline_dependencies().body.serialize())
-    return templ.to_nodeshape()
 
+    return template_to_shape(templ)
 
 def clean_brick_classname(cls: str) -> str:
     return cls.replace(" ", "_")

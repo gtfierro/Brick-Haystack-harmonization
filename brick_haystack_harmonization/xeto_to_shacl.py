@@ -2,7 +2,7 @@ import sys
 from functools import cache
 from buildingmotif.namespaces import PARAM
 import brickschema
-from brickschema.namespaces import BRICK, SH, A, RDF, OWL
+from brickschema.namespaces import BRICK, SH, A, RDF, OWL, RDFS
 from brick_haystack_harmonization.common import validate_uri, get_template_shape, keep_marker_tag_property_shapes
 from rdflib import Namespace, URIRef, Literal
 from rdflib.util import guess_format
@@ -91,6 +91,7 @@ def slot_to_shacl(library_name, name, defn):
 
     g.add((shape, A, SH.NodeShape))
     g.add((shape, A, OWL.Class))
+    g.add((shape, RDFS.label, Literal(name)))
     g.add(
         (shape, SH.rule, [
             (A, SH.TripleRule),
@@ -101,6 +102,7 @@ def slot_to_shacl(library_name, name, defn):
     )
     if "slots" not in defn:
         return
+
     if "points" in defn["slots"]:
         points = defn["slots"].pop("points")
         # asserts to make sure we are using the expected 'point' construct
@@ -127,10 +129,10 @@ def slot_to_shacl(library_name, name, defn):
     for key, keydefn in defn["slots"].items():
         # if it's a marker, add the SHACL requirement
         if keydefn["type"] == "sys::Marker":
-            if key not in shape_cache:
-                shape_cache.add(key)
+            if name not in shape_cache:
+                shape_cache.add(name)
                 condition = get_tag_condition(key)
-                # add ruleto infer Brick class
+                # add rule to infer Brick class
                 g.add((XETO[f"infer_brick_rule_{name}"], A, SH.NodeShape))
                 g.add((XETO[f"infer_brick_rule_{name}"], SH.targetClass, condition))
                 g.add(
@@ -169,6 +171,38 @@ def slot_to_shacl(library_name, name, defn):
                     (SH.subject, SH.this)
                 ])
             )
+
+        
+    # for all 'marker' tag associated with a particualr brick class, add a SHACL
+    # rule which adds the correct Brick class using a sh:TripleRule if
+    # all of the tags are present
+    #marker_tags = [
+    #    t
+    #    for t, v in defn["slots"].items()
+    #    if v["type"] == "sys::Marker"
+    #]
+    #if len(marker_tags) > 0:
+    #    # create a new shape which targets ph:Entity
+    #    # and has a rule which adds the correct Brick class
+    #    shape_name = PH[f"{library_name}::{name}::brick_class"]
+    #    g.add((shape_name, A, SH.NodeShape))
+    #    g.add((shape_name, SH.targetClass, PH.Entity))
+
+    #    conditions = [
+    #        get_tag_condition(t)
+    #        for t in marker_tags
+    #    ]
+    #    print(conditions)
+    #    rule_part = [
+    #        (SH.condition, c)
+    #        for c in conditions
+    #    ]
+    #    rule_part.append((SH.object, shape))
+    #    rule_part.append((SH.predicate, RDF.type))
+    #    rule_part.append((SH.subject, SH.this))
+    #    g.add(
+    #        (shape_name, SH.rule, rule_part)
+    #    )
 
 
 

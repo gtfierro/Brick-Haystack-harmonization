@@ -1,2445 +1,423 @@
-@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ns2: <https://brickschema.org/schema/Brick#> .
-@prefix ns3: <http://qudt.org/schema/qudt/> .
-@prefix ns4: <urn:project_haystack/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix ns1: <urn:project_haystack/> .
+@prefix ns2: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns3: <https://brickschema.org/schema/Brick#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ns2:Angle a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Angle" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ARCMIN>,
-        <http://qudt.org/vocab/unit/ARCSEC>,
-        <http://qudt.org/vocab/unit/DEG>,
-        <http://qudt.org/vocab/unit/GON>,
-        <http://qudt.org/vocab/unit/GRAD>,
-        <http://qudt.org/vocab/unit/MIL>,
-        <http://qudt.org/vocab/unit/MIN_Angle>,
-        <http://qudt.org/vocab/unit/MicroRAD>,
-        <http://qudt.org/vocab/unit/MilliARCSEC>,
-        <http://qudt.org/vocab/unit/MilliRAD>,
-        <http://qudt.org/vocab/unit/RAD>,
-        <http://qudt.org/vocab/unit/REV> ;
-    ns1:definition "The inclination to each other of two intersecting lines, measured by the arc of a circle intercepted between the two lines forming the angle, the center of the circle being the point of intersection.  An acute angle is less than (90^\\circ), a right angle (90^\\circ); an obtuse angle, more than (90^\\circ) but less than (180^\\circ); a straight angle, (180^\\circ); a reflex angle, more than (180^\\circ) but less than (360^\\circ); a perigon, (360^\\circ). Any angle not a multiple of (90^\\circ) is an oblique angle. If the sum of two angles is (90^\\circ), they are complementary angles; if (180^\\circ), supplementary angles; if (360^\\circ), explementary angles."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Angle> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Capacity a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Capacity" ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Capacity> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Cloudage a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Cloudage" ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns1:definition "The fraction of the sky obscured by clouds when observed from a particular location",
-        "The fraction of the sky obscured by clouds when observed from a particular location"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Conductivity a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Conductivity" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/DeciS-PER-M>,
-        <http://qudt.org/vocab/unit/KiloGM-PER-M2-PA-SEC>,
-        <http://qudt.org/vocab/unit/KiloS-PER-M>,
-        <http://qudt.org/vocab/unit/MegaS-PER-M>,
-        <http://qudt.org/vocab/unit/MicroS-PER-CentiM>,
-        <http://qudt.org/vocab/unit/MicroS-PER-M>,
-        <http://qudt.org/vocab/unit/MilliS-PER-CentiM>,
-        <http://qudt.org/vocab/unit/MilliS-PER-M>,
-        <http://qudt.org/vocab/unit/NanoS-PER-CentiM>,
-        <http://qudt.org/vocab/unit/NanoS-PER-M>,
-        <http://qudt.org/vocab/unit/PicoS-PER-M>,
-        <http://qudt.org/vocab/unit/S-PER-CentiM>,
-        <http://qudt.org/vocab/unit/S-PER-M> ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Conductivity> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Dewpoint a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Dewpoint" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/DEG_C>,
-        <http://qudt.org/vocab/unit/DEG_F>,
-        <http://qudt.org/vocab/unit/DEG_R>,
-        <http://qudt.org/vocab/unit/K>,
-        <http://qudt.org/vocab/unit/MilliDEG_C>,
-        <http://qudt.org/vocab/unit/PlanckTemperature> ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/DewPointTemperature> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Enthalpy a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Enthalpy" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/AttoJ>,
-        <http://qudt.org/vocab/unit/BTU_IT>,
-        <http://qudt.org/vocab/unit/BTU_TH>,
-        <http://qudt.org/vocab/unit/CAL_IT>,
-        <http://qudt.org/vocab/unit/CAL_TH>,
-        <http://qudt.org/vocab/unit/ERG>,
-        <http://qudt.org/vocab/unit/EV>,
-        <http://qudt.org/vocab/unit/E_h>,
-        <http://qudt.org/vocab/unit/ExaJ>,
-        <http://qudt.org/vocab/unit/FT-LB_F>,
-        <http://qudt.org/vocab/unit/FT-PDL>,
-        <http://qudt.org/vocab/unit/FemtoJ>,
-        <http://qudt.org/vocab/unit/GigaEV>,
-        <http://qudt.org/vocab/unit/GigaJ>,
-        <http://qudt.org/vocab/unit/GigaW-HR>,
-        <http://qudt.org/vocab/unit/J>,
-        <http://qudt.org/vocab/unit/KiloBTU_IT>,
-        <http://qudt.org/vocab/unit/KiloBTU_TH>,
-        <http://qudt.org/vocab/unit/KiloCAL>,
-        <http://qudt.org/vocab/unit/KiloEV>,
-        <http://qudt.org/vocab/unit/KiloJ>,
-        <http://qudt.org/vocab/unit/KiloV-A-HR>,
-        <http://qudt.org/vocab/unit/KiloV-A_Reactive-HR>,
-        <http://qudt.org/vocab/unit/KiloW-HR>,
-        <http://qudt.org/vocab/unit/MegaEV>,
-        <http://qudt.org/vocab/unit/MegaJ>,
-        <http://qudt.org/vocab/unit/MegaTOE>,
-        <http://qudt.org/vocab/unit/MegaV-A-HR>,
-        <http://qudt.org/vocab/unit/MegaV-A_Reactive-HR>,
-        <http://qudt.org/vocab/unit/MegaW-HR>,
-        <http://qudt.org/vocab/unit/MicroJ>,
-        <http://qudt.org/vocab/unit/MilliJ>,
-        <http://qudt.org/vocab/unit/N-M>,
-        <http://qudt.org/vocab/unit/PetaJ>,
-        <http://qudt.org/vocab/unit/PlanckEnergy>,
-        <http://qudt.org/vocab/unit/QUAD>,
-        <http://qudt.org/vocab/unit/THM_EEC>,
-        <http://qudt.org/vocab/unit/THM_US>,
-        <http://qudt.org/vocab/unit/TOE>,
-        <http://qudt.org/vocab/unit/TeraJ>,
-        <http://qudt.org/vocab/unit/TeraW-HR>,
-        <http://qudt.org/vocab/unit/TonEnergy>,
-        <http://qudt.org/vocab/unit/V-A-HR>,
-        <http://qudt.org/vocab/unit/V-A_Reactive-HR>,
-        <http://qudt.org/vocab/unit/W-HR>,
-        <http://qudt.org/vocab/unit/W-SEC> ;
-    ns1:definition "(also known as heat content), thermodynamic quantity equal to the sum of the internal energy of a system plus the product of the pressure volume work done on the system. H = E + pv, where H = enthalpy or total heat content, E = internal energy of the system, p = pressure, and v = volume. (Compare to [[specific enthalpy]].)",
-        "(also known as heat content), thermodynamic quantity equal to the sum of the internal energy of a system plus the product of the pressure volume work done on the system. H = E + pv, where H = enthalpy or total heat content, E = internal energy of the system, p = pressure, and v = volume. (Compare to [[specific enthalpy]].)"@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Enthalpy> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Illuminance a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Illuminance" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/FC>,
-        <http://qudt.org/vocab/unit/LUX>,
-        <http://qudt.org/vocab/unit/PHOT> ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Illuminance> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Position a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Position" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PERCENT> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns1:definition "The fraction of the full range of motion",
-        "The fraction of the full range of motion"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Power_Factor a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Power Factor" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/UNITLESS> ;
-    ns1:definition "Power Factor, under periodic conditions, is the ratio of the absolute value of the active power (P) to the apparent power (S)."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/PowerFactor> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Torque a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Torque" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/CentiN-M>,
-        <http://qudt.org/vocab/unit/DYN-CentiM>,
-        <http://qudt.org/vocab/unit/DeciN-M>,
-        <http://qudt.org/vocab/unit/J>,
-        <http://qudt.org/vocab/unit/KiloGM_F-M>,
-        <http://qudt.org/vocab/unit/KiloN-M>,
-        <http://qudt.org/vocab/unit/LB_F-FT>,
-        <http://qudt.org/vocab/unit/LB_F-IN>,
-        <http://qudt.org/vocab/unit/MegaN-M>,
-        <http://qudt.org/vocab/unit/MicroN-M>,
-        <http://qudt.org/vocab/unit/MilliN-M>,
-        <http://qudt.org/vocab/unit/N-CentiM>,
-        <http://qudt.org/vocab/unit/N-M>,
-        <http://qudt.org/vocab/unit/OZ_F-IN> ;
-    ns1:definition "In physics, a torque (τ) is a vector that measures the tendency of a force to rotate an object about some axis. The magnitude of a torque is defined as force times its lever arm. Just as a force is a push or a pull, a torque can be thought of as a twist. The SI unit for torque is newton meters ((N m)). In U.S. customary units, it is measured in foot pounds (ft lbf) (also known as \"pounds feet\"). Mathematically, the torque on a particle (which has the position r in some reference frame) can be defined as the cross product: (τ = r x F) where, r is the particle's position vector relative to the fulcrum  F is the force acting on the particles,  or, more generally, torque can be defined as the rate of change of angular momentum: (τ = dL/dt) where, L is the angular momentum vector  t stands for time."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Torque> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Weather_Condition a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Weather Condition" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Absolute_Humidity a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Absolute Humidity" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/GRAIN-PER-GAL>,
-        <http://qudt.org/vocab/unit/KiloGM-PER-M3>,
-        <http://qudt.org/vocab/unit/LB-PER-FT3>,
-        <http://qudt.org/vocab/unit/LB-PER-GAL>,
-        <http://qudt.org/vocab/unit/LB-PER-GAL_UK>,
-        <http://qudt.org/vocab/unit/LB-PER-GAL_US>,
-        <http://qudt.org/vocab/unit/LB-PER-IN3>,
-        <http://qudt.org/vocab/unit/LB-PER-M3>,
-        <http://qudt.org/vocab/unit/LB-PER-YD3>,
-        <http://qudt.org/vocab/unit/MilliGM-PER-DeciL>,
-        <http://qudt.org/vocab/unit/OZ-PER-GAL>,
-        <http://qudt.org/vocab/unit/OZ-PER-IN3>,
-        <http://qudt.org/vocab/unit/PlanckDensity>,
-        <http://qudt.org/vocab/unit/SLUG-PER-FT3>,
-        <http://qudt.org/vocab/unit/TON_LONG-PER-YD3>,
-        <http://qudt.org/vocab/unit/TON_SHORT-PER-YD3>,
-        <http://qudt.org/vocab/unit/TON_UK-PER-YD3>,
-        <http://qudt.org/vocab/unit/TON_US-PER-YD3> ;
-    ns1:broader ns2:Humidity ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/AbsoluteHumidity> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Acceleration_Time a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Acceleration Time" ;
-    ns1:broader ns2:Time ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Active_Energy a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Active_Energy" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/KiloW-HR>,
-        <http://qudt.org/vocab/unit/MegaW-HR>,
-        <http://qudt.org/vocab/unit/W-HR> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Electric_Energy ;
-    ns1:definition "The integral of the active power over a time interval" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Ammonia_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "AmmoniaConcentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/DimensionlessRatio>,
-        ns2:Air_Quality ;
-    ns1:definition "The concentration of Ammonia in a medium" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Apparent_Energy a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Apparent_Energy" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/KiloV-A-HR>,
-        <http://qudt.org/vocab/unit/MegaV-A-HR>,
-        <http://qudt.org/vocab/unit/V-A-HR> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Electric_Energy ;
-    ns1:definition "The integral of the apparent power over a time interval" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Apparent_Power a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Apparent Power" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/KiloV-A>,
-        <http://qudt.org/vocab/unit/MegaV-A>,
-        <http://qudt.org/vocab/unit/V-A> ;
-    ns1:broader ns2:Electric_Power ;
-    ns1:definition "Apparent Power is the product of the rms voltage (U) between the terminals of a two-terminal element or two-terminal circuit and the rms electric current I in the element or circuit. Under sinusoidal conditions, the apparent power is the modulus of the complex power."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/ApparentPower> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Atmospheric_Pressure a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Atmospheric Pressure" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ATM>,
-        <http://qudt.org/vocab/unit/ATM_T>,
-        <http://qudt.org/vocab/unit/BAR>,
-        <http://qudt.org/vocab/unit/BARAD>,
-        <http://qudt.org/vocab/unit/BARYE>,
-        <http://qudt.org/vocab/unit/CM_H2O>,
-        <http://qudt.org/vocab/unit/CentiBAR>,
-        <http://qudt.org/vocab/unit/CentiM_H2O>,
-        <http://qudt.org/vocab/unit/CentiM_HG>,
-        <http://qudt.org/vocab/unit/DYN-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/DecaPA>,
-        <http://qudt.org/vocab/unit/DeciBAR>,
-        <http://qudt.org/vocab/unit/FT_H2O>,
-        <http://qudt.org/vocab/unit/FT_HG>,
-        <http://qudt.org/vocab/unit/GM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/GigaPA>,
-        <http://qudt.org/vocab/unit/HectoBAR>,
-        <http://qudt.org/vocab/unit/HectoPA>,
-        <http://qudt.org/vocab/unit/IN_H2O>,
-        <http://qudt.org/vocab/unit/IN_HG>,
-        <http://qudt.org/vocab/unit/KIP_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloBAR>,
-        <http://qudt.org/vocab/unit/KiloGM-PER-M-SEC2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-M2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/KiloLB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloPA>,
-        <http://qudt.org/vocab/unit/KiloPA_A>,
-        <http://qudt.org/vocab/unit/LB_F-PER-FT2>,
-        <http://qudt.org/vocab/unit/LB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/MegaBAR>,
-        <http://qudt.org/vocab/unit/MegaPA>,
-        <http://qudt.org/vocab/unit/MicroATM>,
-        <http://qudt.org/vocab/unit/MicroBAR>,
-        <http://qudt.org/vocab/unit/MicroPA>,
-        <http://qudt.org/vocab/unit/MicroTORR>,
-        <http://qudt.org/vocab/unit/MilliBAR>,
-        <http://qudt.org/vocab/unit/MilliM_H2O>,
-        <http://qudt.org/vocab/unit/MilliM_HG>,
-        <http://qudt.org/vocab/unit/MilliM_HGA>,
-        <http://qudt.org/vocab/unit/MilliPA>,
-        <http://qudt.org/vocab/unit/MilliTORR>,
-        <http://qudt.org/vocab/unit/N-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/N-PER-M2>,
-        <http://qudt.org/vocab/unit/N-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/PA>,
-        <http://qudt.org/vocab/unit/PDL-PER-FT2>,
-        <http://qudt.org/vocab/unit/PSI>,
-        <http://qudt.org/vocab/unit/PlanckPressure>,
-        <http://qudt.org/vocab/unit/TORR> ;
-    ns1:broader ns2:Pressure ;
-    ns1:definition "The pressure exerted by the weight of the air above it at any point on the earth's surface. At sea level the atmosphere will support a column of mercury about (760 mm) high. This decreases with increasing altitude. The standard value for the atmospheric pressure at sea level in SI units is (101,325 pascals)."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/AtmosphericPressure> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Blowdown_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Blowdown Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "Water expelled from a system to remove mineral build up"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Building_Air a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Building Air" ;
-    ns1:broader ns2:Air ;
-    ns1:definition "air contained within a building"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Bypass_Air a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Bypass Air" ;
-    ns1:broader ns2:Air ;
-    ns1:definition "air in a bypass duct, used to relieve static pressure"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Bypass_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Bypass Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "Water that circumvents a piece of equipment or system"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:CO a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "CO" ;
-    ns1:broader ns2:Gas ;
-    ns1:definition "Carbon Monoxide in the vapor phase"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:CO2 a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "CO2" ;
-    ns1:broader ns2:Gas ;
-    ns1:definition "Carbon Dioxide in the vapor phase"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Collection_Basin_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Collection Basin Water" ;
-    rdfs:seeAlso <https://www.towercomponentsinc.com/cooling-tower-basics-misc-terms-glossary> ;
-    ns1:broader ns2:Water ;
-    ns1:definition "Water transiently collected and directed to the sump or pump suction line, typically integral with a cooling tower"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Complex_Power a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Complex Power" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/KiloV-A>,
-        <http://qudt.org/vocab/unit/MegaV-A>,
-        <http://qudt.org/vocab/unit/V-A> ;
-    ns1:broader ns2:Electric_Power ;
-    ns1:definition "Complex Power, under sinusoidal conditions, is the product of the phasor (U) representing the voltage between the terminals of a linear two-terminal element or two-terminal circuit and the complex conjugate of the phasor (I) representing the electric current in the element or circuit."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/ComplexPower> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Current_Imbalance a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "CurrentImbalance" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PERCENT> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns1:definition "The percent deviation from average current",
-        "The percent deviation from average current"@en ;
-    ns1:related ns2:Electric_Current ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Current_Total_Harmonic_Distortion a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "CurrentTotalHarmonicDistortion" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/DeciB_M>,
-        <http://qudt.org/vocab/unit/PERCENT> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns1:definition "Measurement of harmonic distortion present in a signal defined as the sum of the powers of all harmonic components to the power of the fundamental frequency. (https://en.wikipedia.org/wiki/Total_harmonic_distortion)",
-        "Measurement of harmonic distortion present in a signal defined as the sum of the powers of all harmonic components to the power of the fundamental frequency. (https://en.wikipedia.org/wiki/Total_harmonic_distortion)"@en ;
-    ns1:related ns2:Electric_Current ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Deceleration_Time a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Deceleration Time" ;
-    ns1:broader ns2:Time ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Deionized_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Deionized Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "Water which has been purified by removing its ions (constituting the majority of non-particulate contaminants)"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Differential_CO2_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "ΔCO2Concentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    ns3:isDeltaQuantity true ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:CO2_Concentration ;
-    ns1:definition "The difference in carbon dioxide concentration between two areas" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Differential_CO_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "ΔCOConcentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    ns3:isDeltaQuantity true ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:CO_Concentration ;
-    ns1:definition "The difference in carbon monoxide concentration between two areas" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Differential_Dry_Bulb_Temperature a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Differential Dry Bulb Temperature" ;
-    ns3:isDeltaQuantity true ;
-    ns1:broader ns2:Dry_Bulb_Temperature ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Dry_Bulb_Temperature> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Differential_Temperature a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Differential Temperature" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/DEG_C>,
-        <http://qudt.org/vocab/unit/DEG_F>,
-        <http://qudt.org/vocab/unit/DEG_R>,
-        <http://qudt.org/vocab/unit/K>,
-        <http://qudt.org/vocab/unit/MilliDEG_C>,
-        <http://qudt.org/vocab/unit/PlanckTemperature> ;
-    ns3:isDeltaQuantity true ;
-    ns1:broader ns2:Temperature ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Direction a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Direction" ;
-    ns1:narrower ns2:Wind_Direction ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Domestic_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Domestic Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "A collection of equipment that transport and regulate domestic water among each other"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Entering_Condenser_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Entering Condenser Water" ;
-    ns1:broader ns2:Condenser_Water ;
-    ns1:definition "In a condenser water loop, this is water being brought away from the condenser side of a heat-rejection device (e.g. chiller). It is the 'warm' side."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Exhaust_Air a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Exhaust Air" ;
-    ns1:broader ns2:Air ;
-    ns1:definition "air that must be removed from a space due to contaminants, regardless of pressurization"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Flow a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Flow" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/BBL_UK_PET-PER-DAY>,
-        <http://qudt.org/vocab/unit/BBL_UK_PET-PER-HR>,
-        <http://qudt.org/vocab/unit/BBL_UK_PET-PER-MIN>,
-        <http://qudt.org/vocab/unit/BBL_UK_PET-PER-SEC>,
-        <http://qudt.org/vocab/unit/BBL_US-PER-DAY>,
-        <http://qudt.org/vocab/unit/BBL_US-PER-MIN>,
-        <http://qudt.org/vocab/unit/BBL_US_PET-PER-HR>,
-        <http://qudt.org/vocab/unit/BBL_US_PET-PER-SEC>,
-        <http://qudt.org/vocab/unit/BU_UK-PER-DAY>,
-        <http://qudt.org/vocab/unit/BU_UK-PER-HR>,
-        <http://qudt.org/vocab/unit/BU_UK-PER-MIN>,
-        <http://qudt.org/vocab/unit/BU_UK-PER-SEC>,
-        <http://qudt.org/vocab/unit/BU_US_DRY-PER-DAY>,
-        <http://qudt.org/vocab/unit/BU_US_DRY-PER-HR>,
-        <http://qudt.org/vocab/unit/BU_US_DRY-PER-MIN>,
-        <http://qudt.org/vocab/unit/BU_US_DRY-PER-SEC>,
-        <http://qudt.org/vocab/unit/CentiM3-PER-DAY>,
-        <http://qudt.org/vocab/unit/CentiM3-PER-HR>,
-        <http://qudt.org/vocab/unit/CentiM3-PER-MIN>,
-        <http://qudt.org/vocab/unit/CentiM3-PER-SEC>,
-        <http://qudt.org/vocab/unit/DeciM3-PER-DAY>,
-        <http://qudt.org/vocab/unit/DeciM3-PER-HR>,
-        <http://qudt.org/vocab/unit/DeciM3-PER-MIN>,
-        <http://qudt.org/vocab/unit/DeciM3-PER-SEC>,
-        <http://qudt.org/vocab/unit/FT3-PER-DAY>,
-        <http://qudt.org/vocab/unit/FT3-PER-HR>,
-        <http://qudt.org/vocab/unit/FT3-PER-MIN>,
-        <http://qudt.org/vocab/unit/FT3-PER-SEC>,
-        <http://qudt.org/vocab/unit/GAL_UK-PER-DAY>,
-        <http://qudt.org/vocab/unit/GAL_UK-PER-HR>,
-        <http://qudt.org/vocab/unit/GAL_UK-PER-MIN>,
-        <http://qudt.org/vocab/unit/GAL_UK-PER-SEC>,
-        <http://qudt.org/vocab/unit/GAL_US-PER-DAY>,
-        <http://qudt.org/vocab/unit/GAL_US-PER-HR>,
-        <http://qudt.org/vocab/unit/GAL_US-PER-MIN>,
-        <http://qudt.org/vocab/unit/GAL_US-PER-SEC>,
-        <http://qudt.org/vocab/unit/GI_UK-PER-DAY>,
-        <http://qudt.org/vocab/unit/GI_UK-PER-HR>,
-        <http://qudt.org/vocab/unit/GI_UK-PER-MIN>,
-        <http://qudt.org/vocab/unit/GI_UK-PER-SEC>,
-        <http://qudt.org/vocab/unit/GI_US-PER-DAY>,
-        <http://qudt.org/vocab/unit/GI_US-PER-HR>,
-        <http://qudt.org/vocab/unit/GI_US-PER-MIN>,
-        <http://qudt.org/vocab/unit/GI_US-PER-SEC>,
-        <http://qudt.org/vocab/unit/IN3-PER-HR>,
-        <http://qudt.org/vocab/unit/IN3-PER-MIN>,
-        <http://qudt.org/vocab/unit/IN3-PER-SEC>,
-        <http://qudt.org/vocab/unit/KiloL-PER-HR>,
-        <http://qudt.org/vocab/unit/L-PER-DAY>,
-        <http://qudt.org/vocab/unit/L-PER-HR>,
-        <http://qudt.org/vocab/unit/L-PER-MIN>,
-        <http://qudt.org/vocab/unit/L-PER-SEC>,
-        <http://qudt.org/vocab/unit/M3-PER-DAY>,
-        <http://qudt.org/vocab/unit/M3-PER-HR>,
-        <http://qudt.org/vocab/unit/M3-PER-MIN>,
-        <http://qudt.org/vocab/unit/M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/MilliL-PER-DAY>,
-        <http://qudt.org/vocab/unit/MilliL-PER-HR>,
-        <http://qudt.org/vocab/unit/MilliL-PER-MIN>,
-        <http://qudt.org/vocab/unit/MilliL-PER-SEC>,
-        <http://qudt.org/vocab/unit/OZ_VOL_UK-PER-DAY>,
-        <http://qudt.org/vocab/unit/OZ_VOL_UK-PER-HR>,
-        <http://qudt.org/vocab/unit/OZ_VOL_UK-PER-MIN>,
-        <http://qudt.org/vocab/unit/OZ_VOL_UK-PER-SEC>,
-        <http://qudt.org/vocab/unit/OZ_VOL_US-PER-DAY>,
-        <http://qudt.org/vocab/unit/OZ_VOL_US-PER-HR>,
-        <http://qudt.org/vocab/unit/OZ_VOL_US-PER-MIN>,
-        <http://qudt.org/vocab/unit/OZ_VOL_US-PER-SEC>,
-        <http://qudt.org/vocab/unit/PINT_UK-PER-DAY>,
-        <http://qudt.org/vocab/unit/PINT_UK-PER-HR>,
-        <http://qudt.org/vocab/unit/PINT_UK-PER-MIN>,
-        <http://qudt.org/vocab/unit/PINT_UK-PER-SEC>,
-        <http://qudt.org/vocab/unit/PINT_US-PER-DAY>,
-        <http://qudt.org/vocab/unit/PINT_US-PER-HR>,
-        <http://qudt.org/vocab/unit/PINT_US-PER-MIN>,
-        <http://qudt.org/vocab/unit/PINT_US-PER-SEC>,
-        <http://qudt.org/vocab/unit/PK_UK-PER-DAY>,
-        <http://qudt.org/vocab/unit/PK_UK-PER-HR>,
-        <http://qudt.org/vocab/unit/PK_UK-PER-MIN>,
-        <http://qudt.org/vocab/unit/PK_UK-PER-SEC>,
-        <http://qudt.org/vocab/unit/PK_US_DRY-PER-DAY>,
-        <http://qudt.org/vocab/unit/PK_US_DRY-PER-HR>,
-        <http://qudt.org/vocab/unit/PK_US_DRY-PER-MIN>,
-        <http://qudt.org/vocab/unit/PK_US_DRY-PER-SEC>,
-        <http://qudt.org/vocab/unit/QT_UK-PER-DAY>,
-        <http://qudt.org/vocab/unit/QT_UK-PER-HR>,
-        <http://qudt.org/vocab/unit/QT_UK-PER-MIN>,
-        <http://qudt.org/vocab/unit/QT_UK-PER-SEC>,
-        <http://qudt.org/vocab/unit/QT_US-PER-DAY>,
-        <http://qudt.org/vocab/unit/QT_US-PER-HR>,
-        <http://qudt.org/vocab/unit/QT_US-PER-MIN>,
-        <http://qudt.org/vocab/unit/QT_US-PER-SEC>,
-        <http://qudt.org/vocab/unit/YD3-PER-DAY>,
-        <http://qudt.org/vocab/unit/YD3-PER-HR>,
-        <http://qudt.org/vocab/unit/YD3-PER-MIN>,
-        <http://qudt.org/vocab/unit/YD3-PER-SEC> ;
-    ns1:narrower ns2:Flow_Loss ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Flow_Loss a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "FlowLoss" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/M3-PER-SEC> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L3I0M0H0T-1D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Flow ;
-    ns1:definition "The amount of flow rate that is lost during distribution" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Formaldehyde_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "FormaldehydeConcentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/DimensionlessRatio>,
-        ns2:Air_Quality ;
-    ns1:definition "The concentration of formaldehyde in a medium" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Frequency a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Frequency" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/GigaHZ>,
-        <http://qudt.org/vocab/unit/HZ>,
-        <http://qudt.org/vocab/unit/KiloHZ>,
-        <http://qudt.org/vocab/unit/MegaHZ>,
-        <http://qudt.org/vocab/unit/NUM-PER-HR>,
-        <http://qudt.org/vocab/unit/NUM-PER-SEC>,
-        <http://qudt.org/vocab/unit/NUM-PER-YR>,
-        <http://qudt.org/vocab/unit/PER-DAY>,
-        <http://qudt.org/vocab/unit/PER-HR>,
-        <http://qudt.org/vocab/unit/PER-MIN>,
-        <http://qudt.org/vocab/unit/PER-MO>,
-        <http://qudt.org/vocab/unit/PER-MilliSEC>,
-        <http://qudt.org/vocab/unit/PER-SEC>,
-        <http://qudt.org/vocab/unit/PER-WK>,
-        <http://qudt.org/vocab/unit/PER-YR>,
-        <http://qudt.org/vocab/unit/PERCENT-PER-DAY>,
-        <http://qudt.org/vocab/unit/PERCENT-PER-HR>,
-        <http://qudt.org/vocab/unit/PERCENT-PER-WK>,
-        <http://qudt.org/vocab/unit/PlanckFrequency>,
-        <http://qudt.org/vocab/unit/SAMPLE-PER-SEC>,
-        <http://qudt.org/vocab/unit/TeraHZ>,
-        <http://qudt.org/vocab/unit/failures-in-time> ;
-    ns1:definition "Frequency is the number of occurrences of a repeating event per unit time. The repetition of the events may be periodic (that is. the length of time between event repetitions is fixed) or aperiodic (i.e. the length of time between event repetitions varies). Therefore, we distinguish between periodic and aperiodic frequencies. In the SI system, periodic frequency is measured in hertz (Hz) or multiples of hertz, while aperiodic frequency is measured in becquerel (Bq).  In spectroscopy, ( u) is mostly used. Light passing through different media keeps its frequency, but not its wavelength or wavenumber."@en ;
-    ns1:narrower ns2:Alternating_Current_Frequency ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Frequency> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Frost a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Frost" ;
-    ns1:broader ns2:Solid ;
-    ns1:definition "frost formed on the cold surface (tubes, plates) of a cooling coil."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Fuel_Oil a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Fuel Oil" ;
-    ns1:broader ns2:Oil ;
-    ns1:definition "Petroleum based oil burned for energy"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Gasoline a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Gasoline" ;
-    ns1:broader ns2:Liquid ;
-    ns1:definition "Petroleum derived liquid used as a fuel source"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Glycol a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Glycol" ;
-    ns1:broader ns2:Liquid ;
-    ns4:hasMarkerTag "point" .
-
-ns2:GrainsOfMoisture a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "GrainsOfMoisture" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/GRAIN> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M1H0T0D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Mass>,
-        ns2:Mass ;
-    ns1:definition "Mass of moisture per pround of air, measured in grains of water" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Hail a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Hail" ;
-    ns1:broader ns2:Solid ;
-    ns1:definition "pellets of frozen rain which fall in showers from cumulonimbus clouds."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Ice a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Ice" ;
-    ns1:broader ns2:Solid ;
-    ns1:definition "Water in its solid form"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Irradiance a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Irradiance" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/W-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/W-PER-FT2>,
-        <http://qudt.org/vocab/unit/W-PER-IN2>,
-        <http://qudt.org/vocab/unit/W-PER-M2> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/PowerPerArea> ;
-    ns1:definition "The power per unit area of electromagnetic radiation incident on a surface",
-        "The power per unit area of electromagnetic radiation incident on a surface"@en ;
-    ns1:narrower ns2:Solar_Irradiance ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Leaving_Condenser_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Leaving Condenser Water" ;
-    ns1:broader ns2:Condenser_Water ;
-    ns1:definition "In a condenser water loop, this is water being brought to the condenser side of a heat-rejection device (e.g. chiller). It is the 'cold' side."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Level a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Level" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/CentiM>,
-        <http://qudt.org/vocab/unit/DeciM>,
-        <http://qudt.org/vocab/unit/FT>,
-        <http://qudt.org/vocab/unit/IN>,
-        <http://qudt.org/vocab/unit/KiloM>,
-        <http://qudt.org/vocab/unit/M>,
-        <http://qudt.org/vocab/unit/MicroM>,
-        <http://qudt.org/vocab/unit/MilliM>,
-        <http://qudt.org/vocab/unit/YD> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L1I0M0H0T0D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Length> ;
-    ns1:definition "Amount of substance in a container; typically measured in height" ;
-    ns1:narrower ns2:Precipitation ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Linear_Speed a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Linear_Speed" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/FT-PER-HR>,
-        <http://qudt.org/vocab/unit/FT-PER-SEC>,
-        <http://qudt.org/vocab/unit/KiloM-PER-HR>,
-        <http://qudt.org/vocab/unit/KiloM-PER-SEC>,
-        <http://qudt.org/vocab/unit/M-PER-HR>,
-        <http://qudt.org/vocab/unit/M-PER-SEC>,
-        <http://qudt.org/vocab/unit/MI-PER-HR>,
-        <http://qudt.org/vocab/unit/MI-PER-SEC> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L1I0M0H0T-1D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Speed>,
-        ns2:Speed ;
-    ns1:definition "Speed in one dimension (linear)" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Liquid_CO2 a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Liquid CO2" ;
-    ns1:broader ns2:Liquid ;
-    ns1:definition "Carbon Dioxide in the liquid phase"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Luminous_Flux a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Luminous Flux" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/LM> ;
-    ns1:broader ns2:Luminance ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/LuminousFlux> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Luminous_Intensity a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Luminous Intensity" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/CD>,
-        <http://qudt.org/vocab/unit/CP> ;
-    ns1:broader ns2:Luminance ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/LuminousIntensity> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Makeup_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Makeup Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "Water used used to makeup water loss through leaks, evaporation, or blowdown"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Mass a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Mass" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/AMU>,
-        <http://qudt.org/vocab/unit/CARAT>,
-        <http://qudt.org/vocab/unit/CWT_LONG>,
-        <http://qudt.org/vocab/unit/CWT_SHORT>,
-        <http://qudt.org/vocab/unit/CentiGM>,
-        <http://qudt.org/vocab/unit/DRAM_UK>,
-        <http://qudt.org/vocab/unit/DRAM_US>,
-        <http://qudt.org/vocab/unit/DWT>,
-        <http://qudt.org/vocab/unit/Da>,
-        <http://qudt.org/vocab/unit/DecaGM>,
-        <http://qudt.org/vocab/unit/DeciGM>,
-        <http://qudt.org/vocab/unit/DeciTONNE>,
-        <http://qudt.org/vocab/unit/DeciTON_Metric>,
-        <http://qudt.org/vocab/unit/EarthMass>,
-        <http://qudt.org/vocab/unit/GM>,
-        <http://qudt.org/vocab/unit/GRAIN>,
-        <http://qudt.org/vocab/unit/HectoGM>,
-        <http://qudt.org/vocab/unit/Hundredweight_UK>,
-        <http://qudt.org/vocab/unit/Hundredweight_US>,
-        <http://qudt.org/vocab/unit/KiloGM>,
-        <http://qudt.org/vocab/unit/KiloTONNE>,
-        <http://qudt.org/vocab/unit/KiloTON_Metric>,
-        <http://qudt.org/vocab/unit/LB>,
-        <http://qudt.org/vocab/unit/LB_T>,
-        <http://qudt.org/vocab/unit/LunarMass>,
-        <http://qudt.org/vocab/unit/MegaGM>,
-        <http://qudt.org/vocab/unit/MicroGM>,
-        <http://qudt.org/vocab/unit/MilliGM>,
-        <http://qudt.org/vocab/unit/NanoGM>,
-        <http://qudt.org/vocab/unit/OZ>,
-        <http://qudt.org/vocab/unit/OZ_TROY>,
-        <http://qudt.org/vocab/unit/Pennyweight>,
-        <http://qudt.org/vocab/unit/PicoGM>,
-        <http://qudt.org/vocab/unit/PlanckMass>,
-        <http://qudt.org/vocab/unit/Quarter_UK>,
-        <http://qudt.org/vocab/unit/SLUG>,
-        <http://qudt.org/vocab/unit/SolarMass>,
-        <http://qudt.org/vocab/unit/Stone_UK>,
-        <http://qudt.org/vocab/unit/TONNE>,
-        <http://qudt.org/vocab/unit/TON_Assay>,
-        <http://qudt.org/vocab/unit/TON_LONG>,
-        <http://qudt.org/vocab/unit/TON_Metric>,
-        <http://qudt.org/vocab/unit/TON_SHORT>,
-        <http://qudt.org/vocab/unit/TON_UK>,
-        <http://qudt.org/vocab/unit/TON_US>,
-        <http://qudt.org/vocab/unit/U> ;
-    ns1:narrower ns2:GrainsOfMoisture ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Mass> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Methane_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "MethaneConcentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/DimensionlessRatio>,
-        ns2:Air_Quality ;
-    ns1:definition "The concentration of methane in a medium" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Mixed_Air a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Mixed Air" ;
-    ns1:broader ns2:Air ;
-    ns1:definition "(1) air that contains two or more streams of air. (2) combined outdoor air and recirculated air."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:NO2_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "PM10Concentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Air_Quality ;
-    ns1:definition "The concentration of nitrogen dioxide in a medium" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Natural_Gas a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Natural Gas" ;
-    ns1:broader ns2:Gas ;
-    ns1:definition "Fossil fuel energy source consisting largely of methane and other hydrocarbons"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Occupancy_Count a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Occupancy_Count" ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Dimensionless>,
-        ns2:Occupancy ;
-    ns1:definition "Number of people in an area",
-        "Number of people in an area"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Occupancy_Percentage a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Occupancy_Percentage" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PERCENT> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Dimensionless>,
-        ns2:Occupancy ;
-    ns1:definition "Percent of total occupancy of space that is occupied",
-        "Percent of total occupancy of space that is occupied"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Operative_Temperature a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Operative_Temperature" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/DEG_C>,
-        <http://qudt.org/vocab/unit/DEG_F>,
-        <http://qudt.org/vocab/unit/K> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H1T0D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Temperature>,
-        ns2:Temperature ;
-    ns1:definition "The uniform temperature of an imaginary black enclosure in which an occupant would exchange the same amount of heat by radiation plus convection as in the actual nonuniform environment (https://en.wikipedia.org/wiki/Operative_temperature)",
-        "The uniform temperature of an imaginary black enclosure in which an occupant would exchange the same amount of heat by radiation plus convection as in the actual nonuniform environment (https://en.wikipedia.org/wiki/Operative_temperature)"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Outside_Air a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Outside Air" ;
-    ns1:broader ns2:Air ;
-    ns1:definition "air external to a defined zone (e.g., corridors)."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Ozone_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "OzoneConcentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/DimensionlessRatio>,
-        ns2:Air_Quality ;
-    ns1:definition "The concentration of ozone in a medium" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:PM10_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "PM10Concentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/MicroGM-PER-M3>,
-        <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Air_Quality ;
-    ns1:definition "The concentration of particulates with diameter of 10 microns or less in air" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:PM1_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "PM1Concentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/MicroGM-PER-M3>,
-        <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Air_Quality ;
-    ns1:definition "The concentration of particulates with diameter of 1 microns or less in air" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:PM2.5_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "PM2.5Concentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/MicroGM-PER-M3>,
-        <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Air_Quality ;
-    ns1:definition "The concentration of particulates with diameter of 2.5 microns or less in air" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Peak_Power a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "PeakPower" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/KiloW>,
-        <http://qudt.org/vocab/unit/MegaW>,
-        <http://qudt.org/vocab/unit/MilliW>,
-        <http://qudt.org/vocab/unit/W> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L2I0M1H0T-3D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Power>,
-        ns2:Power ;
-    ns1:definition "Tracks the highest (peak) observed power in some interval",
-        "Tracks the highest (peak) observed power in some interval"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Phasor_Magnitude a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "PhasorMagnitude" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ARCMIN>,
-        <http://qudt.org/vocab/unit/ARCSEC>,
-        <http://qudt.org/vocab/unit/DEG>,
-        <http://qudt.org/vocab/unit/GON>,
-        <http://qudt.org/vocab/unit/GRAD>,
-        <http://qudt.org/vocab/unit/MIL>,
-        <http://qudt.org/vocab/unit/MicroRAD>,
-        <http://qudt.org/vocab/unit/MilliARCSEC>,
-        <http://qudt.org/vocab/unit/MilliRAD>,
-        <http://qudt.org/vocab/unit/RAD>,
-        <http://qudt.org/vocab/unit/REV> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:definition "Magnitude component of a phasor" ;
-    ns1:related ns2:Phasor ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Potable_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Potable Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "Water that is safe to drink"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Precipitation a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Precipitation" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/CentiM>,
-        <http://qudt.org/vocab/unit/DeciM>,
-        <http://qudt.org/vocab/unit/FT>,
-        <http://qudt.org/vocab/unit/IN>,
-        <http://qudt.org/vocab/unit/KiloM>,
-        <http://qudt.org/vocab/unit/M>,
-        <http://qudt.org/vocab/unit/MicroM>,
-        <http://qudt.org/vocab/unit/MilliM>,
-        <http://qudt.org/vocab/unit/YD> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L1I0M0H0T0D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Length>,
-        ns2:Level ;
-    ns1:definition "Amount of atmospheric water vapor fallen including rain, sleet, snow, and hail (https://project-haystack.dev/doc/lib-phScience/precipitation)",
-        "Amount of atmospheric water vapor fallen including rain, sleet, snow, and hail (https://project-haystack.dev/doc/lib-phScience/precipitation)"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Radiance a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Radiance" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/W-PER-M2-SR> ;
-    ns1:narrower ns2:Solar_Radiance ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Radiance> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Radiant_Temperature a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Radiant_Temperature" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/DEG_C>,
-        <http://qudt.org/vocab/unit/DEG_F>,
-        <http://qudt.org/vocab/unit/K> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H1T0D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Temperature>,
-        ns2:Temperature ;
-    ns1:definition "the uniform temperature of an imaginary enclosure in which the radiant heat transfer from the human body is equal to the radiant heat transfer in the actual non-uniform enclosure. (https://en.wikipedia.org/wiki/Mean_radiant_temperature)",
-        "the uniform temperature of an imaginary enclosure in which the radiant heat transfer from the human body is equal to the radiant heat transfer in the actual non-uniform enclosure. (https://en.wikipedia.org/wiki/Mean_radiant_temperature)"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Radon_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "RadonConcentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/BQ-PER-M3> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L-3I0M0H0T-1D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/ActivityConcentration>,
-        ns2:Radioactivity_Concentration ;
-    ns1:definition "The concentration of radioactivity due to Radon in a medium" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Reactive_Energy a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Reactive_Energy" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/KiloV-A_Reactive-HR>,
-        <http://qudt.org/vocab/unit/MegaV-A_Reactive-HR>,
-        <http://qudt.org/vocab/unit/V-A_Reactive-HR> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Electric_Energy ;
-    ns1:definition "The integral of the reactive power over a time interval" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Reactive_Power a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Reactive Power" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/KiloV-A_Reactive>,
-        <http://qudt.org/vocab/unit/MegaV-A_Reactive>,
-        <http://qudt.org/vocab/unit/V-A_Reactive> ;
-    ns1:broader ns2:Electric_Power ;
-    ns1:definition "Reactive Power}, for a linear two-terminal element or two-terminal circuit, under sinusoidal conditions, is the quantity equal to the product of the apparent power (S) and the sine of the displacement angle (\\psi). The absolute value of the reactive power is equal to the non-active power. The ISO (and SI) unit for reactive power is the voltampere. The special name var and symbol \\textit{var are given in IEC 60027 1."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/ReactivePower> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Refrigerant a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Refrigerant" ;
-    rdfs:seeAlso <https://en.wikipedia.org/wiki/Refrigerant> ;
-    ns1:broader ns2:Fluid ;
-    ns1:definition "A refrigerant is a working fluid used in the refrigeration cycle of air conditioning systems and heat pumps where in most cases they undergo a repeated phase transition from a liquid to a gas and back again."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Relative_Humidity a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Relative Humidity" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PERCENT>,
-        <http://qudt.org/vocab/unit/PERCENT_RH> ;
-    ns1:broader ns2:Humidity ;
-    ns1:definition "Relative Humidity} is the ratio of the partial pressure of water vapor in an air-water mixture to the saturated vapor pressure of water at a prescribed temperature. The relative humidity of air depends not only on temperature but also on the pressure of the system of interest. Relative Humidity is also referred to as \\text{Relative Partial Pressure. Relative partial pressure is often referred to as (RH) and expressed in percent."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/RelativeHumidity> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Return_Air a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Return Air" ;
-    ns1:broader ns2:Air ;
-    ns1:definition "air removed from a space to be recirculated or exhausted. Air extracted from a space and totally or partially returned to an air conditioner, furnace, or other heating, cooling, or ventilating system."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Rotational_Speed a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Rotational_Speed" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/DEG-PER-HR>,
-        <http://qudt.org/vocab/unit/DEG-PER-MIN>,
-        <http://qudt.org/vocab/unit/DEG-PER-SEC>,
-        <http://qudt.org/vocab/unit/RAD-PER-HR>,
-        <http://qudt.org/vocab/unit/RAD-PER-MIN>,
-        <http://qudt.org/vocab/unit/RAD-PER-SEC> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L1I0M0H0T-1D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Frequency>,
-        <http://qudt.org/vocab/quantitykind/Speed>,
-        ns2:Speed ;
-    ns1:definition "Rotational speed" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Soil a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Soil" ;
-    ns1:broader ns2:Solid ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Solar_Irradiance a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "SolarIrradiance" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/W-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/W-PER-FT2>,
-        <http://qudt.org/vocab/unit/W-PER-IN2>,
-        <http://qudt.org/vocab/unit/W-PER-M2> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Irradiance ;
-    ns1:definition "The power per unit area of solar electromagnetic radiation incident on a surface",
-        "The power per unit area of solar electromagnetic radiation incident on a surface"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Solar_Radiance a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Solar_Radiance" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/W-PER-M2-SR> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Radiance>,
-        ns2:Radiance ;
-    ns1:definition "The amount of light that passes through or is emitted from the sun and falls within a given solid angle in a specified direction",
-        "The amount of light that passes through or is emitted from the sun and falls within a given solid angle in a specified direction"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Steam a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Steam" ;
-    ns1:broader ns2:Gas ;
-    ns1:definition "water in the vapor phase."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:TVOC_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "TVOCConcentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/MicroGM-PER-M3>,
-        <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/DimensionlessRatio>,
-        ns2:Air_Quality ;
-    ns1:definition "The concentration of total volatile organic compounds in air" ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Thermal_Energy a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Thermal Energy" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/BTU_IT>,
-        <http://qudt.org/vocab/unit/BTU_MEAN>,
-        <http://qudt.org/vocab/unit/BTU_TH>,
-        <http://qudt.org/vocab/unit/CAL_15_DEG_C>,
-        <http://qudt.org/vocab/unit/CAL_IT>,
-        <http://qudt.org/vocab/unit/CAL_MEAN>,
-        <http://qudt.org/vocab/unit/CAL_TH>,
-        <http://qudt.org/vocab/unit/GigaJ>,
-        <http://qudt.org/vocab/unit/J>,
-        <http://qudt.org/vocab/unit/KiloBTU_IT>,
-        <http://qudt.org/vocab/unit/KiloBTU_TH>,
-        <http://qudt.org/vocab/unit/KiloCAL>,
-        <http://qudt.org/vocab/unit/KiloCAL_IT>,
-        <http://qudt.org/vocab/unit/KiloCAL_Mean>,
-        <http://qudt.org/vocab/unit/KiloCAL_TH>,
-        <http://qudt.org/vocab/unit/KiloJ>,
-        <http://qudt.org/vocab/unit/MegaJ>,
-        <http://qudt.org/vocab/unit/N-M>,
-        <http://qudt.org/vocab/unit/THM_EEC>,
-        <http://qudt.org/vocab/unit/THM_US> ;
-    ns1:broader ns2:Energy ;
-    ns1:definition "Thermal Energy} is the portion of the thermodynamic or internal energy of a system that is responsible for the temperature of the system. From a macroscopic thermodynamic description, the thermal energy of a system is given by its constant volume specific heat capacity C(T), a temperature coefficient also called thermal capacity, at any given absolute temperature (T): (U_{thermal = C(T) \\cdot T)."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/ThermalEnergy> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Thermal_Power a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "ThermalPower" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/BTU_IT>,
-        <http://qudt.org/vocab/unit/KiloW>,
-        <http://qudt.org/vocab/unit/MegaW>,
-        <http://qudt.org/vocab/unit/MilliW>,
-        <http://qudt.org/vocab/unit/W> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L2I0M1H0T-3D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Power>,
-        ns2:Power ;
-    ns1:definition "`"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Voltage_Imbalance a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "VoltageImbalance" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PERCENT> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Dimensionless> ;
-    ns1:definition "The percent deviation from average voltage",
-        "The percent deviation from average voltage"@en ;
-    ns1:related ns2:Voltage ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Wet_Bulb_Temperature a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Wet_Bulb_Temperature" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/DEG_C>,
-        <http://qudt.org/vocab/unit/DEG_F>,
-        <http://qudt.org/vocab/unit/K> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H1T0D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Temperature>,
-        ns2:Temperature ;
-    ns1:definition "The temperature read by a thermometer covered in water-soaked cloth (wet-bulb thermometer) over which air is passed. A wet-bulb thermometer indicates a temperature close to the true (thermodynamic) wet-bulb temperature. The wet-bulb temperature is the lowest temperature that can be reached under current ambient conditions by the evaporation of water only.  DBT is the temperature that is usually thought of as air temperature, and it is the true thermodynamic temperature. It indicates the amount of heat in the air and is directly proportional to the mean kinetic energy of the air molecule. (https://en.wikipedia.org/wiki/Wet-bulb_temperature)",
-        "The temperature read by a thermometer covered in water-soaked cloth (wet-bulb thermometer) over which air is passed. A wet-bulb thermometer indicates a temperature close to the true (thermodynamic) wet-bulb temperature. The wet-bulb temperature is the lowest temperature that can be reached under current ambient conditions by the evaporation of water only.  DBT is the temperature that is usually thought of as air temperature, and it is the true thermodynamic temperature. It indicates the amount of heat in the air and is directly proportional to the mean kinetic energy of the air molecule. (https://en.wikipedia.org/wiki/Wet-bulb_temperature)"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Wind_Direction a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Wind_Direction" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ARCMIN>,
-        <http://qudt.org/vocab/unit/ARCSEC>,
-        <http://qudt.org/vocab/unit/DEG>,
-        <http://qudt.org/vocab/unit/GON>,
-        <http://qudt.org/vocab/unit/GRAD>,
-        <http://qudt.org/vocab/unit/MIL>,
-        <http://qudt.org/vocab/unit/MicroRAD>,
-        <http://qudt.org/vocab/unit/MilliARCSEC>,
-        <http://qudt.org/vocab/unit/MilliRAD>,
-        <http://qudt.org/vocab/unit/RAD>,
-        <http://qudt.org/vocab/unit/REV> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Direction ;
-    ns1:definition "Direction of wind relative to North",
-        "Direction of wind relative to North"@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Zone_Air a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Zone Air" ;
-    ns1:broader ns2:Air ;
-    ns1:definition "air inside a defined zone (e.g., corridors)."@en ;
-    ns4:hasMarkerTag "point" .
-
-<urn:model/c-0009> a ns2:Command,
-        ns4:Entity,
-        ns4:HasTag-air,
-        ns4:HasTag-cmd,
-        ns4:HasTag-damper,
-        ns4:HasTag-mixed,
-        ns4:HasTag-point ;
-    ns2:hasTag <https://brickschema.org/schema/BrickTag#Command>,
+ns3:Absolute_Humidity a ns1:Entity .
+
+ns3:Acceleration_Time a ns1:Entity .
+
+ns3:Active_Energy a ns1:Entity .
+
+ns3:Active_Power a ns1:Entity .
+
+ns3:Air a ns1:Entity .
+
+ns3:Air_Quality a ns1:Entity .
+
+ns3:Alternating_Current_Frequency a ns1:Entity .
+
+ns3:Ammonia_Concentration a ns1:Entity .
+
+ns3:Angle a ns1:Entity .
+
+ns3:Apparent_Energy a ns1:Entity .
+
+ns3:Apparent_Power a ns1:Entity .
+
+ns3:Atmospheric_Pressure a ns1:Entity .
+
+ns3:Blowdown_Water a ns1:Entity .
+
+ns3:Building_Air a ns1:Entity .
+
+ns3:Bypass_Air a ns1:Entity .
+
+ns3:Bypass_Water a ns1:Entity .
+
+ns3:CO a ns1:Entity .
+
+ns3:CO2 a ns1:Entity .
+
+ns3:CO2_Concentration a ns1:Entity .
+
+ns3:CO_Concentration a ns1:Entity .
+
+ns3:Capacity a ns1:Entity .
+
+ns3:Chilled_Water a ns1:Entity .
+
+ns3:Cloudage a ns1:Entity .
+
+ns3:Collection_Basin_Water a ns1:Entity .
+
+ns3:Complex_Power a ns1:Entity .
+
+ns3:Condenser_Water a ns1:Entity .
+
+ns3:Conductivity a ns1:Entity .
+
+ns3:Current_Imbalance a ns1:Entity .
+
+ns3:Current_Total_Harmonic_Distortion a ns1:Entity .
+
+ns3:Deceleration_Time a ns1:Entity .
+
+ns3:Deionized_Water a ns1:Entity .
+
+ns3:Dewpoint a ns1:Entity .
+
+ns3:Differential_CO2_Concentration a ns1:Entity .
+
+ns3:Differential_CO_Concentration a ns1:Entity .
+
+ns3:Differential_Dry_Bulb_Temperature a ns1:Entity .
+
+ns3:Differential_Dynamic_Pressure a ns1:Entity .
+
+ns3:Differential_Pressure a ns1:Entity .
+
+ns3:Differential_Static_Pressure a ns1:Entity .
+
+ns3:Differential_Temperature a ns1:Entity .
+
+ns3:Direction a ns1:Entity .
+
+ns3:Discharge_Air a ns1:Entity .
+
+ns3:Domestic_Water a ns1:Entity .
+
+ns3:Dry_Bulb_Temperature a ns1:Entity .
+
+ns3:Dynamic_Pressure a ns1:Entity .
+
+ns3:Electric_Current a ns1:Entity .
+
+ns3:Electric_Energy a ns1:Entity .
+
+ns3:Electric_Power a ns1:Entity .
+
+ns3:Energy a ns1:Entity .
+
+ns3:Entering_Condenser_Water a ns1:Entity .
+
+ns3:Entering_Water a ns1:Entity ;
+    ns2:narrower ns3:Entering_Chilled_Water,
+        ns3:Entering_Hot_Water .
+
+ns3:Enthalpy a ns1:Entity .
+
+ns3:Exhaust_Air a ns1:Entity .
+
+ns3:Flow a ns1:Entity .
+
+ns3:Flow_Loss a ns1:Entity .
+
+ns3:Fluid a ns1:Entity .
+
+ns3:Formaldehyde_Concentration a ns1:Entity .
+
+ns3:Frequency a ns1:Entity .
+
+ns3:Frost a ns1:Entity .
+
+ns3:Fuel_Oil a ns1:Entity .
+
+ns3:Gas a ns1:Entity .
+
+ns3:Gasoline a ns1:Entity .
+
+ns3:Glycol a ns1:Entity .
+
+ns3:GrainsOfMoisture a ns1:Entity .
+
+ns3:Hail a ns1:Entity .
+
+ns3:Hot_Water a ns1:Entity .
+
+ns3:Humidity a ns1:Entity .
+
+ns3:Ice a ns1:Entity .
+
+ns3:Illuminance a ns1:Entity .
+
+ns3:Irradiance a ns1:Entity .
+
+ns3:Leaving_Condenser_Water a ns1:Entity .
+
+ns3:Leaving_Water a ns1:Entity ;
+    ns2:narrower ns3:Leaving_Chilled_Water,
+        ns3:Leaving_Hot_Water .
+
+ns3:Level a ns1:Entity .
+
+ns3:Linear_Speed a ns1:Entity .
+
+ns3:Liquid a ns1:Entity .
+
+ns3:Liquid_CO2 a ns1:Entity .
+
+ns3:Luminance a ns1:Entity .
+
+ns3:Luminous_Flux a ns1:Entity .
+
+ns3:Luminous_Intensity a ns1:Entity .
+
+ns3:Makeup_Water a ns1:Entity .
+
+ns3:Mass a ns1:Entity .
+
+ns3:Methane_Concentration a ns1:Entity .
+
+ns3:Mixed_Air a ns1:Entity .
+
+ns3:NO2_Concentration a ns1:Entity .
+
+ns3:Natural_Gas a ns1:Entity .
+
+ns3:Occupancy a ns1:Entity .
+
+ns3:Occupancy_Count a ns1:Entity .
+
+ns3:Occupancy_Percentage a ns1:Entity .
+
+ns3:Oil a ns1:Entity .
+
+ns3:Operative_Temperature a ns1:Entity .
+
+ns3:Outside_Air a ns1:Entity .
+
+ns3:Ozone_Concentration a ns1:Entity .
+
+ns3:PM10_Concentration a ns1:Entity .
+
+ns3:PM1_Concentration a ns1:Entity .
+
+ns3:PM2.5_Concentration a ns1:Entity .
+
+ns3:Peak_Power a ns1:Entity .
+
+ns3:Phasor a ns1:Entity .
+
+ns3:Phasor_Angle a ns1:Entity ;
+    ns2:narrower ns3:Current_Angle,
+        ns3:Voltage_Angle .
+
+ns3:Phasor_Magnitude a ns1:Entity .
+
+ns3:Position a ns1:Entity .
+
+ns3:Potable_Water a ns1:Entity .
+
+ns3:Power a ns1:Entity .
+
+ns3:Power_Factor a ns1:Entity .
+
+ns3:Precipitation a ns1:Entity .
+
+ns3:Pressure a ns1:Entity .
+
+ns3:Radiance a ns1:Entity .
+
+ns3:Radiant_Temperature a ns1:Entity .
+
+ns3:Radioactivity_Concentration a ns1:Entity .
+
+ns3:Radon_Concentration a ns1:Entity .
+
+ns3:Reactive_Energy a ns1:Entity .
+
+ns3:Reactive_Power a ns1:Entity .
+
+ns3:Real_Power a ns1:Entity .
+
+ns3:Refrigerant a ns1:Entity .
+
+ns3:Relative_Humidity a ns1:Entity .
+
+ns3:Return_Air a ns1:Entity .
+
+ns3:Rotational_Speed a ns1:Entity .
+
+ns3:Soil a ns1:Entity .
+
+ns3:Solar_Irradiance a ns1:Entity .
+
+ns3:Solar_Radiance a ns1:Entity .
+
+ns3:Solid a ns1:Entity .
+
+ns3:Speed a ns1:Entity .
+
+ns3:Static_Pressure a ns1:Entity .
+
+ns3:Steam a ns1:Entity .
+
+ns3:Supply_Air a ns1:Entity .
+
+ns3:TVOC_Concentration a ns1:Entity .
+
+ns3:Temperature a ns1:Entity .
+
+ns3:Thermal_Energy a ns1:Entity .
+
+ns3:Thermal_Power a ns1:Entity .
+
+ns3:Time a ns1:Entity .
+
+ns3:Torque a ns1:Entity .
+
+ns3:Velocity_Pressure a ns1:Entity .
+
+ns3:Voltage a ns1:Entity .
+
+ns3:Voltage_Imbalance a ns1:Entity .
+
+ns3:Water a ns1:Entity .
+
+ns3:Weather_Condition a ns1:Entity .
+
+ns3:Wet_Bulb_Temperature a ns1:Entity .
+
+ns3:Wind_Direction a ns1:Entity .
+
+ns3:Zone_Air a ns1:Entity .
+
+ns3:Current_Angle a ns1:Entity .
+
+ns3:Entering_Chilled_Water a ns1:Entity .
+
+ns3:Entering_Hot_Water a ns1:Entity .
+
+ns3:Leaving_Chilled_Water a ns1:Entity .
+
+ns3:Leaving_Hot_Water a ns1:Entity .
+
+ns3:Voltage_Angle a ns1:Entity .
+
+<urn:model/c-0009> a ns3:Command,
+        <urn:___param___#Brick_Humidifier_Command>,
+        ns1:Entity,
+        ns1:HasTag-air,
+        ns1:HasTag-cmd,
+        ns1:HasTag-damper,
+        ns1:HasTag-humidifier,
+        ns1:HasTag-mixed,
+        ns1:HasTag-modulation,
+        ns1:HasTag-point ;
+    rdfs:label "Charlie AHU 1 Mixed Air Damper Position" ;
+    ns3:hasTag <https://brickschema.org/schema/BrickTag#Command>,
         <https://brickschema.org/schema/BrickTag#Point> ;
-    ns4:hasMarkerTag "air",
+    ns1:hasMarkerTag "air",
         "cmd",
         "cur",
+        "custom",
         "damper",
+        "dis",
+        "equipRef",
         "his",
+        "humidifier",
+        "id",
+        "kind",
         "mixed",
-        "point" ;
-    ns4:hasRefTag [ ns4:key "id"^^xsd:string ;
-            ns4:value <urn:model/c-0009> ],
-        [ ns4:key "siteRef"^^xsd:string ;
-            ns4:value <urn:model/c-0000> ],
-        [ ns4:key "equipRef"^^xsd:string ;
-            ns4:value <urn:model/c-0001> ] ;
-    ns4:hasValueTag [ ns4:key "dis"^^xsd:string ;
-            ns4:value "Charlie AHU 1 Mixed Air Damper Position" ],
-        [ ns4:key "tz"^^xsd:string ;
-            ns4:value "New_York" ],
-        [ ns4:key "kind"^^xsd:string ;
-            ns4:value "Number" ] .
+        "modulation",
+        "point",
+        "siteRef",
+        "tz" ;
+    ns1:hasRefTag [ ns1:key "siteRef"^^xsd:string ;
+            ns1:value <urn:model/c-0000> ],
+        [ ns1:key "id"^^xsd:string ;
+            ns1:value <urn:model/c-0009> ],
+        [ ns1:key "equipRef"^^xsd:string ;
+            ns1:value <urn:model/c-0001> ] ;
+    ns1:hasValueTag [ ns1:key "tz"^^xsd:string ;
+            ns1:value "New_York" ],
+        [ ns1:key "dis"^^xsd:string ;
+            ns1:value "Charlie AHU 1 Mixed Air Damper Position" ],
+        [ ns1:key "kind"^^xsd:string ;
+            ns1:value "Number" ] .
 
-<urn:model/c-test1> a ns2:Command,
-        ns4:Entity,
-        ns4:HasTag-cmd,
-        ns4:HasTag-damper,
-        ns4:HasTag-point ;
-    ns2:hasTag <https://brickschema.org/schema/BrickTag#Command>,
+<urn:model/c-test1> a ns3:Command,
+        <urn:___param___#Brick_Humidifier_Command>,
+        ns1:Entity,
+        ns1:HasTag-cmd,
+        ns1:HasTag-damper,
+        ns1:HasTag-humidifier,
+        ns1:HasTag-modulation,
+        ns1:HasTag-point ;
+    rdfs:label "Charlie AHU 1 Mixed Air Damper Command" ;
+    ns3:hasTag <https://brickschema.org/schema/BrickTag#Command>,
         <https://brickschema.org/schema/BrickTag#Point> ;
-    ns4:hasMarkerTag "cmd",
+    ns1:hasMarkerTag "cmd",
         "cur",
+        "custom",
         "damper",
+        "dis",
+        "equipRef",
         "his",
-        "point" ;
-    ns4:hasRefTag [ ns4:key "equipRef"^^xsd:string ;
-            ns4:value <urn:model/c-0001> ],
-        [ ns4:key "siteRef"^^xsd:string ;
-            ns4:value <urn:model/c-0000> ],
-        [ ns4:key "id"^^xsd:string ;
-            ns4:value <urn:model/c-test1> ] ;
-    ns4:hasValueTag [ ns4:key "dis"^^xsd:string ;
-            ns4:value "Charlie AHU 1 Mixed Air Damper Command" ],
-        [ ns4:key "tz"^^xsd:string ;
-            ns4:value "New_York" ],
-        [ ns4:key "kind"^^xsd:string ;
-            ns4:value "Number" ] .
+        "humidifier",
+        "id",
+        "kind",
+        "modulation",
+        "point",
+        "siteRef",
+        "tz" ;
+    ns1:hasRefTag [ ns1:key "siteRef"^^xsd:string ;
+            ns1:value <urn:model/c-0000> ],
+        [ ns1:key "id"^^xsd:string ;
+            ns1:value <urn:model/c-test1> ],
+        [ ns1:key "equipRef"^^xsd:string ;
+            ns1:value <urn:model/c-0001> ] ;
+    ns1:hasValueTag [ ns1:key "tz"^^xsd:string ;
+            ns1:value "New_York" ],
+        [ ns1:key "dis"^^xsd:string ;
+            ns1:value "Charlie AHU 1 Mixed Air Damper Command" ],
+        [ ns1:key "kind"^^xsd:string ;
+            ns1:value "Number" ] .
 
-ns2:Active_Power a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Active Power" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/GigaW>,
-        <http://qudt.org/vocab/unit/KiloW>,
-        <http://qudt.org/vocab/unit/MegaW>,
-        <http://qudt.org/vocab/unit/MicroW>,
-        <http://qudt.org/vocab/unit/MilliW>,
-        <http://qudt.org/vocab/unit/NanoW>,
-        <http://qudt.org/vocab/unit/PicoW>,
-        <http://qudt.org/vocab/unit/TeraW>,
-        <http://qudt.org/vocab/unit/W> ;
-    owl:sameAs ns2:Real_Power ;
-    ns1:broader ns2:Electric_Power ;
-    ns1:definition "(Active Power) is, under periodic conditions, the mean value, taken over one period (T), of the instantaneous power (p). In complex notation, (P = Re \\; S), where (S) is (complex power)\"."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/ActivePower> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Alternating_Current_Frequency a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Alternating_Current_Frequency" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/GigaHZ>,
-        <http://qudt.org/vocab/unit/HZ>,
-        <http://qudt.org/vocab/unit/KiloHZ>,
-        <http://qudt.org/vocab/unit/MegaHZ> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T-1D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Frequency>,
-        ns2:Frequency ;
-    ns1:definition "The frequency of the oscillations of alternating current",
-        "The frequency of the oscillations of alternating current"@en ;
-    ns1:related ns2:Electric_Current ;
-    ns4:hasMarkerTag "point" .
-
-ns2:CO2_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "CO2Concentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/DimensionlessRatio>,
-        ns2:Air_Quality ;
-    ns1:definition "The concentration of carbon dioxide in a medium" ;
-    ns1:narrower ns2:Differential_CO2_Concentration ;
-    ns4:hasMarkerTag "point" .
-
-ns2:CO_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "COConcentration" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/PPB>,
-        <http://qudt.org/vocab/unit/PPM> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/DimensionlessRatio>,
-        ns2:Air_Quality ;
-    ns1:definition "The concentration of carbon monoxide in a medium" ;
-    ns1:narrower ns2:Differential_CO_Concentration ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Current_Angle a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "CurrentAngle" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ARCMIN>,
-        <http://qudt.org/vocab/unit/ARCSEC>,
-        <http://qudt.org/vocab/unit/DEG>,
-        <http://qudt.org/vocab/unit/GON>,
-        <http://qudt.org/vocab/unit/GRAD>,
-        <http://qudt.org/vocab/unit/MIL>,
-        <http://qudt.org/vocab/unit/MicroRAD>,
-        <http://qudt.org/vocab/unit/MilliARCSEC>,
-        <http://qudt.org/vocab/unit/MilliRAD>,
-        <http://qudt.org/vocab/unit/RAD>,
-        <http://qudt.org/vocab/unit/REV> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Phasor_Angle ;
-    ns1:definition "Angle of current phasor",
-        "Angle of current phasor"@en ;
-    ns1:related ns2:Electric_Current ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Differential_Dynamic_Pressure a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Differential Dynamic Pressure" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ATM>,
-        <http://qudt.org/vocab/unit/ATM_T>,
-        <http://qudt.org/vocab/unit/BAR>,
-        <http://qudt.org/vocab/unit/BARAD>,
-        <http://qudt.org/vocab/unit/BARYE>,
-        <http://qudt.org/vocab/unit/CM_H2O>,
-        <http://qudt.org/vocab/unit/CentiBAR>,
-        <http://qudt.org/vocab/unit/CentiM_H2O>,
-        <http://qudt.org/vocab/unit/CentiM_HG>,
-        <http://qudt.org/vocab/unit/DYN-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/DecaPA>,
-        <http://qudt.org/vocab/unit/DeciBAR>,
-        <http://qudt.org/vocab/unit/FT_H2O>,
-        <http://qudt.org/vocab/unit/FT_HG>,
-        <http://qudt.org/vocab/unit/GM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/GigaPA>,
-        <http://qudt.org/vocab/unit/HectoBAR>,
-        <http://qudt.org/vocab/unit/HectoPA>,
-        <http://qudt.org/vocab/unit/IN_H2O>,
-        <http://qudt.org/vocab/unit/IN_HG>,
-        <http://qudt.org/vocab/unit/KIP_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloBAR>,
-        <http://qudt.org/vocab/unit/KiloGM-PER-M-SEC2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-M2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/KiloLB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloPA>,
-        <http://qudt.org/vocab/unit/KiloPA_A>,
-        <http://qudt.org/vocab/unit/LB_F-PER-FT2>,
-        <http://qudt.org/vocab/unit/LB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/MegaBAR>,
-        <http://qudt.org/vocab/unit/MegaPA>,
-        <http://qudt.org/vocab/unit/MicroATM>,
-        <http://qudt.org/vocab/unit/MicroBAR>,
-        <http://qudt.org/vocab/unit/MicroPA>,
-        <http://qudt.org/vocab/unit/MicroTORR>,
-        <http://qudt.org/vocab/unit/MilliBAR>,
-        <http://qudt.org/vocab/unit/MilliM_H2O>,
-        <http://qudt.org/vocab/unit/MilliM_HG>,
-        <http://qudt.org/vocab/unit/MilliM_HGA>,
-        <http://qudt.org/vocab/unit/MilliPA>,
-        <http://qudt.org/vocab/unit/MilliTORR>,
-        <http://qudt.org/vocab/unit/N-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/N-PER-M2>,
-        <http://qudt.org/vocab/unit/N-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/PA>,
-        <http://qudt.org/vocab/unit/PDL-PER-FT2>,
-        <http://qudt.org/vocab/unit/PSI>,
-        <http://qudt.org/vocab/unit/PlanckPressure>,
-        <http://qudt.org/vocab/unit/TORR> ;
-    ns3:isDeltaQuantity true ;
-    ns1:broader ns2:Differential_Pressure,
-        ns2:Velocity_Pressure ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/DynamicPressure> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Differential_Static_Pressure a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Differential Static Pressure" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ATM>,
-        <http://qudt.org/vocab/unit/ATM_T>,
-        <http://qudt.org/vocab/unit/BAR>,
-        <http://qudt.org/vocab/unit/BARAD>,
-        <http://qudt.org/vocab/unit/BARYE>,
-        <http://qudt.org/vocab/unit/CM_H2O>,
-        <http://qudt.org/vocab/unit/CentiBAR>,
-        <http://qudt.org/vocab/unit/CentiM_H2O>,
-        <http://qudt.org/vocab/unit/CentiM_HG>,
-        <http://qudt.org/vocab/unit/DYN-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/DecaPA>,
-        <http://qudt.org/vocab/unit/DeciBAR>,
-        <http://qudt.org/vocab/unit/FT_H2O>,
-        <http://qudt.org/vocab/unit/FT_HG>,
-        <http://qudt.org/vocab/unit/GM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/GigaPA>,
-        <http://qudt.org/vocab/unit/HectoBAR>,
-        <http://qudt.org/vocab/unit/HectoPA>,
-        <http://qudt.org/vocab/unit/IN_H2O>,
-        <http://qudt.org/vocab/unit/IN_HG>,
-        <http://qudt.org/vocab/unit/KIP_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloBAR>,
-        <http://qudt.org/vocab/unit/KiloGM-PER-M-SEC2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-M2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/KiloLB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloPA>,
-        <http://qudt.org/vocab/unit/KiloPA_A>,
-        <http://qudt.org/vocab/unit/LB_F-PER-FT2>,
-        <http://qudt.org/vocab/unit/LB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/MegaBAR>,
-        <http://qudt.org/vocab/unit/MegaPA>,
-        <http://qudt.org/vocab/unit/MicroATM>,
-        <http://qudt.org/vocab/unit/MicroBAR>,
-        <http://qudt.org/vocab/unit/MicroPA>,
-        <http://qudt.org/vocab/unit/MicroTORR>,
-        <http://qudt.org/vocab/unit/MilliBAR>,
-        <http://qudt.org/vocab/unit/MilliM_H2O>,
-        <http://qudt.org/vocab/unit/MilliM_HG>,
-        <http://qudt.org/vocab/unit/MilliM_HGA>,
-        <http://qudt.org/vocab/unit/MilliPA>,
-        <http://qudt.org/vocab/unit/MilliTORR>,
-        <http://qudt.org/vocab/unit/N-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/N-PER-M2>,
-        <http://qudt.org/vocab/unit/N-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/PA>,
-        <http://qudt.org/vocab/unit/PDL-PER-FT2>,
-        <http://qudt.org/vocab/unit/PSI>,
-        <http://qudt.org/vocab/unit/PlanckPressure>,
-        <http://qudt.org/vocab/unit/TORR> ;
-    ns3:isDeltaQuantity true ;
-    ns1:broader ns2:Differential_Pressure,
-        ns2:Static_Pressure ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/StaticPressure> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Discharge_Air a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Discharge Air" ;
-    owl:sameAs ns2:Supply_Air ;
-    ns1:broader ns2:Air ;
-    ns1:definition "the air exiting the registers (vents)."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Dry_Bulb_Temperature a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Dry_Bulb_Temperature" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/DEG_C>,
-        <http://qudt.org/vocab/unit/DEG_F>,
-        <http://qudt.org/vocab/unit/K> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H1T0D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Temperature>,
-        ns2:Temperature ;
-    ns1:definition "The temperature of air measured by a thermometer freely exposed to the air, but shielded from radiation and moisture. (https://en.wikipedia.org/wiki/Dry-bulb_temperature)",
-        "The temperature of air measured by a thermometer freely exposed to the air, but shielded from radiation and moisture. (https://en.wikipedia.org/wiki/Dry-bulb_temperature)"@en ;
-    ns1:narrower ns2:Differential_Dry_Bulb_Temperature ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Dynamic_Pressure a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Dynamic Pressure" ;
-    ns1:broader ns2:Pressure ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Energy a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Energy" ;
-    ns1:narrower ns2:Electric_Energy,
-        ns2:Thermal_Energy ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Entering_Chilled_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Entering Chilled Water" ;
-    ns1:broader ns2:Chilled_Water,
-        ns2:Entering_Water ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Entering_Hot_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Entering Hot Water" ;
-    ns1:broader ns2:Entering_Water,
-        ns2:Hot_Water ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Humidity a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Humidity" ;
-    ns1:narrower ns2:Absolute_Humidity,
-        ns2:Relative_Humidity ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Leaving_Chilled_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Leaving Chilled Water" ;
-    ns1:broader ns2:Chilled_Water,
-        ns2:Leaving_Water ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Leaving_Hot_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Leaving Hot Water" ;
-    ns1:broader ns2:Hot_Water,
-        ns2:Leaving_Water ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Luminance a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Luminance" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/CD>,
-        <http://qudt.org/vocab/unit/CD-PER-IN2>,
-        <http://qudt.org/vocab/unit/CD-PER-M2>,
-        <http://qudt.org/vocab/unit/CP>,
-        <http://qudt.org/vocab/unit/FT-LA>,
-        <http://qudt.org/vocab/unit/LA>,
-        <http://qudt.org/vocab/unit/LM>,
-        <http://qudt.org/vocab/unit/STILB> ;
-    ns1:narrower ns2:Luminous_Flux,
-        ns2:Luminous_Intensity ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Luminance> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Occupancy a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Occupancy" ;
-    ns1:narrower ns2:Occupancy_Count,
-        ns2:Occupancy_Percentage ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Oil a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Oil" ;
-    ns1:broader ns2:Liquid ;
-    ns1:definition "a viscous liquid derived from petroleum, especially for use as a fuel or lubricant."@en ;
-    ns1:narrower ns2:Fuel_Oil ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Phasor a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Phasor" ;
-    ns1:related ns2:Phasor_Angle,
-        ns2:Phasor_Magnitude ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Radioactivity_Concentration a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Radioactivity Concentration" ;
-    ns1:broader ns2:Air_Quality ;
-    ns1:narrower ns2:Radon_Concentration ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Real_Power a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Real Power" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/GigaW>,
-        <http://qudt.org/vocab/unit/KiloW>,
-        <http://qudt.org/vocab/unit/MegaW>,
-        <http://qudt.org/vocab/unit/MicroW>,
-        <http://qudt.org/vocab/unit/MilliW>,
-        <http://qudt.org/vocab/unit/NanoW>,
-        <http://qudt.org/vocab/unit/PicoW>,
-        <http://qudt.org/vocab/unit/TeraW>,
-        <http://qudt.org/vocab/unit/W> ;
-    owl:sameAs ns2:Active_Power ;
-    ns1:broader ns2:Electric_Power ;
-    ns1:definition "(Active Power) is, under periodic conditions, the mean value, taken over one period (T), of the instantaneous power (p). In complex notation, (P = Re \\; S), where (S) is (complex power)\"."@en ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/ActivePower> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Speed a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Speed" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/BFT>,
-        <http://qudt.org/vocab/unit/DEG-PER-HR>,
-        <http://qudt.org/vocab/unit/DEG-PER-MIN>,
-        <http://qudt.org/vocab/unit/DEG-PER-SEC>,
-        <http://qudt.org/vocab/unit/FT-PER-HR>,
-        <http://qudt.org/vocab/unit/FT-PER-SEC>,
-        <http://qudt.org/vocab/unit/FT3-PER-MIN-FT2>,
-        <http://qudt.org/vocab/unit/GigaC-PER-M3>,
-        <http://qudt.org/vocab/unit/GigaHZ-M>,
-        <http://qudt.org/vocab/unit/HZ-M>,
-        <http://qudt.org/vocab/unit/KiloM-PER-HR>,
-        <http://qudt.org/vocab/unit/KiloM-PER-SEC>,
-        <http://qudt.org/vocab/unit/M-PER-HR>,
-        <http://qudt.org/vocab/unit/M-PER-SEC>,
-        <http://qudt.org/vocab/unit/MI-PER-HR>,
-        <http://qudt.org/vocab/unit/MI-PER-SEC>,
-        <http://qudt.org/vocab/unit/MegaHZ-M>,
-        <http://qudt.org/vocab/unit/RAD-PER-HR>,
-        <http://qudt.org/vocab/unit/RAD-PER-MIN>,
-        <http://qudt.org/vocab/unit/RAD-PER-SEC> ;
-    ns1:narrower ns2:Linear_Speed,
-        ns2:Rotational_Speed ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Speed> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Static_Pressure a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Static Pressure" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ATM>,
-        <http://qudt.org/vocab/unit/ATM_T>,
-        <http://qudt.org/vocab/unit/BAR>,
-        <http://qudt.org/vocab/unit/BARAD>,
-        <http://qudt.org/vocab/unit/BARYE>,
-        <http://qudt.org/vocab/unit/CM_H2O>,
-        <http://qudt.org/vocab/unit/CentiBAR>,
-        <http://qudt.org/vocab/unit/CentiM_H2O>,
-        <http://qudt.org/vocab/unit/CentiM_HG>,
-        <http://qudt.org/vocab/unit/DYN-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/DecaPA>,
-        <http://qudt.org/vocab/unit/DeciBAR>,
-        <http://qudt.org/vocab/unit/FT_H2O>,
-        <http://qudt.org/vocab/unit/FT_HG>,
-        <http://qudt.org/vocab/unit/GM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/GigaPA>,
-        <http://qudt.org/vocab/unit/HectoBAR>,
-        <http://qudt.org/vocab/unit/HectoPA>,
-        <http://qudt.org/vocab/unit/IN_H2O>,
-        <http://qudt.org/vocab/unit/IN_HG>,
-        <http://qudt.org/vocab/unit/KIP_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloBAR>,
-        <http://qudt.org/vocab/unit/KiloGM-PER-M-SEC2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-M2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/KiloLB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloPA>,
-        <http://qudt.org/vocab/unit/KiloPA_A>,
-        <http://qudt.org/vocab/unit/LB_F-PER-FT2>,
-        <http://qudt.org/vocab/unit/LB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/MegaBAR>,
-        <http://qudt.org/vocab/unit/MegaPA>,
-        <http://qudt.org/vocab/unit/MicroATM>,
-        <http://qudt.org/vocab/unit/MicroBAR>,
-        <http://qudt.org/vocab/unit/MicroPA>,
-        <http://qudt.org/vocab/unit/MicroTORR>,
-        <http://qudt.org/vocab/unit/MilliBAR>,
-        <http://qudt.org/vocab/unit/MilliM_H2O>,
-        <http://qudt.org/vocab/unit/MilliM_HG>,
-        <http://qudt.org/vocab/unit/MilliM_HGA>,
-        <http://qudt.org/vocab/unit/MilliPA>,
-        <http://qudt.org/vocab/unit/MilliTORR>,
-        <http://qudt.org/vocab/unit/N-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/N-PER-M2>,
-        <http://qudt.org/vocab/unit/N-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/PA>,
-        <http://qudt.org/vocab/unit/PDL-PER-FT2>,
-        <http://qudt.org/vocab/unit/PSI>,
-        <http://qudt.org/vocab/unit/PlanckPressure>,
-        <http://qudt.org/vocab/unit/TORR> ;
-    ns1:broader ns2:Pressure ;
-    ns1:narrower ns2:Differential_Static_Pressure ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/StaticPressure> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Supply_Air a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Supply Air" ;
-    owl:sameAs ns2:Discharge_Air ;
-    ns1:broader ns2:Air ;
-    ns1:definition "(1) air delivered by mechanical or natural ventilation to a space, composed of any combination of outdoor air, recirculated air, or transfer air. (2) air entering a space from an air-conditioning, heating, or ventilating apparatus for the purpose of comfort conditioning. Supply air is generally filtered, fan forced, and either heated, cooled, humidified, or dehumidified as necessary to maintain specified conditions. Only the quantity of outdoor air within the supply airflow may be used as replacement air."@en ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Time a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Time" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/CentiPOISE-PER-BAR>,
-        <http://qudt.org/vocab/unit/DAY>,
-        <http://qudt.org/vocab/unit/DAY_Sidereal>,
-        <http://qudt.org/vocab/unit/H-PER-KiloOHM>,
-        <http://qudt.org/vocab/unit/H-PER-OHM>,
-        <http://qudt.org/vocab/unit/HR>,
-        <http://qudt.org/vocab/unit/HR_Sidereal>,
-        <http://qudt.org/vocab/unit/KiloSEC>,
-        <http://qudt.org/vocab/unit/MIN>,
-        <http://qudt.org/vocab/unit/MIN_Sidereal>,
-        <http://qudt.org/vocab/unit/MO>,
-        <http://qudt.org/vocab/unit/MO_MeanGREGORIAN>,
-        <http://qudt.org/vocab/unit/MO_MeanJulian>,
-        <http://qudt.org/vocab/unit/MO_Synodic>,
-        <http://qudt.org/vocab/unit/MegaYR>,
-        <http://qudt.org/vocab/unit/MicroH-PER-KiloOHM>,
-        <http://qudt.org/vocab/unit/MicroH-PER-OHM>,
-        <http://qudt.org/vocab/unit/MicroSEC>,
-        <http://qudt.org/vocab/unit/MilliH-PER-KiloOHM>,
-        <http://qudt.org/vocab/unit/MilliH-PER-OHM>,
-        <http://qudt.org/vocab/unit/MilliPA-SEC-PER-BAR>,
-        <http://qudt.org/vocab/unit/MilliSEC>,
-        <http://qudt.org/vocab/unit/NanoSEC>,
-        <http://qudt.org/vocab/unit/PA-SEC-PER-BAR>,
-        <http://qudt.org/vocab/unit/POISE-PER-BAR>,
-        <http://qudt.org/vocab/unit/PicoSEC>,
-        <http://qudt.org/vocab/unit/PlanckTime>,
-        <http://qudt.org/vocab/unit/SEC>,
-        <http://qudt.org/vocab/unit/SH>,
-        <http://qudt.org/vocab/unit/WK>,
-        <http://qudt.org/vocab/unit/YR>,
-        <http://qudt.org/vocab/unit/YR_Common>,
-        <http://qudt.org/vocab/unit/YR_Sidereal>,
-        <http://qudt.org/vocab/unit/YR_TROPICAL> ;
-    ns1:narrower ns2:Acceleration_Time,
-        ns2:Deceleration_Time ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Time> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Velocity_Pressure a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Velocity Pressure" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ATM>,
-        <http://qudt.org/vocab/unit/ATM_T>,
-        <http://qudt.org/vocab/unit/BAR>,
-        <http://qudt.org/vocab/unit/BARAD>,
-        <http://qudt.org/vocab/unit/BARYE>,
-        <http://qudt.org/vocab/unit/CM_H2O>,
-        <http://qudt.org/vocab/unit/CentiBAR>,
-        <http://qudt.org/vocab/unit/CentiM_H2O>,
-        <http://qudt.org/vocab/unit/CentiM_HG>,
-        <http://qudt.org/vocab/unit/DYN-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/DecaPA>,
-        <http://qudt.org/vocab/unit/DeciBAR>,
-        <http://qudt.org/vocab/unit/FT_H2O>,
-        <http://qudt.org/vocab/unit/FT_HG>,
-        <http://qudt.org/vocab/unit/GM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/GigaPA>,
-        <http://qudt.org/vocab/unit/HectoBAR>,
-        <http://qudt.org/vocab/unit/HectoPA>,
-        <http://qudt.org/vocab/unit/IN_H2O>,
-        <http://qudt.org/vocab/unit/IN_HG>,
-        <http://qudt.org/vocab/unit/KIP_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloBAR>,
-        <http://qudt.org/vocab/unit/KiloGM-PER-M-SEC2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-M2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/KiloLB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloPA>,
-        <http://qudt.org/vocab/unit/KiloPA_A>,
-        <http://qudt.org/vocab/unit/LB_F-PER-FT2>,
-        <http://qudt.org/vocab/unit/LB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/MegaBAR>,
-        <http://qudt.org/vocab/unit/MegaPA>,
-        <http://qudt.org/vocab/unit/MicroATM>,
-        <http://qudt.org/vocab/unit/MicroBAR>,
-        <http://qudt.org/vocab/unit/MicroPA>,
-        <http://qudt.org/vocab/unit/MicroTORR>,
-        <http://qudt.org/vocab/unit/MilliBAR>,
-        <http://qudt.org/vocab/unit/MilliM_H2O>,
-        <http://qudt.org/vocab/unit/MilliM_HG>,
-        <http://qudt.org/vocab/unit/MilliM_HGA>,
-        <http://qudt.org/vocab/unit/MilliPA>,
-        <http://qudt.org/vocab/unit/MilliTORR>,
-        <http://qudt.org/vocab/unit/N-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/N-PER-M2>,
-        <http://qudt.org/vocab/unit/N-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/PA>,
-        <http://qudt.org/vocab/unit/PDL-PER-FT2>,
-        <http://qudt.org/vocab/unit/PSI>,
-        <http://qudt.org/vocab/unit/PlanckPressure>,
-        <http://qudt.org/vocab/unit/TORR> ;
-    ns1:broader ns2:Pressure ;
-    ns1:definition "Dynamic Pressure (indicated with q, or Q, and sometimes called velocity pressure) is the quantity defined by: (q = 1/2 * ρ v^{2}), where (using SI units),  (q) is dynamic pressure in (pascals), (ρ) is fluid density in (kg/m^{3}) (for example, density of air) and (v ) is fluid velocity in (m/s)."@en ;
-    ns1:narrower ns2:Differential_Dynamic_Pressure ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/DynamicPressure>,
-        ns2:Dynamic_Pressure ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Voltage a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Voltage" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/KiloV>,
-        <http://qudt.org/vocab/unit/MegaV>,
-        <http://qudt.org/vocab/unit/MicroV>,
-        <http://qudt.org/vocab/unit/MilliV>,
-        <http://qudt.org/vocab/unit/PlanckVolt>,
-        <http://qudt.org/vocab/unit/V>,
-        <http://qudt.org/vocab/unit/V_Ab>,
-        <http://qudt.org/vocab/unit/V_Stat> ;
-    ns1:definition "Voltage, also referred to as Electric Tension, is the difference between electrical potentials of two points. For an electric field within a medium, (U_{ab} = - \\int_{r_a}^{r_b} E . {dr}), where (E) is electric field strength. For an irrotational electric field, the voltage is independent of the path between the two points (a) and (b)."@en ;
-    ns1:related ns2:Voltage_Angle,
-        ns2:Voltage_Imbalance ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Voltage> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Voltage_Angle a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "VoltageAngle" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ARCMIN>,
-        <http://qudt.org/vocab/unit/ARCSEC>,
-        <http://qudt.org/vocab/unit/DEG>,
-        <http://qudt.org/vocab/unit/GON>,
-        <http://qudt.org/vocab/unit/GRAD>,
-        <http://qudt.org/vocab/unit/MIL>,
-        <http://qudt.org/vocab/unit/MicroRAD>,
-        <http://qudt.org/vocab/unit/MilliARCSEC>,
-        <http://qudt.org/vocab/unit/MilliRAD>,
-        <http://qudt.org/vocab/unit/RAD>,
-        <http://qudt.org/vocab/unit/REV> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader ns2:Phasor_Angle ;
-    ns1:definition "Angle of voltage phasor",
-        "Angle of voltage phasor"@en ;
-    ns1:related ns2:Voltage ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Chilled_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Chilled Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "water used as a cooling medium (particularly in air-conditioning systems or in processes) at below ambient temperature."@en ;
-    ns1:narrower ns2:Entering_Chilled_Water,
-        ns2:Leaving_Chilled_Water ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Condenser_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Condenser Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "Water used used to remove heat through condensation"@en ;
-    ns1:narrower ns2:Entering_Condenser_Water,
-        ns2:Leaving_Condenser_Water ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Differential_Pressure a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Differential Pressure" ;
-    ns3:isDeltaQuantity true ;
-    ns1:broader ns2:Pressure ;
-    ns1:narrower ns2:Differential_Dynamic_Pressure,
-        ns2:Differential_Static_Pressure ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Entering_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Entering Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "Water that is entering a piece of equipment or system"@en ;
-    ns1:narrower ns2:Entering_Chilled_Water,
-        ns2:Entering_Hot_Water ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Fluid a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Fluid" ;
-    ns1:definition "substance, as a liquid or gas, that is capable of flowing and that changes shape when acted on by a force."@en ;
-    ns1:narrower ns2:Gas,
-        ns2:Liquid,
-        ns2:Refrigerant ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Hot_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Hot Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "Hot water used for HVAC heating or supply to hot taps"@en ;
-    ns1:narrower ns2:Entering_Hot_Water,
-        ns2:Leaving_Hot_Water ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Leaving_Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Leaving Water" ;
-    ns1:broader ns2:Water ;
-    ns1:definition "Water that is leaving a piece of equipment or system"@en ;
-    ns1:narrower ns2:Leaving_Chilled_Water,
-        ns2:Leaving_Hot_Water ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Phasor_Angle a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "PhasorAngle" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ARCMIN>,
-        <http://qudt.org/vocab/unit/ARCSEC>,
-        <http://qudt.org/vocab/unit/DEG>,
-        <http://qudt.org/vocab/unit/GON>,
-        <http://qudt.org/vocab/unit/GRAD>,
-        <http://qudt.org/vocab/unit/MIL>,
-        <http://qudt.org/vocab/unit/MicroRAD>,
-        <http://qudt.org/vocab/unit/MilliARCSEC>,
-        <http://qudt.org/vocab/unit/MilliRAD>,
-        <http://qudt.org/vocab/unit/RAD>,
-        <http://qudt.org/vocab/unit/REV> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L0I0M0H0T0D1> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/PlaneAngle> ;
-    ns1:definition "Angle component of a phasor" ;
-    ns1:narrower ns2:Current_Angle,
-        ns2:Voltage_Angle ;
-    ns1:related ns2:Phasor ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Power a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Power" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/BAR-L-PER-SEC>,
-        <http://qudt.org/vocab/unit/BAR-M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/BTU_IT>,
-        <http://qudt.org/vocab/unit/BTU_IT-PER-HR>,
-        <http://qudt.org/vocab/unit/BTU_IT-PER-SEC>,
-        <http://qudt.org/vocab/unit/ERG-PER-SEC>,
-        <http://qudt.org/vocab/unit/FT-LB_F-PER-HR>,
-        <http://qudt.org/vocab/unit/FT-LB_F-PER-MIN>,
-        <http://qudt.org/vocab/unit/FT-LB_F-PER-SEC>,
-        <http://qudt.org/vocab/unit/GigaW>,
-        <http://qudt.org/vocab/unit/HP>,
-        <http://qudt.org/vocab/unit/HP_Boiler>,
-        <http://qudt.org/vocab/unit/HP_Brake>,
-        <http://qudt.org/vocab/unit/HP_Electric>,
-        <http://qudt.org/vocab/unit/HP_Metric>,
-        <http://qudt.org/vocab/unit/J-PER-HR>,
-        <http://qudt.org/vocab/unit/J-PER-SEC>,
-        <http://qudt.org/vocab/unit/KiloBTU_IT-PER-HR>,
-        <http://qudt.org/vocab/unit/KiloCAL-PER-MIN>,
-        <http://qudt.org/vocab/unit/KiloCAL-PER-SEC>,
-        <http://qudt.org/vocab/unit/KiloV-A>,
-        <http://qudt.org/vocab/unit/KiloV-A_Reactive>,
-        <http://qudt.org/vocab/unit/KiloW>,
-        <http://qudt.org/vocab/unit/MegaJ-PER-SEC>,
-        <http://qudt.org/vocab/unit/MegaPA-L-PER-SEC>,
-        <http://qudt.org/vocab/unit/MegaPA-M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/MegaV-A>,
-        <http://qudt.org/vocab/unit/MegaV-A_Reactive>,
-        <http://qudt.org/vocab/unit/MegaW>,
-        <http://qudt.org/vocab/unit/MicroW>,
-        <http://qudt.org/vocab/unit/MilliBAR-L-PER-SEC>,
-        <http://qudt.org/vocab/unit/MilliBAR-M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/MilliW>,
-        <http://qudt.org/vocab/unit/NanoW>,
-        <http://qudt.org/vocab/unit/PA-L-PER-SEC>,
-        <http://qudt.org/vocab/unit/PA-M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/PSI-IN3-PER-SEC>,
-        <http://qudt.org/vocab/unit/PSI-M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/PSI-YD3-PER-SEC>,
-        <http://qudt.org/vocab/unit/PicoW>,
-        <http://qudt.org/vocab/unit/PlanckPower>,
-        <http://qudt.org/vocab/unit/TON_FG>,
-        <http://qudt.org/vocab/unit/TeraW>,
-        <http://qudt.org/vocab/unit/V-A>,
-        <http://qudt.org/vocab/unit/V-A_Reactive>,
-        <http://qudt.org/vocab/unit/W> ;
-    ns1:definition "Power is the rate at which work is performed or energy is transmitted, or the amount of energy required or expended for a given unit of time. As a rate of change of work done or the energy of a subsystem, power is: (P = W/t), where (P) is power, (W) is work and {t} is time."@en ;
-    ns1:narrower ns2:Electric_Power,
-        ns2:Peak_Power,
-        ns2:Thermal_Power ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Power> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Electric_Current a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Electric Current" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/A>,
-        <http://qudt.org/vocab/unit/A_Ab>,
-        <http://qudt.org/vocab/unit/A_Stat>,
-        <http://qudt.org/vocab/unit/BIOT>,
-        <http://qudt.org/vocab/unit/KiloA>,
-        <http://qudt.org/vocab/unit/MegaA>,
-        <http://qudt.org/vocab/unit/MicroA>,
-        <http://qudt.org/vocab/unit/MilliA>,
-        <http://qudt.org/vocab/unit/NanoA>,
-        <http://qudt.org/vocab/unit/PicoA>,
-        <http://qudt.org/vocab/unit/PlanckCurrent> ;
-    ns1:related ns2:Alternating_Current_Frequency,
-        ns2:Current_Angle,
-        ns2:Current_Imbalance,
-        ns2:Current_Total_Harmonic_Distortion ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Electric_Energy a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "ElectricEnergy" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/J>,
-        <http://qudt.org/vocab/unit/KiloV-A-HR>,
-        <http://qudt.org/vocab/unit/KiloV-A_Reactive-HR>,
-        <http://qudt.org/vocab/unit/KiloW-HR>,
-        <http://qudt.org/vocab/unit/MegaV-A-HR>,
-        <http://qudt.org/vocab/unit/MegaV-A_Reactive-HR>,
-        <http://qudt.org/vocab/unit/MegaW-HR>,
-        <http://qudt.org/vocab/unit/V-A-HR>,
-        <http://qudt.org/vocab/unit/V-A_Reactive-HR>,
-        <http://qudt.org/vocab/unit/W-HR> ;
-    ns3:hasDimensionVector <http://qudt.org/vocab/dimensionvector/A0E0L2I0M1H0T-2D0> ;
-    rdfs:isDefinedBy <https://brickschema.org/schema/Brick> ;
-    ns1:broader <http://qudt.org/vocab/quantitykind/Energy>,
-        ns2:Energy ;
-    ns1:definition "A form of energy resulting from the flow of electrical charge" ;
-    ns1:narrower ns2:Active_Energy,
-        ns2:Apparent_Energy,
-        ns2:Reactive_Energy ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Solid a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Solid" ;
-    ns1:definition "one of the three states or phases of matter characterized by stability of dimensions, relative incompressibility, and molecular motion held to limited oscillation."@en ;
-    ns1:narrower ns2:Frost,
-        ns2:Hail,
-        ns2:Ice,
-        ns2:Soil ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Pressure a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Pressure" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/ATM>,
-        <http://qudt.org/vocab/unit/ATM_T>,
-        <http://qudt.org/vocab/unit/BAR>,
-        <http://qudt.org/vocab/unit/BARAD>,
-        <http://qudt.org/vocab/unit/BARYE>,
-        <http://qudt.org/vocab/unit/CM_H2O>,
-        <http://qudt.org/vocab/unit/CentiBAR>,
-        <http://qudt.org/vocab/unit/CentiM_H2O>,
-        <http://qudt.org/vocab/unit/CentiM_HG>,
-        <http://qudt.org/vocab/unit/DYN-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/DecaPA>,
-        <http://qudt.org/vocab/unit/DeciBAR>,
-        <http://qudt.org/vocab/unit/FT_H2O>,
-        <http://qudt.org/vocab/unit/FT_HG>,
-        <http://qudt.org/vocab/unit/GM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/GigaPA>,
-        <http://qudt.org/vocab/unit/HectoBAR>,
-        <http://qudt.org/vocab/unit/HectoPA>,
-        <http://qudt.org/vocab/unit/IN_H2O>,
-        <http://qudt.org/vocab/unit/IN_HG>,
-        <http://qudt.org/vocab/unit/KIP_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloBAR>,
-        <http://qudt.org/vocab/unit/KiloGM-PER-M-SEC2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-M2>,
-        <http://qudt.org/vocab/unit/KiloGM_F-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/KiloLB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/KiloPA>,
-        <http://qudt.org/vocab/unit/KiloPA_A>,
-        <http://qudt.org/vocab/unit/LB_F-PER-FT2>,
-        <http://qudt.org/vocab/unit/LB_F-PER-IN2>,
-        <http://qudt.org/vocab/unit/MegaBAR>,
-        <http://qudt.org/vocab/unit/MegaPA>,
-        <http://qudt.org/vocab/unit/MicroATM>,
-        <http://qudt.org/vocab/unit/MicroBAR>,
-        <http://qudt.org/vocab/unit/MicroPA>,
-        <http://qudt.org/vocab/unit/MicroTORR>,
-        <http://qudt.org/vocab/unit/MilliBAR>,
-        <http://qudt.org/vocab/unit/MilliM_H2O>,
-        <http://qudt.org/vocab/unit/MilliM_HG>,
-        <http://qudt.org/vocab/unit/MilliM_HGA>,
-        <http://qudt.org/vocab/unit/MilliPA>,
-        <http://qudt.org/vocab/unit/MilliTORR>,
-        <http://qudt.org/vocab/unit/N-PER-CentiM2>,
-        <http://qudt.org/vocab/unit/N-PER-M2>,
-        <http://qudt.org/vocab/unit/N-PER-MilliM2>,
-        <http://qudt.org/vocab/unit/PA>,
-        <http://qudt.org/vocab/unit/PDL-PER-FT2>,
-        <http://qudt.org/vocab/unit/PSI>,
-        <http://qudt.org/vocab/unit/PlanckPressure>,
-        <http://qudt.org/vocab/unit/TORR> ;
-    ns1:narrower ns2:Atmospheric_Pressure,
-        ns2:Differential_Pressure,
-        ns2:Dynamic_Pressure,
-        ns2:Static_Pressure,
-        ns2:Velocity_Pressure ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Pressure> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Temperature a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Temperature" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/DEG_C>,
-        <http://qudt.org/vocab/unit/DEG_F>,
-        <http://qudt.org/vocab/unit/DEG_R>,
-        <http://qudt.org/vocab/unit/K>,
-        <http://qudt.org/vocab/unit/MilliDEG_C>,
-        <http://qudt.org/vocab/unit/PlanckTemperature> ;
-    ns1:narrower ns2:Differential_Temperature,
-        ns2:Dry_Bulb_Temperature,
-        ns2:Operative_Temperature,
-        ns2:Radiant_Temperature,
-        ns2:Wet_Bulb_Temperature ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/Temperature> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Electric_Power a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Electric Power" ;
-    ns3:applicableUnit <http://qudt.org/vocab/unit/BAR-L-PER-SEC>,
-        <http://qudt.org/vocab/unit/BAR-M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/BTU_IT-PER-HR>,
-        <http://qudt.org/vocab/unit/BTU_IT-PER-SEC>,
-        <http://qudt.org/vocab/unit/ERG-PER-SEC>,
-        <http://qudt.org/vocab/unit/FT-LB_F-PER-HR>,
-        <http://qudt.org/vocab/unit/FT-LB_F-PER-MIN>,
-        <http://qudt.org/vocab/unit/FT-LB_F-PER-SEC>,
-        <http://qudt.org/vocab/unit/GigaW>,
-        <http://qudt.org/vocab/unit/HP>,
-        <http://qudt.org/vocab/unit/HP_Boiler>,
-        <http://qudt.org/vocab/unit/HP_Brake>,
-        <http://qudt.org/vocab/unit/HP_Electric>,
-        <http://qudt.org/vocab/unit/HP_Metric>,
-        <http://qudt.org/vocab/unit/J-PER-HR>,
-        <http://qudt.org/vocab/unit/J-PER-SEC>,
-        <http://qudt.org/vocab/unit/KiloBTU_IT-PER-HR>,
-        <http://qudt.org/vocab/unit/KiloCAL-PER-MIN>,
-        <http://qudt.org/vocab/unit/KiloCAL-PER-SEC>,
-        <http://qudt.org/vocab/unit/KiloV-A>,
-        <http://qudt.org/vocab/unit/KiloV-A_Reactive>,
-        <http://qudt.org/vocab/unit/KiloW>,
-        <http://qudt.org/vocab/unit/MegaJ-PER-SEC>,
-        <http://qudt.org/vocab/unit/MegaPA-L-PER-SEC>,
-        <http://qudt.org/vocab/unit/MegaPA-M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/MegaV-A>,
-        <http://qudt.org/vocab/unit/MegaV-A_Reactive>,
-        <http://qudt.org/vocab/unit/MegaW>,
-        <http://qudt.org/vocab/unit/MicroW>,
-        <http://qudt.org/vocab/unit/MilliBAR-L-PER-SEC>,
-        <http://qudt.org/vocab/unit/MilliBAR-M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/MilliW>,
-        <http://qudt.org/vocab/unit/NanoW>,
-        <http://qudt.org/vocab/unit/PA-L-PER-SEC>,
-        <http://qudt.org/vocab/unit/PA-M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/PSI-IN3-PER-SEC>,
-        <http://qudt.org/vocab/unit/PSI-M3-PER-SEC>,
-        <http://qudt.org/vocab/unit/PSI-YD3-PER-SEC>,
-        <http://qudt.org/vocab/unit/PicoW>,
-        <http://qudt.org/vocab/unit/PlanckPower>,
-        <http://qudt.org/vocab/unit/TON_FG>,
-        <http://qudt.org/vocab/unit/TeraW>,
-        <http://qudt.org/vocab/unit/V-A>,
-        <http://qudt.org/vocab/unit/V-A_Reactive>,
-        <http://qudt.org/vocab/unit/W> ;
-    ns1:broader ns2:Power ;
-    ns1:definition "Electric Power is the rate at which electrical energy is transferred by an electric circuit. In the simple case of direct current circuits, electric power can be calculated as the product of the potential difference in the circuit (V) and the amount of current flowing in the circuit (I): (P = VI), where (P) is the power, (V) is the potential difference, and (I) is the current. However, in general electric power is calculated by taking the integral of the vector cross-product of the electrical and magnetic fields over a specified area."@en ;
-    ns1:narrower ns2:Active_Power,
-        ns2:Apparent_Power,
-        ns2:Complex_Power,
-        ns2:Reactive_Power,
-        ns2:Real_Power ;
-    ns2:hasQUDTReference <http://qudt.org/vocab/quantitykind/ElectricPower> ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Gas a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Gas" ;
-    ns1:broader ns2:Fluid ;
-    ns1:definition "state of matter in which substances exist in the form of nonaggregated molecules and which, within acceptable limits of accuracy, satisfy the ideal gas laws; usually a highly superheated vapor. See [[state]]."@en ;
-    ns1:narrower ns2:Air,
-        ns2:CO,
-        ns2:CO2,
-        ns2:Natural_Gas,
-        ns2:Steam ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Liquid a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Liquid" ;
-    ns1:broader ns2:Fluid ;
-    ns1:definition "state of matter intermediate between crystalline substances and gases in which the volume of a substance, but not the shape, remains relatively constant."@en ;
-    ns1:narrower ns2:Gasoline,
-        ns2:Glycol,
-        ns2:Liquid_CO2,
-        ns2:Oil,
-        ns2:Water ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Air a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Air" ;
-    ns1:broader ns2:Gas ;
-    ns1:definition "the invisible gaseous substance surrounding the earth, a mixture mainly of oxygen and nitrogen."@en ;
-    ns1:narrower ns2:Building_Air,
-        ns2:Bypass_Air,
-        ns2:Discharge_Air,
-        ns2:Exhaust_Air,
-        ns2:Mixed_Air,
-        ns2:Outside_Air,
-        ns2:Return_Air,
-        ns2:Supply_Air,
-        ns2:Zone_Air ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Air_Quality a ns2:Quantity,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Air Quality" ;
-    ns1:narrower ns2:Ammonia_Concentration,
-        ns2:CO2_Concentration,
-        ns2:CO_Concentration,
-        ns2:Formaldehyde_Concentration,
-        ns2:Methane_Concentration,
-        ns2:NO2_Concentration,
-        ns2:Ozone_Concentration,
-        ns2:PM10_Concentration,
-        ns2:PM1_Concentration,
-        ns2:PM2.5_Concentration,
-        ns2:Radioactivity_Concentration,
-        ns2:TVOC_Concentration ;
-    ns4:hasMarkerTag "point" .
-
-ns2:Water a ns2:Substance,
-        ns4:Entity,
-        ns4:HasTag-point ;
-    rdfs:label "Water" ;
-    ns1:broader ns2:Liquid ;
-    ns1:definition "transparent, odorless, tasteless liquid; a compound of hydrogen and oxygen (H2O), containing 11.188% hydrogen and 88.812% oxygen by mass; freezing at 32°F (0°C); boiling near 212°F (100°C)."@en ;
-    ns1:narrower ns2:Blowdown_Water,
-        ns2:Bypass_Water,
-        ns2:Chilled_Water,
-        ns2:Collection_Basin_Water,
-        ns2:Condenser_Water,
-        ns2:Deionized_Water,
-        ns2:Domestic_Water,
-        ns2:Entering_Water,
-        ns2:Hot_Water,
-        ns2:Leaving_Water,
-        ns2:Makeup_Water,
-        ns2:Potable_Water ;
-    ns4:hasMarkerTag "point" .
+<urn:model/c-0000> a ns3:Site,
+        ns1:Entity,
+        ns1:HasTag-site ;
+    rdfs:label "Charlie" ;
+    ns3:hasTag <https://brickschema.org/schema/BrickTag#Location>,
+        <https://brickschema.org/schema/BrickTag#Site> ;
+    ns1:hasMarkerTag "area",
+        "dis",
+        "geoAddr",
+        "geoCity",
+        "geoCountry",
+        "geoPostalCode",
+        "geoState",
+        "geoStreet",
+        "id",
+        "primaryFunction",
+        "site",
+        "tz",
+        "weatherStationRef",
+        "yearBuilt" ;
+    ns1:hasRefTag [ ns1:key "id"^^xsd:string ;
+            ns1:value <urn:model/c-0000> ],
+        [ ns1:key "weatherStationRef"^^xsd:string ;
+            ns1:value <urn:model/c-0267> ] ;
+    ns1:hasValueTag [ ns1:key "geoAddr"^^xsd:string ;
+            ns1:value "123 Some Rd, Troy, MI 48007" ],
+        [ ns1:key "primaryFunction"^^xsd:string ;
+            ns1:value "Office" ],
+        [ ns1:key "yearBuilt"^^xsd:string ;
+            ns1:value 1995 ],
+        [ ns1:key "geoStreet"^^xsd:string ;
+            ns1:value "123 Some Rd" ],
+        [ ns1:key "dis"^^xsd:string ;
+            ns1:value "Charlie" ],
+        [ ns1:key "geoState"^^xsd:string ;
+            ns1:value "MI" ],
+        [ ns1:key "geoPostalCode"^^xsd:string ;
+            ns1:value "48007" ],
+        [ ns1:key "geoCity"^^xsd:string ;
+            ns1:value "Troy" ],
+        [ ns1:key "tz"^^xsd:string ;
+            ns1:value "Detroit" ],
+        [ ns1:key "geoCountry"^^xsd:string ;
+            ns1:value "US" ] .
 
