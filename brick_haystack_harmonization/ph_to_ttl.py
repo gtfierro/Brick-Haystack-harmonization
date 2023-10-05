@@ -85,8 +85,8 @@ def run(haystack_file: str, output_file: str):
     model.serialize("/tmp/out.ttl", format="ttl")
 
     print("Inferred Brick classes for:")
-    res = model.query("""SELECT DISTINCT ?ent ?type WHERE { 
-        ?ent rdf:type ?type . 
+    res = model.query("""SELECT DISTINCT ?ent ?type WHERE {
+        ?ent rdf:type ?type .
         ?type rdfs:subClassOf* brick:Entity .
         ?ent rdf:type/rdfs:subClassOf* brick:Entity .
         ?ent a ph:Entity  .
@@ -126,9 +126,10 @@ def run(haystack_file: str, output_file: str):
     entities = model.query("SELECT DISTINCT ?ent WHERE { ?ent rdf:type/rdfs:subClassOf* brick:Entity }")
     for (ent,) in entities:
         simple_g += model.cbd(ent)
-    #for (s, p, o) in simple_g:
-    #    if PH in s or PH in p or PH in o:
-    #        simple_g.remove((s, p, o))
+    # removes any PH triples
+    # for (s, p, o) in simple_g:
+    #     if PH in s or PH in p or PH in o:
+    #         simple_g.remove((s, p, o))
     simple_g -= brick
 
     simple_g.serialize(output_file, format=rdflib.util.guess_format(output_file) or "ttl")
