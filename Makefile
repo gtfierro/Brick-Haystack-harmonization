@@ -1,4 +1,7 @@
 .PHONY: install-deps visualize-taxonomy check-taxonomy all clean convert-haystack-to-ttl demo
+JSON_FILES := $(wildcard data/haystack-models/*.json)
+TTL_FILES := $(JSON_FILES:.json=.ttl)
+CONVERTED_TTL_FILES := $(wildcard data/converted-models/*.ttl)
 
 all: files convert-haystack-to-ttl convert-brick-to-haystack demo
 
@@ -15,9 +18,8 @@ visualize-taxonomy:
 check-taxonomy:
 	poetry run check-brick Brick.ttl unified_taxonomy.yaml
 
-convert-haystack-to-ttl: data/haystack-models/minimum.ttl data/haystack-models/charlie.ttl
-
-convert-brick-to-haystack: data/converted-models/g36-vav-a2.ttl
+convert-haystack-to-ttl: $(TTL_FILES)
+convert-brick-to-haystack: $(CONVERTED_TTL_FILES)
 
 data/xetolib/bh.xeto: data/brick-haystack.csv brick_haystack_harmonization/bh_to_xeto.py
 	poetry run bh-to-xeto data/brick-haystack.csv data/xetolib/bh.xeto
