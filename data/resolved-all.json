@@ -285,25 +285,11 @@
         }
       },
       "Brick_VAV": {
-        "base": "xetolib::Brick_Terminal_Unit",
+        "base": "ph::Entity",
         "doc": "See Variable_Air_Volume_Box",
         "uri": "https://brickschema.org/schema/Brick#VAV",
         "slots": {
           "equip": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equipment": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "hvac": {
-            "type": "sys::Marker"
-          },
-          "terminal": {
-            "type": "sys::Marker"
-          },
-          "unit": {
             "type": "sys::Marker"
           },
           "vav": {
@@ -312,34 +298,11 @@
         }
       },
       "Brick_RVAV": {
-        "base": "xetolib::Brick_Variable_Air_Volume_Box",
+        "base": "ph::Entity",
         "doc": "See Variable_Air_Volume_Box_With_Reheat",
         "uri": "https://brickschema.org/schema/Brick#RVAV",
         "slots": {
           "equip": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "equipment": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "hvac": {
-            "type": "sys::Marker"
-          },
-          "terminal": {
-            "type": "sys::Marker"
-          },
-          "unit": {
-            "type": "sys::Marker"
-          },
-          "variable": {
-            "type": "sys::Marker"
-          },
-          "volume": {
-            "type": "sys::Marker"
-          },
-          "box": {
             "type": "sys::Marker"
           },
           "reheat": {
@@ -359,10 +322,10 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equipment": {
+          "hvac": {
             "type": "sys::Marker"
           },
-          "hvac": {
+          "equipment": {
             "type": "sys::Marker"
           },
           "damper": {
@@ -379,10 +342,10 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "equipment": {
+          "hvac": {
             "type": "sys::Marker"
           },
-          "hvac": {
+          "equipment": {
             "type": "sys::Marker"
           },
           "damper": {
@@ -403,13 +366,50 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
+          "hvac": {
+            "type": "sys::Marker"
+          },
           "equipment": {
             "type": "sys::Marker"
+          },
+          "fan": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_AHU": {
+        "base": "ph::Entity",
+        "doc": "Assembly consisting of sections containing a fan or fans and other necessary equipment to perform one or more of the following functions: circulating, filtration, heating, cooling, heat recovery, humidifying, dehumidifying, and mixing of air. Is usually connected to an air-distribution system.",
+        "uri": "https://brickschema.org/schema/Brick#AHU",
+        "slots": {
+          "ahu": {
+            "type": "sys::Marker"
+          },
+          "equip": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Mixed_Damper": {
+        "base": "xetolib::Brick_Damper",
+        "doc": "A damper that modulates the flow of the mixed outside and return air streams",
+        "uri": "https://brickschema.org/schema/Brick#Mixed_Damper",
+        "slots": {
+          "equip": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
           },
           "hvac": {
             "type": "sys::Marker"
           },
-          "fan": {
+          "equipment": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "mixed": {
             "type": "sys::Marker"
           }
         }
@@ -770,10 +770,10 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "start": {
+          "stop": {
             "type": "sys::Marker"
           },
-          "stop": {
+          "start": {
             "type": "sys::Marker"
           },
           "call": {
@@ -851,22 +851,14 @@
         }
       },
       "Brick_Run_Time_Sensor": {
-        "base": "xetolib::Brick_Duration_Sensor",
+        "base": "ph::Entity",
         "doc": "Measures the duration for which a device was in an active or \"on\" state",
         "uri": "https://brickschema.org/schema/Brick#Run_Time_Sensor",
         "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "duration": {
+          "run": {
             "type": "sys::Marker"
           },
-          "run": {
+          "sensor": {
             "type": "sys::Marker"
           },
           "time": {
@@ -875,325 +867,236 @@
         }
       },
       "Brick_Discharge_Air_Temperature_Sensor": {
-        "base": "xetolib::Brick_Air_Temperature_Sensor",
+        "base": "ph::Entity",
         "doc": "Measures the temperature of discharge air",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Sensor",
         "slots": {
-          "point": {
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
             "type": "sys::Marker"
           },
           "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Air_Temperature_Setpoint",
+        "base": "ph::Entity",
         "doc": "Sets temperature of discharge air",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Setpoint",
         "slots": {
-          "point": {
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
             "type": "sys::Marker"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Temperature_Deadband_Setpoint": {
-        "base": "xetolib::Brick_Discharge_Air_Temperature_Setpoint",
+        "base": "ph::Entity",
         "doc": "Sets the size of a deadband of temperature of discharge air",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Deadband_Setpoint",
         "slots": {
-          "point": {
+          "air": {
+            "type": "sys::Marker"
+          },
+          "deadband": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
             "type": "sys::Marker"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "deadband": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Heating_Discharge_Air_Temperature_Deadband_Setpoint": {
-        "base": "xetolib::Brick_Discharge_Air_Temperature_Deadband_Setpoint",
+        "base": "ph::Entity",
         "doc": "Sets the size of a deadband of temperature of heating discharge air",
         "uri": "https://brickschema.org/schema/Brick#Heating_Discharge_Air_Temperature_Deadband_Setpoint",
         "slots": {
-          "point": {
+          "air": {
+            "type": "sys::Marker"
+          },
+          "deadband": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "heating": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
             "type": "sys::Marker"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "deadband": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "heating": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Cooling_Discharge_Air_Temperature_Deadband_Setpoint": {
-        "base": "xetolib::Brick_Discharge_Air_Temperature_Cooling_Setpoint",
+        "base": "ph::Entity",
         "doc": "Sets the size of a deadband of temperature of cooling discharge air",
         "uri": "https://brickschema.org/schema/Brick#Cooling_Discharge_Air_Temperature_Deadband_Setpoint",
         "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "cool": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
           "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "cooling": {
             "type": "sys::Marker"
           },
           "deadband": {
             "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "sp": {
+            "type": "sys::Marker"
+          },
+          "temp": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Humidity_Sensor": {
-        "base": "xetolib::Brick_Relative_Humidity_Sensor",
+        "base": "ph::Entity",
         "doc": "Measures the relative humidity of discharge air",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Humidity_Sensor",
         "slots": {
-          "point": {
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "humidity": {
             "type": "sys::Marker"
           },
           "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "absolute": {
-            "type": "sys::Marker"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "humidity": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Humidity_Setpoint": {
-        "base": "xetolib::Brick_Humidity_Setpoint",
+        "base": "ph::Entity",
         "doc": "Humidity setpoint for discharge air",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Humidity_Setpoint",
         "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "humidity": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
           "air": {
             "type": "sys::Marker"
           },
           "discharge": {
             "type": "sys::Marker"
           },
+          "humidity": {
+            "type": "sys::Marker"
+          },
           "setpoint": {
+            "type": "sys::Marker"
+          },
+          "sp": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Static_Pressure_Sensor": {
-        "base": "xetolib::Brick_Static_Pressure_Sensor",
+        "base": "ph::Entity",
         "doc": "The static pressure of air within discharge regions of an HVAC system",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Sensor",
         "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
           "air": {
             "type": "sys::Marker"
           },
           "discharge": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          },
+          "sensor": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Static_Pressure_Setpoint": {
-        "base": "xetolib::Brick_Static_Pressure_Setpoint",
+        "base": "ph::Entity",
         "doc": "Sets static pressure of discharge air",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Setpoint",
         "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
           "air": {
             "type": "sys::Marker"
           },
           "discharge": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "sp": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Velocity_Pressure_Sensor": {
-        "base": "xetolib::Brick_Velocity_Pressure_Sensor",
-        "doc": "Measures the difference between total pressure and static pressure",
+        "base": "ph::Entity",
+        "doc": "Top-level dicts with a unique identifier.\nSee `docHaystack::Ontology#entities` chapter.",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Velocity_Pressure_Sensor",
         "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "velocity": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
           "air": {
             "type": "sys::Marker"
           },
           "discharge": {
             "type": "sys::Marker"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "velocity": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Dewpoint_Sensor": {
-        "base": "xetolib::Brick_Dewpoint_Sensor",
+        "base": "ph::Entity",
         "doc": "Measures dewpoint of discharge air",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Dewpoint_Sensor",
         "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "dewpoint": {
-            "type": "sys::Marker"
-          },
           "air": {
             "type": "sys::Marker"
           },
@@ -1203,127 +1106,101 @@
           "discharge": {
             "type": "sys::Marker"
           },
+          "sensor": {
+            "type": "sys::Marker"
+          },
           "temp": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Flow_Sensor": {
-        "base": "xetolib::Brick_Air_Flow_Sensor",
+        "base": "ph::Entity",
         "doc": "Measures the rate of flow of discharge air",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Flow_Sensor",
         "slots": {
-          "point": {
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "flow": {
             "type": "sys::Marker"
           },
           "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "flow": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Discharge_Air_Flow_Setpoint": {
-        "base": "xetolib::Brick_Air_Flow_Setpoint",
+        "base": "ph::Entity",
         "doc": "Sets discharge air flow",
         "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Flow_Setpoint",
         "slots": {
-          "point": {
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "flow": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
             "type": "sys::Marker"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "flow": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Cooling_Discharge_Air_Flow_Setpoint": {
-        "base": "xetolib::Brick_Discharge_Air_Flow_Setpoint",
+        "base": "ph::Entity",
         "doc": "Sets discharge air flow for cooling",
         "uri": "https://brickschema.org/schema/Brick#Cooling_Discharge_Air_Flow_Setpoint",
         "slots": {
-          "point": {
+          "air": {
+            "type": "sys::Marker"
+          },
+          "cooling": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "flow": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
             "type": "sys::Marker"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "flow": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "cooling": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Heating_Discharge_Air_Flow_Setpoint": {
-        "base": "xetolib::Brick_Discharge_Air_Flow_Setpoint",
+        "base": "ph::Entity",
         "doc": "Sets discharge air flow for heating",
         "uri": "https://brickschema.org/schema/Brick#Heating_Discharge_Air_Flow_Setpoint",
         "slots": {
-          "point": {
+          "air": {
+            "type": "sys::Marker"
+          },
+          "discharge": {
+            "type": "sys::Marker"
+          },
+          "flow": {
+            "type": "sys::Marker"
+          },
+          "heating": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
             "type": "sys::Marker"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "flow": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "discharge": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "heating": {
             "type": "sys::Marker"
           }
         }
@@ -1415,29 +1292,10 @@
         }
       },
       "Brick_Heating_Supply_Air_Temperature_Deadband_Setpoint": {
-        "base": "xetolib::Brick_Heating_Temperature_Setpoint",
+        "base": "xetolib::Brick_Discharge_Air_Temperature_Heating_Setpoint",
         "doc": "Sets the size of a deadband of temperature of supply air for heating",
         "uri": "https://brickschema.org/schema/Brick#Heating_Supply_Air_Temperature_Deadband_Setpoint",
         "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "heat": {
-            "type": "sys::Marker"
-          },
           "air": {
             "type": "sys::Marker"
           },
@@ -1447,7 +1305,16 @@
           "heating": {
             "type": "sys::Marker"
           },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "sp": {
+            "type": "sys::Marker"
+          },
           "supply": {
+            "type": "sys::Marker"
+          },
+          "temp": {
             "type": "sys::Marker"
           }
         }
@@ -1547,7 +1414,7 @@
         }
       },
       "Brick_Supply_Air_Static_Pressure_Sensor": {
-        "base": "xetolib::Brick_Static_Pressure_Sensor",
+        "base": "xetolib::Brick_Air_Static_Pressure_Sensor",
         "doc": "The static pressure of air within supply regions of an HVAC system",
         "uri": "https://brickschema.org/schema/Brick#Supply_Air_Static_Pressure_Sensor",
         "slots": {
@@ -1564,6 +1431,10 @@
             "doc": "Marker labels a dict with typing information"
           },
           "air": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "static": {
             "type": "sys::Marker"
           },
           "supply": {
@@ -1601,8 +1472,8 @@
         }
       },
       "Brick_Supply_Air_Velocity_Pressure_Sensor": {
-        "base": "xetolib::Brick_Velocity_Pressure_Sensor",
-        "doc": "Measures the difference between total pressure and static pressure",
+        "base": "xetolib::Brick_Air_Velocity_Pressure_Sensor",
+        "doc": "Measures the difference between total air pressure and static air pressure.",
         "uri": "https://brickschema.org/schema/Brick#Supply_Air_Velocity_Pressure_Sensor",
         "slots": {
           "point": {
@@ -2411,7 +2282,7 @@
         }
       },
       "Brick_Exhaust_Air_Static_Pressure_Sensor": {
-        "base": "xetolib::Brick_Static_Pressure_Sensor",
+        "base": "xetolib::Brick_Air_Static_Pressure_Sensor",
         "doc": "The static pressure of air within exhaust regions of an HVAC system",
         "uri": "https://brickschema.org/schema/Brick#Exhaust_Air_Static_Pressure_Sensor",
         "slots": {
@@ -2428,6 +2299,10 @@
             "doc": "Marker labels a dict with typing information"
           },
           "air": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "static": {
             "type": "sys::Marker"
           },
           "exhaust": {
@@ -2835,15 +2710,11 @@
         "uri": "https://brickschema.org/schema/Brick#Differential_Pressure_Setpoint",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "sp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
-          },
-          "differential": {
-            "type": "sys::Marker"
           },
           "delta": {
             "type": "sys::Marker"
@@ -3148,7 +3019,7 @@
         }
       },
       "Brick_Chilled_Water_Differential_Pressure_Sensor": {
-        "base": "xetolib::Brick_Differential_Pressure_Sensor",
+        "base": "xetolib::Brick_Water_Differential_Pressure_Sensor",
         "doc": "Measures the difference in water pressure on either side of a chilled water valve",
         "uri": "https://brickschema.org/schema/Brick#Chilled_Water_Differential_Pressure_Sensor",
         "slots": {
@@ -3168,10 +3039,14 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "chilled": {
+          "water": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "differential": {
             "type": "sys::Marker"
           },
-          "water": {
+          "chilled": {
             "type": "sys::Marker"
           }
         }
@@ -3186,10 +3061,6 @@
             "doc": "Marker labels a dict with typing information"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "differential": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
@@ -3208,6 +3079,9 @@
           "water": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
+          },
+          "differential": {
+            "type": "sys::Marker"
           },
           "chilled": {
             "type": "sys::Marker"
@@ -3271,13 +3145,12 @@
         }
       },
       "Brick_Hot_Water_Differential_Temperature_Sensor": {
-        "base": "xetolib::Brick_Entering_Hot_Water_Temperature_Sensor",
+        "base": "xetolib::Brick_Water_Differential_Temperature_Sensor",
         "doc": "Measures the difference in temperature between the entering water to the boiler or other water heating device and leaving water from the same boiler or other water heating device",
         "uri": "https://brickschema.org/schema/Brick#Hot_Water_Differential_Temperature_Sensor",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "sensor": {
             "type": "sys::Marker",
@@ -3291,20 +3164,17 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "entering": {
-            "type": "sys::Marker"
-          },
-          "hot": {
+          "delta": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "delta": {
+          "hot": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Hot_Water_Differential_Pressure_Sensor": {
-        "base": "xetolib::Brick_Differential_Pressure_Sensor",
+        "base": "xetolib::Brick_Water_Differential_Pressure_Sensor",
         "doc": "Measures the difference in water pressure on either side of a hot water valve",
         "uri": "https://brickschema.org/schema/Brick#Hot_Water_Differential_Pressure_Sensor",
         "slots": {
@@ -3324,10 +3194,14 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "hot": {
+          "water": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "differential": {
             "type": "sys::Marker"
           },
-          "water": {
+          "hot": {
             "type": "sys::Marker"
           }
         }
@@ -3342,10 +3216,6 @@
             "doc": "Marker labels a dict with typing information"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "differential": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
@@ -3364,6 +3234,9 @@
           "water": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
+          },
+          "differential": {
+            "type": "sys::Marker"
           },
           "hot": {
             "type": "sys::Marker"
@@ -3723,13 +3596,12 @@
         }
       },
       "Brick_Effective_Zone_Air_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Effective_Air_Temperature_Setpoint",
-        "doc": "Sets temperature of air",
+        "base": "xetolib::Brick_Zone_Air_Temperature_Setpoint",
+        "doc": "Sets temperature of zone air",
         "uri": "https://brickschema.org/schema/Brick#Effective_Zone_Air_Temperature_Setpoint",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "sp": {
             "type": "sys::Marker",
@@ -3747,11 +3619,11 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "effective": {
+          "zone": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "zone": {
+          "effective": {
             "type": "sys::Marker"
           }
         }
@@ -3843,7 +3715,7 @@
         }
       },
       "Brick_Building_Air_Static_Pressure_Sensor": {
-        "base": "xetolib::Brick_Static_Pressure_Sensor",
+        "base": "xetolib::Brick_Air_Static_Pressure_Sensor",
         "doc": "The static pressure of air within a building",
         "uri": "https://brickschema.org/schema/Brick#Building_Air_Static_Pressure_Sensor",
         "slots": {
@@ -3860,6 +3732,10 @@
             "doc": "Marker labels a dict with typing information"
           },
           "air": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "static": {
             "type": "sys::Marker"
           },
           "building": {
@@ -3868,7 +3744,7 @@
         }
       },
       "Brick_Building_Air_Static_Pressure_Setpoint": {
-        "base": "xetolib::Brick_Static_Pressure_Setpoint",
+        "base": "xetolib::Brick_Air_Pressure_Setpoint",
         "doc": "Sets static pressure of the entire building",
         "uri": "https://brickschema.org/schema/Brick#Building_Air_Static_Pressure_Setpoint",
         "slots": {
@@ -3884,14 +3760,14 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "setpoint": {
+          "air": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "air": {
+          "building": {
             "type": "sys::Marker"
           },
-          "building": {
+          "setpoint": {
             "type": "sys::Marker"
           }
         }
@@ -4245,55 +4121,49 @@
         }
       },
       "Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Air_Temperature_Setpoint",
+        "base": "ph::Point",
         "template": "Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint",
-        "doc": "Sets temperature of air",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
         "uri": "urn:___param___#Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint",
         "slots": {
           "point": {
             "type": "sys::Marker"
           },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
           },
           "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "discharge": {
             "type": "sys::Marker"
           },
           "hotDeck": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "temp": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor": {
-        "base": "xetolib::Brick_Static_Pressure_Sensor",
+        "base": "ph::Point",
         "template": "Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor",
-        "doc": "Measures resistance to airflow in a heating and cooling system's components and duct work",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
         "uri": "urn:___param___#Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
           },
           "air": {
             "type": "sys::Marker"
@@ -4302,31 +4172,26 @@
             "type": "sys::Marker"
           },
           "hotDeck": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint": {
-        "base": "xetolib::Brick_Static_Pressure_Setpoint",
+        "base": "ph::Point",
         "template": "Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint",
-        "doc": "Sets static pressure",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
         "uri": "urn:___param___#Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
           },
           "air": {
             "type": "sys::Marker"
@@ -4336,59 +4201,59 @@
           },
           "hotDeck": {
             "type": "sys::Marker"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
           }
         }
       },
       "Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Air_Temperature_Setpoint",
+        "base": "ph::Point",
         "template": "Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint",
-        "doc": "Sets temperature of air",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
         "uri": "urn:___param___#Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint",
         "slots": {
           "point": {
             "type": "sys::Marker"
           },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
           },
           "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "coldDeck": {
             "type": "sys::Marker"
           },
           "discharge": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "temp": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor": {
-        "base": "xetolib::Brick_Static_Pressure_Sensor",
+        "base": "ph::Point",
         "template": "Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor",
-        "doc": "Measures resistance to airflow in a heating and cooling system's components and duct work",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
         "uri": "urn:___param___#Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
           },
           "air": {
             "type": "sys::Marker"
@@ -4397,31 +4262,26 @@
             "type": "sys::Marker"
           },
           "discharge": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
             "type": "sys::Marker"
           }
         }
       },
       "Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint": {
-        "base": "xetolib::Brick_Static_Pressure_Setpoint",
+        "base": "ph::Point",
         "template": "Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint",
-        "doc": "Sets static pressure",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
         "uri": "urn:___param___#Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
           },
           "air": {
             "type": "sys::Marker"
@@ -4430,6 +4290,12 @@
             "type": "sys::Marker"
           },
           "discharge": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          },
+          "setpoint": {
             "type": "sys::Marker"
           }
         }
@@ -4476,46 +4342,6 @@
             "type": "sys::Marker"
           },
           "mixed": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Damper_Position_Command": {
-        "base": "xetolib::Brick_Command",
-        "template": "Brick_Damper_Position_Command",
-        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
-        "uri": "urn:___param___#Brick_Damper_Position_Command",
-        "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "cmd": {
-            "type": "sys::Marker"
-          },
-          "damper": {
-            "type": "sys::Marker"
-          },
-          "inlet": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Damper_Position_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "template": "Brick_Damper_Position_Sensor",
-        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
-        "uri": "urn:___param___#Brick_Damper_Position_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker"
-          },
-          "sensor": {
-            "type": "sys::Marker"
-          },
-          "damper": {
-            "type": "sys::Marker"
-          },
-          "inlet": {
             "type": "sys::Marker"
           }
         }
@@ -4908,6 +4734,40 @@
             "type": "sys::Marker"
           },
           "override": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Damper_Position_Command": {
+        "base": "xetolib::Brick_Command",
+        "template": "Brick_Damper_Position_Command",
+        "doc": "A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.",
+        "uri": "urn:___param___#Brick_Damper_Position_Command",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "cmd": {
+            "type": "sys::Marker"
+          },
+          "damper": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Damper_Position_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "template": "Brick_Damper_Position_Sensor",
+        "doc": "A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).",
+        "uri": "urn:___param___#Brick_Damper_Position_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          },
+          "sensor": {
+            "type": "sys::Marker"
+          },
+          "damper": {
             "type": "sys::Marker"
           }
         }
@@ -6429,10 +6289,10 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "start": {
+          "stop": {
             "type": "sys::Marker"
           },
-          "stop": {
+          "start": {
             "type": "sys::Marker"
           },
           "call": {
@@ -7505,14 +7365,9 @@
         "uri": "urn:___param___#Brick_Filter_Differential_Pressure_Setpoint",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "differential": {
             "type": "sys::Marker"
           },
           "delta": {
@@ -7612,14 +7467,9 @@
         "uri": "urn:___param___#Brick_Return_Air_Filter_Differential_Pressure_Setpoint",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "differential": {
             "type": "sys::Marker"
           },
           "delta": {
@@ -7722,14 +7572,9 @@
         "uri": "urn:___param___#Brick_Intake_Air_Filter_Differential_Pressure_Setpoint",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "differential": {
             "type": "sys::Marker"
           },
           "delta": {
@@ -7915,21 +7760,18 @@
         }
       },
       "Brick_Compressor_Run_Time_Sensor": {
-        "base": "xetolib::Brick_Duration_Sensor",
+        "base": "ph::Point",
         "template": "Brick_Compressor_Run_Time_Sensor",
-        "doc": "Measures the duration of a phenomenon or event",
+        "doc": "Data point such as a sensor or actuator.\nSee `docHaystack::Points` chapter.",
         "uri": "urn:___param___#Brick_Compressor_Run_Time_Sensor",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "duration": {
             "type": "sys::Marker"
+          },
+          "equips": {
+            "type": "sys::Query",
+            "of": "ph::Equip",
+            "via": "equipRef+"
           },
           "compressor": {
             "type": "sys::Marker"
@@ -8269,28 +8111,10 @@
           }
         }
       },
-      "Brick_Differential_Setpoint": {
-        "base": "xetolib::Brick_Setpoint",
-        "doc": "A type of Setpoints that is related to the difference between two measurements",
-        "uri": "https://brickschema.org/schema/Brick#Differential_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "differential": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Electric_Power_Sensor": {
-        "base": "xetolib::Brick_Power_Sensor",
-        "doc": "Measures the amount of instantaneous electric power consumed",
-        "uri": "https://brickschema.org/schema/Brick#Electric_Power_Sensor",
+      "Brick_Chilled_Water_Temperature_Sensor": {
+        "base": "xetolib::Brick_Water_Temperature_Sensor",
+        "doc": "Measures the temperature of chilled water",
+        "uri": "https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
@@ -8300,43 +8124,15 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "power": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "electric": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Discharge_Air_Temperature_Cooling_Setpoint": {
-        "base": "xetolib::Brick_Cooling_Temperature_Setpoint",
-        "doc": "Sets temperature of discharge air for cooling",
-        "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Cooling_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker"
-          },
           "temp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "cool": {
+          "water": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "air": {
-            "type": "sys::Marker"
-          },
-          "discharge": {
+          "chilled": {
             "type": "sys::Marker"
           }
         }
@@ -8359,40 +8155,50 @@
           }
         }
       },
-      "Brick_Class": {
-        "base": "ph::Entity",
-        "doc": "Top-level dicts with a unique identifier.\nSee `docHaystack::Ontology#entities` chapter.",
-        "uri": "https://brickschema.org/schema/Brick#Class"
-      },
-      "Brick_Cooling_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Temperature_Setpoint",
-        "doc": "Sets temperature for cooling",
-        "uri": "https://brickschema.org/schema/Brick#Cooling_Temperature_Setpoint",
+      "Brick_CO2_Sensor": {
+        "base": "xetolib::Brick_Air_Quality_Sensor",
+        "doc": "Measures properties of CO2 in air",
+        "uri": "https://brickschema.org/schema/Brick#CO2_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "sp": {
+          "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "setpoint": {
+          "air": {
             "type": "sys::Marker"
           },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+          "quality": {
+            "type": "sys::Marker"
           },
-          "cool": {
+          "co2": {
             "type": "sys::Marker"
           }
         }
       },
-      "Brick_Velocity_Pressure_Sensor": {
-        "base": "xetolib::Brick_Pressure_Sensor",
-        "doc": "Measures the difference between total pressure and static pressure",
-        "uri": "https://brickschema.org/schema/Brick#Velocity_Pressure_Sensor",
+      "Brick_HVAC_Equipment": {
+        "base": "xetolib::Brick_Equipment",
+        "doc": "See Heating_Ventilation_Air_Conditioning_System",
+        "uri": "https://brickschema.org/schema/Brick#HVAC_Equipment",
+        "slots": {
+          "equip": {
+            "type": "sys::Marker"
+          },
+          "hvac": {
+            "type": "sys::Marker"
+          },
+          "equipment": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Pressure_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Measure the amount of force acting on a unit area",
+        "uri": "https://brickschema.org/schema/Brick#Pressure_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
@@ -8403,18 +8209,32 @@
             "doc": "Marker labels a dict with typing information"
           },
           "pressure": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "velocity": {
             "type": "sys::Marker"
           }
         }
       },
-      "Brick_Water_Flow_Setpoint": {
-        "base": "xetolib::Brick_Flow_Setpoint",
-        "doc": "Sets the target flow rate of water",
-        "uri": "https://brickschema.org/schema/Brick#Water_Flow_Setpoint",
+      "Brick_Power_Sensor": {
+        "base": "xetolib::Brick_Sensor",
+        "doc": "Measures the amount of instantaneous power consumed",
+        "uri": "https://brickschema.org/schema/Brick#Power_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "power": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Humidity_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "doc": "Sets humidity",
+        "uri": "https://brickschema.org/schema/Brick#Humidity_Setpoint",
         "slots": {
           "point": {
             "type": "sys::Marker",
@@ -8424,14 +8244,25 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "flow": {
+          "humidity": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_On_Status": {
+        "base": "xetolib::Brick_Status",
+        "doc": "Indicates if a control loop, relay or equipment is on",
+        "uri": "https://brickschema.org/schema/Brick#On_Status",
+        "slots": {
+          "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "setpoint": {
-            "type": "sys::Marker"
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
           },
-          "water": {
+          "on": {
             "type": "sys::Marker"
           }
         }
@@ -8463,51 +8294,32 @@
           }
         }
       },
-      "Brick_Humidity_Setpoint": {
-        "base": "xetolib::Brick_Setpoint",
-        "doc": "Sets humidity",
-        "uri": "https://brickschema.org/schema/Brick#Humidity_Setpoint",
+      "Brick_Air_Enthalpy_Sensor": {
+        "base": "xetolib::Brick_Enthalpy_Sensor",
+        "doc": "Measures the total heat content of air",
+        "uri": "https://brickschema.org/schema/Brick#Air_Enthalpy_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "sp": {
+          "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "humidity": {
+          "enthalpy": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
             "type": "sys::Marker"
           }
         }
       },
-      "Brick_Terminal_Unit": {
-        "base": "xetolib::Brick_HVAC_Equipment",
-        "doc": "A device that regulates the volumetric flow rate and/or the temperature of the controlled medium.",
-        "uri": "https://brickschema.org/schema/Brick#Terminal_Unit",
-        "slots": {
-          "equip": {
-            "type": "sys::Marker"
-          },
-          "equipment": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "hvac": {
-            "type": "sys::Marker"
-          },
-          "terminal": {
-            "type": "sys::Marker"
-          },
-          "unit": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Effective_Air_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Air_Temperature_Setpoint",
-        "doc": "Sets temperature of air",
-        "uri": "https://brickschema.org/schema/Brick#Effective_Air_Temperature_Setpoint",
+      "Brick_Cooling_Temperature_Setpoint": {
+        "base": "xetolib::Brick_Temperature_Setpoint",
+        "doc": "Sets temperature for cooling",
+        "uri": "https://brickschema.org/schema/Brick#Cooling_Temperature_Setpoint",
         "slots": {
           "point": {
             "type": "sys::Marker",
@@ -8518,345 +8330,26 @@
             "doc": "Marker labels a dict with typing information"
           },
           "setpoint": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "temp": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "air": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "effective": {
+          "cool": {
             "type": "sys::Marker"
           }
         }
       },
-      "Brick_Entering_Hot_Water_Temperature_Sensor": {
-        "base": "xetolib::Brick_Water_Temperature_Sensor",
-        "doc": "Measures the temperature of water enteringed to a hot water system",
-        "uri": "https://brickschema.org/schema/Brick#Entering_Hot_Water_Temperature_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "water": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "entering": {
-            "type": "sys::Marker"
-          },
-          "hot": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_HVAC_Equipment": {
-        "base": "xetolib::Brick_Equipment",
-        "doc": "See Heating_Ventilation_Air_Conditioning_System",
-        "uri": "https://brickschema.org/schema/Brick#HVAC_Equipment",
-        "slots": {
-          "equip": {
-            "type": "sys::Marker"
-          },
-          "equipment": {
-            "type": "sys::Marker"
-          },
-          "hvac": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Water_Flow_Sensor": {
-        "base": "xetolib::Brick_Flow_Sensor",
-        "doc": "Measures the rate of flow of water",
-        "uri": "https://brickschema.org/schema/Brick#Water_Flow_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "flow": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "water": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_CO2_Sensor": {
-        "base": "xetolib::Brick_Air_Quality_Sensor",
-        "doc": "Measures properties of CO2 in air",
-        "uri": "https://brickschema.org/schema/Brick#CO2_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "air": {
-            "type": "sys::Marker"
-          },
-          "quality": {
-            "type": "sys::Marker"
-          },
-          "co2": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Duration_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Measures the duration of a phenomenon or event",
-        "uri": "https://brickschema.org/schema/Brick#Duration_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "duration": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_CO2_Setpoint": {
+      "Brick_Differential_Setpoint": {
         "base": "xetolib::Brick_Setpoint",
-        "doc": "Sets some property of CO2",
-        "uri": "https://brickschema.org/schema/Brick#CO2_Setpoint",
+        "doc": "A type of Setpoints that is related to the difference between two measurements",
+        "uri": "https://brickschema.org/schema/Brick#Differential_Setpoint",
         "slots": {
           "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
+            "type": "sys::Marker"
           },
           "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "co2": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Pressure_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Measure the amount of force acting on a unit area",
-        "uri": "https://brickschema.org/schema/Brick#Pressure_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Water_Differential_Pressure_Setpoint": {
-        "base": "xetolib::Brick_Differential_Pressure_Setpoint",
-        "doc": "Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit",
-        "uri": "https://brickschema.org/schema/Brick#Water_Differential_Pressure_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "differential": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "delta": {
-            "type": "sys::Marker"
-          },
-          "pressure": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "setpoint": {
-            "type": "sys::Marker"
-          },
-          "water": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Pressure_Setpoint": {
-        "base": "xetolib::Brick_Setpoint",
-        "doc": "Sets pressure",
-        "uri": "https://brickschema.org/schema/Brick#Pressure_Setpoint",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "pressure": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Run_Status": {
-        "base": "xetolib::Brick_Start_Stop_Status",
-        "doc": "Indicates the active/inactive status of a control loop (but not equipment activities or relays -- use On/Off for this purpose)",
-        "uri": "https://brickschema.org/schema/Brick#Run_Status",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "status": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "off": {
-            "type": "sys::Marker"
-          },
-          "run": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "start": {
-            "type": "sys::Marker"
-          },
-          "stop": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Off_Status": {
-        "base": "xetolib::Brick_Status",
-        "doc": "Indicates if a control loop, relay or equipment is off",
-        "uri": "https://brickschema.org/schema/Brick#Off_Status",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "status": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "off": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Point": {
-        "base": "xetolib::Brick_Class",
-        "doc": "Top-level dicts with a unique identifier.\nSee `docHaystack::Ontology#entities` chapter.",
-        "uri": "https://brickschema.org/schema/Brick#Point",
-        "slots": {
-          "point": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_On_Status": {
-        "base": "xetolib::Brick_Status",
-        "doc": "Indicates if a control loop, relay or equipment is on",
-        "uri": "https://brickschema.org/schema/Brick#On_Status",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "status": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "on": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Chilled_Water_Temperature_Sensor": {
-        "base": "xetolib::Brick_Water_Temperature_Sensor",
-        "doc": "Measures the temperature of chilled water",
-        "uri": "https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor",
-        "slots": {
-          "point": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "sensor": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "temp": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "water": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "chilled": {
-            "type": "sys::Marker"
-          }
-        }
-      },
-      "Brick_Variable_Air_Volume_Box": {
-        "base": "xetolib::Brick_Terminal_Unit",
-        "doc": "A device that regulates the volume and temperature of air delivered to a zone by opening or closing a damper",
-        "uri": "https://brickschema.org/schema/Brick#Variable_Air_Volume_Box",
-        "slots": {
-          "equip": {
-            "type": "sys::Marker"
-          },
-          "equipment": {
-            "type": "sys::Marker",
-            "doc": "Marker labels a dict with typing information"
-          },
-          "hvac": {
-            "type": "sys::Marker"
-          },
-          "terminal": {
-            "type": "sys::Marker"
-          },
-          "unit": {
-            "type": "sys::Marker"
-          },
-          "variable": {
-            "type": "sys::Marker"
-          },
-          "volume": {
-            "type": "sys::Marker"
-          },
-          "box": {
             "type": "sys::Marker"
           }
         }
@@ -8891,10 +8384,237 @@
           }
         }
       },
-      "Brick_Power_Sensor": {
-        "base": "xetolib::Brick_Sensor",
-        "doc": "Measures the amount of instantaneous power consumed",
-        "uri": "https://brickschema.org/schema/Brick#Power_Sensor",
+      "Brick_Water_Flow_Setpoint": {
+        "base": "xetolib::Brick_Flow_Setpoint",
+        "doc": "Sets the target flow rate of water",
+        "uri": "https://brickschema.org/schema/Brick#Water_Flow_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "flow": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Point": {
+        "base": "xetolib::Brick_Class",
+        "doc": "Top-level dicts with a unique identifier.\nSee `docHaystack::Ontology#entities` chapter.",
+        "uri": "https://brickschema.org/schema/Brick#Point",
+        "slots": {
+          "point": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Class": {
+        "base": "ph::Entity",
+        "doc": "Top-level dicts with a unique identifier.\nSee `docHaystack::Ontology#entities` chapter.",
+        "uri": "https://brickschema.org/schema/Brick#Class"
+      },
+      "Brick_Air_Static_Pressure_Sensor": {
+        "base": "xetolib::Brick_Static_Pressure_Sensor",
+        "doc": "Measures the pressure exerted by the air in a system, not influenced by its motion.",
+        "uri": "https://brickschema.org/schema/Brick#Air_Static_Pressure_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          },
+          "static": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_CO2_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "doc": "Sets some property of CO2",
+        "uri": "https://brickschema.org/schema/Brick#CO2_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "co2": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Air_Pressure_Setpoint": {
+        "base": "xetolib::Brick_Pressure_Setpoint",
+        "doc": "Sets pressure",
+        "uri": "https://brickschema.org/schema/Brick#Air_Pressure_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "air": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Water_Differential_Pressure_Setpoint": {
+        "base": "xetolib::Brick_Differential_Pressure_Setpoint",
+        "doc": "Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit",
+        "uri": "https://brickschema.org/schema/Brick#Water_Differential_Pressure_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "delta": {
+            "type": "sys::Marker"
+          },
+          "pressure": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "setpoint": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          },
+          "differential": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Off_Status": {
+        "base": "xetolib::Brick_Status",
+        "doc": "Indicates if a control loop, relay or equipment is off",
+        "uri": "https://brickschema.org/schema/Brick#Off_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Run_Status": {
+        "base": "xetolib::Brick_Start_Stop_Status",
+        "doc": "Indicates the active/inactive status of a control loop (but not equipment activities or relays -- use On/Off for this purpose)",
+        "uri": "https://brickschema.org/schema/Brick#Run_Status",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "status": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "off": {
+            "type": "sys::Marker"
+          },
+          "run": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "stop": {
+            "type": "sys::Marker"
+          },
+          "start": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Water_Flow_Sensor": {
+        "base": "xetolib::Brick_Flow_Sensor",
+        "doc": "Measures the rate of flow of water",
+        "uri": "https://brickschema.org/schema/Brick#Water_Flow_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "flow": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "water": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Discharge_Air_Temperature_Heating_Setpoint": {
+        "base": "ph::Entity",
+        "doc": "Sets temperature of discharge air for heating",
+        "uri": "https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Heating_Setpoint"
+      },
+      "Brick_Pressure_Setpoint": {
+        "base": "xetolib::Brick_Setpoint",
+        "doc": "Sets pressure",
+        "uri": "https://brickschema.org/schema/Brick#Pressure_Setpoint",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sp": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          }
+        }
+      },
+      "Brick_Electric_Power_Sensor": {
+        "base": "xetolib::Brick_Power_Sensor",
+        "doc": "Measures the amount of instantaneous electric power consumed",
+        "uri": "https://brickschema.org/schema/Brick#Electric_Power_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
@@ -8905,14 +8625,18 @@
             "doc": "Marker labels a dict with typing information"
           },
           "power": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "electric": {
             "type": "sys::Marker"
           }
         }
       },
-      "Brick_Air_Enthalpy_Sensor": {
-        "base": "xetolib::Brick_Enthalpy_Sensor",
-        "doc": "Measures the total heat content of air",
-        "uri": "https://brickschema.org/schema/Brick#Air_Enthalpy_Sensor",
+      "Brick_Water_Differential_Pressure_Sensor": {
+        "base": "xetolib::Brick_Differential_Pressure_Sensor",
+        "doc": "Measures the difference in water pressure between two points in a system.",
+        "uri": "https://brickschema.org/schema/Brick#Water_Differential_Pressure_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
@@ -8922,36 +8646,39 @@
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "enthalpy": {
+          "pressure": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "air": {
+          "delta": {
+            "type": "sys::Marker"
+          },
+          "water": {
+            "type": "sys::Marker"
+          },
+          "differential": {
             "type": "sys::Marker"
           }
         }
       },
-      "Brick_Heating_Temperature_Setpoint": {
-        "base": "xetolib::Brick_Temperature_Setpoint",
-        "doc": "Sets temperature for heating",
-        "uri": "https://brickschema.org/schema/Brick#Heating_Temperature_Setpoint",
+      "Brick_Air_Velocity_Pressure_Sensor": {
+        "base": "xetolib::Brick_Velocity_Pressure_Sensor",
+        "doc": "Measures the difference between total air pressure and static air pressure.",
+        "uri": "https://brickschema.org/schema/Brick#Air_Velocity_Pressure_Sensor",
         "slots": {
           "point": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "sp": {
+          "sensor": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "setpoint": {
-            "type": "sys::Marker"
-          },
-          "temp": {
+          "pressure": {
             "type": "sys::Marker",
             "doc": "Marker labels a dict with typing information"
           },
-          "heat": {
+          "velocity": {
             "type": "sys::Marker"
           }
         }
@@ -8995,6 +8722,24 @@
           }
         }
       },
+      "Brick_Velocity_Pressure_Sensor": {
+        "base": "xetolib::Brick_Pressure_Sensor",
+        "doc": "Measures the difference between total pressure and static pressure",
+        "uri": "https://brickschema.org/schema/Brick#Velocity_Pressure_Sensor",
+        "slots": {
+          "point": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "sensor": {
+            "type": "sys::Marker",
+            "doc": "Marker labels a dict with typing information"
+          },
+          "pressure": {
+            "type": "sys::Marker"
+          }
+        }
+      },
       "Brick_Start_Stop_Status": {
         "base": "xetolib::Brick_On_Off_Status",
         "doc": "Indicates the active/inactive status of a control loop (but not equipment activities or relays -- use On/Off for this purpose)",
@@ -9014,10 +8759,10 @@
           "run": {
             "type": "sys::Marker"
           },
-          "start": {
+          "stop": {
             "type": "sys::Marker"
           },
-          "stop": {
+          "start": {
             "type": "sys::Marker"
           }
         }

@@ -399,6 +399,84 @@
             "custom": {
                 "precision": 1
             }
+        },
+        {
+            "id": {
+                "_kind": "ref",
+                "val": "c-0002"
+            },
+            "air": {
+                "_kind": "marker"
+            },
+            "co2": {
+                "_kind": "marker"
+            },
+            "cur": {
+                "_kind": "marker"
+            },
+            "dis": "Charlie AHU 1 CO2",
+            "equipRef": {
+                "_kind": "ref",
+                "val": "c-0001"
+            },
+            "his": {
+                "_kind": "marker"
+            },
+            "kind": "Number",
+            "point": {
+                "_kind": "marker"
+            },
+            "sensor": {
+                "_kind": "marker"
+            },
+            "siteRef": {
+                "_kind": "ref",
+                "val": "c-0000"
+            },
+            "tz": "New_York",
+            "unit": "ppm",
+            "zone": {
+                "_kind": "marker"
+            }
+        },
+        {
+            "id": {
+                "_kind": "ref",
+                "val": "c-0003"
+            },
+            "air": {
+                "_kind": "marker"
+            },
+            "co2": {
+                "_kind": "marker"
+            },
+            "cur": {
+                "_kind": "marker"
+            },
+            "dis": "Charlie AHU 1 CO2 Setpoint",
+            "equipRef": {
+                "_kind": "ref",
+                "val": "c-0001"
+            },
+            "his": {
+                "_kind": "marker"
+            },
+            "kind": "Number",
+            "point": {
+                "_kind": "marker"
+            },
+            "siteRef": {
+                "_kind": "ref",
+                "val": "c-0000"
+            },
+            "sp": {
+                "_kind": "marker"
+            },
+            "tz": "New_York",
+            "unit": "ppm",
+            "zone": {
+                "_kind": "marker"
+            }
         }
     ]
 }

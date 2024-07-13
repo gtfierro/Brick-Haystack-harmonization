@@ -9,10 +9,10 @@ Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Hot_Deck
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor:
@@ -25,10 +25,10 @@ Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Hot_Deck
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint:
@@ -41,10 +41,10 @@ Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Hot_Deck
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint:
@@ -57,10 +57,10 @@ Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Cold_Deck
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor:
@@ -73,10 +73,10 @@ Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Cold_Deck
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint:
@@ -89,10 +89,10 @@ Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Cold_Deck
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Mixed_Damper_Position_Command:
@@ -105,10 +105,10 @@ Brick_Mixed_Damper_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Mixed_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Mixed_Damper_Position_Sensor:
@@ -121,42 +121,10 @@ Brick_Mixed_Damper_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Mixed_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
-    args: {"name": "name"}
-        
-Brick_Damper_Position_Command:
-  body: >
-    @prefix P: <urn:___param___#> .
-    @prefix brick: <https://brickschema.org/schema/Brick#> .
-    P:name a brick:Position_Command ;
-        brick:isPointOf P:part .
-    P:part a brick:Damper ;
-        brick:hasPoint P:name .
-  dependencies:
-  - template: https://brickschema.org/schema/Brick#Damper
-    library: https://brickschema.org/schema/1.3/Brick
-    args: {"name": "part"}
-  - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
-    args: {"name": "name"}
-        
-Brick_Damper_Position_Sensor:
-  body: >
-    @prefix P: <urn:___param___#> .
-    @prefix brick: <https://brickschema.org/schema/Brick#> .
-    P:name a brick:Position_Sensor ;
-        brick:isPointOf P:part .
-    P:part a brick:Damper ;
-        brick:hasPoint P:name .
-  dependencies:
-  - template: https://brickschema.org/schema/Brick#Damper
-    library: https://brickschema.org/schema/1.3/Brick
-    args: {"name": "part"}
-  - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Damper_Position_Command:
@@ -169,10 +137,10 @@ Brick_Return_Damper_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Damper_Position_Sensor:
@@ -185,10 +153,10 @@ Brick_Return_Damper_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Damper_Overridden_Status:
@@ -201,10 +169,10 @@ Brick_Return_Damper_Overridden_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Overridden_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Damper_Override_Command:
@@ -217,10 +185,10 @@ Brick_Return_Damper_Override_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Override_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Outside_Damper_Position_Command:
@@ -233,10 +201,10 @@ Brick_Outside_Damper_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Outside_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Outside_Damper_Position_Sensor:
@@ -249,10 +217,10 @@ Brick_Outside_Damper_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Outside_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Outside_Damper_Overridden_Status:
@@ -265,10 +233,10 @@ Brick_Outside_Damper_Overridden_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Outside_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Overridden_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Outside_Damper_Override_Command:
@@ -281,10 +249,10 @@ Brick_Outside_Damper_Override_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Outside_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Override_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Economizer_Damper_Position_Command:
@@ -297,10 +265,10 @@ Brick_Economizer_Damper_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Economizer_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Economizer_Damper_Position_Sensor:
@@ -313,10 +281,10 @@ Brick_Economizer_Damper_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Economizer_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Economizer_Damper_Overridden_Status:
@@ -329,10 +297,10 @@ Brick_Economizer_Damper_Overridden_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Economizer_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Overridden_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Economizer_Damper_Override_Command:
@@ -345,10 +313,10 @@ Brick_Economizer_Damper_Override_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Economizer_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Override_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Exhaust_Damper_Position_Command:
@@ -361,10 +329,10 @@ Brick_Exhaust_Damper_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Exhaust_Damper_Position_Sensor:
@@ -377,10 +345,10 @@ Brick_Exhaust_Damper_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Exhaust_Damper_Overridden_Status:
@@ -393,10 +361,10 @@ Brick_Exhaust_Damper_Overridden_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Overridden_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Exhaust_Damper_Override_Command:
@@ -409,10 +377,42 @@ Brick_Exhaust_Damper_Override_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Override_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
+    args: {"name": "name"}
+        
+Brick_Damper_Position_Command:
+  body: >
+    @prefix P: <urn:___param___#> .
+    @prefix brick: <https://brickschema.org/schema/Brick#> .
+    P:name a brick:Position_Command ;
+        brick:isPointOf P:part .
+    P:part a brick:Damper ;
+        brick:hasPoint P:name .
+  dependencies:
+  - template: https://brickschema.org/schema/Brick#Damper
+    library: https://brickschema.org/schema/1.4/Brick
+    args: {"name": "part"}
+  - template: https://brickschema.org/schema/Brick#Position_Command
+    library: https://brickschema.org/schema/1.4/Brick
+    args: {"name": "name"}
+        
+Brick_Damper_Position_Sensor:
+  body: >
+    @prefix P: <urn:___param___#> .
+    @prefix brick: <https://brickschema.org/schema/Brick#> .
+    P:name a brick:Position_Sensor ;
+        brick:isPointOf P:part .
+    P:part a brick:Damper ;
+        brick:hasPoint P:name .
+  dependencies:
+  - template: https://brickschema.org/schema/Brick#Damper
+    library: https://brickschema.org/schema/1.4/Brick
+    args: {"name": "part"}
+  - template: https://brickschema.org/schema/Brick#Position_Sensor
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Damper_Command:
@@ -425,10 +425,10 @@ Brick_Damper_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Damper_Overridden_Status:
@@ -441,10 +441,10 @@ Brick_Damper_Overridden_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Overridden_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Damper_Override_Command:
@@ -457,10 +457,10 @@ Brick_Damper_Override_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Damper
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Override_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Discharge_Fan_On_Off_Command:
@@ -473,10 +473,10 @@ Brick_Discharge_Fan_On_Off_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Discharge_Fan_On_Off_Status:
@@ -489,10 +489,10 @@ Brick_Discharge_Fan_On_Off_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Discharge_Fan_Speed_Mode_Status:
@@ -505,10 +505,10 @@ Brick_Discharge_Fan_Speed_Mode_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Mode_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command:
@@ -522,13 +522,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status:
@@ -542,13 +542,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status:
@@ -562,13 +562,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Overridden_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command:
@@ -582,13 +582,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Override_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor:
@@ -602,13 +602,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint:
@@ -622,13 +622,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor:
@@ -642,13 +642,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Frequency_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor:
@@ -662,13 +662,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Active_Power_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor:
@@ -682,13 +682,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Current_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor:
@@ -702,13 +702,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Voltage_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor:
@@ -722,13 +722,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Torque_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor:
@@ -742,13 +742,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#DC_Bus_Voltage_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status:
@@ -762,13 +762,13 @@ Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Discharge_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Fault_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Fan_On_Off_Command:
@@ -781,10 +781,10 @@ Brick_Return_Fan_On_Off_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Fan_On_Off_Status:
@@ -797,10 +797,10 @@ Brick_Return_Fan_On_Off_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Fan_Speed_Mode_Status:
@@ -813,10 +813,10 @@ Brick_Return_Fan_Speed_Mode_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Mode_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command:
@@ -830,13 +830,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status:
@@ -850,13 +850,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status:
@@ -870,13 +870,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Overridden_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command:
@@ -890,13 +890,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Override_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor:
@@ -910,13 +910,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint:
@@ -930,13 +930,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor:
@@ -950,13 +950,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Frequency_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor:
@@ -970,13 +970,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Active_Power_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor:
@@ -990,13 +990,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Current_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor:
@@ -1010,13 +1010,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Voltage_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor:
@@ -1030,13 +1030,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Torque_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor:
@@ -1050,13 +1050,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#DC_Bus_Voltage_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status:
@@ -1070,13 +1070,13 @@ Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Fault_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Fan_Air_Flow_Sensor:
@@ -1089,10 +1089,10 @@ Brick_Return_Fan_Air_Flow_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Air_Flow_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Fan_Air_Flow_Setpoint:
@@ -1105,10 +1105,10 @@ Brick_Return_Fan_Air_Flow_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Air_Flow_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Exhaust_Fan_On_Off_Command:
@@ -1121,10 +1121,10 @@ Brick_Exhaust_Fan_On_Off_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Exhaust_Fan_On_Off_Status:
@@ -1137,10 +1137,10 @@ Brick_Exhaust_Fan_On_Off_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command:
@@ -1154,13 +1154,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status:
@@ -1174,13 +1174,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status:
@@ -1194,13 +1194,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Overridden_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command:
@@ -1214,13 +1214,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Override_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor:
@@ -1234,13 +1234,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint:
@@ -1254,13 +1254,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor:
@@ -1274,13 +1274,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Frequency_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor:
@@ -1294,13 +1294,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Active_Power_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor:
@@ -1314,13 +1314,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Current_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor:
@@ -1334,13 +1334,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Voltage_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor:
@@ -1354,13 +1354,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Torque_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor:
@@ -1374,13 +1374,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#DC_Bus_Voltage_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status:
@@ -1394,13 +1394,13 @@ Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Exhaust_Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Fault_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Fan_On_Off_Command:
@@ -1413,10 +1413,10 @@ Brick_Fan_On_Off_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Fan_On_Off_Status:
@@ -1429,10 +1429,10 @@ Brick_Fan_On_Off_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Fan_Speed_Mode_Status:
@@ -1445,10 +1445,10 @@ Brick_Fan_Speed_Mode_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Mode_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status:
@@ -1462,13 +1462,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Run_Request_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command:
@@ -1482,13 +1482,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status:
@@ -1502,13 +1502,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status:
@@ -1522,13 +1522,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Overridden_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command:
@@ -1542,13 +1542,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Override_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor:
@@ -1562,13 +1562,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint:
@@ -1582,13 +1582,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor:
@@ -1602,13 +1602,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Frequency_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor:
@@ -1622,13 +1622,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Active_Power_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor:
@@ -1642,13 +1642,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Current_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor:
@@ -1662,13 +1662,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Voltage_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor:
@@ -1682,13 +1682,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Torque_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor:
@@ -1702,13 +1702,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#DC_Bus_Voltage_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status:
@@ -1722,13 +1722,13 @@ Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Fan
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "equip"}
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Fault_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Humidifier_On_Off_Command:
@@ -1741,10 +1741,10 @@ Brick_Humidifier_On_Off_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Humidifier
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Humidifier_On_Off_Status:
@@ -1757,10 +1757,10 @@ Brick_Humidifier_On_Off_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Humidifier
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Humidifier_Command:
@@ -1773,10 +1773,10 @@ Brick_Humidifier_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Humidifier
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Heat_Wheel_On_Off_Command:
@@ -1789,10 +1789,10 @@ Brick_Heat_Wheel_On_Off_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Heat_Wheel
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Heat_Wheel_On_Off_Status:
@@ -1805,10 +1805,10 @@ Brick_Heat_Wheel_On_Off_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Heat_Wheel
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Heat_Wheel_Speed_Sensor:
@@ -1821,10 +1821,10 @@ Brick_Heat_Wheel_Speed_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Heat_Wheel
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Valve_Position_Command:
@@ -1837,10 +1837,10 @@ Brick_Valve_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Valve_Position_Sensor:
@@ -1853,10 +1853,10 @@ Brick_Valve_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Valve_Flow_Sensor:
@@ -1869,10 +1869,10 @@ Brick_Valve_Flow_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Flow_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Valve_Failure_Alarm:
@@ -1885,10 +1885,10 @@ Brick_Valve_Failure_Alarm:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Failure_Alarm
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Chilled_Water_Valve_Position_Sensor:
@@ -1901,10 +1901,10 @@ Brick_Chilled_Water_Valve_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Chilled_Water_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Chilled_Water_Valve_Position_Command:
@@ -1917,10 +1917,10 @@ Brick_Chilled_Water_Valve_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Chilled_Water_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Chilled_Water_Valve_Failure_Alarm:
@@ -1933,10 +1933,10 @@ Brick_Chilled_Water_Valve_Failure_Alarm:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Chilled_Water_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Failure_Alarm
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Condenser_Water_Valve_Position_Sensor:
@@ -1949,10 +1949,10 @@ Brick_Condenser_Water_Valve_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Condenser_Water_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Condenser_Water_Valve_Position_Command:
@@ -1965,10 +1965,10 @@ Brick_Condenser_Water_Valve_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Condenser_Water_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Condenser_Water_Valve_Failure_Alarm:
@@ -1981,10 +1981,10 @@ Brick_Condenser_Water_Valve_Failure_Alarm:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Condenser_Water_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Failure_Alarm
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Hot_Water_Valve_Position_Sensor:
@@ -1997,10 +1997,10 @@ Brick_Hot_Water_Valve_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Hot_Water_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Hot_Water_Valve_Failure_Alarm:
@@ -2013,10 +2013,10 @@ Brick_Hot_Water_Valve_Failure_Alarm:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Hot_Water_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Failure_Alarm
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Hot_Water_Valve_Position_Command:
@@ -2029,10 +2029,10 @@ Brick_Hot_Water_Valve_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Hot_Water_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Steam_Valve_Position_Sensor:
@@ -2045,10 +2045,10 @@ Brick_Steam_Valve_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Steam_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Steam_Valve_Position_Command:
@@ -2061,10 +2061,10 @@ Brick_Steam_Valve_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Steam_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Isolation_Valve_Position_Sensor:
@@ -2077,10 +2077,10 @@ Brick_Isolation_Valve_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Isolation_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Isolation_Valve_Position_Command:
@@ -2093,10 +2093,10 @@ Brick_Isolation_Valve_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Isolation_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Condenser_Water_Isolation_Valve_Position_Sensor:
@@ -2109,10 +2109,10 @@ Brick_Condenser_Water_Isolation_Valve_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Condenser_Water_Isolation_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Condenser_Water_Isolation_Valve_Position_Command:
@@ -2125,10 +2125,10 @@ Brick_Condenser_Water_Isolation_Valve_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Condenser_Water_Isolation_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Bypass_Valve_Position_Sensor:
@@ -2141,10 +2141,10 @@ Brick_Bypass_Valve_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Bypass_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Bypass_Valve_Position_Command:
@@ -2157,10 +2157,10 @@ Brick_Bypass_Valve_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Bypass_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Bypass_Valve_Flow_Sensor:
@@ -2173,10 +2173,10 @@ Brick_Bypass_Valve_Flow_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Bypass_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Flow_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Condenser_Water_Bypass_Valve_Position_Sensor:
@@ -2189,10 +2189,10 @@ Brick_Condenser_Water_Bypass_Valve_Position_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Condenser_Water_Bypass_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Condenser_Water_Bypass_Valve_Position_Command:
@@ -2205,10 +2205,10 @@ Brick_Condenser_Water_Bypass_Valve_Position_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Condenser_Water_Bypass_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Position_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Condenser_Water_Bypass_Valve_Flow_Sensor:
@@ -2221,10 +2221,10 @@ Brick_Condenser_Water_Bypass_Valve_Flow_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Condenser_Water_Bypass_Valve
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Flow_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Filter_Status:
@@ -2237,10 +2237,10 @@ Brick_Filter_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Filter_Alarm:
@@ -2253,10 +2253,10 @@ Brick_Filter_Alarm:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Alarm
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Filter_Differential_Pressure_Sensor:
@@ -2269,10 +2269,10 @@ Brick_Filter_Differential_Pressure_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Differential_Pressure_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Filter_Differential_Pressure_Setpoint:
@@ -2285,10 +2285,10 @@ Brick_Filter_Differential_Pressure_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Differential_Pressure_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Air_Filter_Status:
@@ -2301,10 +2301,10 @@ Brick_Return_Air_Filter_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Air_Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Air_Filter_Alarm:
@@ -2317,10 +2317,10 @@ Brick_Return_Air_Filter_Alarm:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Air_Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Alarm
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Air_Filter_Differential_Pressure_Sensor:
@@ -2333,10 +2333,10 @@ Brick_Return_Air_Filter_Differential_Pressure_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Air_Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Differential_Pressure_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Return_Air_Filter_Differential_Pressure_Setpoint:
@@ -2349,10 +2349,10 @@ Brick_Return_Air_Filter_Differential_Pressure_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Return_Air_Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Differential_Pressure_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Intake_Air_Filter_Status:
@@ -2365,10 +2365,10 @@ Brick_Intake_Air_Filter_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Intake_Air_Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Intake_Air_Filter_Alarm:
@@ -2381,10 +2381,10 @@ Brick_Intake_Air_Filter_Alarm:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Intake_Air_Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Alarm
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Intake_Air_Filter_Differential_Pressure_Sensor:
@@ -2397,10 +2397,10 @@ Brick_Intake_Air_Filter_Differential_Pressure_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Intake_Air_Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Differential_Pressure_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Intake_Air_Filter_Differential_Pressure_Setpoint:
@@ -2413,10 +2413,10 @@ Brick_Intake_Air_Filter_Differential_Pressure_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Intake_Air_Filter
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Differential_Pressure_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Compressor_On_Off_Command:
@@ -2429,10 +2429,10 @@ Brick_Compressor_On_Off_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Compressor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Compressor_On_Off_Status:
@@ -2445,10 +2445,10 @@ Brick_Compressor_On_Off_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Compressor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Compressor_Enable_Command:
@@ -2461,10 +2461,10 @@ Brick_Compressor_Enable_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Compressor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Compressor_Enable_Status:
@@ -2477,10 +2477,10 @@ Brick_Compressor_Enable_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Compressor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Compressor_Fault_Status:
@@ -2493,10 +2493,10 @@ Brick_Compressor_Fault_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Compressor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Fault_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Compressor_Speed_Sensor:
@@ -2509,10 +2509,10 @@ Brick_Compressor_Speed_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Compressor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Compressor_Temperature_Sensor:
@@ -2525,10 +2525,10 @@ Brick_Compressor_Temperature_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Compressor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Temperature_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Compressor_Current_Sensor:
@@ -2541,10 +2541,10 @@ Brick_Compressor_Current_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Compressor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Current_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Compressor_Run_Time_Sensor:
@@ -2557,10 +2557,10 @@ Brick_Compressor_Run_Time_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Compressor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Run_Time_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_On_Off_Command:
@@ -2573,10 +2573,10 @@ Brick_Variable_Frequency_Drive_On_Off_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_On_Off_Status:
@@ -2589,10 +2589,10 @@ Brick_Variable_Frequency_Drive_On_Off_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#On_Off_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Enable_Command:
@@ -2605,10 +2605,10 @@ Brick_Variable_Frequency_Drive_Enable_Command:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Command
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Enable_Status:
@@ -2621,10 +2621,10 @@ Brick_Variable_Frequency_Drive_Enable_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Enable_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Overridden_Status:
@@ -2637,10 +2637,10 @@ Brick_Variable_Frequency_Drive_Overridden_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Overridden_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Speed_Sensor:
@@ -2653,10 +2653,10 @@ Brick_Variable_Frequency_Drive_Speed_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Speed_Setpoint:
@@ -2669,10 +2669,10 @@ Brick_Variable_Frequency_Drive_Speed_Setpoint:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Speed_Setpoint
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Frequency_Sensor:
@@ -2685,10 +2685,10 @@ Brick_Variable_Frequency_Drive_Frequency_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Frequency_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Active_Power_Sensor:
@@ -2701,10 +2701,10 @@ Brick_Variable_Frequency_Drive_Active_Power_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Active_Power_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Current_Sensor:
@@ -2717,10 +2717,10 @@ Brick_Variable_Frequency_Drive_Current_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Current_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Voltage_Sensor:
@@ -2733,10 +2733,10 @@ Brick_Variable_Frequency_Drive_Voltage_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Voltage_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Torque_Sensor:
@@ -2749,10 +2749,10 @@ Brick_Variable_Frequency_Drive_Torque_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Torque_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor:
@@ -2765,10 +2765,10 @@ Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Heat_Sink_Temperature_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor:
@@ -2781,10 +2781,10 @@ Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#DC_Bus_Voltage_Sensor
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         
 Brick_Variable_Frequency_Drive_Fault_Status:
@@ -2797,9 +2797,9 @@ Brick_Variable_Frequency_Drive_Fault_Status:
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#Variable_Frequency_Drive
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "part"}
   - template: https://brickschema.org/schema/Brick#Fault_Status
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {"name": "name"}
         

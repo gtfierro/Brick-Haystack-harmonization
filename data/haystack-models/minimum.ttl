@@ -1,315 +1,97 @@
-@prefix ns1: <urn:project_haystack/> .
-@prefix ns2: <http://www.w3.org/2004/02/skos/core#> .
-@prefix ns3: <https://brickschema.org/schema/Brick#> .
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix model: <urn:model/> .
+@prefix ph: <urn:project_haystack/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-ns3:Absolute_Humidity a ns1:Entity .
-
-ns3:Acceleration_Time a ns1:Entity .
-
-ns3:Active_Energy a ns1:Entity .
-
-ns3:Active_Power a ns1:Entity .
-
-ns3:Air a ns1:Entity .
-
-ns3:Air_Quality a ns1:Entity .
-
-ns3:Alternating_Current_Frequency a ns1:Entity .
-
-ns3:Ammonia_Concentration a ns1:Entity .
-
-ns3:Angle a ns1:Entity .
-
-ns3:Apparent_Energy a ns1:Entity .
-
-ns3:Apparent_Power a ns1:Entity .
-
-ns3:Atmospheric_Pressure a ns1:Entity .
-
-ns3:Blowdown_Water a ns1:Entity .
-
-ns3:Building_Air a ns1:Entity .
-
-ns3:Bypass_Air a ns1:Entity .
-
-ns3:Bypass_Water a ns1:Entity .
-
-ns3:CO a ns1:Entity .
-
-ns3:CO2 a ns1:Entity .
-
-ns3:CO2_Concentration a ns1:Entity .
-
-ns3:CO_Concentration a ns1:Entity .
-
-ns3:Capacity a ns1:Entity .
-
-ns3:Chilled_Water a ns1:Entity .
-
-ns3:Cloudage a ns1:Entity .
-
-ns3:Collection_Basin_Water a ns1:Entity .
-
-ns3:Complex_Power a ns1:Entity .
-
-ns3:Condenser_Water a ns1:Entity .
-
-ns3:Conductivity a ns1:Entity .
-
-ns3:Current_Imbalance a ns1:Entity .
-
-ns3:Current_Total_Harmonic_Distortion a ns1:Entity .
-
-ns3:Deceleration_Time a ns1:Entity .
-
-ns3:Deionized_Water a ns1:Entity .
-
-ns3:Dewpoint a ns1:Entity .
-
-ns3:Differential_CO2_Concentration a ns1:Entity .
-
-ns3:Differential_CO_Concentration a ns1:Entity .
-
-ns3:Differential_Dry_Bulb_Temperature a ns1:Entity .
-
-ns3:Differential_Dynamic_Pressure a ns1:Entity .
-
-ns3:Differential_Pressure a ns1:Entity .
-
-ns3:Differential_Static_Pressure a ns1:Entity .
-
-ns3:Differential_Temperature a ns1:Entity .
-
-ns3:Direction a ns1:Entity .
-
-ns3:Discharge_Air a ns1:Entity .
-
-ns3:Domestic_Water a ns1:Entity .
-
-ns3:Dry_Bulb_Temperature a ns1:Entity .
-
-ns3:Dynamic_Pressure a ns1:Entity .
-
-ns3:Electric_Current a ns1:Entity .
-
-ns3:Electric_Energy a ns1:Entity .
-
-ns3:Electric_Power a ns1:Entity .
-
-ns3:Energy a ns1:Entity .
-
-ns3:Entering_Condenser_Water a ns1:Entity .
-
-ns3:Entering_Water a ns1:Entity ;
-    ns2:narrower ns3:Entering_Chilled_Water,
-        ns3:Entering_Hot_Water .
-
-ns3:Enthalpy a ns1:Entity .
-
-ns3:Exhaust_Air a ns1:Entity .
-
-ns3:Flow a ns1:Entity .
-
-ns3:Flow_Loss a ns1:Entity .
-
-ns3:Fluid a ns1:Entity .
-
-ns3:Formaldehyde_Concentration a ns1:Entity .
-
-ns3:Frequency a ns1:Entity .
-
-ns3:Frost a ns1:Entity .
-
-ns3:Fuel_Oil a ns1:Entity .
-
-ns3:Gas a ns1:Entity .
-
-ns3:Gasoline a ns1:Entity .
-
-ns3:Glycol a ns1:Entity .
-
-ns3:GrainsOfMoisture a ns1:Entity .
-
-ns3:Hail a ns1:Entity .
-
-ns3:Hot_Water a ns1:Entity .
-
-ns3:Humidity a ns1:Entity .
-
-ns3:Ice a ns1:Entity .
-
-ns3:Illuminance a ns1:Entity .
-
-ns3:Irradiance a ns1:Entity .
-
-ns3:Leaving_Condenser_Water a ns1:Entity .
-
-ns3:Leaving_Water a ns1:Entity ;
-    ns2:narrower ns3:Leaving_Chilled_Water,
-        ns3:Leaving_Hot_Water .
-
-ns3:Level a ns1:Entity .
-
-ns3:Linear_Speed a ns1:Entity .
-
-ns3:Liquid a ns1:Entity .
-
-ns3:Liquid_CO2 a ns1:Entity .
-
-ns3:Luminance a ns1:Entity .
-
-ns3:Luminous_Flux a ns1:Entity .
-
-ns3:Luminous_Intensity a ns1:Entity .
-
-ns3:Makeup_Water a ns1:Entity .
-
-ns3:Mass a ns1:Entity .
-
-ns3:Methane_Concentration a ns1:Entity .
-
-ns3:Mixed_Air a ns1:Entity .
-
-ns3:NO2_Concentration a ns1:Entity .
-
-ns3:Natural_Gas a ns1:Entity .
-
-ns3:Occupancy a ns1:Entity .
-
-ns3:Occupancy_Count a ns1:Entity .
-
-ns3:Occupancy_Percentage a ns1:Entity .
-
-ns3:Oil a ns1:Entity .
-
-ns3:Operative_Temperature a ns1:Entity .
-
-ns3:Outside_Air a ns1:Entity .
-
-ns3:Ozone_Concentration a ns1:Entity .
-
-ns3:PM10_Concentration a ns1:Entity .
-
-ns3:PM1_Concentration a ns1:Entity .
-
-ns3:PM2.5_Concentration a ns1:Entity .
-
-ns3:Peak_Power a ns1:Entity .
-
-ns3:Phasor a ns1:Entity .
-
-ns3:Phasor_Angle a ns1:Entity ;
-    ns2:narrower ns3:Current_Angle,
-        ns3:Voltage_Angle .
-
-ns3:Phasor_Magnitude a ns1:Entity .
-
-ns3:Position a ns1:Entity .
-
-ns3:Potable_Water a ns1:Entity .
-
-ns3:Power a ns1:Entity .
-
-ns3:Power_Factor a ns1:Entity .
-
-ns3:Precipitation a ns1:Entity .
-
-ns3:Pressure a ns1:Entity .
-
-ns3:Radiance a ns1:Entity .
-
-ns3:Radiant_Temperature a ns1:Entity .
-
-ns3:Radioactivity_Concentration a ns1:Entity .
-
-ns3:Radon_Concentration a ns1:Entity .
-
-ns3:Reactive_Energy a ns1:Entity .
-
-ns3:Reactive_Power a ns1:Entity .
-
-ns3:Real_Power a ns1:Entity .
-
-ns3:Refrigerant a ns1:Entity .
-
-ns3:Relative_Humidity a ns1:Entity .
-
-ns3:Return_Air a ns1:Entity .
-
-ns3:Rotational_Speed a ns1:Entity .
-
-ns3:Soil a ns1:Entity .
-
-ns3:Solar_Irradiance a ns1:Entity .
-
-ns3:Solar_Radiance a ns1:Entity .
-
-ns3:Solid a ns1:Entity .
-
-ns3:Speed a ns1:Entity .
-
-ns3:Static_Pressure a ns1:Entity .
-
-ns3:Steam a ns1:Entity .
-
-ns3:Supply_Air a ns1:Entity .
-
-ns3:TVOC_Concentration a ns1:Entity .
-
-ns3:Temperature a ns1:Entity .
-
-ns3:Thermal_Energy a ns1:Entity .
-
-ns3:Thermal_Power a ns1:Entity .
-
-ns3:Time a ns1:Entity .
-
-ns3:Torque a ns1:Entity .
-
-ns3:Velocity_Pressure a ns1:Entity .
-
-ns3:Voltage a ns1:Entity .
-
-ns3:Voltage_Imbalance a ns1:Entity .
-
-ns3:Water a ns1:Entity .
-
-ns3:Weather_Condition a ns1:Entity .
-
-ns3:Wet_Bulb_Temperature a ns1:Entity .
-
-ns3:Wind_Direction a ns1:Entity .
-
-ns3:Zone_Air a ns1:Entity .
-
-ns3:Current_Angle a ns1:Entity .
-
-ns3:Entering_Chilled_Water a ns1:Entity .
-
-ns3:Entering_Hot_Water a ns1:Entity .
-
-ns3:Leaving_Chilled_Water a ns1:Entity .
-
-ns3:Leaving_Hot_Water a ns1:Entity .
-
-ns3:Voltage_Angle a ns1:Entity .
-
-<urn:model/c-0009> a ns3:Command,
-        <urn:___param___#Brick_Humidifier_Command>,
-        ns1:Entity,
-        ns1:HasTag-air,
-        ns1:HasTag-cmd,
-        ns1:HasTag-damper,
-        ns1:HasTag-humidifier,
-        ns1:HasTag-mixed,
-        ns1:HasTag-modulation,
-        ns1:HasTag-point ;
+model:c-0002 a brick:CO2_Level_Sensor,
+        brick:CO2_Sensor,
+        brick:Point,
+        brick:Sensor,
+        ph:Entity ;
+    rdfs:label "Charlie AHU 1 CO2" ;
+    ph:hasMarkerTag "air",
+        "co2",
+        "cur",
+        "dis",
+        "equipRef",
+        "his",
+        "id",
+        "kind",
+        "point",
+        "sensor",
+        "siteRef",
+        "tz",
+        "unit",
+        "zone" ;
+    ph:hasRefTag [ ph:key "siteRef"^^xsd:string ;
+            ph:value model:c-0000 ],
+        [ ph:key "equipRef"^^xsd:string ;
+            ph:value model:c-0001 ],
+        [ ph:key "id"^^xsd:string ;
+            ph:value model:c-0002 ] ;
+    ph:hasValueTag [ ph:key "dis"^^xsd:string ;
+            ph:value "Charlie AHU 1 CO2" ],
+        [ ph:key "kind"^^xsd:string ;
+            ph:value "Number" ],
+        [ ph:key "tz"^^xsd:string ;
+            ph:value "New_York" ],
+        [ ph:key "unit"^^xsd:string ;
+            ph:value "ppm" ] .
+
+model:c-0003 a brick:CO2_Setpoint,
+        brick:Differential_Setpoint,
+        brick:Point,
+        brick:Setpoint,
+        ph:Entity ;
+    rdfs:label "Charlie AHU 1 CO2 Setpoint" ;
+    ph:hasMarkerTag "air",
+        "co2",
+        "cur",
+        "dis",
+        "equipRef",
+        "his",
+        "id",
+        "kind",
+        "point",
+        "siteRef",
+        "sp",
+        "tz",
+        "unit",
+        "zone" ;
+    ph:hasRefTag [ ph:key "id"^^xsd:string ;
+            ph:value model:c-0003 ],
+        [ ph:key "equipRef"^^xsd:string ;
+            ph:value model:c-0001 ],
+        [ ph:key "siteRef"^^xsd:string ;
+            ph:value model:c-0000 ] ;
+    ph:hasValueTag [ ph:key "dis"^^xsd:string ;
+            ph:value "Charlie AHU 1 CO2 Setpoint" ],
+        [ ph:key "tz"^^xsd:string ;
+            ph:value "New_York" ],
+        [ ph:key "kind"^^xsd:string ;
+            ph:value "Number" ],
+        [ ph:key "unit"^^xsd:string ;
+            ph:value "ppm" ] .
+
+model:part_18c85c05 a brick:Damper ;
+    brick:hasPoint model:c-test1 ;
+    brick:isPartOf model:c-0001 .
+
+model:part_ce3240db a brick:Mixed_Damper ;
+    brick:hasPoint model:c-0009 ;
+    brick:isPartOf model:c-0001 .
+
+model:c-0009 a brick:Command,
+        brick:Point,
+        brick:Position_Command,
+        <urn:___param___#Brick_Damper_Command>,
+        <urn:___param___#Brick_Damper_Position_Command>,
+        <urn:___param___#Brick_Mixed_Damper_Position_Command>,
+        ph:Entity ;
     rdfs:label "Charlie AHU 1 Mixed Air Damper Position" ;
-    ns3:hasTag <https://brickschema.org/schema/BrickTag#Command>,
-        <https://brickschema.org/schema/BrickTag#Point> ;
-    ns1:hasMarkerTag "air",
+    brick:isPointOf model:part_ce3240db ;
+    ph:hasMarkerTag "air",
         "cmd",
         "cur",
         "custom",
@@ -317,72 +99,61 @@ ns3:Voltage_Angle a ns1:Entity .
         "dis",
         "equipRef",
         "his",
-        "humidifier",
         "id",
         "kind",
         "mixed",
-        "modulation",
         "point",
         "siteRef",
         "tz" ;
-    ns1:hasRefTag [ ns1:key "siteRef"^^xsd:string ;
-            ns1:value <urn:model/c-0000> ],
-        [ ns1:key "id"^^xsd:string ;
-            ns1:value <urn:model/c-0009> ],
-        [ ns1:key "equipRef"^^xsd:string ;
-            ns1:value <urn:model/c-0001> ] ;
-    ns1:hasValueTag [ ns1:key "tz"^^xsd:string ;
-            ns1:value "New_York" ],
-        [ ns1:key "dis"^^xsd:string ;
-            ns1:value "Charlie AHU 1 Mixed Air Damper Position" ],
-        [ ns1:key "kind"^^xsd:string ;
-            ns1:value "Number" ] .
+    ph:hasRefTag [ ph:key "id"^^xsd:string ;
+            ph:value model:c-0009 ],
+        [ ph:key "equipRef"^^xsd:string ;
+            ph:value model:c-0001 ],
+        [ ph:key "siteRef"^^xsd:string ;
+            ph:value model:c-0000 ] ;
+    ph:hasValueTag [ ph:key "dis"^^xsd:string ;
+            ph:value "Charlie AHU 1 Mixed Air Damper Position" ],
+        [ ph:key "kind"^^xsd:string ;
+            ph:value "Number" ],
+        [ ph:key "tz"^^xsd:string ;
+            ph:value "New_York" ] .
 
-<urn:model/c-test1> a ns3:Command,
-        <urn:___param___#Brick_Humidifier_Command>,
-        ns1:Entity,
-        ns1:HasTag-cmd,
-        ns1:HasTag-damper,
-        ns1:HasTag-humidifier,
-        ns1:HasTag-modulation,
-        ns1:HasTag-point ;
+model:c-test1 a brick:Command,
+        brick:Point,
+        <urn:___param___#Brick_Damper_Command>,
+        <urn:___param___#Brick_Damper_Position_Command>,
+        ph:Entity ;
     rdfs:label "Charlie AHU 1 Mixed Air Damper Command" ;
-    ns3:hasTag <https://brickschema.org/schema/BrickTag#Command>,
-        <https://brickschema.org/schema/BrickTag#Point> ;
-    ns1:hasMarkerTag "cmd",
+    brick:isPointOf model:part_18c85c05 ;
+    ph:hasMarkerTag "cmd",
         "cur",
         "custom",
         "damper",
         "dis",
         "equipRef",
         "his",
-        "humidifier",
         "id",
         "kind",
-        "modulation",
         "point",
         "siteRef",
         "tz" ;
-    ns1:hasRefTag [ ns1:key "siteRef"^^xsd:string ;
-            ns1:value <urn:model/c-0000> ],
-        [ ns1:key "id"^^xsd:string ;
-            ns1:value <urn:model/c-test1> ],
-        [ ns1:key "equipRef"^^xsd:string ;
-            ns1:value <urn:model/c-0001> ] ;
-    ns1:hasValueTag [ ns1:key "tz"^^xsd:string ;
-            ns1:value "New_York" ],
-        [ ns1:key "dis"^^xsd:string ;
-            ns1:value "Charlie AHU 1 Mixed Air Damper Command" ],
-        [ ns1:key "kind"^^xsd:string ;
-            ns1:value "Number" ] .
+    ph:hasRefTag [ ph:key "id"^^xsd:string ;
+            ph:value model:c-test1 ],
+        [ ph:key "siteRef"^^xsd:string ;
+            ph:value model:c-0000 ],
+        [ ph:key "equipRef"^^xsd:string ;
+            ph:value model:c-0001 ] ;
+    ph:hasValueTag [ ph:key "dis"^^xsd:string ;
+            ph:value "Charlie AHU 1 Mixed Air Damper Command" ],
+        [ ph:key "tz"^^xsd:string ;
+            ph:value "New_York" ],
+        [ ph:key "kind"^^xsd:string ;
+            ph:value "Number" ] .
 
-<urn:model/c-0000> a ns3:Site,
-        ns1:Entity,
-        ns1:HasTag-site ;
+model:c-0000 a brick:Site,
+        ph:Entity ;
     rdfs:label "Charlie" ;
-    ns3:hasTag <https://brickschema.org/schema/BrickTag#Location>,
-        <https://brickschema.org/schema/BrickTag#Site> ;
-    ns1:hasMarkerTag "area",
+    ph:hasMarkerTag "area",
         "dis",
         "geoAddr",
         "geoCity",
@@ -396,28 +167,45 @@ ns3:Voltage_Angle a ns1:Entity .
         "tz",
         "weatherStationRef",
         "yearBuilt" ;
-    ns1:hasRefTag [ ns1:key "id"^^xsd:string ;
-            ns1:value <urn:model/c-0000> ],
-        [ ns1:key "weatherStationRef"^^xsd:string ;
-            ns1:value <urn:model/c-0267> ] ;
-    ns1:hasValueTag [ ns1:key "geoAddr"^^xsd:string ;
-            ns1:value "123 Some Rd, Troy, MI 48007" ],
-        [ ns1:key "primaryFunction"^^xsd:string ;
-            ns1:value "Office" ],
-        [ ns1:key "yearBuilt"^^xsd:string ;
-            ns1:value 1995 ],
-        [ ns1:key "geoStreet"^^xsd:string ;
-            ns1:value "123 Some Rd" ],
-        [ ns1:key "dis"^^xsd:string ;
-            ns1:value "Charlie" ],
-        [ ns1:key "geoState"^^xsd:string ;
-            ns1:value "MI" ],
-        [ ns1:key "geoPostalCode"^^xsd:string ;
-            ns1:value "48007" ],
-        [ ns1:key "geoCity"^^xsd:string ;
-            ns1:value "Troy" ],
-        [ ns1:key "tz"^^xsd:string ;
-            ns1:value "Detroit" ],
-        [ ns1:key "geoCountry"^^xsd:string ;
-            ns1:value "US" ] .
+    ph:hasRefTag [ ph:key "weatherStationRef"^^xsd:string ;
+            ph:value model:c-0267 ],
+        [ ph:key "id"^^xsd:string ;
+            ph:value model:c-0000 ] ;
+    ph:hasValueTag [ ph:key "geoCountry"^^xsd:string ;
+            ph:value "US" ],
+        [ ph:key "geoPostalCode"^^xsd:string ;
+            ph:value "48007" ],
+        [ ph:key "geoAddr"^^xsd:string ;
+            ph:value "123 Some Rd, Troy, MI 48007" ],
+        [ ph:key "geoCity"^^xsd:string ;
+            ph:value "Troy" ],
+        [ ph:key "primaryFunction"^^xsd:string ;
+            ph:value "Office" ],
+        [ ph:key "geoStreet"^^xsd:string ;
+            ph:value "123 Some Rd" ],
+        [ ph:key "geoState"^^xsd:string ;
+            ph:value "MI" ],
+        [ ph:key "dis"^^xsd:string ;
+            ph:value "Charlie" ],
+        [ ph:key "yearBuilt"^^xsd:string ;
+            ph:value 1995 ],
+        [ ph:key "tz"^^xsd:string ;
+            ph:value "Detroit" ] .
+
+model:c-0001 a brick:AHU,
+        brick:Equipment,
+        ph:Entity ;
+    rdfs:label "Charlie AHU 1" ;
+    ph:hasMarkerTag "ahu",
+        "custom",
+        "dis",
+        "equip",
+        "id",
+        "siteRef" ;
+    ph:hasRefTag [ ph:key "siteRef"^^xsd:string ;
+            ph:value model:c-0000 ],
+        [ ph:key "id"^^xsd:string ;
+            ph:value model:c-0001 ] ;
+    ph:hasValueTag [ ph:key "dis"^^xsd:string ;
+            ph:value "Charlie AHU 1" ] .
 
