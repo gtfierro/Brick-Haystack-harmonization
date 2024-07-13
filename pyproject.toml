@@ -8,19 +8,24 @@ license = "bsd-3-clause"
 [tool.poetry.scripts]
 bh-to-shapes = "brick_haystack_harmonization.bh_to_shapes:main"
 bh-to-xeto = "brick_haystack_harmonization.bh_to_xeto:main"
-ph-to-ttl = "brick_haystack_harmonization.ph_to_ttl:main"
-xeto-to-shacl = "brick_haystack_harmonization.xeto_to_shacl:main"
+#ph-to-ttl = "brick_haystack_harmonization.ph_to_ttl:main"
+#xeto-to-shacl = "brick_haystack_harmonization.xeto_to_shacl:main"
+xeto-to-shacl = "brick_haystack_harmonization.xeto2shacl2:main"
+ph-to-ttl = "brick_haystack_harmonization.ph2ttl2:main"
 visualize-taxonomy = "brick_haystack_harmonization.visualize_taxonomy:main"
 check-brick = "brick_haystack_harmonization.check_brick:main"
 brick-to-haystack = "brick_haystack_harmonization.brick_to_haystack:main"
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.9,<3.12"
 pyaml = "^21.10.1"
-rdflib = "^6.1.1"
+rdflib = "^7.0"
 pydot = "^1.4.2"
-brickschema = "0.7.1a5"
+brickschema = "0.7.5"
 rfc3987 = "^1.3.8"
+brick-tq-shacl = "^0.3.3a3"
+buildingmotif = {path = "BuildingMOTIF", extras = ["xlsx-ingress", "topquadrant"]}
+pyontoenv = "0.1.9a2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^7.1.1"

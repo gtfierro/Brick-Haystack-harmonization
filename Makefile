@@ -9,7 +9,7 @@ files: data/resolved-bh.json data/resolved-all.json data/bh.ttl data/xetolib dat
 
 install-deps: pyproject.toml poetry.lock
 	poetry install
-	poetry run pip install -e buildingmotif
+	poetry run pip install -e ./buildingmotif[topquadrant,xlsx-ingress]
 	poetry run pip install openpyxl
 
 visualize-taxonomy:
@@ -39,16 +39,16 @@ data/resolved-all.json: xeto/* data/xetolib/bh.xeto
 data/all.json: xeto/* data/xetolib/bh.xeto
 	xeto/bin/xeto json-ast -own -out data/all.json all
 
-data/haystack-models/%.ttl: data/haystack-models/%.json brick_haystack_harmonization/ph_to_ttl.py haystack-ontology/haystack.ttl data/bh.ttl
-	poetry run ph-to-ttl $< $@
+data/haystack-models/%.ttl: data/haystack-models/%.json brick_haystack_harmonization/ph_to_ttl.py haystack-ontology/haystack.ttl data/bh.ttl brick_haystack_harmonization/ph2ttl2.py
+	-poetry run ph-to-ttl $< $@
 
 data/converted-models/%.ttl: data/brick-models/%.ttl brick_haystack_harmonization/brick_to_haystack.py data/bh.ttl haystack-ontology/haystack.ttl
-	poetry run brick-to-haystack $< $@
+	-poetry run brick-to-haystack $< $@
 
 data/converted-models/%.json: data/brick-models/%.ttl brick_haystack_harmonization/brick_to_haystack.py data/bh.ttl haystack-ontology/haystack.ttl
 	poetry run brick-to-haystack $< $@
 
-data/bh.ttl: data/resolved-bh.json brick_haystack_harmonization/xeto_to_shacl.py
+data/bh.ttl: data/resolved-bh.json brick_haystack_harmonization/xeto_to_shacl.py brick_haystack_harmonization/xeto2shacl2.py
 	poetry run xeto-to-shacl data/resolved-bh.json data/bh.ttl
 
 demo/bmotif.db:

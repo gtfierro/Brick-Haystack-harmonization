@@ -1,23 +1,26 @@
 import buildingmotif
 import os
-from typing import Optional
+from typing import Optional, List, Tuple
 import logging
-from buildingmotif.dataclasses import Library
-from buildingmotif.utils import template_to_shape
+import brickschema
+from buildingmotif.dataclasses import Library, Template
+from buildingmotif.utils import template_to_shape, PARAM
 import rdflib
-from rdflib.term import Node
+from rdflib.term import Node, URIRef
 import rfc3987
-from brickschema.namespaces import BRICK, RDFS, SH
+from brickschema.namespaces import BRICK, RDFS, SH, RDF
 import csv
 from typing import Set
 
+A = RDF.type
+
 # set up buildingmotif to read templates
 if os.path.exists('/tmp/bmotif.db'):
-    bm = buildingmotif.BuildingMOTIF("sqlite://///tmp/bmotif.db", log_level=logging.WARNING)
+    bm = buildingmotif.BuildingMOTIF("sqlite://///tmp/bmotif.db", log_level=logging.WARNING, shacl_engine='topquadrant')
 else:
-    bm = buildingmotif.BuildingMOTIF("sqlite://///tmp/bmotif.db", log_level=logging.WARNING)
+    bm = buildingmotif.BuildingMOTIF("sqlite://///tmp/bmotif.db", log_level=logging.WARNING, shacl_engine='topquadrant')
     bm.setup_tables()
-Library.load(ontology_graph='Brick.ttl', overwrite=False)
+Library.load(ontology_graph='https://brickschema.org/schema/1.4/Brick.ttl', overwrite=False)
 lib = Library.load(directory='data/bmotif/', overwrite=True)
 PH = rdflib.Namespace("urn:project_haystack/")
 
@@ -107,3 +110,34 @@ def get_equip_ref(entity: Node, graph: rdflib.Graph) -> Optional[Node]:
     }"""
     for row in graph.query(q, initBindings={"entity": entity}):
         return row[1]
+
+
+def get_parent(template: Template) -> Tuple[URIRef, URIRef]:
+    # get the 'parent' of the template; the "top level" thing.
+    # if there is an 'equip' parameter, then the parent is the equip
+    # else, if there is a 'part' parameter, then the parent is the part
+    # else, the parent is the 'name' parameter
+    parent_type = template.body.value(PARAM['equip'], A)
+    parent = PARAM['equip']
+    if not parent_type:
+        parent_type = template.body.value(PARAM['part'], A)
+        parent = PARAM['part']
+    if not parent_type:
+        parent_type = template.body.value(PARAM['name'], A)
+        parent = PARAM['name']
+    return parent, parent_type
+
+
+def get_most_specific_template(templates: List[Template], context: brickschema.Graph) -> Template:
+    # get the parent type for each template
+    template_parent_types = [get_parent(t)[1] for t in templates]
+    # the 'most specific' template is the one with the most specific parent type
+    # The most specific parent type is the one that isn't a subclass of any other parent type
+    for idx, t in enumerate(template_parent_types):
+        all_other_types = [p for p in template_parent_types if p != t]
+        query = "ASK {" + " UNION ".join([f"{{ {t.n3()} rdfs:subClassOf+ {p.n3()} }}" for p in all_other_types]) + "}"
+        if not bool(context.query(query)):
+            continue
+        print(f"Most specific template is {templates[idx]}")
+        return templates[idx]
+    return templates[0]

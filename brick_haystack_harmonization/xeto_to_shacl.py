@@ -28,7 +28,7 @@ g.add(
     (
         URIRef("urn:brick-haystack-xeto"),
         OWL.imports,
-        URIRef("https://brickschema.org/schema/Brick"),
+        URIRef("https://brickschema.org/schema/1.4/Brick"),
     )
 )
 
@@ -44,8 +44,10 @@ def get_tag_condition(tag):
     g.add((condition, SH.property, [
         (A, SH.PropertyShape),
         (SH.path, PH.hasMarkerTag),
-        (SH.hasValue, Literal(tag)),
+        (SH.qualifiedValueShape, [ (SH.hasValue, Literal(tag)) ]),
+        (SH.qualifiedMinCount, Literal(1)),
     ]))
+
     condition_rule = PH[f"HasTag-{tag}-Rule"]
     g.add((condition_rule, A, SH.NodeShape))
     g.add((condition_rule, SH.targetClass, PH.Entity))
@@ -72,9 +74,10 @@ def slot_to_shacl(library_name, name, defn):
     # TODO: make sure we emit the shape for the buildingmotif template
     global g
     if defn.get('template',''):
-        print('template name', defn['template'])
         # TODO: only keep the 'hasmarkertag' parts of the shape
+
         shape = get_template_shape(defn['template'])
+        # TODO: keep this?
         keep_marker_tag_property_shapes(PARAM[defn['template']], shape)
         g += shape
         g.add((PARAM[defn['template']], A, OWL.Class))
@@ -163,49 +166,14 @@ def slot_to_shacl(library_name, name, defn):
                 )
             )
             # add rule to infer tags
-            g.add(
-                (shape, SH.rule, [
-                    (A, SH.TripleRule),
-                    (SH.object, Literal(key)),
-                    (SH.predicate, PH.hasMarkerTag),
-                    (SH.subject, SH.this)
-                ])
-            )
-
-        
-    # for all 'marker' tag associated with a particualr brick class, add a SHACL
-    # rule which adds the correct Brick class using a sh:TripleRule if
-    # all of the tags are present
-    #marker_tags = [
-    #    t
-    #    for t, v in defn["slots"].items()
-    #    if v["type"] == "sys::Marker"
-    #]
-    #if len(marker_tags) > 0:
-    #    # create a new shape which targets ph:Entity
-    #    # and has a rule which adds the correct Brick class
-    #    shape_name = PH[f"{library_name}::{name}::brick_class"]
-    #    g.add((shape_name, A, SH.NodeShape))
-    #    g.add((shape_name, SH.targetClass, PH.Entity))
-
-    #    conditions = [
-    #        get_tag_condition(t)
-    #        for t in marker_tags
-    #    ]
-    #    print(conditions)
-    #    rule_part = [
-    #        (SH.condition, c)
-    #        for c in conditions
-    #    ]
-    #    rule_part.append((SH.object, shape))
-    #    rule_part.append((SH.predicate, RDF.type))
-    #    rule_part.append((SH.subject, SH.this))
-    #    g.add(
-    #        (shape_name, SH.rule, rule_part)
-    #    )
-
-
-
+            #g.add(
+            #    (shape, SH.rule, [
+            #        (A, SH.TripleRule),
+            #        (SH.object, Literal(key)),
+            #        (SH.predicate, PH.hasMarkerTag),
+            #        (SH.subject, SH.this)
+            #    ])
+            #)
 
 
 def main():
@@ -214,7 +182,10 @@ def main():
         sys.exit(1)
     resolved_xetos = json.load(open(sys.argv[1]))
     for slot in read_slots(resolved_xetos):
-        slot_to_shacl(*slot)
+        library_name, name, defn = slot
+        if "template" in defn:
+            print(f"Processing template {defn['template']}")
+        #slot_to_shacl(*slot)
     g.serialize(sys.argv[2], format=guess_format(sys.argv[2]))
 
 

@@ -13,7 +13,7 @@ from .common import (
     guess_tags,
 )
 
-g = brickschema.Graph().load_file("Brick.ttl")
+g = brickschema.Graph().load_file("https://brickschema.org/schema/1.4/Brick.ttl")
 seen_classes = set()
 parent_classes = set()
 buildingmotif_template_file_content = ''
@@ -51,6 +51,19 @@ def equip_to_xeto(row: dict) -> str:
 
 def make_statement(point_class: str, tag_list: str) -> str:
     parent = g.value(subject=BRICK[point_class], predicate=RDFS.subClassOf)
+
+    # do not include these classes as a parent class in the XETO file.
+    # This is because they have tags which do not agree with the haystack
+    # structure. For example, Air_Quality_Sensor has tags "air" and "quality",
+    # which interfere with correct detection of CO2_Sensor, which only has hasytack 
+    # tags of "co2", "air", and "sensor"
+    parents_to_skip = {
+        BRICK.Air_Quality_Sensor,
+    }
+    # if the parent is in the list of parents to skip, then we should skip this class by
+    # replacing 'parent' with parent's parent class as determined by graph 'g'
+    while parent in parents_to_skip:
+        parent = g.value(subject=parent, predicate=RDFS.subClassOf)
     if parent is None:
         parent = "Entity"
     else:
@@ -102,10 +115,10 @@ def subparts_to_xeto(row: dict):
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#{row['Subpart:EntityClassL0']}
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {{"name": "part"}}
   - template: https://brickschema.org/schema/Brick#{row['Brick:PointClass']}
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {{"name": "name"}}
         """
     else:
@@ -123,13 +136,13 @@ def subparts_to_xeto(row: dict):
         brick:hasPoint P:name .
   dependencies:
   - template: https://brickschema.org/schema/Brick#{row['Subpart:EntityClassL0']}
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {{"name": "equip"}}
   - template: https://brickschema.org/schema/Brick#{row['Subpart:EntityClassL1']}
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {{"name": "part"}}
   - template: https://brickschema.org/schema/Brick#{row['Brick:PointClass']}
-    library: https://brickschema.org/schema/1.3/Brick
+    library: https://brickschema.org/schema/1.4/Brick
     args: {{"name": "name"}}
         """
         pass
