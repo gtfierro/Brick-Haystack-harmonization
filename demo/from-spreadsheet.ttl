@@ -8,280 +8,304 @@
 <urn:example/vav1> a ns1:VAV,
         brick:VAV ;
     rdfs:label "urn:example/vav1" ;
-    ns1:contains <urn:example/name-dmp_6f3bd3bb>,
-        <urn:example/name-rhc_e5ea79a6>,
+    ns1:contains <urn:example/name-dmp_4ebab81c>,
+        <urn:example/name-rhc_09fc6ad7>,
         <urn:example/saf1>,
         <urn:example/sap1>,
         <urn:example/sat1> ;
-    ns1:hasProperty <urn:example/name-sup-air-flow_88f913e1>,
-        <urn:example/name-sup-air-pressure_8af42c6c>,
-        <urn:example/name-sup-air-temp_cda2866a> .
+    ns1:hasProperty <urn:example/name-sup-air-flow_6b9b0a93>,
+        <urn:example/name-sup-air-pressure_b99fc306>,
+        <urn:example/name-sup-air-temp_14611d4a> .
 
 <urn:example/vav2> a ns1:VAV,
         brick:VAV ;
     rdfs:label "urn:example/vav2" ;
-    ns1:contains <urn:example/name-dmp_bf939fbb>,
-        <urn:example/name-rhc_e5d118ec>,
+    ns1:contains <urn:example/name-dmp_f856379e>,
+        <urn:example/name-rhc_dec31549>,
         <urn:example/saf2>,
         <urn:example/sap2>,
         <urn:example/sat2> ;
-    ns1:hasProperty <urn:example/name-sup-air-flow_749d63d0>,
-        <urn:example/name-sup-air-pressure_849c5f1d>,
-        <urn:example/name-sup-air-temp_dd8afd1b> .
+    ns1:hasProperty <urn:example/name-sup-air-flow_c944a13d>,
+        <urn:example/name-sup-air-pressure_96c2dfb0>,
+        <urn:example/name-sup-air-temp_201ea649> .
 
-<urn:example/name-dmp-command_aa9f5929> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "urn:example/name-dmp-command_aa9f5929" ;
+<urn:example/name-dmp-command_a4265f29> a ns1:QuantifiableActuatableProperty ;
+    rdfs:label "urn:example/name-dmp-command_a4265f29" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:unit unit:PERCENT .
 
-<urn:example/name-dmp-command_d170127b> a ns1:QuantifiableActuatableProperty ;
-    rdfs:label "urn:example/name-dmp-command_d170127b" ;
+<urn:example/name-dmp-command_e463de01> a ns1:QuantifiableActuatableProperty ;
+    rdfs:label "urn:example/name-dmp-command_e463de01" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:unit unit:PERCENT .
 
-<urn:example/name-dmp-feedback_6fcc9c33> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-dmp-feedback_6fcc9c33" ;
+<urn:example/name-dmp-feedback_3df2e075> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-dmp-feedback_3df2e075" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:unit unit:PERCENT .
 
-<urn:example/name-dmp-feedback_8582a3fb> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-dmp-feedback_8582a3fb" ;
+<urn:example/name-dmp-feedback_b713a1d5> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-dmp-feedback_b713a1d5" ;
     qudt:hasQuantityKind qudtqk:DimensionlessRatio ;
     qudt:unit unit:PERCENT .
 
-<urn:example/name-dmp-out_1656d40f> a ns1:OutletConnectionPoint ;
-    rdfs:label "urn:example/name-dmp-out_1656d40f" ;
+<urn:example/name-dmp-out_88ccca8e> a ns1:OutletConnectionPoint ;
+    rdfs:label "urn:example/name-dmp-out_88ccca8e" ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:example/name-dmp-out_1bb516dc> a ns1:OutletConnectionPoint ;
-    rdfs:label "urn:example/name-dmp-out_1bb516dc" ;
+<urn:example/name-dmp-out_a6248b04> a ns1:OutletConnectionPoint ;
+    rdfs:label "urn:example/name-dmp-out_a6248b04" ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:example/name-dmp_6f3bd3bb> a ns1:Damper,
+<urn:example/name-dmp_4ebab81c> a ns1:Damper,
         brick:Damper ;
-    rdfs:label "urn:example/name-dmp_6f3bd3bb" ;
-    ns1:hasConnectionPoint <urn:example/name-dmp-in_ba50a253>,
-        <urn:example/name-dmp-out_1bb516dc> ;
-    ns1:hasProperty <urn:example/name-dmp-command_aa9f5929>,
-        <urn:example/name-dmp-feedback_6fcc9c33> .
+    rdfs:label "urn:example/name-dmp_4ebab81c" ;
+    ns1:hasConnectionPoint <urn:example/name-dmp-in_e239eba2>,
+        <urn:example/name-dmp-out_a6248b04> ;
+    ns1:hasProperty <urn:example/name-dmp-command_e463de01>,
+        <urn:example/name-dmp-feedback_3df2e075> .
 
-<urn:example/name-dmp_bf939fbb> a ns1:Damper,
+<urn:example/name-dmp_f856379e> a ns1:Damper,
         brick:Damper ;
-    rdfs:label "urn:example/name-dmp_bf939fbb" ;
-    ns1:hasConnectionPoint <urn:example/name-dmp-in_a9ce78fd>,
-        <urn:example/name-dmp-out_1656d40f> ;
-    ns1:hasProperty <urn:example/name-dmp-command_d170127b>,
-        <urn:example/name-dmp-feedback_8582a3fb> .
+    rdfs:label "urn:example/name-dmp_f856379e" ;
+    ns1:hasConnectionPoint <urn:example/name-dmp-in_20141d47>,
+        <urn:example/name-dmp-out_88ccca8e> ;
+    ns1:hasProperty <urn:example/name-dmp-command_a4265f29>,
+        <urn:example/name-dmp-feedback_b713a1d5> .
 
-<urn:example/name-rhc-air-in_5fbc93b9> a ns1:InletConnectionPoint ;
-    rdfs:label "urn:example/name-rhc-air-in_5fbc93b9" ;
+<urn:example/name-rhc-air-in_787c9b63> a ns1:InletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-air-in_787c9b63" ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:example/name-rhc-air-in_6fbd7f30> a ns1:InletConnectionPoint ;
-    rdfs:label "urn:example/name-rhc-air-in_6fbd7f30" ;
+<urn:example/name-rhc-air-in_9bf68967> a ns1:InletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-air-in_9bf68967" ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:example/name-rhc-return-water-temp-sensor_4d97f637> a ns1:Sensor ;
-    rdfs:label "urn:example/name-rhc-return-water-temp-sensor_4d97f637" ;
-    ns1:observes <urn:example/name-rhc-return-water-temp_8e25fd31> .
+<urn:example/name-rhc-return-water-temp-sensor_6d6c7d6e> a ns1:Sensor ;
+    rdfs:label "urn:example/name-rhc-return-water-temp-sensor_6d6c7d6e" ;
+    ns1:hasMeasurementLocation <urn:example/name-rhc-water-out_30260aa9> ;
+    ns1:observes <urn:example/name-rhc-return-water-temp_4f15ab85> .
 
-<urn:example/name-rhc-return-water-temp-sensor_65929336> a ns1:Sensor ;
-    rdfs:label "urn:example/name-rhc-return-water-temp-sensor_65929336" ;
-    ns1:observes <urn:example/name-rhc-return-water-temp_9aedb4e4> .
+<urn:example/name-rhc-return-water-temp-sensor_b1647a2d> a ns1:Sensor ;
+    rdfs:label "urn:example/name-rhc-return-water-temp-sensor_b1647a2d" ;
+    ns1:hasMeasurementLocation <urn:example/name-rhc-water-out_2645d6ff> ;
+    ns1:observes <urn:example/name-rhc-return-water-temp_fd334d51> .
 
-<urn:example/name-rhc-supply-water-temp-sensor_62856f6f> a ns1:Sensor ;
-    rdfs:label "urn:example/name-rhc-supply-water-temp-sensor_62856f6f" ;
-    ns1:observes <urn:example/name-rhc-supply-water-temp_0c68ecbb> .
+<urn:example/name-rhc-supply-water-temp-sensor_0759cd48> a ns1:Sensor ;
+    rdfs:label "urn:example/name-rhc-supply-water-temp-sensor_0759cd48" ;
+    ns1:hasMeasurementLocation <urn:example/name-rhc-water-in_9a50e699> ;
+    ns1:observes <urn:example/name-rhc-supply-water-temp_4868f939> .
 
-<urn:example/name-rhc-supply-water-temp-sensor_a32482b4> a ns1:Sensor ;
-    rdfs:label "urn:example/name-rhc-supply-water-temp-sensor_a32482b4" ;
-    ns1:observes <urn:example/name-rhc-supply-water-temp_3d50ee07> .
+<urn:example/name-rhc-supply-water-temp-sensor_1c2971b6> a ns1:Sensor ;
+    rdfs:label "urn:example/name-rhc-supply-water-temp-sensor_1c2971b6" ;
+    ns1:hasMeasurementLocation <urn:example/name-rhc-water-in_4f4b0514> ;
+    ns1:observes <urn:example/name-rhc-supply-water-temp_4afb9dae> .
 
-<urn:example/name-rhc-valve-command_290163f4> a ns1:EnumeratedActuatableProperty ;
-    rdfs:label "urn:example/name-rhc-valve-command_290163f4" ;
+<urn:example/name-rhc-valve-command_c307777d> a ns1:EnumeratedActuatableProperty ;
+    rdfs:label "urn:example/name-rhc-valve-command_c307777d" ;
     ns1:hasEnumerationKind ns1:EnumerationKind-RunStatus .
 
-<urn:example/name-rhc-valve-command_f0886efa> a ns1:EnumeratedActuatableProperty ;
-    rdfs:label "urn:example/name-rhc-valve-command_f0886efa" ;
+<urn:example/name-rhc-valve-command_fe690cb5> a ns1:EnumeratedActuatableProperty ;
+    rdfs:label "urn:example/name-rhc-valve-command_fe690cb5" ;
     ns1:hasEnumerationKind ns1:EnumerationKind-RunStatus .
 
-<urn:example/name-rhc-valve-feedback_6cc3ecb0> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "urn:example/name-rhc-valve-feedback_6cc3ecb0" ;
+<urn:example/name-rhc-valve-feedback_a7e33c4a> a ns1:EnumeratedObservableProperty ;
+    rdfs:label "urn:example/name-rhc-valve-feedback_a7e33c4a" ;
     ns1:hasEnumerationKind ns1:EnumerationKind-RunStatus .
 
-<urn:example/name-rhc-valve-feedback_82364d9c> a ns1:EnumeratedObservableProperty ;
-    rdfs:label "urn:example/name-rhc-valve-feedback_82364d9c" ;
+<urn:example/name-rhc-valve-feedback_d2907bfe> a ns1:EnumeratedObservableProperty ;
+    rdfs:label "urn:example/name-rhc-valve-feedback_d2907bfe" ;
     ns1:hasEnumerationKind ns1:EnumerationKind-RunStatus .
 
-<urn:example/name-rhc-valve-in_04ecb547> a ns1:InletConnectionPoint ;
-    rdfs:label "urn:example/name-rhc-valve-in_04ecb547" ;
+<urn:example/name-rhc-valve-in_354bdfb3> a ns1:InletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-valve-in_354bdfb3" ;
     ns1:hasMedium ns1:Medium-Water .
 
-<urn:example/name-rhc-valve-in_e0b435a5> a ns1:InletConnectionPoint ;
-    rdfs:label "urn:example/name-rhc-valve-in_e0b435a5" ;
+<urn:example/name-rhc-valve-in_b4e3c669> a ns1:InletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-valve-in_b4e3c669" ;
     ns1:hasMedium ns1:Medium-Water .
 
-<urn:example/name-rhc-valve-out_929890b0> a ns1:OutletConnectionPoint ;
-    rdfs:label "urn:example/name-rhc-valve-out_929890b0" ;
+<urn:example/name-rhc-valve-out_7d326a34> a ns1:OutletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-valve-out_7d326a34" ;
     ns1:hasMedium ns1:Medium-Water .
 
-<urn:example/name-rhc-valve-out_991338d3> a ns1:OutletConnectionPoint ;
-    rdfs:label "urn:example/name-rhc-valve-out_991338d3" ;
+<urn:example/name-rhc-valve-out_8478a257> a ns1:OutletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-valve-out_8478a257" ;
     ns1:hasMedium ns1:Medium-Water .
 
-<urn:example/name-rhc-valve_08a4143a> a ns1:Valve ;
-    rdfs:label "urn:example/name-rhc-valve_08a4143a" ;
-    ns1:hasConnectionPoint <urn:example/name-rhc-valve-in_04ecb547>,
-        <urn:example/name-rhc-valve-out_929890b0> ;
+<urn:example/name-rhc-valve_3de2065c> a ns1:Valve ;
+    rdfs:label "urn:example/name-rhc-valve_3de2065c" ;
+    ns1:hasConnectionPoint <urn:example/name-rhc-valve-in_354bdfb3>,
+        <urn:example/name-rhc-valve-out_8478a257> ;
     ns1:hasMedium ns1:Water-HotWater ;
-    ns1:hasProperty <urn:example/name-rhc-valve-command_290163f4>,
-        <urn:example/name-rhc-valve-feedback_6cc3ecb0> .
+    ns1:hasProperty <urn:example/name-rhc-valve-command_fe690cb5>,
+        <urn:example/name-rhc-valve-feedback_a7e33c4a> .
 
-<urn:example/name-rhc-valve_19f7d87d> a ns1:Valve ;
-    rdfs:label "urn:example/name-rhc-valve_19f7d87d" ;
-    ns1:hasConnectionPoint <urn:example/name-rhc-valve-in_e0b435a5>,
-        <urn:example/name-rhc-valve-out_991338d3> ;
+<urn:example/name-rhc-valve_5d007a02> a ns1:Valve ;
+    rdfs:label "urn:example/name-rhc-valve_5d007a02" ;
+    ns1:hasConnectionPoint <urn:example/name-rhc-valve-in_b4e3c669>,
+        <urn:example/name-rhc-valve-out_7d326a34> ;
     ns1:hasMedium ns1:Water-HotWater ;
-    ns1:hasProperty <urn:example/name-rhc-valve-command_f0886efa>,
-        <urn:example/name-rhc-valve-feedback_82364d9c> .
+    ns1:hasProperty <urn:example/name-rhc-valve-command_c307777d>,
+        <urn:example/name-rhc-valve-feedback_d2907bfe> .
 
-<urn:example/name-rhc_e5d118ec> a ns1:HeatingCoil,
+<urn:example/name-rhc_09fc6ad7> a ns1:HeatingCoil,
         brick:Heating_Coil ;
-    rdfs:label "urn:example/name-rhc_e5d118ec" ;
-    ns1:contains <urn:example/name-rhc-return-water-temp-sensor_65929336>,
-        <urn:example/name-rhc-supply-water-temp-sensor_62856f6f>,
-        <urn:example/name-rhc-valve_08a4143a> ;
-    ns1:hasConnectionPoint <urn:example/name-rhc-air-in_5fbc93b9>,
-        <urn:example/name-rhc-air-out_4f632a91> ;
-    ns1:hasProperty <urn:example/name-rhc-return-water-temp_9aedb4e4>,
-        <urn:example/name-rhc-supply-water-temp_0c68ecbb> .
+    rdfs:label "urn:example/name-rhc_09fc6ad7" ;
+    ns1:contains <urn:example/name-rhc-return-water-temp-sensor_6d6c7d6e>,
+        <urn:example/name-rhc-supply-water-temp-sensor_1c2971b6>,
+        <urn:example/name-rhc-valve_3de2065c> ;
+    ns1:hasConnectionPoint <urn:example/name-rhc-air-in_9bf68967>,
+        <urn:example/name-rhc-air-out_67d7b2d5>,
+        <urn:example/name-rhc-water-in_4f4b0514>,
+        <urn:example/name-rhc-water-out_30260aa9> ;
+    ns1:hasProperty <urn:example/name-rhc-return-water-temp_4f15ab85>,
+        <urn:example/name-rhc-supply-water-temp_4afb9dae> .
 
-<urn:example/name-rhc_e5ea79a6> a ns1:HeatingCoil,
+<urn:example/name-rhc_dec31549> a ns1:HeatingCoil,
         brick:Heating_Coil ;
-    rdfs:label "urn:example/name-rhc_e5ea79a6" ;
-    ns1:contains <urn:example/name-rhc-return-water-temp-sensor_4d97f637>,
-        <urn:example/name-rhc-supply-water-temp-sensor_a32482b4>,
-        <urn:example/name-rhc-valve_19f7d87d> ;
-    ns1:hasConnectionPoint <urn:example/name-rhc-air-in_6fbd7f30>,
-        <urn:example/name-rhc-air-out_00e9fd2e> ;
-    ns1:hasProperty <urn:example/name-rhc-return-water-temp_8e25fd31>,
-        <urn:example/name-rhc-supply-water-temp_3d50ee07> .
+    rdfs:label "urn:example/name-rhc_dec31549" ;
+    ns1:contains <urn:example/name-rhc-return-water-temp-sensor_b1647a2d>,
+        <urn:example/name-rhc-supply-water-temp-sensor_0759cd48>,
+        <urn:example/name-rhc-valve_5d007a02> ;
+    ns1:hasConnectionPoint <urn:example/name-rhc-air-in_787c9b63>,
+        <urn:example/name-rhc-air-out_2054bd84>,
+        <urn:example/name-rhc-water-in_9a50e699>,
+        <urn:example/name-rhc-water-out_2645d6ff> ;
+    ns1:hasProperty <urn:example/name-rhc-return-water-temp_fd334d51>,
+        <urn:example/name-rhc-supply-water-temp_4868f939> .
 
 <urn:example/saf1> a ns1:FlowSensor,
         ns1:Sensor,
         brick:Supply_Air_Flow_Sensor ;
     rdfs:label "urn:example/saf1" ;
-    ns1:observes <urn:example/name-sup-air-flow_88f913e1> .
+    ns1:observes <urn:example/name-sup-air-flow_6b9b0a93> .
 
 <urn:example/saf2> a ns1:FlowSensor,
         ns1:Sensor,
         brick:Supply_Air_Flow_Sensor ;
     rdfs:label "urn:example/saf2" ;
-    ns1:observes <urn:example/name-sup-air-flow_749d63d0> .
+    ns1:observes <urn:example/name-sup-air-flow_c944a13d> .
 
 <urn:example/sap1> a ns1:PressureSensor,
         ns1:Sensor,
         brick:Supply_Air_Static_Pressure_Sensor ;
     rdfs:label "urn:example/sap1" ;
-    ns1:observes <urn:example/name-sup-air-pressure_8af42c6c> .
+    ns1:observes <urn:example/name-sup-air-pressure_b99fc306> .
 
 <urn:example/sap2> a ns1:PressureSensor,
         ns1:Sensor,
         brick:Supply_Air_Static_Pressure_Sensor ;
     rdfs:label "urn:example/sap2" ;
-    ns1:observes <urn:example/name-sup-air-pressure_849c5f1d> .
+    ns1:observes <urn:example/name-sup-air-pressure_96c2dfb0> .
 
 <urn:example/sat1> a ns1:Sensor,
         ns1:TemperatureSensor,
         brick:Supply_Air_Temperature_Sensor ;
     rdfs:label "urn:example/sat1" ;
-    ns1:observes <urn:example/name-sup-air-temp_cda2866a> .
+    ns1:observes <urn:example/name-sup-air-temp_14611d4a> .
 
 <urn:example/sat2> a ns1:Sensor,
         ns1:TemperatureSensor,
         brick:Supply_Air_Temperature_Sensor ;
     rdfs:label "urn:example/sat2" ;
-    ns1:observes <urn:example/name-sup-air-temp_dd8afd1b> .
+    ns1:observes <urn:example/name-sup-air-temp_201ea649> .
 
-<urn:example/name-c0_a323191c> a ns1:Duct ;
-    rdfs:label "urn:example/name-c0_a323191c" ;
-    ns1:connectsAt <urn:example/name-dmp-in_a9ce78fd>,
-        <urn:example/name-rhc-air-out_4f632a91> ;
+<urn:example/name-c0_63c55f6c> a ns1:Duct ;
+    rdfs:label "urn:example/name-c0_63c55f6c" ;
+    ns1:connectsAt <urn:example/name-dmp-in_e239eba2>,
+        <urn:example/name-rhc-air-out_67d7b2d5> ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:example/name-c0_f420cd8e> a ns1:Duct ;
-    rdfs:label "urn:example/name-c0_f420cd8e" ;
-    ns1:connectsAt <urn:example/name-dmp-in_ba50a253>,
-        <urn:example/name-rhc-air-out_00e9fd2e> ;
+<urn:example/name-c0_ca68d73d> a ns1:Duct ;
+    rdfs:label "urn:example/name-c0_ca68d73d" ;
+    ns1:connectsAt <urn:example/name-dmp-in_20141d47>,
+        <urn:example/name-rhc-air-out_2054bd84> ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:example/name-dmp-in_a9ce78fd> a ns1:InletConnectionPoint ;
-    rdfs:label "urn:example/name-dmp-in_a9ce78fd" ;
-    ns1:connectsThrough <urn:example/name-c0_a323191c> ;
+<urn:example/name-dmp-in_20141d47> a ns1:InletConnectionPoint ;
+    rdfs:label "urn:example/name-dmp-in_20141d47" ;
+    ns1:connectsThrough <urn:example/name-c0_ca68d73d> ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:example/name-dmp-in_ba50a253> a ns1:InletConnectionPoint ;
-    rdfs:label "urn:example/name-dmp-in_ba50a253" ;
-    ns1:connectsThrough <urn:example/name-c0_f420cd8e> ;
+<urn:example/name-dmp-in_e239eba2> a ns1:InletConnectionPoint ;
+    rdfs:label "urn:example/name-dmp-in_e239eba2" ;
+    ns1:connectsThrough <urn:example/name-c0_63c55f6c> ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:example/name-rhc-air-out_00e9fd2e> a ns1:OutletConnectionPoint ;
-    rdfs:label "urn:example/name-rhc-air-out_00e9fd2e" ;
-    ns1:connectsThrough <urn:example/name-c0_f420cd8e> ;
+<urn:example/name-rhc-air-out_2054bd84> a ns1:OutletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-air-out_2054bd84" ;
+    ns1:connectsThrough <urn:example/name-c0_ca68d73d> ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:example/name-rhc-air-out_4f632a91> a ns1:OutletConnectionPoint ;
-    rdfs:label "urn:example/name-rhc-air-out_4f632a91" ;
-    ns1:connectsThrough <urn:example/name-c0_a323191c> ;
+<urn:example/name-rhc-air-out_67d7b2d5> a ns1:OutletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-air-out_67d7b2d5" ;
+    ns1:connectsThrough <urn:example/name-c0_63c55f6c> ;
     ns1:hasMedium ns1:Medium-Air .
 
-<urn:example/name-rhc-return-water-temp_8e25fd31> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-rhc-return-water-temp_8e25fd31" ;
+<urn:example/name-rhc-return-water-temp_4f15ab85> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-rhc-return-water-temp_4f15ab85" ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:unit unit:DEG_C .
 
-<urn:example/name-rhc-return-water-temp_9aedb4e4> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-rhc-return-water-temp_9aedb4e4" ;
+<urn:example/name-rhc-return-water-temp_fd334d51> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-rhc-return-water-temp_fd334d51" ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:unit unit:DEG_C .
 
-<urn:example/name-rhc-supply-water-temp_0c68ecbb> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-rhc-supply-water-temp_0c68ecbb" ;
+<urn:example/name-rhc-supply-water-temp_4868f939> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-rhc-supply-water-temp_4868f939" ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:unit unit:DEG_C .
 
-<urn:example/name-rhc-supply-water-temp_3d50ee07> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-rhc-supply-water-temp_3d50ee07" ;
+<urn:example/name-rhc-supply-water-temp_4afb9dae> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-rhc-supply-water-temp_4afb9dae" ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:unit unit:DEG_C .
 
-<urn:example/name-sup-air-flow_749d63d0> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-sup-air-flow_749d63d0" ;
+<urn:example/name-rhc-water-in_4f4b0514> a ns1:InletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-water-in_4f4b0514" ;
+    ns1:hasMedium ns1:Medium-Water .
+
+<urn:example/name-rhc-water-in_9a50e699> a ns1:InletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-water-in_9a50e699" ;
+    ns1:hasMedium ns1:Medium-Water .
+
+<urn:example/name-rhc-water-out_2645d6ff> a ns1:OutletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-water-out_2645d6ff" ;
+    ns1:hasMedium ns1:Medium-Water .
+
+<urn:example/name-rhc-water-out_30260aa9> a ns1:OutletConnectionPoint ;
+    rdfs:label "urn:example/name-rhc-water-out_30260aa9" ;
+    ns1:hasMedium ns1:Medium-Water .
+
+<urn:example/name-sup-air-flow_6b9b0a93> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-sup-air-flow_6b9b0a93" ;
     qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
     qudt:unit unit:FT3-PER-MIN .
 
-<urn:example/name-sup-air-flow_88f913e1> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-sup-air-flow_88f913e1" ;
+<urn:example/name-sup-air-flow_c944a13d> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-sup-air-flow_c944a13d" ;
     qudt:hasQuantityKind qudtqk:VolumeFlowRate ;
     qudt:unit unit:FT3-PER-MIN .
 
-<urn:example/name-sup-air-pressure_849c5f1d> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-sup-air-pressure_849c5f1d" ;
+<urn:example/name-sup-air-pressure_96c2dfb0> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-sup-air-pressure_96c2dfb0" ;
     qudt:hasQuantityKind qudtqk:Pressure ;
     qudt:unit unit:INH2O .
 
-<urn:example/name-sup-air-pressure_8af42c6c> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-sup-air-pressure_8af42c6c" ;
+<urn:example/name-sup-air-pressure_b99fc306> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-sup-air-pressure_b99fc306" ;
     qudt:hasQuantityKind qudtqk:Pressure ;
     qudt:unit unit:INH2O .
 
-<urn:example/name-sup-air-temp_cda2866a> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-sup-air-temp_cda2866a" ;
+<urn:example/name-sup-air-temp_14611d4a> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-sup-air-temp_14611d4a" ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:unit unit:DEG_C .
 
-<urn:example/name-sup-air-temp_dd8afd1b> a ns1:QuantifiableObservableProperty ;
-    rdfs:label "urn:example/name-sup-air-temp_dd8afd1b" ;
+<urn:example/name-sup-air-temp_201ea649> a ns1:QuantifiableObservableProperty ;
+    rdfs:label "urn:example/name-sup-air-temp_201ea649" ;
     qudt:hasQuantityKind qudtqk:Temperature ;
     qudt:unit unit:DEG_C .
 
