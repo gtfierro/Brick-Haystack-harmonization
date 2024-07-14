@@ -35,11 +35,11 @@ def equipReftoBrick(subject: rdflib.URIRef, equipRef: rdflib.URIRef, context: br
     Outputs the correct Brick relationship
     """
     # if subject is a transitive subClass of brick:Point, then output isPointOf
-    query = "ASK { ?s rdf:type/rdfs:subClassOf* brick:Point }"
+    query = "ASK { ?s rdf:type/brick:aliasOf?/rdfs:subClassOf* brick:Point }"
     if bool(context.query(query, initBindings={"s": subject})):  # type: ignore
         return BRICK.isPointOf
     # if subject is a transitive subClass of brick:Equipment, then output isPartOf
-    query = "ASK { ?s rdf:type/rdfs:subClassOf* brick:Equipment }"
+    query = "ASK { ?s rdf:type/brick:aliasOf?/rdfs:subClassOf* brick:Equipment }"
     if bool(context.query(query, initBindings={"s": subject})):  # type: ignore
         return BRICK.isPartOf
     raise ValueError(f"Unknown equipRef {equipRef} for entity {subject}")
@@ -157,6 +157,17 @@ def run(haystack_file: str, output_file: str):
         handle_entity_with_templates(model, entity, entity_types)
 
     model.serialize(output_file, format=rdflib.util.guess_format(output_file) or "ttl")
+
+    # validate
+    env.import_dependencies(brick)
+    combined = brick.skolemize()
+    combined.serialize("/tmp/combined.ttl", format="ttl")
+
+    valid, _, report = validate(model, combined)
+    if not valid:
+        print(report)
+        sys.exit(1)
+
 
 
 def main():

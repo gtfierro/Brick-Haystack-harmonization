@@ -68,13 +68,13 @@ def make_statement(point_class: str, tag_list: str) -> str:
         parent = "Entity"
     else:
         parent_classes.add(parent)
-        parent = f"Brick_{parent.split('#')[-1].replace('.','')}"
+        parent = f"Brick_{parent.split('#')[-1].replace('.','').replace('-','')}"
 
     defn = g.value(subject=BRICK[point_class], predicate=SKOS.definition)
     if defn is not None:
-        return f'// {defn}\nBrick_{point_class.replace(".", "")} : {parent} <uri:"{BRICK[point_class]}"> {{ {tag_list} }}\n'
+        return f'// {defn}\nBrick_{point_class.replace(".", "").replace("-","")}: {parent} <uri:"{BRICK[point_class]}"> {{ {tag_list} }}\n'
     else:
-        return f'\nBrick_{point_class.replace(".", "")} : {parent} <uri:"{BRICK[point_class]}"> {{ {tag_list} }}\n'
+        return f'\nBrick_{point_class.replace(".", "").replace("-","")}: {parent} <uri:"{BRICK[point_class]}"> {{ {tag_list} }}\n'
 
 
 def subparts_to_xeto(row: dict):
@@ -156,7 +156,7 @@ def make_templ_statement(point_class: str, template_name: str, tag_list: str) ->
         parent = "Point"
     else:
         parent_classes.add(parent)
-        parent = f"Brick_{parent.split('#')[-1].replace('.','')}"
+        parent = f"Brick_{parent.split('#')[-1].replace('.','').replace('-','')}"
 
     return f'\n{template_name} : {parent} <template:"{template_name}", uri:"{PARAM[template_name]}"> {{ {tag_list} }}\n'
 
@@ -172,6 +172,7 @@ def run(filename: str, outputfile: str):
             statements.append(subparts_to_xeto(row) + "\n")
         elif row["Meta:State"] == "Equip":
             statements.append(equip_to_xeto(row) + "\n")
+        # TODO: add support for locations
     with open('data/bmotif/templates.yml', 'w') as f:
         f.write(buildingmotif_template_file_content)
 
