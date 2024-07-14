@@ -1,0 +1,14 @@
+
+        pragma: Lib <
+          doc: "Generated xeto file"
+          version: "3.9.12"
+          baseUri: "https://brickschema.org/schema/Brick#"
+          depends: {
+            { lib: "sys" }
+            { lib: "ph" }
+          }
+          org: {
+           dis: "Brick xeto file"
+           uri: "https://github.com/gtfierro/Brick-Haystack-harmonization"
+          }
+        >

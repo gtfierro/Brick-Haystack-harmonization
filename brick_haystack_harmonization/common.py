@@ -11,17 +11,29 @@ import rfc3987
 from brickschema.namespaces import BRICK, RDFS, SH, RDF
 import csv
 from typing import Set
+import importlib_resources
+from ontoenv import OntoEnv, Config
 
 A = RDF.type
 
+env = OntoEnv(Config(search_directories=["."]))
+env.add("https://brickschema.org/schema/1.4/Brick.ttl")
+
 # set up buildingmotif to read templates
-if os.path.exists('/tmp/bmotif.db'):
-    bm = buildingmotif.BuildingMOTIF("sqlite://///tmp/bmotif.db", log_level=logging.WARNING, shacl_engine='topquadrant')
+if os.path.exists('bmotif.db'):
+    bm = buildingmotif.BuildingMOTIF("sqlite:///bmotif.db", log_level=logging.WARNING, shacl_engine='topquadrant')
+    brick_lib = Library.load(ontology_graph='https://brickschema.org/schema/1.4/Brick.ttl', overwrite=False, run_shacl_inference=False)
 else:
-    bm = buildingmotif.BuildingMOTIF("sqlite://///tmp/bmotif.db", log_level=logging.WARNING, shacl_engine='topquadrant')
+    bm = buildingmotif.BuildingMOTIF("sqlite:///bmotif.db", log_level=logging.WARNING, shacl_engine='topquadrant')
     bm.setup_tables()
-Library.load(ontology_graph='https://brickschema.org/schema/1.4/Brick.ttl', overwrite=False)
-lib = Library.load(directory='data/bmotif/', overwrite=True)
+    brick_lib = Library.load(ontology_graph='https://brickschema.org/schema/1.4/Brick.ttl', overwrite=True)
+brick = brick_lib.get_shape_collection().graph
+
+# read data/bmotif out of the package data
+bmotif_template_path = str(importlib_resources.files('brick_haystack_harmonization.data').joinpath('bmotif'))
+lib = Library.load(directory=bmotif_template_path, overwrite=True)
+
+
 PH = rdflib.Namespace("urn:project_haystack/")
 
 replacements = {

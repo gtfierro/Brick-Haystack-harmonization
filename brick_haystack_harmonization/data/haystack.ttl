@@ -1,0 +1,103 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sosa: <http://www.w3.org/ns/sosa/> .
+@prefix unit: <http://qudt.org/vocab/unit/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix ph: <urn:project_haystack/> .
+
+<urn:project_haystack> a owl:Ontology ;
+    rdfs:label "Haystack RDF Representation" ;
+    sh:declare [ sh:namespace "http://www.w3.org/1999/02/22-rdf-syntax-ns#"^^xsd:anyURI ;
+            sh:prefix "rdf" ],
+        [ sh:namespace "http://www.w3.org/2000/01/rdf-schema#"^^xsd:anyURI ;
+            sh:prefix "rdfs" ],
+        [ sh:namespace "http://www.w3.org/ns/shacl#"^^xsd:anyURI ;
+            sh:prefix "sh" ],
+        [ sh:namespace "http://data.ashrae.org/standard223#"^^xsd:anyURI ;
+            sh:prefix "s223" ],
+        [ sh:namespace "https://brickschema.org/schema/Brick#"^^xsd:anyURI ;
+            sh:prefix "brick" ],
+        [ sh:namespace "http://www.w3.org/2002/07/owl#"^^xsd:anyURI ;
+            sh:prefix "owl" ] .
+
+ph:hasMarkerTag a owl:DatatypeProperty ;
+    rdfs:label "has marker tag" ;
+    skos:definition "Marker tag associated with an entity" .
+
+ph:hasMarkerTagShape a sh:PropertyShape ;
+    sh:path ph:hasMarkerTag ;
+    sh:datatype xsd:string .
+
+ph:hasValueTag a owl:ObjectProperty ;
+    rdfs:label "has value tag" ;
+    skos:definition "Value tag (k/v pair) associated with an entity" .
+
+ph:hasValueTagShape a sh:PropertyShape ;
+    sh:path ph:hasValueTag ;
+    sh:node ph:ValueTag .
+
+ph:hasRefTag a owl:ObjectProperty ;
+    rdfs:label "has value tag" ;
+    skos:definition "Ref tag (k/v pair) associated with an entity that points to another entity" .
+
+ph:hasRefTagShape a sh:PropertyShape ;
+    sh:path ph:hasRefTag ;
+    sh:node ph:RefTag .
+
+ph:ValueTag a owl:Class, sh:NodeShape ;
+    rdfs:label "Value Tag" ;
+    sh:property [
+        sh:maxCount 1 ;
+        sh:minCount 1 ;
+        sh:path ph:key;
+        sh:datatype xsd:string ;
+        sh:message "Each value tag must have a key/name" ;
+    ] ;
+    sh:property [
+        sh:maxCount 1 ;
+        sh:minCount 1 ;
+        sh:path ph:value ;
+    ] ;
+.
+
+ph:RefTag a owl:Class, sh:NodeShape ;
+    rdfs:subClassOf ph:ValueTag ;
+    rdfs:label "Value Tag" ;
+    sh:property [
+        sh:maxCount 1 ;
+        sh:minCount 1 ;
+        sh:path ph:value ;
+        sh:class ph:Entity ;
+    ] ;
+.
+
+ph:Entity a owl:Class, sh:NodeShape ;
+    sh:property ph:hasMarkerTagShape, 
+                ph:hasValueTagShape,
+                ph:hasRefTagShape
+.
+
+
+# brick/hasytack rules
+#ph:add_equip_ref a sh:NodeShape ;
+#    sh:targetClass ph:Entity ;
+#    sh:rule [
+#        a sh:SPARQLRule ;
+#        sh:construct """
+#        CONSTRUCT {
+#            $this ph:hasRefTag _:0 .
+#            _:0 ph:key "equipRef" .
+#            _:0 ph:value ?label .
+#        } WHERE {
+#            $this s223:observes ?prop .
+#            ?equip s223:hasProperty ?prop .
+#            ?equip rdfs:label ?label 
+#        }
+#        """ ;
+#        sh:prefixes <urn:project_haystack> ;
+#    ] ;
+#.

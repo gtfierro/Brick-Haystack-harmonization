@@ -1,0 +1,76 @@
+@prefix brick: <https://brickschema.org/schema/Brick#> .
+@prefix ns1: <urn:project_haystack/> .
+
+<http://example.org#vav1> a brick:Equipment,
+        brick:HVAC_Equipment,
+        brick:Terminal_Unit,
+        brick:VAV,
+        <urn:brick-haystack-xeto/ashrae.g36::G36Vav>,
+        ns1:Entity,
+        ns1:HasTag-equip ;
+    brick:feeds <http://example.org#zone1> ;
+    brick:hasPart <http://example.org#hw_coil>,
+        <http://example.org#vdmp1> ;
+    brick:hasPoint <http://example.org#co2s1>,
+        <http://example.org#safs1>,
+        <http://example.org#sats1>,
+        <http://example.org#zts1> ;
+    ns1:hasMarkerTag "equip",
+        "equipment",
+        "hvac",
+        "terminal",
+        "unit",
+        "vav" .
+
+<http://example.org#co2s1> a brick:CO2_Sensor,
+        ns1:Entity,
+        ns1:HasTag-point ;
+    ns1:hasMarkerTag "air",
+        "co2",
+        "point",
+        "quality",
+        "sensor" .
+
+<http://example.org#safs1> a brick:Supply_Air_Flow_Sensor,
+        ns1:Entity,
+        ns1:HasTag-point ;
+    ns1:hasMarkerTag "air",
+        "flow",
+        "point",
+        "sensor",
+        "supply" .
+
+<http://example.org#sats1> a brick:Supply_Air_Temperature_Sensor,
+        ns1:Entity,
+        ns1:HasTag-point ;
+    ns1:hasMarkerTag "air",
+        "point",
+        "sensor",
+        "supply",
+        "temp" .
+
+<http://example.org#vdmp1> a brick:Damper,
+        brick:Equipment,
+        brick:HVAC_Equipment,
+        ns1:Entity,
+        ns1:HasTag-equip,
+        ns1:HasTag-point ;
+    brick:hasPoint <http://example.org#dmppos1> ;
+    ns1:hasMarkerTag "cmd",
+        "damper",
+        "equip",
+        "equipment",
+        "hvac",
+        "inlet",
+        "point",
+        "sensor" .
+
+<http://example.org#zts1> a brick:Zone_Air_Temperature_Sensor,
+        ns1:Entity,
+        ns1:HasTag-point ;
+    ns1:hasMarkerTag "air",
+        "point",
+        "sensor",
+        "temp",
+        "zone" .
+

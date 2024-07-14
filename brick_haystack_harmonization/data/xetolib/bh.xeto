@@ -1,0 +1,1863 @@
+// devices that serve all or part of the building and may include electric power, lighting, transportation, or service water heating, including, but not limited to, furnaces, boilers, air conditioners, heat pumps, chillers, water heaters, lamps, luminaires, ballasts, elevators, escalators, or other devices or installations.
+Brick_Equipment: Brick_Asset <uri:"https://brickschema.org/schema/Brick#Equipment"> { equip }
+
+// See Variable_Air_Volume_Box
+Brick_VAV: Entity <uri:"https://brickschema.org/schema/Brick#VAV"> { equip, vav }
+
+// See Variable_Air_Volume_Box_With_Reheat
+Brick_RVAV: Entity <uri:"https://brickschema.org/schema/Brick#RVAV"> { equip, reheat, vav }
+
+// Element inserted into an air-distribution system or element of an air-distribution system permitting modification of the air resistance of the system and consequently changing the airflow rate or shutting off the airflow.
+Brick_Damper: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Damper"> { damper, equip }
+
+// A damper that modulates the flow of exhaust air
+Brick_Exhaust_Damper: Brick_Damper <uri:"https://brickschema.org/schema/Brick#Exhaust_Damper"> { damper, equip, exhaust }
+
+// Any device with two or more blades or vanes attached to a rotating shaft used to produce an airflow for the purpose of comfort, ventilation, exhaust, heating, cooling, or any other gaseous transport.
+Brick_Fan: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Fan"> { equip, fan }
+
+// Assembly consisting of sections containing a fan or fans and other necessary equipment to perform one or more of the following functions: circulating, filtration, heating, cooling, heat recovery, humidifying, dehumidifying, and mixing of air. Is usually connected to an air-distribution system.
+Brick_AHU: Entity <uri:"https://brickschema.org/schema/Brick#AHU"> { ahu, equip }
+
+// A damper that modulates the flow of the mixed outside and return air streams
+Brick_Mixed_Damper: Brick_Damper <uri:"https://brickschema.org/schema/Brick#Mixed_Damper"> { damper, equip, mixed }
+
+// See Fan_Coil_Unit
+Brick_FCU: Entity <uri:"https://brickschema.org/schema/Brick#FCU"> { equip, fcu }
+
+// A meter that measures the usage or consumption of gas
+Brick_Gas_Meter: Brick_Meter <uri:"https://brickschema.org/schema/Brick#Gas_Meter"> { equip, gas, meter }
+
+// A meter that measures the usage or consumption of electricity
+Brick_Electrical_Meter: Brick_Meter <uri:"https://brickschema.org/schema/Brick#Electrical_Meter"> { elec, equip, meter }
+
+// A Command is an output point that directly determines the behavior of equipment and/or affects relevant operational points.
+Brick_Command: Brick_Point <uri:"https://brickschema.org/schema/Brick#Command"> { cmd }
+
+// A Sensor is an input point that represents the value of a device or instrument designed to detect and measure a variable (ASHRAE Dictionary).
+Brick_Sensor: Brick_Point <uri:"https://brickschema.org/schema/Brick#Sensor"> { sensor }
+
+// Alarm points are signals (either audible or visual) that alert an operator to an off-normal condition which requires some form of corrective action
+Brick_Alarm: Brick_Point <uri:"https://brickschema.org/schema/Brick#Alarm"> { alarm }
+
+// A Status is input point that reports the current operating mode, state, position, or condition of an item. Statuses are observations and should be considered 'read-only'
+Brick_Status: Brick_Point <uri:"https://brickschema.org/schema/Brick#Status"> { status }
+
+// A Setpoint is an input value at which the desired property is set
+Brick_Setpoint: Brick_Point <uri:"https://brickschema.org/schema/Brick#Setpoint"> { sp }
+
+// An On/Off Command controls or reports the binary status of a control loop, relay or equipment activity
+Brick_On_Off_Command: Brick_Command <uri:"https://brickschema.org/schema/Brick#On_Off_Command"> { cmd, run }
+
+// Indicates the on/off status of a control loop, relay or equipment
+Brick_On_Off_Status: Brick_On_Status <uri:"https://brickschema.org/schema/Brick#On_Off_Status"> { run, status }
+
+// Commands that enable functionality
+Brick_Enable_Command: Brick_Command <uri:"https://brickschema.org/schema/Brick#Enable_Command"> { cmd, enable }
+
+// Indicates if a system or piece of functionality has been enabled
+Brick_Enable_Status: Brick_Status <uri:"https://brickschema.org/schema/Brick#Enable_Status"> { enable, status }
+
+// Indicates which mode a system, device or control loop is currently in
+Brick_Mode_Status: Brick_Status <uri:"https://brickschema.org/schema/Brick#Mode_Status"> { mode, run, status }
+
+// Indicates the current operating mode of a system, device or control loop
+Brick_Operating_Mode_Status: Brick_Mode_Status <uri:"https://brickschema.org/schema/Brick#Operating_Mode_Status"> { mode, operation, status }
+
+// Controls whether or not a device or controller is operating in "Occupied" mode
+Brick_Occupancy_Command: Brick_Command <uri:"https://brickschema.org/schema/Brick#Occupancy_Command"> { cmd, occupied }
+
+// Indicates if a room or space is occupied
+Brick_Occupancy_Status: Brick_Status <uri:"https://brickschema.org/schema/Brick#Occupancy_Status"> { occupied, status }
+
+// Indicates if a system, device or control loop is in "Occupied" mode
+Brick_Occupied_Mode_Status: Brick_Mode_Status <uri:"https://brickschema.org/schema/Brick#Occupied_Mode_Status"> { mode, occupied, status }
+
+// Indicates if the expected operating status of an equipment or control loop has been overridden
+Brick_Overridden_Status: Brick_Status <uri:"https://brickschema.org/schema/Brick#Overridden_Status"> { override, status }
+
+// Controls or reports whether or not a device or control loop is in 'override'
+Brick_Override_Command: Brick_Command <uri:"https://brickschema.org/schema/Brick#Override_Command"> { cmd, override }
+
+// Indicates if a control loop, relay or equipment has been turned on when it would otherwise be scheduled to be off
+Brick_Overridden_On_Status: Brick_Overridden_Status <uri:"https://brickschema.org/schema/Brick#Overridden_On_Status"> { on, override, status }
+
+// Indicates if a control loop, relay or equipment has been turned off when it would otherwise be scheduled to be on
+Brick_Overridden_Off_Status: Brick_Off_Status <uri:"https://brickschema.org/schema/Brick#Overridden_Off_Status"> { off, override, status }
+
+
+Brick_Operating_Mode_Command: Entity <uri:"https://brickschema.org/schema/Brick#Operating_Mode_Command"> { cmd, emergency, enable, mode }
+
+// Indicates if a request has been filed to start a device or equipment
+Brick_Run_Request_Status: Brick_Run_Status <uri:"https://brickschema.org/schema/Brick#Run_Request_Status"> { call, run, status }
+
+// Indicates the presence of a fault in a device, system or control loop
+Brick_Fault_Status: Brick_Status <uri:"https://brickschema.org/schema/Brick#Fault_Status"> { fault, status }
+
+// An alarm that indicates a loss of communication e.g. with a device or controller
+Brick_Communication_Loss_Alarm: Brick_Alarm <uri:"https://brickschema.org/schema/Brick#Communication_Loss_Alarm"> { alarm }
+
+
+Brick_Thermal_Power_Sensor: Brick_Power_Sensor <uri:"https://brickschema.org/schema/Brick#Thermal_Power_Sensor"> { power, sensor, thermal }
+
+
+Brick_Electrical_Power_Sensor: Entity <uri:"https://brickschema.org/schema/Brick#Electrical_Power_Sensor"> { elec, power, sensor }
+
+// Measures the duration for which a device was in an active or "on" state
+Brick_Run_Time_Sensor: Entity <uri:"https://brickschema.org/schema/Brick#Run_Time_Sensor"> { run, sensor, time }
+
+// Measures the temperature of discharge air
+Brick_Discharge_Air_Temperature_Sensor: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Sensor"> { air, discharge, sensor, temp }
+
+// Sets temperature of discharge air
+Brick_Discharge_Air_Temperature_Setpoint: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Setpoint"> { air, discharge, setpoint, sp, temp }
+
+// Sets the size of a deadband of temperature of discharge air
+Brick_Discharge_Air_Temperature_Deadband_Setpoint: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Temperature_Deadband_Setpoint"> { air, deadband, discharge, setpoint, sp, temp }
+
+// Sets the size of a deadband of temperature of heating discharge air
+Brick_Heating_Discharge_Air_Temperature_Deadband_Setpoint: Entity <uri:"https://brickschema.org/schema/Brick#Heating_Discharge_Air_Temperature_Deadband_Setpoint"> { air, deadband, discharge, heating, setpoint, sp, temp }
+
+// Sets the size of a deadband of temperature of cooling discharge air
+Brick_Cooling_Discharge_Air_Temperature_Deadband_Setpoint: Entity <uri:"https://brickschema.org/schema/Brick#Cooling_Discharge_Air_Temperature_Deadband_Setpoint"> { air, cooling, deadband, discharge, setpoint, sp, temp }
+
+// Measures the relative humidity of discharge air
+Brick_Discharge_Air_Humidity_Sensor: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Humidity_Sensor"> { air, discharge, humidity, sensor }
+
+// Humidity setpoint for discharge air
+Brick_Discharge_Air_Humidity_Setpoint: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Humidity_Setpoint"> { air, discharge, humidity, setpoint, sp }
+
+// The static pressure of air within discharge regions of an HVAC system
+Brick_Discharge_Air_Static_Pressure_Sensor: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Sensor"> { air, discharge, pressure, sensor }
+
+// Sets static pressure of discharge air
+Brick_Discharge_Air_Static_Pressure_Setpoint: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Static_Pressure_Setpoint"> { air, discharge, pressure, setpoint, sp }
+
+
+Brick_Discharge_Air_Velocity_Pressure_Sensor: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Velocity_Pressure_Sensor"> { air, discharge, pressure, sensor, velocity }
+
+// Measures dewpoint of discharge air
+Brick_Discharge_Air_Dewpoint_Sensor: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Dewpoint_Sensor"> { air, dewPoint, discharge, sensor, temp }
+
+// Measures the rate of flow of discharge air
+Brick_Discharge_Air_Flow_Sensor: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Flow_Sensor"> { air, discharge, flow, sensor }
+
+// Sets discharge air flow
+Brick_Discharge_Air_Flow_Setpoint: Entity <uri:"https://brickschema.org/schema/Brick#Discharge_Air_Flow_Setpoint"> { air, discharge, flow, setpoint, sp }
+
+// Sets discharge air flow for cooling
+Brick_Cooling_Discharge_Air_Flow_Setpoint: Entity <uri:"https://brickschema.org/schema/Brick#Cooling_Discharge_Air_Flow_Setpoint"> { air, cooling, discharge, flow, setpoint, sp }
+
+// Sets discharge air flow for heating
+Brick_Heating_Discharge_Air_Flow_Setpoint: Entity <uri:"https://brickschema.org/schema/Brick#Heating_Discharge_Air_Flow_Setpoint"> { air, discharge, flow, heating, setpoint, sp }
+
+
+
+
+// Measures the temperature of supply air
+Brick_Supply_Air_Temperature_Sensor: Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Temperature_Sensor"> { air, sensor, supply, temp }
+
+// Temperature setpoint for supply air
+Brick_Supply_Air_Temperature_Setpoint: Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Supply_Air_Temperature_Setpoint"> { air, setpoint, sp, supply, temp }
+
+// Sets the size of a deadband of temperature of supply air
+Brick_Supply_Air_Temperature_Deadband_Setpoint: Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Supply_Air_Temperature_Deadband_Setpoint"> { air, deadband, setpoint, sp, supply, temp }
+
+// Sets the size of a deadband of temperature of supply air for heating
+Brick_Heating_Supply_Air_Temperature_Deadband_Setpoint: Brick_Heating_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Supply_Air_Temperature_Deadband_Setpoint"> { air, deadband, heating, setpoint, sp, supply, temp }
+
+// Sets the size of a deadband of temperature of supply air for cooling
+Brick_Cooling_Supply_Air_Temperature_Deadband_Setpoint: Brick_Cooling_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Supply_Air_Temperature_Deadband_Setpoint"> { air, cooling, deadband, setpoint, sp, supply, temp }
+
+// Measures the relative humidity of supply air
+Brick_Supply_Air_Humidity_Sensor: Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Humidity_Sensor"> { air, humidity, sensor, supply }
+
+// Humidity setpoint for supply air
+Brick_Supply_Air_Humidity_Setpoint: Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Supply_Air_Humidity_Setpoint"> { air, humidity, setpoint, sp, supply }
+
+// The static pressure of air within supply regions of an HVAC system
+Brick_Supply_Air_Static_Pressure_Sensor: Brick_Air_Static_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Static_Pressure_Sensor"> { air, pressure, sensor, supply }
+
+// Sets static pressure of supply air
+Brick_Supply_Air_Static_Pressure_Setpoint: Brick_Static_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Supply_Air_Static_Pressure_Setpoint"> { air, pressure, setpoint, sp, supply }
+
+
+Brick_Supply_Air_Velocity_Pressure_Sensor: Brick_Air_Velocity_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Velocity_Pressure_Sensor"> { air, pressure, sensor, supply, velocity }
+
+
+Brick_Supply_Air_Dewpoint_Sensor: Brick_Dewpoint_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Dewpoint_Sensor"> { air, dewPoint, sensor, supply, temp }
+
+// Measures the rate of flow of supply air
+Brick_Supply_Air_Flow_Sensor: Brick_Air_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Supply_Air_Flow_Sensor"> { air, flow, sensor, supply }
+
+// Sets supply air flow rate
+Brick_Supply_Air_Flow_Setpoint: Brick_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Supply_Air_Flow_Setpoint"> { air, flow, setpoint, sp, supply }
+
+// Sets supply air flow rate for cooling
+Brick_Cooling_Supply_Air_Flow_Setpoint: Brick_Supply_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Supply_Air_Flow_Setpoint"> { air, cooling, flow, setpoint, sp, supply }
+
+// Sets supply air flow rate for heating
+Brick_Heating_Supply_Air_Flow_Setpoint: Brick_Supply_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Supply_Air_Flow_Setpoint"> { air, flow, heating, setpoint, sp, supply }
+
+
+
+
+// Measures the temperature of mixed air
+Brick_Mixed_Air_Temperature_Sensor: Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Temperature_Sensor"> { air, mixed, sensor, temp }
+
+// Sets temperature of mixed air
+Brick_Mixed_Air_Temperature_Setpoint: Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Temperature_Setpoint"> { air, mixed, setpoint, sp, temp }
+
+// Measures the humidity of mixed air
+Brick_Mixed_Air_Humidity_Sensor: Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Humidity_Sensor"> { air, humidity, mixed, sensor }
+
+// Humidity setpoint for mixed air
+Brick_Mixed_Air_Humidity_Setpoint: Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Humidity_Setpoint"> { air, humidity, mixed, setpoint, sp }
+
+// Measures the rate of flow of mixed air
+Brick_Mixed_Air_Flow_Sensor: Brick_Air_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Flow_Sensor"> { air, flow, mixed, sensor }
+
+// Measures the temperature of return air
+Brick_Return_Air_Temperature_Sensor: Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_Temperature_Sensor"> { air, return, sensor, temp }
+
+// The target temperature for return air, often used as an approximation of zone air temperature
+Brick_Return_Air_Temperature_Setpoint: Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Return_Air_Temperature_Setpoint"> { air, return, setpoint, sp, temp }
+
+// Measures the relative humidity of return air
+Brick_Return_Air_Humidity_Sensor: Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_Humidity_Sensor"> { air, humidity, return, sensor }
+
+// Humidity setpoint for return air
+Brick_Return_Air_Humidity_Setpoint: Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Return_Air_Humidity_Setpoint"> { air, humidity, return, setpoint, sp }
+
+// Measures the total heat content of return air
+Brick_Return_Air_Enthalpy_Sensor: Brick_Air_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_Enthalpy_Sensor"> { air, enthalpy, return, sensor }
+
+// Senses the dewpoint temperature of return air
+Brick_Return_Air_Dewpoint_Sensor: Brick_Dewpoint_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_Dewpoint_Sensor"> { air, dewPoint, return, sensor, temp }
+
+// Measures the rate of flow of return air
+Brick_Return_Air_Flow_Sensor: Brick_Air_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_Flow_Sensor"> { air, flow, return, sensor }
+
+// Measures the concentration of CO2 in return air
+Brick_Return_Air_CO2_Sensor: Brick_CO2_Sensor <uri:"https://brickschema.org/schema/Brick#Return_Air_CO2_Sensor"> { air, co2, return, sensor }
+
+// Sets some property of CO2 in Return Air
+Brick_Return_Air_CO2_Setpoint: Brick_CO2_Setpoint <uri:"https://brickschema.org/schema/Brick#Return_Air_CO2_Setpoint"> { air, co2, return, setpoint, sp }
+
+// Measures the temperature of outside air
+Brick_Outside_Air_Temperature_Sensor: Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_Temperature_Sensor"> { air, outside, sensor, temp }
+
+// Senses the dewpoint temperature of outside air
+Brick_Outside_Air_Dewpoint_Sensor: Brick_Dewpoint_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_Dewpoint_Sensor"> { air, dewPoint, outside, sensor, temp }
+
+// Measures the relative humidity of outside air
+Brick_Outside_Air_Humidity_Sensor: Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_Humidity_Sensor"> { air, humidity, outside, sensor }
+
+// Measures the total heat content of outside air
+Brick_Outside_Air_Enthalpy_Sensor: Brick_Air_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_Enthalpy_Sensor"> { air, enthalpy, outside, sensor }
+
+// Measures the rate of flow of outside air into the system
+Brick_Outside_Air_Flow_Sensor: Brick_Air_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_Flow_Sensor"> { air, flow, outside, sensor }
+
+// Sets outside air flow rate
+Brick_Outside_Air_Flow_Setpoint: Brick_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Flow_Setpoint"> { air, flow, min, outside, setpoint, sp }
+
+// Measures the concentration of CO2 in outside air
+Brick_Outside_Air_CO2_Sensor: Brick_CO2_Sensor <uri:"https://brickschema.org/schema/Brick#Outside_Air_CO2_Sensor"> { air, co2, outside, sensor }
+
+// Measures the temperature of exhaust air
+Brick_Exhaust_Air_Temperature_Sensor: Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Temperature_Sensor"> { air, exhaust, sensor, temp }
+
+// Measures the relative humidity of exhaust air
+Brick_Exhaust_Air_Humidity_Sensor: Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Humidity_Sensor"> { air, exhaust, humidity, sensor }
+
+// The static pressure of air within exhaust regions of an HVAC system
+Brick_Exhaust_Air_Static_Pressure_Sensor: Brick_Air_Static_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Static_Pressure_Sensor"> { air, exhaust, pressure, sensor }
+
+// Sets static pressure of exhaust air
+Brick_Exhaust_Air_Static_Pressure_Setpoint: Brick_Static_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Static_Pressure_Setpoint"> { air, exhaust, pressure, setpoint, sp }
+
+// Measures the rate of flow of exhaust air
+Brick_Exhaust_Air_Flow_Sensor: Brick_Air_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Flow_Sensor"> { air, exhaust, flow, sensor }
+
+// Sets exhaust air flow rate
+Brick_Exhaust_Air_Flow_Setpoint: Brick_Air_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Exhaust_Air_Flow_Setpoint"> { air, exhaust, flow, setpoint, sp }
+
+// Measures the temperature of air
+Brick_Air_Temperature_Sensor: Brick_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Temperature_Sensor"> { air, sensor, temp }
+
+// Sets temperature of air
+Brick_Air_Temperature_Setpoint: Brick_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Air_Temperature_Setpoint"> { air, setpoint, sp, temp }
+
+// Measures the present state of absolute humidity relative to a maximum humidity given the same temperature
+Brick_Relative_Humidity_Sensor: Brick_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Relative_Humidity_Sensor"> { air, humidity, sensor }
+
+// Measures the concentration of water vapor in air
+Brick_Humidity_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Humidity_Sensor"> { absolute, air, humidity, sensor }
+
+// Measures the rate of flow of air
+Brick_Air_Flow_Sensor: Brick_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Flow_Sensor"> { air, flow, sensor }
+
+// Sets air flow
+Brick_Air_Flow_Setpoint: Brick_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Air_Flow_Setpoint"> { air, flow, setpoint, sp }
+
+// Measures the magnitude of velocity of some form of movement
+Brick_Speed_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Speed_Sensor"> { sensor, speed }
+
+// Sets speed
+Brick_Speed_Setpoint: Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Speed_Setpoint"> { setpoint, sp, speed }
+
+// Measures the current position of a component in terms of a fraction of its full range of motion
+Brick_Position_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Position_Sensor"> { position, sensor }
+
+// Controls or reports the position of some object
+Brick_Position_Command: Brick_Command <uri:"https://brickschema.org/schema/Brick#Position_Command"> { cmd, position }
+
+// Measures the rate of flow of some substance
+Brick_Flow_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Flow_Sensor"> { flow, sensor }
+
+// Sets flow
+Brick_Flow_Setpoint: Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Flow_Setpoint"> { flow, setpoint, sp }
+
+// Measures resistance to airflow in a heating and cooling system's components and duct work
+Brick_Static_Pressure_Sensor: Brick_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Static_Pressure_Sensor"> { pressure, sensor }
+
+// Sets static pressure
+Brick_Static_Pressure_Setpoint: Brick_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Static_Pressure_Setpoint"> { pressure, setpoint, sp }
+
+// Measures the difference between two applied pressures
+Brick_Differential_Pressure_Sensor: Brick_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Differential_Pressure_Sensor"> { delta, pressure, sensor }
+
+// Sets differential pressure
+Brick_Differential_Pressure_Setpoint: Brick_Differential_Setpoint <uri:"https://brickschema.org/schema/Brick#Differential_Pressure_Setpoint"> { delta, pressure, setpoint, sp }
+
+// Measures temperature: the physical property of matter that quantitatively expresses the common notions of hot and cold
+Brick_Temperature_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Temperature_Sensor"> { sensor, temp }
+
+// Sets temperature
+Brick_Temperature_Setpoint: Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Temperature_Setpoint"> { setpoint, sp, temp }
+
+// Measures the concentration of CO2 in air
+Brick_CO2_Level_Sensor: Brick_CO2_Sensor <uri:"https://brickschema.org/schema/Brick#CO2_Level_Sensor"> { co2, sensor }
+
+
+
+Brick_Outside_Air_Lockout_Temperature_Setpoint: Brick_Outside_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Lockout_Temperature_Setpoint"> { air, disable, outside, setpoint, sp, temp }
+
+// Indicates if a piece of equipment, system, or functionality has been locked out from operation
+Brick_Lockout_Status: Brick_Status <uri:"https://brickschema.org/schema/Brick#Lockout_Status"> { air, disable, economizing, outside, status, temp }
+
+// Command that enables heating functionality in equipment but certain condition(s) must be met first before actively heating. For the actively heating control, see Heating_Command.
+Brick_Heating_Enable_Command: Brick_Enable_Command <uri:"https://brickschema.org/schema/Brick#Heating_Enable_Command"> { cmd, heating, run }
+
+// Controls the amount of heating to be delivered (typically as a proportion of total heating output)
+Brick_Heating_Command: Brick_Command <uri:"https://brickschema.org/schema/Brick#Heating_Command"> { cmd, heat }
+
+// Command that enables cooling functionality in equipment but certain condition(s) must be met first before actively cooling. For the actively cooling control, see Cooling_Command.
+Brick_Cooling_Enable_Command: Brick_Enable_Command <uri:"https://brickschema.org/schema/Brick#Cooling_Enable_Command"> { cmd, cooling, run }
+
+// Controls the amount of cooling to be delivered (typically as a proportion of total cooling output)
+Brick_Cooling_Command: Brick_Command <uri:"https://brickschema.org/schema/Brick#Cooling_Command"> { cmd, cool }
+
+// Measures the rate of flow in a chilled water circuit
+Brick_Chilled_Water_Flow_Sensor: Brick_Water_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Flow_Sensor"> { chilled, flow, sensor, water }
+
+// Sets the target flow rate of chilled water
+Brick_Chilled_Water_Flow_Setpoint: Brick_Water_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Flow_Setpoint"> { chilled, flow, setpoint, sp, water }
+
+
+// Measures the difference in temperature between the entering water to the chiller or other water cooling device and leaving water from the same chiller or other water cooling device
+Brick_Chilled_Water_Differential_Temperature_Sensor: Brick_Chilled_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Differential_Temperature_Sensor"> { chilled, delta, sensor, temp, water }
+
+// Measures the difference in water pressure on either side of a chilled water valve
+Brick_Chilled_Water_Differential_Pressure_Sensor: Brick_Water_Differential_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Differential_Pressure_Sensor"> { chilled, delta, pressure, sensor, water }
+
+// Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit used to carry chilled water
+Brick_Chilled_Water_Differential_Pressure_Setpoint: Brick_Water_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Differential_Pressure_Setpoint"> { chilled, delta, pressure, setpoint, sp, water }
+
+
+// Measures the rate of flow in a hot water circuit
+Brick_Hot_Water_Flow_Sensor: Brick_Water_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Hot_Water_Flow_Sensor"> { flow, hot, sensor, water }
+
+// Sets the target flow rate of hot water
+Brick_Hot_Water_Flow_Setpoint: Brick_Water_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Hot_Water_Flow_Setpoint"> { flow, hot, setpoint, sp, water }
+
+// Measures the difference in temperature between the entering water to the boiler or other water heating device and leaving water from the same boiler or other water heating device
+Brick_Hot_Water_Differential_Temperature_Sensor: Brick_Water_Differential_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Hot_Water_Differential_Temperature_Sensor"> { delta, hot, sensor, temp, water }
+
+// Measures the difference in water pressure on either side of a hot water valve
+Brick_Hot_Water_Differential_Pressure_Sensor: Brick_Water_Differential_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Hot_Water_Differential_Pressure_Sensor"> { delta, hot, pressure, sensor, water }
+
+// Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit used to carry hot water
+Brick_Hot_Water_Differential_Pressure_Setpoint: Brick_Water_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Hot_Water_Differential_Pressure_Setpoint"> { delta, hot, pressure, setpoint, sp, water }
+
+// Measures the flow of the condenser water
+Brick_Condenser_Water_Flow_Sensor: Brick_Water_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Condenser_Water_Flow_Sensor"> { condenser, flow, sensor, water }
+
+
+Brick_Condenser_Water_Flow_Setpoint: Brick_Water_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Condenser_Water_Flow_Setpoint"> { condenser, flow, setpoint, sp, water }
+
+// Measures the rate of flow of bypass water
+Brick_Bypass_Water_Flow_Sensor: Brick_Water_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Bypass_Water_Flow_Sensor"> { bypass, flow, sensor, water }
+
+// Measures the temperature of entering water
+Brick_Entering_Water_Temperature_Sensor: Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Entering_Water_Temperature_Sensor"> { entering, sensor, temp, water }
+
+// Measures the temperature of water leaving a piece of equipment or system
+Brick_Leaving_Water_Temperature_Sensor: Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Leaving_Water_Temperature_Sensor"> { leaving, sensor, temp, water }
+
+// Measures the rate of flow of water entering a piece of equipment or system
+Brick_Entering_Water_Flow_Sensor: Brick_Water_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Entering_Water_Flow_Sensor"> { entering, flow, pressure, sensor, water }
+
+// Measures the rate of flow of water that is leaving a piece of equipment or system
+Brick_Leaving_Water_Flow_Sensor: Brick_Water_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Leaving_Water_Flow_Sensor"> { flow, leaving, pressure, sensor, water }
+
+// Measures the difference in water temperature between an upstream and downstream point in a pipe or conduit
+Brick_Water_Differential_Temperature_Sensor: Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Differential_Temperature_Sensor"> { delta, sensor, temp, water }
+
+// Measures the temperature of water
+Brick_Water_Temperature_Sensor: Brick_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Temperature_Sensor"> { sensor, temp, water }
+
+// Measures the level of the water in the collection basin, e.g. within a Cooling_Tower
+Brick_Collection_Basin_Water_Level_Sensor: Brick_Water_Level_Sensor <uri:"https://brickschema.org/schema/Brick#Collection_Basin_Water_Level_Sensor"> { basin, level, sensor, water }
+
+// Measures the height/level of water in some container
+Brick_Water_Level_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Level_Sensor"> { level, sensor, water }
+
+// An alarm that indicates leaks occured in systems containing fluids
+Brick_Leak_Alarm: Brick_Alarm <uri:"https://brickschema.org/schema/Brick#Leak_Alarm"> { alarm, leak }
+
+// A physical or virtual sensor which represents the temperature of an HVAC Zone
+Brick_Zone_Air_Temperature_Sensor: Brick_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Zone_Air_Temperature_Sensor"> { air, sensor, temp, zone }
+
+// Sets temperature of zone air
+Brick_Zone_Air_Temperature_Setpoint: Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Zone_Air_Temperature_Setpoint"> { air, setpoint, sp, temp, zone }
+
+
+Brick_Effective_Zone_Air_Temperature_Setpoint: Brick_Zone_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Effective_Zone_Air_Temperature_Setpoint"> { air, effective, setpoint, sp, temp, zone }
+
+// Measures the relative humidity of zone air
+Brick_Zone_Air_Humidity_Sensor: Brick_Relative_Humidity_Sensor <uri:"https://brickschema.org/schema/Brick#Zone_Air_Humidity_Sensor"> { air, humidity, sensor, zone }
+
+// Humidity setpoint for zone air
+Brick_Zone_Air_Humidity_Setpoint: Brick_Humidity_Setpoint <uri:"https://brickschema.org/schema/Brick#Zone_Air_Humidity_Setpoint"> { air, humidity, setpoint, sp, zone }
+
+// Measures dewpoint of zone air
+Brick_Zone_Air_Dewpoint_Sensor: Brick_Dewpoint_Sensor <uri:"https://brickschema.org/schema/Brick#Zone_Air_Dewpoint_Sensor"> { air, dewPoint, sensor, temp, zone }
+
+// The static pressure of air within a building
+Brick_Building_Air_Static_Pressure_Sensor: Brick_Air_Static_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Building_Air_Static_Pressure_Sensor"> { air, building, pressure, sensor }
+
+// Sets static pressure of the entire building
+Brick_Building_Air_Static_Pressure_Setpoint: Brick_Air_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Building_Air_Static_Pressure_Setpoint"> { air, building, pressure, setpoint, sp }
+
+// The computed average temperature of air in a zone, over some period of time
+Brick_Average_Zone_Air_Temperature_Sensor: Brick_Zone_Air_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Average_Zone_Air_Temperature_Sensor"> { air, avg, sensor, temp, zone }
+
+// Measures the portion of power that, averaged over a complete cycle of the AC waveform, results in net transfer of energy in one direction
+Brick_Active_Power_Sensor: Brick_Electric_Power_Sensor <uri:"https://brickschema.org/schema/Brick#Active_Power_Sensor"> { active, power, sensor }
+
+// Measures the portion of power that, averaged over a complete cycle of the AC waveform, is due to stored energy which returns to the source in each cycle
+Brick_Reactive_Power_Sensor: Brick_Electric_Power_Sensor <uri:"https://brickschema.org/schema/Brick#Reactive_Power_Sensor"> { power, reactive, sensor }
+
+// Senses the amperes of electrical current passing through the sensor
+Brick_Current_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Current_Sensor"> { current, sensor }
+
+// Measures the voltage of an electrical device or object
+Brick_Voltage_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Voltage_Sensor"> { sensor, volt }
+
+// Measures the frequency of a phenomenon or aspect of a phenomenon, e.g. the frequency of a fan turning
+Brick_Frequency_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Frequency_Sensor"> { freq, sensor }
+
+// Sensors measuring power Factor, under periodic conditions, is the ratio of the absolute value of the active power (P) to the apparent power (S).
+Brick_Power_Factor_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Power_Factor_Sensor"> { pf, sensor }
+
+// Measures torque, the tendency of a force to rotate an object about some axis
+Brick_Torque_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Torque_Sensor"> { sensor, torque }
+
+// Measure temperature of the heat sink on a device such as a VFD.
+Brick_Heat_Sink_Temperature_Sensor: Brick_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Heat_Sink_Temperature_Sensor"> { heatsink, sensor, temp }
+
+// Measures the voltage across a DC bus
+Brick_DC_Bus_Voltage_Sensor: Brick_Voltage_Sensor <uri:"https://brickschema.org/schema/Brick#DC_Bus_Voltage_Sensor"> { dc, sensor, volt }
+
+// An alarm that indicates a leak of condensate from a cooling system
+Brick_Condensate_Leak_Alarm: Brick_Leak_Alarm <uri:"https://brickschema.org/schema/Brick#Condensate_Leak_Alarm"> { alarm, condensate, status }
+
+
+// Measures the total luminous flux incident on a surface, per unit area
+Brick_Illuminance_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Illuminance_Sensor"> { illuminance, sensor }
+
+// Detects matter of size 1 micron
+Brick_PM1_Sensor: Brick_Particulate_Matter_Sensor <uri:"https://brickschema.org/schema/Brick#PM1_Sensor"> { air, pm1, sensor, zone }
+
+// Detects matter of size 2.5 microns
+Brick_PM25_Sensor: Brick_Particulate_Matter_Sensor <uri:"https://brickschema.org/schema/Brick#PM2.5_Sensor"> { air, pm2_5, sensor, zone }
+
+// Detects matter of size 10 microns
+Brick_PM10_Sensor: Brick_Particulate_Matter_Sensor <uri:"https://brickschema.org/schema/Brick#PM10_Sensor"> { air, pm10, sensor, zone }
+
+
+Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint : Point <template:"Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint", uri:"urn:___param___#Brick_Hot_Deck_Discharge_Air_Temperature_Setpoint"> { air, discharge, hotDeck, setpoint, temp }
+
+
+Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor : Point <template:"Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor", uri:"urn:___param___#Brick_Hot_Deck_Discharge_Air_Static_Pressure_Sensor"> { air, discharge, hotDeck, pressure }
+
+
+Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint : Point <template:"Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint", uri:"urn:___param___#Brick_Hot_Deck_Discharge_Air_Static_Pressure_Setpoint"> { air, discharge, hotDeck, pressure, setpoint }
+
+
+Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint : Point <template:"Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint", uri:"urn:___param___#Brick_Cold_Deck_Discharge_Air_Temperature_Setpoint"> { air, coldDeck, discharge, setpoint, temp }
+
+
+Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor : Point <template:"Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor", uri:"urn:___param___#Brick_Cold_Deck_Discharge_Air_Static_Pressure_Sensor"> { air, coldDeck, discharge, pressure }
+
+
+Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint : Point <template:"Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint", uri:"urn:___param___#Brick_Cold_Deck_Discharge_Air_Static_Pressure_Setpoint"> { air, coldDeck, discharge, pressure, setpoint }
+
+
+Brick_Mixed_Damper_Position_Command : Brick_Command <template:"Brick_Mixed_Damper_Position_Command", uri:"urn:___param___#Brick_Mixed_Damper_Position_Command"> { air, damper, mixed }
+
+
+Brick_Mixed_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Mixed_Damper_Position_Sensor", uri:"urn:___param___#Brick_Mixed_Damper_Position_Sensor"> { air, damper, mixed }
+
+
+Brick_Return_Damper_Position_Command : Brick_Command <template:"Brick_Return_Damper_Position_Command", uri:"urn:___param___#Brick_Return_Damper_Position_Command"> { air, damper, return }
+
+
+Brick_Return_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Return_Damper_Position_Sensor", uri:"urn:___param___#Brick_Return_Damper_Position_Sensor"> { air, damper, return }
+
+
+Brick_Return_Damper_Overridden_Status : Brick_Status <template:"Brick_Return_Damper_Overridden_Status", uri:"urn:___param___#Brick_Return_Damper_Overridden_Status"> { air, damper, override, return }
+
+
+Brick_Return_Damper_Override_Command : Brick_Command <template:"Brick_Return_Damper_Override_Command", uri:"urn:___param___#Brick_Return_Damper_Override_Command"> { air, damper, override, return }
+
+
+Brick_Outside_Damper_Position_Command : Brick_Command <template:"Brick_Outside_Damper_Position_Command", uri:"urn:___param___#Brick_Outside_Damper_Position_Command"> { air, damper, outside }
+
+
+Brick_Outside_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Outside_Damper_Position_Sensor", uri:"urn:___param___#Brick_Outside_Damper_Position_Sensor"> { air, damper, outside }
+
+
+Brick_Outside_Damper_Overridden_Status : Brick_Status <template:"Brick_Outside_Damper_Overridden_Status", uri:"urn:___param___#Brick_Outside_Damper_Overridden_Status"> { air, damper, outside, override }
+
+
+Brick_Outside_Damper_Override_Command : Brick_Command <template:"Brick_Outside_Damper_Override_Command", uri:"urn:___param___#Brick_Outside_Damper_Override_Command"> { air, damper, outside, override }
+
+
+Brick_Economizer_Damper_Position_Command : Brick_Command <template:"Brick_Economizer_Damper_Position_Command", uri:"urn:___param___#Brick_Economizer_Damper_Position_Command"> { air, damper, economizer }
+
+
+Brick_Economizer_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Economizer_Damper_Position_Sensor", uri:"urn:___param___#Brick_Economizer_Damper_Position_Sensor"> { air, damper, economizer }
+
+
+Brick_Economizer_Damper_Overridden_Status : Brick_Status <template:"Brick_Economizer_Damper_Overridden_Status", uri:"urn:___param___#Brick_Economizer_Damper_Overridden_Status"> { air, damper, economizer, override }
+
+
+Brick_Economizer_Damper_Override_Command : Brick_Command <template:"Brick_Economizer_Damper_Override_Command", uri:"urn:___param___#Brick_Economizer_Damper_Override_Command"> { air, damper, economizer, override }
+
+
+Brick_Exhaust_Damper_Position_Command : Brick_Command <template:"Brick_Exhaust_Damper_Position_Command", uri:"urn:___param___#Brick_Exhaust_Damper_Position_Command"> { air, damper, exhaust }
+
+
+Brick_Exhaust_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Exhaust_Damper_Position_Sensor", uri:"urn:___param___#Brick_Exhaust_Damper_Position_Sensor"> { air, damper, exhaust }
+
+
+Brick_Exhaust_Damper_Overridden_Status : Brick_Status <template:"Brick_Exhaust_Damper_Overridden_Status", uri:"urn:___param___#Brick_Exhaust_Damper_Overridden_Status"> { air, damper, exhaust, override }
+
+
+Brick_Exhaust_Damper_Override_Command : Brick_Command <template:"Brick_Exhaust_Damper_Override_Command", uri:"urn:___param___#Brick_Exhaust_Damper_Override_Command"> { air, damper, exhaust, override }
+
+
+Brick_Damper_Position_Command : Brick_Command <template:"Brick_Damper_Position_Command", uri:"urn:___param___#Brick_Damper_Position_Command"> { damper }
+
+
+Brick_Damper_Position_Sensor : Brick_Sensor <template:"Brick_Damper_Position_Sensor", uri:"urn:___param___#Brick_Damper_Position_Sensor"> { damper }
+
+
+Brick_Damper_Command : Point <template:"Brick_Damper_Command", uri:"urn:___param___#Brick_Damper_Command"> { damper }
+
+
+Brick_Damper_Overridden_Status : Brick_Status <template:"Brick_Damper_Overridden_Status", uri:"urn:___param___#Brick_Damper_Overridden_Status"> { damper, override }
+
+
+Brick_Damper_Override_Command : Brick_Command <template:"Brick_Damper_Override_Command", uri:"urn:___param___#Brick_Damper_Override_Command"> { damper, override }
+
+
+Brick_Discharge_Fan_On_Off_Command : Brick_Command <template:"Brick_Discharge_Fan_On_Off_Command", uri:"urn:___param___#Brick_Discharge_Fan_On_Off_Command"> { air, discharge, fan, run }
+
+
+Brick_Discharge_Fan_On_Off_Status : Brick_On_Status <template:"Brick_Discharge_Fan_On_Off_Status", uri:"urn:___param___#Brick_Discharge_Fan_On_Off_Status"> { air, discharge, fan, run }
+
+
+Brick_Discharge_Fan_Speed_Mode_Status : Brick_Speed_Status <template:"Brick_Discharge_Fan_Speed_Mode_Status", uri:"urn:___param___#Brick_Discharge_Fan_Speed_Mode_Status"> { air, discharge, fan, mode, speed }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Command"> { air, discharge, enable, fan }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Enable_Status"> { air, discharge, enable, fan }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Overridden_Status"> { air, discharge, fan, override }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Override_Command"> { air, discharge, fan, override }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Sensor"> { air, discharge, fan, speed }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Speed_Setpoint"> { air, discharge, fan, setpoint, speed }
+
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Frequency_Sensor"> { air, discharge, fan, freq }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Active_Power_Sensor"> { active, air, discharge, fan, power }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Current_Sensor"> { air, current, discharge, fan }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Voltage_Sensor"> { air, discharge, fan, volt }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Torque_Sensor"> { air, discharge, fan, torque }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_DC_Bus_Voltage_Sensor"> { air, dc, discharge, fan, volt }
+
+
+Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Discharge_Fan_Fault_Status"> { air, discharge, fan, fault }
+
+
+
+
+Brick_Return_Fan_On_Off_Command : Brick_Command <template:"Brick_Return_Fan_On_Off_Command", uri:"urn:___param___#Brick_Return_Fan_On_Off_Command"> { air, fan, return, run }
+
+
+Brick_Return_Fan_On_Off_Status : Brick_On_Status <template:"Brick_Return_Fan_On_Off_Status", uri:"urn:___param___#Brick_Return_Fan_On_Off_Status"> { air, fan, return, run }
+
+
+Brick_Return_Fan_Speed_Mode_Status : Brick_Speed_Status <template:"Brick_Return_Fan_Speed_Mode_Status", uri:"urn:___param___#Brick_Return_Fan_Speed_Mode_Status"> { air, fan, mode, return, speed }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Command"> { air, enable, fan, return }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Enable_Status"> { air, enable, fan, return }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Overridden_Status"> { air, fan, override, return }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Override_Command"> { air, fan, override, return }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Sensor"> { air, fan, return, speed }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Speed_Setpoint"> { air, fan, return, setpoint, speed }
+
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Frequency_Sensor"> { air, fan, freq, return }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Active_Power_Sensor"> { active, air, fan, power, return }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Current_Sensor"> { air, current, fan, return }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Voltage_Sensor"> { air, fan, return, volt }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Torque_Sensor"> { air, fan, return, torque }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_DC_Bus_Voltage_Sensor"> { air, dc, fan, return, volt }
+
+
+Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Return_Fan_Fault_Status"> { air, fan, fault, return }
+
+
+
+
+Brick_Return_Fan_Air_Flow_Sensor : Brick_Flow_Sensor <template:"Brick_Return_Fan_Air_Flow_Sensor", uri:"urn:___param___#Brick_Return_Fan_Air_Flow_Sensor"> { air, fan, flow, return }
+
+
+Brick_Return_Fan_Air_Flow_Setpoint : Brick_Flow_Setpoint <template:"Brick_Return_Fan_Air_Flow_Setpoint", uri:"urn:___param___#Brick_Return_Fan_Air_Flow_Setpoint"> { air, fan, flow, return, setpoint }
+
+
+Brick_Exhaust_Fan_On_Off_Command : Brick_Command <template:"Brick_Exhaust_Fan_On_Off_Command", uri:"urn:___param___#Brick_Exhaust_Fan_On_Off_Command"> { air, exhaust, fan, run }
+
+
+Brick_Exhaust_Fan_On_Off_Status : Brick_On_Status <template:"Brick_Exhaust_Fan_On_Off_Status", uri:"urn:___param___#Brick_Exhaust_Fan_On_Off_Status"> { air, exhaust, fan, run }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Command"> { air, enable, exhaust, fan }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Enable_Status"> { air, enable, exhaust, fan }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Overridden_Status"> { air, exhaust, fan, override }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Override_Command"> { air, exhaust, fan, override }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Sensor"> { air, exhaust, fan, speed }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Speed_Setpoint"> { air, exhaust, fan, setpoint, speed }
+
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Frequency_Sensor"> { air, exhaust, fan, freq }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Active_Power_Sensor"> { active, air, exhaust, fan, power }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Current_Sensor"> { air, current, exhaust, fan }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Voltage_Sensor"> { air, exhaust, fan, volt }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Torque_Sensor"> { air, exhaust, fan, torque }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_DC_Bus_Voltage_Sensor"> { air, dc, exhaust, fan, volt }
+
+
+Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Exhaust_Fan_Fault_Status"> { air, exhaust, fan, fault }
+
+
+
+
+Brick_Fan_On_Off_Command : Brick_Command <template:"Brick_Fan_On_Off_Command", uri:"urn:___param___#Brick_Fan_On_Off_Command"> { fan, run }
+
+
+Brick_Fan_On_Off_Status : Brick_On_Status <template:"Brick_Fan_On_Off_Status", uri:"urn:___param___#Brick_Fan_On_Off_Status"> { fan, run }
+
+
+Brick_Fan_Speed_Mode_Status : Brick_Speed_Status <template:"Brick_Fan_Speed_Mode_Status", uri:"urn:___param___#Brick_Fan_Speed_Mode_Status"> { fan, mode, speed }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status : Brick_Run_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Run_Request_Status"> { call, fan, run }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Command"> { enable, fan }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Enable_Status"> { enable, fan }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Overridden_Status"> { fan, override }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Override_Command"> { fan, override }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Sensor"> { fan, speed }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Speed_Setpoint"> { fan, setpoint, speed }
+
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Frequency_Sensor"> { fan, freq }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Active_Power_Sensor"> { active, fan, power }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Current_Sensor"> { current, fan }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Voltage_Sensor"> { fan, volt }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Torque_Sensor"> { fan, torque }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_DC_Bus_Voltage_Sensor"> { dc, fan, volt }
+
+
+Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Brick_Fan_Fault_Status"> { fan, fault }
+
+
+
+
+Brick_Humidifier_On_Off_Command : Brick_Command <template:"Brick_Humidifier_On_Off_Command", uri:"urn:___param___#Brick_Humidifier_On_Off_Command"> { humidifier, run }
+
+
+Brick_Humidifier_On_Off_Status : Brick_On_Status <template:"Brick_Humidifier_On_Off_Status", uri:"urn:___param___#Brick_Humidifier_On_Off_Status"> { humidifier, run }
+
+
+Brick_Humidifier_Command : Point <template:"Brick_Humidifier_Command", uri:"urn:___param___#Brick_Humidifier_Command"> { humidifier, modulation }
+
+
+Brick_Heat_Wheel_On_Off_Command : Brick_Command <template:"Brick_Heat_Wheel_On_Off_Command", uri:"urn:___param___#Brick_Heat_Wheel_On_Off_Command"> { heatWheel, run }
+
+
+Brick_Heat_Wheel_On_Off_Status : Brick_On_Status <template:"Brick_Heat_Wheel_On_Off_Status", uri:"urn:___param___#Brick_Heat_Wheel_On_Off_Status"> { heatWheel, run }
+
+
+Brick_Heat_Wheel_Speed_Sensor : Brick_Sensor <template:"Brick_Heat_Wheel_Speed_Sensor", uri:"urn:___param___#Brick_Heat_Wheel_Speed_Sensor"> { heatWheel, speed }
+
+
+Brick_Valve_Position_Command : Brick_Command <template:"Brick_Valve_Position_Command", uri:"urn:___param___#Brick_Valve_Position_Command"> { valve }
+
+
+Brick_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Valve_Position_Sensor", uri:"urn:___param___#Brick_Valve_Position_Sensor"> { valve }
+
+
+Brick_Valve_Flow_Sensor : Brick_Sensor <template:"Brick_Valve_Flow_Sensor", uri:"urn:___param___#Brick_Valve_Flow_Sensor"> { flow, valve }
+
+
+Brick_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Valve_Failure_Alarm", uri:"urn:___param___#Brick_Valve_Failure_Alarm"> { alarm, valve }
+
+
+Brick_Chilled_Water_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Chilled_Water_Valve_Position_Sensor", uri:"urn:___param___#Brick_Chilled_Water_Valve_Position_Sensor"> { chilled, cool, valve, water }
+
+
+Brick_Chilled_Water_Valve_Position_Command : Brick_Command <template:"Brick_Chilled_Water_Valve_Position_Command", uri:"urn:___param___#Brick_Chilled_Water_Valve_Position_Command"> { chilled, cool, valve, water }
+
+
+Brick_Chilled_Water_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Chilled_Water_Valve_Failure_Alarm", uri:"urn:___param___#Brick_Chilled_Water_Valve_Failure_Alarm"> { alarm, chilled, cool, valve, water }
+
+
+
+
+Brick_Condenser_Water_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Valve_Position_Sensor", uri:"urn:___param___#Brick_Condenser_Water_Valve_Position_Sensor"> { condenser, valve, water }
+
+
+Brick_Condenser_Water_Valve_Position_Command : Brick_Command <template:"Brick_Condenser_Water_Valve_Position_Command", uri:"urn:___param___#Brick_Condenser_Water_Valve_Position_Command"> { condenser, valve, water }
+
+
+Brick_Condenser_Water_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Condenser_Water_Valve_Failure_Alarm", uri:"urn:___param___#Brick_Condenser_Water_Valve_Failure_Alarm"> { alarm, chilled, cool, valve, water }
+
+
+Brick_Hot_Water_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Hot_Water_Valve_Position_Sensor", uri:"urn:___param___#Brick_Hot_Water_Valve_Position_Sensor"> { heat, hot, valve, water }
+
+
+
+Brick_Hot_Water_Valve_Failure_Alarm : Brick_Alarm <template:"Brick_Hot_Water_Valve_Failure_Alarm", uri:"urn:___param___#Brick_Hot_Water_Valve_Failure_Alarm"> { alarm, heat, hot, valve, water }
+
+
+Brick_Hot_Water_Valve_Position_Command : Brick_Command <template:"Brick_Hot_Water_Valve_Position_Command", uri:"urn:___param___#Brick_Hot_Water_Valve_Position_Command"> { heat, hot, valve, water }
+
+
+
+
+
+Brick_Steam_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Steam_Valve_Position_Sensor", uri:"urn:___param___#Brick_Steam_Valve_Position_Sensor"> { steam, valve }
+
+
+Brick_Steam_Valve_Position_Command : Brick_Command <template:"Brick_Steam_Valve_Position_Command", uri:"urn:___param___#Brick_Steam_Valve_Position_Command"> { steam, valve }
+
+
+Brick_Isolation_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Isolation_Valve_Position_Sensor", uri:"urn:___param___#Brick_Isolation_Valve_Position_Sensor"> { isolation, valve }
+
+
+Brick_Isolation_Valve_Position_Command : Brick_Command <template:"Brick_Isolation_Valve_Position_Command", uri:"urn:___param___#Brick_Isolation_Valve_Position_Command"> { isolation, valve }
+
+
+Brick_Condenser_Water_Isolation_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Isolation_Valve_Position_Sensor", uri:"urn:___param___#Brick_Condenser_Water_Isolation_Valve_Position_Sensor"> { condenser, isolation, valve, water }
+
+
+Brick_Condenser_Water_Isolation_Valve_Position_Command : Brick_Command <template:"Brick_Condenser_Water_Isolation_Valve_Position_Command", uri:"urn:___param___#Brick_Condenser_Water_Isolation_Valve_Position_Command"> { condenser, isolation, valve, water }
+
+
+Brick_Bypass_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Bypass_Valve_Position_Sensor", uri:"urn:___param___#Brick_Bypass_Valve_Position_Sensor"> { bypass, valve }
+
+
+Brick_Bypass_Valve_Position_Command : Brick_Command <template:"Brick_Bypass_Valve_Position_Command", uri:"urn:___param___#Brick_Bypass_Valve_Position_Command"> { bypass, valve }
+
+
+
+Brick_Bypass_Valve_Flow_Sensor : Brick_Sensor <template:"Brick_Bypass_Valve_Flow_Sensor", uri:"urn:___param___#Brick_Bypass_Valve_Flow_Sensor"> { bypass, flow, valve }
+
+
+Brick_Condenser_Water_Bypass_Valve_Position_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Bypass_Valve_Position_Sensor", uri:"urn:___param___#Brick_Condenser_Water_Bypass_Valve_Position_Sensor"> { bypass, condenser, valve, water }
+
+
+Brick_Condenser_Water_Bypass_Valve_Position_Command : Brick_Command <template:"Brick_Condenser_Water_Bypass_Valve_Position_Command", uri:"urn:___param___#Brick_Condenser_Water_Bypass_Valve_Position_Command"> { bypass, condenser, valve, water }
+
+
+Brick_Condenser_Water_Bypass_Valve_Flow_Sensor : Brick_Sensor <template:"Brick_Condenser_Water_Bypass_Valve_Flow_Sensor", uri:"urn:___param___#Brick_Condenser_Water_Bypass_Valve_Flow_Sensor"> { bypass, condenser, flow, valve, water }
+
+
+Brick_Filter_Status : Point <template:"Brick_Filter_Status", uri:"urn:___param___#Brick_Filter_Status"> { filter }
+
+
+Brick_Filter_Alarm : Point <template:"Brick_Filter_Alarm", uri:"urn:___param___#Brick_Filter_Alarm"> { fault, filter }
+
+
+Brick_Filter_Differential_Pressure_Sensor : Brick_Pressure_Sensor <template:"Brick_Filter_Differential_Pressure_Sensor", uri:"urn:___param___#Brick_Filter_Differential_Pressure_Sensor"> { delta, filter, pressure }
+
+
+Brick_Filter_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <template:"Brick_Filter_Differential_Pressure_Setpoint", uri:"urn:___param___#Brick_Filter_Differential_Pressure_Setpoint"> { delta, filter, pressure, setpoint }
+
+
+Brick_Return_Air_Filter_Status : Point <template:"Brick_Return_Air_Filter_Status", uri:"urn:___param___#Brick_Return_Air_Filter_Status"> { filter, return }
+
+
+Brick_Return_Air_Filter_Alarm : Point <template:"Brick_Return_Air_Filter_Alarm", uri:"urn:___param___#Brick_Return_Air_Filter_Alarm"> { fault, filter, return }
+
+
+Brick_Return_Air_Filter_Differential_Pressure_Sensor : Brick_Pressure_Sensor <template:"Brick_Return_Air_Filter_Differential_Pressure_Sensor", uri:"urn:___param___#Brick_Return_Air_Filter_Differential_Pressure_Sensor"> { delta, filter, pressure, return }
+
+
+Brick_Return_Air_Filter_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <template:"Brick_Return_Air_Filter_Differential_Pressure_Setpoint", uri:"urn:___param___#Brick_Return_Air_Filter_Differential_Pressure_Setpoint"> { delta, filter, pressure, return, setpoint }
+
+
+Brick_Intake_Air_Filter_Status : Point <template:"Brick_Intake_Air_Filter_Status", uri:"urn:___param___#Brick_Intake_Air_Filter_Status"> { filter, outside }
+
+
+Brick_Intake_Air_Filter_Alarm : Point <template:"Brick_Intake_Air_Filter_Alarm", uri:"urn:___param___#Brick_Intake_Air_Filter_Alarm"> { fault, filter, outside }
+
+
+Brick_Intake_Air_Filter_Differential_Pressure_Sensor : Brick_Pressure_Sensor <template:"Brick_Intake_Air_Filter_Differential_Pressure_Sensor", uri:"urn:___param___#Brick_Intake_Air_Filter_Differential_Pressure_Sensor"> { delta, filter, outside, pressure }
+
+
+Brick_Intake_Air_Filter_Differential_Pressure_Setpoint : Brick_Differential_Setpoint <template:"Brick_Intake_Air_Filter_Differential_Pressure_Setpoint", uri:"urn:___param___#Brick_Intake_Air_Filter_Differential_Pressure_Setpoint"> { delta, filter, outside, pressure, setpoint }
+
+
+Brick_Compressor_On_Off_Command : Brick_Command <template:"Brick_Compressor_On_Off_Command", uri:"urn:___param___#Brick_Compressor_On_Off_Command"> { compressor, run }
+
+
+Brick_Compressor_On_Off_Status : Brick_On_Status <template:"Brick_Compressor_On_Off_Status", uri:"urn:___param___#Brick_Compressor_On_Off_Status"> { compressor, run }
+
+
+Brick_Compressor_Enable_Command : Brick_Command <template:"Brick_Compressor_Enable_Command", uri:"urn:___param___#Brick_Compressor_Enable_Command"> { compressor, enable }
+
+
+Brick_Compressor_Enable_Status : Brick_Status <template:"Brick_Compressor_Enable_Status", uri:"urn:___param___#Brick_Compressor_Enable_Status"> { compressor, enable }
+
+
+Brick_Compressor_Fault_Status : Brick_Status <template:"Brick_Compressor_Fault_Status", uri:"urn:___param___#Brick_Compressor_Fault_Status"> { compressor, fault }
+
+
+Brick_Compressor_Speed_Sensor : Brick_Sensor <template:"Brick_Compressor_Speed_Sensor", uri:"urn:___param___#Brick_Compressor_Speed_Sensor"> { compressor, speed }
+
+
+Brick_Compressor_Temperature_Sensor : Brick_Sensor <template:"Brick_Compressor_Temperature_Sensor", uri:"urn:___param___#Brick_Compressor_Temperature_Sensor"> { compressor, temp }
+
+
+Brick_Compressor_Current_Sensor : Brick_Sensor <template:"Brick_Compressor_Current_Sensor", uri:"urn:___param___#Brick_Compressor_Current_Sensor"> { compressor, current }
+
+
+Brick_Compressor_Run_Time_Sensor : Point <template:"Brick_Compressor_Run_Time_Sensor", uri:"urn:___param___#Brick_Compressor_Run_Time_Sensor"> { compressor, run, time }
+
+
+Brick_Variable_Frequency_Drive_On_Off_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_On_Off_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_On_Off_Command"> { run, vfd }
+
+
+Brick_Variable_Frequency_Drive_On_Off_Status : Brick_On_Status <template:"Brick_Variable_Frequency_Drive_On_Off_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_On_Off_Status"> { run, vfd }
+
+
+Brick_Variable_Frequency_Drive_Enable_Command : Brick_Command <template:"Brick_Variable_Frequency_Drive_Enable_Command", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Enable_Command"> { enable, vfd }
+
+
+Brick_Variable_Frequency_Drive_Enable_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Enable_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Enable_Status"> { enable, vfd }
+
+
+Brick_Variable_Frequency_Drive_Overridden_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Overridden_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Overridden_Status"> { override, vfd }
+
+
+Brick_Variable_Frequency_Drive_Speed_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Speed_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Speed_Sensor"> { speed, vfd }
+
+
+Brick_Variable_Frequency_Drive_Speed_Setpoint : Brick_Setpoint <template:"Brick_Variable_Frequency_Drive_Speed_Setpoint", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Speed_Setpoint"> { setpoint, speed, vfd }
+
+
+Brick_Variable_Frequency_Drive_Frequency_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Frequency_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Frequency_Sensor"> { freq, vfd }
+
+
+Brick_Variable_Frequency_Drive_Active_Power_Sensor : Brick_Electric_Power_Sensor <template:"Brick_Variable_Frequency_Drive_Active_Power_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Active_Power_Sensor"> { active, power, vfd }
+
+
+Brick_Variable_Frequency_Drive_Current_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Current_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Current_Sensor"> { current, vfd }
+
+
+Brick_Variable_Frequency_Drive_Voltage_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Voltage_Sensor"> { vfd, volt }
+
+
+Brick_Variable_Frequency_Drive_Torque_Sensor : Brick_Sensor <template:"Brick_Variable_Frequency_Drive_Torque_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Torque_Sensor"> { torque, vfd }
+
+
+Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor : Brick_Temperature_Sensor <template:"Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Heat_Sink_Temperature_Sensor"> { heatsink, temp, vfd }
+
+
+Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor : Brick_Voltage_Sensor <template:"Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor", uri:"urn:___param___#Brick_Variable_Frequency_Drive_DC_Bus_Voltage_Sensor"> { dc, vfd, volt }
+
+
+Brick_Variable_Frequency_Drive_Fault_Status : Brick_Status <template:"Brick_Variable_Frequency_Drive_Fault_Status", uri:"urn:___param___#Brick_Variable_Frequency_Drive_Fault_Status"> { fault, vfd }
+
+// A device that provides vertical transportation between floors, levels or decks of a building, vessel or other structure
+Brick_Elevator: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Elevator"> { elevator, equip }
+
+// Utilize a gas distribution source to represent how gas is distributed across multiple destinations
+Brick_Gas_Distribution: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Gas_Distribution"> { dist, equip, gas }
+
+// an electrically operated switch
+Brick_Relay: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Relay"> { equip, relay }
+
+// Utilize a steam distribution source to represent how steam is distributed across multiple destinations
+Brick_Steam_Distribution: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Steam_Distribution"> { dist, equip, steam }
+
+// Utilize a water distribution source to represent how water is distributed across multiple destinations (pipes)
+Brick_Water_Distribution: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Water_Distribution"> { dist, equip, water }
+
+// A dedicated weather measurement station
+Brick_Weather_Station: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Weather_Station"> { equip, station, weather }
+
+
+Brick_Surveillance_Camera: Brick_Video_Surveillance_Equipment <uri:"https://brickschema.org/schema/Brick#Surveillance_Camera"> { camera, equip, security, surveillance, video }
+
+// A low platform in a space or on a stage
+Brick_Stage_Riser: Brick_Furniture <uri:"https://brickschema.org/schema/Brick#Stage_Riser"> { equip, furniture, riser, stage }
+
+// A type of solar panels that convert solar radiation into usable thermal and electrical energy
+Brick_PVT_Panel: Brick_PV_Panel <uri:"https://brickschema.org/schema/Brick#PVT_Panel"> { collector, equip, panel, pv, solar, thermal }
+
+// Variable-frequency drive for fans
+Brick_Fan_VFD: Brick_Variable_Frequency_Drive <uri:"https://brickschema.org/schema/Brick#Fan_VFD"> { equip, fan, vfd }
+
+// A VFD that drives a heat wheel
+Brick_Heat_Wheel_VFD: Brick_Variable_Frequency_Drive <uri:"https://brickschema.org/schema/Brick#Heat_Wheel_VFD"> { equip, heat, vfd, wheel }
+
+// Variable-frequency drive for pumps
+Brick_Pump_VFD: Brick_Variable_Frequency_Drive <uri:"https://brickschema.org/schema/Brick#Pump_VFD"> { equip, pump, vfd }
+
+// A window with tint control.
+Brick_Automatic_Tint_Window: Brick_Shading_Equipment <uri:"https://brickschema.org/schema/Brick#Automatic_Tint_Window"> { auto, equip, shade, tint, win }
+
+// A window covering.
+Brick_Blind: Brick_Shading_Equipment <uri:"https://brickschema.org/schema/Brick#Blind"> { blind, equip, shade }
+
+// Basin heaters prevent cold water basin freeze-up, e.g. in cooling towers, closed circuit fluid coolers, or evaporative condensers
+Brick_Collection_Basin_Water_Heater: Brick_Water_Heater <uri:"https://brickschema.org/schema/Brick#Collection_Basin_Water_Heater"> { basin, collection, equip, heater, water }
+
+// A closed, pressure vessel that uses electricity for heating water or other fluids to supply steam or hot water for heating, humidification, or other applications.
+Brick_Electric_Boiler: Brick_Boiler <uri:"https://brickschema.org/schema/Brick#Electric_Boiler"> { boiler, elec, equip }
+
+// A closed, pressure vessel that uses natural gas and heat exchanger that capture and reuse any latent heat for heating water or other fluids to supply steam or hot water for heating, humidification, or other applications.
+Brick_Condensing_Natural_Gas_Boiler: Brick_Natural_Gas_Boiler <uri:"https://brickschema.org/schema/Brick#Condensing_Natural_Gas_Boiler"> { boiler, condensing, equip, gas, nat }
+
+// A closed, pressure vessel that uses natural gas with no system to capture latent heat for heating water or other fluids to supply steam or hot water for heating, humidification, or other applications.
+Brick_Noncondensing_Natural_Gas_Boiler: Brick_Natural_Gas_Boiler <uri:"https://brickschema.org/schema/Brick#Noncondensing_Natural_Gas_Boiler"> { boiler, equip, gas, nat, noncond }
+
+// A larger, more industrial version of a grease trap designed to handle higher volumes of wastewater and more efficiently separate grease and fats.
+Brick_Grease_Interceptor: Brick_Separation_Tank <uri:"https://brickschema.org/schema/Brick#Grease_Interceptor"> { equip, tank, waste }
+
+// A Thermal Energy Storage (TES) tank is a specialized container for storing thermal energy, enabling more efficient cooling by balancing supply and demand. It helps reduce operational costs and minimizes the need for larger equipment.
+Brick_Chilled_Water_Thermal_Energy_Storage_Tank: Brick_Thermal_Energy_Storage_Tank <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Thermal_Energy_Storage_Tank"> { chilled, energy, equip, storage, tank, thermal, water }
+
+// A Thermal Energy Storage (TES) tank is a specialized container for storing thermal energy, enabling more efficient heating by balancing supply and demand. It helps reduce operational costs and minimizes the need for larger equipment.
+Brick_Hot_Water_Thermal_Energy_Storage_Tank: Brick_Thermal_Energy_Storage_Tank <uri:"https://brickschema.org/schema/Brick#Hot_Water_Thermal_Energy_Storage_Tank"> { energy, equip, hot, storage, tank, thermal, water }
+
+// A tank specifically designed to store chilled water in HVAC systems.
+Brick_Chilled_Water_Storage_Tank: Brick_Water_Storage_Tank <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Storage_Tank"> { chilled, equip, storage, water }
+
+// A tank used to store cold water, usually in a building's water supply system.
+Brick_Cold_Water_Storage_Tank: Brick_Water_Storage_Tank <uri:"https://brickschema.org/schema/Brick#Cold_Water_Storage_Tank"> { cold, equip, storage, water }
+
+// A specialized tank intended to store water that can be quickly accessed for fire suppression.
+Brick_Fire_Sprinkler_Water_Storage_Tank: Brick_Water_Storage_Tank <uri:"https://brickschema.org/schema/Brick#Fire_Sprinkler_Water_Storage_Tank"> { equip, fire, storage, water }
+
+// A tank designed to store hot water in an HVAC system.
+Brick_Hot_Water_Storage_Tank: Brick_Water_Storage_Tank <uri:"https://brickschema.org/schema/Brick#Hot_Water_Storage_Tank"> { equip, hot, storage, water }
+
+// A tank engineered to capture and store rainwater, usually for non-potable uses.
+Brick_Rain_Water_Storage_Tank: Brick_Water_Storage_Tank <uri:"https://brickschema.org/schema/Brick#Rain_Water_Storage_Tank"> { equip, rain, storage, water }
+
+// A thermal expansion tank designed specifically for chilled water systems.
+Brick_Chilled_Water_Thermal_Expansion_Tank: Brick_Thermal_Expansion_Tank <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Thermal_Expansion_Tank"> { chilled, equip, expansion, tank, thermal }
+
+// A specialized thermal expansion tank that is part of a building's fire suppression system.
+Brick_Fire_Sprinkler_Thermal_Expansion_Tank: Brick_Thermal_Expansion_Tank <uri:"https://brickschema.org/schema/Brick#Fire_Sprinkler_Thermal_Expansion_Tank"> { equip, expansion, fire, tank, thermal }
+
+// A thermal expansion tank used in hot water heating systems.
+Brick_Hot_Water_Thermal_Expansion_Tank: Brick_Thermal_Expansion_Tank <uri:"https://brickschema.org/schema/Brick#Hot_Water_Thermal_Expansion_Tank"> { equip, expansion, hot, tank, thermal }
+
+// A switch used to operate all or part of a lighting installation that uses a touch-based mechanism (typically resistive or capacitive) rather than a mechanical actuator
+Brick_Touchpanel: Brick_Interface <uri:"https://brickschema.org/schema/Brick#Touchpanel"> { equip, interface, touchpanel }
+
+// A switch providing continuous control over all or part of a lighting installation; typically potentiometer-based
+Brick_Dimmer: Brick_Switch <uri:"https://brickschema.org/schema/Brick#Dimmer"> { dimmer, equip, interface, switch }
+
+// A complete lighting unit consisting of a lamp or lamps and ballast(s) (when applicable) together with the parts designed to distribute the light, to position and protect the lamps, and to connect the lamps to the power supply.
+Brick_Luminaire: Brick_Lighting <uri:"https://brickschema.org/schema/Brick#Luminaire"> { equip, luminaire }
+
+// A power source for a luminaire
+Brick_Luminaire_Driver: Brick_Lighting <uri:"https://brickschema.org/schema/Brick#Luminaire_Driver"> { driver, equip, luminaire }
+
+
+Brick_First_Aid_Kit: Brick_Safety_Equipment <uri:"https://brickschema.org/schema/Brick#First_Aid_Kit"> { aid, equip, firstAid, safety }
+
+
+Brick_Automated_External_Defibrillator: Brick_Safety_Equipment <uri:"https://brickschema.org/schema/Brick#Automated_External_Defibrillator"> { aed, defib, equip, safety }
+
+
+Brick_Drench_Hose: Brick_Emergency_Wash_Station <uri:"https://brickschema.org/schema/Brick#Drench_Hose"> { drench, emerg, equip, hose, safety, station, wash }
+
+
+Brick_Eye_Wash_Station: Brick_Emergency_Wash_Station <uri:"https://brickschema.org/schema/Brick#Eye_Wash_Station"> { emerg, equip, eye, safety, station, wash }
+
+
+Brick_Safety_Shower: Brick_Emergency_Wash_Station <uri:"https://brickschema.org/schema/Brick#Safety_Shower"> { emerg, equip, safety, shower, station, wash }
+
+
+Brick_Intrusion_Detection_Equipment: Brick_Security_Equipment <uri:"https://brickschema.org/schema/Brick#Intrusion_Detection_Equipment"> { detection, equip, intrusion, security }
+
+
+Brick_Access_Reader: Brick_Access_Control_Equipment <uri:"https://brickschema.org/schema/Brick#Access_Reader"> { access, control, equip, reader, security }
+
+
+Brick_Emergency_Phone: Brick_Intercom_Equipment <uri:"https://brickschema.org/schema/Brick#Emergency_Phone"> { emerg, equip, intercom, phone, security }
+
+
+Brick_Video_Intercom: Brick_Intercom_Equipment <uri:"https://brickschema.org/schema/Brick#Video_Intercom"> { equip, intercom, security, video }
+
+
+Brick_Network_Video_Recorder: Brick_Video_Surveillance_Equipment <uri:"https://brickschema.org/schema/Brick#Network_Video_Recorder"> { equip, network, recorder, security, surveillance, video }
+
+
+Brick_Fire_Alarm: Brick_Fire_Safety_Equipment <uri:"https://brickschema.org/schema/Brick#Fire_Alarm"> { alarm, equip, fire, safety }
+
+// Fire alarm panel is the controlling component of a fire alarm system.
+Brick_Fire_Alarm_Control_Panel: Brick_Fire_Safety_Equipment <uri:"https://brickschema.org/schema/Brick#Fire_Alarm_Control_Panel"> { alarm, control, equip, fire, panel, safety }
+
+// A panel-mounted device that provides status and control of a fire safety system
+Brick_Fire_Control_Panel: Brick_Fire_Safety_Equipment <uri:"https://brickschema.org/schema/Brick#Fire_Control_Panel"> { control, equip, fire, panel, safety }
+
+
+Brick_Heat_Detector: Brick_Fire_Safety_Equipment <uri:"https://brickschema.org/schema/Brick#Heat_Detector"> { detector, equip, fire, heat, safety }
+
+
+Brick_Smoke_Detector: Brick_Fire_Safety_Equipment <uri:"https://brickschema.org/schema/Brick#Smoke_Detector"> { detector, equip, fire, safety, smoke }
+
+// Manual alarm call points are designed for the purpose of raising an alarm manually once verification of a fire or emergency condition exists. by operating the push button or break glass the alarm signal can be raised.
+Brick_Fire_Alarm_Manual_Call_Point: Brick_Manual_Fire_Alarm_Activation_Equipment <uri:"https://brickschema.org/schema/Brick#Fire_Alarm_Manual_Call_Point"> { alarm, call, equip, fire, manual, safety, station }
+
+// An active fire protection device (usually wall-mounted) that when activated initiates an alarm on a fire alarm system. In its simplest form the user activates the alarm by pulling the handle down.
+Brick_Fire_Alarm_Pull_Station: Brick_Manual_Fire_Alarm_Activation_Equipment <uri:"https://brickschema.org/schema/Brick#Fire_Alarm_Pull_Station"> { alarm, equip, fire, manual, pull, safety, station }
+
+// Equipment related to sound and visual components such as speakers and displays.
+Brick_Audio_Visual_Equipment: Brick_ICT_Equipment <uri:"https://brickschema.org/schema/Brick#Audio_Visual_Equipment"> { audio, equip, visual }
+
+
+Brick_Gateway: Brick_ICT_Equipment <uri:"https://brickschema.org/schema/Brick#Gateway"> { equip, gateway }
+
+
+Brick_ICT_Rack: Brick_ICT_Equipment <uri:"https://brickschema.org/schema/Brick#ICT_Rack"> { equip, rack }
+
+
+Brick_BACnet_Controller: Brick_Controller <uri:"https://brickschema.org/schema/Brick#BACnet_Controller"> { bacnet, controller, equip }
+
+
+Brick_Modbus_Controller: Brick_Controller <uri:"https://brickschema.org/schema/Brick#Modbus_Controller"> { controller, equip, modbus }
+
+// A flat, handheld mobile computer, usually with a touchscreen
+Brick_Tablet: Brick_ICT_Hardware <uri:"https://brickschema.org/schema/Brick#Tablet"> { equip, hardware, tablet }
+
+
+Brick_Server: Brick_ICT_Hardware <uri:"https://brickschema.org/schema/Brick#Server"> { equip, hardware, server }
+
+
+Brick_Ethernet_Port: Brick_Data_Network_Equipment <uri:"https://brickschema.org/schema/Brick#Ethernet_Port"> { equip, ethernet, port }
+
+
+Brick_Ethernet_Switch: Brick_Data_Network_Equipment <uri:"https://brickschema.org/schema/Brick#Ethernet_Switch"> { equip, ethernet, switch }
+
+
+Brick_Network_Router: Brick_Data_Network_Equipment <uri:"https://brickschema.org/schema/Brick#Network_Router"> { equip, network, router }
+
+
+Brick_Network_Security_Equipment: Brick_Data_Network_Equipment <uri:"https://brickschema.org/schema/Brick#Network_Security_Equipment"> { equip, network, security }
+
+
+Brick_Wireless_Access_Point: Brick_Data_Network_Equipment <uri:"https://brickschema.org/schema/Brick#Wireless_Access_Point"> { access, equip, point, wireless }
+
+
+Brick_Thermostat_Equipment: Brick_Sensor_Equipment <uri:"https://brickschema.org/schema/Brick#Thermostat_Equipment"> { equip, thermo }
+
+
+Brick_Daylight_Sensor_Equipment: Brick_Sensor_Equipment <uri:"https://brickschema.org/schema/Brick#Daylight_Sensor_Equipment"> { daylight, equip, sensor }
+
+
+Brick_IAQ_Sensor_Equipment: Brick_Sensor_Equipment <uri:"https://brickschema.org/schema/Brick#IAQ_Sensor_Equipment"> { equip, iaq, sensor }
+
+
+Brick_Leak_Detector_Equipment: Brick_Sensor_Equipment <uri:"https://brickschema.org/schema/Brick#Leak_Detector_Equipment"> { detector, equip, leak }
+
+
+Brick_Occupancy_Sensor_Equipment: Brick_Sensor_Equipment <uri:"https://brickschema.org/schema/Brick#Occupancy_Sensor_Equipment"> { equip, occupancy, sensor }
+
+
+Brick_People_Count_Sensor_Equipment: Brick_Sensor_Equipment <uri:"https://brickschema.org/schema/Brick#People_Count_Sensor_Equipment"> { count, equip, people, sensor }
+
+// An automatic control device used to maintain temperature at a fixed or adjustable setpoint.
+Brick_Thermostat: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Thermostat"> { equip, thermo }
+
+
+Brick_Vibration_Sensor_Equipment: Brick_Sensor_Equipment <uri:"https://brickschema.org/schema/Brick#Vibration_Sensor_Equipment"> { equip, sensor, vibration }
+
+// Breaker Panel distributes power into various end-uses.
+Brick_Breaker_Panel: Brick_Electrical_Equipment <uri:"https://brickschema.org/schema/Brick#Breaker_Panel"> { breaker, equip }
+
+// Bus Risers are commonly fed from a switchgear and rise up through a series of floors to the main power distribution source for each floor.
+Brick_Bus_Riser: Brick_Electrical_Equipment <uri:"https://brickschema.org/schema/Brick#Bus_Riser"> { equip, riser }
+
+// The Motor Control Center is a specialized type of switchgear which provides electrical power to major mechanical systems in the building such as HVAC components.
+Brick_Motor_Control_Center: Brick_Electrical_Equipment <uri:"https://brickschema.org/schema/Brick#Motor_Control_Center"> { center, control, equip }
+
+// A device containing a block of electrical sockets allowing multiple electrical devices to be powered from a single electrical socket.
+Brick_PlugStrip: Brick_Electrical_Equipment <uri:"https://brickschema.org/schema/Brick#PlugStrip"> { equip, plugstrip }
+
+// A Transformer is usually fed by a high-voltage source and then steps down the voltage to a lower-voltage feed for low-voltage application (such as lights). Transformers also can step up voltage, but this generally does not apply to in building distribution.
+Brick_Transformer: Brick_Electrical_Equipment <uri:"https://brickschema.org/schema/Brick#Transformer"> { equip, trans }
+
+// A container that stores chemical energy that can be converted into electricity and used as a source of power
+Brick_Battery: Brick_Energy_Storage <uri:"https://brickschema.org/schema/Brick#Battery"> { battery, energy, equip, storage }
+
+//  Converts direct current electricity generated by solar panels into alternating current
+Brick_Photovoltaic_Inverter: Brick_Inverter <uri:"https://brickschema.org/schema/Brick#Photovoltaic_Inverter"> { equip, inverter, pv }
+
+// An individual point of attachment for charing a single electric vehicle
+Brick_Electric_Vehicle_Charging_Port: Brick_Electrical_Equipment <uri:"https://brickschema.org/schema/Brick#Electric_Vehicle_Charging_Port"> { charging, elec, equip, port, vehicle }
+
+// An individual piece of equipment supplying electrical power for charging electric vehicles. Contains 1 or more electric vehicle charging ports
+Brick_Electric_Vehicle_Charging_Station: Brick_Electrical_Equipment <uri:"https://brickschema.org/schema/Brick#Electric_Vehicle_Charging_Station"> { charging, elec, equip, station, vehicle }
+
+// All breaker panels generally have a main circuit breaker before the bus / MCBs. In some older panels there may be a Main Disconnect Switch instead. It is also possible to have a main disconnect switch, and a main circuit breaker in a panel.
+Brick_Main_Circuit_Breaker: Brick_Circuit_Breaker <uri:"https://brickschema.org/schema/Brick#Main_Circuit_Breaker"> { breaker, circuit, equip, main }
+
+// An automatic transfer switch (ATS) is a device that automatically transfers a power supply from its primary source to a backup source when it senses a failure or outage in the primary source.
+Brick_Automatic_Transfer_Switch: Brick_Transfer_Switch <uri:"https://brickschema.org/schema/Brick#Automatic_Transfer_Switch"> { auto, equip, switch, transfer }
+
+// Similar to ATS, but utilises no moving parts in the switch to achieve much faster response times.
+Brick_Static_Transfer_Switch: Brick_Automatic_Switch <uri:"https://brickschema.org/schema/Brick#Static_Transfer_Switch"> { equip, static, switch, transfer }
+
+// See 'Disconnect_Switch'
+Brick_Isolation_Switch: Brick_Switchgear <uri:"https://brickschema.org/schema/Brick#Isolation_Switch"> { equip, isolation, switch }
+
+
+Brick_Building_Disconnect_Switch: Brick_Disconnect_Switch <uri:"https://brickschema.org/schema/Brick#Building_Disconnect_Switch"> { building, disconn, equip, switch }
+
+// Building power is most commonly provided by utility company through a master disconnect switch (sometimes called a service disconnect) in the main electrical room of a building. The Utility Company provided master disconnect switch often owns or restricts access to this switch. There can also be other cases where a disconnect is placed into an electrical system to allow service cut-off to a portion of the building.
+Brick_Main_Disconnect_Switch: Brick_Disconnect_Switch <uri:"https://brickschema.org/schema/Brick#Main_Disconnect_Switch"> { disconn, equip, main, switch }
+
+// Valves that automatically shut off your natural gas service when an earthquake of a sufficient magnitude occurs at the location.
+Brick_Natural_Gas_Seismic_Shutoff_Valve: Brick_Valve <uri:"https://brickschema.org/schema/Brick#Natural_Gas_Seismic_Shutoff_Valve"> { equip, gas, nat, seismic, shutoff, valve }
+
+// Valve designed to prevent the reverse flow of fluid, typically water, thereby protecting potable water supplies from contamination or pollution.
+Brick_Backflow_Preventer_Valve: Brick_Check_Valve <uri:"https://brickschema.org/schema/Brick#Backflow_Preventer_Valve"> { backflow, preventer, valve }
+
+// Valve designed to maintain controlled downstream gas pressure with varying upstream pressure.
+Brick_Gas_Pressure_Regulator_Valve: Brick_Pressure_Regulator_Valve <uri:"https://brickschema.org/schema/Brick#Gas_Pressure_Regulator_Valve"> { gas, press, regulator, valve }
+
+
+Brick_Reversing_Valve: Brick_Refrigerant_Valve <uri:"https://brickschema.org/schema/Brick#Reversing_Valve"> { gas, liq, ref, reversing, valve }
+
+// Electronically controlled valve for precise mixing of hot and cold fluid.
+Brick_Electronic_Mixing_Valve: Brick_Mixing_Valve <uri:"https://brickschema.org/schema/Brick#Electronic_Mixing_Valve"> { electronic, equip, mixed, valve }
+
+// A valve that blends hot water with cold water to ensure constant, safe shower and bath outlet temperatures, preventing scalding.
+Brick_Thermostatic_Mixing_Valve: Brick_Mixing_Valve <uri:"https://brickschema.org/schema/Brick#Thermostatic_Mixing_Valve"> { equip, mixed, thermal, valve }
+
+// Valve designed to reduce steam pressure from a high to a manageable level; maintains uniform steam outlet pressure.
+Brick_Steam_Pressure_Reducing_Valve: Brick_Pressure_Reducing_Valve <uri:"https://brickschema.org/schema/Brick#Steam_Pressure_Reducing_Valve"> { press, reducing, steam, valve }
+
+// Valve specifically designed to reduce high water pressure to a usable level; maintains uniform water outlet pressure.
+Brick_Water_Pressure_Reducing_Valve: Brick_Pressure_Reducing_Valve <uri:"https://brickschema.org/schema/Brick#Water_Pressure_Reducing_Valve"> { press, reducing, valve, water }
+
+// Valve designed to automatically relieve excessive steam pressure.
+Brick_Steam_Pressure_Relief_Valve: Brick_Pressure_Relief_Valve <uri:"https://brickschema.org/schema/Brick#Steam_Pressure_Relief_Valve"> { press, relief, steam, valve }
+
+// Valve designed to automatically relieve excessive water pressure.
+Brick_Water_Pressure_Relief_Valve: Brick_Water_Valve <uri:"https://brickschema.org/schema/Brick#Water_Pressure_Relief_Valve"> { press, relief, steam, valve }
+
+// A valve that modulates the flow of chilled water
+Brick_Chilled_Water_Valve: Brick_Water_Valve <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Valve"> { chilled, equip, valve, water }
+
+// A valve that modulates the flow of condenser water
+Brick_Condenser_Water_Valve: Brick_HVAC_Valve <uri:"https://brickschema.org/schema/Brick#Condenser_Water_Valve"> { cond, equip, valve, water }
+
+// A valve regulating the flow of makeup water into a water holding tank, e.g. a cooling tower, hot water tank
+Brick_Makeup_Water_Valve: Brick_HVAC_Valve <uri:"https://brickschema.org/schema/Brick#Makeup_Water_Valve"> { equip, fluid, liquid, makeup, valve, water }
+
+// A valve regulating the flow of domestic hot water
+Brick_Domestic_Hot_Water_Valve: Brick_Hot_Water_Valve <uri:"https://brickschema.org/schema/Brick#Domestic_Hot_Water_Valve"> { domestic, equip, heat, hot, valve, water }
+
+
+Brick_Preheat_Hot_Water_Valve: Brick_Hot_Water_Valve <uri:"https://brickschema.org/schema/Brick#Preheat_Hot_Water_Valve"> { equip, heat, hot, preheat, valve, water }
+
+// A standalone thermal power meter
+Brick_Thermal_Power_Meter: Brick_Meter <uri:"https://brickschema.org/schema/Brick#Thermal_Power_Meter"> { equip, meter, power, thermal }
+
+// A Waste Meter is used for tracking and categorizing various waste types in a building, aiding in waste management facilitating waste reduction, recycling, and disposal strategies.
+Brick_Waste_Meter: Brick_Meter <uri:"https://brickschema.org/schema/Brick#Waste_Meter"> { meter, waste }
+
+// A meter that measures the usage or consumption of electricity of a whole building
+Brick_Building_Electrical_Meter: Brick_Building_Meter <uri:"https://brickschema.org/schema/Brick#Building_Electrical_Meter"> { building, elec, equip, meter }
+
+// A meter that measures the usage or consumption of gas of a whole building
+Brick_Building_Gas_Meter: Brick_Building_Meter <uri:"https://brickschema.org/schema/Brick#Building_Gas_Meter"> { building, equip, gas, meter }
+
+// A meter that measures the usage or consumption of water of a whole building
+Brick_Building_Water_Meter: Brick_Water_Meter <uri:"https://brickschema.org/schema/Brick#Building_Water_Meter"> { building, equip, meter, water }
+
+// A meter that measures the usage or consumption of chilled water of a whole building
+Brick_Building_Chilled_Water_Meter: Brick_Building_Meter <uri:"https://brickschema.org/schema/Brick#Building_Chilled_Water_Meter"> { building, chilled, equip, meter, water }
+
+// A meter that measures the usage or consumption of hot water of a whole building
+Brick_Building_Hot_Water_Meter: Brick_Hot_Water_Meter <uri:"https://brickschema.org/schema/Brick#Building_Hot_Water_Meter"> { building, equip, hot, meter, water }
+
+// A device in VRF systems that regulates the flow of refrigerant to different indoor units or branches, ensuring optimal distribution of heating or cooling according to the specific requirements of each zone or area in the building.
+Brick_Branch_Selector: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Branch_Selector"> { branch, equip, hvac, selector }
+
+// (1) device for mechanically increasing the pressure of a gas. (2) often described as being either open, hermetic, or semihermetic to describe how the compressor and motor drive is situated in relation to the gas or vapor being compressed. Types include centrifugal, axial flow, reciprocating, rotary screw, rotary vane, scroll, or diaphragm. 1. device for mechanically increasing the pressure of a gas. 2. specific machine, with or without accessories, for compressing refrigerant vapor.
+Brick_Compressor: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Compressor"> { compressor, equip }
+
+// A cooling tower is a heat rejection device that rejects waste heat to the atmosphere through the cooling of a water stream to a lower temperature. Cooling towers may either use the evaporation of water to remove process heat and cool the working fluid to near the wet-bulb air temperature or, in the case of closed circuit dry cooling towers, rely solely on air to cool the working fluid to near the dry-bulb air temperature.
+Brick_Cooling_Tower: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Cooling_Tower"> { cool, equip, tower }
+
+// A valve that controls air temperature by modulating the amount of cold water flowing through a cooling coil
+Brick_Cooling_Valve: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Cooling_Valve"> { cool, equip, valve }
+
+// A dry cooler is a fluid cooler that uses air, a relatively dry, non-liquid fluid to accomplish process cooling. (https://submer.com/submer-academy/library/dry-cooler/)
+Brick_Dry_Cooler: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Dry_Cooler"> { cooler, dry, equip, hvac }
+
+// Device that, on proper variable sensing, initiates control signals or actions to conserve energy. A control system that reduces the mechanical heating and cooling requirement.
+Brick_Economizer: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Economizer"> { economizer, equip }
+
+// A fume-collection device mounted over a work space, table, or shelf and serving to conduct unwanted gases away from the area enclosed.
+Brick_Fume_Hood: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Fume_Hood"> { equip, fume, hood }
+
+// A device that adds moisture to air or other gases
+Brick_Humidifier: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Humidifier"> { equip, humidifier }
+
+// A heater used to warm the air in an enclosed area, such as a room or office
+Brick_Space_Heater: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Space_Heater"> { equip, heater, space }
+
+// A wall air conditioner, also known as a window air conditioner when installed in a window frame, is a self-contained unit that cools a room by drawing in warm air, cooling it over a refrigerant coil, and recirculating it back into the space.
+Brick_Wall_Air_Conditioner: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Wall_Air_Conditioner"> { air, conditioner, equip, wall }
+
+// Part of a dual duct air handling unit that supplies cooling to a building
+Brick_Cold_Deck: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Cold_Deck"> { cold, deck, equip }
+
+// Part of a dual duct air handling unit that supplies heating to a building
+Brick_Hot_Deck: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Hot_Deck"> { deck, equip, hot }
+
+// An isolation valve installed in the condenser water loop
+Brick_Condenser_Water_Isolation_Valve: Brick_Isolation_Valve <uri:"https://brickschema.org/schema/Brick#Condenser_Water_Isolation_Valve"> { condenser, equip, isolation, valve, water }
+
+// A valve installed in a bypass line of a condenser water loop
+Brick_Condenser_Water_Bypass_Valve: Brick_Bypass_Valve <uri:"https://brickschema.org/schema/Brick#Condenser_Water_Bypass_Valve"> { bypass, condenser, equip, valve, water }
+
+// A 2-way, self contained proportional valve with an integral differential pressure adjustment setting.
+Brick_Differential_Pressure_Bypass_Valve: Brick_Bypass_Valve <uri:"https://brickschema.org/schema/Brick#Differential_Pressure_Bypass_Valve"> { bypass, differential, equip, pressure, valve }
+
+// a computer room air handler (CRAH) uses fans, cooling coils and a water-chiller system to remove heat.
+Brick_Computer_Room_Air_Handler: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Computer_Room_Air_Handler"> { air, computer, crah, equip, handler, room }
+
+// A self-contained unit that uses air as a heat source or sink for heating and cooling purposes.
+Brick_Packaged_Air_Source_Heat_Pump: Brick_Packaged_Heat_Pump <uri:"https://brickschema.org/schema/Brick#Packaged_Air_Source_Heat_Pump"> { air, equip, heat, pump, source }
+
+// A self-contained unit that uses water as a heat source or sink for heating and cooling purposes.
+Brick_Packaged_Water_Source_Heat_Pump: Brick_Packaged_Heat_Pump <uri:"https://brickschema.org/schema/Brick#Packaged_Water_Source_Heat_Pump"> { equip, heat, pump, source, water }
+
+// A component of the HVAC the receives air from the room to recirculate or exhaust to or from the building
+Brick_Return_Air_Plenum: Brick_Air_Plenum <uri:"https://brickschema.org/schema/Brick#Return_Air_Plenum"> { air, equip, plenum, return }
+
+// An open space between a structural concrete slab and the underside of a raised access floor system that connects to an air handling unit to receive conditioned and/or ventilating air before delivery to the room(s)
+Brick_Underfloor_Air_Plenum: Brick_Supply_Air_Plenum <uri:"https://brickschema.org/schema/Brick#Underfloor_Air_Plenum"> { air, equip, plenum, underfloor }
+
+// A CRAC that is activated as part of a lead/lag operation or when an alarm occurs in a primary unit
+Brick_Standby_CRAC: Brick_Computer_Room_Air_Conditioning <uri:"https://brickschema.org/schema/Brick#Standby_CRAC"> { crac, equip, standby }
+
+// A valve that controls air temperature by modulating the amount of hot water flowing through a reheat coil
+Brick_Reheat_Valve: Brick_Heating_Valve <uri:"https://brickschema.org/schema/Brick#Reheat_Valve"> { equip, heat, reheat, valve }
+
+// A valve installed on the return side of a heat exchanger
+Brick_Return_Heating_Valve: Brick_Heating_Valve <uri:"https://brickschema.org/schema/Brick#Return_Heating_Valve"> { equip, heat, return, valve }
+
+// Used to increase the pressure and flow of chilled water in a system to ensure adequate supply where needed.
+Brick_Chilled_Water_Booster_Pump: Brick_Chilled_Water_Pump <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Booster_Pump"> { booster, chilled, equip, pump, water }
+
+// Used to increase the pressure and flow of condenser water in a system to ensure adequate supply where needed.
+Brick_Condenser_Water_Booster_Pump: Brick_Booster_Pump <uri:"https://brickschema.org/schema/Brick#Condenser_Water_Booster_Pump"> { booster, condenser, equip, pump, water }
+
+// Used to increase the pressure and flow of hot water in a system to ensure adequate supply where needed.
+Brick_Hot_Water_Booster_Pump: Brick_Hot_Water_Pump <uri:"https://brickschema.org/schema/Brick#Hot_Water_Booster_Pump"> { booster, equip, hot, pump, water }
+
+// Used to move chilled water in a closed circuit, ensuring continuous flow.
+Brick_Chilled_Water_Circulator_Pump: Brick_Chilled_Water_Pump <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Circulator_Pump"> { chilled, circulator, equip, pump, water }
+
+// Used to move chilled water in a closed circuit, ensuring continuous flow.
+Brick_Condenser_Water_Circulator_Pump: Brick_Circulator_Pump <uri:"https://brickschema.org/schema/Brick#Condenser_Water_Circulator_Pump"> { circulator, condenser, equip, pump, water }
+
+// Used to move domestic hot water in a closed circuit, ensuring continuous flow.
+Brick_Domestic_Hot_Water_Circulator_Pump: Brick_Hot_Water_Circulator_Pump <uri:"https://brickschema.org/schema/Brick#Domestic_Hot_Water_Circulator_Pump"> { circulator, domestic, equip, hot, pump, water }
+
+// A fixed orifice device in refrigeration systems that controls refrigerant flow based on its diameter and length, without moving parts
+Brick_Capillary_Tube_Metering_Device: Brick_Refrigerant_Metering_Device <uri:"https://brickschema.org/schema/Brick#Capillary_Tube_Metering_Device"> { fixed, gas, liquid, metering, refrig }
+
+// A digitally controlled valve in HVAC systems that precisely regulates refrigerant flow.
+Brick_Electronic_Expansion_Valve: Brick_Refrigerant_Metering_Device <uri:"https://brickschema.org/schema/Brick#Electronic_Expansion_Valve"> { expansion, gas, liquid, metering, modulating, refrig, valve }
+
+// An type of metering device that automatically adjusts refrigerant flow based on temperature changes, using a sensing bulb
+Brick_Thermal_Expansion_Valve: Brick_Refrigerant_Metering_Device <uri:"https://brickschema.org/schema/Brick#Thermal_Expansion_Valve"> { expansion, gas, liquid, metering, modulating, refrig, valve }
+
+// A chiller that utilizes a thermal or/and chemical process to produce the refrigeration effect necessary to provide chilled water. There is no mechanical compression of the refrigerant taking place within the machine, as occurs within more traditional vapor compression type chillers.
+Brick_Absorption_Chiller: Brick_Chiller <uri:"https://brickschema.org/schema/Brick#Absorption_Chiller"> { absorption, chiller, equip }
+
+// A chiller that uses air to cool the refrigerant, used in various commercial and industrial cooling applications
+Brick_Air_Cooled_Chiller: Brick_Chiller <uri:"https://brickschema.org/schema/Brick#Air_Cooled_Chiller"> { chiller, cooled, equip, water }
+
+// A chiller that uses the vapor compression cycle to chill water. It throws off the heat collected from the chilled water plus the heat from the compressor to a water loop
+Brick_Centrifugal_Chiller: Brick_Chiller <uri:"https://brickschema.org/schema/Brick#Centrifugal_Chiller"> { centrifugal, chiller, equip }
+
+// A chiller system using water in the heat exchange process, employed in industrial or commercial facilities for cooling
+Brick_Water_Cooled_Chiller: Brick_Chiller <uri:"https://brickschema.org/schema/Brick#Water_Cooled_Chiller"> { chiller, cooled, equip, water }
+
+
+Brick_Heat_Recovery_Air_Source_Condensing_Unit: Brick_Heat_Recovery_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Heat_Recovery_Air_Source_Condensing_Unit"> { condenser, condensing, cooling, equip, heating, recovery, source, unit, water }
+
+
+Brick_Heat_Recovery_Water_Source_Condensing_Unit: Brick_Heat_Recovery_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Heat_Recovery_Water_Source_Condensing_Unit"> { condenser, condensing, cooling, equip, heating, recovery, source, unit, water }
+
+
+Brick_Cooling_Only_Air_Source_Condensing_Unit: Brick_Cooling_Only_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Cooling_Only_Air_Source_Condensing_Unit"> { condenser, condensing, cooling, equip, source, unit, water }
+
+
+Brick_Cooling_Only_Ground_Source_Condensing_Unit: Brick_Cooling_Only_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Cooling_Only_Ground_Source_Condensing_Unit"> { condenser, condensing, cooling, equip, ground, source, unit }
+
+
+Brick_Cooling_Only_Water_Source_Condensing_Unit: Brick_Cooling_Only_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Cooling_Only_Water_Source_Condensing_Unit"> { condenser, condensing, cooling, equip, source, unit, water }
+
+
+Brick_Heat_Pump_Air_Source_Condensing_Unit: Brick_Heat_Pump_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Heat_Pump_Air_Source_Condensing_Unit"> { air, equip, heat, pump, source }
+
+
+Brick_Heat_Pump_Ground_Source_Condensing_Unit: Brick_Heat_Pump_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Heat_Pump_Ground_Source_Condensing_Unit"> { equip, ground, heat, pump, source }
+
+
+Brick_Heat_Pump_Water_Source_Condensing_Unit: Brick_Heat_Pump_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Heat_Pump_Water_Source_Condensing_Unit"> { equip, heat, pump, source, water }
+
+// The last, high-efficiency filter installed in a sequence to remove the finest particulates from the substance being filtered
+Brick_Final_Filter: Brick_Filter <uri:"https://brickschema.org/schema/Brick#Final_Filter"> { equip, filter, final }
+
+// Filters air intake
+Brick_Intake_Air_Filter: Brick_Filter <uri:"https://brickschema.org/schema/Brick#Intake_Air_Filter"> { air, equip, filter, intake }
+
+// A filter that is applied to the mixture of recirculated and outside air
+Brick_Mixed_Air_Filter: Brick_Filter <uri:"https://brickschema.org/schema/Brick#Mixed_Air_Filter"> { air, equip, filter, mixed }
+
+// A filter installed in front of a more efficient filter to extend the life of the more expensive higher efficiency filter
+Brick_Pre_Filter: Brick_Filter <uri:"https://brickschema.org/schema/Brick#Pre_Filter"> { equip, filter, pre }
+
+// Filters return air
+Brick_Return_Air_Filter: Brick_Filter <uri:"https://brickschema.org/schema/Brick#Return_Air_Filter"> { air, equip, filter, return }
+
+// A heat exchanger in which the primary heat transfer vapor changes its state to a liquid phase.
+Brick_Condenser_Heat_Exchanger: Brick_Heat_Exchanger <uri:"https://brickschema.org/schema/Brick#Condenser_Heat_Exchanger"> { condenser, equip, exchanger, heat }
+
+
+Brick_Evaporative_Heat_Exchanger: Brick_Heat_Exchanger <uri:"https://brickschema.org/schema/Brick#Evaporative_Heat_Exchanger"> { equip, evaporative, exchanger, heat }
+
+// A rotary heat exchanger positioned within the supply and exhaust air streams of an air handling system in order to recover heat energy
+Brick_Heat_Wheel: Brick_Heat_Exchanger <uri:"https://brickschema.org/schema/Brick#Heat_Wheel"> { equip, heat, wheel }
+
+// A cooling element made of pipe or tube that removes heat from equipment, machines or airflows that is filled with chilled water.
+Brick_Chilled_Water_Coil: Brick_Cooling_Coil <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Coil"> { chilled, coil, cool, equip, water }
+
+
+Brick_Direct_Expansion_Cooling_Coil: Brick_Cooling_Coil <uri:"https://brickschema.org/schema/Brick#Direct_Expansion_Cooling_Coil"> { coil, cool, direct, equip, expansion }
+
+
+Brick_Direct_Expansion_Heating_Coil: Brick_Heating_Coil <uri:"https://brickschema.org/schema/Brick#Direct_Expansion_Heating_Coil"> { coil, direct, equip, expansion, heat }
+
+// A heating element typically made of pipe, tube or wire that emits heat that is filled with hot water.
+Brick_Hot_Water_Coil: Brick_Heating_Coil <uri:"https://brickschema.org/schema/Brick#Hot_Water_Coil"> { coil, equip, heat, hot, water }
+
+// A bypass damper is a type of damper that is employed in forced-air bypass applications to reduce the buildup of static pressure, usually when certain zone dampers are closed.
+Brick_Bypass_Damper: Brick_Damper <uri:"https://brickschema.org/schema/Brick#Bypass_Damper"> { bypass, damper, equip }
+
+// A damper that is part of an economizer that is used to module the flow of air
+Brick_Economizer_Damper: Brick_Damper <uri:"https://brickschema.org/schema/Brick#Economizer_Damper"> { damper, economizer, equip }
+
+
+// A damper that isolates a section of ductwork or other air handling system.
+Brick_Isolation_Damper: Brick_Damper <uri:"https://brickschema.org/schema/Brick#Isolation_Damper"> { damper, equip, isolation }
+
+
+// A damper that modulates the flow of outside air
+Brick_Outside_Damper: Brick_Damper <uri:"https://brickschema.org/schema/Brick#Outside_Damper"> { damper, equip, outside }
+
+// A damper that is a component of a Relief Air System, ensuring building doesn't become over-pressurised
+Brick_Relief_Damper: Brick_Damper <uri:"https://brickschema.org/schema/Brick#Relief_Damper"> { damper, equip, relief }
+
+// A damper that modulates the flow of return air
+Brick_Return_Damper: Brick_Damper <uri:"https://brickschema.org/schema/Brick#Return_Damper"> { damper, equip, return }
+
+// Dampers open and close to regulate zone temperatures in an HVAC system.
+Brick_Zone_Damper: Brick_Damper <uri:"https://brickschema.org/schema/Brick#Zone_Damper"> { damper, equip, zone }
+
+// A device with an primary air connection and integrated coil and condensate pan that performs sensible and latent cooling of a space. Essentially an Active Chilled Beam with a built in condensate pan.
+Brick_Induction_Unit: Brick_Terminal_Unit <uri:"https://brickschema.org/schema/Brick#Induction_Unit"> { equip, induction, unit }
+
+// A Chilled Beam with an integral primary air connection that induces air flow through the device.
+Brick_Active_Chilled_Beam: Brick_Chilled_Beam <uri:"https://brickschema.org/schema/Brick#Active_Chilled_Beam"> { active, beam, chilled, equip }
+
+// A chilled beam that does not have an integral air supply and instead relies on natural convection to draw air through the device.
+Brick_Passive_Chilled_Beam: Brick_Chilled_Beam <uri:"https://brickschema.org/schema/Brick#Passive_Chilled_Beam"> { beam, chilled, equip, passive }
+
+// A terminal unit for which supply air flow rate is constant and the supply air temperature is varied to meet thermal load
+Brick_Constant_Air_Volume_Box: Brick_Terminal_Unit <uri:"https://brickschema.org/schema/Brick#Constant_Air_Volume_Box"> { box, cav, constant, equip, volume }
+
+// An air diffuser that is designed for low discharge air speeds to minimize turbulence and induction of room air. This diffuser is used with displacement ventilation systems.
+Brick_Displacement_Flow_Air_Diffuser: Brick_Air_Diffuser <uri:"https://brickschema.org/schema/Brick#Displacement_Flow_Air_Diffuser"> { air, diffuser, displacement, equip, flow }
+
+// An air diffuser that is designed to produce high velocity discharge air stream to throw the air over a large distance or target the air stream to a localize area
+Brick_Jet_Nozzle_Air_Diffuser: Brick_Air_Diffuser <uri:"https://brickschema.org/schema/Brick#Jet_Nozzle_Air_Diffuser"> { air, diffuser, equip, jet, nozzle }
+
+// An air diffuser that is designed for low discharge air speeds to provide uniform and unidirectional air pattern which minimizes room air entrainment
+Brick_Laminar_Flow_Air_Diffuser: Brick_Air_Diffuser <uri:"https://brickschema.org/schema/Brick#Laminar_Flow_Air_Diffuser"> { air, diffuser, equip, flow, laminar }
+
+// Electric heating device located at or near the floor
+Brick_Electric_Baseboard_Radiator: Brick_Electric_Radiator <uri:"https://brickschema.org/schema/Brick#Electric_Baseboard_Radiator"> { baseboard, elec, equip, radiator }
+
+// Hydronic heating device located at or near the floor
+Brick_Hot_Water_Baseboard_Radiator: Brick_Baseboard_Radiator <uri:"https://brickschema.org/schema/Brick#Hot_Water_Baseboard_Radiator"> { baseboard, equip, hot, radiator, water }
+
+// Steam heating device located at or near the floor
+Brick_Steam_Baseboard_Radiator: Brick_Steam_Radiator <uri:"https://brickschema.org/schema/Brick#Steam_Baseboard_Radiator"> { baseboard, equip, radiator, steam }
+
+// A VAV box with a reheat coil mounted on the discharge end of the unit that can heat the air delivered to a zone
+Brick_Variable_Air_Volume_Box_With_Reheat: Brick_Variable_Air_Volume_Box <uri:"https://brickschema.org/schema/Brick#Variable_Air_Volume_Box_With_Reheat"> { box, equip, reheat, variable, vav, volume }
+
+// A type of fan coil unit installed within the ceiling void, typically using a cassette for air delivery
+Brick_Cassette_Fan_Coil_Unit: Brick_Fan_Coil_Unit <uri:"https://brickschema.org/schema/Brick#Cassette_Fan_Coil_Unit"> { cassette, ceiling, coil, equip, fan, fcu, unit }
+
+// A fan coil unit installed on the floor, typically against a wall, for providing heating and cooling in residential or small office spaces
+Brick_Floor_Fan_Coil_Unit: Brick_Fan_Coil_Unit <uri:"https://brickschema.org/schema/Brick#Floor_Fan_Coil_Unit"> { coil, equip, fan, fcu, floor, unit }
+
+// A wall-mounted fan coil unit used for individual room heating and cooling, often found in hotels, apartments, and offices
+Brick_Wall_Fan_Coil_Unit: Brick_Fan_Coil_Unit <uri:"https://brickschema.org/schema/Brick#Wall_Fan_Coil_Unit"> { coil, equip, fan, fcu, mounted, unit, wall }
+
+// An inline HVAC component, the Duct Fan Coil Unit is integrated within the ductwork system, rather than within the served space, to distribute conditioned air through ducts to various areas or rooms.
+Brick_Duct_Fan_Coil_Unit: Brick_Fan_Coil_Unit <uri:"https://brickschema.org/schema/Brick#Duct_Fan_Coil_Unit"> { coil, duct, equip, fan, fcu, horizontal, unit }
+
+// Radiant panel heating and cooling system where the energy heat source or sink is embedded in a radiant layer which is thermally insulated from the building structure.
+Brick_Embedded_Surface_System_Panel: Brick_Radiant_Panel <uri:"https://brickschema.org/schema/Brick#Embedded_Surface_System_Panel"> { embedded, equip, ess, panel, surface, system }
+
+// Radiant panel heating and cooling system that are usually made from metal and suspended under the ceiling or insulated from the building structure.
+Brick_Radiant_Ceiling_Panel: Brick_Radiant_Panel <uri:"https://brickschema.org/schema/Brick#Radiant_Ceiling_Panel"> { ceiling, equip, panel, radiant }
+
+// Radiant panel heating and cooling system where the energy heat source or sink is embedded in the building structure such as in slabs and walls.
+Brick_Thermally_Activated_Building_System_Panel: Brick_Radiant_Panel <uri:"https://brickschema.org/schema/Brick#Thermally_Activated_Building_System_Panel"> { activated, building, equip, panel, system, thermally }
+
+// Fan activated to increase airflow beyond what is provided by the default configuration
+Brick_Booster_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Booster_Fan"> { booster, equip, fan }
+
+// A fan installed on the ceiling of a room for the purpose of air circulation
+Brick_Ceiling_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Ceiling_Fan"> { ceiling, equip, fan }
+
+// A fan that pulls air through a cooling tower and across the louvers where the water falls to aid in heat exchange by the process of evaporation
+Brick_Cooling_Tower_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Cooling_Tower_Fan"> { cool, equip, fan, tower }
+
+// Fan moving exhaust air -- air that must be removed from a space due to contaminants
+Brick_Exhaust_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Exhaust_Fan"> { equip, exhaust, fan }
+
+// A pressurization fan is a device used to increase and maintain higher air pressure in a specified space compared to its surroundings.
+Brick_Pressurization_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Pressurization_Fan"> { equip, fan, pressurization }
+
+// A fan that is a component of a Relief Air System, ensuring building doesn't become over-pressurised
+Brick_Relief_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Relief_Fan"> { equip, fan, relief }
+
+// Fan moving return air -- air that is circulated from the building back into the HVAC system
+Brick_Return_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Return_Fan"> { equip, fan, return }
+
+// Fan that is activated as part of a lead/lag operation or when a primary fan raises an alarm
+Brick_Standby_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Standby_Fan"> { equip, fan, standby }
+
+// A fan that transfers air from a space to another space.
+Brick_Transfer_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Transfer_Fan"> { equip, fan, transfer }
+
+// Fan moving outside air; air that is supplied into the building from the outdoors
+Brick_Outside_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Outside_Fan"> { equip, fan, outside }
+
+// Fan moving supply air -- air that is supplied from the HVAC system into the building
+Brick_Supply_Fan: Brick_Fan <uri:"https://brickschema.org/schema/Brick#Supply_Fan"> { equip, fan, supply }
+
+// A device that conditions and delivers 100% outdoor air to its assigned spaces. It decouples air-conditioning of the outdoor air, usually used to provide minimum outdoor air ventilation, from conditioning of the internal loads.
+Brick_Dedicated_Outdoor_Air_System_Unit: Brick_Air_Handling_Unit <uri:"https://brickschema.org/schema/Brick#Dedicated_Outdoor_Air_System_Unit"> { air, dedicated, equip, outdoor, system }
+
+// An air handling unit that contains hot and cold decks to supply heating and cooling to a building
+Brick_Dual_Duct_Air_Handling_Unit: Brick_Air_Handling_Unit <uri:"https://brickschema.org/schema/Brick#Dual_Duct_Air_Handling_Unit"> { ahu, dual, duct, equip }
+
+// A device designed to condition ventilation air introduced into a space or to replace air exhausted from a process or general area exhaust. The device may be used to prevent negative pressure within buildings or to reduce airborne contaminants in a space.
+Brick_Makeup_Air_Unit: Brick_Air_Handling_Unit <uri:"https://brickschema.org/schema/Brick#Makeup_Air_Unit"> { ahu, equip, makeup }
+
+// A type of AHU, use to pre-treat the outdoor air before feed to AHU
+Brick_PreCooling_Air_Unit: Brick_Air_Handling_Unit <uri:"https://brickschema.org/schema/Brick#Pre-Cooling_Air_Unit"> { ahu, equip, precool }
+
+// Packaged air conditioner mounted on a roof, the conditioned air being discharged directly into the rooms below or through a duct system.
+Brick_Rooftop_Unit: Brick_Air_Handling_Unit <uri:"https://brickschema.org/schema/Brick#Rooftop_Unit"> { equip, rtu }
+
+// Terminal device consisting of a heating and/or cooling heat exchanger or 'coil' and fan that is used to control the temperature in the space where it is installed
+Brick_Fan_Coil_Unit: Brick_Terminal_Unit <uri:"https://brickschema.org/schema/Brick#Fan_Coil_Unit"> { fan, coil, equipment, fcu, unit }
+// A valve that stops the flow of a fluid, usually for maintenance or safety purposes
+Brick_Isolation_Valve: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Isolation_Valve"> { equipment, valve, isolation }
+// Sets the target water differential pressure between an upstream and downstream point in a water pipe or conduit
+Brick_Water_Differential_Pressure_Setpoint: Brick_Differential_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Water_Differential_Pressure_Setpoint"> { point, water, sp, differential, pressure }
+// Measures the amount of instantaneous power consumed
+Brick_Power_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Power_Sensor"> { point, power, sensor }
+// Indicates if a control loop, relay or equipment is off
+Brick_Off_Status: Brick_Status <uri:"https://brickschema.org/schema/Brick#Off_Status"> { off, point, status }
+// Used to move hot water in a closed circuit, ensuring continuous flow.
+Brick_Hot_Water_Circulator_Pump: Brick_Hot_Water_Pump <uri:"https://brickschema.org/schema/Brick#Hot_Water_Circulator_Pump"> { circulator, hot, water, pump, equipment }
+// Device to remove gases from a mixture of gases or to remove solid material from a fluid
+Brick_Filter: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Filter"> { filter, equipment }
+// Sets pressure
+Brick_Pressure_Setpoint: Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Pressure_Setpoint"> { point, pressure, sp }
+
+Brick_Data_Network_Equipment: Brick_ICT_Equipment <uri:"https://brickschema.org/schema/Brick#Data_Network_Equipment"> { equipment, data, network }
+// Valve used to reduce a high supply pressure to a usable level; maintains uniform outlet pressure despite inlet pressure variation.
+Brick_Pressure_Reducing_Valve: Brick_Valve <uri:"https://brickschema.org/schema/Brick#Pressure_Reducing_Valve"> { valve, pressure, reducing }
+// A main disconnect or service disconnect feeds power to a switchgear, which then distributes power to the rest of the building through smaller amperage-rated disconnects.
+Brick_Switchgear: Brick_Electrical_Equipment <uri:"https://brickschema.org/schema/Brick#Switchgear"> { equipment, switchgear }
+// Sets some property of CO2
+Brick_CO2_Setpoint: Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#CO2_Setpoint"> { co2, point, sp }
+// Indicates if a control loop, relay or equipment is on
+Brick_On_Status: Brick_Status <uri:"https://brickschema.org/schema/Brick#On_Status"> { status, point, on }
+
+Brick_Run_Status: Brick_Start_Stop_Status <uri:"https://brickschema.org/schema/Brick#Run_Status"> { status, point, run }
+
+Brick_HVAC_Valve: Brick_Valve <uri:"https://brickschema.org/schema/Brick#HVAC_Valve"> { equipment, valve, hvac }
+
+Brick_Electrical_Equipment: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Electrical_Equipment"> { electrical, equipment }
+// A type of Setpoints that is related to the difference between two measurements
+Brick_Differential_Setpoint: Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Differential_Setpoint"> {  }
+// Devices or equipment that store energy in its various forms
+Brick_Energy_Storage: Brick_Electrical_Equipment <uri:"https://brickschema.org/schema/Brick#Energy_Storage"> { equipment, energy, storage }
+// An integrated assembly of interconnected photovoltaic cells designed to deliver a selected level of working voltage and current at its output terminals packaged for protection against environment degradation and suited for incorporation in photovoltaic power systems.
+Brick_PV_Panel: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#PV_Panel"> { panel, solar, equipment, pv }
+// See Heating_Ventilation_Air_Conditioning_System
+Brick_HVAC_Equipment: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#HVAC_Equipment"> { equipment, hvac }
+// A closed, pressure vessel that uses fuel or electricity for heating water or other fluids to supply steam or hot water for heating, humidification, or other applications.
+Brick_Boiler: Brick_Water_Heater <uri:"https://brickschema.org/schema/Brick#Boiler"> { boiler, equipment }
+// A heat exchanger is a piece of equipment built for efficient heat transfer from one medium to another. The media may be separated by a solid wall to prevent mixing or they may be in direct contact (BEDES)
+Brick_Heat_Exchanger: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Heat_Exchanger"> { exchanger, hx, equipment, heat }
+// Used to move hot or cold water in a closed circuit, ensuring continuous fluid flow.
+Brick_Circulator_Pump: Brick_Pump <uri:"https://brickschema.org/schema/Brick#Circulator_Pump"> { circulator, equipment, pump }
+// A disconnect switch performs the task of manually cutting or reconnecting power from an electrical supply by creating or closing an air insulation gap between two conduction points. Also known as an 'Isolation Switch'.
+Brick_Disconnect_Switch: Brick_Switchgear <uri:"https://brickschema.org/schema/Brick#Disconnect_Switch"> { switch, equipment, disconnect }
+// An automatic switch operates automatically in the event of some current threshold or other designed event. Criteria for automatic operation is generally a physical property of the switch.
+Brick_Automatic_Switch: Brick_Switchgear <uri:"https://brickschema.org/schema/Brick#Automatic_Switch"> { automatic, switch, equipment }
+
+Brick_Video_Surveillance_Equipment: Brick_Security_Equipment <uri:"https://brickschema.org/schema/Brick#Video_Surveillance_Equipment"> { security, surveillance, equipment, video }
+// Indicates the operating speed of a device or equipment, e.g. fan
+Brick_Speed_Status: Brick_Status <uri:"https://brickschema.org/schema/Brick#Speed_Status"> { speed, status, point }
+// A meter that measures the usage or consumption of hot water
+Brick_Hot_Water_Meter: Brick_Water_Meter <uri:"https://brickschema.org/schema/Brick#Hot_Water_Meter"> { meter, equipment, hot, water }
+// Measures the pressure exerted by the air in a system, not influenced by its motion.
+Brick_Air_Static_Pressure_Sensor: Brick_Static_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Static_Pressure_Sensor"> { point, static, pressure, air, sensor }
+
+Brick_ICT_Hardware: Brick_ICT_Equipment <uri:"https://brickschema.org/schema/Brick#ICT_Hardware"> { hardware, equipment, ict }
+// A device for manually activating fire alarm
+Brick_Manual_Fire_Alarm_Activation_Equipment: Brick_Fire_Safety_Equipment <uri:"https://brickschema.org/schema/Brick#Manual_Fire_Alarm_Activation_Equipment"> { fire, safety, alarm, equipment, activation, manual }
+// A tank designed to accommodate the expansion and contraction of a fluid, typically water, in a closed heating or cooling system.
+Brick_Thermal_Expansion_Tank: Brick_Tank <uri:"https://brickschema.org/schema/Brick#Thermal_Expansion_Tank"> { equipment, tank }
+// Measures the difference between total air pressure and static air pressure.
+Brick_Air_Velocity_Pressure_Sensor: Brick_Velocity_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Velocity_Pressure_Sensor"> { pressure, velocity, point, sensor }
+// A valve controlling the flow or pressure of refrigerant in refrigeration or air conditioning systems, crucial for system efficiency
+Brick_Refrigerant_Valve: Brick_Valve <uri:"https://brickschema.org/schema/Brick#Refrigerant_Valve"> { gas, valve, liquid, refrigerant }
+// Responsible for regulating refrigerant flow, which includes mechanisms like TXVs, EXVs, and capillary tubes
+Brick_Refrigerant_Metering_Device: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Refrigerant_Metering_Device"> { device, fluid, throttling }
+// An advanced outdoor HVAC unit equipped for both heating and cooling, with the added capability of heat recovery. It efficiently recycles heat from the cooling process for heating purposes, featuring components like a condenser coil, compressor, and heat recovery systems.
+Brick_Heat_Recovery_Condensing_Unit: Brick_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Heat_Recovery_Condensing_Unit"> { heating, condenser, equipment, unit, recovery, condensing, cooling }
+// Movable objects intended to support various human activities such as seating, eating and sleeping
+Brick_Furniture: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Furniture"> { furniture, equipment }
+// A pump that performs work on hot water; typically part of a hot water system
+Brick_Hot_Water_Pump: Brick_Water_Pump <uri:"https://brickschema.org/schema/Brick#Hot_Water_Pump"> { hot, equipment, pump, water }
+// A device with an integrated coil that performs sensible heating of a space via circulation of room air. Chilled Beams are not designed to perform latent cooling; see Induction Units. Despite their name, Chilled Beams may perform heating or cooling of a space depending on their configuration.
+Brick_Chilled_Beam: Brick_Terminal_Unit <uri:"https://brickschema.org/schema/Brick#Chilled_Beam"> { chilled, equipment, beam }
+// A component of the HVAC the receives air from the air handling unit to distribute to the building
+Brick_Supply_Air_Plenum: Brick_Air_Plenum <uri:"https://brickschema.org/schema/Brick#Supply_Air_Plenum"> { supply, air, equipment, plenum, discharge }
+// A meter that measures usage or consumption of some media for a whole building
+Brick_Building_Meter: Brick_Meter <uri:"https://brickschema.org/schema/Brick#Building_Meter"> { meter, equipment, building }
+// A device that regulates the volumetric flow rate and/or the temperature of the controlled medium.
+Brick_Terminal_Unit: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Terminal_Unit"> { terminal, unit, equipment }
+// Sets temperature for heating
+Brick_Heating_Temperature_Setpoint: Brick_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Heating_Temperature_Setpoint"> { heat, temp, point, sp }
+// A device that changes direct current into alternating current
+Brick_Inverter: Brick_Electrical_Equipment <uri:"https://brickschema.org/schema/Brick#Inverter"> { equipment, inverter }
+// Measures the amount of instantaneous electric power consumed
+Brick_Electric_Power_Sensor: Brick_Power_Sensor <uri:"https://brickschema.org/schema/Brick#Electric_Power_Sensor"> { point, electric, power, sensor }
+// Measures the rate of flow of water
+Brick_Water_Flow_Sensor: Brick_Flow_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Flow_Sensor"> { flow, water, point, sensor }
+// Valve that allows fluid to flow in only one direction, preventing reverse flow.
+Brick_Check_Valve: Brick_Valve <uri:"https://brickschema.org/schema/Brick#Check_Valve"> { check, valve }
+// A device that regulates the volume and temperature of air delivered to a zone by opening or closing a damper
+Brick_Variable_Air_Volume_Box: Brick_Terminal_Unit <uri:"https://brickschema.org/schema/Brick#Variable_Air_Volume_Box"> { volume, equipment, variable, box, vav }
+// A tank used in conjunction with a filter to facilitate the separation of filtrate material for disposal.
+Brick_Separation_Tank: Brick_Tank <uri:"https://brickschema.org/schema/Brick#Separation_Tank"> { equipment, tank }
+// Sets the target flow rate of water
+Brick_Water_Flow_Setpoint: Brick_Flow_Setpoint <uri:"https://brickschema.org/schema/Brick#Water_Flow_Setpoint"> { sp, water, point, flow }
+// A pump that performs work on chilled water; typically part of a chilled water system
+Brick_Chilled_Water_Pump: Brick_Water_Pump <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Pump"> { chilled, equipment, pump, water }
+// An apparatus for heating and usually storing hot water
+Brick_Water_Heater: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Water_Heater"> { heater, equipment, water }
+// Electric heating device
+Brick_Electric_Radiator: Brick_Radiator <uri:"https://brickschema.org/schema/Brick#Electric_Radiator"> { radiator, equipment, electric }
+// A cooling element made of pipe or tube that removes heat from equipment, machines or airflows. Typically filled with either refrigerant or cold water.
+Brick_Cooling_Coil: Brick_Coil <uri:"https://brickschema.org/schema/Brick#Cooling_Coil"> { coil, equipment, cool }
+// A device that provides an occupant control over a lighting system
+Brick_Interface: Brick_Lighting_Equipment <uri:"https://brickschema.org/schema/Brick#Interface"> { interface, equipment }
+
+Brick_Shading_Equipment: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Shading_Equipment"> { equipment, shade }
+// A specialized type of tank intended for the storage of water for extended periods.
+Brick_Water_Storage_Tank: Brick_Storage_Tank <uri:"https://brickschema.org/schema/Brick#Water_Storage_Tank"> { equipment, water, storage }
+// A switch used to operate all or part of a lighting installation
+Brick_Switch: Brick_Interface <uri:"https://brickschema.org/schema/Brick#Switch"> { switch, interface, equipment }
+// A Thermal Energy Storage (TES) tank is a specialized container for storing thermal energy, enabling more efficient heating and cooling by balancing supply and demand. It helps reduce operational costs and minimizes the need for larger equipment.
+Brick_Thermal_Energy_Storage_Tank: Brick_Storage_Tank <uri:"https://brickschema.org/schema/Brick#Thermal_Energy_Storage_Tank"> { thermal, storage, energy, tank, equipment }
+// Refrigerating machine used to transfer heat between fluids. Chillers are either direct expansion with a compressor or absorption type.
+Brick_Chiller: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Chiller"> { chiller, equipment }
+// A valve that controls air temperature by modulating the amount of hot water flowing through a heating coil
+Brick_Heating_Valve: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Heating_Valve"> { heat, equipment, valve }
+
+Brick_Fire_Safety_Equipment: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Fire_Safety_Equipment"> { safety, equipment, fire }
+// Measures properties of CO2 in air
+Brick_CO2_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#CO2_Sensor"> { co2, point, sensor }
+
+Brick_Lighting: Brick_Lighting_Equipment <uri:"https://brickschema.org/schema/Brick#Lighting"> {  }
+// An outdoor HVAC unit that functions in both heating and cooling modes. It includes a reversing valve along with a condenser coil and compressor, enabling the switch between cooling and heating by reversing refrigerant flow.
+Brick_Heat_Pump_Condensing_Unit: Brick_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Heat_Pump_Condensing_Unit"> { heating, condenser, equipment, unit, condensing, cooling }
+
+Brick_Emergency_Wash_Station: Brick_Safety_Equipment <uri:"https://brickschema.org/schema/Brick#Emergency_Wash_Station"> { station, emergency, safety, equipment, wash }
+// Device to maintain controlled downstream fluid pressure with varying upstream pressure.
+Brick_Pressure_Regulator_Valve: Brick_Valve <uri:"https://brickschema.org/schema/Brick#Pressure_Regulator_Valve"> { regulator, valve, pressure }
+// A type of valve installed in a bypass pipeline
+Brick_Bypass_Valve: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Bypass_Valve"> { equipment, valve, bypass }
+// A heating element typically made of pipe, tube or wire that emits heat. Typically filled with hot water, or, in the case of wire, uses electricity.
+Brick_Heating_Coil: Brick_Coil <uri:"https://brickschema.org/schema/Brick#Heating_Coil"> { coil, heat, equipment }
+// A temperature-controlled surface that provides fifty percent (50%) or more of the design heat transfer by thermal radiation.
+Brick_Radiant_Panel: Brick_Terminal_Unit <uri:"https://brickschema.org/schema/Brick#Radiant_Panel"> { panel, equipment, radiant }
+// A device that measure usage or consumption of some media --- typically a form energy or power.
+Brick_Meter: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Meter"> { meter, equipment }
+// Electronic device that varies its output frequency to vary the rotating speed of a motor, given a fixed input frequency. Used with fans or pumps to vary the flow in the system as a function of a maintained pressure.
+Brick_Variable_Frequency_Drive: Brick_Motor <uri:"https://brickschema.org/schema/Brick#Variable_Frequency_Drive"> { vfd, frequency, drive, equipment, variable }
+// Sets temperature of outside air
+Brick_Outside_Air_Temperature_Setpoint: Brick_Air_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Outside_Air_Temperature_Setpoint"> { point, outside, temp, sp, air }
+// A valve that modulates the flow of water
+Brick_Water_Valve: Brick_Valve <uri:"https://brickschema.org/schema/Brick#Water_Valve"> { equipment, valve, water }
+// Pressure-actuated valve to automatically relieve excessive pressure; prevents explosive shattering of the housing.
+Brick_Pressure_Relief_Valve: Brick_Valve <uri:"https://brickschema.org/schema/Brick#Pressure_Relief_Valve"> { relief, valve, pressure }
+
+Brick_Security_Equipment: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Security_Equipment"> { security, equipment }
+// Measures the temperature of chilled water
+Brick_Chilled_Water_Temperature_Sensor: Brick_Water_Temperature_Sensor <uri:"https://brickschema.org/schema/Brick#Chilled_Water_Temperature_Sensor"> { point, chilled, temp, water, sensor }
+// Used to increase the pressure and flow of a fluid, typically water, in a system to ensure adequate supply where needed.
+Brick_Booster_Pump: Brick_Pump <uri:"https://brickschema.org/schema/Brick#Booster_Pump"> { booster, equipment, pump }
+// A valve regulating the flow of hot water
+Brick_Hot_Water_Valve: Brick_Heating_Valve <uri:"https://brickschema.org/schema/Brick#Hot_Water_Valve"> { equipment, hot, water, valve }
+// Detects pollutants in the ambient air
+Brick_Particulate_Matter_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Particulate_Matter_Sensor"> { particulate, point, sensor, matter }
+// A circuit breaker is a safety device to prevent damage to devices in a circuit, such as electric motors, and wiring when the current flowing through the electrical circuit supersedes its design limits. It does this by removing the current from a circuit when an unsafe condition arises. Unlike a switch, a circuit breaker automatically does this and shuts off the power immediately.
+Brick_Circuit_Breaker: Brick_Switchgear <uri:"https://brickschema.org/schema/Brick#Circuit_Breaker"> { breaker, circuit }
+// Radiator that uses steam
+Brick_Steam_Radiator: Brick_Radiator <uri:"https://brickschema.org/schema/Brick#Steam_Radiator"> { radiator, equipment, steam }
+// Sets humidity
+Brick_Humidity_Setpoint: Brick_Setpoint <uri:"https://brickschema.org/schema/Brick#Humidity_Setpoint"> { humidity, point, sp }
+// A piece of equipment for sensing some physical properties
+Brick_Sensor_Equipment: Brick_ICT_Equipment <uri:"https://brickschema.org/schema/Brick#Sensor_Equipment"> { equipment, ict, sensor }
+// A meter that measures the usage or consumption of water
+Brick_Water_Meter: Brick_Meter <uri:"https://brickschema.org/schema/Brick#Water_Meter"> { meter, equipment, water }
+
+Brick_Intercom_Equipment: Brick_Security_Equipment <uri:"https://brickschema.org/schema/Brick#Intercom_Equipment"> { intercom, equipment, security }
+// A component of the HVAC the receives air from the air handling unit or room to distribute or exhaust to or from the building
+Brick_Air_Plenum: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Air_Plenum"> { plenum, equipment, air }
+// A device that is a component of the air distribution system that controls the delivery of conditioned and/or ventilating air into a room
+Brick_Air_Diffuser: Brick_Terminal_Unit <uri:"https://brickschema.org/schema/Brick#Air_Diffuser"> { diffuser, equipment, air }
+// A closed, pressure vessel that uses natural gas for heating water or other fluids to supply steam or hot water for heating, humidification, or other applications.
+Brick_Natural_Gas_Boiler: Brick_Boiler <uri:"https://brickschema.org/schema/Brick#Natural_Gas_Boiler"> { boiler, equipment, gas, natural }
+// Information and Communications Technology (ICT) equipment operates with a processor to process data or logic and create digital signals.
+Brick_ICT_Equipment: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#ICT_Equipment"> { equipment, ict }
+
+Brick_Controller: Brick_ICT_Equipment <uri:"https://brickschema.org/schema/Brick#Controller"> { controller, equipment, ict }
+// Measures the total heat content of air
+Brick_Air_Enthalpy_Sensor: Brick_Enthalpy_Sensor <uri:"https://brickschema.org/schema/Brick#Air_Enthalpy_Sensor"> { air, enthalpy, point, sensor }
+
+Brick_Safety_Equipment: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Safety_Equipment"> { safety, equipment }
+
+Brick_Air_Handling_Unit: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Air_Handling_Unit"> { handling, equipment, handler, unit, ahu, air }
+
+Brick_Cooling_Only_Condensing_Unit: Brick_Condensing_Unit <uri:"https://brickschema.org/schema/Brick#Cooling_Only_Condensing_Unit"> { condenser, equipment, unit, condensing, cooling }
+// A device that regulates, directs or controls the flow of a fluid by opening, closing or partially obstructing various passageways
+Brick_Valve: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Valve"> { equipment, valve }
+// A self-contained unit designed to transfer heat energy to or from a designated space, capable of offering both heating and cooling functions
+Brick_Packaged_Heat_Pump: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Packaged_Heat_Pump"> { heat, equipment, pump }
+
+Brick_Asset: Entity <uri:"https://brickschema.org/schema/Brick#Asset"> {  }
+// Steam, hydronic, or electric heating device located at or near the floor.
+Brick_Baseboard_Radiator: Brick_Radiator <uri:"https://brickschema.org/schema/Brick#Baseboard_Radiator"> { baseboard, equipment, radiator }
+// Valve used for mixing hot and cold fluid to a desired temperature.
+Brick_Mixing_Valve: Brick_Valve <uri:"https://brickschema.org/schema/Brick#Mixing_Valve"> { valve, mixing }
+// Senses the dewpoint temperature . Dew point is the temperature to which air must be cooled to become saturated with water vapor
+Brick_Dewpoint_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Dewpoint_Sensor"> { point, sensor, dewpoint }
+// Sets temperature for cooling
+Brick_Cooling_Temperature_Setpoint: Brick_Temperature_Setpoint <uri:"https://brickschema.org/schema/Brick#Cooling_Temperature_Setpoint"> { cool, temp, point, sp }
+// Measures the difference in water pressure between two points in a system.
+Brick_Water_Differential_Pressure_Sensor: Brick_Differential_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Water_Differential_Pressure_Sensor"> { point, water, differential, pressure, sensor }
+
+Brick_Access_Control_Equipment: Brick_Security_Equipment <uri:"https://brickschema.org/schema/Brick#Access_Control_Equipment"> { access, equipment, control, security }
+// An electrical switch that switches a load between two (or more) sources.
+Brick_Transfer_Switch: Brick_Switchgear <uri:"https://brickschema.org/schema/Brick#Transfer_Switch"> { switch, equipment, transfer }
+
+Brick_Point: Brick_Class <uri:"https://brickschema.org/schema/Brick#Point"> { point }
+// A device that monitors and maintains the temperature, air distribution and humidity in a network room or data center.
+Brick_Computer_Room_Air_Conditioning: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Computer_Room_Air_Conditioning"> { room, computer, crac, equipment, conditioning, air }
+// Measure the amount of force acting on a unit area
+Brick_Pressure_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Pressure_Sensor"> { point, pressure, sensor }
+
+Brick_Air_Pressure_Setpoint: Brick_Pressure_Setpoint <uri:"https://brickschema.org/schema/Brick#Air_Pressure_Setpoint"> { air, pressure, sp }
+// Measures the total heat content of some substance
+Brick_Enthalpy_Sensor: Brick_Sensor <uri:"https://brickschema.org/schema/Brick#Enthalpy_Sensor"> { enthalpy, point, sensor }
+// An outdoor HVAC unit that typically condenses refrigerant from gas to liquid, integral to the refrigeration cycle. It comprises a condenser coil, compressor, fan, and potentially a reversing valve in heat pump applications.
+Brick_Condensing_Unit: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Condensing_Unit"> { condenser, unit, equipment, condensing }
+// A container designed to hold or store fluids for various applications within a system.
+Brick_Tank: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Tank"> { equipment, tank }
+// Machine for imparting energy to a fluid, causing it to do work, drawing a fluid into itself through an entrance port, and forcing the fluid out through an exhaust port.
+Brick_Pump: Brick_HVAC_Equipment <uri:"https://brickschema.org/schema/Brick#Pump"> { equipment, pump }
+// Indicates the active/inactive status of a control loop (but not equipment activities or relays -- use On/Off for this purpose)
+Brick_Start_Stop_Status: Brick_On_Off_Status <uri:"https://brickschema.org/schema/Brick#Start_Stop_Status"> { status, stop, point, start }
+
+Brick_Class: Entity <uri:"https://brickschema.org/schema/Brick#Class"> {  }
+// Heat exchangers designed to transfer thermal energy from one medium to another
+Brick_Radiator: Brick_Terminal_Unit <uri:"https://brickschema.org/schema/Brick#Radiator"> { radiator, equipment }
+// A specialized type of tank intended primarily for the storage of fluids or gases for extended periods.
+Brick_Storage_Tank: Brick_Tank <uri:"https://brickschema.org/schema/Brick#Storage_Tank"> { equipment, tank, storage }
+// A pump that performs work on water
+Brick_Water_Pump: Brick_Pump <uri:"https://brickschema.org/schema/Brick#Water_Pump"> { equipment, pump, water }
+
+Brick_Lighting_Equipment: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Lighting_Equipment"> { lighting, equipment }
+// Measures the difference between total pressure and static pressure
+Brick_Velocity_Pressure_Sensor: Brick_Pressure_Sensor <uri:"https://brickschema.org/schema/Brick#Velocity_Pressure_Sensor"> {  }
+// Cooling or heating element made of pipe or tube that may or may not be finned and formed into helical or serpentine shape (ASHRAE Dictionary)
+Brick_Coil: Brick_Heat_Exchanger <uri:"https://brickschema.org/schema/Brick#Coil"> { coil, equipment }
+// A machine in which power is applied to do work by the conversion of various forms of energy into mechanical force and motion.
+Brick_Motor: Brick_Equipment <uri:"https://brickschema.org/schema/Brick#Motor"> { motor, equipment }
+Brick_Site : Entity <uri:"https://brickschema.org/schema/Brick#Site"> { site }
