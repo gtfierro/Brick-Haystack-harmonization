@@ -9,6 +9,7 @@ import rdflib
 import brickschema
 from brick_haystack_harmonization.common import lib, get_equip_ref, get_parent, get_most_specific_template, brick, env
 from buildingmotif.namespaces import PARAM
+from buildingmotif.dataclasses import Model, Library, ShapeCollection
 from brickschema.namespaces import SKOS, BRICK, RDFS, A, RDF
 from rdflib import XSD
 
@@ -19,17 +20,28 @@ class HaystackToRDFTransformer:
 
         haystack_ontology_path = importlib_resources.files('brick_haystack_harmonization.data').joinpath('haystack.ttl')
         self.ontology = brickschema.Graph().load_file(str(haystack_ontology_path))
+        self.haystack = Library.load(ontology_graph=str(haystack_ontology_path), infer_templates=False, run_shacl_inference=False)
 
+        #env.import_graph
         bh_path = importlib_resources.files('brick_haystack_harmonization.data').joinpath('bh.ttl')
-        self.ontology.load_file(str(bh_path))
+        self.bh = Library.load(ontology_graph=str(bh_path), infer_templates=False, run_shacl_inference=False)
+        self.ontology.parse(str(bh_path))
         bh_base_path = importlib_resources.files('brick_haystack_harmonization.data').joinpath('bhbase.ttl')
-        self.ontology.load_file(str(bh_base_path))
+        self.bhbase = Library.load(ontology_graph=str(bh_base_path), infer_templates=False, run_shacl_inference=False)
+        self.ontology.parse(str(bh_base_path))
 
-        self.brick = brick
+        env.import_dependencies(brick)
+        self.brick = ShapeCollection.create()
+        self.brick.add_graph(brick)
 
+        self._ontologies = [self.haystack.get_shape_collection(), self.bh.get_shape_collection()] #, self.bhbase.get_shape_collection(), self.brick]
 
     def is_marker_tag(self, tag):
         return isinstance(tag, dict) and tag.get("_kind") == "marker" or isinstance(tag, str)
+
+    @property
+    def ontology_graphs(self):
+        return sum((o.graph for o in self._ontologies), start=rdflib.Graph())
 
     def equipReftoBrick(self, subject: rdflib.URIRef, equipRef: rdflib.URIRef, context: brickschema.Graph) -> rdflib.URIRef:
         query = "ASK { ?s rdf:type/brick:aliasOf?/rdfs:subClassOf* brick:Point }"
@@ -91,7 +103,7 @@ class HaystackToRDFTransformer:
 
     def handle_entity_with_templates(self, model: brickschema.Graph, entity: rdflib.URIRef, entity_types: List[rdflib.URIRef]):
         template_names = [t.split(PARAM)[-1] for t in entity_types]
-        base_context = self.ontology + model + self.brick
+        base_context = self.ontology + model + self.brick.graph
         print(f"Entity {entity} has types {template_names} from {entity_types}")
         template = get_most_specific_template([lib.get_template_by_name(t) for t in template_names], base_context)
         if not template:
@@ -119,21 +131,35 @@ class HaystackToRDFTransformer:
             model.add((bindings[parent_param_str], relationship, equip))
 
     def run(self, haystack_file: str) -> Tuple[brickschema.Graph, bool, rdflib.Graph]:
-        model = self.haystack_to_rdf(haystack_file)
-        infer(model, self.ontology + self.brick)
-        for entity in model.subjects(A, self.PH.Entity):
-            entity_types = [t for t in model.objects(entity, RDF.type) if t.startswith(PARAM)]
+        rdfhaystackmodel = self.haystack_to_rdf(haystack_file)
+        model = Model.create(self.M)
+        model.add_graph(rdfhaystackmodel)
+        compiled = model.compile(self._ontologies)
+        #compiled = infer(rdfhaystackmodel, self.ontology_graphs)
+        model.add_graph(compiled)
+        model.graph.serialize("/tmp/model1.ttl", format="ttl")
+        for entity in model.graph.subjects(A, self.PH.Entity):
+            entity_types = [t for t in model.graph.objects(entity, RDF.type) if t.startswith(PARAM)]
             if not entity_types:
                 continue
-            self.handle_entity_with_templates(model, entity, entity_types)
+            self.handle_entity_with_templates(model.graph, entity, entity_types)
 
-        env.import_dependencies(self.brick)
-        combined = self.brick.skolemize()
+        print(f"before: {len(model.graph)=}")
+        #res = infer(model, self.ontology + self.brick)
+        compiled = model.compile(self._ontologies)
+        model.add_graph(compiled)
+        print(f"after: {len(model.graph)=}")
+        print(f"after: {len(compiled)=}")
 
-        combined.serialize("/tmp/combined.ttl", format="ttl")
-        model.serialize("/tmp/model.ttl", format="ttl")
-        valid, _, report = validate(model, combined)
-        return model, valid, report
+        self.ontology.serialize("/tmp/ontology.ttl", format="ttl")
+        model.graph.serialize("/tmp/model2.ttl", format="ttl")
+        print("Starting validation")
+        #valid, _, report = validate(model.graph, self.ontology_graphs)
+        #return model.graph, valid, report
+        ctx = model.validate(self._ontologies, error_on_missing_imports=False)
+        
+        return model.graph, ctx.valid, ctx.report
+
 
 def main():
     if len(sys.argv) < 3:

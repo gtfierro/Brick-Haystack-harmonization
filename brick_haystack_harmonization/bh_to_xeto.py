@@ -50,6 +50,20 @@ class BHtoXetoConverter:
             tag_list = tags.pop()
         return self.make_statement(equip_class, tag_list)
 
+    def loc_to_xeto(self, row: dict) -> str:
+        loc_class = clean_brick_classname(row["Subpart:EntityClassL0"])
+        if BRICK[loc_class] in self.seen_classes:
+            return ""
+        self.seen_classes.add(BRICK[loc_class])
+        tags = taglist_to_set(row["Haystack:Markers"])
+        tags.update(taglist_to_set(row["Haystack:CustomMarkers"]))
+        fixup_tags(tags)
+        if len(tags) > 1:
+            tag_list = ", ".join(sorted(tags))
+        else:
+            tag_list = tags.pop()
+        return self.make_statement(loc_class, tag_list)
+
     def make_statement(self, point_class: str, tag_list: str) -> str:
         parent = brick.value(subject=BRICK[point_class], predicate=RDFS.subClassOf)
 
@@ -171,6 +185,8 @@ class BHtoXetoConverter:
                 statements.append(self.subparts_to_xeto(row) + "\n")
             elif row["Meta:State"] == "Equip":
                 statements.append(self.equip_to_xeto(row) + "\n")
+            elif row["Meta:State"] == "Location":
+                statements.append(self.loc_to_xeto(row) + "\n")
             # TODO: add support for locations
         with open(template_file, 'w') as f:
             f.write(self.buildingmotif_template_file_content)

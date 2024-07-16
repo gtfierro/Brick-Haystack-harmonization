@@ -115,7 +115,8 @@ def keep_marker_tag_property_shapes(root: Node, sg: rdflib.Graph):
 
 
 def get_equip_ref(entity: Node, graph: rdflib.Graph) -> Optional[Node]:
-    q = """SELECT ?entity ?equip WHERE {
+    q = """PREFIX ph: <urn:project_haystack/>
+    SELECT ?entity ?equip WHERE {
         ?entity ph:hasRefTag ?tag  .
         ?tag ph:key "equipRef"^^xsd:string .
         ?tag ph:value ?equip

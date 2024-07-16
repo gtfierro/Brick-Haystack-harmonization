@@ -5,9 +5,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <urn:brick-haystack-xeto#> .
+@prefix : <urn:brick-haystack-xeto-rules#> .
 
-<urn:brick-haystack-xeto> a owl:Ontology ;
+<urn:brick-haystack-xeto-rules> a owl:Ontology ;
     sh:prefixes [
         sh:declare [
             sh:prefix "brick" ;
@@ -33,6 +33,14 @@
             sh:prefix "xsd" ;
             sh:namespace "http://www.w3.org/2001/XMLSchema#" ;
         ] ;
+        sh:declare [ 
+            sh:prefix "ref"  ;
+            sh:namespace "https://brickschema.org/schema/Brick/ref#"^^xsd:anyURI ;
+        ] ;
+        sh:declare [ 
+            sh:prefix "bacnet"  ;
+            sh:namespace "http://data.ashrae.org/bacnet/2020#"^^xsd:anyURI ;
+        ] ;
     ] ;
     owl:imports <http://www.w3.org/ns/shacl>,
         <https://brickschema.org/schema/1.4/Brick> .
@@ -43,20 +51,19 @@
 :BACnetReferenceRule a sh:NodeShape ;
     sh:targetClass ph:Entity ;
     # needs to have bacnetConnRef ref tag
-    sh:property [
-        sh:path ph:hasRefTag ;
-        sh:qualifiedValueShape [
-            sh:property [
-                sh:path ph:key ;
-                sh:hasValue "bacnetConnRef" ;
-            ] ;
-        ] ;
-    ] ;
+    #sh:property [
+    #    sh:path ph:hasRefTag ;
+    #    sh:qualifiedValueShape [
+    #        sh:property [
+    #            sh:path ph:key ;
+    #            sh:hasValue "bacnetConnRef" ;
+    #        ] ;
+    #    ] ;
+    #] ;
 
     sh:rule [
         a sh:SPARQLRule ;
-        sh:prefixes <urn:brick-haystack-xeto> ;
-        sh:condition :BACnetReferenceCondition ;
+        sh:prefixes <urn:brick-haystack-xeto-rules> ;
         sh:construct """
             CONSTRUCT {
                 $this ref:hasExternalReference [
@@ -70,3 +77,31 @@
             }
             """ ;
     ] .
+
+:BACnetReferenceRule2 a sh:NodeShape ;
+    sh:targetClass ph:Entity ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes <urn:brick-haystack-xeto-rules> ;
+        sh:construct """
+            CONSTRUCT {
+                $this a brick:BACNET .
+            } WHERE {
+                $this ph:hasRefTag ?tag .
+                ?tag ph:key "bacnetConnRef" .
+                ?tag ph:value ?bacnet .
+            }
+            """ ;
+    ] .
+
+
+:BACnetReferenceRule3 a sh:NodeShape ;
+    sh:targetClass ph:Entity ;
+    sh:rule [
+        a sh:TripleRule ;
+        sh:subject sh:this ;
+        sh:predicate rdf:type ;
+        sh:object brick:BACNET2 ;
+    ] .
+
+
