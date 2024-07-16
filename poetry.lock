@@ -1466,15 +1466,36 @@ windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
 name = "pyontoenv"
-version = "0.1.9a2"
+version = "0.1.9a3"
 description = "Command line tool to manage ontologies and their imports in a local environment"
 optional = false
 python-versions = ">=3.9"
 files = [
-    {file = "pyontoenv-0.1.9a2-cp38-abi3-macosx_10_13_x86_64.macosx_11_0_arm64.macosx_10_13_universal2.whl", hash = "sha256:0a3b7ddbcf819302eac1ee2e6d41e76273f3e1ee25f2e5a9bf9fee07b525f899"},
-    {file = "pyontoenv-0.1.9a2-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:a8b8cf3c967ddbd4140d743d2a5aab923b286418c0dbebf5f44d62f7450c0ec1"},
-    {file = "pyontoenv-0.1.9a2-cp38-abi3-win_amd64.whl", hash = "sha256:e1e112a8e57925b65c51f6ee1c06340bf7eaadfc1057a2981a15d6799841e7b3"},
-    {file = "pyontoenv-0.1.9a2.tar.gz", hash = "sha256:e384e63c830ebf28bf96f4d8b826b7a50c22f35fc21db46a63c95e1e9c4d22cd"},
+    {file = "pyontoenv-0.1.9a3-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:6d8ac7d66d793a7c2570f91991e190a2580dc01d7d91d753fc2163c3553289a3"},
+    {file = "pyontoenv-0.1.9a3-cp310-cp310-musllinux_1_2_aarch64.whl", hash = "sha256:726dd77609e8cf49614d63f7c582223a63def3698676ac1d92d1c92ff004cf61"},
+    {file = "pyontoenv-0.1.9a3-cp310-cp310-musllinux_1_2_x86_64.whl", hash = "sha256:29a8c415b50c62b0cd5d274d94c0690af59da3c87d5f7266c435caa34d680c13"},
+    {file = "pyontoenv-0.1.9a3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:40cdd459c5201b5f7849bd87517bb23b25e413fd0807f128d47c1c3dfe66fa80"},
+    {file = "pyontoenv-0.1.9a3-cp311-cp311-musllinux_1_2_aarch64.whl", hash = "sha256:e52a9c4f97b737fb4649fc802f4ecf6a465f5174a104fe73bce006d02633912a"},
+    {file = "pyontoenv-0.1.9a3-cp311-cp311-musllinux_1_2_x86_64.whl", hash = "sha256:faddb3e7e68c81d0d5b4f48bfeaedb33e8ff61abd43e86b901d6348afc1a7839"},
+    {file = "pyontoenv-0.1.9a3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:421f2fd5cfd148e55b9198c2546878c5d5da8eab7fa611f4672a16b4b2f57d03"},
+    {file = "pyontoenv-0.1.9a3-cp312-cp312-musllinux_1_2_aarch64.whl", hash = "sha256:8e6d56c95a77b9224e4a6b87e27a8dd8c49f81d8ede01a9f0e1adb81d88f53d1"},
+    {file = "pyontoenv-0.1.9a3-cp312-cp312-musllinux_1_2_x86_64.whl", hash = "sha256:393a136d55c6d7981f36582490fd0f7ce6f159cde674ed29b72f1691136a55b2"},
+    {file = "pyontoenv-0.1.9a3-cp38-abi3-macosx_10_14_x86_64.macosx_11_0_arm64.macosx_10_14_universal2.whl", hash = "sha256:aedad46a6f3fd812fb63218e5dd6999474adf5523c4ab0173586f494f2085d84"},
+    {file = "pyontoenv-0.1.9a3-cp38-abi3-macosx_10_14_x86_64.whl", hash = "sha256:9bbeb5dffe34463635fcc316df70e5c1c4f307f8dab31c2d53722dad95ece41b"},
+    {file = "pyontoenv-0.1.9a3-cp38-abi3-macosx_11_0_arm64.whl", hash = "sha256:3fdf7bafaa5069d34fcdb911bafba80b501d90aab95d13d9d0f996a2c48eb976"},
+    {file = "pyontoenv-0.1.9a3-cp38-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:e870b7cc1fb4d13f3a522da005c6a6048d88a215225f35a4f59aed7da5f0a83a"},
+    {file = "pyontoenv-0.1.9a3-cp38-abi3-musllinux_1_2_aarch64.whl", hash = "sha256:0c07e2773b904f9b636d7202e446f0a0a87efbb3c28610384c289833f6e88b87"},
+    {file = "pyontoenv-0.1.9a3-cp38-abi3-musllinux_1_2_x86_64.whl", hash = "sha256:27cdb18d04190a113773531e87a3a0cb3dfa2c98a602c9f0af0b8b9893d148be"},
+    {file = "pyontoenv-0.1.9a3-cp38-abi3-win_amd64.whl", hash = "sha256:8496f0326d25d2e73597e0a95fba4e4474b109008ba50b632da6299c76206efe"},
+    {file = "pyontoenv-0.1.9a3-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1ad3eb0b1fbc8a3c0cca20ccc1116f9e3634c89c1bf9c345a5e408b25bb8ddfd"},
+    {file = "pyontoenv-0.1.9a3-cp38-cp38-musllinux_1_2_aarch64.whl", hash = "sha256:7017159aa3f3d647fc402f08b4f1ad81eec48d47366b3e43b6c924d7928e72a1"},
+    {file = "pyontoenv-0.1.9a3-cp38-cp38-musllinux_1_2_x86_64.whl", hash = "sha256:d7a80475001928772cd51c3d603d5369b2b6a2758ca834e165286cf302431f65"},
+    {file = "pyontoenv-0.1.9a3-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:bbabfcc22a3d6a8a6b6f52d88f5cfef77774fd25a09aa81c62e79e4e49f16bc7"},
+    {file = "pyontoenv-0.1.9a3-cp39-cp39-musllinux_1_2_aarch64.whl", hash = "sha256:c624366463fa6d470fe4ee1177649fdf6a009a85fb96c36de96289ef3742b120"},
+    {file = "pyontoenv-0.1.9a3-cp39-cp39-musllinux_1_2_x86_64.whl", hash = "sha256:2535e989768abfdfa73863e890e4ae8e0f150331e2acee369bff8dfa941accea"},
+    {file = "pyontoenv-0.1.9a3-pp310-pypy310_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:f2ae56d7156c15e9e53fea6365567ef7afb168e96cd5dab36da16719ce911644"},
+    {file = "pyontoenv-0.1.9a3-pp39-pypy39_pp73-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:49db65d0583122cdfb67d5bd06666d6a727689190851e779d6a200e363f0e2de"},
+    {file = "pyontoenv-0.1.9a3.tar.gz", hash = "sha256:6f2502a801653c2198529ebd7bfe0cd7879e2a6240643b169837ca39139462b1"},
 ]
 
 [[package]]
@@ -2272,4 +2293,4 @@ test = ["big-O", "importlib-resources", "jaraco.functools", "jaraco.itertools", 
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.12"
-content-hash = "0ed3bba4fb59e9efa0ec162ad9861049438f0a76ba860dea9d191ddbef128262"
+content-hash = "f9fdddd4857002279207ed82a5dcb5087aba3f3d7810fe9bd1a94c185cc99925"
