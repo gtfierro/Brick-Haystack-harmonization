@@ -133,8 +133,11 @@ class HaystackToRDFTransformer:
             parent_param_str = str(parent).removeprefix(str(PARAM))
             model.add((bindings[parent_param_str], relationship, equip))
 
+
     def run(self, haystack_file: str) -> Tuple[brickschema.Graph, bool, rdflib.Graph]:
+        # convert the haystack model to RDf. No inference
         rdfhaystackmodel = self.haystack_to_rdf(haystack_file)
+        # figure out which types/templates apply based on available tags
         model = infer(rdfhaystackmodel, self.ontology_graphs)
         for entity in model.subjects(A, self.PH.Entity):
             entity_types = [t for t in model.objects(entity, RDF.type) if t.startswith(PARAM)]
@@ -149,7 +152,7 @@ class HaystackToRDFTransformer:
         #bmotif_model = Model.create(self.M)
         #bmotif_model.add_graph(model)
 
-        valid, _, report = validate(model.graph, self.ontology_graphs)
+        valid, _, report = validate(model, self.ontology_graphs)
         return model.graph, valid, report
     #ctx = bmotif_model.validate(self._ontologies, error_on_missing_imports=False)
 

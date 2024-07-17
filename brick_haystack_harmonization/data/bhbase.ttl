@@ -77,3 +77,21 @@
             """ ;
     ] .
 
+
+
+# spaceRef => hasLocation
+:SpaceReferenceRule a sh:NodeShape ;
+    sh:targetClass ph:Entity ;
+    sh:rule [
+        a sh:SPARQLRule ;
+        sh:prefixes <urn:brick-haystack-xeto-rules> ;
+        sh:construct """
+            CONSTRUCT {
+                $this brick:hasLocation ?ref .
+            } WHERE {
+                $this ph:hasRefTag ?tag .
+                ?tag ph:key "spaceRef" .
+                ?tag ph:value ?ref .
+            }
+            """ ;
+    ] .
