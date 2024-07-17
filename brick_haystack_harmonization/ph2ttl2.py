@@ -34,7 +34,10 @@ class HaystackToRDFTransformer:
         self.brick = ShapeCollection.create()
         self.brick.add_graph(brick)
 
-        self._ontologies = [self.haystack.get_shape_collection(), self.bh.get_shape_collection()] #, self.bhbase.get_shape_collection(), self.brick]
+        self.bhbase.get_shape_collection().graph.serialize("/tmp/bhbase.ttl")
+        self.bh.get_shape_collection().graph.serialize("/tmp/bh.ttl")
+
+        self._ontologies = [self.haystack.get_shape_collection(), self.bh.get_shape_collection(), self.bhbase.get_shape_collection()]  #, self.brick]
 
     def is_marker_tag(self, tag):
         return isinstance(tag, dict) and tag.get("_kind") == "marker" or isinstance(tag, str)
@@ -132,33 +135,25 @@ class HaystackToRDFTransformer:
 
     def run(self, haystack_file: str) -> Tuple[brickschema.Graph, bool, rdflib.Graph]:
         rdfhaystackmodel = self.haystack_to_rdf(haystack_file)
-        model = Model.create(self.M)
-        model.add_graph(rdfhaystackmodel)
-        compiled = model.compile(self._ontologies)
-        #compiled = infer(rdfhaystackmodel, self.ontology_graphs)
-        model.add_graph(compiled)
-        model.graph.serialize("/tmp/model1.ttl", format="ttl")
-        for entity in model.graph.subjects(A, self.PH.Entity):
-            entity_types = [t for t in model.graph.objects(entity, RDF.type) if t.startswith(PARAM)]
+        model = infer(rdfhaystackmodel, self.ontology_graphs)
+        for entity in model.subjects(A, self.PH.Entity):
+            entity_types = [t for t in model.objects(entity, RDF.type) if t.startswith(PARAM)]
             if not entity_types:
                 continue
-            self.handle_entity_with_templates(model.graph, entity, entity_types)
-
-        print(f"before: {len(model.graph)=}")
-        #res = infer(model, self.ontology + self.brick)
-        compiled = model.compile(self._ontologies)
-        model.add_graph(compiled)
-        print(f"after: {len(model.graph)=}")
-        print(f"after: {len(compiled)=}")
+            self.handle_entity_with_templates(model, entity, entity_types)
+        model = infer(model, self.ontology_graphs)
 
         self.ontology.serialize("/tmp/ontology.ttl", format="ttl")
-        model.graph.serialize("/tmp/model2.ttl", format="ttl")
+        model.serialize("/tmp/model2.ttl", format="ttl")
         print("Starting validation")
-        #valid, _, report = validate(model.graph, self.ontology_graphs)
-        #return model.graph, valid, report
-        ctx = model.validate(self._ontologies, error_on_missing_imports=False)
-        
-        return model.graph, ctx.valid, ctx.report
+        #bmotif_model = Model.create(self.M)
+        #bmotif_model.add_graph(model)
+
+        valid, _, report = validate(model.graph, self.ontology_graphs)
+        return model.graph, valid, report
+    #ctx = bmotif_model.validate(self._ontologies, error_on_missing_imports=False)
+
+    #    return model.graph, ctx.valid, ctx.report
 
 
 def main():
