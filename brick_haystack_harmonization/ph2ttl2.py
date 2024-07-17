@@ -153,7 +153,7 @@ class HaystackToRDFTransformer:
         #bmotif_model.add_graph(model)
 
         valid, _, report = validate(model, self.ontology_graphs)
-        return model.graph, valid, report
+        return model, valid, report
     #ctx = bmotif_model.validate(self._ontologies, error_on_missing_imports=False)
 
     #    return model.graph, ctx.valid, ctx.report
