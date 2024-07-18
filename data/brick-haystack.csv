@@ -11,7 +11,6 @@
 ,,Equip,,,Gas_Meter,,"equip, meter, gas",,,,,,,,
 ,,Equip,,,Electrical_Meter,,"equip, meter, elec",,,,,,,,
 ,,Location,,,Floor,,"floor, space",,,,,,,,
-,,Location,,,Space,,"space",,,,,,,,
 ,,Location,,,Room,,"room, space",,,,,,,,
 ,,Location,,,HVAC_Zone,,"hvac, zone, space",,,,,,,,
 ,Command,Base,Command,Command,,,,,cmd,hisMode:sampled,,,,,

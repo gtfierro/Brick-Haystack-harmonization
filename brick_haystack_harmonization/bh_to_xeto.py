@@ -62,7 +62,18 @@ class BHtoXetoConverter:
             tag_list = ", ".join(sorted(tags))
         else:
             tag_list = tags.pop()
-        return self.make_statement(loc_class, tag_list)
+        return self.make_location_statement(loc_class, tag_list)
+
+    def make_location_statement(self, location_class, tag_list):
+        parent = brick.value(subject=BRICK[location_class], predicate=RDFS.subClassOf)
+        # haystack doesn't use the 'location' tag, so we need to also skip adding tags from Location
+        if parent is None or parent == BRICK["Location"]:
+            parent = "Entity"
+        else:
+            self.parent_classes.add(parent)
+            parent = f"Brick_{parent.split('#')[-1].replace('.','').replace('-','')}"
+
+        return f'\nBrick_{location_class.replace(".", "").replace("-","")}: {parent} <uri:"{BRICK[location_class]}"> {{ {tag_list} }}\n'
 
     def make_statement(self, point_class: str, tag_list: str) -> str:
         parent = brick.value(subject=BRICK[point_class], predicate=RDFS.subClassOf)
@@ -176,6 +187,7 @@ class BHtoXetoConverter:
     def run(self, filename: str, xeto_file: str, template_file: str):
         statements = []
         for row in read_csv(filename):
+            print(f"Processing {row}")
             if 'check' in row.values():
                 print(f"Skipping {row} because of 'check'")
                 continue
@@ -187,7 +199,6 @@ class BHtoXetoConverter:
                 statements.append(self.equip_to_xeto(row) + "\n")
             elif row["Meta:State"] == "Location":
                 statements.append(self.loc_to_xeto(row) + "\n")
-            # TODO: add support for locations
         with open(template_file, 'w') as f:
             f.write(self.buildingmotif_template_file_content)
 
